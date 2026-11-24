@@ -27,6 +27,8 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Real GNU and LLVM comparison on owned fixture
         run: PYTHONPATH=. python tests/engine_smoke.py
+      - name: Persistent external-engine cache and bounded parallel smoke
+        run: PYTHONPATH=. python tests/engine_batch_smoke.py
       - name: Compile all research Python
         run: python -m compileall -q skell_vst_decompiler
       - name: Compile and test original native DSP prototypes

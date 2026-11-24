@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "report_kind": "owned_fixture_external_engine_batch",
+  "source_commit": "dc9156496fd30c6279ed7f80dc5142bca2bc03ff",
+  "jobs_per_run": 38,
+  "scope_count": 19,
+  "warm_hits_per_run": 38,
+  "observations_equal": true,
+  "environment_invalidation": true,
+  "corrupt_entry_recovery": true,
+  "runs": [
+    {
+      "fixture_sha256": "382840a5fc5da3cf2f332090c4de25f3c08dde155943da08560c1c3cc65687d9",
+      "serial_seconds": 0.2036344680000184,
+      "parallel_seconds": 0.08899850399984643,
+      "cold_seconds": 0.12145642299992687,
+      "warm_seconds": 0.04484829400007584
+    },
+    {
+      "fixture_sha256": "b2e18891b522f047df194d966eaf2be0a6e50665075453c2365526a28cf1931d",
+      "serial_seconds": 0.13360648599973501,
+      "parallel_seconds": 0.08887865299993791,
+      "cold_seconds": 0.11554854299993167,
+      "warm_seconds": 0.05179262799993012
+    }
+  ],
+  "local_restored_tests": 84,
+  "original_native_regressions": "both passed at four sample rates",
+  "space_ns_per_frame": 60.0477,
+  "limitations": "Overlapping owned fixture ranges only. Two runs, not a large dataset benchmark. Rizin runtime pending, no Revenant execution or new vendor analysis."
+}
