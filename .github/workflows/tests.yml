@@ -49,3 +49,9 @@ jobs:
           g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/skelliere/render_space.cpp -o /tmp/skell_space_render
           g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer experiments/skelliere/test_space.cpp -o /tmp/skell_space_sanitized
           /tmp/skell_space_sanitized
+      - name: Original adaptive compressor experiment and sanitizers
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/skelliere/test_adaptive.cpp -o /tmp/skell_adaptive
+          /tmp/skell_adaptive
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer experiments/skelliere/test_adaptive.cpp -o /tmp/skell_adaptive_sanitized
+          /tmp/skell_adaptive_sanitized

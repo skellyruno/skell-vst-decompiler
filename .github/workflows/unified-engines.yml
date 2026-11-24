@@ -6,6 +6,8 @@ on:
       - 'tests/unified_engine_smoke.py'
       - 'tests/fixtures/ghidra_fixture.c'
       - 'skell_vst_decompiler/multi_engine.py'
+      - 'skell_vst_decompiler/boundary_audit.py'
+      - 'skell_vst_decompiler/navigation.py'
       - 'skell_vst_decompiler/engine_agreement.py'
       - 'skell_vst_decompiler/classgraph.py'
       - 'skell_vst_decompiler/ghidra_bridge.py'
@@ -20,7 +22,7 @@ concurrency:
 jobs:
   compare:
     runs-on: ubuntu-latest
-    timeout-minutes: 18
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v5
         with:
@@ -65,4 +67,6 @@ jobs:
           rz=$(find "$RUNNER_TEMP/rizin" -type f -name rizin -perm -u+x -print -quit)
           test -n "$home"
           test -n "$rz"
-          PYTHONPATH=. python tests/unified_engine_smoke.py --ghidra-home "$home" --rizin "$rz" --revenant "$(command -v revenant)"
+          for opt in O0 O1 O2 O3 Os; do
+            PYTHONPATH=. python tests/unified_engine_smoke.py --ghidra-home "$home" --rizin "$rz" --revenant "$(command -v revenant)" --optimization "$opt"
+          done

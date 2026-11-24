@@ -12,6 +12,7 @@ from skell_vst_decompiler.classgraph import compare_rizin
 from skell_vst_decompiler.engine_agreement import call_observations
 from skell_vst_decompiler.multi_engine import reconcile_observations
 from skell_vst_decompiler.verification import revenant_metadata
+from skell_vst_decompiler.boundary_audit import audit_boundaries
 
 
 def main():
@@ -19,12 +20,13 @@ def main():
     p.add_argument('--ghidra-home',required=True)
     p.add_argument('--rizin',required=True)
     p.add_argument('--revenant',required=True)
+    p.add_argument('--optimization',choices=('O0','O1','O2','O3','Os'),default='O1')
     a=p.parse_args()
     with tempfile.TemporaryDirectory(prefix='skell-unified-') as d:
         root=Path(d); obj=root/'fixture.obj'; exe=root/'fixture.exe'
         src=Path(__file__).parent/'fixtures'/'ghidra_fixture.c'
-        subprocess.run(['clang','--target=x86_64-pc-windows-msvc','-O1','-fno-stack-protector','-c',str(src),'-o',str(obj)],check=True,timeout=30)
-        subprocess.run(['lld-link','/entry:entry','/subsystem:console','/nodefaultlib','/out:'+str(exe),str(obj)],check=True,timeout=30)
+        subprocess.run(['clang','--target=x86_64-pc-windows-msvc','-'+a.optimization,'-fno-stack-protector','-c',str(src),'-o',str(obj)],check=True,timeout=30)
+        subprocess.run(['lld-link','/entry:entry','/subsystem:console','/nodefaultlib','/Brepro','/out:'+str(exe),str(obj)],check=True,timeout=30)
         pe=PE(exe); exports=fixture_exports(exe); start=exports['apply_gain']
         span=containing_range(runtime_ranges(pe),start)
         if not span or int(span['start_rva'],16)!=start:
@@ -70,6 +72,14 @@ def main():
             raise RuntimeError('Revenant static pipeline incomplete')
         if PE(exe).sha256!=pe.sha256:
             raise RuntimeError('Fixture changed')
+        boundary=audit_boundaries(pe.sha256,runtime_ranges(pe),[
+            {'engine':'rizin','binary_sha256':pe.sha256,'entries':[{'requested':x,'entry':x if x in entries else None} for x in exports.values()]},
+            {'engine':'ghidra','binary_sha256':pe.sha256,'entries':[{'requested':int(x['requested_rva'],16),'entry':None if x['entry_rva'] is None else int(x['entry_rva'],16)} for x in g['targets']]}
+        ],exports.values())
+        combined['boundary_audit']=boundary
+        combined['optimization']=a.optimization
+        if boundary['review_count'] or any(x['status']!='corroborated_entry' for x in boundary['entries']):
+            raise RuntimeError('Boundary disagreement: '+json.dumps(boundary))
         combined['revenant']=meta
         combined['exports']=exports
         combined['direct_call_sites']={k:{hex(x):hex(y) for x,y in v.items()} for k,v in direct_sites.items()}
