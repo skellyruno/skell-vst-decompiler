@@ -4,7 +4,7 @@ from pathlib import Path
 import tempfile
 import unittest
 from skell_vst_decompiler.analysis_cache import encode,sha
-from skell_vst_decompiler.cache_policy import prune_cache
+from skell_vst_decompiler.cache_policy import prune_cache, stable_stat
 from skell_vst_decompiler.dependency_identity import parse_ldd
 from skell_vst_decompiler.engine_batch import run_batch
 
@@ -37,6 +37,14 @@ class CachePolicyTest(unittest.TestCase):
             result=prune_cache(root,max_entries=100,max_bytes=0)
             self.assertEqual(result['remaining_entries'],0)
             self.assertTrue(other.exists() and invalid.exists())
+
+    def test_access_time_not_content_mutation(self):
+        from types import SimpleNamespace
+        info=dict(st_dev=1,st_ino=2,st_mode=0o100600,st_size=3,st_mtime_ns=4,st_ctime_ns=5)
+        self.assertEqual(stable_stat(SimpleNamespace(**info,st_atime_ns=1)),
+                         stable_stat(SimpleNamespace(**info,st_atime_ns=2)))
+        self.assertNotEqual(stable_stat(SimpleNamespace(**info)),
+                            stable_stat(SimpleNamespace(**{**info,'st_size':4})))
 
     def test_invalid_budget_before_target(self):
         with self.assertRaises(ValueError): run_batch('missing',[(1,2)],cache_limits=(1,1))

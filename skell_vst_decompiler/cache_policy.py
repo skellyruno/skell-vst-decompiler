@@ -15,6 +15,12 @@ def validate_limits(max_entries, max_bytes):
         raise ValueError('Nonnegative integer cache limits required')
 
 
+def stable_stat(info):
+    # Reading an entry may update atime. It is not a content mutation.
+    return (info.st_dev, info.st_ino, info.st_mode, info.st_size,
+            info.st_mtime_ns, info.st_ctime_ns)
+
+
 def verified_entry(path):
     if not re.fullmatch(r'[0-9a-f]{64}\.json', path.name):
         return None
@@ -36,7 +42,7 @@ def verified_entry(path):
             valid = data['key'] == path.stem and data['result_sha256'] == sha(encode(data['result']))
         else:
             return None
-        if not valid or before != path.lstat():
+        if not valid or stable_stat(before) != stable_stat(path.lstat()):
             return None
         return before
     except (OSError, ValueError, KeyError, TypeError, AttributeError):
@@ -66,7 +72,7 @@ def prune_cache(directory, *, max_entries, max_bytes):
         # Do not unlink a changed/replaced file. Concurrent external writers
         # are unsupported; this is a best-effort guard, not a filesystem lock.
         try:
-            if path.lstat() != info:
+            if stable_stat(path.lstat()) != stable_stat(info):
                 continue
             path.unlink()
         except OSError:
