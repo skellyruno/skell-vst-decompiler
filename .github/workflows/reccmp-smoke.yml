@@ -1,0 +1,41 @@
+name: Reccmp export comparison (owned fixture)
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/reccmp-smoke.yml'
+      - 'tests/reccmp_smoke.py'
+      - 'skell_vst_decompiler/legacy_pe.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || format('protected-{0}-{1}', github.ref, github.run_id) }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  owned-exports:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Install fixture compiler
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y clang lld
+      - name: Install standalone pinned upstream tool
+        run: |
+          set -euo pipefail
+          git clone https://github.com/isledecomp/reccmp.git "$RUNNER_TEMP/reccmp-src"
+          git -C "$RUNNER_TEMP/reccmp-src" checkout --detach fb58416f04032342140ca96de74ffcf3564c4899
+          test "$(git -C "$RUNNER_TEMP/reccmp-src" rev-parse HEAD)" = fb58416f04032342140ca96de74ffcf3564c4899
+          python -m venv "$RUNNER_TEMP/reccmp-venv"
+          "$RUNNER_TEMP/reccmp-venv/bin/python" -m pip install "$RUNNER_TEMP/reccmp-src"
+          "$RUNNER_TEMP/reccmp-venv/bin/reccmp-verexp" --version
+      - name: Check matching and changed exports
+        run: |
+          export PATH="$RUNNER_TEMP/reccmp-venv/bin:$PATH"
+          PYTHONPATH=. python tests/reccmp_smoke.py

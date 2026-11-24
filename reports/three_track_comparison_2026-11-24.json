@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "report_kind": "three_track_archived_comparison",
+  "source_commit": "8da5bedb9cd031ef25535acebd50e8e9e4cda6c1",
+  "verified_predecessor": {
+    "tests": 102,
+    "all_four_workflows_passed": true,
+    "run_ids": [
+      45430217471,
+      45430217256,
+      45430216953,
+      45430216479
+    ]
+  },
+  "tracks": {
+    "TVB": {
+      "region_records": 64,
+      "distinct_ranges": 64,
+      "records_with_region_digest": 29,
+      "records_without_region_digest": 35,
+      "repeated_exact_ranges": 0,
+      "candidate_digest_conflicts": 0
+    },
+    "VMR": {
+      "region_records": 64,
+      "distinct_ranges": 64,
+      "records_with_region_digest": 64,
+      "records_without_region_digest": 0,
+      "repeated_exact_ranges": 0,
+      "candidate_digest_conflicts": 0,
+      "per_module": {
+        "FG-116": 8,
+        "FG-2A": 50,
+        "FG-Stress": 6
+      }
+    },
+    "Evo": {
+      "region_records": 0,
+      "metadata_only": true,
+      "architecture": "x86",
+      "file_version": "6.0.9"
+    }
+  },
+  "limits": "Recomputed from 10 TVB and 8 VMR archived reports via GitHub; no repeated exact ranges, so zero candidate conflicts is not corroboration. No fresh original byte analysis."
+}
