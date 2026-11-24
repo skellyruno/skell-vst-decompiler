@@ -56,3 +56,7 @@ The catalog can be searched offline by keyword or hexadecimal RVA. It includes r
 ## Detector mapping and literal field navigation
 
 [Detector morphing and coefficient provenance](docs/TVB_DETECTOR_MAPPING.md) connects the six detector groups to continuous neighboring-bank interpolation, dB peak/power blending, nonlinear control calibration and rate-dependent setup. `--mode tvb-detector` verifies the original build and emits calibration fingerprints, not vendor arrays. `--mode fieldrefs --rva 0x5cfa7f --bytes 0x2564 --base rbp --offset=-0x50` identifies literal memory-operand locations with conservative access labels. This works on bounded code windows in other PE binaries too; it is not full register alias analysis. Hexadecimal byte lengths are now accepted.
+
+## Post-gain coloration and verified host binding
+
+[Coloration and parameter-binding report](docs/TVB_COLORATION_AND_PARAMETERS.md). The exact-build `--mode tvb-color` verifies distinct FET/optical post-gain nonlinear paths, three vs two filter stages, and six nearest-rate FET coefficient rows. `--mode tvb-parameters` follows the parent/child constructor chain, validates named pointer lookup slots and maps 25 source/destination endpoints to two proven compressor instances. The reports record confidence, RVAs and aggregate filter-only math; no raw vendor tables or executable code are published. Real audio equivalence, the full compound threshold/input/output conversion and alternate host routes remain unverified.

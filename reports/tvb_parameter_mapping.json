@@ -1,0 +1,322 @@
+{
+  "schema_version": 1,
+  "source": "TVB Rack V2.vst3",
+  "binary_sha256": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
+  "checkpoint_count": 116,
+  "constructor_chain": {
+    "parent_initializer_rva": "0x33c014",
+    "embedded_offset": "0x1e90",
+    "child_constructor_rva": "0x34c7a0",
+    "vtable_rva": "0x9273d0",
+    "virtual_process_rva": "0x5cfa50",
+    "instance_base_offsets": [
+      "0x34368",
+      "0x35390"
+    ]
+  },
+  "host_slots": {
+    "0x1a8": "fx_comp_compress",
+    "0x1b0": "fx_comp_algorithm",
+    "0x1b8": "fx_comp_la2a_limit",
+    "0x1c0": "fx_comp_la2a_hifreq",
+    "0xe80": "comp2_on",
+    "0xe88": "comp2_threshold_db",
+    "0xe90": "comp2_ratio",
+    "0xe98": "comp2_knee_db",
+    "0xea0": "comp2_attack_ms",
+    "0xea8": "comp2_release_ms",
+    "0xeb0": "comp2_auto_release",
+    "0xeb8": "comp2_makeup_db",
+    "0xec0": "comp2_auto_makeup",
+    "0xec8": "comp2_mix",
+    "0xed0": "comp2_schpf_on",
+    "0xed8": "comp2_input_db",
+    "0xee0": "comp2_all_in",
+    "0xee8": "comp2_output_db",
+    "0xef0": "fx_comp2_la2a_limit",
+    "0xef8": "fx_comp2_la2a_hifreq",
+    "0xf00": "fx_comp2_compress",
+    "0xf08": "fx_comp2_algorithm",
+    "0xf10": "comp2_on",
+    "0x3b308": "comp_on",
+    "0x3b310": "comp_threshold_db",
+    "0x3b318": "comp_ratio",
+    "0x3b320": "comp_knee_db",
+    "0x3b328": "comp_attack_ms",
+    "0x3b330": "comp_release_ms",
+    "0x3b338": "comp_auto_release",
+    "0x3b340": "comp_makeup_db",
+    "0x3b348": "comp_auto_makeup",
+    "0x3b350": "comp_mix",
+    "0x3b358": "comp_schpf_on",
+    "0x3b360": "comp_input_db",
+    "0x3b368": "comp_all_in",
+    "0x3b370": "comp_output_db",
+    "0x3b378": "comp_cla_output_db"
+  },
+  "mapped_endpoints": [
+    {
+      "parameter_id": "comp_ratio",
+      "host_slot_offset": "0x3b318",
+      "compressor_base_offset": "0x34368",
+      "dsp_field_offset": "0x154",
+      "load_rva": "0x34310e",
+      "store_rva": "0x3431bb",
+      "confidence": "instruction-verified source/destination endpoints; intervening range/default logic present"
+    },
+    {
+      "parameter_id": "comp_knee_db",
+      "host_slot_offset": "0x3b320",
+      "compressor_base_offset": "0x34368",
+      "dsp_field_offset": "0x158",
+      "load_rva": "0x3431c3",
+      "store_rva": "0x3431e2",
+      "confidence": "instruction-verified source/destination endpoints; intervening range/default logic present"
+    },
+    {
+      "parameter_id": "comp_attack_ms",
+      "host_slot_offset": "0x3b328",
+      "compressor_base_offset": "0x34368",
+      "dsp_field_offset": "0x15c",
+      "load_rva": "0x3431ea",
+      "store_rva": "0x343215",
+      "confidence": "instruction-verified source/destination endpoints; intervening range/default logic present"
+    },
+    {
+      "parameter_id": "comp_release_ms",
+      "host_slot_offset": "0x3b330",
+      "compressor_base_offset": "0x34368",
+      "dsp_field_offset": "0x160",
+      "load_rva": "0x34321d",
+      "store_rva": "0x343242",
+      "confidence": "instruction-verified source/destination endpoints; intervening range/default logic present"
+    },
+    {
+      "parameter_id": "comp_auto_release",
+      "host_slot_offset": "0x3b338",
+      "compressor_base_offset": "0x34368",
+      "dsp_field_offset": "0x164",
+      "load_rva": "0x34324a",
+      "store_rva": "0x34325d",
+      "confidence": "instruction-verified source/destination endpoints; intervening range/default logic present"
+    },
+    {
+      "parameter_id": "comp_mix",
+      "host_slot_offset": "0x3b350",
+      "compressor_base_offset": "0x34368",
+      "dsp_field_offset": "0x170",
+      "load_rva": "0x343263",
+      "store_rva": "0x343282",
+      "confidence": "instruction-verified source/destination endpoints; intervening range/default logic present"
+    },
+    {
+      "parameter_id": "comp_schpf_on",
+      "host_slot_offset": "0x3b358",
+      "compressor_base_offset": "0x34368",
+      "dsp_field_offset": "0x178",
+      "load_rva": "0x34328a",
+      "store_rva": "0x34329d",
+      "confidence": "instruction-verified source/destination endpoints; intervening range/default logic present"
+    },
+    {
+      "parameter_id": "comp_all_in",
+      "host_slot_offset": "0x3b368",
+      "compressor_base_offset": "0x34368",
+      "dsp_field_offset": "0x180",
+      "load_rva": "0x3432a3",
+      "store_rva": "0x3432b6",
+      "confidence": "instruction-verified source/destination endpoints; intervening range/default logic present"
+    },
+    {
+      "parameter_id": "fx_comp_la2a_limit",
+      "host_slot_offset": "0x1b8",
+      "compressor_base_offset": "0x34368",
+      "dsp_field_offset": "0x188",
+      "load_rva": "0x3441b4",
+      "store_rva": "0x3441c7",
+      "confidence": "instruction-verified source/destination endpoints; intervening range/default logic present"
+    },
+    {
+      "parameter_id": "fx_comp_la2a_hifreq",
+      "host_slot_offset": "0x1c0",
+      "compressor_base_offset": "0x34368",
+      "dsp_field_offset": "0x18c",
+      "load_rva": "0x3441cd",
+      "store_rva": "0x3441ea",
+      "confidence": "instruction-verified source/destination endpoints; intervening range/default logic present"
+    },
+    {
+      "parameter_id": "comp2_threshold_db",
+      "host_slot_offset": "0xe88",
+      "compressor_base_offset": "0x35390",
+      "dsp_field_offset": "0x150",
+      "load_rva": "0x343ed4",
+      "store_rva": "0x343f04",
+      "confidence": "instruction-verified source/destination endpoints; intervening range/default logic present"
+    },
+    {
+      "parameter_id": "comp2_ratio",
+      "host_slot_offset": "0xe90",
+      "compressor_base_offset": "0x35390",
+      "dsp_field_offset": "0x154",
+      "load_rva": "0x343f0c",
+      "store_rva": "0x343f3c",
+      "confidence": "instruction-verified source/destination endpoints; intervening range/default logic present"
+    },
+    {
+      "parameter_id": "comp2_knee_db",
+      "host_slot_offset": "0xe98",
+      "compressor_base_offset": "0x35390",
+      "dsp_field_offset": "0x158",
+      "load_rva": "0x343f44",
+      "store_rva": "0x343f7c",
+      "confidence": "instruction-verified source/destination endpoints; intervening range/default logic present"
+    },
+    {
+      "parameter_id": "comp2_attack_ms",
+      "host_slot_offset": "0xea0",
+      "compressor_base_offset": "0x35390",
+      "dsp_field_offset": "0x15c",
+      "load_rva": "0x343f84",
+      "store_rva": "0x343fba",
+      "confidence": "instruction-verified source/destination endpoints; intervening range/default logic present"
+    },
+    {
+      "parameter_id": "comp2_release_ms",
+      "host_slot_offset": "0xea8",
+      "compressor_base_offset": "0x35390",
+      "dsp_field_offset": "0x160",
+      "load_rva": "0x343fc2",
+      "store_rva": "0x343ff2",
+      "confidence": "instruction-verified source/destination endpoints; intervening range/default logic present"
+    },
+    {
+      "parameter_id": "comp2_auto_release",
+      "host_slot_offset": "0xeb0",
+      "compressor_base_offset": "0x35390",
+      "dsp_field_offset": "0x164",
+      "load_rva": "0x343ffa",
+      "store_rva": "0x344018",
+      "confidence": "instruction-verified source/destination endpoints; intervening range/default logic present"
+    },
+    {
+      "parameter_id": "comp2_makeup_db",
+      "host_slot_offset": "0xeb8",
+      "compressor_base_offset": "0x35390",
+      "dsp_field_offset": "0x168",
+      "load_rva": "0x34401e",
+      "store_rva": "0x344046",
+      "confidence": "instruction-verified source/destination endpoints; intervening range/default logic present"
+    },
+    {
+      "parameter_id": "comp2_auto_makeup",
+      "host_slot_offset": "0xec0",
+      "compressor_base_offset": "0x35390",
+      "dsp_field_offset": "0x16c",
+      "load_rva": "0x34404e",
+      "store_rva": "0x34406b",
+      "confidence": "instruction-verified source/destination endpoints; intervening range/default logic present"
+    },
+    {
+      "parameter_id": "comp2_mix",
+      "host_slot_offset": "0xec8",
+      "compressor_base_offset": "0x35390",
+      "dsp_field_offset": "0x170",
+      "load_rva": "0x344071",
+      "store_rva": "0x34409b",
+      "confidence": "instruction-verified source/destination endpoints; intervening range/default logic present"
+    },
+    {
+      "parameter_id": "comp2_schpf_on",
+      "host_slot_offset": "0xed0",
+      "compressor_base_offset": "0x35390",
+      "dsp_field_offset": "0x178",
+      "load_rva": "0x3440a3",
+      "store_rva": "0x3440c1",
+      "confidence": "instruction-verified source/destination endpoints; intervening range/default logic present"
+    },
+    {
+      "parameter_id": "comp2_input_db",
+      "host_slot_offset": "0xed8",
+      "compressor_base_offset": "0x35390",
+      "dsp_field_offset": "0x17c",
+      "load_rva": "0x3440c7",
+      "store_rva": "0x3440ed",
+      "confidence": "instruction-verified source/destination endpoints; intervening range/default logic present"
+    },
+    {
+      "parameter_id": "comp2_output_db",
+      "host_slot_offset": "0xee8",
+      "compressor_base_offset": "0x35390",
+      "dsp_field_offset": "0x174",
+      "load_rva": "0x3440f6",
+      "store_rva": "0x344121",
+      "confidence": "instruction-verified source/destination endpoints; intervening range/default logic present"
+    },
+    {
+      "parameter_id": "fx_comp2_la2a_limit",
+      "host_slot_offset": "0xef0",
+      "compressor_base_offset": "0x35390",
+      "dsp_field_offset": "0x188",
+      "load_rva": "0x344129",
+      "store_rva": "0x344146",
+      "confidence": "instruction-verified source/destination endpoints; intervening range/default logic present"
+    },
+    {
+      "parameter_id": "fx_comp2_la2a_hifreq",
+      "host_slot_offset": "0xef8",
+      "compressor_base_offset": "0x35390",
+      "dsp_field_offset": "0x18c",
+      "load_rva": "0x34414c",
+      "store_rva": "0x344176",
+      "confidence": "instruction-verified source/destination endpoints; intervening range/default logic present"
+    },
+    {
+      "parameter_id": "fx_comp2_compress",
+      "host_slot_offset": "0xf00",
+      "compressor_base_offset": "0x35390",
+      "dsp_field_offset": "0x190",
+      "load_rva": "0x34417e",
+      "store_rva": "0x3441ac",
+      "confidence": "instruction-verified source/destination endpoints; intervening range/default logic present"
+    }
+  ],
+  "regions": [
+    {
+      "id": "compressor_objects",
+      "title": "Two constructed compressor instances",
+      "start_rva": "0x34bd12",
+      "end_rva_exclusive": "0x34bd2b",
+      "confidence": "instruction-verified object base chain",
+      "equation": "Parent + 0x1e90 + child offsets 0x324d8 or 0x33500. Both use same verified compressor constructor/vtable."
+    },
+    {
+      "id": "mode_assignments",
+      "title": "Processing path assigns mode 1 and mode 2",
+      "start_rva": "0x343ea2",
+      "end_rva_exclusive": "0x343eb0",
+      "confidence": "instruction-verified mode writes for this path",
+      "equation": "Writes numeric mode 1 to first instance field 0x184, mode 2 to second. Does not prove all host paths use fixed modes."
+    },
+    {
+      "id": "primary_threshold_drive",
+      "title": "Primary threshold, input and output coupling",
+      "start_rva": "0x342fa8",
+      "end_rva_exclusive": "0x3431b3",
+      "confidence": "instruction-verified endpoints, intermediate equations incomplete",
+      "equation": "Primary threshold and CLA output feed conditional/table-based gain calculation with input and output parameters; destinations include threshold 0x150, field 0x174 and field 0x17c. Not simple one-to-one knob mapping."
+    },
+    {
+      "id": "secondary_optical",
+      "title": "Optical detector and compression amount bindings",
+      "start_rva": "0x344129",
+      "end_rva_exclusive": "0x3441b4",
+      "confidence": "instruction-verified endpoints",
+      "equation": "fx_comp2_la2a_limit -> 0x188; fx_comp2_la2a_hifreq -> 0x18c; fx_comp2_compress -> 0x190, after default and range logic."
+    }
+  ],
+  "limits": [
+    "Static endpoint mapping for one native host processing path; not a full APVTS automation trace. Exact threshold/input/output mapping, all alternate dispatch paths and actual audio remain unverified.",
+    "No vendor implementation or parameter tables exported."
+  ]
+}

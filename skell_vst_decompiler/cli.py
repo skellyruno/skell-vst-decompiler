@@ -13,12 +13,14 @@ from .navigation import function_report, reference_report
 from .curve_provenance import verify_curves
 from .detector_mapping import verify_detector_mapping
 from .fieldrefs import field_report
+from .coloration import verify_coloration
+from .parameter_mapping import verify_parameter_mapping
 
 
 def main(argv=None):
     p=argparse.ArgumentParser(description="Skell VST Decompiler: read-only PE and DSP evidence")
     p.add_argument("binary",help="Locally owned Windows x64 VST3/EPL binary")
-    p.add_argument("--mode",choices=["inventory","trace","tvb-biquad","tvb-bank","tvb-compressor-setup","tvb-dynamics","dispatch","tvb-curves","tvb-detector","fieldrefs","function","xref"],default="inventory")
+    p.add_argument("--mode",choices=["inventory","trace","tvb-biquad","tvb-bank","tvb-compressor-setup","tvb-dynamics","dispatch","tvb-curves","tvb-detector","tvb-color","tvb-parameters","fieldrefs","function","xref"],default="inventory")
     p.add_argument("--find",help="Filter tvb-dynamics by keywords or hexadecimal RVA")
     p.add_argument("--entries",type=int,default=4,help="Candidate jump-table slots to inspect (1..32, not inferred table length)")
     p.add_argument("--target",type=lambda x:int(x,0),help="Target RVA for xref search")
@@ -41,6 +43,12 @@ def main(argv=None):
         res=trace_dispatch(pe,a.rva,a.entries,a.objdump)
     elif a.mode=="tvb-detector":
         res=verify_detector_mapping(pe,a.objdump)
+        if a.find is not None:res=search(res,a.find)
+    elif a.mode=="tvb-color":
+        res=verify_coloration(pe,a.objdump)
+        if a.find is not None:res=search(res,a.find)
+    elif a.mode=="tvb-parameters":
+        res=verify_parameter_mapping(pe,a.objdump)
         if a.find is not None:res=search(res,a.find)
     elif a.mode=="fieldrefs":
         if a.rva is None or a.base is None or a.offset is None:p.error("--mode fieldrefs requires --rva, --base and --offset")
