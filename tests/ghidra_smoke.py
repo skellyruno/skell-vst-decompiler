@@ -9,7 +9,7 @@ from skell_vst_decompiler.pe import PE
 from skell_vst_decompiler.ghidra_bridge import make_plan, run_analysis
 
 
-def fixture_exports(path):
+def fixture_exports(path, required=('smooth','apply_gain')):
     pe=PE(path)
     optional=pe._unpack('<I',0x3c)[0]+24
     rva,size=pe._unpack('<II',optional+112)
@@ -24,8 +24,8 @@ def fixture_exports(path):
         target=pe.u32(functions+4*ordinal)
         if rva<=target<rva+size:raise RuntimeError('Unexpected forwarded export')
         pe.at_rva(target,1,executable=True)
-        if name in ('smooth','apply_gain'):result[name]=target
-    if set(result)!={'smooth','apply_gain'}:raise RuntimeError('Fixture exports not found')
+        if name in required:result[name]=target
+    if set(result)!=set(required):raise RuntimeError('Fixture exports not found')
     return result
 
 

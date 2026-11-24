@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "report_kind": "same_binary_unified_ci_verified",
+  "source_commit": "f66a33bb532faedd1555a7154b7ba88bcdb9693e",
+  "run_ids": {
+    "static": 45425334964,
+    "unified": 45425335194,
+    "ghidra": 45425334892,
+    "rizin": 45425335578
+  },
+  "all_success": true,
+  "tests": 93,
+  "binary_sha256": "034abe43b1f1477050663437bb3decb2b17111bbc8106c30416a51edbe773ebd",
+  "claims": [
+    {
+      "kind": "function_call",
+      "subject_rva": "0x1010",
+      "value_rva": "0x1000",
+      "supporting_engines": [
+        "ghidra",
+        "llvm-objdump",
+        "objdump"
+      ],
+      "status": "corroborated_static"
+    },
+    {
+      "kind": "function_entry",
+      "subject_rva": "0x1000",
+      "value_rva": "0x1000",
+      "supporting_engines": [
+        "ghidra",
+        "rizin"
+      ],
+      "status": "corroborated_static"
+    },
+    {
+      "kind": "function_entry",
+      "subject_rva": "0x1010",
+      "value_rva": "0x1010",
+      "supporting_engines": [
+        "ghidra",
+        "rizin"
+      ],
+      "status": "corroborated_static"
+    },
+    {
+      "kind": "function_entry",
+      "subject_rva": "0x1050",
+      "value_rva": "0x1050",
+      "supporting_engines": [
+        "rizin"
+      ],
+      "status": "single_observation"
+    }
+  ],
+  "direct_call_sites": {
+    "llvm-objdump": {
+      "0x102f": "0x1000"
+    },
+    "objdump": {
+      "0x102f": "0x1000"
+    }
+  },
+  "revenant": {
+    "runtime_verified": true,
+    "provider": "none",
+    "completed_stage_count": 4,
+    "failed_stage_count": 0,
+    "function_count": 3,
+    "interpretation": "metadata only; no individual call votes"
+  },
+  "batch": {
+    "jobs": 38,
+    "warm_hits": 38,
+    "sequential_seconds": 0.293765293,
+    "parallel_seconds": 0.220656059,
+    "warm_seconds": 0.021476442
+  },
+  "limitations": "Owned fixture only; no vendor DSP validation or algorithm coverage."
+}
