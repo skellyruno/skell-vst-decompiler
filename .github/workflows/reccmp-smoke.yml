@@ -4,6 +4,9 @@ on:
     paths:
       - '.github/workflows/reccmp-smoke.yml'
       - 'tests/reccmp_smoke.py'
+      - 'skell_vst_decompiler/reccmp_compat.py'
+      - 'tests/test_reccmp_compat.py'
+      - 'skell_vst_decompiler/pe_export_audit.py'
       - 'skell_vst_decompiler/legacy_pe.py'
   workflow_dispatch:
 permissions:
@@ -38,4 +41,5 @@ jobs:
       - name: Check matching and changed exports
         run: |
           export PATH="$RUNNER_TEMP/reccmp-venv/bin:$PATH"
-          PYTHONPATH=. python tests/reccmp_smoke.py
+          PYTHONPATH=. "$RUNNER_TEMP/reccmp-venv/bin/python" -m unittest discover -s tests -p test_reccmp_compat.py -v
+          PYTHONPATH=. "$RUNNER_TEMP/reccmp-venv/bin/python" tests/reccmp_smoke.py

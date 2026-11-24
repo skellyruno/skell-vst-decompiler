@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "report_kind": "private_source_unwind_grouping_and_text_marker_audit",
+  "source_commit": "0472b759312a277778cbbb7918517314372e2ba7",
+  "method": "Read original PE exception directories and compare existing verified half-open regions against runtime-function extent records. Exact original binary SHA-256 matched previous provenance report. No target execution.",
+  "records": [
+    {
+      "track": "TVB",
+      "sha256": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
+      "region_count": 64,
+      "unwind_records": 34461,
+      "range_relation": {
+        "contained_unique": 58,
+        "no_overlap": 3,
+        "partial_overlap": 3,
+        "contained_multiple": 0
+      },
+      "unique_containing_records": 16,
+      "largest_group_region_count": 26,
+      "multiple_region_groups": 6
+    },
+    {
+      "track": "FG-116",
+      "sha256": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+      "region_count": 8,
+      "unwind_records": 20110,
+      "range_relation": {
+        "contained_unique": 7,
+        "no_overlap": 1,
+        "partial_overlap": 0,
+        "contained_multiple": 0
+      },
+      "unique_containing_records": 2,
+      "largest_group_region_count": 4,
+      "multiple_region_groups": 2
+    },
+    {
+      "track": "FG-2A",
+      "sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+      "region_count": 50,
+      "unwind_records": 19781,
+      "range_relation": {
+        "contained_unique": 41,
+        "no_overlap": 5,
+        "partial_overlap": 4,
+        "contained_multiple": 0
+      },
+      "unique_containing_records": 15,
+      "largest_group_region_count": 19,
+      "multiple_region_groups": 6
+    },
+    {
+      "track": "FG-Stress",
+      "sha256": "2509a6f3480481feb15a0fde97abcb4acccfc6fc936f55f5e8c88b7c98edcd26",
+      "region_count": 6,
+      "unwind_records": 20224,
+      "range_relation": {
+        "contained_unique": 6,
+        "no_overlap": 0,
+        "partial_overlap": 0,
+        "contained_multiple": 0
+      },
+      "unique_containing_records": 1,
+      "largest_group_region_count": 6,
+      "multiple_region_groups": 1
+    }
+  ],
+  "evo": {
+    "sha256": "278d03b4a88fe6ef59b48e5c1f70bc921b3ae530ea672879ef2ae21f0ce873d5",
+    "method": "Case-insensitive ASCII whole token and UTF16LE substring counts, whole file; not code analysis.",
+    "text_marker_counts": {
+      "autocorrelation": {
+        "ascii_whole_token": 0,
+        "utf16le_substring": 0
+      },
+      "autocorrelate": {
+        "ascii_whole_token": 0,
+        "utf16le_substring": 0
+      },
+      "crosscorrelation": {
+        "ascii_whole_token": 0,
+        "utf16le_substring": 0
+      },
+      "cepstrum": {
+        "ascii_whole_token": 0,
+        "utf16le_substring": 0
+      },
+      "phase vocoder": {
+        "ascii_whole_token": 0,
+        "utf16le_substring": 0
+      },
+      "PSOLA": {
+        "ascii_whole_token": 0,
+        "utf16le_substring": 0
+      },
+      "YIN": {
+        "ascii_whole_token": 0,
+        "utf16le_substring": 0
+      },
+      "pitch tracking": {
+        "ascii_whole_token": 1,
+        "utf16le_substring": 0
+      },
+      "pitch detection": {
+        "ascii_whole_token": 0,
+        "utf16le_substring": 0
+      },
+      "formant": {
+        "ascii_whole_token": 1,
+        "utf16le_substring": 0
+      },
+      "resampling": {
+        "ascii_whole_token": 0,
+        "utf16le_substring": 0
+      },
+      "FFT": {
+        "ascii_whole_token": 0,
+        "utf16le_substring": 0
+      },
+      "LPC": {
+        "ascii_whole_token": 0,
+        "utf16le_substring": 0
+      }
+    }
+  },
+  "limits": "Unique containing unwind records are not proven full function extents or runtime routes. No overlap may be valid leaf code. Text presence or absence cannot identify or exclude an algorithm. No new proprietary equation or source recovered."
+}
