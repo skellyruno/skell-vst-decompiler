@@ -1,0 +1,44 @@
+name: Craft Anything metadata (owned fixtures)
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/craft-metadata.yml'
+      - 'tests/craft_metadata_smoke.py'
+      - 'skell_vst_decompiler/craft_metadata.py'
+      - 'skell_vst_decompiler/pe_export_audit.py'
+      - 'skell_vst_decompiler/legacy_pe.py'
+      - 'skell_vst_decompiler/pe.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || format('protected-{0}-{1}', github.ref, github.run_id) }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Install fixture compiler
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y clang lld
+      - name: Download verified standalone release archive
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 2 --max-time 240 https://github.com/storytold/craft-anything/releases/download/v0.6.1/craft-anything-0.6.1-linux-x86_64.tar.gz -o "$RUNNER_TEMP/craft.tar.gz"
+          echo "83ec0730c9117f399122b315c63ed4c3a8d31ac55bddd74cb8b33cd2f76ef704  $RUNNER_TEMP/craft.tar.gz" | sha256sum -c -
+          mkdir -p "$RUNNER_TEMP/craft"
+          tar -xzf "$RUNNER_TEMP/craft.tar.gz" -C "$RUNNER_TEMP/craft" --no-same-owner
+      - name: Compare layout and upstream evidence integrity
+        run: |
+          set -euo pipefail
+          cli=$(find "$RUNNER_TEMP/craft" -type f -name craft-anything-cli -perm -u+x -print -quit)
+          test -n "$cli"
+          PYTHONPATH=. python tests/craft_metadata_smoke.py --cli "$cli"

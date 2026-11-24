@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "report_kind": "verified_independent_dsp_reference_ci",
+  "source_commit": "b505623299352645c29da04606d4c37ed46f1f9a",
+  "tests": 110,
+  "run_ids": {
+    "static": 45435438787,
+    "reccmp": 45435438996,
+    "rizin": 45435438739,
+    "ghidra": 45435438955,
+    "pe_oracle": 45435438703,
+    "unified": 45435438907
+  },
+  "success_count": 5,
+  "failed_count": 1,
+  "pitch": {
+    "cases": 30,
+    "max_absolute_cents": 0.6965710256063525,
+    "median_absolute_cents": 0.06956083477618968,
+    "median_batch_seconds": {
+      "direct": 0.08249466799999539,
+      "fft": 0.012862675999997464
+    },
+    "speedup": 6.4134918736981055
+  },
+  "saturation_9khz": {
+    "direct": {
+      "folded_21khz_relative_db": -11.80557626748628,
+      "fundamental_rms": 0.8689580508113869
+    },
+    "adaa": {
+      "folded_21khz_relative_db": -17.677418757174827,
+      "fundamental_rms": 0.8061838870402402
+    }
+  },
+  "limits": "Synthetic offline cases; folded bin not full alias metric, fundamental RMS differs; no perceptual or vendor parity claim. Reccmp remains failed."
+}
