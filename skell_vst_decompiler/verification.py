@@ -115,18 +115,20 @@ def main(argv=None):
     p.add_argument('reports',type=Path)
     p.add_argument('--revenant',type=Path)
     p.add_argument('--sha256')
+    p.add_argument('--cache-dir', type=Path, help='Optional private local reconciliation cache')
     a = p.parse_args(argv)
-    snapshot, raw_sha = load(a.reports/'vmr_variant_navigation.json')
-    inputs = [(path.name,*load(path)) for path in sorted(a.reports.glob('*.json')) if path.name != 'vmr_variant_navigation.json']
-    result = reconcile(snapshot, inputs)
-    result['snapshot_file_sha256'] = raw_sha
+    from .analysis_cache import reconcile_directory
+    result, hit = reconcile_directory(a.reports, a.cache_dir)
+    if a.cache_dir is not None:
+        import sys
+        print('cache hit' if hit else 'cache miss', file=sys.stderr)
     if a.revenant:
         if not a.sha256:
             p.error('--revenant requires --sha256')
         external, external_sha = load(a.revenant)
         result['external'] = revenant_metadata(external, a.sha256)
         result['external']['report_sha256'] = external_sha
-    print(json.dumps(result,indent=2,allow_nan=False))
+    print(json.dumps(result,indent=2,allow_nan=False,sort_keys=True))
     return int(any(c['status'] != 'consistent' for c in result['checks']))
 
 

@@ -20,11 +20,13 @@ jobs:
       - name: Install C++ PE fixture compiler and linker
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y clang lld
+          sudo apt-get install -y clang lld llvm binutils
           command -v clang++
           command -v lld-link
       - name: Unit tests (no vendor binaries)
         run: python -m unittest discover -s tests -v
+      - name: Real GNU and LLVM comparison on owned fixture
+        run: PYTHONPATH=. python tests/engine_smoke.py
       - name: Compile all research Python
         run: python -m compileall -q skell_vst_decompiler
       - name: Compile and test original native DSP prototypes

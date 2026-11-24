@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "report_kind": "owned_fixture_and_cache_benchmark",
+  "source_commit": "23e69b54f4bf73dfbb9d295373f579a987c8e56b",
+  "fixture_sha256": "d0148fb6b856dac3b266a9bf8d0913cc17e74592a259fc83795f84140b60261a",
+  "exports": {
+    "apply_gain": 4112,
+    "smooth": 4096
+  },
+  "checks": [
+    {
+      "site_rva": "0x102f",
+      "left_target": "0x1000",
+      "right_target": "0x1000",
+      "status": "agreed_static"
+    }
+  ],
+  "engines": [
+    "GNU objdump 2.44",
+    "LLVM objdump (local Swift toolchain)"
+  ],
+  "cache": {
+    "report_count": 26,
+    "repetitions": 30,
+    "median_uncached_seconds": 0.003074454999932641,
+    "median_warm_seconds": 0.0013141524999582543,
+    "byte_identical_cli_output": true,
+    "all_results_equal": true
+  },
+  "local_restored_lab_tests": 82,
+  "limitations": "Restored local lab subset plus current changes, not complete exact-head CI. Cache covers reconciliation only; no new vendor analysis."
+}

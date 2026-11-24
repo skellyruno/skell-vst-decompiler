@@ -1,9 +1,10 @@
 {
   "schema_version": 1,
+  "report_kind": "synthetic_lookup_benchmark",
   "source_commit": "69f91f4a45471184724d34c08e7e8c5695d754ac",
   "scope": "Synthetic interval lookup only; no new vendor analysis, decompilation or audio benchmark.",
   "seed": 420,
-  "regions": 40000,
+  "region_count": 40000,
   "queries": 500,
   "repetitions": 3,
   "median_linear_seconds": 0.8410504920000221,
