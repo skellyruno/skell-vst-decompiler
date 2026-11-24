@@ -45,6 +45,10 @@ jobs:
         run: PYTHONPATH=. python tests/adaptive_research_smoke.py
       - name: Research gates and competing recovery descriptions
         run: PYTHONPATH=. python tests/research_gates_smoke.py
+      - name: Slow motion discrimination and periodic coloration comparison
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+        run: PYTHONPATH=. python tests/motion_color_smoke.py
       - name: Compile all research Python
         run: python -m compileall -q skell_vst_decompiler
       - name: Compile and test original native DSP prototypes
