@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "report_kind": "independent_advanced_dsp_local_validation",
+  "source_commit": "d83deed2af1dbbadb19a22b55c595b2706fdfc60",
+  "local_tested_code_blob": "ce1289df1db8d5701a8c7563f61fad91379afa64",
+  "local_tests": 3,
+  "local_test_result": "pass",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "previous_ci": {
+    "tests": 130,
+    "all_eight_passed": true,
+    "run_ids": [
+      45444984028,
+      45444983641,
+      45444983728,
+      45444983594,
+      45444983572,
+      45444984075,
+      45444984184,
+      45444983890
+    ],
+    "sustained_retune_residual_rms_cents": 16.720158752575877
+  },
+  "pitch": {
+    "4": {
+      "raw_center_rmse": 18.08073098089066,
+      "estimated_center_rmse": 5.071856778397612,
+      "vibrato_rmse": 8.515743655028443
+    },
+    "5": {
+      "raw_center_rmse": 17.915704869840187,
+      "estimated_center_rmse": 0.8596887156758489,
+      "vibrato_rmse": 0.881815648772013
+    },
+    "6": {
+      "raw_center_rmse": 18.225435618519047,
+      "estimated_center_rmse": 3.4570218850202705,
+      "vibrato_rmse": 8.501925316000174
+    }
+  },
+  "recovery": {
+    "true_tau_ms": [
+      47,
+      483
+    ],
+    "single": {
+      "tau_ms": [
+        264.30993893232835
+      ],
+      "heldout_rmse": 0.4444624308630027
+    },
+    "dual": {
+      "tau_ms": [
+        47.074958729718,
+        483.4845112973913
+      ],
+      "heldout_rmse": 0.01467362503033807
+    }
+  },
+  "imd": {
+    "linear": {
+      "imd2_db": -286.04079150168394,
+      "imd3_db": -299.00171375549024
+    },
+    "quadratic": {
+      "imd2_db": -19.999999999999716,
+      "imd3_db": -298.6722885043215
+    },
+    "cubic": {
+      "imd2_db": -286.0735120274051,
+      "imd3_db": -35.01530899788027
+    }
+  },
+  "limits": "Original synthetic inputs only; fixed 5 Hz oscillator, warmup excluded, no audio synthesis or real-time performance, known recovery generator, selected coherent IMD products only. No additional vendor binary instruction analysis, proprietary recovery or real audio tests."
+}

@@ -39,6 +39,8 @@ jobs:
         run: PYTHONPATH=. python tests/behavior_models_smoke.py
       - name: Stereo topology, harmonics and sustained retune probes
         run: PYTHONPATH=. python tests/public_behavior_smoke.py
+      - name: Advanced independent DSP hypothesis benchmark
+        run: PYTHONPATH=. python tests/advanced_dsp_smoke.py
       - name: Compile all research Python
         run: python -m compileall -q skell_vst_decompiler
       - name: Compile and test original native DSP prototypes
