@@ -51,6 +51,8 @@ jobs:
         run: PYTHONPATH=. python tests/motion_color_smoke.py
       - name: Cross-disassembler instruction census on owned PE fixtures
         run: PYTHONPATH=. python tests/code_census_smoke.py
+      - name: Bounded static flow verification on owned PE fixtures
+        run: PYTHONPATH=. python tests/static_flow_smoke.py
       - name: Compile all research Python
         run: python -m compileall -q skell_vst_decompiler
       - name: Compile and test original native DSP prototypes

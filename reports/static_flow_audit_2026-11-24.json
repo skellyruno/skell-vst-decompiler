@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "report_kind": "bounded_static_flow_observations",
+  "source_commit": "e265f40a99e1ff12b723e278b8b5019070d99ead",
+  "atlas_git_blob": "bc75dc2ee0781189b539897bcb435c7a3f8091bc",
+  "archive_sha256": "353f23373ac05d7b2121c313073f08c708e879d839115d4ce5d30657732f481e",
+  "original_hashes": {
+    "FG-116.epl": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+    "FG-2A.epl": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+    "FG-Stress.epl": "2509a6f3480481feb15a0fde97abcb4acccfc6fc936f55f5e8c88b7c98edcd26",
+    "TVB Rack V2.vst3": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
+    "VMR rack": "8da77cc3d3e9935db56f56dabc586f1ff38dc1e667fa9ff6a9fbc2302f66c838",
+    "Evo": "278d03b4a88fe6ef59b48e5c1f70bc921b3ae530ea672879ef2ae21f0ce873d5"
+  },
+  "all_six_matched": true,
+  "archived_regions": {
+    "FG-116.epl": {
+      "scopes": 8,
+      "bytes": 4826,
+      "agreed_spans": 1082,
+      "possible_reached_spans": 1050,
+      "possible_reached_bytes": 4690,
+      "not_reached_in_model": 32,
+      "scopes_with_unverified_boundary": 1,
+      "scopes_with_interior_destination": 0,
+      "scope_digest_list_sha256": "f06ce4ac17a6272943ba29b07d91eaed54425e0e7b31e371a2848c3905781680",
+      "seed_status": {
+        "agreed_start": 8
+      },
+      "instruction_categories": {
+        "fallthrough": 956,
+        "direct_call": 28,
+        "conditional": 55,
+        "jump": 7,
+        "return": 3,
+        "barrier": 1
+      },
+      "flow_destinations": {
+        "agreed_start": 1092,
+        "outside_scope": 8,
+        "unverified_boundary": 1
+      },
+      "direct_call_destinations_not_followed": {
+        "outside_scope": 28
+      }
+    },
+    "FG-2A.epl": {
+      "scopes": 50,
+      "bytes": 13726,
+      "agreed_spans": 2846,
+      "possible_reached_spans": 1890,
+      "possible_reached_bytes": 9733,
+      "not_reached_in_model": 956,
+      "scopes_with_unverified_boundary": 9,
+      "scopes_with_interior_destination": 0,
+      "scope_digest_list_sha256": "cd0de11e717cf797252ff1286219f468b56687416b0a87d6f2e2124b9fbb8171",
+      "seed_status": {
+        "agreed_start": 50
+      },
+      "instruction_categories": {
+        "fallthrough": 1652,
+        "barrier": 5,
+        "conditional": 95,
+        "return": 17,
+        "jump": 10,
+        "direct_call": 111
+      },
+      "flow_destinations": {
+        "agreed_start": 1901,
+        "outside_scope": 53,
+        "unverified_boundary": 9
+      },
+      "direct_call_destinations_not_followed": {
+        "outside_scope": 111
+      }
+    },
+    "FG-Stress.epl": {
+      "scopes": 6,
+      "bytes": 5169,
+      "agreed_spans": 1001,
+      "possible_reached_spans": 1001,
+      "possible_reached_bytes": 5168,
+      "not_reached_in_model": 0,
+      "scopes_with_unverified_boundary": 1,
+      "scopes_with_interior_destination": 0,
+      "scope_digest_list_sha256": "a74cd3fe6d56c15cd33557e508b8e5b8630526783aa3a4f65e7aa7f7f83aaff1",
+      "seed_status": {
+        "agreed_start": 6
+      },
+      "instruction_categories": {
+        "fallthrough": 886,
+        "direct_call": 45,
+        "indirect_call": 15,
+        "conditional": 42,
+        "jump": 12,
+        "return": 1
+      },
+      "flow_destinations": {
+        "agreed_start": 1035,
+        "unverified_boundary": 1,
+        "outside_scope": 6
+      },
+      "direct_call_destinations_not_followed": {
+        "outside_scope": 45
+      }
+    },
+    "TVB Rack V2.vst3": {
+      "scopes": 64,
+      "bytes": 23849,
+      "agreed_spans": 4831,
+      "possible_reached_spans": 4731,
+      "possible_reached_bytes": 23417,
+      "not_reached_in_model": 100,
+      "scopes_with_unverified_boundary": 3,
+      "scopes_with_interior_destination": 0,
+      "scope_digest_list_sha256": "3a9a8c49f04e5b9003452f99719c7f48cc2657c7314323fa92495f195d3a36d2",
+      "seed_status": {
+        "agreed_start": 64
+      },
+      "instruction_categories": {
+        "fallthrough": 4181,
+        "direct_call": 131,
+        "conditional": 254,
+        "jump": 148,
+        "barrier": 1,
+        "return": 12,
+        "indirect_jump": 1,
+        "indirect_call": 3
+      },
+      "flow_destinations": {
+        "agreed_start": 4879,
+        "unverified_boundary": 3,
+        "outside_scope": 89
+      },
+      "direct_call_destinations_not_followed": {
+        "outside_scope": 131
+      }
+    }
+  },
+  "public_entries": {
+    "TVB": {
+      "bytes": 128,
+      "agreed_spans": 63,
+      "possible_reached_spans": 23,
+      "possible_reached_bytes": 84,
+      "direct_call_destinations_not_followed": {
+        "outside_scope": 3
+      },
+      "instruction_categories": {
+        "fallthrough": 17,
+        "direct_call": 3,
+        "conditional": 1,
+        "return": 2
+      },
+      "flow_destinations": {
+        "agreed_start": 22
+      },
+      "scope_sha256": "2aff87b82248f38baa66bde819e5aba8b7567b34a8cac42ef9fb7dde938e3c00"
+    },
+    "VMR": {
+      "bytes": 128,
+      "agreed_spans": 43,
+      "possible_reached_spans": 43,
+      "possible_reached_bytes": 128,
+      "instruction_categories": {
+        "fallthrough": 40,
+        "conditional": 2,
+        "jump": 1
+      },
+      "flow_destinations": {
+        "agreed_start": 42,
+        "outside_scope": 3
+      },
+      "scope_sha256": "e0df91fd8ce58bd6f5b40f3ba1ec38b8a0a08a1a5a0f3862e621c0f7199251ec"
+    },
+    "Evo": {
+      "bytes": 128,
+      "agreed_spans": 67,
+      "possible_reached_spans": 31,
+      "possible_reached_bytes": 58,
+      "instruction_categories": {
+        "fallthrough": 25,
+        "indirect_call": 1,
+        "conditional": 2,
+        "direct_call": 1,
+        "indirect_jump": 1,
+        "return": 1
+      },
+      "flow_destinations": {
+        "agreed_start": 31
+      },
+      "direct_call_destinations_not_followed": {
+        "outside_scope": 1
+      },
+      "scope_sha256": "5da3e9813c1db423694032c6109991c5905a37ecdee92a4cca085c71d7b41299"
+    }
+  },
+  "evo_public_entry_section": {
+    "bytes": 212992,
+    "agreed_spans": 73581,
+    "possible_reached_spans": 31,
+    "possible_reached_bytes": 58,
+    "direct_call_destinations_not_followed": {
+      "agreed_start": 1
+    },
+    "scope_sha256": "4b7394e97eb4e47aedbc8840222801c4e5ec6f309f7214e733e04639a1bf10a1"
+  },
+  "local_validation": {
+    "unit_tests": 6,
+    "unit_result": "pass",
+    "owned_cases": [
+      {
+        "bits": 32,
+        "opt": "-O0",
+        "agreed_spans": 32,
+        "possible_reached_spans": 24,
+        "result": "pass"
+      },
+      {
+        "bits": 32,
+        "opt": "-O2",
+        "agreed_spans": 19,
+        "possible_reached_spans": 14,
+        "result": "pass"
+      },
+      {
+        "bits": 64,
+        "opt": "-O0",
+        "agreed_spans": 27,
+        "possible_reached_spans": 20,
+        "result": "pass"
+      },
+      {
+        "bits": 64,
+        "opt": "-O2",
+        "agreed_spans": 19,
+        "possible_reached_spans": 15,
+        "result": "pass"
+      }
+    ],
+    "tested_blobs": {
+      "skell_vst_decompiler/static_flow.py": "0be48199ac808c168045286b2905b58398a91f8c",
+      "tests/test_static_flow.py": "501771cf539e7c0712e961f11a546892b890ae3f",
+      "tests/static_flow_smoke.py": "b3602f641ce1f1ec0ff4874896109571795bb270"
+    }
+  },
+  "prior_ci": {
+    "tests": 148,
+    "all_eight_passed": true,
+    "run_ids": [
+      45463577378,
+      45463577430,
+      45463577306,
+      45463577323,
+      45463577310,
+      45463577476,
+      45463577459,
+      45463577706
+    ]
+  },
+  "limitations": "Read-only aggregate intraprocedural observations from explicit seeds, not function recovery. Both conditional arms assumed possible, calls assumed returning but not traversed. Indirect targets, exceptions, unsupported encodings and out-of-scope paths not resolved. Research scopes overlap and start addresses are not verified function entries. Not reached does not mean dead. No recovered DSP equations, runtime execution, vendor code or production changes."
+}
