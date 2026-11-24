@@ -1,0 +1,889 @@
+[
+  {
+    "schema_version": 1,
+    "source": "FG-116.epl",
+    "binary_sha256": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+    "regions": [
+      {
+        "id": "effect_candidate",
+        "title": "Shared slot 4/5 processing candidate",
+        "equation": "Smoothed scalar gain multiplication: g+=alpha*(target-g); y=x*g; per-lane gain state written back.",
+        "checkpoint_rvas": [
+          "0x161b26",
+          "0x161b2a",
+          "0x161b2e",
+          "0x161b39",
+          "0x161b45",
+          "0x161bd9"
+        ],
+        "start_rva": "0x1619a0",
+        "end_rva_exclusive": "0x162418",
+        "sha256": "d3a8ccc832ddb966c898f84333e2d410afaaca8f34748eaeee5e271cb7d642b4",
+        "checkpoint_count": 6,
+        "math_call_count": 0,
+        "direct_calls": [
+          {
+            "site_rva": "0x161c24",
+            "target_rva": "0xcea1f4"
+          },
+          {
+            "site_rva": "0x161c3c",
+            "target_rva": "0xcea1f4"
+          },
+          {
+            "site_rva": "0x161c46",
+            "target_rva": "0x15d8a0"
+          },
+          {
+            "site_rva": "0x161c80",
+            "target_rva": "0xcea1f4"
+          },
+          {
+            "site_rva": "0x161c98",
+            "target_rva": "0xcea1f4"
+          },
+          {
+            "site_rva": "0x161ca2",
+            "target_rva": "0x15d030"
+          },
+          {
+            "site_rva": "0x161cda",
+            "target_rva": "0xcea1f4"
+          },
+          {
+            "site_rva": "0x161cf4",
+            "target_rva": "0xcea1f4"
+          },
+          {
+            "site_rva": "0x161d42",
+            "target_rva": "0x161880"
+          },
+          {
+            "site_rva": "0x161d77",
+            "target_rva": "0xcea1f4"
+          },
+          {
+            "site_rva": "0x161d91",
+            "target_rva": "0xcea1f4"
+          },
+          {
+            "site_rva": "0x161da5",
+            "target_rva": "0x15ddd0"
+          },
+          {
+            "site_rva": "0x161dd6",
+            "target_rva": "0xcea1f4"
+          },
+          {
+            "site_rva": "0x161df0",
+            "target_rva": "0xcea1f4"
+          },
+          {
+            "site_rva": "0x161e04",
+            "target_rva": "0x15d4a0"
+          },
+          {
+            "site_rva": "0x161e1d",
+            "target_rva": "0x6f7c0"
+          },
+          {
+            "site_rva": "0x161e3b",
+            "target_rva": "0x6f840"
+          },
+          {
+            "site_rva": "0x161e5a",
+            "target_rva": "0x6f820"
+          },
+          {
+            "site_rva": "0x161e69",
+            "target_rva": "0x163950"
+          },
+          {
+            "site_rva": "0x161ead",
+            "target_rva": "0x6f8a0"
+          },
+          {
+            "site_rva": "0x162153",
+            "target_rva": "0xcea1f4"
+          },
+          {
+            "site_rva": "0x16216b",
+            "target_rva": "0xcea1f4"
+          },
+          {
+            "site_rva": "0x162175",
+            "target_rva": "0x15e670"
+          },
+          {
+            "site_rva": "0x1623da",
+            "target_rva": "0x6f860"
+          }
+        ]
+      }
+    ],
+    "wrapper_rva": "0x160540",
+    "table_rva": "0xfef548",
+    "selector_instruction_rva": "0x16069f",
+    "selector_field": "rdx,DWORD PTR [rax+0xd0]",
+    "indirect_call_rva": "0x1606a6",
+    "explicit_slots": [
+      {
+        "slot": 0,
+        "target_rva": "0x156ae0",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 1,
+        "target_rva": "0x1569c0",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 2,
+        "target_rva": "0x156840",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 3,
+        "target_rva": "0x162e50",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 4,
+        "target_rva": "0x1619a0",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 5,
+        "target_rva": "0x1619a0",
+        "executable_file_backed": true
+      }
+    ],
+    "candidate": {
+      "id": "effect_candidate",
+      "title": "Shared slot 4/5 processing candidate",
+      "equation": "Smoothed scalar gain multiplication: g+=alpha*(target-g); y=x*g; per-lane gain state written back.",
+      "checkpoint_rvas": [
+        "0x161b26",
+        "0x161b2a",
+        "0x161b2e",
+        "0x161b39",
+        "0x161b45",
+        "0x161bd9"
+      ],
+      "start_rva": "0x1619a0",
+      "end_rva_exclusive": "0x162418",
+      "sha256": "d3a8ccc832ddb966c898f84333e2d410afaaca8f34748eaeee5e271cb7d642b4",
+      "checkpoint_count": 6,
+      "math_call_count": 0,
+      "direct_calls": [
+        {
+          "site_rva": "0x161c24",
+          "target_rva": "0xcea1f4"
+        },
+        {
+          "site_rva": "0x161c3c",
+          "target_rva": "0xcea1f4"
+        },
+        {
+          "site_rva": "0x161c46",
+          "target_rva": "0x15d8a0"
+        },
+        {
+          "site_rva": "0x161c80",
+          "target_rva": "0xcea1f4"
+        },
+        {
+          "site_rva": "0x161c98",
+          "target_rva": "0xcea1f4"
+        },
+        {
+          "site_rva": "0x161ca2",
+          "target_rva": "0x15d030"
+        },
+        {
+          "site_rva": "0x161cda",
+          "target_rva": "0xcea1f4"
+        },
+        {
+          "site_rva": "0x161cf4",
+          "target_rva": "0xcea1f4"
+        },
+        {
+          "site_rva": "0x161d42",
+          "target_rva": "0x161880"
+        },
+        {
+          "site_rva": "0x161d77",
+          "target_rva": "0xcea1f4"
+        },
+        {
+          "site_rva": "0x161d91",
+          "target_rva": "0xcea1f4"
+        },
+        {
+          "site_rva": "0x161da5",
+          "target_rva": "0x15ddd0"
+        },
+        {
+          "site_rva": "0x161dd6",
+          "target_rva": "0xcea1f4"
+        },
+        {
+          "site_rva": "0x161df0",
+          "target_rva": "0xcea1f4"
+        },
+        {
+          "site_rva": "0x161e04",
+          "target_rva": "0x15d4a0"
+        },
+        {
+          "site_rva": "0x161e1d",
+          "target_rva": "0x6f7c0"
+        },
+        {
+          "site_rva": "0x161e3b",
+          "target_rva": "0x6f840"
+        },
+        {
+          "site_rva": "0x161e5a",
+          "target_rva": "0x6f820"
+        },
+        {
+          "site_rva": "0x161e69",
+          "target_rva": "0x163950"
+        },
+        {
+          "site_rva": "0x161ead",
+          "target_rva": "0x6f8a0"
+        },
+        {
+          "site_rva": "0x162153",
+          "target_rva": "0xcea1f4"
+        },
+        {
+          "site_rva": "0x16216b",
+          "target_rva": "0xcea1f4"
+        },
+        {
+          "site_rva": "0x162175",
+          "target_rva": "0x15e670"
+        },
+        {
+          "site_rva": "0x1623da",
+          "target_rva": "0x6f860"
+        }
+      ]
+    },
+    "limits": "Only six explicit slots inspected. No assertion of table length, runtime selection, coefficient mapping or complete compression law."
+  },
+  {
+    "schema_version": 1,
+    "source": "FG-2A.epl",
+    "binary_sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+    "regions": [
+      {
+        "id": "effect_candidate",
+        "title": "Shared slot 4/5 processing candidate",
+        "equation": "Two distinct stereo double-precision first-order filter passes: y=b0*x+z; z_next=b1*x-a1*y. Coefficient meanings and full optical gain law unknown.",
+        "checkpoint_rvas": [
+          "0x156dd4",
+          "0x156ddc",
+          "0x156de4",
+          "0x156de9",
+          "0x156df8",
+          "0x156e00",
+          "0x156e04",
+          "0x156e83",
+          "0x156e8b",
+          "0x156eb4"
+        ],
+        "start_rva": "0x156b20",
+        "end_rva_exclusive": "0x156ffb",
+        "sha256": "8b1907f4c1f9654438908872d95c3142c3e274a28816915b14711fdb67660000",
+        "checkpoint_count": 10,
+        "math_call_count": 0,
+        "direct_calls": [
+          {
+            "site_rva": "0x156c30",
+            "target_rva": "0xd38dc4"
+          },
+          {
+            "site_rva": "0x156c4b",
+            "target_rva": "0xd38dc4"
+          },
+          {
+            "site_rva": "0x156c55",
+            "target_rva": "0x150870"
+          },
+          {
+            "site_rva": "0x156ce8",
+            "target_rva": "0x1535f0"
+          },
+          {
+            "site_rva": "0x156d23",
+            "target_rva": "0xd38dc4"
+          },
+          {
+            "site_rva": "0x156d3b",
+            "target_rva": "0xd38dc4"
+          },
+          {
+            "site_rva": "0x156d45",
+            "target_rva": "0x14cff0"
+          },
+          {
+            "site_rva": "0x156d5a",
+            "target_rva": "0xd38dc4"
+          },
+          {
+            "site_rva": "0x156d73",
+            "target_rva": "0xd38dc4"
+          },
+          {
+            "site_rva": "0x156f2d",
+            "target_rva": "0xd38dc4"
+          },
+          {
+            "site_rva": "0x156f45",
+            "target_rva": "0xd38dc4"
+          },
+          {
+            "site_rva": "0x156f4f",
+            "target_rva": "0x14d590"
+          },
+          {
+            "site_rva": "0x156fb9",
+            "target_rva": "0x155960"
+          },
+          {
+            "site_rva": "0x156fd1",
+            "target_rva": "0x141e60"
+          }
+        ]
+      }
+    ],
+    "wrapper_rva": "0x1561c0",
+    "table_rva": "0x1008518",
+    "selector_instruction_rva": "0x15631f",
+    "selector_field": "rdx,DWORD PTR [rax+0x190]",
+    "indirect_call_rva": "0x156326",
+    "explicit_slots": [
+      {
+        "slot": 0,
+        "target_rva": "0x144c90",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 1,
+        "target_rva": "0x144b70",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 2,
+        "target_rva": "0x1449f0",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 3,
+        "target_rva": "0x1573c0",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 4,
+        "target_rva": "0x156b20",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 5,
+        "target_rva": "0x156b20",
+        "executable_file_backed": true
+      }
+    ],
+    "candidate": {
+      "id": "effect_candidate",
+      "title": "Shared slot 4/5 processing candidate",
+      "equation": "Two distinct stereo double-precision first-order filter passes: y=b0*x+z; z_next=b1*x-a1*y. Coefficient meanings and full optical gain law unknown.",
+      "checkpoint_rvas": [
+        "0x156dd4",
+        "0x156ddc",
+        "0x156de4",
+        "0x156de9",
+        "0x156df8",
+        "0x156e00",
+        "0x156e04",
+        "0x156e83",
+        "0x156e8b",
+        "0x156eb4"
+      ],
+      "start_rva": "0x156b20",
+      "end_rva_exclusive": "0x156ffb",
+      "sha256": "8b1907f4c1f9654438908872d95c3142c3e274a28816915b14711fdb67660000",
+      "checkpoint_count": 10,
+      "math_call_count": 0,
+      "direct_calls": [
+        {
+          "site_rva": "0x156c30",
+          "target_rva": "0xd38dc4"
+        },
+        {
+          "site_rva": "0x156c4b",
+          "target_rva": "0xd38dc4"
+        },
+        {
+          "site_rva": "0x156c55",
+          "target_rva": "0x150870"
+        },
+        {
+          "site_rva": "0x156ce8",
+          "target_rva": "0x1535f0"
+        },
+        {
+          "site_rva": "0x156d23",
+          "target_rva": "0xd38dc4"
+        },
+        {
+          "site_rva": "0x156d3b",
+          "target_rva": "0xd38dc4"
+        },
+        {
+          "site_rva": "0x156d45",
+          "target_rva": "0x14cff0"
+        },
+        {
+          "site_rva": "0x156d5a",
+          "target_rva": "0xd38dc4"
+        },
+        {
+          "site_rva": "0x156d73",
+          "target_rva": "0xd38dc4"
+        },
+        {
+          "site_rva": "0x156f2d",
+          "target_rva": "0xd38dc4"
+        },
+        {
+          "site_rva": "0x156f45",
+          "target_rva": "0xd38dc4"
+        },
+        {
+          "site_rva": "0x156f4f",
+          "target_rva": "0x14d590"
+        },
+        {
+          "site_rva": "0x156fb9",
+          "target_rva": "0x155960"
+        },
+        {
+          "site_rva": "0x156fd1",
+          "target_rva": "0x141e60"
+        }
+      ]
+    },
+    "limits": "Only six explicit slots inspected. No assertion of table length, runtime selection, coefficient mapping or complete compression law."
+  },
+  {
+    "schema_version": 1,
+    "source": "FG-Stress.epl",
+    "binary_sha256": "2509a6f3480481feb15a0fde97abcb4acccfc6fc936f55f5e8c88b7c98edcd26",
+    "regions": [
+      {
+        "id": "effect_candidate",
+        "title": "Shared slot 4/5 processing candidate",
+        "equation": "Linked peak recurrence P=max(p,p+a*(P_prev-p)); p=max(abs(L),abs(R)). Then two bounded threshold-relative control calculations; their full effect not yet established.",
+        "checkpoint_rvas": [
+          "0x163460",
+          "0x163480",
+          "0x163488",
+          "0x16348b",
+          "0x16348f",
+          "0x163493",
+          "0x16349d",
+          "0x1634a1",
+          "0x1634a5",
+          "0x163509"
+        ],
+        "start_rva": "0x162790",
+        "end_rva_exclusive": "0x1638b6",
+        "sha256": "63fd4dab7fe2196410a2698271140dd688b61a4970d4ddfa14adadb7edaf4045",
+        "checkpoint_count": 10,
+        "math_call_count": 0,
+        "direct_calls": [
+          {
+            "site_rva": "0x16291d",
+            "target_rva": "0xd0c514"
+          },
+          {
+            "site_rva": "0x162946",
+            "target_rva": "0xd0c514"
+          },
+          {
+            "site_rva": "0x162950",
+            "target_rva": "0x15b300"
+          },
+          {
+            "site_rva": "0x162997",
+            "target_rva": "0xd0c514"
+          },
+          {
+            "site_rva": "0x1629c4",
+            "target_rva": "0xd0c514"
+          },
+          {
+            "site_rva": "0x162a88",
+            "target_rva": "0xd0c514"
+          },
+          {
+            "site_rva": "0x162ab5",
+            "target_rva": "0xd0c514"
+          },
+          {
+            "site_rva": "0x162b46",
+            "target_rva": "0x6f9a0"
+          },
+          {
+            "site_rva": "0x162b9a",
+            "target_rva": "0xd0c514"
+          },
+          {
+            "site_rva": "0x162bc7",
+            "target_rva": "0xd0c514"
+          },
+          {
+            "site_rva": "0x162c66",
+            "target_rva": "0x6f9a0"
+          },
+          {
+            "site_rva": "0x162c81",
+            "target_rva": "0x6f860"
+          },
+          {
+            "site_rva": "0x162c9c",
+            "target_rva": "0x808c0"
+          },
+          {
+            "site_rva": "0x162cad",
+            "target_rva": "0x6f8a0"
+          },
+          {
+            "site_rva": "0x162ce3",
+            "target_rva": "0x6f860"
+          },
+          {
+            "site_rva": "0x162f69",
+            "target_rva": "0x6f840"
+          },
+          {
+            "site_rva": "0x162f84",
+            "target_rva": "0x6f900"
+          },
+          {
+            "site_rva": "0x162fe6",
+            "target_rva": "0xd0c514"
+          },
+          {
+            "site_rva": "0x163010",
+            "target_rva": "0xd0c514"
+          },
+          {
+            "site_rva": "0x16301a",
+            "target_rva": "0x15cd20"
+          },
+          {
+            "site_rva": "0x163097",
+            "target_rva": "0x6f860"
+          },
+          {
+            "site_rva": "0x1632f4",
+            "target_rva": "0x6f840"
+          },
+          {
+            "site_rva": "0x163335",
+            "target_rva": "0x6f8a0"
+          },
+          {
+            "site_rva": "0x163343",
+            "target_rva": "0x6f9c0"
+          },
+          {
+            "site_rva": "0x16335e",
+            "target_rva": "0x6f800"
+          },
+          {
+            "site_rva": "0x1633f1",
+            "target_rva": "0x15d420"
+          },
+          {
+            "site_rva": "0x16341a",
+            "target_rva": "0xd0c514"
+          },
+          {
+            "site_rva": "0x16355b",
+            "target_rva": "0xd0c514"
+          },
+          {
+            "site_rva": "0x163577",
+            "target_rva": "0xd0c514"
+          },
+          {
+            "site_rva": "0x163639",
+            "target_rva": "0xd0c514"
+          },
+          {
+            "site_rva": "0x163655",
+            "target_rva": "0xd0c514"
+          },
+          {
+            "site_rva": "0x163739",
+            "target_rva": "0x15c0f0"
+          },
+          {
+            "site_rva": "0x163757",
+            "target_rva": "0x6fa00"
+          },
+          {
+            "site_rva": "0x163775",
+            "target_rva": "0x6fa00"
+          },
+          {
+            "site_rva": "0x1637d1",
+            "target_rva": "0x6f9e0"
+          },
+          {
+            "site_rva": "0x16381a",
+            "target_rva": "0x6f9e0"
+          },
+          {
+            "site_rva": "0x16387d",
+            "target_rva": "0xd0b3f8"
+          },
+          {
+            "site_rva": "0x163893",
+            "target_rva": "0xd0c58c"
+          },
+          {
+            "site_rva": "0x1638ac",
+            "target_rva": "0xd0b398"
+          }
+        ]
+      }
+    ],
+    "wrapper_rva": "0x160a30",
+    "table_rva": "0x1014588",
+    "selector_instruction_rva": "0x160b8f",
+    "selector_field": "rdx,DWORD PTR [rax+0x360]",
+    "indirect_call_rva": "0x160b96",
+    "explicit_slots": [
+      {
+        "slot": 0,
+        "target_rva": "0x1556b0",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 1,
+        "target_rva": "0x155590",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 2,
+        "target_rva": "0x155410",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 3,
+        "target_rva": "0x164890",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 4,
+        "target_rva": "0x162790",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 5,
+        "target_rva": "0x162790",
+        "executable_file_backed": true
+      }
+    ],
+    "candidate": {
+      "id": "effect_candidate",
+      "title": "Shared slot 4/5 processing candidate",
+      "equation": "Linked peak recurrence P=max(p,p+a*(P_prev-p)); p=max(abs(L),abs(R)). Then two bounded threshold-relative control calculations; their full effect not yet established.",
+      "checkpoint_rvas": [
+        "0x163460",
+        "0x163480",
+        "0x163488",
+        "0x16348b",
+        "0x16348f",
+        "0x163493",
+        "0x16349d",
+        "0x1634a1",
+        "0x1634a5",
+        "0x163509"
+      ],
+      "start_rva": "0x162790",
+      "end_rva_exclusive": "0x1638b6",
+      "sha256": "63fd4dab7fe2196410a2698271140dd688b61a4970d4ddfa14adadb7edaf4045",
+      "checkpoint_count": 10,
+      "math_call_count": 0,
+      "direct_calls": [
+        {
+          "site_rva": "0x16291d",
+          "target_rva": "0xd0c514"
+        },
+        {
+          "site_rva": "0x162946",
+          "target_rva": "0xd0c514"
+        },
+        {
+          "site_rva": "0x162950",
+          "target_rva": "0x15b300"
+        },
+        {
+          "site_rva": "0x162997",
+          "target_rva": "0xd0c514"
+        },
+        {
+          "site_rva": "0x1629c4",
+          "target_rva": "0xd0c514"
+        },
+        {
+          "site_rva": "0x162a88",
+          "target_rva": "0xd0c514"
+        },
+        {
+          "site_rva": "0x162ab5",
+          "target_rva": "0xd0c514"
+        },
+        {
+          "site_rva": "0x162b46",
+          "target_rva": "0x6f9a0"
+        },
+        {
+          "site_rva": "0x162b9a",
+          "target_rva": "0xd0c514"
+        },
+        {
+          "site_rva": "0x162bc7",
+          "target_rva": "0xd0c514"
+        },
+        {
+          "site_rva": "0x162c66",
+          "target_rva": "0x6f9a0"
+        },
+        {
+          "site_rva": "0x162c81",
+          "target_rva": "0x6f860"
+        },
+        {
+          "site_rva": "0x162c9c",
+          "target_rva": "0x808c0"
+        },
+        {
+          "site_rva": "0x162cad",
+          "target_rva": "0x6f8a0"
+        },
+        {
+          "site_rva": "0x162ce3",
+          "target_rva": "0x6f860"
+        },
+        {
+          "site_rva": "0x162f69",
+          "target_rva": "0x6f840"
+        },
+        {
+          "site_rva": "0x162f84",
+          "target_rva": "0x6f900"
+        },
+        {
+          "site_rva": "0x162fe6",
+          "target_rva": "0xd0c514"
+        },
+        {
+          "site_rva": "0x163010",
+          "target_rva": "0xd0c514"
+        },
+        {
+          "site_rva": "0x16301a",
+          "target_rva": "0x15cd20"
+        },
+        {
+          "site_rva": "0x163097",
+          "target_rva": "0x6f860"
+        },
+        {
+          "site_rva": "0x1632f4",
+          "target_rva": "0x6f840"
+        },
+        {
+          "site_rva": "0x163335",
+          "target_rva": "0x6f8a0"
+        },
+        {
+          "site_rva": "0x163343",
+          "target_rva": "0x6f9c0"
+        },
+        {
+          "site_rva": "0x16335e",
+          "target_rva": "0x6f800"
+        },
+        {
+          "site_rva": "0x1633f1",
+          "target_rva": "0x15d420"
+        },
+        {
+          "site_rva": "0x16341a",
+          "target_rva": "0xd0c514"
+        },
+        {
+          "site_rva": "0x16355b",
+          "target_rva": "0xd0c514"
+        },
+        {
+          "site_rva": "0x163577",
+          "target_rva": "0xd0c514"
+        },
+        {
+          "site_rva": "0x163639",
+          "target_rva": "0xd0c514"
+        },
+        {
+          "site_rva": "0x163655",
+          "target_rva": "0xd0c514"
+        },
+        {
+          "site_rva": "0x163739",
+          "target_rva": "0x15c0f0"
+        },
+        {
+          "site_rva": "0x163757",
+          "target_rva": "0x6fa00"
+        },
+        {
+          "site_rva": "0x163775",
+          "target_rva": "0x6fa00"
+        },
+        {
+          "site_rva": "0x1637d1",
+          "target_rva": "0x6f9e0"
+        },
+        {
+          "site_rva": "0x16381a",
+          "target_rva": "0x6f9e0"
+        },
+        {
+          "site_rva": "0x16387d",
+          "target_rva": "0xd0b3f8"
+        },
+        {
+          "site_rva": "0x163893",
+          "target_rva": "0xd0c58c"
+        },
+        {
+          "site_rva": "0x1638ac",
+          "target_rva": "0xd0b398"
+        }
+      ]
+    },
+    "limits": "Only six explicit slots inspected. No assertion of table length, runtime selection, coefficient mapping or complete compression law."
+  }
+]

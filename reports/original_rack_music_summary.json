@@ -1,0 +1,118 @@
+{
+  "source": "user-provided music recording (not a dry vocal or commercial-plugin render)",
+  "sample_rate": 44100,
+  "start_seconds": 60,
+  "duration_seconds": 12,
+  "input_drive_db": 6,
+  "ceiling_dbfs": -1,
+  "oversampled_internal_ceiling_dbfs": -1.25,
+  "measurement_notes": "4x polyphase estimated peak, not certified dBTP. RMS and first-difference RMS are descriptive, not perceptual quality. Lookahead latency removed for offline comparison. No gain normalization on primary WAVs.",
+  "renders": {
+    "dry": {
+      "sample_peak_dbfs": 0.0,
+      "estimated_4x_peak_dbfs": 2.133489378774773,
+      "rms_dbfs": -5.32475437967575,
+      "dc_max": 0.0006466597185743999,
+      "peak_frames_over_minus1_dbfs": 50582,
+      "difference_rms_dbfs": -20.513875029473212,
+      "band_rms_dbfs": {
+        "150-400": -21.21785044849569,
+        "1000-4000": -18.156124841420855,
+        "6000-10000": -26.15814162635413
+      }
+    },
+    "driven": {
+      "sample_peak_dbfs": 5.999999783366708,
+      "estimated_4x_peak_dbfs": 8.13348918338087,
+      "rms_dbfs": 0.6752455986222283,
+      "dc_max": 0.0012902557957801127,
+      "peak_frames_over_minus1_dbfs": 325838,
+      "difference_rms_dbfs": -14.513875072016688,
+      "band_rms_dbfs": {
+        "150-400": -15.217850493450209,
+        "1000-4000": -12.156124901314094,
+        "6000-10000": -20.158141676705842
+      }
+    },
+    "baseline": {
+      "sample_peak_dbfs": -1.0000002900227403,
+      "estimated_4x_peak_dbfs": 1.1326116615036308,
+      "rms_dbfs": -5.94637018545097,
+      "dc_max": 0.0001631267672863857,
+      "peak_frames_over_minus1_dbfs": 0,
+      "difference_rms_dbfs": -21.20607020503174,
+      "band_rms_dbfs": {
+        "150-400": -21.777593073425123,
+        "1000-4000": -18.857241909369332,
+        "6000-10000": -26.857199462814478
+      },
+      "render_stdout": "frames=529200 latency_samples=0 maximum_bell_cut_db=0.000000",
+      "oversampling_factor": 1
+    },
+    "lookahead": {
+      "sample_peak_dbfs": -1.0000002900227403,
+      "estimated_4x_peak_dbfs": 1.1334890971416982,
+      "rms_dbfs": -6.156950391883909,
+      "dc_max": 0.0002834352659974906,
+      "peak_frames_over_minus1_dbfs": 0,
+      "difference_rms_dbfs": -21.386025679620264,
+      "band_rms_dbfs": {
+        "150-400": -21.988943268135767,
+        "1000-4000": -19.01233018008965,
+        "6000-10000": -27.038240379867602
+      },
+      "render_stdout": "frames=529200 latency_samples=132 maximum_bell_cut_db=0.000000",
+      "oversampling_factor": 1
+    },
+    "static_bell": {
+      "sample_peak_dbfs": 1.0899931733006556,
+      "estimated_4x_peak_dbfs": 2.1423137499248925,
+      "rms_dbfs": -5.469131275360837,
+      "dc_max": 0.0006340840615243875,
+      "peak_frames_over_minus1_dbfs": 41428,
+      "difference_rms_dbfs": -20.527322604207182,
+      "band_rms_dbfs": {
+        "150-400": -23.892255986825578,
+        "1000-4000": -18.214826424771765,
+        "6000-10000": -26.16003781385635
+      },
+      "render_stdout": "frames=529200 latency_samples=0 maximum_bell_cut_db=0.000000",
+      "oversampling_factor": 1
+    },
+    "bell": {
+      "sample_peak_dbfs": 0.8948905201108155,
+      "estimated_4x_peak_dbfs": 2.113572769002666,
+      "rms_dbfs": -5.4466640822357615,
+      "dc_max": 0.0006400773351305765,
+      "peak_frames_over_minus1_dbfs": 42951,
+      "difference_rms_dbfs": -20.524949234174557,
+      "band_rms_dbfs": {
+        "150-400": -23.4747848782106,
+        "1000-4000": -18.202723939513287,
+        "6000-10000": -26.159672390524896
+      },
+      "render_stdout": "frames=529200 latency_samples=0 maximum_bell_cut_db=-4.948644",
+      "oversampling_factor": 1
+    },
+    "oversampled_margin": {
+      "sample_peak_dbfs": -1.2272888848167285,
+      "estimated_4x_peak_dbfs": -1.1819980912319796,
+      "rms_dbfs": -6.576479198892509,
+      "dc_max": 0.00031566076965096833,
+      "peak_frames_over_minus1_dbfs": 0,
+      "difference_rms_dbfs": -21.95834315726371,
+      "band_rms_dbfs": {
+        "150-400": -22.398529412216885,
+        "1000-4000": -19.44870318860153,
+        "6000-10000": -27.59833987103282
+      },
+      "render_stdout": "frames=2116800 latency_samples=529 maximum_bell_cut_db=0.000000",
+      "oversampling_factor": 4
+    }
+  },
+  "listening_match": {
+    "candidate_rms_adjust_db": 0.6301090134415382,
+    "common_attenuation_db": 0.0,
+    "note": "Baseline versus 4x margin candidate. RMS-matched listening files, not LUFS-matched; raw measurements above unaffected."
+  }
+}

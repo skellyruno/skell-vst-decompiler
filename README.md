@@ -64,3 +64,12 @@ The catalog can be searched offline by keyword or hexadecimal RVA. It includes r
 ## Extended DSP research and actual PCM analysis
 
 [Compound gain / dynamic EQ / de-esser / VMR utility-path report](docs/EXTENDED_DSP_RESEARCH.md). `--mode tvb-extended` verifies the exact source build and indexes the nine native code regions; `--mode vmr-utilities` verifies the known FG-116, FG-2A and FG-Stress copy/conversion paths, not their compression algorithms. `python -m skell_vst_decompiler.catalog reports/tvb_extended_dsp.json 0x34308c` searches the new report by RVA. Install `.[audio]` for `python -m skell_vst_decompiler.audio_probe wet.wav --tone 17000`; the analyzer operates only on PCM exports, never loads commercial binaries. `python -m experiments.render_original_color local/audio` renders our independent nonlinear experiment. Actual vendor audio requires a compatible licensed DAW and remains unverified. No third-party coefficient arrays or binaries are published.
+
+## Rack DSP paths and independent native music prototypes
+
+[New rack DSP evidence and private music experiment](docs/RACK_DSP_PATHS_AND_PROTOTYPES.md). Exact-build `--mode tvb-rack-paths` checks ten local EQ/gate/limiter/spatial regions. `--mode vmr-effect-paths` verifies bounded dispatch slots and three local effect-specific candidates, not live runtime selection. The original standalone C++ adaptive bell and lookahead limiter live in `experiments/skelliere/`; they are not installed plugin modules. The music harness renders private local WAVs with delay alignment and computes estimated intersample peaks, band energy and RMS, plus separate RMS-matched listening files. Offline 4x resampling is not a real-time oversampling implementation. Only aggregate metrics are checked in; vendor binaries and user audio stay local. See the linked report for reproduction commands and limitations.
+
+```sh
+python -m skell_vst_decompiler "TVB Rack V2.vst3" --mode tvb-rack-paths --find limiter
+python -m skell_vst_decompiler "FG-116.epl" --mode vmr-effect-paths
+```

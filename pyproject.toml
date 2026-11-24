@@ -10,7 +10,7 @@ requires-python = ">=3.10"
 dependencies = []
 
 [project.optional-dependencies]
-audio = ["numpy>=1.26,<3", "scipy>=1.13,<2"]
+audio = ["numpy>=1.26,<3", "scipy>=1.13,<2", "soundfile>=0.12,<1"]
 
 [tool.setuptools.packages.find]
 where = ["."]
