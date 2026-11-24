@@ -1,0 +1,951 @@
+{
+  "schema_version": 1,
+  "binaries": [
+    {
+      "binary": "TVB Rack V2.vst3",
+      "binary_sha256": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
+      "keyword": "Module@dsp@voxbox",
+      "class_count": 17,
+      "table_count": 18,
+      "classes": [
+        {
+          "type": ".?AVDspModule@dsp@voxbox@@",
+          "type_rva": "0x77c5188",
+          "vtables": [
+            {
+              "vtable_rva": "0x925458",
+              "subobject_offset": 0,
+              "candidate_slot_count": 6,
+              "slot_scan_capped": false,
+              "selected_method_rvas": {
+                "5": "0x87f0f0"
+              },
+              "base_records": [
+                {
+                  "type": ".?AVDspModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": ".?AVGainModule@dsp@voxbox@@",
+          "type_rva": "0x77c51b8",
+          "vtables": [
+            {
+              "vtable_rva": "0x925490",
+              "subobject_offset": 0,
+              "candidate_slot_count": 6,
+              "slot_scan_capped": false,
+              "selected_method_rvas": {
+                "5": "0x5a3700"
+              },
+              "base_records": [
+                {
+                  "type": ".?AVGainModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVDspModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": ".?AVSuiteNoiseModule@dsp@voxbox@@",
+          "type_rva": "0x77c51e8",
+          "vtables": [
+            {
+              "vtable_rva": "0x9254d0",
+              "subobject_offset": 0,
+              "candidate_slot_count": 6,
+              "slot_scan_capped": false,
+              "selected_method_rvas": {
+                "5": "0x35bf50"
+              },
+              "base_records": [
+                {
+                  "type": ".?AVSuiteNoiseModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVDspModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": ".?AVSuiteEqModule@dsp@voxbox@@",
+          "type_rva": "0x77c5220",
+          "vtables": [
+            {
+              "vtable_rva": "0x925518",
+              "subobject_offset": 0,
+              "candidate_slot_count": 6,
+              "slot_scan_capped": false,
+              "selected_method_rvas": {
+                "5": "0x35b6b0"
+              },
+              "base_records": [
+                {
+                  "type": ".?AVSuiteEqModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVDspModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVTimer@juce@@",
+                  "member_displacement": 336,
+                  "vbtable_displacement": -1
+                }
+              ]
+            },
+            {
+              "vtable_rva": "0x925550",
+              "subobject_offset": 336,
+              "candidate_slot_count": 2,
+              "slot_scan_capped": false,
+              "selected_method_rvas": {},
+              "base_records": [
+                {
+                  "type": ".?AVSuiteEqModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVDspModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVTimer@juce@@",
+                  "member_displacement": 336,
+                  "vbtable_displacement": -1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": ".?AVAirExciterModule@dsp@voxbox@@",
+          "type_rva": "0x77c5250",
+          "vtables": [
+            {
+              "vtable_rva": "0x927250",
+              "subobject_offset": 0,
+              "candidate_slot_count": 6,
+              "slot_scan_capped": false,
+              "selected_method_rvas": {
+                "5": "0x5bad90"
+              },
+              "base_records": [
+                {
+                  "type": ".?AVAirExciterModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVDspModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": ".?AVChorusModule@dsp@voxbox@@",
+          "type_rva": "0x77c5288",
+          "vtables": [
+            {
+              "vtable_rva": "0x927290",
+              "subobject_offset": 0,
+              "candidate_slot_count": 6,
+              "slot_scan_capped": false,
+              "selected_method_rvas": {
+                "5": "0x5bc4c0"
+              },
+              "base_records": [
+                {
+                  "type": ".?AVChorusModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVDspModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": ".?AVPitchCorrectorModule@dsp@voxbox@@",
+          "type_rva": "0x77c52b8",
+          "vtables": [
+            {
+              "vtable_rva": "0x9272d0",
+              "subobject_offset": 0,
+              "candidate_slot_count": 6,
+              "slot_scan_capped": false,
+              "selected_method_rvas": {
+                "5": "0x5c5bc0"
+              },
+              "base_records": [
+                {
+                  "type": ".?AVPitchCorrectorModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVDspModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": ".?AVGateModule@dsp@voxbox@@",
+          "type_rva": "0x77c52f0",
+          "vtables": [
+            {
+              "vtable_rva": "0x927310",
+              "subobject_offset": 0,
+              "candidate_slot_count": 6,
+              "slot_scan_capped": false,
+              "selected_method_rvas": {
+                "5": "0x5c9670"
+              },
+              "base_records": [
+                {
+                  "type": ".?AVGateModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVDspModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": ".?AVDemonModule@dsp@voxbox@@",
+          "type_rva": "0x77c5320",
+          "vtables": [
+            {
+              "vtable_rva": "0x927350",
+              "subobject_offset": 0,
+              "candidate_slot_count": 6,
+              "slot_scan_capped": false,
+              "selected_method_rvas": {
+                "5": "0x5ca420"
+              },
+              "base_records": [
+                {
+                  "type": ".?AVDemonModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVDspModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": ".?AVEqModule@dsp@voxbox@@",
+          "type_rva": "0x77c5350",
+          "vtables": [
+            {
+              "vtable_rva": "0x927390",
+              "subobject_offset": 0,
+              "candidate_slot_count": 6,
+              "slot_scan_capped": false,
+              "selected_method_rvas": {
+                "5": "0x5cce60"
+              },
+              "base_records": [
+                {
+                  "type": ".?AVEqModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVDspModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": ".?AVCompressorModule@dsp@voxbox@@",
+          "type_rva": "0x77c5380",
+          "vtables": [
+            {
+              "vtable_rva": "0x9273d0",
+              "subobject_offset": 0,
+              "candidate_slot_count": 6,
+              "slot_scan_capped": false,
+              "selected_method_rvas": {
+                "5": "0x5cfa50"
+              },
+              "base_records": [
+                {
+                  "type": ".?AVCompressorModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVDspModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": ".?AVDeEsserModule@dsp@voxbox@@",
+          "type_rva": "0x77c53b8",
+          "vtables": [
+            {
+              "vtable_rva": "0x927418",
+              "subobject_offset": 0,
+              "candidate_slot_count": 6,
+              "slot_scan_capped": false,
+              "selected_method_rvas": {
+                "5": "0x5d3bd0"
+              },
+              "base_records": [
+                {
+                  "type": ".?AVDeEsserModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVDspModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": ".?AVSaturationModule@dsp@voxbox@@",
+          "type_rva": "0x77c53e8",
+          "vtables": [
+            {
+              "vtable_rva": "0x927458",
+              "subobject_offset": 0,
+              "candidate_slot_count": 6,
+              "slot_scan_capped": false,
+              "selected_method_rvas": {
+                "5": "0x5d4700"
+              },
+              "base_records": [
+                {
+                  "type": ".?AVSaturationModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVDspModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": ".?AVStereoWidthModule@dsp@voxbox@@",
+          "type_rva": "0x77c5420",
+          "vtables": [
+            {
+              "vtable_rva": "0x9274a0",
+              "subobject_offset": 0,
+              "candidate_slot_count": 6,
+              "slot_scan_capped": false,
+              "selected_method_rvas": {
+                "5": "0x5d5b20"
+              },
+              "base_records": [
+                {
+                  "type": ".?AVStereoWidthModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVDspModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": ".?AVDelayModule@dsp@voxbox@@",
+          "type_rva": "0x77c5458",
+          "vtables": [
+            {
+              "vtable_rva": "0x9274e0",
+              "subobject_offset": 0,
+              "candidate_slot_count": 6,
+              "slot_scan_capped": false,
+              "selected_method_rvas": {
+                "5": "0x5d6760"
+              },
+              "base_records": [
+                {
+                  "type": ".?AVDelayModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVDspModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": ".?AVReverbModule@dsp@voxbox@@",
+          "type_rva": "0x77c5488",
+          "vtables": [
+            {
+              "vtable_rva": "0x927520",
+              "subobject_offset": 0,
+              "candidate_slot_count": 6,
+              "slot_scan_capped": false,
+              "selected_method_rvas": {
+                "5": "0x5d7e40"
+              },
+              "base_records": [
+                {
+                  "type": ".?AVReverbModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVDspModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": ".?AVLimiterModule@dsp@voxbox@@",
+          "type_rva": "0x77c54e8",
+          "vtables": [
+            {
+              "vtable_rva": "0x9275a8",
+              "subobject_offset": 0,
+              "candidate_slot_count": 6,
+              "slot_scan_capped": false,
+              "selected_method_rvas": {
+                "5": "0x5dd090"
+              },
+              "base_records": [
+                {
+                  "type": ".?AVLimiterModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVDspModule@dsp@voxbox@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "selected_plan": {
+        "schema_version": 1,
+        "binary_sha256": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
+        "image_base": "0x180000000",
+        "targets": [
+          {
+            "requested_rva": "0x35b6b0",
+            "unwind_region": {
+              "start_rva": "0x35b6b0",
+              "end_rva_exclusive": "0x35b71f",
+              "unwind_rva": "0x771d9f0",
+              "bytes": 111
+            }
+          },
+          {
+            "requested_rva": "0x35bf50",
+            "unwind_region": {
+              "start_rva": "0x35bf50",
+              "end_rva_exclusive": "0x35bfa3",
+              "unwind_rva": "0x76c5100",
+              "bytes": 83
+            }
+          },
+          {
+            "requested_rva": "0x5a3700",
+            "unwind_region": {
+              "start_rva": "0x5a3700",
+              "end_rva_exclusive": "0x5a3765",
+              "unwind_rva": "0x7758148",
+              "bytes": 101
+            }
+          },
+          {
+            "requested_rva": "0x5bad90",
+            "unwind_region": {
+              "start_rva": "0x5bad90",
+              "end_rva_exclusive": "0x5badcd",
+              "unwind_rva": "0x775a348",
+              "bytes": 61
+            }
+          },
+          {
+            "requested_rva": "0x5bc4c0",
+            "unwind_region": {
+              "start_rva": "0x5bc4c0",
+              "end_rva_exclusive": "0x5bc518",
+              "unwind_rva": "0x775a488",
+              "bytes": 88
+            }
+          },
+          {
+            "requested_rva": "0x5c5bc0",
+            "unwind_region": {
+              "start_rva": "0x5c5bc0",
+              "end_rva_exclusive": "0x5c5be1",
+              "unwind_rva": "0x775ae54",
+              "bytes": 33
+            }
+          },
+          {
+            "requested_rva": "0x5c9670",
+            "unwind_region": {
+              "start_rva": "0x5c9670",
+              "end_rva_exclusive": "0x5c969a",
+              "unwind_rva": "0x775b024",
+              "bytes": 42
+            }
+          },
+          {
+            "requested_rva": "0x5ca420",
+            "unwind_region": {
+              "start_rva": "0x5ca420",
+              "end_rva_exclusive": "0x5ca45e",
+              "unwind_rva": "0x775b184",
+              "bytes": 62
+            }
+          },
+          {
+            "requested_rva": "0x5cce60",
+            "unwind_region": {
+              "start_rva": "0x5cce60",
+              "end_rva_exclusive": "0x5cce8a",
+              "unwind_rva": "0x775b320",
+              "bytes": 42
+            }
+          },
+          {
+            "requested_rva": "0x5cfa50",
+            "unwind_region": {
+              "start_rva": "0x5cfa50",
+              "end_rva_exclusive": "0x5cfa7f",
+              "unwind_rva": "0x775b5ac",
+              "bytes": 47
+            }
+          },
+          {
+            "requested_rva": "0x5d3bd0",
+            "unwind_region": {
+              "start_rva": "0x5d3bd0",
+              "end_rva_exclusive": "0x5d41e3",
+              "unwind_rva": "0x775b6f4",
+              "bytes": 1555
+            }
+          },
+          {
+            "requested_rva": "0x5d4700",
+            "unwind_region": {
+              "start_rva": "0x5d4700",
+              "end_rva_exclusive": "0x5d48b8",
+              "unwind_rva": "0x775b7ac",
+              "bytes": 440
+            }
+          },
+          {
+            "requested_rva": "0x5d5b20",
+            "unwind_region": {
+              "start_rva": "0x5d5b20",
+              "end_rva_exclusive": "0x5d5b40",
+              "unwind_rva": "0x775b87c",
+              "bytes": 32
+            }
+          },
+          {
+            "requested_rva": "0x5d6760",
+            "unwind_region": {
+              "start_rva": "0x5d6760",
+              "end_rva_exclusive": "0x5d6778",
+              "unwind_rva": "0x775b9a8",
+              "bytes": 24
+            }
+          },
+          {
+            "requested_rva": "0x5d7e40",
+            "unwind_region": {
+              "start_rva": "0x5d7e40",
+              "end_rva_exclusive": "0x5d9949",
+              "unwind_rva": "0x775bab0",
+              "bytes": 6921
+            }
+          },
+          {
+            "requested_rva": "0x5dd090",
+            "unwind_region": {
+              "start_rva": "0x5dd090",
+              "end_rva_exclusive": "0x5de15d",
+              "unwind_rva": "0x775bf18",
+              "bytes": 4301
+            }
+          },
+          {
+            "requested_rva": "0x87f0f0",
+            "unwind_region": null
+          }
+        ],
+        "note": "Unwind ranges are hints; Ghidra must identify the enclosing function."
+      }
+    },
+    {
+      "binary": "FG-116.epl",
+      "binary_sha256": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+      "keyword": "FG116ModuleProcessor@",
+      "class_count": 2,
+      "table_count": 2,
+      "classes": [
+        {
+          "type": ".?AV?$Fg116ModuleProcessor@$0A@$00$00@fg116@@",
+          "type_rva": "0x1007ce8",
+          "vtables": [
+            {
+              "vtable_rva": "0xe7d830",
+              "subobject_offset": 0,
+              "candidate_slot_count": 19,
+              "slot_scan_capped": false,
+              "selected_method_rvas": {
+                "8": "0x160910"
+              },
+              "base_records": [
+                {
+                  "type": ".?AV?$Fg116ModuleProcessor@$0A@$00$00@fg116@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVPluginProcessor@plugin@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVIPluginProcessor@plugin@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": ".?AV?$Fg116ModuleProcessor@$00$01$01@fg116@@",
+          "type_rva": "0x1007d58",
+          "vtables": [
+            {
+              "vtable_rva": "0xe7d8d0",
+              "subobject_offset": 0,
+              "candidate_slot_count": 19,
+              "slot_scan_capped": false,
+              "selected_method_rvas": {
+                "8": "0x160540"
+              },
+              "base_records": [
+                {
+                  "type": ".?AV?$Fg116ModuleProcessor@$00$01$01@fg116@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVPluginProcessor@plugin@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVIPluginProcessor@plugin@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "selected_plan": {
+        "schema_version": 1,
+        "binary_sha256": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+        "image_base": "0x180000000",
+        "targets": [
+          {
+            "requested_rva": "0x160540",
+            "unwind_region": {
+              "start_rva": "0x160540",
+              "end_rva_exclusive": "0x160759",
+              "unwind_rva": "0xf81758",
+              "bytes": 537
+            }
+          },
+          {
+            "requested_rva": "0x160910",
+            "unwind_region": {
+              "start_rva": "0x160910",
+              "end_rva_exclusive": "0x160a65",
+              "unwind_rva": "0xf81734",
+              "bytes": 341
+            }
+          }
+        ],
+        "note": "Unwind ranges are hints; Ghidra must identify the enclosing function."
+      }
+    },
+    {
+      "binary": "FG-2A.epl",
+      "binary_sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+      "keyword": "FG2AModuleProcessor@",
+      "class_count": 2,
+      "table_count": 2,
+      "classes": [
+        {
+          "type": ".?AV?$Fg2aModuleProcessor@$0A@$00$00@fg2a@@",
+          "type_rva": "0x1016920",
+          "vtables": [
+            {
+              "vtable_rva": "0xea9ee8",
+              "subobject_offset": 0,
+              "candidate_slot_count": 19,
+              "slot_scan_capped": false,
+              "selected_method_rvas": {
+                "8": "0x156590"
+              },
+              "base_records": [
+                {
+                  "type": ".?AV?$Fg2aModuleProcessor@$0A@$00$00@fg2a@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVPluginProcessor@plugin@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVIPluginProcessor@plugin@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": ".?AV?$Fg2aModuleProcessor@$00$01$01@fg2a@@",
+          "type_rva": "0x1016990",
+          "vtables": [
+            {
+              "vtable_rva": "0xea9f88",
+              "subobject_offset": 0,
+              "candidate_slot_count": 64,
+              "slot_scan_capped": true,
+              "selected_method_rvas": {
+                "8": "0x1561c0"
+              },
+              "base_records": [
+                {
+                  "type": ".?AV?$Fg2aModuleProcessor@$00$01$01@fg2a@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVPluginProcessor@plugin@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVIPluginProcessor@plugin@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "selected_plan": {
+        "schema_version": 1,
+        "binary_sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+        "image_base": "0x180000000",
+        "targets": [
+          {
+            "requested_rva": "0x1561c0",
+            "unwind_region": {
+              "start_rva": "0x1561c0",
+              "end_rva_exclusive": "0x1563d9",
+              "unwind_rva": "0xf9aff8",
+              "bytes": 537
+            }
+          },
+          {
+            "requested_rva": "0x156590",
+            "unwind_region": {
+              "start_rva": "0x156590",
+              "end_rva_exclusive": "0x1566e5",
+              "unwind_rva": "0xf9af30",
+              "bytes": 341
+            }
+          }
+        ],
+        "note": "Unwind ranges are hints; Ghidra must identify the enclosing function."
+      }
+    },
+    {
+      "binary": "FG-Stress.epl",
+      "binary_sha256": "2509a6f3480481feb15a0fde97abcb4acccfc6fc936f55f5e8c88b7c98edcd26",
+      "keyword": "FGStressModuleProcessor@",
+      "class_count": 2,
+      "table_count": 2,
+      "classes": [
+        {
+          "type": ".?AV?$FgStressModuleProcessor@$0A@$00$00@fgstress@@",
+          "type_rva": "0x102d0e0",
+          "vtables": [
+            {
+              "vtable_rva": "0xe9f7a8",
+              "subobject_offset": 0,
+              "candidate_slot_count": 19,
+              "slot_scan_capped": false,
+              "selected_method_rvas": {
+                "8": "0x160e00"
+              },
+              "base_records": [
+                {
+                  "type": ".?AV?$FgStressModuleProcessor@$0A@$00$00@fgstress@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVPluginProcessor@plugin@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVIPluginProcessor@plugin@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": ".?AV?$FgStressModuleProcessor@$00$01$01@fgstress@@",
+          "type_rva": "0x102d160",
+          "vtables": [
+            {
+              "vtable_rva": "0xe9f848",
+              "subobject_offset": 0,
+              "candidate_slot_count": 64,
+              "slot_scan_capped": true,
+              "selected_method_rvas": {
+                "8": "0x160a30"
+              },
+              "base_records": [
+                {
+                  "type": ".?AV?$FgStressModuleProcessor@$00$01$01@fgstress@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVPluginProcessor@plugin@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                },
+                {
+                  "type": ".?AVIPluginProcessor@plugin@@",
+                  "member_displacement": 0,
+                  "vbtable_displacement": -1
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "selected_plan": {
+        "schema_version": 1,
+        "binary_sha256": "2509a6f3480481feb15a0fde97abcb4acccfc6fc936f55f5e8c88b7c98edcd26",
+        "image_base": "0x180000000",
+        "targets": [
+          {
+            "requested_rva": "0x160a30",
+            "unwind_region": {
+              "start_rva": "0x160a30",
+              "end_rva_exclusive": "0x160c49",
+              "unwind_rva": "0xfa607c",
+              "bytes": 537
+            }
+          },
+          {
+            "requested_rva": "0x160e00",
+            "unwind_region": {
+              "start_rva": "0x160e00",
+              "end_rva_exclusive": "0x160f55",
+              "unwind_rva": "0xfa6058",
+              "bytes": 341
+            }
+          }
+        ],
+        "note": "Unwind ranges are hints; Ghidra must identify the enclosing function."
+      }
+    }
+  ],
+  "note": "Scope-limited static RTTI and candidate slot metadata. No runtime dispatch or complete function-length claims."
+}

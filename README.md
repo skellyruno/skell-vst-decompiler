@@ -97,3 +97,7 @@ See [VMR nonlinear evidence](docs/VMR_NONLINEAR_ATLAS.md) for the verified clamp
 ### FG-2A filter / feedback provenance
 
 Use `python -m skell_vst_decompiler.vmr_filter_provenance /private/FG-2A.epl` for fingerprint-gated verification of six filter setup records, 30 active coefficient fields, 60 channel read endpoints and 17 nonlinear feedback setup writes. See [filter and feedback provenance](docs/FG2A_FILTER_FEEDBACK_PROVENANCE.md). The consolidated atlas has 128 evidence regions; the counts are scoped static relationships, not an estimate of whole-plugin recovery. Generator internals, rational parameter initialization, live dispatch, full gain law and commercial audio are unresolved.
+
+## Multi-engine C++ class navigation
+
+[Class graph, Ghidra and Rizin workflow](docs/MULTI_ENGINE_CLASS_NAVIGATION.md). `python -m skell_vst_decompiler.classgraph /private/plugin.vst3 --class-keyword CompressorModule` validates MSVC RTTI metadata and maps base/subobject relationships to candidate vtable slots. Explicit class/table/slot selections create a fingerprint-bound plan for the existing optional Ghidra backend. `--rizin-index` compares externally supplied, normalized function offsets to PE unwind ranges. The older C++ Class Analyzer is archived; use Ghidra's maintained official framework and local class recovery scripts. Cutter remains a separate GUI. Actual Rizin/Cutter runs and vendor Ghidra pseudocode remain unverified. See the scoped metadata report for TVB and the three VMR processor pairs; candidate slots are not complete algorithm recovery.
