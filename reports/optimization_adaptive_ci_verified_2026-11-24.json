@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "report_kind": "verified_optimization_and_adaptive_ci",
+  "source_commit": "8bdd741e64806ce870e20cfbf509d720fe288ad2",
+  "run_ids": {
+    "unified": 45428100370,
+    "static": 45428100357,
+    "rizin": 45428100607,
+    "ghidra": 45428100312
+  },
+  "tests": 98,
+  "all_success": true,
+  "optimization": [
+    {
+      "level": "O0",
+      "sha256": "1416c91dc1875ac738e2fdb7e06770af730647337b17c20c3eb54f79b7a514c9",
+      "unwind_missing": 0
+    },
+    {
+      "level": "O1",
+      "sha256": "e387d969d2b7ffa32ec32f68f3e0b9786e04c202b9dd99741bfd219d3b8d9bc4",
+      "unwind_missing": 1
+    },
+    {
+      "level": "O2",
+      "sha256": "e387d969d2b7ffa32ec32f68f3e0b9786e04c202b9dd99741bfd219d3b8d9bc4",
+      "unwind_missing": 1
+    },
+    {
+      "level": "O3",
+      "sha256": "e387d969d2b7ffa32ec32f68f3e0b9786e04c202b9dd99741bfd219d3b8d9bc4",
+      "unwind_missing": 1
+    },
+    {
+      "level": "Os",
+      "sha256": "32c946a721594cb0bbb7b3db9b30b5f439b04bda2666be5a063ae2dfc64575cb",
+      "unwind_missing": 1
+    }
+  ],
+  "each_export_entries_corroborated": 2,
+  "each_review_count": 0,
+  "adaptive": {
+    "rates": [
+      44100,
+      48000,
+      96000,
+      192000
+    ],
+    "transient_energy_advantage_db": [
+      3.360689986,
+      3.358333206,
+      3.346110149,
+      3.339998579
+    ],
+    "settled_reduction_db": -12.0463498,
+    "recovery_100ms_db": [
+      -9.564812371,
+      -9.564843218,
+      -9.56501779,
+      -9.565105183
+    ],
+    "optimized_ns_per_frame": 70.32771875,
+    "sanitized_ns_per_frame": 172.2682813,
+    "limits": "Synthetic step and random samples, not real music or vendor equivalence."
+  }
+}
