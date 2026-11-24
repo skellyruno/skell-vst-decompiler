@@ -24,3 +24,9 @@ TVB Rack V2.vst3 and Virtual Mix Rack.vst3 were located in the private Library. 
 Keep the existing private read-only analysis and original DSP experiments separate. Extend evidence validation and compare independent analysis results only where authorized. Prioritize report-level contradictions and reproducible original DSP tests; do not treat inferred routine roles, runtime dispatch, or proprietary audio parity as established. See docs/UPSTREAM_TOOL_REVIEW.md for external tool decisions. No new vendor execution, binary analysis, or production DSP changes in this continuity batch.
 
 At each handoff, record the current commit, exact-commit CI result, changed paths, new findings and unresolved questions. Latest CI for a new commit must be checked separately; no successful test should be inferred from its predecessor.
+
+## Evidence reconciliation and Revenant interface
+
+Verified predecessor: ea5febfd3577727f8df89b449c42bfdb40bb192e. Static CI run 45420118958 and real Ghidra owned-fixture smoke 45420118911 succeeded. Independent cross-report recomputation using eight VMR source reports (64 regions) and the archived snapshot reproduced all six overlap results: 3,0,3,0,6,0. Archived attachment SHA-256 independently rechecked locally. This is report consistency, not fresh binary analysis.
+
+Added skell_vst_decompiler.verification: exact input digests, deterministic dependency key, mismatch reporting, range and duplicate checks, offline Revenant report metadata importer. Six local synthetic tests passed; seventh repository-wide test added for CI. No new vendor binary execution or DSP behavior claims. Exact new CI pending. Future work: owned-fixture Revenant runtime smoke, then authorized external metadata comparisons. No persistent disk cache implemented yet; input key is the groundwork.

@@ -18,3 +18,7 @@ These links supplement the established Ghidra/RTTI/Rizin workflow. Reviewed upst
 5. Keep plugin metadata from trusted host measurements distinct from file metadata, and keep measured original DSP behavior distinct from static hypotheses.
 
 Actual integration work remains scoped to the existing Skell tools. The archive preservation test validates consistency of historical records, not the accuracy of the original disassembly or vendor runtime behavior.
+
+## Offline interface extension
+
+Inspected [Revenant report model](https://github.com/DatanoiseTV/revenant/blob/main/revenant/models/report.py) and [report stage](https://github.com/DatanoiseTV/revenant/blob/main/revenant/stages/report.py). Added a metadata-only adapter consuming its top-level report.json: exact SHA-256, function count, completed/failed stage counts. Unknown external claims are not promoted or imported. No dependency replacement. Docker, Rizin and local Ghidra executables unavailable; upstream runtime unverified. Use python -m skell_vst_decompiler.verification reports --revenant /private/owned-fixture/report.json --sha256 <exact-hash> (omit optional flags for internal reconciliation). The verification stage emits a stable dependency key for future caching, not a persistent cache. Save CLI output outside the input reports directory.

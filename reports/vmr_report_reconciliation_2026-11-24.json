@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "source_commit": "ea5febfd3577727f8df89b449c42bfdb40bb192e",
+  "source_reports": [
+    "vmr_control_streams.json",
+    "vmr_effect_paths.json",
+    "vmr_fg2a_coefficient_provenance.json",
+    "vmr_fg2a_filter_provenance.json",
+    "vmr_nonlinear_paths.json",
+    "vmr_utility_paths.json",
+    "vmr_fg116_code_trace.json",
+    "vmr_fg2a_code_trace.json"
+  ],
+  "region_count": 64,
+  "checked_snapshot": "vmr_variant_navigation.json",
+  "checks": [
+    {
+      "module": "FG-116",
+      "overlap_counts": [
+        3,
+        0
+      ]
+    },
+    {
+      "module": "FG-2A",
+      "overlap_counts": [
+        3,
+        0
+      ]
+    },
+    {
+      "module": "FG-Stress",
+      "overlap_counts": [
+        6,
+        0
+      ]
+    }
+  ],
+  "consistent_count": 6,
+  "limitations": "Independent report-level interval recomputation only; no new binary execution or engine runtime comparison."
+}
