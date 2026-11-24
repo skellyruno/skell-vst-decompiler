@@ -2,7 +2,7 @@
 
 Overlapping local evidence, not an algorithm-completeness count. Calls are static decoded references, not proven runtime edges. Unmatched targets are unresolved in this catalog, not necessarily unknown functions. No vendor implementation or raw coefficient arrays.
 
-**111 evidence records across 4 exact binary fingerprints.**
+**128 evidence records across 4 exact binary fingerprints.**
 
 ## FG-116.epl
 
@@ -105,7 +105,7 @@ The scalar retention argument comes from the object at r15+0x10; output scratch 
 
 ## FG-2A.epl
 
-SHA-256: `6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573` — 33 records.
+SHA-256: `6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573` — 50 records.
 
 ### Vector sum dispatch
 
@@ -300,6 +300,69 @@ Static direct call references:
 - `0x1425cf` → `0xd38e3c`: not covered in catalog
 - `0x1425e7` → `0xd37c48`: not covered in catalog
 
+### Feedback setup receives the processing subobject
+
+- **RVA:** `0x149a90–0x149ab8` (end exclusive)
+- **Evidence:** `vmr_fg2a_filter_provenance.json::fg2a_feedback_setup_context`
+- **Confidence:** exact-build static instruction evidence; runtime dispatch and audio unverified
+
+RSI is the first pointer of the setup context previously populated with the same +0x1360 relative subobject.
+
+### Two polarity curve writers and quadratic transition setup
+
+- **RVA:** `0x149b36–0x149e48` (end exclusive)
+- **Evidence:** `vmr_fg2a_filter_provenance.json::fg2a_feedback_curve_setup`
+- **Confidence:** exact-build static instruction evidence; runtime dispatch and audio unverified
+
+All fourteen piecewise curve fields and three associated scale/feedback fields have local setup writes. With ordered distinct breakpoints L,H and high-region slope m, the quadratic transition uses A=(m-1)/(2*(H-L)), B=1-2*A*L, C=(1-B-A*L)*L. This establishes value and slope continuity at L and matching slope at H; the independently calculated affine intercept is not assumed continuous at H. Full calibration scalar origins and runtime behavior remain open.
+
+Static direct call references:
+
+- `0x149b5a` → `0xd38e6c`: not covered in catalog
+- `0x149b95` → `0xd38e6c`: not covered in catalog
+- `0x149bcb` → `0xd38e6c`: not covered in catalog
+- `0x149c01` → `0xd38e6c`: not covered in catalog
+- `0x149c5a` → `0xd38e54`: not covered in catalog
+- `0x149c7c` → `0xd38e54`: not covered in catalog
+
+### FG-2A shared filter setup context
+
+- **RVA:** `0x14b5e0–0x14b624` (end exclusive)
+- **Evidence:** `vmr_fg2a_filter_provenance.json::fg2a_rate_setup_context`
+- **Confidence:** exact-build static instruction evidence; runtime dispatch and audio unverified
+
+The setup routine preserves the context in RDI; its first pointer supplies the parent object. The +0x10 scalar is subsequently passed to each coefficient generator.
+
+### Six filter coefficient generator/copy endpoints
+
+- **RVA:** `0x14b7fd–0x14ba01` (end exclusive)
+- **Evidence:** `vmr_fg2a_filter_provenance.json::fg2a_six_filter_writers`
+- **Confidence:** exact-build static instruction evidence; runtime dispatch and audio unverified
+
+Six 48-byte coefficient records are generated in separate stack locations, then copied to the +0x1360 processing subobject. The five active coefficients in each are read below; the sixth slot is not read in these recurrences and is not counted. Generator internals and runtime selection remain unverified.
+
+Static direct call references:
+
+- `0x14b82b` → `0xbf7cd0`: not covered in catalog
+- `0x14b85e` → `0xbfa810`: not covered in catalog
+- `0x14b888` → `0xbf5290`: not covered in catalog
+- `0x14b8bb` → `0xbfc260`: not covered in catalog
+- `0x14b8e5` → `0xbf5290`: not covered in catalog
+- `0x14b90f` → `0xbf5290`: not covered in catalog
+- `0x14b9fc` → `0x149a90`: `vmr_fg2a_filter_provenance.json::fg2a_feedback_setup_context`
+
+### Matching processing context
+
+- **RVA:** `0x14d590–0x14d5df` (end exclusive)
+- **Evidence:** `vmr_fg2a_filter_provenance.json::fg2a_filter_processing_context`
+- **Confidence:** exact-build static instruction evidence; runtime dispatch and audio unverified
+
+The candidate processor uses RBX as the supplied subobject and a per-stream count from context +0x30.
+
+Static direct call references:
+
+- `0x14d5b5` → `0xd37e00`: not covered in catalog
+
 ### FG-2A coefficient base and channel count
 
 - **RVA:** `0x14d5bd–0x14d61c` (end exclusive)
@@ -311,6 +374,14 @@ RBX is the supplied subobject pointer; the processing loop copies two streams an
 Static direct call references:
 
 - `0x14d610` → `0x6f740`: not covered in catalog
+
+### FG-2A stereo biquad block 0x2f0
+
+- **RVA:** `0x14d674–0x14d748` (end exclusive)
+- **Evidence:** `vmr_fg2a_filter_provenance.json::fg2a_filter_2f0`
+- **Confidence:** exact-build static instruction evidence; runtime dispatch and audio unverified
+
+Two independent state pairs share five active coefficients. Local DF2T relationship: y=b0*x+z1; z1_next=b1*x-a1*y+z2; z2_next=b2*x-a2*y. Setup copy endpoints verified; generator equations and live audio remain open.
 
 ### FG-2A signed curve constant setup
 
@@ -385,6 +456,14 @@ Static direct call references:
 
 Standard double DF2T recurrence follows the even-power sum scratch; coefficients 0x360/368/370/380/388. Frequency response, actual runtime values and ultimate role remain unknown.
 
+### FG-2A stereo biquad block 0x360
+
+- **RVA:** `0x14db5f–0x14dc2e` (end exclusive)
+- **Evidence:** `vmr_fg2a_filter_provenance.json::fg2a_filter_360`
+- **Confidence:** exact-build static instruction evidence; runtime dispatch and audio unverified
+
+Two independent state pairs share five active coefficients. Local DF2T relationship: y=b0*x+z1; z1_next=b1*x-a1*y+z2; z2_next=b2*x-a2*y. Setup copy endpoints verified; generator equations and live audio remain open.
+
 ### FG-2A two rational transform callsites
 
 - **RVA:** `0x14dc2c–0x14dc79` (end exclusive)
@@ -407,6 +486,14 @@ Static direct call references:
 
 Two independent DF2T state pairs share coefficients at 0x3d0/3d8/3e0/3f0/3f8. Standard y=b0*x+z1, z1_next=b1*x-a1*y+z2, z2_next=b2*x-a2*y. Frequency calibration unresolved.
 
+### FG-2A stereo biquad block 0x3d0
+
+- **RVA:** `0x14dc9f–0x14dd76` (end exclusive)
+- **Evidence:** `vmr_fg2a_filter_provenance.json::fg2a_filter_3d0`
+- **Confidence:** exact-build static instruction evidence; runtime dispatch and audio unverified
+
+Two independent state pairs share five active coefficients. Local DF2T relationship: y=b0*x+z1; z1_next=b1*x-a1*y+z2; z2_next=b2*x-a2*y. Setup copy endpoints verified; generator equations and live audio remain open.
+
 ### FG-2A odd-power parallel branch
 
 - **RVA:** `0x14dd74–0x14de64` (end exclusive)
@@ -428,6 +515,22 @@ Static direct call references:
 - `0x14de48` → `0x6f840`: not covered in catalog
 - `0x14de5f` → `0x6f7e0`: not covered in catalog
 
+### FG-2A stereo biquad block 0x440
+
+- **RVA:** `0x14de8f–0x14df64` (end exclusive)
+- **Evidence:** `vmr_fg2a_filter_provenance.json::fg2a_filter_440`
+- **Confidence:** exact-build static instruction evidence; runtime dispatch and audio unverified
+
+Two independent state pairs share five active coefficients. Local DF2T relationship: y=b0*x+z1; z1_next=b1*x-a1*y+z2; z2_next=b2*x-a2*y. Setup copy endpoints verified; generator equations and live audio remain open.
+
+### FG-2A stereo biquad block 0x4b0
+
+- **RVA:** `0x14df7f–0x14e050` (end exclusive)
+- **Evidence:** `vmr_fg2a_filter_provenance.json::fg2a_filter_4b0`
+- **Confidence:** exact-build static instruction evidence; runtime dispatch and audio unverified
+
+Two independent state pairs share five active coefficients. Local DF2T relationship: y=b0*x+z1; z1_next=b1*x-a1*y+z2; z2_next=b2*x-a2*y. Setup copy endpoints verified; generator equations and live audio remain open.
+
 ### FG-2A later branch merge and second rational transform
 
 - **RVA:** `0x14e04e–0x14e0ae` (end exclusive)
@@ -442,6 +545,14 @@ Static direct call references:
 - `0x14e078` → `0x142110`: `vmr_fg2a_coefficient_provenance.json::fg2a_rational_stage`
 - `0x14e093` → `0x6f880`: not covered in catalog
 - `0x14e0a9` → `0x6f840`: not covered in catalog
+
+### FG-2A stereo biquad block 0x520
+
+- **RVA:** `0x14e0df–0x14e1b4` (end exclusive)
+- **Evidence:** `vmr_fg2a_filter_provenance.json::fg2a_filter_520`
+- **Confidence:** exact-build static instruction evidence; runtime dispatch and audio unverified
+
+Two independent state pairs share five active coefficients. Local DF2T relationship: y=b0*x+z1; z1_next=b1*x-a1*y+z2; z2_next=b2*x-a2*y. Setup copy endpoints verified; generator equations and live audio remain open.
 
 ### FG-2A candidate local clipping and output handoff
 
@@ -458,7 +569,66 @@ Static direct call references:
 - `0x14e22c` → `0x6f740`: not covered in catalog
 - `0x14e279` → `0xd38dc4`: not covered in catalog
 - `0x14e29a` → `0xd38dc4`: not covered in catalog
-- `0x14e2a6` → `0x14f340`: not covered in catalog
+- `0x14e2a6` → `0x14f340`: `vmr_fg2a_filter_provenance.json::fg2a_feedback_context`
+
+### Nonlinear processor downstream handoff
+
+- **RVA:** `0x14e238–0x14e2ab` (end exclusive)
+- **Evidence:** `vmr_fg2a_filter_provenance.json::fg2a_feedback_handoff`
+- **Confidence:** exact-build static instruction evidence; runtime dispatch and audio unverified
+
+The polynomial processor passes its subobject as the first pointer of the downstream context.
+
+Static direct call references:
+
+- `0x14e279` → `0xd38dc4`: not covered in catalog
+- `0x14e29a` → `0xd38dc4`: not covered in catalog
+- `0x14e2a6` → `0x14f340`: `vmr_fg2a_filter_provenance.json::fg2a_feedback_context`
+
+### Downstream feedback context and history
+
+- **RVA:** `0x14f340–0x14f40b` (end exclusive)
+- **Evidence:** `vmr_fg2a_filter_provenance.json::fg2a_feedback_context`
+- **Confidence:** exact-build static instruction evidence; runtime dispatch and audio unverified
+
+The downstream context recovers the same subobject pointer, reads input scale and per-stream feedback history. The scalar helper paths are previously cataloged.
+
+Static direct call references:
+
+- `0x14f3ee` → `0x6f820`: not covered in catalog
+
+### Sign-selected piecewise feedback transform
+
+- **RVA:** `0x14f69d–0x14f75e` (end exclusive)
+- **Evidence:** `vmr_fg2a_filter_provenance.json::fg2a_feedback_nonlinearity`
+- **Confidence:** exact-build static instruction evidence; runtime dispatch and audio unverified
+
+Finite-input scalar tail: previous scaled output feeds the next input; sign chooses one of two piecewise identity/quadratic/affine magnitude curves. The signed output is stored before feedback multiplication. This establishes a local nonlinear feedback loop, not the final gain-reduction law.
+
+### First difference and residual branch
+
+- **RVA:** `0x14facd–0x14fb22` (end exclusive)
+- **Evidence:** `vmr_fg2a_filter_provenance.json::fg2a_feedback_difference`
+- **Confidence:** exact-build static instruction evidence; runtime dispatch and audio unverified
+
+First difference d[n]=v[n]-v[n-1], followed by scaling and a residual difference on the previously inspected scalar helper paths.
+
+Static direct call references:
+
+- `0x14fb09` → `0x6f820`: not covered in catalog
+- `0x14fb1d` → `0x6f880`: not covered in catalog
+
+### Downstream final local output and two-channel stride
+
+- **RVA:** `0x14fdef–0x14fe25` (end exclusive)
+- **Evidence:** `vmr_fg2a_filter_provenance.json::fg2a_feedback_output`
+- **Confidence:** exact-build static instruction evidence; runtime dispatch and audio unverified
+
+The candidate local output difference is written to a supplied output buffer; repeat for two streams at 0xb0-byte state stride. Final host output routing is not proven.
+
+Static direct call references:
+
+- `0x14fe01` → `0x6f880`: not covered in catalog
 
 ### Dual scalar gain and parallel sum
 
@@ -489,7 +659,7 @@ Static direct call references:
 - `0x156d73` → `0xd38dc4`: not covered in catalog
 - `0x156f2d` → `0xd38dc4`: not covered in catalog
 - `0x156f45` → `0xd38dc4`: not covered in catalog
-- `0x156f4f` → `0x14d590`: not covered in catalog
+- `0x156f4f` → `0x14d590`: `vmr_fg2a_filter_provenance.json::fg2a_filter_processing_context`
 - `0x156fb9` → `0x155960`: `vmr_control_streams.json::fg2a_dual_slew`
 - `0x156fd1` → `0x141e60`: not covered in catalog
 
@@ -505,7 +675,21 @@ Static direct call references:
 
 - `0x156f2d` → `0xd38dc4`: not covered in catalog
 - `0x156f45` → `0xd38dc4`: not covered in catalog
-- `0x156f4f` → `0x14d590`: not covered in catalog
+- `0x156f4f` → `0x14d590`: `vmr_fg2a_filter_provenance.json::fg2a_filter_processing_context`
+
+### Processing caller passes identical relative subobject
+
+- **RVA:** `0x156f04–0x156f54` (end exclusive)
+- **Evidence:** `vmr_fg2a_filter_provenance.json::fg2a_filter_processing_parent`
+- **Confidence:** exact-build static instruction evidence; runtime dispatch and audio unverified
+
+The caller supplies the same parent-relative offset +0x1360 as the setup path. Runtime object identity is not asserted.
+
+Static direct call references:
+
+- `0x156f2d` → `0xd38dc4`: not covered in catalog
+- `0x156f45` → `0xd38dc4`: not covered in catalog
+- `0x156f4f` → `0x14d590`: `vmr_fg2a_filter_provenance.json::fg2a_filter_processing_context`
 
 ## FG-Stress.epl
 

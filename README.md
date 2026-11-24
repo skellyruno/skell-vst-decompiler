@@ -93,3 +93,7 @@ See [VMR nonlinear evidence](docs/VMR_NONLINEAR_ATLAS.md) for the verified clamp
 ### FG-2A coefficient provenance
 
 `python -m skell_vst_decompiler.vmr_coefficients /private/FG-2A.epl` verifies nine polynomial weight initializer/read endpoints, scalar rational helper candidates, and local branch merging. See [coverage and limitations](docs/FG2A_COEFFICIENT_PROVENANCE.md). The 9/9 scoped coverage is not a whole-plugin completion percentage.
+
+### FG-2A filter / feedback provenance
+
+Use `python -m skell_vst_decompiler.vmr_filter_provenance /private/FG-2A.epl` for fingerprint-gated verification of six filter setup records, 30 active coefficient fields, 60 channel read endpoints and 17 nonlinear feedback setup writes. See [filter and feedback provenance](docs/FG2A_FILTER_FEEDBACK_PROVENANCE.md). The consolidated atlas has 128 evidence regions; the counts are scoped static relationships, not an estimate of whole-plugin recovery. Generator internals, rational parameter initialization, live dispatch, full gain law and commercial audio are unresolved.

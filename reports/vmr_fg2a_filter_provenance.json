@@ -1,0 +1,920 @@
+{
+  "schema_version": 1,
+  "source": "FG-2A.epl",
+  "binary_sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+  "regions": [
+    {
+      "id": "fg2a_rate_setup_context",
+      "title": "FG-2A shared filter setup context",
+      "equation": "The setup routine preserves the context in RDI; its first pointer supplies the parent object. The +0x10 scalar is subsequently passed to each coefficient generator.",
+      "confidence": "exact-build static instruction evidence; runtime dispatch and audio unverified",
+      "direct_calls": [],
+      "checkpoint_rvas": [
+        "0x14b5fe",
+        "0x14b605",
+        "0x14b608"
+      ],
+      "start_rva": "0x14b5e0",
+      "end_rva_exclusive": "0x14b624",
+      "sha256": "c7ddf6cd512f29d377b1848d20bda5add522ba5aed8638b930402b39474fbfdf",
+      "checkpoint_count": 3,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_six_filter_writers",
+      "title": "Six filter coefficient generator/copy endpoints",
+      "equation": "Six 48-byte coefficient records are generated in separate stack locations, then copied to the +0x1360 processing subobject. The five active coefficients in each are read below; the sixth slot is not read in these recurrences and is not counted. Generator internals and runtime selection remain unverified.",
+      "confidence": "exact-build static instruction evidence; runtime dispatch and audio unverified",
+      "direct_calls": [
+        {
+          "site_rva": "0x14b82b",
+          "target_rva": "0xbf7cd0"
+        },
+        {
+          "site_rva": "0x14b85e",
+          "target_rva": "0xbfa810"
+        },
+        {
+          "site_rva": "0x14b888",
+          "target_rva": "0xbf5290"
+        },
+        {
+          "site_rva": "0x14b8bb",
+          "target_rva": "0xbfc260"
+        },
+        {
+          "site_rva": "0x14b8e5",
+          "target_rva": "0xbf5290"
+        },
+        {
+          "site_rva": "0x14b90f",
+          "target_rva": "0xbf5290"
+        },
+        {
+          "site_rva": "0x14b9fc",
+          "target_rva": "0x149a90"
+        }
+      ],
+      "checkpoint_rvas": [
+        "0x14b7fd",
+        "0x14b800",
+        "0x14b805",
+        "0x14b80c",
+        "0x14b81a",
+        "0x14b82b",
+        "0x14b837",
+        "0x14b85e",
+        "0x14b872",
+        "0x14b888",
+        "0x14b894",
+        "0x14b8bb",
+        "0x14b8cf",
+        "0x14b8e5",
+        "0x14b8f9",
+        "0x14b90f",
+        "0x14b91c",
+        "0x14b914",
+        "0x14b927",
+        "0x14b918",
+        "0x14b932",
+        "0x14b923",
+        "0x14b93d",
+        "0x14b92e",
+        "0x14b948",
+        "0x14b939",
+        "0x14b953",
+        "0x14b944",
+        "0x14b95e",
+        "0x14b94f",
+        "0x14b969",
+        "0x14b95a",
+        "0x14b974",
+        "0x14b965",
+        "0x14b97f",
+        "0x14b970",
+        "0x14b98a",
+        "0x14b97b",
+        "0x14b995",
+        "0x14b986",
+        "0x14b9a0",
+        "0x14b991",
+        "0x14b9a7",
+        "0x14b99c",
+        "0x14b9c5",
+        "0x14b9ae",
+        "0x14b9d3",
+        "0x14b9bc",
+        "0x14b9e1",
+        "0x14b9cc",
+        "0x14b9e8",
+        "0x14b9da",
+        "0x14b9b7",
+        "0x14b9fc"
+      ],
+      "start_rva": "0x14b7fd",
+      "end_rva_exclusive": "0x14ba01",
+      "sha256": "be1a9be68431c2348aa68e6e705408d8659bbcf7211329c9d71dab7f2afca015",
+      "checkpoint_count": 54,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_filter_processing_context",
+      "title": "Matching processing context",
+      "equation": "The candidate processor uses RBX as the supplied subobject and a per-stream count from context +0x30.",
+      "confidence": "exact-build static instruction evidence; runtime dispatch and audio unverified",
+      "direct_calls": [
+        {
+          "site_rva": "0x14d5b5",
+          "target_rva": "0xd37e00"
+        }
+      ],
+      "checkpoint_rvas": [
+        "0x14d5bd",
+        "0x14d5c8",
+        "0x14d5d8"
+      ],
+      "start_rva": "0x14d590",
+      "end_rva_exclusive": "0x14d5df",
+      "sha256": "2fdbf112e8618708ea19a8bceb3e0b391a4eba4fb74423254dc88fd2624f2a5d",
+      "checkpoint_count": 3,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_filter_processing_parent",
+      "title": "Processing caller passes identical relative subobject",
+      "equation": "The caller supplies the same parent-relative offset +0x1360 as the setup path. Runtime object identity is not asserted.",
+      "confidence": "exact-build static instruction evidence; runtime dispatch and audio unverified",
+      "direct_calls": [
+        {
+          "site_rva": "0x156f2d",
+          "target_rva": "0xd38dc4"
+        },
+        {
+          "site_rva": "0x156f45",
+          "target_rva": "0xd38dc4"
+        },
+        {
+          "site_rva": "0x156f4f",
+          "target_rva": "0x14d590"
+        }
+      ],
+      "checkpoint_rvas": [
+        "0x156f04",
+        "0x156f0b",
+        "0x156f4a",
+        "0x156f4f"
+      ],
+      "start_rva": "0x156f04",
+      "end_rva_exclusive": "0x156f54",
+      "sha256": "45b7bb7c174a95e8bdf11d05bd3eaa41484665367d07d806c7a63365cc256711",
+      "checkpoint_count": 4,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_filter_2f0",
+      "title": "FG-2A stereo biquad block 0x2f0",
+      "equation": "Two independent state pairs share five active coefficients. Local DF2T relationship: y=b0*x+z1; z1_next=b1*x-a1*y+z2; z2_next=b2*x-a2*y. Setup copy endpoints verified; generator equations and live audio remain open.",
+      "confidence": "exact-build static instruction evidence; runtime dispatch and audio unverified",
+      "direct_calls": [],
+      "checkpoint_rvas": [
+        "0x14d674",
+        "0x14d68a",
+        "0x14d6bc",
+        "0x14d692",
+        "0x14d6ae",
+        "0x14d6a6",
+        "0x14d6c8",
+        "0x14d6a2",
+        "0x14d6c4",
+        "0x14d6e0",
+        "0x14d6f9",
+        "0x14d72b",
+        "0x14d701",
+        "0x14d71d",
+        "0x14d715",
+        "0x14d737",
+        "0x14d711",
+        "0x14d733"
+      ],
+      "start_rva": "0x14d674",
+      "end_rva_exclusive": "0x14d748",
+      "sha256": "767c9221f1196555d0a73738b8676e60cd72b318e7c51154004b8e520bcbbae3",
+      "checkpoint_count": 18,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_filter_360",
+      "title": "FG-2A stereo biquad block 0x360",
+      "equation": "Two independent state pairs share five active coefficients. Local DF2T relationship: y=b0*x+z1; z1_next=b1*x-a1*y+z2; z2_next=b2*x-a2*y. Setup copy endpoints verified; generator equations and live audio remain open.",
+      "confidence": "exact-build static instruction evidence; runtime dispatch and audio unverified",
+      "direct_calls": [],
+      "checkpoint_rvas": [
+        "0x14db5f",
+        "0x14db75",
+        "0x14db99",
+        "0x14db7d",
+        "0x14dba1",
+        "0x14db91",
+        "0x14dbb3",
+        "0x14db8d",
+        "0x14dbaf",
+        "0x14dbc6",
+        "0x14dbdb",
+        "0x14dc0f",
+        "0x14dbe3",
+        "0x14dbff",
+        "0x14dbf7",
+        "0x14dc1b",
+        "0x14dbf3",
+        "0x14dc17"
+      ],
+      "start_rva": "0x14db5f",
+      "end_rva_exclusive": "0x14dc2e",
+      "sha256": "24fa1397acdcef12d29d84b11fb93ab14a6ef32552d5715073b84f196fdb15cd",
+      "checkpoint_count": 18,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_filter_3d0",
+      "title": "FG-2A stereo biquad block 0x3d0",
+      "equation": "Two independent state pairs share five active coefficients. Local DF2T relationship: y=b0*x+z1; z1_next=b1*x-a1*y+z2; z2_next=b2*x-a2*y. Setup copy endpoints verified; generator equations and live audio remain open.",
+      "confidence": "exact-build static instruction evidence; runtime dispatch and audio unverified",
+      "direct_calls": [],
+      "checkpoint_rvas": [
+        "0x14dc9f",
+        "0x14dcb8",
+        "0x14dcdc",
+        "0x14dcc0",
+        "0x14dce4",
+        "0x14dcd4",
+        "0x14dcf9",
+        "0x14dcd0",
+        "0x14dcf5",
+        "0x14dd0e",
+        "0x14dd23",
+        "0x14dd57",
+        "0x14dd2b",
+        "0x14dd47",
+        "0x14dd3f",
+        "0x14dd63",
+        "0x14dd3b",
+        "0x14dd5f"
+      ],
+      "start_rva": "0x14dc9f",
+      "end_rva_exclusive": "0x14dd76",
+      "sha256": "13c84306269bfc8884efe780bf5698ddded22552b9ca88277574d8d4149f7a74",
+      "checkpoint_count": 18,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_filter_440",
+      "title": "FG-2A stereo biquad block 0x440",
+      "equation": "Two independent state pairs share five active coefficients. Local DF2T relationship: y=b0*x+z1; z1_next=b1*x-a1*y+z2; z2_next=b2*x-a2*y. Setup copy endpoints verified; generator equations and live audio remain open.",
+      "confidence": "exact-build static instruction evidence; runtime dispatch and audio unverified",
+      "direct_calls": [],
+      "checkpoint_rvas": [
+        "0x14de8f",
+        "0x14dea8",
+        "0x14decc",
+        "0x14deb0",
+        "0x14dedd",
+        "0x14dec4",
+        "0x14dee9",
+        "0x14dec0",
+        "0x14dee5",
+        "0x14defc",
+        "0x14df13",
+        "0x14df49",
+        "0x14df1b",
+        "0x14df37",
+        "0x14df2f",
+        "0x14df55",
+        "0x14df2b",
+        "0x14df51"
+      ],
+      "start_rva": "0x14de8f",
+      "end_rva_exclusive": "0x14df64",
+      "sha256": "d7042c4c7e19dcbe6dcb612040fe0470aad9ec8ea77f0f56d7a7e64b7971ed17",
+      "checkpoint_count": 18,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_filter_4b0",
+      "title": "FG-2A stereo biquad block 0x4b0",
+      "equation": "Two independent state pairs share five active coefficients. Local DF2T relationship: y=b0*x+z1; z1_next=b1*x-a1*y+z2; z2_next=b2*x-a2*y. Setup copy endpoints verified; generator equations and live audio remain open.",
+      "confidence": "exact-build static instruction evidence; runtime dispatch and audio unverified",
+      "direct_calls": [],
+      "checkpoint_rvas": [
+        "0x14df7f",
+        "0x14df95",
+        "0x14dfb9",
+        "0x14df9d",
+        "0x14dfc1",
+        "0x14dfb1",
+        "0x14dfd3",
+        "0x14dfad",
+        "0x14dfcf",
+        "0x14dfe8",
+        "0x14dffd",
+        "0x14e031",
+        "0x14e005",
+        "0x14e021",
+        "0x14e019",
+        "0x14e03d",
+        "0x14e015",
+        "0x14e039"
+      ],
+      "start_rva": "0x14df7f",
+      "end_rva_exclusive": "0x14e050",
+      "sha256": "5abf60f440a017a58b86ff7fad9545125d47272dea19c38f77d6808c35c23649",
+      "checkpoint_count": 18,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_filter_520",
+      "title": "FG-2A stereo biquad block 0x520",
+      "equation": "Two independent state pairs share five active coefficients. Local DF2T relationship: y=b0*x+z1; z1_next=b1*x-a1*y+z2; z2_next=b2*x-a2*y. Setup copy endpoints verified; generator equations and live audio remain open.",
+      "confidence": "exact-build static instruction evidence; runtime dispatch and audio unverified",
+      "direct_calls": [],
+      "checkpoint_rvas": [
+        "0x14e0df",
+        "0x14e0f8",
+        "0x14e11c",
+        "0x14e100",
+        "0x14e124",
+        "0x14e114",
+        "0x14e139",
+        "0x14e110",
+        "0x14e135",
+        "0x14e14c",
+        "0x14e163",
+        "0x14e199",
+        "0x14e16b",
+        "0x14e187",
+        "0x14e17f",
+        "0x14e1a5",
+        "0x14e17b",
+        "0x14e1a1"
+      ],
+      "start_rva": "0x14e0df",
+      "end_rva_exclusive": "0x14e1b4",
+      "sha256": "25b3633f9e504410d9970c9c78b4666721cb34fa71e4f24ec431b3e1e0af0387",
+      "checkpoint_count": 18,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_feedback_setup_context",
+      "title": "Feedback setup receives the processing subobject",
+      "equation": "RSI is the first pointer of the setup context previously populated with the same +0x1360 relative subobject.",
+      "confidence": "exact-build static instruction evidence; runtime dispatch and audio unverified",
+      "direct_calls": [],
+      "checkpoint_rvas": [
+        "0x149ab2",
+        "0x149ab5"
+      ],
+      "start_rva": "0x149a90",
+      "end_rva_exclusive": "0x149ab8",
+      "sha256": "6522ac1164e6a6c872566118757c524e993616bd0ba2406a5c936c9699a23364",
+      "checkpoint_count": 2,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_feedback_curve_setup",
+      "title": "Two polarity curve writers and quadratic transition setup",
+      "equation": "All fourteen piecewise curve fields and three associated scale/feedback fields have local setup writes. With ordered distinct breakpoints L,H and high-region slope m, the quadratic transition uses A=(m-1)/(2*(H-L)), B=1-2*A*L, C=(1-B-A*L)*L. This establishes value and slope continuity at L and matching slope at H; the independently calculated affine intercept is not assumed continuous at H. Full calibration scalar origins and runtime behavior remain open.",
+      "confidence": "exact-build static instruction evidence; runtime dispatch and audio unverified",
+      "direct_calls": [
+        {
+          "site_rva": "0x149b5a",
+          "target_rva": "0xd38e6c"
+        },
+        {
+          "site_rva": "0x149b95",
+          "target_rva": "0xd38e6c"
+        },
+        {
+          "site_rva": "0x149bcb",
+          "target_rva": "0xd38e6c"
+        },
+        {
+          "site_rva": "0x149c01",
+          "target_rva": "0xd38e6c"
+        },
+        {
+          "site_rva": "0x149c5a",
+          "target_rva": "0xd38e54"
+        },
+        {
+          "site_rva": "0x149c7c",
+          "target_rva": "0xd38e54"
+        }
+      ],
+      "checkpoint_rvas": [
+        "0x149d1e",
+        "0x149d41",
+        "0x149d5c",
+        "0x149ced",
+        "0x149d77",
+        "0x149ce1",
+        "0x149d02",
+        "0x149dcd",
+        "0x149de5",
+        "0x149e40",
+        "0x149dff",
+        "0x149e37",
+        "0x149e0d",
+        "0x149e1a",
+        "0x149b44",
+        "0x149b79",
+        "0x149b85",
+        "0x149c96",
+        "0x149cf6",
+        "0x149d0a",
+        "0x149d16",
+        "0x149d1a",
+        "0x149d29",
+        "0x149d31",
+        "0x149d35",
+        "0x149d3d",
+        "0x149d49",
+        "0x149d4d",
+        "0x149dbe",
+        "0x149dc2",
+        "0x149dc6",
+        "0x149dd5",
+        "0x149dd9",
+        "0x149ddd",
+        "0x149ded",
+        "0x149e25",
+        "0x149e33"
+      ],
+      "start_rva": "0x149b36",
+      "end_rva_exclusive": "0x149e48",
+      "sha256": "d0566fc0ef94aa5ec643f91f0ea01970ec37a715a64306c10c6f29b072933dff",
+      "checkpoint_count": 37,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_feedback_handoff",
+      "title": "Nonlinear processor downstream handoff",
+      "equation": "The polynomial processor passes its subobject as the first pointer of the downstream context.",
+      "confidence": "exact-build static instruction evidence; runtime dispatch and audio unverified",
+      "direct_calls": [
+        {
+          "site_rva": "0x14e279",
+          "target_rva": "0xd38dc4"
+        },
+        {
+          "site_rva": "0x14e29a",
+          "target_rva": "0xd38dc4"
+        },
+        {
+          "site_rva": "0x14e2a6",
+          "target_rva": "0x14f340"
+        }
+      ],
+      "checkpoint_rvas": [
+        "0x14e23d",
+        "0x14e29f",
+        "0x14e2a6"
+      ],
+      "start_rva": "0x14e238",
+      "end_rva_exclusive": "0x14e2ab",
+      "sha256": "c70f8c2c65fabf263c13153a4d121717f6b4dc21048a3f452570089c5813506a",
+      "checkpoint_count": 3,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_feedback_context",
+      "title": "Downstream feedback context and history",
+      "equation": "The downstream context recovers the same subobject pointer, reads input scale and per-stream feedback history. The scalar helper paths are previously cataloged.",
+      "confidence": "exact-build static instruction evidence; runtime dispatch and audio unverified",
+      "direct_calls": [
+        {
+          "site_rva": "0x14f3ee",
+          "target_rva": "0x6f820"
+        }
+      ],
+      "checkpoint_rvas": [
+        "0x14f361",
+        "0x14f36e",
+        "0x14f37c",
+        "0x14f3c9",
+        "0x14f3ee",
+        "0x14f3f3"
+      ],
+      "start_rva": "0x14f340",
+      "end_rva_exclusive": "0x14f40b",
+      "sha256": "647cc66cda348c0db77264a9b1c891e8cec2c5da5ac9b41df6958fa893ab41b8",
+      "checkpoint_count": 6,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_feedback_nonlinearity",
+      "title": "Sign-selected piecewise feedback transform",
+      "equation": "Finite-input scalar tail: previous scaled output feeds the next input; sign chooses one of two piecewise identity/quadratic/affine magnitude curves. The signed output is stored before feedback multiplication. This establishes a local nonlinear feedback loop, not the final gain-reduction law.",
+      "confidence": "exact-build static instruction evidence; runtime dispatch and audio unverified",
+      "direct_calls": [],
+      "checkpoint_rvas": [
+        "0x14f6b3",
+        "0x14f6cb",
+        "0x14f6d0",
+        "0x14f6d8",
+        "0x14f6e1",
+        "0x14f6eb",
+        "0x14f6ef",
+        "0x14f6f8",
+        "0x14f6fa",
+        "0x14f6ff",
+        "0x14f701",
+        "0x14f706",
+        "0x14f713",
+        "0x14f718",
+        "0x14f71c",
+        "0x14f727",
+        "0x14f72c",
+        "0x14f730",
+        "0x14f73d",
+        "0x14f745",
+        "0x14f755"
+      ],
+      "start_rva": "0x14f69d",
+      "end_rva_exclusive": "0x14f75e",
+      "sha256": "4d868f9a8af74703e095f2fa01f08b6f9067278e3b56f5adcd9bc06c138f98ec",
+      "checkpoint_count": 21,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_feedback_difference",
+      "title": "First difference and residual branch",
+      "equation": "First difference d[n]=v[n]-v[n-1], followed by scaling and a residual difference on the previously inspected scalar helper paths.",
+      "confidence": "exact-build static instruction evidence; runtime dispatch and audio unverified",
+      "direct_calls": [
+        {
+          "site_rva": "0x14fb09",
+          "target_rva": "0x6f820"
+        },
+        {
+          "site_rva": "0x14fb1d",
+          "target_rva": "0x6f880"
+        }
+      ],
+      "checkpoint_rvas": [
+        "0x14facd",
+        "0x14fad5",
+        "0x14fade",
+        "0x14fae6",
+        "0x14faf3",
+        "0x14faf5",
+        "0x14fb09",
+        "0x14fb1d"
+      ],
+      "start_rva": "0x14facd",
+      "end_rva_exclusive": "0x14fb22",
+      "sha256": "e416103ef52332f33f3e295ef52a9f3434c20729a8deb71cf518b29a5dafc2b3",
+      "checkpoint_count": 8,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_feedback_output",
+      "title": "Downstream final local output and two-channel stride",
+      "equation": "The candidate local output difference is written to a supplied output buffer; repeat for two streams at 0xb0-byte state stride. Final host output routing is not proven.",
+      "confidence": "exact-build static instruction evidence; runtime dispatch and audio unverified",
+      "direct_calls": [
+        {
+          "site_rva": "0x14fe01",
+          "target_rva": "0x6f880"
+        }
+      ],
+      "checkpoint_rvas": [
+        "0x14fdef",
+        "0x14fdfe",
+        "0x14fe01",
+        "0x14fe11",
+        "0x14fe14",
+        "0x14fe1b",
+        "0x14fe1f"
+      ],
+      "start_rva": "0x14fdef",
+      "end_rva_exclusive": "0x14fe25",
+      "sha256": "d9dc12cdcd5d084b1b4a37f4da3f036ac3c6931de25f07e5dda06fd93100410c",
+      "checkpoint_count": 7,
+      "math_call_count": 0
+    }
+  ],
+  "checkpoint_count": 256,
+  "filter_records_total": 6,
+  "filter_records_linked": 6,
+  "active_coefficient_fields_total": 30,
+  "active_coefficient_fields_linked": 30,
+  "channel_read_endpoints_verified": 60,
+  "filter_links": [
+    {
+      "record_offset": "0x2f0",
+      "generator_call_rva": "0x14b82b",
+      "copy_store_rvas": [
+        "0x14b91c",
+        "0x14b927",
+        "0x14b932"
+      ],
+      "channels": [
+        {
+          "channel": 0,
+          "state_offsets": [
+            "0x2b0",
+            "0x2b8"
+          ],
+          "read_sites": {
+            "b0": "0x14d674",
+            "b1": "0x14d68a",
+            "b2": "0x14d6bc",
+            "a1": "0x14d692",
+            "a2": "0x14d6ae"
+          }
+        },
+        {
+          "channel": 1,
+          "state_offsets": [
+            "0x2d0",
+            "0x2d8"
+          ],
+          "read_sites": {
+            "b0": "0x14d6e0",
+            "b1": "0x14d6f9",
+            "b2": "0x14d72b",
+            "a1": "0x14d701",
+            "a2": "0x14d71d"
+          }
+        }
+      ]
+    },
+    {
+      "record_offset": "0x360",
+      "generator_call_rva": "0x14b85e",
+      "copy_store_rvas": [
+        "0x14b93d",
+        "0x14b948",
+        "0x14b953"
+      ],
+      "channels": [
+        {
+          "channel": 0,
+          "state_offsets": [
+            "0x320",
+            "0x328"
+          ],
+          "read_sites": {
+            "b0": "0x14db5f",
+            "b1": "0x14db75",
+            "b2": "0x14db99",
+            "a1": "0x14db7d",
+            "a2": "0x14dba1"
+          }
+        },
+        {
+          "channel": 1,
+          "state_offsets": [
+            "0x340",
+            "0x348"
+          ],
+          "read_sites": {
+            "b0": "0x14dbc6",
+            "b1": "0x14dbdb",
+            "b2": "0x14dc0f",
+            "a1": "0x14dbe3",
+            "a2": "0x14dbff"
+          }
+        }
+      ]
+    },
+    {
+      "record_offset": "0x3d0",
+      "generator_call_rva": "0x14b888",
+      "copy_store_rvas": [
+        "0x14b95e",
+        "0x14b969",
+        "0x14b974"
+      ],
+      "channels": [
+        {
+          "channel": 0,
+          "state_offsets": [
+            "0x390",
+            "0x398"
+          ],
+          "read_sites": {
+            "b0": "0x14dc9f",
+            "b1": "0x14dcb8",
+            "b2": "0x14dcdc",
+            "a1": "0x14dcc0",
+            "a2": "0x14dce4"
+          }
+        },
+        {
+          "channel": 1,
+          "state_offsets": [
+            "0x3b0",
+            "0x3b8"
+          ],
+          "read_sites": {
+            "b0": "0x14dd0e",
+            "b1": "0x14dd23",
+            "b2": "0x14dd57",
+            "a1": "0x14dd2b",
+            "a2": "0x14dd47"
+          }
+        }
+      ]
+    },
+    {
+      "record_offset": "0x440",
+      "generator_call_rva": "0x14b8bb",
+      "copy_store_rvas": [
+        "0x14b97f",
+        "0x14b98a",
+        "0x14b995"
+      ],
+      "channels": [
+        {
+          "channel": 0,
+          "state_offsets": [
+            "0x400",
+            "0x408"
+          ],
+          "read_sites": {
+            "b0": "0x14de8f",
+            "b1": "0x14dea8",
+            "b2": "0x14decc",
+            "a1": "0x14deb0",
+            "a2": "0x14dedd"
+          }
+        },
+        {
+          "channel": 1,
+          "state_offsets": [
+            "0x420",
+            "0x428"
+          ],
+          "read_sites": {
+            "b0": "0x14defc",
+            "b1": "0x14df13",
+            "b2": "0x14df49",
+            "a1": "0x14df1b",
+            "a2": "0x14df37"
+          }
+        }
+      ]
+    },
+    {
+      "record_offset": "0x4b0",
+      "generator_call_rva": "0x14b8e5",
+      "copy_store_rvas": [
+        "0x14b9a0",
+        "0x14b9a7",
+        "0x14b9c5"
+      ],
+      "channels": [
+        {
+          "channel": 0,
+          "state_offsets": [
+            "0x470",
+            "0x478"
+          ],
+          "read_sites": {
+            "b0": "0x14df7f",
+            "b1": "0x14df95",
+            "b2": "0x14dfb9",
+            "a1": "0x14df9d",
+            "a2": "0x14dfc1"
+          }
+        },
+        {
+          "channel": 1,
+          "state_offsets": [
+            "0x490",
+            "0x498"
+          ],
+          "read_sites": {
+            "b0": "0x14dfe8",
+            "b1": "0x14dffd",
+            "b2": "0x14e031",
+            "a1": "0x14e005",
+            "a2": "0x14e021"
+          }
+        }
+      ]
+    },
+    {
+      "record_offset": "0x520",
+      "generator_call_rva": "0x14b90f",
+      "copy_store_rvas": [
+        "0x14b9d3",
+        "0x14b9e1",
+        "0x14b9e8"
+      ],
+      "channels": [
+        {
+          "channel": 0,
+          "state_offsets": [
+            "0x4e0",
+            "0x4e8"
+          ],
+          "read_sites": {
+            "b0": "0x14e0df",
+            "b1": "0x14e0f8",
+            "b2": "0x14e11c",
+            "a1": "0x14e100",
+            "a2": "0x14e124"
+          }
+        },
+        {
+          "channel": 1,
+          "state_offsets": [
+            "0x500",
+            "0x508"
+          ],
+          "read_sites": {
+            "b0": "0x14e14c",
+            "b1": "0x14e163",
+            "b2": "0x14e199",
+            "a1": "0x14e16b",
+            "a2": "0x14e187"
+          }
+        }
+      ]
+    }
+  ],
+  "feedback_curve_write_endpoints_verified": 17,
+  "feedback_curve_write_endpoints_total": 17,
+  "feedback_curve_write_sites": [
+    {
+      "field": "0x160",
+      "site_rva": "0x149d1e"
+    },
+    {
+      "field": "0x168",
+      "site_rva": "0x149d41"
+    },
+    {
+      "field": "0x170",
+      "site_rva": "0x149d5c"
+    },
+    {
+      "field": "0x178",
+      "site_rva": "0x149ced"
+    },
+    {
+      "field": "0x180",
+      "site_rva": "0x149d77"
+    },
+    {
+      "field": "0x188",
+      "site_rva": "0x149ce1"
+    },
+    {
+      "field": "0x190",
+      "site_rva": "0x149d02"
+    },
+    {
+      "field": "0x198",
+      "site_rva": "0x149dcd"
+    },
+    {
+      "field": "0x1a0",
+      "site_rva": "0x149de5"
+    },
+    {
+      "field": "0x1a8",
+      "site_rva": "0x149e40"
+    },
+    {
+      "field": "0x1b0",
+      "site_rva": "0x149dff"
+    },
+    {
+      "field": "0x1b8",
+      "site_rva": "0x149e37"
+    },
+    {
+      "field": "0x1c0",
+      "site_rva": "0x149e0d"
+    },
+    {
+      "field": "0x1c8",
+      "site_rva": "0x149e1a"
+    },
+    {
+      "field": "0x1d0",
+      "site_rva": "0x149b44"
+    },
+    {
+      "field": "0x1d8",
+      "site_rva": "0x149b79"
+    },
+    {
+      "field": "0x1e0",
+      "site_rva": "0x149b85"
+    }
+  ],
+  "limits": "Scoped writer-to-reader endpoint coverage only. Generator formula internals, six rational-field roles across two records, complete gain law and vendor runtime/audio remain unverified. No raw coefficient values or runnable processor exported."
+}
