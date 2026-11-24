@@ -1,0 +1,74 @@
+{
+  "sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+  "rva": "0x1561c0",
+  "requested_bytes": 2048,
+  "instruction_count": 529,
+  "direct_calls": [
+    {
+      "site_rva": "0x1561fd",
+      "target_rva": "0x2550"
+    },
+    {
+      "site_rva": "0x156207",
+      "target_rva": "0x24b0"
+    },
+    {
+      "site_rva": "0x1562ff",
+      "target_rva": "0x6f740"
+    },
+    {
+      "site_rva": "0x15638d",
+      "target_rva": "0x6f740"
+    },
+    {
+      "site_rva": "0x156412",
+      "target_rva": "0x2550"
+    },
+    {
+      "site_rva": "0x15641c",
+      "target_rva": "0x24b0"
+    },
+    {
+      "site_rva": "0x1564d1",
+      "target_rva": "0x6f780"
+    },
+    {
+      "site_rva": "0x1564ff",
+      "target_rva": "0x6f7a0"
+    },
+    {
+      "site_rva": "0x156537",
+      "target_rva": "0x6f780"
+    },
+    {
+      "site_rva": "0x156562",
+      "target_rva": "0x6f7a0"
+    },
+    {
+      "site_rva": "0x1565c1",
+      "target_rva": "0x2550"
+    },
+    {
+      "site_rva": "0x1565cb",
+      "target_rva": "0x24b0"
+    },
+    {
+      "site_rva": "0x156664",
+      "target_rva": "0x6f740"
+    },
+    {
+      "site_rva": "0x1566ae",
+      "target_rva": "0x6f740"
+    },
+    {
+      "site_rva": "0x15679f",
+      "target_rva": "0x6f8e0"
+    },
+    {
+      "site_rva": "0x1569a8",
+      "target_rva": "0x6f8e0"
+    }
+  ],
+  "rip_data_references": [],
+  "caveat": "Code pointers/constants are evidence only; no complete DSP signal path inferred."
+}
