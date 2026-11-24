@@ -43,3 +43,5 @@ Inspected [Revenant report model](https://github.com/DatanoiseTV/revenant/blob/m
 Craft Anything v0.6.1 runtime verified on owned fixture layout and inline tamper checking: run 45436229454, all four cases passed. AI rebuilding not executed; independent owned projects only with authorized local agent and non-private behavioral specifications.
 
 Reccmp compatibility: original pinned upstream export parser exact source blob 491a1cb2e818069040cd145cd0167918f7d3ba2e. Independently authored standalone adapter replaces only cached exports property for the process, no vendored source or persistent upstream edits. Read named export tables via declared RVAs and ordinals; tests include aliases. Stock exit logged separately; new actual CLI proof pending. AGPL upstream remains standalone and is not linked into production plugin.
+
+Reccmp adapter verified in actual CI run 45439758319 at e2065085b6bdc9ce91b800564a1d3df46ed1cd23: matching and intentionally changed owned i386 exports correctly detected, stock exit 1 preserved. No full ABI or vendor function matching claim.

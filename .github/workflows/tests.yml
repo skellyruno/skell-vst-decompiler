@@ -35,6 +35,8 @@ jobs:
         run: PYTHONPATH=. python tests/dsp_reference_smoke.py
       - name: Historical public pitch-method comparison
         run: PYTHONPATH=. python tests/historical_pitch_smoke.py
+      - name: Independent behavioral model and moving pitch comparison
+        run: PYTHONPATH=. python tests/behavior_models_smoke.py
       - name: Compile all research Python
         run: python -m compileall -q skell_vst_decompiler
       - name: Compile and test original native DSP prototypes
