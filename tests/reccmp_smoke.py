@@ -4,6 +4,7 @@ from pathlib import Path
 import subprocess
 import tempfile
 from skell_vst_decompiler.legacy_pe import LegacyPE
+from skell_vst_decompiler.pe_export_audit import export_metadata
 
 
 def main():
@@ -23,9 +24,11 @@ def main():
             result=subprocess.run(['reccmp-verexp','--paths',str(original),str(target),str(symbols),str(root),'--no-color'],capture_output=True,text=True,timeout=45)
             print(result.stdout);print(result.stderr)
             return result
+        metadata=[export_metadata(x,('probe','additional')) for x in (original,same,different)]
+        print('SKELL_RECCMP_LAYOUT '+json.dumps(metadata,sort_keys=True),flush=True)
         yes=run(same,pdb);no=run(different,pdb2)
         if yes.returncode!=0 or no.returncode!=1 or 'additional' not in no.stdout+no.stderr:
-            raise RuntimeError('Unexpected reccmp export comparison result')
+            raise RuntimeError('Reccmp export comparison failed; inspect recorded table layout and upstream parser. No success inferred.')
         inventories=[LegacyPE(x).inventory() for x in (original,same,different)]
         if [x['exports']['named_count'] for x in inventories]!=[1,1,2]:
             raise RuntimeError('Independent legacy export count disagrees')

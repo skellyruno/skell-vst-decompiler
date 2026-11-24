@@ -1,0 +1,31 @@
+name: Independent PE oracle (owned fixtures)
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/pe-oracle.yml'
+      - 'tests/pe_oracle_smoke.py'
+      - 'skell_vst_decompiler/pe_export_audit.py'
+      - 'skell_vst_decompiler/legacy_pe.py'
+      - 'skell_vst_decompiler/pe.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || format('protected-{0}-{1}', github.ref, github.run_id) }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  exports:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y clang lld
+          python -m pip install pefile==2024.8.26
+      - run: PYTHONPATH=. python tests/pe_oracle_smoke.py
