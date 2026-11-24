@@ -17,12 +17,13 @@ from .coloration import verify_coloration
 from .parameter_mapping import verify_parameter_mapping
 from .extended_dsp import verify_extended, verify_vmr_utilities
 from .rack_paths import verify_tvb_rack, verify_vmr_paths
+from .reverb_feedback import verify_reverb
 
 
 def main(argv=None):
     p=argparse.ArgumentParser(description="Skell VST Decompiler: read-only PE and DSP evidence")
     p.add_argument("binary",help="Locally owned Windows x64 VST3/EPL binary")
-    p.add_argument("--mode",choices=["inventory","trace","tvb-biquad","tvb-bank","tvb-compressor-setup","tvb-dynamics","dispatch","tvb-curves","tvb-detector","tvb-color","tvb-parameters","tvb-extended","vmr-utilities","tvb-rack-paths","vmr-effect-paths","fieldrefs","function","xref"],default="inventory")
+    p.add_argument("--mode",choices=["inventory","trace","tvb-biquad","tvb-bank","tvb-compressor-setup","tvb-dynamics","dispatch","tvb-curves","tvb-detector","tvb-color","tvb-parameters","tvb-extended","vmr-utilities","tvb-rack-paths","tvb-reverb","vmr-effect-paths","fieldrefs","function","xref"],default="inventory")
     p.add_argument("--find",help="Filter tvb-dynamics by keywords or hexadecimal RVA")
     p.add_argument("--entries",type=int,default=4,help="Candidate jump-table slots to inspect (1..32, not inferred table length)")
     p.add_argument("--target",type=lambda x:int(x,0),help="Target RVA for xref search")
@@ -59,6 +60,9 @@ def main(argv=None):
         res=verify_vmr_utilities(pe,a.objdump)
     elif a.mode=="tvb-rack-paths":
         res=verify_tvb_rack(pe,a.objdump)
+        if a.find is not None:res=search(res,a.find)
+    elif a.mode=="tvb-reverb":
+        res=verify_reverb(pe,a.objdump)
         if a.find is not None:res=search(res,a.find)
     elif a.mode=="vmr-effect-paths":
         res=verify_vmr_paths(pe,a.objdump)

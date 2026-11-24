@@ -73,3 +73,9 @@ The catalog can be searched offline by keyword or hexadecimal RVA. It includes r
 python -m skell_vst_decompiler "TVB Rack V2.vst3" --mode tvb-rack-paths --find limiter
 python -m skell_vst_decompiler "FG-116.epl" --mode vmr-effect-paths
 ```
+
+## Targeted Ghidra and reverb research
+
+[Towel-Decomp](https://github.com/towelWet/Towel-Decomp) was reviewed. Its Ghidra workflow inspired our own optional, address-targeted headless bridge; no upstream files are copied. See [Ghidra / reverb workflow](docs/GHIDRA_REVERB_RESEARCH.md). Search across all equation reports, select exact-fingerprint RVAs, create a dry-run plan, and optionally export local C-like pseudocode and caller/callee candidates using an installed official Ghidra. Generated analysis stays in ignored local folders. The bridge's mock subprocess tests pass; actual Ghidra execution and Java script compilation are unverified until an installed runtime is available.
+
+The exact-build TVB reverb verifier now checks 191 instructions across ten regions, including eight-lane Householder feedback, per-lane decay scaling, input-linked wet ducking and normalized output color. No vendor tables/code or runtime audio parity claims. Use `--mode tvb-reverb` and `python -m skell_vst_decompiler.research_index reports reverb`.

@@ -25,3 +25,7 @@ __pycache__/
 *.gdb
 local/
 work/
+
+# Local Ghidra projects and generated analysis output (never commit pseudocode).
+skell-ghidra-*/
+*.c.txt
