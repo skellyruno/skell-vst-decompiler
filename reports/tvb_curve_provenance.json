@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "binary_sha256": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
+  "source": "TVB Rack V2.vst3",
+  "status": "instruction-verified table provenance and local recurrence; runtime and vendor sound unverified",
+  "checkpoint_count": 68,
+  "copy_word_pairs_verified": 61,
+  "initializer_instruction_count": 144,
+  "runtime_record_count": 34461,
+  "tables": [
+    {
+      "mode": 1,
+      "source_rva": "0xa5ba80",
+      "initializer_rva": "0x5d2c70",
+      "startup_copy_rva": "0x16a50",
+      "destination_rva": "0x77e7cb0",
+      "lookup_rva": "0x5d30b0",
+      "coordinate_origin": -12,
+      "rows": 5,
+      "points_per_row": 61,
+      "total_points": 305,
+      "bytes": 1220,
+      "sha256": "eca5c88cfdcc464c9f6d05e00e4a661639b2ebb6b4e1328ebb08644e40a3e85c",
+      "all_finite": true,
+      "row_shapes": [
+        {
+          "row": 0,
+          "negative_step_count": 5,
+          "flat_step_count": 4
+        },
+        {
+          "row": 1,
+          "negative_step_count": 7,
+          "flat_step_count": 7
+        },
+        {
+          "row": 2,
+          "negative_step_count": 7,
+          "flat_step_count": 8
+        },
+        {
+          "row": 3,
+          "negative_step_count": 6,
+          "flat_step_count": 13
+        },
+        {
+          "row": 4,
+          "negative_step_count": 7,
+          "flat_step_count": 4
+        }
+      ]
+    },
+    {
+      "mode": 2,
+      "source": "immediate stores",
+      "initializer_rva": "0x5d31b0",
+      "startup_copy_rva": "0x16af0",
+      "destination_rva": "0x77e7a40",
+      "lookup_rva": "0x5d1833",
+      "coordinate_origin": -70,
+      "rows": 2,
+      "points_per_row": 77,
+      "total_points": 154,
+      "bytes": 616,
+      "sha256": "f4f8d86b3535df5e56f77d742eb368baef0b9b02bb335fb17ed3e32bdd6b1e46",
+      "all_finite": true,
+      "row_shapes": [
+        {
+          "row": 0,
+          "negative_step_count": 0,
+          "flat_step_count": 18
+        },
+        {
+          "row": 1,
+          "negative_step_count": 0,
+          "flat_step_count": 18
+        }
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "id": "mode1_curve_blend",
+      "start_rva": "0x5d1342",
+      "end_rva_exclusive": "0x5d14aa",
+      "title": "Ratio-indexed interpolation across curve rows",
+      "confidence": "instruction-verified structure",
+      "equation": "Special selector uses row 4. Ordinary selector scales row 0 below anchor 4, interpolates adjacent rows between anchors 4, 8, 12, 20, and selects row 3 above 20; the source field and UI semantics remain unverified.",
+      "containing_range": {
+        "start_rva": "0x5cfa7f",
+        "end_rva_exclusive": "0x5d1fe3",
+        "unwind_rva": "0x775b5c4",
+        "bytes": 9572
+      }
+    },
+    {
+      "id": "mode1_history_release",
+      "start_rva": "0x5d14aa",
+      "end_rva_exclusive": "0x5d15af",
+      "title": "Mode 1 nonlinear target and coupled recovery",
+      "confidence": "instruction-verified structure",
+      "equation": "Nonlinear target uses exp and optional pow. Primary state Q at 0x210 rises using attack coefficient and falls with coefficient b/(1+k*H). Secondary history H at 0x214 smooths a transformed log1p output, which is coupled back into target and release. Full parameter scaling unresolved.",
+      "containing_range": {
+        "start_rva": "0x5cfa7f",
+        "end_rva_exclusive": "0x5d1fe3",
+        "unwind_rva": "0x775b5c4",
+        "bytes": 9572
+      }
+    },
+    {
+      "id": "mode2_nonlinear_attack",
+      "start_rva": "0x5d18d6",
+      "end_rva_exclusive": "0x5d1946",
+      "title": "Reduction-dependent exponential attack increment",
+      "confidence": "instruction-verified local recurrence",
+      "equation": "For target C > prior G, delta=C-G; G_new=G+min(delta, A*(1-exp(-delta/B))*exp(-G/D)), with positive setup-dependent A,B,D.",
+      "containing_range": {
+        "start_rva": "0x5cfa7f",
+        "end_rva_exclusive": "0x5d1fe3",
+        "unwind_rva": "0x775b5c4",
+        "bytes": 9572
+      }
+    },
+    {
+      "id": "mode2_adaptive_release",
+      "start_rva": "0x5d1946",
+      "end_rva_exclusive": "0x5d1a52",
+      "title": "State- and target-dependent release",
+      "confidence": "instruction-verified structure",
+      "equation": "G_new=G+min(1, step/tau(G,C,H))*(C-G); tau=clamp(a*(max(0.05,G)/10)^(-p)*(1+k*H)/(1+max(C,0)/max(d,0.1)), lo, hi); selected constants a,p,k,d,lo,hi not mapped to UI.",
+      "containing_range": {
+        "start_rva": "0x5cfa7f",
+        "end_rva_exclusive": "0x5d1fe3",
+        "unwind_rva": "0x775b5c4",
+        "bytes": 9572
+      }
+    },
+    {
+      "id": "mode2_history",
+      "start_rva": "0x5d1a52",
+      "end_rva_exclusive": "0x5d1a90",
+      "title": "Secondary history state",
+      "confidence": "instruction-verified local recurrence",
+      "equation": "H_new=H+alpha*(0.05*G_new-H); primary reduction G_new stored in 0xd48 and 0x204; H stored in 0xd4c.",
+      "containing_range": {
+        "start_rva": "0x5cfa7f",
+        "end_rva_exclusive": "0x5d1fe3",
+        "unwind_rva": "0x775b5c4",
+        "bytes": 9572
+      }
+    }
+  ],
+  "limits": [
+    "No vendor table values or raw instructions exported; table hashes prove reproducibility.",
+    "Static initialization verified, later runtime mutations not excluded.",
+    "No UI mode names, full parameter mapping, measured audio or VMR gain law established."
+  ]
+}

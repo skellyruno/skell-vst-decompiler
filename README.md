@@ -6,7 +6,7 @@ Private **read-only native binary DSP research** for Skelliere and the Skell aud
 
 The supplied `TVB Rack V2.vst3` (SHA-256 `cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9`) contains a native compressor processing branch starting at RVA `0x5D07BF`. Eleven x64 instruction/address/operand checks confirm one **transposed direct-form II biquad** (`y=b0*x+z1`, `z1'=b1*x-a1*y+z2`, `z2'=b2*x-a2*y`). An additional structural check confirms **24 repeated sections** with five adjacent coefficients and two channel-specific state floats per section. The per-channel state stride is 192 bytes (`24 × 2 × 4`). See [`docs/TVB_COMPRESSOR_BIQUAD_24.md`](docs/TVB_COMPRESSOR_BIQUAD_24.md).
 
-**Limits:** We have not proven whether all stages process the audible signal or the detector, nor recovered cutoff/Q assignments or a complete compressor gain computer. This is static analysis of native instructions, not measured TVB or VMR sound. A 24-section code motif does not establish a one-to-one mapping to TVB's 24 dynamic EQ controls.
+**Updated finding:** these are six groups of four in a detector branch, not a serial audio EQ. Cutoff/Q assignments remain unknown. Conventional gain computation and parts of the alternate modes are documented below. This is static analysis of native instructions, not measured TVB or VMR sound. A 24-section code motif does not establish a one-to-one mapping to TVB's 24 dynamic EQ controls.
 
 ### Confirmed compressor coefficient-setup math calls
 
@@ -38,7 +38,7 @@ All vendor binaries, decoded resources, extracted commercial code, licenses and 
 
 ## Dynamics equation index (new)
 
-The conventional compressor target knee, attack/release recurrence, dual recovery, gain conversion, and six-group detector topology are now supported by exact-build native evidence. **Correction:** the earlier 24 filter motifs are six groups of four feeding six independent peak/power states, not one serial 24-stage audio EQ. Alternate gain-curve interpolation is identified; runtime curve values remain unknown. [Full dynamics research](docs/TVB_DYNAMICS_EQUATIONS.md).
+The conventional compressor target knee, attack/release recurrence, dual recovery, gain conversion, and six-group detector topology are now supported by exact-build native evidence. **Correction:** the earlier 24 filter motifs are six groups of four feeding six independent peak/power states, not one serial 24-stage audio EQ. Alternate gain-curve interpolation and static initialization are now verified; later runtime mutation remains unknown. [Full dynamics research](docs/TVB_DYNAMICS_EQUATIONS.md).
 
 ```bash
 python -m skell_vst_decompiler "TVB Rack V2.vst3" --mode tvb-dynamics --out local/dynamics.json
@@ -48,3 +48,7 @@ python -m skell_vst_decompiler "FG-116.epl" --mode dispatch --rva 0x6f740 --entr
 ```
 
 The catalog can be searched offline by keyword or hexadecimal RVA. It includes region byte fingerprints, source file offsets, equation summaries, confidence and linked checkpoint/constant/call addresses. Generic dispatch inspection samples bounded static entries, not a live selector or a verified vendor audio algorithm. Never execute or patch vendor binaries. No runtime plugin tests are implied by static evidence.
+
+## Alternate dynamics and function navigation
+
+[New table-provenance and adaptive recovery report](docs/TVB_ALTERNATE_DYNAMICS.md). `--mode tvb-curves` verifies the exact build, both table initialization paths (459 finite points), curve row interpolation, mode-1 coupled recovery and mode-2 nonlinear attack/history release. It emits hashes and structural summaries, never original table arrays. `--mode function --rva 0x5d18d6` maps an address to its compiler unwind range; `--mode xref --rva 0x16a50 --bytes 337 --target 0x77e7a40 --target-bytes 616` locates a table initializer reference. Generic navigation also works with supplied VMR binaries. No vendor audio execution or complete algorithm parity is implied.

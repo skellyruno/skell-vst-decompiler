@@ -43,7 +43,9 @@ class PE:
         if section_count < 1 or section_count > 96 or optional_size < 0x70:
             raise PEFormatError("Unexpected section count or optional header")
         self.image_base = self._unpack("<Q", optional_offset+24)[0]
+        directory_count = self._unpack("<I",optional_offset+108)[0]
         self.import_directory_rva = self._unpack("<I",optional_offset+120)[0] if optional_size>=128 else 0
+        self.exception_directory = self._unpack("<II",optional_offset+136) if optional_size>=144 and directory_count>=4 else (0,0)
         section_start = optional_offset + optional_size
         if section_start + section_count*40 > len(b):
             raise PEFormatError("Truncated section table")

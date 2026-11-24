@@ -1,0 +1,76 @@
+[
+  {
+    "module": "AirEQAir.epl",
+    "sha256": "c75499749848d64aa9a72298204087d5a78f685e7d960beacecd6644d9e3136b",
+    "runtime_records": 21418,
+    "dispatch_ranges": []
+  },
+  {
+    "module": "CS-EQ.epl",
+    "sha256": "a4a8c92d6ea80acc16a314b23cf727c0bd86cb92a40351efb03f6892605571d0",
+    "runtime_records": 19499,
+    "dispatch_ranges": []
+  },
+  {
+    "module": "FG-116 Modern.epl",
+    "sha256": "6782b73fb9d4a3c1dade5406fe6ea1bead30699529082ea9f9a8dfe04056a664",
+    "runtime_records": 20150,
+    "dispatch_ranges": []
+  },
+  {
+    "module": "FG-116.epl",
+    "sha256": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+    "runtime_records": 20110,
+    "dispatch_ranges": [
+      {
+        "rva": "0x6f740",
+        "containing_range": null
+      },
+      {
+        "rva": "0x6f780",
+        "containing_range": null
+      },
+      {
+        "rva": "0x6f7a0",
+        "containing_range": null
+      }
+    ]
+  },
+  {
+    "module": "FG-2A.epl",
+    "sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+    "runtime_records": 19781,
+    "dispatch_ranges": [
+      {
+        "rva": "0x6f740",
+        "containing_range": null
+      },
+      {
+        "rva": "0x6f780",
+        "containing_range": null
+      },
+      {
+        "rva": "0x6f7a0",
+        "containing_range": null
+      }
+    ]
+  },
+  {
+    "module": "FG-401.epl",
+    "sha256": "0cc3444f095ccf4aa751f653e6aceb484d7bfaea73df30ccb68a7f2fccf46ef6",
+    "runtime_records": 20020,
+    "dispatch_ranges": []
+  },
+  {
+    "module": "FG-Stress.epl",
+    "sha256": "2509a6f3480481feb15a0fde97abcb4acccfc6fc936f55f5e8c88b7c98edcd26",
+    "runtime_records": 20224,
+    "dispatch_ranges": []
+  },
+  {
+    "module": "VCC Channel.epl",
+    "sha256": "73747020e8996938b8e6fdff51004cff4ea85c95f992cbc8bc0d0896a80aad87",
+    "runtime_records": 20481,
+    "dispatch_ranges": []
+  }
+]
