@@ -1,0 +1,740 @@
+{
+  "schema_version": 1,
+  "source": "FG-2A.epl",
+  "binary_sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+  "regions": [
+    {
+      "id": "fg2a_initializer_object",
+      "title": "FG-2A initializer and processing subobject link",
+      "equation": "Setup calls coefficient initializer with parent subobject +0x1360; a separate subobject at +0x590 has a different initializer.",
+      "confidence": "exact-build static evidence; runtime dispatch unverified",
+      "direct_calls": [
+        {
+          "site_rva": "0x142358",
+          "target_rva": "0x19b970"
+        },
+        {
+          "site_rva": "0x14237b",
+          "target_rva": "0x142c20"
+        },
+        {
+          "site_rva": "0x142387",
+          "target_rva": "0x1423a0"
+        }
+      ],
+      "checkpoint_rvas": [
+        "0x142352",
+        "0x142374",
+        "0x14237b",
+        "0x142380",
+        "0x142387"
+      ],
+      "start_rva": "0x142340",
+      "end_rva_exclusive": "0x14239f",
+      "sha256": "cb2cc2e67453af25e352eb24d731b21dcd4845c7cfc5fc42dbd941e6bacc961f",
+      "checkpoint_count": 5,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_processing_object",
+      "title": "FG-2A processing subobject argument",
+      "equation": "The processing caller passes parent subobject +0x1360 through the first context slot to 0x14d590.",
+      "confidence": "exact-build static evidence; runtime dispatch unverified",
+      "direct_calls": [
+        {
+          "site_rva": "0x156f2d",
+          "target_rva": "0xd38dc4"
+        },
+        {
+          "site_rva": "0x156f45",
+          "target_rva": "0xd38dc4"
+        },
+        {
+          "site_rva": "0x156f4f",
+          "target_rva": "0x14d590"
+        }
+      ],
+      "checkpoint_rvas": [
+        "0x156f04",
+        "0x156f0b",
+        "0x156f4a",
+        "0x156f4f"
+      ],
+      "start_rva": "0x156f00",
+      "end_rva_exclusive": "0x156f54",
+      "sha256": "10984fe7e090e3e4cdb9671e04d2cd085f232c1125025946445a2902b2e41a85",
+      "checkpoint_count": 4,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_processing_context",
+      "title": "FG-2A coefficient base and channel count",
+      "equation": "RBX is the supplied subobject pointer; the processing loop copies two streams and uses twice the per-stream sample count for vector operations.",
+      "confidence": "exact-build static evidence; runtime dispatch unverified",
+      "direct_calls": [
+        {
+          "site_rva": "0x14d610",
+          "target_rva": "0x6f740"
+        }
+      ],
+      "checkpoint_rvas": [
+        "0x14d5bd",
+        "0x14d5c8",
+        "0x14d5d8",
+        "0x14d5dc",
+        "0x14d617",
+        "0x14d61a"
+      ],
+      "start_rva": "0x14d5bd",
+      "end_rva_exclusive": "0x14d61c",
+      "sha256": "9a30d92865d384329ea4cc0c0be0442984388125c691798104996ad7a9778c66",
+      "checkpoint_count": 6,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_weight_base",
+      "title": "FG-2A logarithmic calibration base",
+      "equation": "A static initialization path computes ln(10)*0.05 and writes it to shared calibration scalar 0x10364d0.",
+      "confidence": "exact-build static evidence; runtime dispatch unverified",
+      "direct_calls": [
+        {
+          "site_rva": "0x1425be",
+          "target_rva": "0xd37ca8"
+        },
+        {
+          "site_rva": "0x1425cf",
+          "target_rva": "0xd38e3c"
+        },
+        {
+          "site_rva": "0x1425e7",
+          "target_rva": "0xd37c48"
+        }
+      ],
+      "checkpoint_rvas": [
+        "0x1425cc",
+        "0x1425cf",
+        "0x1425d4",
+        "0x1425df",
+        "0x1425ec"
+      ],
+      "start_rva": "0x1425b7",
+      "end_rva_exclusive": "0x1425ee",
+      "sha256": "9945c44297e993aa2ac55abc04bebd65dfc38f7b27ceb6500d5f6321b943977b",
+      "checkpoint_count": 5,
+      "math_call_count": 1
+    },
+    {
+      "id": "fg2a_weight_initializer",
+      "title": "FG-2A nine polynomial calibration weights",
+      "equation": "Nine scalar weights follow signed exp(ln(10)*0.05*d), equivalently signed 10^(d/20), with file-backed dB calibrations. Actual runtime updates not excluded.",
+      "confidence": "exact-build static evidence; runtime dispatch unverified",
+      "direct_calls": [
+        {
+          "site_rva": "0x142409",
+          "target_rva": "0xd38e54"
+        },
+        {
+          "site_rva": "0x142435",
+          "target_rva": "0xd38e54"
+        },
+        {
+          "site_rva": "0x14246f",
+          "target_rva": "0xd38e54"
+        },
+        {
+          "site_rva": "0x1424a0",
+          "target_rva": "0xd38e54"
+        },
+        {
+          "site_rva": "0x1424cc",
+          "target_rva": "0xd38e54"
+        },
+        {
+          "site_rva": "0x1424fd",
+          "target_rva": "0xd38e54"
+        },
+        {
+          "site_rva": "0x14252e",
+          "target_rva": "0xd38e54"
+        },
+        {
+          "site_rva": "0x14255f",
+          "target_rva": "0xd38e54"
+        },
+        {
+          "site_rva": "0x142587",
+          "target_rva": "0xd38e54"
+        }
+      ],
+      "checkpoint_rvas": [
+        "0x1423c6",
+        "0x1423d7",
+        "0x14243a",
+        "0x1423f9",
+        "0x142401",
+        "0x142409",
+        "0x14240e",
+        "0x142425",
+        "0x14242d",
+        "0x142435",
+        "0x142448",
+        "0x142443",
+        "0x14245f",
+        "0x142467",
+        "0x14246f",
+        "0x142479",
+        "0x142474",
+        "0x142490",
+        "0x142498",
+        "0x1424a0",
+        "0x1424a5",
+        "0x1424bc",
+        "0x1424c4",
+        "0x1424cc",
+        "0x1424d6",
+        "0x1424d1",
+        "0x1424ed",
+        "0x1424f5",
+        "0x1424fd",
+        "0x142507",
+        "0x142502",
+        "0x14251e",
+        "0x142526",
+        "0x14252e",
+        "0x142538",
+        "0x142533",
+        "0x14254f",
+        "0x142557",
+        "0x14255f",
+        "0x142564",
+        "0x142577",
+        "0x14257f",
+        "0x142587",
+        "0x1425a4"
+      ],
+      "start_rva": "0x1423a0",
+      "end_rva_exclusive": "0x1425b7",
+      "sha256": "5800c04feae2c41e91e2a84cd859788d6f1fc817c989a70558d7ca50a33d6e2a",
+      "checkpoint_count": 44,
+      "math_call_count": 9
+    },
+    {
+      "id": "fg2a_odd_order_terms",
+      "title": "FG-2A odd-power parallel branch",
+      "equation": "Previously computed v^2 combines with v to form v^3, v^5, v^7. The inspected vector paths scale and sum v^3/v^7, then scale the sum and add to a filtered branch. v^5 is formed but its final use is not established here.",
+      "confidence": "exact-build static evidence; runtime dispatch unverified",
+      "direct_calls": [
+        {
+          "site_rva": "0x14dd86",
+          "target_rva": "0x6f7e0"
+        },
+        {
+          "site_rva": "0x14dda3",
+          "target_rva": "0x6f8a0"
+        },
+        {
+          "site_rva": "0x14ddc0",
+          "target_rva": "0x6f8a0"
+        },
+        {
+          "site_rva": "0x14dddb",
+          "target_rva": "0x6f8a0"
+        },
+        {
+          "site_rva": "0x14ddf0",
+          "target_rva": "0x6f7e0"
+        },
+        {
+          "site_rva": "0x14de07",
+          "target_rva": "0x6f7e0"
+        },
+        {
+          "site_rva": "0x14de1b",
+          "target_rva": "0x6f840"
+        },
+        {
+          "site_rva": "0x14de32",
+          "target_rva": "0x6f7e0"
+        },
+        {
+          "site_rva": "0x14de48",
+          "target_rva": "0x6f840"
+        },
+        {
+          "site_rva": "0x14de5f",
+          "target_rva": "0x6f7e0"
+        }
+      ],
+      "checkpoint_rvas": [
+        "0x14dd74",
+        "0x14dd86",
+        "0x14dd95",
+        "0x14dd9c",
+        "0x14dda3",
+        "0x14ddb2",
+        "0x14ddb9",
+        "0x14ddc0",
+        "0x14ddcd",
+        "0x14ddd4",
+        "0x14dddb",
+        "0x14dde0",
+        "0x14ddf5",
+        "0x14de1b",
+        "0x14de20",
+        "0x14de32",
+        "0x14de48"
+      ],
+      "start_rva": "0x14dd74",
+      "end_rva_exclusive": "0x14de64",
+      "sha256": "d0f060298dc8be4fc580e4c9f7c38f7917e61cbcf79b8574d7e601e52333fb9f",
+      "checkpoint_count": 17,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_second_filter",
+      "title": "FG-2A additional stereo DF2T bank",
+      "equation": "Two independent DF2T state pairs share coefficients at 0x3d0/3d8/3e0/3f0/3f8. Standard y=b0*x+z1, z1_next=b1*x-a1*y+z2, z2_next=b2*x-a2*y. Frequency calibration unresolved.",
+      "confidence": "exact-build static evidence; runtime dispatch unverified",
+      "direct_calls": [],
+      "checkpoint_rvas": [
+        "0x14dc9f",
+        "0x14dca7",
+        "0x14dcb8",
+        "0x14dcc0",
+        "0x14dcc8",
+        "0x14dcd0",
+        "0x14dcd4",
+        "0x14dcdc",
+        "0x14dce4",
+        "0x14dcf5",
+        "0x14dcf9",
+        "0x14dd16",
+        "0x14dd3f",
+        "0x14dd63"
+      ],
+      "start_rva": "0x14dc90",
+      "end_rva_exclusive": "0x14dd74",
+      "sha256": "f4973c6bbfb0512bb7b7ee5ddd0e7b422860e6f678ec15648b94a495b83db8dd",
+      "checkpoint_count": 14,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_scalar_offset",
+      "title": "FG-2A scalar addition candidate",
+      "equation": "Inspected scalar helper: dst=src+offset.",
+      "confidence": "exact-build static evidence; runtime dispatch unverified",
+      "direct_calls": [],
+      "checkpoint_rvas": [
+        "0x71c09",
+        "0x71c0e",
+        "0x71c12"
+      ],
+      "start_rva": "0x71c09",
+      "end_rva_exclusive": "0x71c18",
+      "sha256": "de1a4e97ab9d45026189acd393fd71668be9dead02023ab28ecfdd2afc77895e",
+      "checkpoint_count": 3,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_division",
+      "title": "FG-2A vector division candidate",
+      "equation": "Inspected scalar helper: dst=second/first for finite nonzero denominator. Exceptional denominator handling is outside this equation.",
+      "confidence": "exact-build static evidence; runtime dispatch unverified",
+      "direct_calls": [],
+      "checkpoint_rvas": [
+        "0x739fa",
+        "0x739ff",
+        "0x73a05",
+        "0x73a0b",
+        "0x73a0d",
+        "0x73a11"
+      ],
+      "start_rva": "0x739fa",
+      "end_rva_exclusive": "0x73a19",
+      "sha256": "297e0fd53da33cf5a29ab13d6cc8e570e2c880d79db77bd76b84c2ce806339ab",
+      "checkpoint_count": 6,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_symmetric_clip",
+      "title": "FG-2A symmetric clipping candidate",
+      "equation": "Inspected scalar helper: dst=clamp(src,-limit,+limit), finite limit >= 0.",
+      "confidence": "exact-build static evidence; runtime dispatch unverified",
+      "direct_calls": [],
+      "checkpoint_rvas": [
+        "0x7128e",
+        "0x71292",
+        "0x71298",
+        "0x7129d",
+        "0x712aa",
+        "0x712af",
+        "0x712b3"
+      ],
+      "start_rva": "0x7128a",
+      "end_rva_exclusive": "0x712c3",
+      "sha256": "211166c29042290b49c3ad33b015d187a742f443b3e2a1a6d370287dba6f727b",
+      "checkpoint_count": 7,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_subtract",
+      "title": "FG-2A vector difference candidate",
+      "equation": "Inspected scalar helper: dst=second-first.",
+      "confidence": "exact-build static evidence; runtime dispatch unverified",
+      "direct_calls": [],
+      "checkpoint_rvas": [
+        "0x730a1",
+        "0x730a7",
+        "0x730ad"
+      ],
+      "start_rva": "0x730a1",
+      "end_rva_exclusive": "0x730b3",
+      "sha256": "d21256ed2ec0ee1c78eab6047aaf7a53499c2fc1a7f44e92f52ce802221bec76",
+      "checkpoint_count": 3,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_rational_stage",
+      "title": "FG-2A local biased rational transform",
+      "equation": "On the inspected scalar dispatch path for finite input/nonzero denominator/nonnegative limit: u=x+offset_in; numerator=A*u^3+B*u; denominator=u^2+C; dst=clamp(numerator/denominator,-limit,limit)+offset_out. Six coefficient fields in argument record at +0/+8/+0x10/+0x20/+0x28/+0x30. Runtime coefficient origins and dispatch unverified.",
+      "confidence": "exact-build static evidence; runtime dispatch unverified",
+      "direct_calls": [
+        {
+          "site_rva": "0x14216c",
+          "target_rva": "0x6f800"
+        },
+        {
+          "site_rva": "0x142180",
+          "target_rva": "0x75f40"
+        },
+        {
+          "site_rva": "0x14219b",
+          "target_rva": "0x6f8a0"
+        },
+        {
+          "site_rva": "0x1421b5",
+          "target_rva": "0x6f820"
+        },
+        {
+          "site_rva": "0x1422c8",
+          "target_rva": "0x6f800"
+        },
+        {
+          "site_rva": "0x1422e5",
+          "target_rva": "0x6f8c0"
+        },
+        {
+          "site_rva": "0x142300",
+          "target_rva": "0x6f7c0"
+        },
+        {
+          "site_rva": "0x142317",
+          "target_rva": "0x6f800"
+        }
+      ],
+      "checkpoint_rvas": [
+        "0x142132",
+        "0x142135",
+        "0x142152",
+        "0x14216c",
+        "0x142180",
+        "0x14219b",
+        "0x1421a0",
+        "0x1421b5",
+        "0x1421ba",
+        "0x14229b",
+        "0x1422a0",
+        "0x1422a4",
+        "0x1422b2",
+        "0x1422c8",
+        "0x1422e5",
+        "0x1422ea",
+        "0x142300",
+        "0x142305",
+        "0x142314",
+        "0x142317"
+      ],
+      "start_rva": "0x142110",
+      "end_rva_exclusive": "0x142335",
+      "sha256": "db042e066d5ca7f37029358eed760f622cedfafb4a6294e97f5404830204f903",
+      "checkpoint_count": 20,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_rational_consumers",
+      "title": "FG-2A two rational transform callsites",
+      "equation": "The filtered even-order sum is combined with a weighted squared term, then passed to a rational transform with parameter record +0x238. This verifies a second-order contribution in addition to the previous fourth/sixth/eighth-order polynomial.",
+      "confidence": "exact-build static evidence; runtime dispatch unverified",
+      "direct_calls": [
+        {
+          "site_rva": "0x14dc45",
+          "target_rva": "0x6f820"
+        },
+        {
+          "site_rva": "0x14dc59",
+          "target_rva": "0x6f840"
+        },
+        {
+          "site_rva": "0x14dc74",
+          "target_rva": "0x142110"
+        }
+      ],
+      "checkpoint_rvas": [
+        "0x14dc2c",
+        "0x14dc45",
+        "0x14dc59",
+        "0x14dc5e",
+        "0x14dc65",
+        "0x14dc68",
+        "0x14dc6d",
+        "0x14dc74"
+      ],
+      "start_rva": "0x14dc2c",
+      "end_rva_exclusive": "0x14dc79",
+      "sha256": "db3f6876181786e34e5faaa42664c43bc8c1e44dc2dec2fcfa9f9b8da653c0f5",
+      "checkpoint_count": 8,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_branch_merge",
+      "title": "FG-2A later branch merge and second rational transform",
+      "equation": "A second rational transform uses record +0x270. Its output is differenced against the preceding stream and added into another scratch branch on the inspected helper paths. This is not the final audio gain law.",
+      "confidence": "exact-build static evidence; runtime dispatch unverified",
+      "direct_calls": [
+        {
+          "site_rva": "0x14e05d",
+          "target_rva": "0x6f840"
+        },
+        {
+          "site_rva": "0x14e078",
+          "target_rva": "0x142110"
+        },
+        {
+          "site_rva": "0x14e093",
+          "target_rva": "0x6f880"
+        },
+        {
+          "site_rva": "0x14e0a9",
+          "target_rva": "0x6f840"
+        }
+      ],
+      "checkpoint_rvas": [
+        "0x14e05d",
+        "0x14e062",
+        "0x14e06c",
+        "0x14e073",
+        "0x14e078",
+        "0x14e087",
+        "0x14e08c",
+        "0x14e093",
+        "0x14e0a9"
+      ],
+      "start_rva": "0x14e04e",
+      "end_rva_exclusive": "0x14e0ae",
+      "sha256": "0b0f1ede288c567628fca74284a824aeb24461f600af3eb8785fb92a6cb2e50e",
+      "checkpoint_count": 9,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_weight_consumers",
+      "title": "FG-2A nine initialized weight read endpoints",
+      "equation": "All nine initialized weight fields are read from the linked subobject in this candidate. The last endpoint (0x580) scales the fourth-power scratch stream. A matching read is not proof that every path is executed in a live plugin.",
+      "confidence": "exact-build static evidence; runtime dispatch unverified",
+      "direct_calls": [
+        {
+          "site_rva": "0x14dacb",
+          "target_rva": "0x6f7e0"
+        },
+        {
+          "site_rva": "0x14dae2",
+          "target_rva": "0x6f7e0"
+        },
+        {
+          "site_rva": "0x14daf6",
+          "target_rva": "0x6f840"
+        },
+        {
+          "site_rva": "0x14db14",
+          "target_rva": "0x6f820"
+        },
+        {
+          "site_rva": "0x14db28",
+          "target_rva": "0x6f840"
+        },
+        {
+          "site_rva": "0x14dc45",
+          "target_rva": "0x6f820"
+        },
+        {
+          "site_rva": "0x14dc59",
+          "target_rva": "0x6f840"
+        },
+        {
+          "site_rva": "0x14dc74",
+          "target_rva": "0x142110"
+        },
+        {
+          "site_rva": "0x14dd86",
+          "target_rva": "0x6f7e0"
+        },
+        {
+          "site_rva": "0x14dda3",
+          "target_rva": "0x6f8a0"
+        },
+        {
+          "site_rva": "0x14ddc0",
+          "target_rva": "0x6f8a0"
+        },
+        {
+          "site_rva": "0x14dddb",
+          "target_rva": "0x6f8a0"
+        },
+        {
+          "site_rva": "0x14ddf0",
+          "target_rva": "0x6f7e0"
+        },
+        {
+          "site_rva": "0x14de07",
+          "target_rva": "0x6f7e0"
+        },
+        {
+          "site_rva": "0x14de1b",
+          "target_rva": "0x6f840"
+        },
+        {
+          "site_rva": "0x14de32",
+          "target_rva": "0x6f7e0"
+        },
+        {
+          "site_rva": "0x14de48",
+          "target_rva": "0x6f840"
+        },
+        {
+          "site_rva": "0x14de5f",
+          "target_rva": "0x6f7e0"
+        }
+      ],
+      "checkpoint_rvas": [
+        "0x14dc2c",
+        "0x14ddf5",
+        "0x14dafb",
+        "0x14dad0",
+        "0x14dde0",
+        "0x14dabb",
+        "0x14de4d",
+        "0x14dd74",
+        "0x14de20",
+        "0x14de55",
+        "0x14de5f"
+      ],
+      "start_rva": "0x14dabb",
+      "end_rva_exclusive": "0x14de64",
+      "sha256": "851d64e96d354284deb08f0787bd6e48d74f787db008b4df0fc5dfde17a7235f",
+      "checkpoint_count": 11,
+      "math_call_count": 0
+    },
+    {
+      "id": "fg2a_local_output_merge",
+      "title": "FG-2A candidate local clipping and output handoff",
+      "equation": "Inspected scalar candidates clamp a local filtered branch, add the saved input scratch stream, copy two buffers, and pass a context to 0x14f340. That downstream routine and final plugin output remain unresolved.",
+      "confidence": "exact-build static evidence; runtime dispatch unverified",
+      "direct_calls": [
+        {
+          "site_rva": "0x14e1c8",
+          "target_rva": "0x6f7c0"
+        },
+        {
+          "site_rva": "0x14e1dc",
+          "target_rva": "0x6f840"
+        },
+        {
+          "site_rva": "0x14e22c",
+          "target_rva": "0x6f740"
+        },
+        {
+          "site_rva": "0x14e279",
+          "target_rva": "0xd38dc4"
+        },
+        {
+          "site_rva": "0x14e29a",
+          "target_rva": "0xd38dc4"
+        },
+        {
+          "site_rva": "0x14e2a6",
+          "target_rva": "0x14f340"
+        }
+      ],
+      "checkpoint_rvas": [
+        "0x14e1b6",
+        "0x14e1b9",
+        "0x14e1c1",
+        "0x14e1c8",
+        "0x14e1d0",
+        "0x14e1d5",
+        "0x14e1dc",
+        "0x14e22c",
+        "0x14e233",
+        "0x14e236",
+        "0x14e2a6"
+      ],
+      "start_rva": "0x14e1b6",
+      "end_rva_exclusive": "0x14e2ab",
+      "sha256": "b6bf3d92126c1719763b8aded4f329c7d91822bdb33d91cdef8fc12f0cf76079",
+      "checkpoint_count": 11,
+      "math_call_count": 0
+    }
+  ],
+  "weight_origins_verified": 9,
+  "weight_origins_total": 9,
+  "weight_consumer_endpoints_verified": 9,
+  "weight_links": [
+    {
+      "field": "0x550",
+      "initializer_store_rva": "0x14240e",
+      "consumer_read_rva": "0x14dc2c"
+    },
+    {
+      "field": "0x558",
+      "initializer_store_rva": "0x142448",
+      "consumer_read_rva": "0x14ddf5"
+    },
+    {
+      "field": "0x560",
+      "initializer_store_rva": "0x142479",
+      "consumer_read_rva": "0x14dafb"
+    },
+    {
+      "field": "0x568",
+      "initializer_store_rva": "0x1424a5",
+      "consumer_read_rva": "0x14dad0"
+    },
+    {
+      "field": "0x570",
+      "initializer_store_rva": "0x1424d6",
+      "consumer_read_rva": "0x14dde0"
+    },
+    {
+      "field": "0x578",
+      "initializer_store_rva": "0x142507",
+      "consumer_read_rva": "0x14dabb"
+    },
+    {
+      "field": "0x580",
+      "initializer_store_rva": "0x142538",
+      "consumer_read_rva": "0x14de4d"
+    },
+    {
+      "field": "0x588",
+      "initializer_store_rva": "0x142564",
+      "consumer_read_rva": "0x14dd74"
+    },
+    {
+      "field": "0x590",
+      "initializer_store_rva": "0x1425a4",
+      "consumer_read_rva": "0x14de20"
+    }
+  ],
+  "calibration_source_sha256": "c89334aa7a576e8366bad0c8f902a37d285c010bb84934cf31b919c3cded494c",
+  "checkpoint_count": 173,
+  "limits": "Only nine weights in this initializer; not a percentage of all FG-2A DSP. No raw dB values or reconstructed processor exported. Runtime dispatch and full gain law unverified."
+}

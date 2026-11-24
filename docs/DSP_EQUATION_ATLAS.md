@@ -2,7 +2,7 @@
 
 Overlapping local evidence, not an algorithm-completeness count. Calls are static decoded references, not proven runtime edges. Unmatched targets are unresolved in this catalog, not necessarily unknown functions. No vendor implementation or raw coefficient arrays.
 
-**95 evidence records across 4 exact binary fingerprints.**
+**111 evidence records across 4 exact binary fingerprints.**
 
 ## FG-116.epl
 
@@ -105,7 +105,7 @@ The scalar retention argument comes from the object at r15+0x10; output scratch 
 
 ## FG-2A.epl
 
-SHA-256: `6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573` — 17 records.
+SHA-256: `6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573` — 33 records.
 
 ### Vector sum dispatch
 
@@ -115,6 +115,14 @@ SHA-256: `6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573` — 
 
 Seven inspected slots resolve to four entry points. Selected runtime slot unknown; all four candidate entries lead to vector addition.
 
+### FG-2A symmetric clipping candidate
+
+- **RVA:** `0x7128a–0x712c3` (end exclusive)
+- **Evidence:** `vmr_fg2a_coefficient_provenance.json::fg2a_symmetric_clip`
+- **Confidence:** exact-build static evidence; runtime dispatch unverified
+
+Inspected scalar helper: dst=clamp(src,-limit,+limit), finite limit >= 0.
+
 ### In-place scalar multiply
 
 - **RVA:** `0x7173d–0x7174e` (end exclusive)
@@ -122,6 +130,14 @@ Seven inspected slots resolve to four entry points. Selected runtime slot unknow
 - **Confidence:** instruction-verified local arithmetic; runtime dispatch unverified
 
 dst*=scalar for inspected first dispatch slot; other slots not established.
+
+### FG-2A scalar addition candidate
+
+- **RVA:** `0x71c09–0x71c18` (end exclusive)
+- **Evidence:** `vmr_fg2a_coefficient_provenance.json::fg2a_scalar_offset`
+- **Confidence:** exact-build static evidence; runtime dispatch unverified
+
+Inspected scalar helper: dst=src+offset.
 
 ### Out-of-place scalar multiply
 
@@ -163,6 +179,14 @@ Wrapper calls vector arithmetic helper.
 
 Both AVX candidate paths also perform addition. Not a distinct nonlinear compression algorithm.
 
+### FG-2A vector difference candidate
+
+- **RVA:** `0x730a1–0x730b3` (end exclusive)
+- **Evidence:** `vmr_fg2a_coefficient_provenance.json::fg2a_subtract`
+- **Confidence:** exact-build static evidence; runtime dispatch unverified
+
+Inspected scalar helper: dst=second-first.
+
 ### Vector multiply
 
 - **RVA:** `0x73571–0x73583` (end exclusive)
@@ -170,6 +194,14 @@ Both AVX candidate paths also perform addition. Not a distinct nonlinear compres
 - **Confidence:** instruction-verified local arithmetic; runtime dispatch unverified
 
 dst=src1*src2 for inspected first dispatch slot; other slots not established.
+
+### FG-2A vector division candidate
+
+- **RVA:** `0x739fa–0x73a19` (end exclusive)
+- **Evidence:** `vmr_fg2a_coefficient_provenance.json::fg2a_division`
+- **Confidence:** exact-build static evidence; runtime dispatch unverified
+
+Inspected scalar helper: dst=second/first for finite nonzero denominator. Exceptional denominator handling is outside this equation.
 
 ### Scalar/packed sum helper
 
@@ -200,6 +232,85 @@ Static direct call references:
 - `0x76a38` → `0xd38410`: not covered in catalog
 - `0x76a5e` → `0xd38410`: not covered in catalog
 - `0x76a87` → `0xd38410`: not covered in catalog
+
+### FG-2A local biased rational transform
+
+- **RVA:** `0x142110–0x142335` (end exclusive)
+- **Evidence:** `vmr_fg2a_coefficient_provenance.json::fg2a_rational_stage`
+- **Confidence:** exact-build static evidence; runtime dispatch unverified
+
+On the inspected scalar dispatch path for finite input/nonzero denominator/nonnegative limit: u=x+offset_in; numerator=A*u^3+B*u; denominator=u^2+C; dst=clamp(numerator/denominator,-limit,limit)+offset_out. Six coefficient fields in argument record at +0/+8/+0x10/+0x20/+0x28/+0x30. Runtime coefficient origins and dispatch unverified.
+
+Static direct call references:
+
+- `0x14216c` → `0x6f800`: not covered in catalog
+- `0x142180` → `0x75f40`: `vmr_nonlinear_paths.json::fg2a_square_dispatch`
+- `0x14219b` → `0x6f8a0`: not covered in catalog
+- `0x1421b5` → `0x6f820`: not covered in catalog
+- `0x1422c8` → `0x6f800`: not covered in catalog
+- `0x1422e5` → `0x6f8c0`: not covered in catalog
+- `0x142300` → `0x6f7c0`: not covered in catalog
+- `0x142317` → `0x6f800`: not covered in catalog
+
+### FG-2A initializer and processing subobject link
+
+- **RVA:** `0x142340–0x14239f` (end exclusive)
+- **Evidence:** `vmr_fg2a_coefficient_provenance.json::fg2a_initializer_object`
+- **Confidence:** exact-build static evidence; runtime dispatch unverified
+
+Setup calls coefficient initializer with parent subobject +0x1360; a separate subobject at +0x590 has a different initializer.
+
+Static direct call references:
+
+- `0x142358` → `0x19b970`: not covered in catalog
+- `0x14237b` → `0x142c20`: not covered in catalog
+- `0x142387` → `0x1423a0`: `vmr_fg2a_coefficient_provenance.json::fg2a_weight_initializer`
+
+### FG-2A nine polynomial calibration weights
+
+- **RVA:** `0x1423a0–0x1425b7` (end exclusive)
+- **Evidence:** `vmr_fg2a_coefficient_provenance.json::fg2a_weight_initializer`
+- **Confidence:** exact-build static evidence; runtime dispatch unverified
+
+Nine scalar weights follow signed exp(ln(10)*0.05*d), equivalently signed 10^(d/20), with file-backed dB calibrations. Actual runtime updates not excluded.
+
+Static direct call references:
+
+- `0x142409` → `0xd38e54`: not covered in catalog
+- `0x142435` → `0xd38e54`: not covered in catalog
+- `0x14246f` → `0xd38e54`: not covered in catalog
+- `0x1424a0` → `0xd38e54`: not covered in catalog
+- `0x1424cc` → `0xd38e54`: not covered in catalog
+- `0x1424fd` → `0xd38e54`: not covered in catalog
+- `0x14252e` → `0xd38e54`: not covered in catalog
+- `0x14255f` → `0xd38e54`: not covered in catalog
+- `0x142587` → `0xd38e54`: not covered in catalog
+
+### FG-2A logarithmic calibration base
+
+- **RVA:** `0x1425b7–0x1425ee` (end exclusive)
+- **Evidence:** `vmr_fg2a_coefficient_provenance.json::fg2a_weight_base`
+- **Confidence:** exact-build static evidence; runtime dispatch unverified
+
+A static initialization path computes ln(10)*0.05 and writes it to shared calibration scalar 0x10364d0.
+
+Static direct call references:
+
+- `0x1425be` → `0xd37ca8`: not covered in catalog
+- `0x1425cf` → `0xd38e3c`: not covered in catalog
+- `0x1425e7` → `0xd37c48`: not covered in catalog
+
+### FG-2A coefficient base and channel count
+
+- **RVA:** `0x14d5bd–0x14d61c` (end exclusive)
+- **Evidence:** `vmr_fg2a_coefficient_provenance.json::fg2a_processing_context`
+- **Confidence:** exact-build static evidence; runtime dispatch unverified
+
+RBX is the supplied subobject pointer; the processing loop copies two streams and uses twice the per-stream sample count for vector operations.
+
+Static direct call references:
+
+- `0x14d610` → `0x6f740`: not covered in catalog
 
 ### FG-2A signed curve constant setup
 
@@ -237,6 +348,35 @@ Static direct call references:
 - `0x14db14` → `0x6f820`: not covered in catalog
 - `0x14db28` → `0x6f840`: not covered in catalog
 
+### FG-2A nine initialized weight read endpoints
+
+- **RVA:** `0x14dabb–0x14de64` (end exclusive)
+- **Evidence:** `vmr_fg2a_coefficient_provenance.json::fg2a_weight_consumers`
+- **Confidence:** exact-build static evidence; runtime dispatch unverified
+
+All nine initialized weight fields are read from the linked subobject in this candidate. The last endpoint (0x580) scales the fourth-power scratch stream. A matching read is not proof that every path is executed in a live plugin.
+
+Static direct call references:
+
+- `0x14dacb` → `0x6f7e0`: not covered in catalog
+- `0x14dae2` → `0x6f7e0`: not covered in catalog
+- `0x14daf6` → `0x6f840`: not covered in catalog
+- `0x14db14` → `0x6f820`: not covered in catalog
+- `0x14db28` → `0x6f840`: not covered in catalog
+- `0x14dc45` → `0x6f820`: not covered in catalog
+- `0x14dc59` → `0x6f840`: not covered in catalog
+- `0x14dc74` → `0x142110`: `vmr_fg2a_coefficient_provenance.json::fg2a_rational_stage`
+- `0x14dd86` → `0x6f7e0`: not covered in catalog
+- `0x14dda3` → `0x6f8a0`: not covered in catalog
+- `0x14ddc0` → `0x6f8a0`: not covered in catalog
+- `0x14dddb` → `0x6f8a0`: not covered in catalog
+- `0x14ddf0` → `0x6f7e0`: not covered in catalog
+- `0x14de07` → `0x6f7e0`: not covered in catalog
+- `0x14de1b` → `0x6f840`: not covered in catalog
+- `0x14de32` → `0x6f7e0`: not covered in catalog
+- `0x14de48` → `0x6f840`: not covered in catalog
+- `0x14de5f` → `0x6f7e0`: not covered in catalog
+
 ### FG-2A post-polynomial DF2T filter
 
 - **RVA:** `0x14db50–0x14dbbb` (end exclusive)
@@ -244,6 +384,81 @@ Static direct call references:
 - **Confidence:** instruction-verified local arithmetic; runtime dispatch unverified
 
 Standard double DF2T recurrence follows the even-power sum scratch; coefficients 0x360/368/370/380/388. Frequency response, actual runtime values and ultimate role remain unknown.
+
+### FG-2A two rational transform callsites
+
+- **RVA:** `0x14dc2c–0x14dc79` (end exclusive)
+- **Evidence:** `vmr_fg2a_coefficient_provenance.json::fg2a_rational_consumers`
+- **Confidence:** exact-build static evidence; runtime dispatch unverified
+
+The filtered even-order sum is combined with a weighted squared term, then passed to a rational transform with parameter record +0x238. This verifies a second-order contribution in addition to the previous fourth/sixth/eighth-order polynomial.
+
+Static direct call references:
+
+- `0x14dc45` → `0x6f820`: not covered in catalog
+- `0x14dc59` → `0x6f840`: not covered in catalog
+- `0x14dc74` → `0x142110`: `vmr_fg2a_coefficient_provenance.json::fg2a_rational_stage`
+
+### FG-2A additional stereo DF2T bank
+
+- **RVA:** `0x14dc90–0x14dd74` (end exclusive)
+- **Evidence:** `vmr_fg2a_coefficient_provenance.json::fg2a_second_filter`
+- **Confidence:** exact-build static evidence; runtime dispatch unverified
+
+Two independent DF2T state pairs share coefficients at 0x3d0/3d8/3e0/3f0/3f8. Standard y=b0*x+z1, z1_next=b1*x-a1*y+z2, z2_next=b2*x-a2*y. Frequency calibration unresolved.
+
+### FG-2A odd-power parallel branch
+
+- **RVA:** `0x14dd74–0x14de64` (end exclusive)
+- **Evidence:** `vmr_fg2a_coefficient_provenance.json::fg2a_odd_order_terms`
+- **Confidence:** exact-build static evidence; runtime dispatch unverified
+
+Previously computed v^2 combines with v to form v^3, v^5, v^7. The inspected vector paths scale and sum v^3/v^7, then scale the sum and add to a filtered branch. v^5 is formed but its final use is not established here.
+
+Static direct call references:
+
+- `0x14dd86` → `0x6f7e0`: not covered in catalog
+- `0x14dda3` → `0x6f8a0`: not covered in catalog
+- `0x14ddc0` → `0x6f8a0`: not covered in catalog
+- `0x14dddb` → `0x6f8a0`: not covered in catalog
+- `0x14ddf0` → `0x6f7e0`: not covered in catalog
+- `0x14de07` → `0x6f7e0`: not covered in catalog
+- `0x14de1b` → `0x6f840`: not covered in catalog
+- `0x14de32` → `0x6f7e0`: not covered in catalog
+- `0x14de48` → `0x6f840`: not covered in catalog
+- `0x14de5f` → `0x6f7e0`: not covered in catalog
+
+### FG-2A later branch merge and second rational transform
+
+- **RVA:** `0x14e04e–0x14e0ae` (end exclusive)
+- **Evidence:** `vmr_fg2a_coefficient_provenance.json::fg2a_branch_merge`
+- **Confidence:** exact-build static evidence; runtime dispatch unverified
+
+A second rational transform uses record +0x270. Its output is differenced against the preceding stream and added into another scratch branch on the inspected helper paths. This is not the final audio gain law.
+
+Static direct call references:
+
+- `0x14e05d` → `0x6f840`: not covered in catalog
+- `0x14e078` → `0x142110`: `vmr_fg2a_coefficient_provenance.json::fg2a_rational_stage`
+- `0x14e093` → `0x6f880`: not covered in catalog
+- `0x14e0a9` → `0x6f840`: not covered in catalog
+
+### FG-2A candidate local clipping and output handoff
+
+- **RVA:** `0x14e1b6–0x14e2ab` (end exclusive)
+- **Evidence:** `vmr_fg2a_coefficient_provenance.json::fg2a_local_output_merge`
+- **Confidence:** exact-build static evidence; runtime dispatch unverified
+
+Inspected scalar candidates clamp a local filtered branch, add the saved input scratch stream, copy two buffers, and pass a context to 0x14f340. That downstream routine and final plugin output remain unresolved.
+
+Static direct call references:
+
+- `0x14e1c8` → `0x6f7c0`: not covered in catalog
+- `0x14e1dc` → `0x6f840`: not covered in catalog
+- `0x14e22c` → `0x6f740`: not covered in catalog
+- `0x14e279` → `0xd38dc4`: not covered in catalog
+- `0x14e29a` → `0xd38dc4`: not covered in catalog
+- `0x14e2a6` → `0x14f340`: not covered in catalog
 
 ### Dual scalar gain and parallel sum
 
@@ -277,6 +492,20 @@ Static direct call references:
 - `0x156f4f` → `0x14d590`: not covered in catalog
 - `0x156fb9` → `0x155960`: `vmr_control_streams.json::fg2a_dual_slew`
 - `0x156fd1` → `0x141e60`: not covered in catalog
+
+### FG-2A processing subobject argument
+
+- **RVA:** `0x156f00–0x156f54` (end exclusive)
+- **Evidence:** `vmr_fg2a_coefficient_provenance.json::fg2a_processing_object`
+- **Confidence:** exact-build static evidence; runtime dispatch unverified
+
+The processing caller passes parent subobject +0x1360 through the first context slot to 0x14d590.
+
+Static direct call references:
+
+- `0x156f2d` → `0xd38dc4`: not covered in catalog
+- `0x156f45` → `0xd38dc4`: not covered in catalog
+- `0x156f4f` → `0x14d590`: not covered in catalog
 
 ## FG-Stress.epl
 

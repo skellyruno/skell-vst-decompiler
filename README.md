@@ -89,3 +89,7 @@ A separate real Ghidra smoke workflow uses the official pinned release and a com
 ## VMR nonlinear DSP and consolidated equation atlas
 
 See [VMR nonlinear evidence](docs/VMR_NONLINEAR_ATLAS.md) for the verified clamped and variable-state FG-116 relationships, FG-2A biased curve / even-power polynomial candidate / post-polynomial filter, and FG-Stress three-region curve. Run `python -m skell_vst_decompiler.vmr_nonlinear /private/path/FG-2A.epl` to recheck the exact source fingerprint and instruction operands. The consolidated [DSP equation and code-location atlas](docs/DSP_EQUATION_ATLAS.md) contains 95 local evidence records; regenerate it with `python -m skell_vst_decompiler.evidence_book reports > docs/DSP_EQUATION_ATLAS.md`, or use `--format json`. Static calls and overlapping evidence windows are not counts of complete algorithms. Ghidra's previous real owned-fixture CI smoke passed, but vendor binary pseudocode and commercial audio parity are still unverified. No vendor source or processor implementation exported.
+
+### FG-2A coefficient provenance
+
+`python -m skell_vst_decompiler.vmr_coefficients /private/FG-2A.epl` verifies nine polynomial weight initializer/read endpoints, scalar rational helper candidates, and local branch merging. See [coverage and limitations](docs/FG2A_COEFFICIENT_PROVENANCE.md). The 9/9 scoped coverage is not a whole-plugin completion percentage.
