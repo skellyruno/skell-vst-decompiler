@@ -1,0 +1,287 @@
+[
+  {
+    "schema_version": 1,
+    "source": "FG-116.epl",
+    "binary_sha256": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+    "regions": [
+      {
+        "id": "fg116_input_slew",
+        "title": "Fixed input scalar smoothing",
+        "equation": "g += 0.0025*(target-g); y=x*g. Initialization branch sets g=target. This is a local scalar gain stage, not the compression gain computer.",
+        "confidence": "instruction-verified local arithmetic; runtime selection unverified",
+        "checkpoint_rvas": [
+          "0x1619e7",
+          "0x161ad0",
+          "0x161ae6",
+          "0x161af3",
+          "0x161b26",
+          "0x161b2a",
+          "0x161b2e",
+          "0x161b39",
+          "0x161b45",
+          "0x161bd9"
+        ],
+        "start_rva": "0x1619a0",
+        "end_rva_exclusive": "0x161be1",
+        "sha256": "eeee0c7a29451170275f11c1c9bb93452eeed0d658b3b0b22d5ce58eff78f999",
+        "checkpoint_count": 10,
+        "math_call_count": 0
+      },
+      {
+        "id": "fg116_min_envelope",
+        "title": "Minimum-constrained envelope",
+        "equation": "For finite inputs, s=min(x,x+a*(s_prev-x)); s stored to output and state. For 0<=a<=1 this captures decreases immediately and smooths increases. Input buffer semantics remain unknown.",
+        "confidence": "instruction-verified local arithmetic; runtime selection unverified",
+        "checkpoint_rvas": [
+          "0x161880",
+          "0x1618b0",
+          "0x1618b8",
+          "0x1618bd",
+          "0x1618c1",
+          "0x1618c5",
+          "0x1618c9",
+          "0x1618cd",
+          "0x1618d2",
+          "0x161980"
+        ],
+        "start_rva": "0x161880",
+        "end_rva_exclusive": "0x161998",
+        "sha256": "8158684fed9910dcb7d1216cb1f6c7824b239b218d4635a91c694aa3afd6ef4b",
+        "checkpoint_count": 10,
+        "math_call_count": 0
+      },
+      {
+        "id": "fg116_envelope_call",
+        "title": "Candidate envelope caller",
+        "equation": "The scalar retention argument comes from the object at r15+0x10; output scratch rbp+0x60 and persistent state rsi+0x70. Physical units and host knob mapping unverified.",
+        "confidence": "instruction-verified local arithmetic; runtime selection unverified",
+        "checkpoint_rvas": [
+          "0x161cb0",
+          "0x161cd2",
+          "0x161d01",
+          "0x161d06",
+          "0x161d11",
+          "0x161d21",
+          "0x161d3d",
+          "0x161d42"
+        ],
+        "start_rva": "0x161ca7",
+        "end_rva_exclusive": "0x161d47",
+        "sha256": "55822d28b1690f380bf932a4af0e827a16ce9cf4ce6f82a4b03e17abf882f413",
+        "checkpoint_count": 8,
+        "math_call_count": 0
+      }
+    ],
+    "constants": {
+      "0xe7db78": 0.0025
+    },
+    "checkpoint_count": 28,
+    "limits": "Candidate processing paths only; no full compressor law or runtime validation."
+  },
+  {
+    "schema_version": 1,
+    "source": "FG-2A.epl",
+    "binary_sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+    "regions": [
+      {
+        "id": "fg2a_dual_slew",
+        "title": "Dual scalar gain and parallel sum",
+        "equation": "Two independent scalar gain ramps per channel use g+=.0025*(target-g), then sum two weighted scratch streams. Verified vector-add candidates below; identities of the two streams and complete gain law unknown.",
+        "confidence": "instruction-verified local arithmetic; runtime selection unverified",
+        "checkpoint_rvas": [
+          "0x15598e",
+          "0x1559ca",
+          "0x1559dc",
+          "0x155a26",
+          "0x155a2a",
+          "0x155a2e",
+          "0x155a39",
+          "0x155ad2",
+          "0x155ade",
+          "0x155b36",
+          "0x155b3a",
+          "0x155b3e",
+          "0x155b49",
+          "0x155be4",
+          "0x155beb",
+          "0x155bf4",
+          "0x155c04",
+          "0x155c0f",
+          "0x155c12"
+        ],
+        "start_rva": "0x155960",
+        "end_rva_exclusive": "0x155c3f",
+        "sha256": "34bc98a89cb25ee51325360bfd60382135a990a82b8d0cb89c71bdd6dffb88f1",
+        "checkpoint_count": 19,
+        "math_call_count": 0
+      },
+      {
+        "id": "fg2a_sum_dispatch",
+        "title": "Vector sum dispatch",
+        "equation": "Seven inspected slots resolve to four entry points. Selected runtime slot unknown; all four candidate entries lead to vector addition.",
+        "confidence": "instruction-verified local arithmetic; runtime selection unverified",
+        "checkpoint_rvas": [
+          "0x6f860",
+          "0x6f867",
+          "0x6f86e"
+        ],
+        "start_rva": "0x6f860",
+        "end_rva_exclusive": "0x6f872",
+        "sha256": "ba9bc8f137b24aedf51edd1cee5ddcf320cb459aa3f8a4abc563028290a89045",
+        "checkpoint_count": 3,
+        "math_call_count": 0
+      },
+      {
+        "id": "fg2a_sum_scalar",
+        "title": "Vector sum scalar and packed arithmetic",
+        "equation": "Scalar and packed paths sum src1+src2 into output.",
+        "confidence": "instruction-verified local arithmetic; runtime selection unverified",
+        "checkpoint_rvas": [
+          "0x72bd1",
+          "0x72bd7",
+          "0x72bdd",
+          "0x72c14"
+        ],
+        "start_rva": "0x72b60",
+        "end_rva_exclusive": "0x72d40",
+        "sha256": "3cb9fd65e8ded4a91338c3306874f18382e52d5bbf9a626c5596d5829c56f6dc",
+        "checkpoint_count": 4,
+        "math_call_count": 0
+      },
+      {
+        "id": "fg2a_sum_bridge",
+        "title": "Four slots share addition wrapper",
+        "equation": "Wrapper calls vector arithmetic helper.",
+        "confidence": "instruction-verified local arithmetic; runtime selection unverified",
+        "checkpoint_rvas": [
+          "0x72d62"
+        ],
+        "start_rva": "0x72d40",
+        "end_rva_exclusive": "0x72d78",
+        "sha256": "52029e67a83b3203c73c280c6427e9de9293de5d93955299d1d78f0a79103a4d",
+        "checkpoint_count": 1,
+        "math_call_count": 0
+      },
+      {
+        "id": "fg2a_sum_helper",
+        "title": "Scalar/packed sum helper",
+        "equation": "Addition verified in scalar and packed instructions.",
+        "confidence": "instruction-verified local arithmetic; runtime selection unverified",
+        "checkpoint_rvas": [
+          "0x74d9f",
+          "0x74daa",
+          "0x74dae",
+          "0x74e4e"
+        ],
+        "start_rva": "0x74d90",
+        "end_rva_exclusive": "0x74e68",
+        "sha256": "665a031cfd923c2fa7d8bea93588c3c1ef0d6feb264107c0ce0f199c54470691",
+        "checkpoint_count": 4,
+        "math_call_count": 0
+      },
+      {
+        "id": "fg2a_sum_avx",
+        "title": "Two wide-vector sum candidates",
+        "equation": "Both AVX candidate paths also perform addition. Not a distinct nonlinear compression algorithm.",
+        "confidence": "instruction-verified local arithmetic; runtime selection unverified",
+        "checkpoint_rvas": [
+          "0x72e07",
+          "0x72e41",
+          "0x72e45",
+          "0x72fb1",
+          "0x72fc8"
+        ],
+        "start_rva": "0x72d80",
+        "end_rva_exclusive": "0x73025",
+        "sha256": "824421246732e04ba803d4821152467e8ff094135d2d5a1b6eef5568a7138fa8",
+        "checkpoint_count": 5,
+        "math_call_count": 0
+      }
+    ],
+    "constants": {
+      "0xeaa3a8": 0.0025
+    },
+    "checkpoint_count": 36,
+    "limits": "Candidate processing paths only; no full compressor law or runtime validation."
+  },
+  {
+    "schema_version": 1,
+    "source": "FG-Stress.epl",
+    "binary_sha256": "2509a6f3480481feb15a0fde97abcb4acccfc6fc936f55f5e8c88b7c98edcd26",
+    "regions": [
+      {
+        "id": "stress_bounds_setup",
+        "title": "Control range constants",
+        "equation": "Local path establishes zero and one clamp boundaries; absolute-value mask and slope checked at consuming sites.",
+        "confidence": "instruction-verified local arithmetic; runtime selection unverified",
+        "checkpoint_rvas": [
+          "0x163031",
+          "0x163046"
+        ],
+        "start_rva": "0x163031",
+        "end_rva_exclusive": "0x16304e",
+        "sha256": "784817dfd7da666f11fa4900b77765c34ad32d1cc24e437d73a51b97e9ea24f8",
+        "checkpoint_count": 2,
+        "math_call_count": 0
+      },
+      {
+        "id": "stress_control_pair",
+        "title": "Coupled bounded detector controls",
+        "equation": "For finite P, U=clamp(130*(P-T1),0,1); V=(1-U)*clamp(130*(P-T0),0,1). These are bounded scratch control streams, not established audio gain.",
+        "confidence": "instruction-verified local arithmetic; runtime selection unverified",
+        "checkpoint_rvas": [
+          "0x163442",
+          "0x16344c",
+          "0x1634a5",
+          "0x1634b2",
+          "0x1634bb",
+          "0x1634bf",
+          "0x1634c6",
+          "0x1634ca",
+          "0x1634d1",
+          "0x1634d5",
+          "0x1634de",
+          "0x1634e2",
+          "0x1634eb",
+          "0x1634ef",
+          "0x1634f6",
+          "0x1634fa",
+          "0x163501",
+          "0x163505",
+          "0x163509"
+        ],
+        "start_rva": "0x163442",
+        "end_rva_exclusive": "0x163521",
+        "sha256": "311ee886d78aaed43045262d4ef66f824932abed0e9cf3aac7918b41728cd719",
+        "checkpoint_count": 19,
+        "math_call_count": 0
+      },
+      {
+        "id": "stress_control_history",
+        "title": "Control-stream history stores",
+        "equation": "The same bounded streams feed reduction/summary calls and 1024-position circular histories. The summary operation and whether these streams also affect audio remain unresolved.",
+        "confidence": "instruction-verified local arithmetic; runtime selection unverified",
+        "checkpoint_rvas": [
+          "0x1637dd",
+          "0x1637ec",
+          "0x1637fe",
+          "0x16380f",
+          "0x16381a",
+          "0x16384a",
+          "0x16385b"
+        ],
+        "start_rva": "0x1637d6",
+        "end_rva_exclusive": "0x163866",
+        "sha256": "269f3a3bb05c0cde2888d573eff2974ffaa9dff3ba999fe175e02cc571555eb0",
+        "checkpoint_count": 7,
+        "math_call_count": 0
+      }
+    ],
+    "constants": {
+      "0xea0480": 1.0,
+      "0xea0460": 130.0
+    },
+    "checkpoint_count": 28,
+    "limits": "Candidate processing paths only; no full compressor law or runtime validation."
+  }
+]

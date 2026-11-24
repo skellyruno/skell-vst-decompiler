@@ -30,3 +30,10 @@ jobs:
         run: |
           g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer experiments/skelliere/test_original.cpp -o /tmp/skell_original_sanitized
           /tmp/skell_original_sanitized
+      - name: Original spatial prototype regression and sanitizers
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/skelliere/test_space.cpp -o /tmp/skell_space_tests
+          /tmp/skell_space_tests
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/skelliere/render_space.cpp -o /tmp/skell_space_render
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer experiments/skelliere/test_space.cpp -o /tmp/skell_space_sanitized
+          /tmp/skell_space_sanitized

@@ -1,0 +1,40 @@
+name: Real Ghidra smoke (owned fixture)
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/ghidra-smoke.yml'
+      - 'skell_vst_decompiler/ghidra_bridge.py'
+      - 'skell_vst_decompiler/ghidra_scripts/**'
+      - 'tests/ghidra_smoke.py'
+      - 'tests/fixtures/ghidra_fixture.c'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || format('protected-{0}-{1}', github.ref, github.run_id) }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  real-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '25'
+      - name: Install pinned official Ghidra distribution
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 2 --max-time 300 https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_12.2_build/ghidra_12.2_PUBLIC_20261016.zip -o "$RUNNER_TEMP/ghidra.zip"
+          echo "2c2cd776db3c1f6a097ba418922378ac3649cadd5e844a6f5f088ae628a7be67  $RUNNER_TEMP/ghidra.zip" | sha256sum -c -
+          unzip -q "$RUNNER_TEMP/ghidra.zip" -d "$RUNNER_TEMP/ghidra"
+      - name: Compile fixture and run actual headless decompiler
+        run: |
+          set -euo pipefail
+          home=$(find "$RUNNER_TEMP/ghidra" -mindepth 1 -maxdepth 1 -type d -name 'ghidra_*' -print -quit)
+          test -n "$home"
+          PYTHONPATH=. python tests/ghidra_smoke.py --ghidra-home "$home"

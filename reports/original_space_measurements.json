@@ -1,0 +1,93 @@
+{
+  "sample_rate": 44100,
+  "excerpt_seconds": 12,
+  "source_start_seconds": 60,
+  "nominal_low_frequency_decay_s": 1.8,
+  "damping_hz": 4200,
+  "decay": {
+    "44100": {
+      "broadband": {
+        "estimated_rt60_from_t20_s": 1.4487244816311167,
+        "fit_r2": 0.9951330026245946
+      },
+      "250Hz": {
+        "estimated_rt60_from_t20_s": 1.814733864865621,
+        "fit_r2": 0.9993208640359011
+      },
+      "1kHz": {
+        "estimated_rt60_from_t20_s": 1.5304901016526888,
+        "fit_r2": 0.9991834289479143
+      },
+      "4kHz": {
+        "estimated_rt60_from_t20_s": 0.7245255350932025,
+        "fit_r2": 0.9986407430897182
+      },
+      "8kHz": {
+        "estimated_rt60_from_t20_s": 0.37835323783296887,
+        "fit_r2": 0.9990459355633932
+      }
+    },
+    "48000": {
+      "broadband": {
+        "estimated_rt60_from_t20_s": 1.440544989496257,
+        "fit_r2": 0.994662894765172
+      },
+      "250Hz": {
+        "estimated_rt60_from_t20_s": 1.8157124154652315,
+        "fit_r2": 0.99932376003402
+      },
+      "1kHz": {
+        "estimated_rt60_from_t20_s": 1.5292038377642072,
+        "fit_r2": 0.9993906248044955
+      },
+      "4kHz": {
+        "estimated_rt60_from_t20_s": 0.7230338678541257,
+        "fit_r2": 0.9983552524793311
+      },
+      "8kHz": {
+        "estimated_rt60_from_t20_s": 0.38301557052218327,
+        "fit_r2": 0.9989903212325856
+      }
+    },
+    "96000": {
+      "broadband": {
+        "estimated_rt60_from_t20_s": 1.374303340717141,
+        "fit_r2": 0.9875979129982994
+      },
+      "250Hz": {
+        "estimated_rt60_from_t20_s": 1.8126865445646003,
+        "fit_r2": 0.9993195147827744
+      },
+      "1kHz": {
+        "estimated_rt60_from_t20_s": 1.5274692457052488,
+        "fit_r2": 0.9992237621279096
+      },
+      "4kHz": {
+        "estimated_rt60_from_t20_s": 0.7141864820856844,
+        "fit_r2": 0.9984946102820459
+      },
+      "8kHz": {
+        "estimated_rt60_from_t20_s": 0.3658032754711111,
+        "fit_r2": 0.9988707219334209
+      }
+    }
+  },
+  "music": {
+    "unducked": {
+      "active_wet_rms_dbfs": -18.62341722757314,
+      "tail_wet_rms_dbfs": -24.36784025133676,
+      "peak_dbfs": -7.262995863042951,
+      "active_stereo_correlation": 0.06180448700819126
+    },
+    "ducked": {
+      "active_wet_rms_dbfs": -26.047707629095655,
+      "tail_wet_rms_dbfs": -30.880408101616702,
+      "peak_dbfs": -14.643614505234478,
+      "active_stereo_correlation": 0.06396169644482749
+    },
+    "wet_active_change_db": -7.424290401522518,
+    "first_tail_second_change_db": -6.512567850279939,
+    "matched_rms_difference_db": 0.0
+  },
+  "note": "Original offline DSP, not TVB or VMR renders. T20 regression estimate, RMS not LUFS. No subjective listening rating."
+}
