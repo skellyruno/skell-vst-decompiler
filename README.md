@@ -52,3 +52,7 @@ The catalog can be searched offline by keyword or hexadecimal RVA. It includes r
 ## Alternate dynamics and function navigation
 
 [New table-provenance and adaptive recovery report](docs/TVB_ALTERNATE_DYNAMICS.md). `--mode tvb-curves` verifies the exact build, both table initialization paths (459 finite points), curve row interpolation, mode-1 coupled recovery and mode-2 nonlinear attack/history release. It emits hashes and structural summaries, never original table arrays. `--mode function --rva 0x5d18d6` maps an address to its compiler unwind range; `--mode xref --rva 0x16a50 --bytes 337 --target 0x77e7a40 --target-bytes 616` locates a table initializer reference. Generic navigation also works with supplied VMR binaries. No vendor audio execution or complete algorithm parity is implied.
+
+## Detector mapping and literal field navigation
+
+[Detector morphing and coefficient provenance](docs/TVB_DETECTOR_MAPPING.md) connects the six detector groups to continuous neighboring-bank interpolation, dB peak/power blending, nonlinear control calibration and rate-dependent setup. `--mode tvb-detector` verifies the original build and emits calibration fingerprints, not vendor arrays. `--mode fieldrefs --rva 0x5cfa7f --bytes 0x2564 --base rbp --offset=-0x50` identifies literal memory-operand locations with conservative access labels. This works on bounded code windows in other PE binaries too; it is not full register alias analysis. Hexadecimal byte lengths are now accepted.
