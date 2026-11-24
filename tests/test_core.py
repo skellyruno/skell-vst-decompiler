@@ -114,3 +114,28 @@ class TestTraceSafety(unittest.TestCase):
             bad=[v for v in ins if 'rsi+0x6fc' not in v.operands]
             with patch('skell_vst_decompiler.equations.disassemble',return_value=bad):
                 with self.assertRaises(ValueError):trace_tvb_biquad_bank(P())
+
+class TestImportResolver(unittest.TestCase):
+    def test_cstring_near_section_end(self):
+        with tempfile.TemporaryDirectory() as td:
+            p=Path(td)/'synthetic.vst3'
+            raw=synthetic_pe()
+            raw[0x3fa:0x400]=b'abcde\x00'
+            p.write_bytes(raw)
+            self.assertEqual(PE(p).cstring_rva(0x10fa),'abcde')
+
+    def test_direct_call_import_thunk(self):
+        from skell_vst_decompiler.disasm import imported_call_sites
+        class P:
+            image_base=0x180000000
+            def imports(self):return {0x3000:{'dll':'test-math.dll','symbol':'expf'}}
+            def at_rva(self,rva,n,executable=False):
+                self_last = rva == 0x1100 and n==6 and executable
+                if not self_last:raise PEFormatError('not a code thunk')
+                # ff 25 + relative displacement to IAT 0x3000
+                return b'\xff\x25'+struct.pack('<i',0x3000-(rva+6))
+        ins=[Instruction(0x180001080,'call','0x180001100')]
+        r=imported_call_sites(P(),ins)
+        self.assertEqual(len(r),1)
+        self.assertEqual(r[0]['symbol'],'expf')
+        self.assertEqual(r[0]['iat_rva'],'0x3000')

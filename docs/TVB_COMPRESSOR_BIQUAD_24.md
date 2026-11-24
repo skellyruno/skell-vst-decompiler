@@ -20,6 +20,12 @@ Its native instruction sites include **`0x5D07C6`, `0x5D07D5`, `0x5D07DD`, `0x5D
 
 **Interpretation limits:** The evidence establishes repeated per-channel filter-state recurrences and shows the first section's algebra. A filter recurrence does *not* establish whether the signal is wet audio, sidechain detector, or one branch of a complex multiband processor. The compiled branch may combine filter and meter/dynamics calculations; there are more operands after the last state group. We do **not** infer filter cutoffs, Q, gain normalization, 24-to-24 front-end band mapping, phase response, full compression transfer, CPU or sound quality from this evidence alone.
 
+## DSP coefficient setup: verified math-library imports
+
+The same TVB compressor method before the mode-specific sample loop (RVA `0x5CFA7F–0x5D07BF`) calls imported CRT math routines via compiler thunks. A read-only target-to-IAT resolver checked the exact compiled callsites, not just the names in the imports table. It found **16 `expf`, 10 `powf`, and 5 `logf` calls** in this code region. These are **static callsite counts**, not dynamic runtime executions. The full callsite RVAs and import targets are in `reports/tvb_compressor_coefficient_math_calls.json`.
+
+The repeated exponential operations support coefficient preparation, but **which times/frequencies they represent and which paths execute under which modes are not yet confirmed**. Neither a compressor knee curve nor its gain detector can be reconstructed from these calls alone.
+
 ## Why it matters for Skelliere
 
 - The coefficient grouping and persistent state update can guide an independently developed, testable filter-bank abstraction.

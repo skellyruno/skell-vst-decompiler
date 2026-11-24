@@ -8,6 +8,10 @@ The supplied `TVB Rack V2.vst3` (SHA-256 `cefaa0c08642093832b0cf9cd93fea791ebd81
 
 **Limits:** We have not proven whether all stages process the audible signal or the detector, nor recovered cutoff/Q assignments or a complete compressor gain computer. This is static analysis of native instructions, not measured TVB or VMR sound. A 24-section code motif does not establish a one-to-one mapping to TVB's 24 dynamic EQ controls.
 
+### Confirmed compressor coefficient-setup math calls
+
+In the TVB compressor's setup region RVA `0x5CFA7F–0x5D07BF`, direct-call target and import-thunk resolution confirms **16 calls to `expf`, 10 to `powf`, and 5 to `logf`**. These strongly suggest time constants, frequency/dB transforms, or nonlinear coefficient calculations; they do **not** recover the exact user-knob mappings or prove all calls are made on every preset. The paths are stored with RVAs in `reports/tvb_compressor_coefficient_math_calls.json`.
+
 ### Use it locally
 
 Python ≥3.10; no runtime Python dependencies. `objdump` (GNU binutils) is required only for disassembly.
@@ -17,6 +21,7 @@ python -m unittest discover -s tests -v
 python -m skell_vst_decompiler "TVB Rack V2.vst3" --mode inventory
 python -m skell_vst_decompiler "TVB Rack V2.vst3" --mode tvb-biquad --out local/first_biquad.json
 python -m skell_vst_decompiler "TVB Rack V2.vst3" --mode tvb-bank --out local/24_section_proof.json
+python -m skell_vst_decompiler "TVB Rack V2.vst3" --mode tvb-compressor-setup --out local/coefficient_math_calls.json
 python -m skell_vst_decompiler "FG-116.epl" --mode trace --rva 0x160540 --bytes 4096 --out local/fg116_trace.json
 ```
 

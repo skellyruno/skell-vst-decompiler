@@ -68,6 +68,23 @@ def direct_calls(pe, ins):
     return results
 
 
+def imported_call_sites(pe, ins):
+    """Resolve direct CALL -> jmp [RIP+disp32] import thunks, not indirect DSP."""
+    symbols=pe.imports()
+    import struct
+    found=[]
+    for item in direct_calls(pe, ins):
+        target=int(item["target_rva"],16)
+        try: code=pe.at_rva(target,6,executable=True)
+        except PEFormatError:continue
+        if code[:2] != b"\xff\x25":continue
+        iat=target+6+struct.unpack_from("<i",code,2)[0]
+        symbol=symbols.get(iat)
+        if symbol:
+            found.append({**item,"iat_rva":hex(iat),**symbol})
+    return found
+
+
 def rip_data_refs(pe, ins):
     refs=[]
     for i in ins:

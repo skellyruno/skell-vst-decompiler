@@ -43,6 +43,7 @@ class PE:
         if section_count < 1 or section_count > 96 or optional_size < 0x70:
             raise PEFormatError("Unexpected section count or optional header")
         self.image_base = self._unpack("<Q", optional_offset+24)[0]
+        self.import_directory_rva = self._unpack("<I",optional_offset+120)[0] if optional_size>=128 else 0
         section_start = optional_offset + optional_size
         if section_start + section_count*40 > len(b):
             raise PEFormatError("Truncated section table")
@@ -74,6 +75,43 @@ class PE:
                 pos = s.file_offset+rva-s.rva
                 return self.data[pos:pos+n]
         raise PEFormatError("RVA not backed by original file bytes")
+
+    def cstring_rva(self,rva,max_length=512):
+        if max_length < 1 or max_length > 4096:
+            raise PEFormatError("Unreasonable string length")
+        containing=next((section for section in self.sections
+                         if section.rva<=rva<section.rva+section.file_size),None)
+        if containing is None:raise PEFormatError("String RVA not backed")
+        raw=self.at_rva(rva,min(max_length,containing.file_size-(rva-containing.rva)))
+        e=raw.find(b"\0")
+        if e<0:raise PEFormatError("Unterminated bounded C string")
+        return raw[:e].decode("ascii","replace")
+
+    def imports(self):
+        """IAT slot RVA -> DLL/symbol, with hard caps on malformed input."""
+        found={}
+        if not self.import_directory_rva:return found
+        for i in range(256):
+            pos=self.import_directory_rva+20*i
+            oft,timestamp,chain,dll,iat=struct.unpack("<IIIII",self.at_rva(pos,20))
+            if not any((oft,timestamp,chain,dll,iat)):
+                return found
+            if not dll or not iat:
+                raise PEFormatError("Incomplete import descriptor")
+            dllname=self.cstring_rva(dll)
+            thunks=oft or iat
+            for n in range(8192):
+                pointer=struct.unpack("<Q",self.at_rva(thunks+8*n,8))[0]
+                if pointer==0:break
+                if pointer>>63:
+                    name="#"+str(pointer&0xffff)
+                else:
+                    if pointer >= 1<<32:
+                        raise PEFormatError("Unexpected 64-bit import name RVA")
+                    name=self.cstring_rva(pointer+2)
+                found[iat+8*n]={"dll":dllname,"symbol":name}
+            else: raise PEFormatError("Import thunk count exceeded safety limit")
+        raise PEFormatError("Import descriptor count exceeded safety limit")
 
     def u32(self,rva): return struct.unpack("<I",self.at_rva(rva,4))[0]
     def f32(self,rva): return struct.unpack("<f",self.at_rva(rva,4))[0]
