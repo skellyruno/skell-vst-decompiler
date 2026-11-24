@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "report_kind": "verified_craft_metadata_ci",
+  "source_commit": "682aa1b6da50ff02859081d4a48aebb2c72ceacb",
+  "run_id": 45436229454,
+  "tool_version": "craft-anything-cli 0.6.1",
+  "cases": [
+    {
+      "architecture": "x86",
+      "optimization": "O0",
+      "sha256": "042809eb5229986551e5d8b2e8ae95957ec74fd59c8dfdce8ba0d6e312fdab93",
+      "section_count": 2
+    },
+    {
+      "architecture": "x86",
+      "optimization": "O2",
+      "sha256": "bba2f104ed455025137b19f95f1688b1c7cf3c2ffa77f7577edcb994eec0105b",
+      "section_count": 2
+    },
+    {
+      "architecture": "x64",
+      "optimization": "O0",
+      "sha256": "8e8990b5b1350d7e8799508ec4433518289de9228ab71976e5b61e5fdb17c288",
+      "section_count": 3
+    },
+    {
+      "architecture": "x64",
+      "optimization": "O2",
+      "sha256": "d29bebb9bc7e3597373ce4b0c34a0b50f5dd5fb74db70175e680110e6e639346",
+      "section_count": 2
+    }
+  ],
+  "all_metadata_agreed": true,
+  "all_inline_integrity_checks_passed": true,
+  "all_tampered_records_rejected": true,
+  "scope": "Owned fixtures only. No AI rebuilding, no vendor DSP extraction."
+}
