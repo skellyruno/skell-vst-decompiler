@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "report_kind": "verified_rea_ci",
+  "source_commit": "6c3e476528a7d0326b9992dae0cb72105786bc3b",
+  "tests": 127,
+  "run_ids": {
+    "pe_oracle": 45443069834,
+    "ghidra": 45443069913,
+    "rea": 45443069910,
+    "unified": 45443069856,
+    "craft": 45443069535,
+    "reccmp": 45443069818,
+    "rizin": 45443069608,
+    "static": 45443069649
+  },
+  "all_eight_passed": true,
+  "rea": {
+    "all_agreed": true,
+    "cases": [
+      {
+        "bits": 32,
+        "count": 0,
+        "sha256": "fc267db0327bd6677929a1382dd9020e61998117a6bf575c6b4b07658c566ac8"
+      },
+      {
+        "bits": 32,
+        "count": 1,
+        "sha256": "4aa034e6b00ec8ecaa6ef632ea11ffb2a119e9286363d560415d272bd1669697",
+        "imphash": "0bf41bf93362b040db54bd08549cc612"
+      },
+      {
+        "bits": 64,
+        "count": 0,
+        "sha256": "6ce8de37025f3d03b93fa0ab9a4a0f56c92ebe69b9133d085342e2c0e29b2f44"
+      },
+      {
+        "bits": 64,
+        "count": 1,
+        "sha256": "e75ed34b66d4de844b6be97a39b1b5f369ca64a1a03fcc37503971cb4fe48b63",
+        "imphash": "561d5c4bc46a85a3ef63703e9e4768be"
+      }
+    ]
+  },
+  "limits": "Owned metadata fixtures only. Not native decompilation or runtime DSP."
+}

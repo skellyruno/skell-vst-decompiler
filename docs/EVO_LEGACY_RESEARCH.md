@@ -10,3 +10,5 @@ Independent reference: de Cheveigne and Kawahara (2002), YIN, doi:10.1121/1.1458
 Opt-in backend='fft' computes the same fixed-window squared differences via convolution and cumulative power; direct remains the baseline/default. RetuneControl converts accepted estimates to cents correction using an explicit MIDI note set, hysteresis and exponential timing; zero milliseconds responds immediately, no voice resets state. This is control-domain research, not an audio shifter or Evo implementation. New numerical CI measures backend parity, noisy harmonic errors and timing. No latency claim; 65 ms analysis frame is not total plugin latency.
 
 Historical public architecture source and new independent comparison: see HISTORICAL_PITCH_AND_DYNAMICS.md. Do not infer Evo uses the identical patent implementation.
+
+Historical manual pp.23–24 supplies additional public behavioral evidence; see PUBLIC_DSP_BEHAVIOR.md. Independent sustained-note smoothing is not the commercial Humanize mapping.

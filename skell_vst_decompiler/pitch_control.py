@@ -8,7 +8,12 @@ import math
 
 class RetuneControl:
     def __init__(self, notes=range(36,85), retune_ms=20., hysteresis_cents=12.,
-                 min_periodicity=.8):
+                 min_periodicity=.8, *, sustain_ms=0., sustain_after_ms=150., sustain_ramp_ms=250.):
+        if not all(math.isfinite(v) for v in (sustain_ms,sustain_after_ms,sustain_ramp_ms)) or not 0<=sustain_ms<=1000 or not 0<=sustain_after_ms<=5000 or not 0<sustain_ramp_ms<=5000:
+            raise ValueError('Invalid sustained-note settings')
+        self.sustain_ms=sustain_ms
+        self.sustain_after_ms=sustain_after_ms
+        self.sustain_ramp_ms=sustain_ramp_ms
         notes=tuple(sorted(set(notes)))
         if not notes or any(type(n) is not int or not 0<=n<=127 for n in notes):
             raise ValueError('Expected MIDI note set')
@@ -23,6 +28,7 @@ class RetuneControl:
     def reset(self):
         self.note=None
         self.cents=0.
+        self.note_age_ms=0.
 
     def step(self, frequency, periodicity, elapsed_ms):
         if not math.isfinite(elapsed_ms) or elapsed_ms<=0:
@@ -38,7 +44,12 @@ class RetuneControl:
         candidate=min(self.notes,key=lambda n:(abs(n-pitch),n))
         if self.note is None or abs(pitch-self.note)-abs(pitch-candidate)>2*self.hysteresis/100.:
             self.note=candidate
+            self.note_age_ms=0.
         target=100.*(self.note-pitch)
-        alpha=1. if self.retune_ms==0 else -math.expm1(-elapsed_ms/self.retune_ms)
+        # Original duration-dependent smoothing, not a commercial control mapping.
+        weight=min(1.,max(0.,(self.note_age_ms-self.sustain_after_ms)/self.sustain_ramp_ms))
+        tau=self.retune_ms+self.sustain_ms*weight*weight*(3.-2.*weight)
+        alpha=1. if tau==0 else -math.expm1(-elapsed_ms/tau)
+        self.note_age_ms+=elapsed_ms
         self.cents+=alpha*(target-self.cents)
         return self.note,self.cents
