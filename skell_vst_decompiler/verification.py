@@ -6,6 +6,7 @@ import hashlib
 import json
 from pathlib import Path
 import re
+from .interval_index import IntervalIndex
 
 VERSION = 1
 SHA = re.compile(r'[0-9a-f]{64}\Z')
@@ -63,6 +64,7 @@ def reconcile(snapshot, inputs):
                 if lo >= hi or key in regions:
                     raise ValueError('Invalid or repeated evidence interval')
                 regions[key] = (lo, hi)
+    index = IntervalIndex(regions)
     checks = []
     seen = set()
     for binary in snapshot['binaries']:
@@ -81,7 +83,7 @@ def reconcile(snapshot, inputs):
             if lo != address(slots[4]['target_rva']) or hi <= lo or span['bytes'] != hi - lo:
                 raise ValueError('Inconsistent target span')
             expected = set(wrapper['slot45_atlas_overlap'])
-            observed = {name for (source, name), (start, end) in regions.items() if source == sha and max(lo, start) < min(hi, end)}
+            observed = index.overlaps(sha, lo, hi)
             missing, added = sorted(expected-observed), sorted(observed-expected)
             status = 'consistent' if not (missing or added) else 'review_required'
             checks.append({'binary':binary['binary'], 'wrapper_rva':hex(rva), 'status':status,
