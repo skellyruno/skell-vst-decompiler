@@ -35,3 +35,16 @@ python -m skell_vst_decompiler "FG-116.epl" --mode trace --rva 0x160540 --bytes 
 4. Preserve Skelliere VST3 identity, presets, automation IDs, slot type mappings and Tune latency; gate DSP changes behind explicit new modes.
 
 All vendor binaries, decoded resources, extracted commercial code, licenses and private user audio stay **outside Git**. Source evidence under `docs/` contains only short arithmetic descriptions, addresses, public-format descriptions and analysis provenance. See [`AGENTS.md`](AGENTS.md).
+
+## Dynamics equation index (new)
+
+The conventional compressor target knee, attack/release recurrence, dual recovery, gain conversion, and six-group detector topology are now supported by exact-build native evidence. **Correction:** the earlier 24 filter motifs are six groups of four feeding six independent peak/power states, not one serial 24-stage audio EQ. Alternate gain-curve interpolation is identified; runtime curve values remain unknown. [Full dynamics research](docs/TVB_DYNAMICS_EQUATIONS.md).
+
+```bash
+python -m skell_vst_decompiler "TVB Rack V2.vst3" --mode tvb-dynamics --out local/dynamics.json
+python -m skell_vst_decompiler.catalog reports/tvb_dynamics_equations.json "gain reduction"
+python -m skell_vst_decompiler.catalog reports/tvb_dynamics_equations.json 0x5d1b35
+python -m skell_vst_decompiler "FG-116.epl" --mode dispatch --rva 0x6f740 --entries 7
+```
+
+The catalog can be searched offline by keyword or hexadecimal RVA. It includes region byte fingerprints, source file offsets, equation summaries, confidence and linked checkpoint/constant/call addresses. Generic dispatch inspection samples bounded static entries, not a live selector or a verified vendor audio algorithm. Never execute or patch vendor binaries. No runtime plugin tests are implied by static evidence.

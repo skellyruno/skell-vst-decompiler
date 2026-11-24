@@ -1,0 +1,278 @@
+[
+  {
+    "binary_sha256": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+    "source": "FG-116.epl",
+    "dispatcher_rva": "0x6f740",
+    "selector_rva": "0x1053c24",
+    "selector_file_backed": false,
+    "table_rva": "0xffc5e0",
+    "sampled_slots": [
+      {
+        "slot": 0,
+        "target_rva": "0x70550",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 1,
+        "target_rva": "0x70590",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 2,
+        "target_rva": "0x705d0",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 3,
+        "target_rva": "0x705d0",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 4,
+        "target_rva": "0x70610",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 5,
+        "target_rva": "0x70650",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 6,
+        "target_rva": "0x70700",
+        "executable_file_backed": true
+      }
+    ],
+    "status": "static candidate targets only; table extent, runtime choice and DSP semantics unverified"
+  },
+  {
+    "binary_sha256": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+    "source": "FG-116.epl",
+    "dispatcher_rva": "0x6f780",
+    "selector_rva": "0x1053c24",
+    "selector_file_backed": false,
+    "table_rva": "0xffc650",
+    "sampled_slots": [
+      {
+        "slot": 0,
+        "target_rva": "0x70930",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 1,
+        "target_rva": "0x70a30",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 2,
+        "target_rva": "0x70a70",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 3,
+        "target_rva": "0x70a70",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 4,
+        "target_rva": "0x70ab0",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 5,
+        "target_rva": "0x70af0",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 6,
+        "target_rva": "0x70bf0",
+        "executable_file_backed": true
+      }
+    ],
+    "status": "static candidate targets only; table extent, runtime choice and DSP semantics unverified"
+  },
+  {
+    "binary_sha256": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+    "source": "FG-116.epl",
+    "dispatcher_rva": "0x6f7a0",
+    "selector_rva": "0x1053c24",
+    "selector_file_backed": false,
+    "table_rva": "0xffc688",
+    "sampled_slots": [
+      {
+        "slot": 0,
+        "target_rva": "0x70d70",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 1,
+        "target_rva": "0x70f80",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 2,
+        "target_rva": "0x70fc0",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 3,
+        "target_rva": "0x70fc0",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 4,
+        "target_rva": "0x71000",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 5,
+        "target_rva": "0x71040",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 6,
+        "target_rva": "0x711a0",
+        "executable_file_backed": true
+      }
+    ],
+    "status": "static candidate targets only; table extent, runtime choice and DSP semantics unverified"
+  },
+  {
+    "binary_sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+    "source": "FG-2A.epl",
+    "dispatcher_rva": "0x6f740",
+    "selector_rva": "0x1061e54",
+    "selector_file_backed": false,
+    "table_rva": "0x1015d60",
+    "sampled_slots": [
+      {
+        "slot": 0,
+        "target_rva": "0x704d0",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 1,
+        "target_rva": "0x70510",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 2,
+        "target_rva": "0x70550",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 3,
+        "target_rva": "0x70550",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 4,
+        "target_rva": "0x70590",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 5,
+        "target_rva": "0x705d0",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 6,
+        "target_rva": "0x70680",
+        "executable_file_backed": true
+      }
+    ],
+    "status": "static candidate targets only; table extent, runtime choice and DSP semantics unverified"
+  },
+  {
+    "binary_sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+    "source": "FG-2A.epl",
+    "dispatcher_rva": "0x6f780",
+    "selector_rva": "0x1061e54",
+    "selector_file_backed": false,
+    "table_rva": "0x1015dd0",
+    "sampled_slots": [
+      {
+        "slot": 0,
+        "target_rva": "0x708b0",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 1,
+        "target_rva": "0x709b0",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 2,
+        "target_rva": "0x709f0",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 3,
+        "target_rva": "0x709f0",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 4,
+        "target_rva": "0x70a30",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 5,
+        "target_rva": "0x70a70",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 6,
+        "target_rva": "0x70b70",
+        "executable_file_backed": true
+      }
+    ],
+    "status": "static candidate targets only; table extent, runtime choice and DSP semantics unverified"
+  },
+  {
+    "binary_sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+    "source": "FG-2A.epl",
+    "dispatcher_rva": "0x6f7a0",
+    "selector_rva": "0x1061e54",
+    "selector_file_backed": false,
+    "table_rva": "0x1015e08",
+    "sampled_slots": [
+      {
+        "slot": 0,
+        "target_rva": "0x70cf0",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 1,
+        "target_rva": "0x70f00",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 2,
+        "target_rva": "0x70f40",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 3,
+        "target_rva": "0x70f40",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 4,
+        "target_rva": "0x70f80",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 5,
+        "target_rva": "0x70fc0",
+        "executable_file_backed": true
+      },
+      {
+        "slot": 6,
+        "target_rva": "0x71120",
+        "executable_file_backed": true
+      }
+    ],
+    "status": "static candidate targets only; table extent, runtime choice and DSP semantics unverified"
+  }
+]

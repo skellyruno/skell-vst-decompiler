@@ -41,3 +41,7 @@ python -m unittest discover -s tests -v
 ```
 
 Outputs are JSON **summaries only**, with SHA-256, coefficient and state offsets and scope limitations; no original vendor code or binary bytes.
+
+## Subsequent verified correction
+
+The deeper dynamics trace establishes that these 24 motifs form **six groups of four**, restarting from the same gain-adjusted sample and feeding weighted peak and power detector states. The conventional compressor knee, gain-reduction recurrence and gain conversion are also now established for their native branch. See [the new equation catalog report](TVB_DYNAMICS_EQUATIONS.md). Earlier uncertainty in this document is retained as historical context; exact cutoffs, full alternate mode gain curves and host/audio behavior remain unverified.

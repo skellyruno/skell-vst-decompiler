@@ -6,12 +6,17 @@ from pathlib import Path
 from .disasm import disassemble, direct_calls, imported_call_sites, rip_data_refs
 from .equations import TVB_SHA256, trace_tvb_first_biquad, trace_tvb_biquad_bank
 from .pe import PE
+from .dynamics import verify_dynamics
+from .catalog import search
+from .dispatch import trace_dispatch
 
 
 def main(argv=None):
     p=argparse.ArgumentParser(description="Skell VST Decompiler: read-only PE and DSP evidence")
     p.add_argument("binary",help="Locally owned Windows x64 VST3/EPL binary")
-    p.add_argument("--mode",choices=["inventory","trace","tvb-biquad","tvb-bank","tvb-compressor-setup"],default="inventory")
+    p.add_argument("--mode",choices=["inventory","trace","tvb-biquad","tvb-bank","tvb-compressor-setup","tvb-dynamics","dispatch"],default="inventory")
+    p.add_argument("--find",help="Filter tvb-dynamics by keywords or hexadecimal RVA")
+    p.add_argument("--entries",type=int,default=4,help="Candidate jump-table slots to inspect (1..32, not inferred table length)")
     p.add_argument("--rva",type=lambda x:int(x,0))
     p.add_argument("--bytes",dest="length",type=int,default=2048)
     p.add_argument("--objdump",default="objdump")
@@ -23,6 +28,12 @@ def main(argv=None):
     if a.mode=="inventory":res=pe.inventory()
     elif a.mode=="tvb-biquad":res={"sha256":pe.sha256,"evidence":trace_tvb_first_biquad(pe,a.objdump)}
     elif a.mode=="tvb-bank":res=trace_tvb_biquad_bank(pe,a.objdump)
+    elif a.mode=="dispatch":
+        if a.rva is None:p.error("--mode dispatch requires --rva")
+        res=trace_dispatch(pe,a.rva,a.entries,a.objdump)
+    elif a.mode=="tvb-dynamics":
+        res=verify_dynamics(pe,a.objdump)
+        if a.find is not None:res=search(res,a.find)
     elif a.mode=="tvb-compressor-setup":
         if pe.sha256!=TVB_SHA256:
             raise ValueError("Exact source SHA-256 differs; refusing build-specific DSP claims")
