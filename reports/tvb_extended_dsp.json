@@ -1,0 +1,299 @@
+{
+  "schema_version": 1,
+  "source": "TVB Rack V2.vst3",
+  "binary_sha256": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
+  "regions": [
+    {
+      "id": "compound_gain",
+      "title": "Primary FET input calibration, threshold and output coupling",
+      "confidence": "instruction-verified local algebra/structure; runtime unverified",
+      "equation": "Finite inputs: z=lerp(input_curve,clamp(threshold+59,0,59))+input_db; I=clamp(z,-12,24); e=z-I; T=clamp(-e,-72,0); O=clamp(lerp(output_curve,clamp(cla_output+59,0,59))+output_db+e,-120,24). If threshold or CLA output <= -59.95, O=-120. Fields 0x17c=input, 0x150=threshold, 0x174=output; makeup and auto makeup zeroed. CLA default -18 if absent. Curves are file-backed and fingerprinted, not exported.",
+      "checkpoint_rvas": [
+        "0x342fa8",
+        "0x342fb1",
+        "0x342ff5",
+        "0x343019",
+        "0x343030",
+        "0x34303a",
+        "0x343044",
+        "0x343053",
+        "0x343057",
+        "0x343060",
+        "0x34308c",
+        "0x3430db",
+        "0x3430e3",
+        "0x3430eb",
+        "0x3430f2",
+        "0x343106",
+        "0x343137",
+        "0x343161",
+        "0x34316b",
+        "0x343184",
+        "0x343192",
+        "0x343196",
+        "0x3431bb"
+      ],
+      "start_rva": "0x342fa8",
+      "end_rva_exclusive": "0x3431c3",
+      "sha256": "493328617695c5ec59f937bacb955ab110f8cdc37975e7e0500916de55d3c2fc",
+      "checkpoint_count": 23,
+      "math_call_count": 0
+    },
+    {
+      "id": "gain_consumers",
+      "title": "Independent input/output gain ramps and dry blend",
+      "confidence": "instruction-verified local algebra/structure; runtime unverified",
+      "equation": "Field 0x17c is converted to a smoothed linear input multiplier, field 0x174 to output gain; db<=-100 maps to zero, else 10^(db/20).",
+      "checkpoint_rvas": [
+        "0x5d052e",
+        "0x5d057d",
+        "0x5d0596",
+        "0x5d05bb",
+        "0x5d05c7",
+        "0x5d05cd",
+        "0x5d072e",
+        "0x5d07a9"
+      ],
+      "start_rva": "0x5d052e",
+      "end_rva_exclusive": "0x5d07b5",
+      "sha256": "a63a7f5adb8bb9df6a41f9702abc635aac9d15ab99fbca34f9ecbf72db35b0e9",
+      "checkpoint_count": 8,
+      "math_call_count": 2
+    },
+    {
+      "id": "mix",
+      "title": "Final output blend",
+      "confidence": "instruction-verified local algebra/structure; runtime unverified",
+      "equation": "Output = O_linear*((1-mix)*saved_dry + mix*colored_wet), or O_linear*wet when blend branch inactive. Makeup path includes further factors; exact mode-dependent calibration not asserted.",
+      "checkpoint_rvas": [
+        "0x5d1ccd",
+        "0x5d1cd2",
+        "0x5d1d15",
+        "0x5d1d07",
+        "0x5d1ef7",
+        "0x5d1eff",
+        "0x5d1f04",
+        "0x5d1f08"
+      ],
+      "start_rva": "0x5d1c9a",
+      "end_rva_exclusive": "0x5d1f25",
+      "sha256": "6cd7a45a1169f4587ad935a3c9936955cd8fbd4b4439857917f7831ebb2dd8e4",
+      "checkpoint_count": 8,
+      "math_call_count": 0
+    },
+    {
+      "id": "deess_crossover",
+      "title": "De-esser complementary two-section crossover",
+      "confidence": "instruction-verified local algebra/structure; runtime unverified",
+      "equation": "Two TPT lowpass sections with shared g,k. low=LP2(LP1(x)); high=HP1+LP1-k*BP1-low. Sum is allpass1, not sample-identical dry.",
+      "checkpoint_rvas": [
+        "0x5b6b4a",
+        "0x5b6b50",
+        "0x5b6b54",
+        "0x5b6b5a",
+        "0x5b6b79",
+        "0x5b6b9a",
+        "0x5b6bdb",
+        "0x5b6bfb",
+        "0x5b6c01",
+        "0x5b6c06",
+        "0x5b6c0c",
+        "0x5b6c15",
+        "0x5b6c1d",
+        "0x5b6c21"
+      ],
+      "start_rva": "0x5b6b20",
+      "end_rva_exclusive": "0x5b6c2a",
+      "sha256": "ed4259d9e42cbae6025faf767fb569d328a346b5f6495006efdb789085a760d7",
+      "checkpoint_count": 14,
+      "math_call_count": 0
+    },
+    {
+      "id": "deess_setup",
+      "title": "De-esser crossover and time coefficient setup",
+      "confidence": "instruction-verified local algebra/structure; runtime unverified",
+      "equation": "Crossover cutoff=clamp(field150*mode_scale,2000,12000) with scale 1.3,1,0.75. Detector retention exp(-1/(Fs*t)) with t=.00012 or .028 seconds; gain envelope retention uses fields 0x16c/0x170 in ms. Ratio slope=1-1/R.",
+      "checkpoint_rvas": [
+        "0x5d3c73",
+        "0x5d3c7f",
+        "0x5d3c8f",
+        "0x5d3cb2",
+        "0x5d3d11",
+        "0x5d3d1f",
+        "0x5d3d4d",
+        "0x5d3d6b",
+        "0x5d3d95",
+        "0x5d3dcd",
+        "0x5d3deb",
+        "0x5d3df3"
+      ],
+      "start_rva": "0x5d3c5e",
+      "end_rva_exclusive": "0x5d3dfd",
+      "sha256": "70fa101b26560fba91352131778be91ea3d60fa3603a99fbba6b219b0407f9c5",
+      "checkpoint_count": 12,
+      "math_call_count": 4
+    },
+    {
+      "id": "deess_gain",
+      "title": "De-esser linked level, progressive gain law and output choices",
+      "confidence": "instruction-verified local algebra/structure; runtime unverified",
+      "equation": "Linked p=max(abs(high[channel])). E=retain*Eold+(1-retain)*p; L=max(-120,20log10(E)); u=L-T. For u>0, target=min(cap,(1-1/R)*u*(1+0.55*clamp(u/8,0,1))), else 0. Separate attack/release GR smoothing, gain=10^(-GR/20) above -100dB. Mode field 0x160 selects wideband (1) versus split-band; flag0x164 excludes low component.",
+      "checkpoint_rvas": [
+        "0x5d3e82",
+        "0x5d3e8b",
+        "0x5d3e8f",
+        "0x5d3ed0",
+        "0x5d3ed4",
+        "0x5d3edc",
+        "0x5d3f05",
+        "0x5d3f12",
+        "0x5d3f25",
+        "0x5d3f31",
+        "0x5d3f3c",
+        "0x5d3f44",
+        "0x5d3f7f",
+        "0x5d3fcd",
+        "0x5d3feb",
+        "0x5d3ff4"
+      ],
+      "start_rva": "0x5d3e44",
+      "end_rva_exclusive": "0x5d401e",
+      "sha256": "933557362cdcf54c46612a8d2dd3f56a822b5c1194a6d609122673c9c91980f7",
+      "checkpoint_count": 16,
+      "math_call_count": 2
+    },
+    {
+      "id": "deess_split",
+      "title": "Split-band output sample write",
+      "confidence": "instruction-verified local algebra/structure; runtime unverified",
+      "equation": "Split output=high*gain+low, or high*gain with low excluded.",
+      "checkpoint_rvas": [
+        "0x5d4115",
+        "0x5d411b",
+        "0x5d4120",
+        "0x5d4131"
+      ],
+      "start_rva": "0x5d4112",
+      "end_rva_exclusive": "0x5d4137",
+      "sha256": "667b122a3afb6444dde57ae3b9b2b4f1c230ca401e27de90d0757114c9bbb01f",
+      "checkpoint_count": 4,
+      "math_call_count": 0
+    },
+    {
+      "id": "eq_schedule",
+      "title": "24-band detector/output EQ handoff in 32-frame chunks",
+      "confidence": "instruction-verified local algebra/structure; runtime unverified",
+      "equation": "For each <=32-frame chunk, call detector then transfer 24 per-band signed gain adjustments to audio EQ before processing the chunk.",
+      "checkpoint_rvas": [
+        "0x35bba0",
+        "0x35bbaf",
+        "0x35bbcd",
+        "0x35bbe0",
+        "0x35bbec",
+        "0x35bbf5",
+        "0x35bc11",
+        "0x35bc67"
+      ],
+      "start_rva": "0x35bb80",
+      "end_rva_exclusive": "0x35bc6c",
+      "sha256": "db873829f1fcfc16b3073749d2cdba2c8f1003500e6cd49c5dcb9e1cb2c245e5",
+      "checkpoint_count": 8,
+      "math_call_count": 0
+    },
+    {
+      "id": "eq_detector",
+      "title": "Dynamic EQ bandpass coefficient and detector recurrences",
+      "confidence": "instruction-verified local algebra/structure; runtime unverified",
+      "equation": "TPT bandpass branch: g=tan(pi*clamp(f,1,0.49*Fs)/Fs), k=1/max(Q,.025), a1=1/(1+g*(g+k)), a2=g*a1,a3=g*a2; output=k*v1. Fast and slow absolute envelopes. Signed adjustment = range*clamp((L-T)/clamp(6+0.5*abs(range),6,24),0,1); fixed threshold or slow-envelope dB+3. Fast retention is frequency/control-dependent; slow retention exp(-1/(2*Fs)). 24 records of 0x168 bytes. Other detector routing branches exist.",
+      "checkpoint_rvas": [
+        "0x5a50ce",
+        "0x5a5258",
+        "0x5a525c",
+        "0x5a5287",
+        "0x5a528b",
+        "0x5a52a1",
+        "0x5a52aa",
+        "0x5a52b3",
+        "0x5a5b65",
+        "0x5a5b90",
+        "0x5a5b96",
+        "0x5a5bbb",
+        "0x5a5be2",
+        "0x5a5bf0",
+        "0x5a5c30",
+        "0x5a5c69",
+        "0x5a5c6d",
+        "0x5a5c83",
+        "0x5a5c9e",
+        "0x5a5cb7",
+        "0x5a5cc6",
+        "0x5a5ce7"
+      ],
+      "start_rva": "0x5a5090",
+      "end_rva_exclusive": "0x5a5d70",
+      "sha256": "5554a5dec7e5db3faf8623a4fa04b0c21b6d7bfb166ebbd38263aad8ebe6da60",
+      "checkpoint_count": 22,
+      "math_call_count": 6
+    }
+  ],
+  "checkpoint_count": 115,
+  "scalar_constants": {
+    "0x928ac8": -18,
+    "0x928ad8": -59.95,
+    "0x928a88": 59,
+    "0x928ac4": -12,
+    "0x918858": 24,
+    "0x928ae0": -72,
+    "0x928aec": -120,
+    "0x928ae8": -100,
+    "0x909bec": 0.05,
+    "0x909c98": 10,
+    "0x928ab0": 2000,
+    "0x928abc": 12000,
+    "0xa5c774": 0.00012,
+    "0xa5c778": 0.028,
+    "0x9142a0": 0.001,
+    "0xa5b128": 0.125,
+    "0x914300": 0.55,
+    "0x928a70": 20,
+    "0x974198": 0.025,
+    "0x9143f0": 6,
+    "0x909c80": 3
+  },
+  "gain_table_fingerprints": [
+    {
+      "rows": 1,
+      "points_per_row": 60,
+      "total_points": 60,
+      "bytes": 240,
+      "sha256": "6abe1f7bf3aa3fb5be661c219f1db43a577d6f92babcf5e27001659bfcc85c25",
+      "all_finite": true,
+      "row_shapes": [
+        {
+          "row": 0,
+          "negative_step_count": 0,
+          "flat_step_count": 0
+        }
+      ]
+    },
+    {
+      "rows": 1,
+      "points_per_row": 60,
+      "total_points": 60,
+      "bytes": 240,
+      "sha256": "5d7cd99ac28fa93e27ba84715884d8d70e694b0801b8489f89077511d30279f7",
+      "all_finite": true,
+      "row_shapes": [
+        {
+          "row": 0,
+          "negative_step_count": 0,
+          "flat_step_count": 3
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Exact source only. Local equations for finite valid values, not an end-to-end implementation.",
+    "Original tables excluded; GUI normalization, all routing, dynamic EQ audio filter modes and runtime DSP not verified."
+  ]
+}
