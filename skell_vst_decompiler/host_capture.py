@@ -41,6 +41,17 @@ def bundle_hash(path):
     return hashlib.sha256(json.dumps(rows,separators=(',',':'),ensure_ascii=True).encode()).hexdigest()
 
 
+def windows_module_path(path):
+    """Resolve the standard x64 VST3 entry without moving or rewriting the bundle."""
+    p=Path(path)
+    if p.suffix.lower()!='.vst3' or p.is_symlink():raise ValueError('Invalid VST3 path')
+    if p.is_file():return p
+    if not p.is_dir():raise ValueError('Plugin path unavailable')
+    module=p/'Contents'/'x86_64-win'/p.name
+    if any(q.is_symlink() for q in (p/'Contents',module.parent,module)) or not module.is_file():raise ValueError('Standard Windows x64 VST3 module missing')
+    return module
+
+
 def validate(spec, authorized=False):
     if not isinstance(spec,dict) or spec.get('backend') not in ('fixture','installed_vst3'):raise ValueError('Unknown backend')
     params=spec.get('parameters')
@@ -88,7 +99,8 @@ def capture(root,case,spec,output,authorized=False):
     if pb.__version__!='0.9.23':raise ValueError('Use the tested Pedalboard 0.9.23 host version')
     external=spec['backend']=='installed_vst3'
     if external:
-        fx=pb.load_plugin(spec['path'],plugin_name=spec.get('plugin_name'),initialization_timeout=10.)
+        module=windows_module_path(spec['path']);module_sha=digest(module)
+        fx=pb.load_plugin(str(module),plugin_name=spec.get('plugin_name'),initialization_timeout=10.)
         if not fx.is_effect or fx.is_instrument:raise ValueError('Only audio effects supported')
         if any(k not in fx.parameters for k in spec['parameters']):raise ValueError('Unknown plugin parameter')
         for k,v in spec['parameters'].items():setattr(fx,k,v)
@@ -107,10 +119,10 @@ def capture(root,case,spec,output,authorized=False):
         after=normalized_readback(fx,spec['expected_normalized'])
         if after.keys()!=readback.keys() or any(not math.isfinite(v) or abs(v-readback[k])>1e-6 for k,v in after.items()):raise ValueError('Parameter readback changed after processing')
     if y.shape!=x.shape or not np.isfinite(y).all() or np.max(abs(y))>64:raise ValueError('Invalid or buffered output; no silent length correction')
-    if digest(source)!=row['sha256'] or (external and bundle_hash(spec['path'])!=binary_sha):raise ValueError('Input changed during render')
+    if digest(source)!=row['sha256'] or (external and (bundle_hash(spec['path'])!=binary_sha or digest(module)!=module_sha)):raise ValueError('Input changed during render')
     output.mkdir(parents=True,exist_ok=False)
     wet=output/'render.wav';sf.write(wet,y,fs,subtype='FLOAT')
-    meta={'plugin':plugin_name,'version':version,'settings':json.dumps({'requested':spec['parameters'],'readback':settings_readback},sort_keys=True),'source_sha256':row['sha256'],'render_sha256':digest(wet),'offset_samples':0,'target_stage':spec['target_stage'],'evidence':'EXEC: reference' if external and spec['purpose']=='reference' else 'EXEC: fixture','host':'Pedalboard '+pb.__version__,'backend':spec['backend'],'binary_sha256':binary_sha,'sample_rate':fs,'frames':len(y),'block_size':spec['block_size'],'reset':True,'parameter_readback':readback,'offline_process_seconds':elapsed,'alignment_status':'host_compensated_unverified' if external else 'fixture_no_extra_offset','reported_latency_samples':int(fx.reported_latency_samples) if external else None,'latency_note':'Pedalboard compensates reported latency; actual alignment not independently measured. No additional offset applied.'}
+    meta={'plugin':plugin_name,'version':version,'settings':json.dumps({'requested':spec['parameters'],'readback':settings_readback},sort_keys=True),'source_sha256':row['sha256'],'render_sha256':digest(wet),'offset_samples':0,'target_stage':spec['target_stage'],'evidence':'EXEC: reference' if external and spec['purpose']=='reference' else 'EXEC: fixture','host':'Pedalboard '+pb.__version__,'backend':spec['backend'],'binary_sha256':binary_sha,'host_module_sha256':module_sha if external else None,'sample_rate':fs,'frames':len(y),'block_size':spec['block_size'],'reset':True,'parameter_readback':readback,'offline_process_seconds':elapsed,'alignment_status':'host_compensated_unverified' if external else 'fixture_no_extra_offset','reported_latency_samples':int(fx.reported_latency_samples) if external else None,'latency_note':'Pedalboard compensates reported latency; actual alignment not independently measured. No additional offset applied.'}
     (output/'metadata.json').write_text(json.dumps(meta,indent=2,allow_nan=False)+'\n');return meta
 
 

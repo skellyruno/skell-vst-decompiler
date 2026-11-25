@@ -4,7 +4,7 @@ import tempfile
 import unittest
 import numpy as np
 import soundfile as sf
-from skell_vst_decompiler.host_capture import bundle_hash, validate, capture, run_matrix, normalized_readback
+from skell_vst_decompiler.host_capture import bundle_hash, validate, capture, run_matrix, normalized_readback, windows_module_path
 from skell_vst_decompiler.reference_lab import digest, measure
 from skell_vst_decompiler.divergence import first_difference
 
@@ -32,6 +32,16 @@ class HostTests(unittest.TestCase):
             with self.assertRaises(ValueError):normalized_readback(fx,expected)
         fx.parameters["gain"].raw_value=float("nan")
         with self.assertRaises(ValueError):normalized_readback(fx,{})
+
+    def test_standard_windows_module_resolution(self):
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d)/'Owned.vst3';p.mkdir()
+            with self.assertRaises(ValueError):windows_module_path(p)
+            m=p/'Contents'/'x86_64-win'/p.name;m.parent.mkdir(parents=True);m.write_bytes(b'fixture')
+            self.assertEqual(windows_module_path(p),m)
+            old=Path(d)/'Legacy.vst3';old.write_bytes(b'fixture')
+            self.assertEqual(windows_module_path(old),old)
+            self.assertEqual(m.read_bytes(),b'fixture')
 
     def test_fingerprint(self):
         with tempfile.TemporaryDirectory() as d:
