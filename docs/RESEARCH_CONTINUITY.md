@@ -180,3 +180,6 @@ Recovered verified original VMR archive (31 EPL files), added complete fingerpri
 
 ## Gem Dopamine intake — 2026-11-25
 Added owner-supplied Gem Dopamine-64.vst3 to the research queue. SHA-256 dc923f6507cc891e0417854178f1db2eb84965040aa661c9c144649548dffb6f; 16,981,384 bytes; PE32+ x64 DLL, standard VST3 factory/init/exit exports observed with GNU objdump. Embedded 1.1.5 version string, de-esser labels and two RTTI name candidates are navigation clues only. See reports/rack_intake/gem_dopamine.json. Priority: frequency-selective dynamics, excitation, de-esser and parameter provenance. No DSP algorithm verified, no binary executed or committed. Existing TVB/VMR priorities unchanged. Metadata-only addition; no new software tests or UI build. JUCE retrieval attempted, DNS unavailable.
+
+## Gem Dopamine and selected VMR DSP paths
+New exact-build evidence: Gem nonlinear/filter paths and utility classification, FG-401 asymmetric smoothing, AirEQ Air 64-sample FIR history, VCC Channel two-channel wrapper. 113 GNU/LLVM checkpoints in 11 regions across four fingerprints; four new tests, archived 72/72 passed. See docs/GEM_VMR_NATIVE_PATHS.md and reports/native_scoped/gem_vmr_paths.json. Full current-head CI pending. All previous research targets remain queued; no production changes.
