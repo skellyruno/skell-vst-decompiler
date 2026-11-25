@@ -122,7 +122,21 @@ jobs:
           /tmp/skell_coverage coverage 48000 > /tmp/coverage_opt.txt
           /tmp/skell_coverage chain 48000 > /tmp/chain_opt.bin
           cmp /tmp/coverage_san.txt /tmp/coverage_opt.txt
-          cmp /tmp/chain_san.bin /tmp/chain_opt.bin
+          python tests/compare_chain_numeric.py /tmp/chain_san.bin /tmp/chain_opt.bin
+      - name: Original extended Spacer and limiter chain regression
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/engine_lab/test_spacer_extended.cpp -o /tmp/skell_extended
+          /tmp/skell_extended
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/engine_lab/limited_color_chain.cpp -o /tmp/skell_limited
+          python tests/limited_color_smoke.py /tmp/skell_limited
+      - name: Extended Spacer and limited chain sanitizers
+        run: |
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie experiments/engine_lab/test_spacer_extended.cpp -o /tmp/skell_extended_san
+          /tmp/skell_extended_san quick
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie experiments/engine_lab/limited_color_chain.cpp -o /tmp/skell_limited_san
+          python tests/limited_color_smoke.py /tmp/skell_limited_san
+      - name: Owned PE direct caller census
+        run: PYTHONPATH=. python tests/direct_caller_smoke.py
       - name: Compile all research Python
         run: python -m compileall -q skell_vst_decompiler
       - name: Compile and test original native DSP prototypes

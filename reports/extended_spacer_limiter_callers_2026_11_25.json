@@ -1,0 +1,121 @@
+{
+  "parent": "27eb88e59f312aadf5819e7e19f890653cc79084",
+  "previous_ci": {
+    "workflows_passed": 7,
+    "workflows_total": 8,
+    "linux_run": 45661131310,
+    "failed_step": "exact byte comparison chain optimized vs sanitized",
+    "windows_host": "passed"
+  },
+  "spacer": {
+    "bands": 21,
+    "rate_hz": [
+      44100,
+      48000,
+      96000,
+      192000
+    ],
+    "cut20db": [
+      -5.68270752,
+      -5.6827277,
+      -5.68284003,
+      -5.68289646
+    ],
+    "old20db": -0.00663493,
+    "cut30_48k": -7.93278938,
+    "cut45_48k": -8.55470485,
+    "cross_20det_30main_db": -4.11394972,
+    "benchmark_median_us48": [
+      7.057539,
+      8.34406,
+      5.68383
+    ],
+    "benchmark_columns": [
+      "prior17",
+      "extended21_per_sample",
+      "extended21_periodic"
+    ],
+    "seeded_max_sample_error": 0
+  },
+  "limiter": {
+    "latency_samples": [
+      172,
+      184,
+      328,
+      616
+    ],
+    "minus_1_5_sample_peak": 0.8413951396942139,
+    "minus_1_5_estimated_4x_peaks": [
+      1.0514757762989662,
+      1.0173010384286092,
+      0.8476238562715014,
+      0.8419307424662917
+    ],
+    "minus_3_estimated_4x_dbfs": [
+      -1.064005786,
+      -1.219001907,
+      -2.765353762,
+      -2.981679478
+    ],
+    "limit": "sample-peak guarantee only"
+  },
+  "direct_callers": {
+    "trackspace": {
+      "sha256": "4964c856700126a97db3884f34d8dff7eb441cb8d516b6bceed79f6c3bcd5b84",
+      "calls": [
+        0,
+        0,
+        0,
+        3,
+        1
+      ],
+      "labels": [
+        "coefficient_target",
+        "bandpass_setup",
+        "peak_setup",
+        "cutoff_setup",
+        "spectral_processing"
+      ]
+    },
+    "gem": {
+      "sha256": "dc923f6507cc891e0417854178f1db2eb84965040aa661c9c144649548dffb6f",
+      "calls": [
+        21,
+        9,
+        12,
+        2,
+        4
+      ],
+      "scopes": [
+        10,
+        9,
+        7,
+        1,
+        1
+      ],
+      "labels": [
+        "highpass_family",
+        "lowpass_family",
+        "iir_helper",
+        "setup",
+        "envelope_path"
+      ]
+    },
+    "tvb": {
+      "sha256": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
+      "calls": [
+        0,
+        0
+      ],
+      "note": "selected old interior anchors, no absence claim"
+    }
+  },
+  "local_tests": {
+    "python": "10/10",
+    "owned_pe": "passed, 2 expected calls, wrong SHA rejected",
+    "native_optimized": "passed",
+    "native_sanitizers": "passed",
+    "old_chain_numeric_error": 0
+  },
+  "limits": "No vendor execution or new coefficient equations, no VCC/FG2A exact source reanalysis, no production or UI change, no certified true peak, no reference parity. Private detailed audio metrics excluded."
+}
