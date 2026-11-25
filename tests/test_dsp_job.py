@@ -11,7 +11,7 @@ class DSPJobTests(unittest.TestCase):
             root=Path(tmp);out=root/'report.json';binary=root/'fixture.dll'
             with patch('skell_vst_decompiler.dsp_job.shutil.which',return_value='/bin/objdump'),patch('skell_vst_decompiler.dsp_job.discover',return_value={'type':'dsp_discovery'}) as scan:
                 self.assertEqual(run_job(binary,out),0)
-                scan.assert_called_once_with(binary,limit=32,tool='objdump')
+                scan.assert_called_once_with(binary,limit=64,tool='objdump')
                 self.assertEqual(json.loads(out.read_text())['type'],'dsp_discovery')
                 with self.assertRaises(ValueError):run_job(binary,out)
     def test_error_report(self):

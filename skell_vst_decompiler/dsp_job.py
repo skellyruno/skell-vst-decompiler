@@ -3,7 +3,7 @@ import argparse
 import json
 from pathlib import Path
 import shutil
-from .dsp_discovery import discover
+from .anchored_discovery import anchored as discover
 
 
 def run_job(binary, output):
@@ -14,7 +14,7 @@ def run_job(binary, output):
     tool=next((t for t in ('objdump','llvm-objdump') if shutil.which(t)),None)
     try:
         if tool is None:raise RuntimeError('Install GNU or LLVM objdump on PATH')
-        report=discover(binary,limit=32,tool=tool)
+        report=discover(binary,limit=64,tool=tool)
         status=0
     except (ValueError,OSError,RuntimeError) as exc:
         report={'schema_version':1,'type':'dsp_discovery_error','error':str(exc)[:300]}
