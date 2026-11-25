@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "type": "parameter_navigation_cross_binary_summary",
+  "decoders": [
+    "objdump",
+    "llvm-objdump"
+  ],
+  "region_limit_per_binary": 48,
+  "sources": [
+    {
+      "source": "A1TriggerGate-x64(1).vst3",
+      "binary_sha256": "83a50c120301173e1aec1e537fa131b460d593fc7141fb4f39c8e813d99dabfc",
+      "literal_locations": 82,
+      "raw_candidate_sites": 77,
+      "uncovered_sites": 50,
+      "scanned_regions": 5,
+      "reference_count": 27,
+      "direct_argument_calls": 27,
+      "reader_candidates": 0,
+      "decoder_disagreements": 0
+    },
+    {
+      "source": "Gem Dopamine-64.vst3",
+      "binary_sha256": "dc923f6507cc891e0417854178f1db2eb84965040aa661c9c144649548dffb6f",
+      "literal_locations": 16,
+      "raw_candidate_sites": 1,
+      "uncovered_sites": 0,
+      "scanned_regions": 1,
+      "reference_count": 1,
+      "direct_argument_calls": 0,
+      "reader_candidates": 0,
+      "decoder_disagreements": 0
+    },
+    {
+      "source": "TVB Rack V2.vst3",
+      "binary_sha256": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
+      "literal_locations": 19,
+      "raw_candidate_sites": 38,
+      "uncovered_sites": 6,
+      "scanned_regions": 9,
+      "reference_count": 32,
+      "direct_argument_calls": 16,
+      "reader_candidates": 0,
+      "decoder_disagreements": 0
+    },
+    {
+      "source": "Virtual Mix Rack.vst3",
+      "binary_sha256": "8da77cc3d3e9935db56f56dabc586f1ff38dc1e667fa9ff6a9fbc2302f66c838",
+      "literal_locations": 4,
+      "raw_candidate_sites": 0,
+      "uncovered_sites": 0,
+      "scanned_regions": 0,
+      "reference_count": 0,
+      "direct_argument_calls": 0,
+      "reader_candidates": 0,
+      "decoder_disagreements": 0
+    },
+    {
+      "source": "Skelly Master.vst3",
+      "binary_sha256": "cc1945eecaefc53131b2d59ebe66c4da415549dae3bfc7bbfdce28abc87ab238",
+      "literal_locations": 24,
+      "raw_candidate_sites": 57,
+      "uncovered_sites": 0,
+      "scanned_regions": 13,
+      "reference_count": 57,
+      "direct_argument_calls": 50,
+      "reader_candidates": 16,
+      "decoder_disagreements": 0
+    },
+    {
+      "source": "Skell-Flang.vst3",
+      "binary_sha256": "7aa775fa9109971739404853e8685ac391df24e1ffc58f942bc39f1fc9bd44d1",
+      "literal_locations": 17,
+      "raw_candidate_sites": 60,
+      "uncovered_sites": 0,
+      "scanned_regions": 17,
+      "reference_count": 60,
+      "direct_argument_calls": 30,
+      "reader_candidates": 0,
+      "decoder_disagreements": 0
+    }
+  ],
+  "master_windows": {
+    "source_sha256": "cc1945eecaefc53131b2d59ebe66c4da415549dae3bfc7bbfdce28abc87ab238",
+    "source_checkout": "7a6b51210a4409610625aada8903913a933e3c08",
+    "processor_candidate": "0x1ebe40",
+    "string_helper": "0x227d0",
+    "reader_target": "0x1e2c30",
+    "reader_candidates": [
+      {
+        "source_id": "input",
+        "reference_rva": "0x1ebf33",
+        "reader_call_rva": "0x1ebf4c",
+        "scalar_load_rva": "0x1ebf51",
+        "reader_target_rva": "0x1e2c30"
+      },
+      {
+        "source_id": "drive",
+        "reference_rva": "0x1ebf62",
+        "reader_call_rva": "0x1ebf7b",
+        "scalar_load_rva": "0x1ebf80",
+        "reader_target_rva": "0x1e2c30"
+      },
+      {
+        "source_id": "glue",
+        "reference_rva": "0x1ebf9e",
+        "reader_call_rva": "0x1ebfb7",
+        "scalar_load_rva": "0x1ebfbc",
+        "reader_target_rva": "0x1e2c30"
+      },
+      {
+        "source_id": "dynamics",
+        "reference_rva": "0x1ebfd5",
+        "reader_call_rva": "0x1ebfee",
+        "scalar_load_rva": "0x1ebff3",
+        "reader_target_rva": "0x1e2c30"
+      },
+      {
+        "source_id": "lows",
+        "reference_rva": "0x1ec00c",
+        "reader_call_rva": "0x1ec025",
+        "scalar_load_rva": "0x1ec02a",
+        "reader_target_rva": "0x1e2c30"
+      },
+      {
+        "source_id": "highs",
+        "reference_rva": "0x1ec03a",
+        "reader_call_rva": "0x1ec053",
+        "scalar_load_rva": "0x1ec058",
+        "reader_target_rva": "0x1e2c30"
+      },
+      {
+        "source_id": "sauce",
+        "reference_rva": "0x1ec06a",
+        "reader_call_rva": "0x1ec083",
+        "scalar_load_rva": "0x1ec088",
+        "reader_target_rva": "0x1e2c30"
+      },
+      {
+        "source_id": "width",
+        "reference_rva": "0x1ec0a0",
+        "reader_call_rva": "0x1ec0b9",
+        "scalar_load_rva": "0x1ec0be",
+        "reader_target_rva": "0x1e2c30"
+      },
+      {
+        "source_id": "spatialWidth",
+        "reference_rva": "0x1ec0d3",
+        "reader_call_rva": "0x1ec0ec",
+        "scalar_load_rva": "0x1ec0f1",
+        "reader_target_rva": "0x1e2c30"
+      },
+      {
+        "source_id": "transients",
+        "reference_rva": "0x1ec149",
+        "reader_call_rva": "0x1ec160",
+        "scalar_load_rva": "0x1ec165",
+        "reader_target_rva": "0x1e2c30"
+      },
+      {
+        "source_id": "output",
+        "reference_rva": "0x1ec17b",
+        "reader_call_rva": "0x1ec192",
+        "scalar_load_rva": "0x1ec197",
+        "reader_target_rva": "0x1e2c30"
+      },
+      {
+        "source_id": "clipper",
+        "reference_rva": "0x1ec1ac",
+        "reader_call_rva": "0x1ec1c3",
+        "scalar_load_rva": "0x1ec1c8",
+        "reader_target_rva": "0x1e2c30"
+      },
+      {
+        "source_id": "ceiling",
+        "reference_rva": "0x1ec209",
+        "reader_call_rva": "0x1ec220",
+        "scalar_load_rva": "0x1ec225",
+        "reader_target_rva": "0x1e2c30"
+      },
+      {
+        "source_id": "bypass",
+        "reference_rva": "0x1ec2c1",
+        "reader_call_rva": "0x1ec2d8",
+        "scalar_load_rva": "0x1ec2dd",
+        "reader_target_rva": "0x1e2c30"
+      },
+      {
+        "source_id": "deuceMatch",
+        "reference_rva": "0x1ec2f2",
+        "reader_call_rva": "0x1ec309",
+        "scalar_load_rva": "0x1ec30e",
+        "reader_target_rva": "0x1e2c30"
+      },
+      {
+        "source_id": "ceiling",
+        "reference_rva": "0x1ec459",
+        "reader_call_rva": "0x1ec472",
+        "scalar_load_rva": "0x1ec477",
+        "reader_target_rva": "0x1e2c30"
+      }
+    ],
+    "parameter_setup_call": "0x1ec53e",
+    "parameter_setup_target": "0x1f0eb0",
+    "status": "source-known scalar read endpoints; full field dataflow pending"
+  },
+  "tvb_detector": {
+    "source_sha256": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
+    "checkpoint_count": 28,
+    "regions": [
+      {
+        "start_rva": "0x34ed50",
+        "end_rva_exclusive": "0x34f149",
+        "region_sha256": "b94c9bbc00801e8ddccab8d0f9d27bdc2191f2e00ae7f8c0a0f31efbc7124677"
+      },
+      {
+        "start_rva": "0x351700",
+        "end_rva_exclusive": "0x35176b",
+        "region_sha256": "52e7074586e1b5145ec7003374a14aa3e69aa3b0e5a8063d4788b127ddb4abd3"
+      },
+      {
+        "start_rva": "0x35acf8",
+        "end_rva_exclusive": "0x35ad8d",
+        "region_sha256": "743210761061d6486f061a5c96dbb3fae55a43378760861d3e68e90b9d8deca0"
+      },
+      {
+        "start_rva": "0x35b71f",
+        "end_rva_exclusive": "0x35bd80",
+        "region_sha256": "dc671a793975a7b73b01dfb5ee65751f6fce86bb6464167a375831d06bfa1e04"
+      }
+    ],
+    "producer": "0x35ba5a–0x35bb70",
+    "consumer_call": "0x35bbcd",
+    "consumer_target": "0x5a5090",
+    "status": "local channel-average scratch buffer; upstream buffer source unverified",
+    "prior_mapping_rerun": {
+      "checkpoint_count": 116,
+      "mapped_endpoints": 25
+    }
+  },
+  "a1_text_helper": {
+    "target": "0x266e0",
+    "start_rva": "0x266e0",
+    "end_rva_exclusive": "0x2686f",
+    "region_sha256": "a8115f85ece7bfcb8850b10e81f2cd74439c6363e6a35a30359d1fbdbc4757bb",
+    "gnu_rows": 107,
+    "llvm_rows": 107,
+    "matched": 106,
+    "arithmetic": 0,
+    "byte_processing_candidate": true,
+    "reference_count": 27
+  },
+  "gem_setup": {
+    "start_rva": "0x58b750",
+    "end_rva_exclusive": "0x58b912",
+    "region_sha256": "c42204e9cec5a26d4189bf05a4a4808a7fff04a50b13135eb5eb1aee4f4aa14c",
+    "matched_instruction_rows": 82,
+    "status": "indexed control setup; named identity unresolved"
+  },
+  "vmr_module_recovery": "BLOCKED: split parts truncated locally; 100MiB rematerialization cap prevents original archive recovery. Rack module available, separate EPL files not reverified.",
+  "limits": "Bounded static evidence only; no complete parameter or vendor DSP reconstruction, no runtime or audible verification. Disagreement metric is unmatched first-decoder reference rows; not entire instruction stream parity."
+}

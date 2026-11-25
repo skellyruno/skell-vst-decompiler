@@ -25,6 +25,8 @@ jobs:
           command -v lld-link
       - name: Unit tests (no vendor binaries)
         run: python -m unittest discover -s tests -v
+      - name: Owned PE parameter-reader navigation and negative control
+        run: PYTHONPATH=. python tests/parameter_xrefs_smoke.py
       - name: Owned-source blind PE recognition and native behavioral benchmark
         run: PYTHONPATH=. python tests/ground_truth_smoke.py
       - name: Owned wrapper and engine import verification
