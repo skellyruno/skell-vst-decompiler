@@ -183,3 +183,6 @@ Added owner-supplied Gem Dopamine-64.vst3 to the research queue. SHA-256 dc923f6
 
 ## Gem Dopamine and selected VMR DSP paths
 New exact-build evidence: Gem nonlinear/filter paths and utility classification, FG-401 asymmetric smoothing, AirEQ Air 64-sample FIR history, VCC Channel two-channel wrapper. 113 GNU/LLVM checkpoints in 11 regions across four fingerprints; four new tests, archived 72/72 passed. See docs/GEM_VMR_NATIVE_PATHS.md and reports/native_scoped/gem_vmr_paths.json. Full current-head CI pending. All previous research targets remain queued; no production changes.
+
+## Architecture-first automation foundation
+Parent 163ce35 all eight CI workflows passed. Added explicit adjacent-engine import/literal inventory, extracted-state audit and opt-in private Ghidra project retention. 76/76 archived tests passed; compiled owned two-DLL static edge independently confirmed with objdump; actual Gem/TVB/VMR metadata scanned. No real Ghidra retention, Delphi VMT, FLP/FST extraction or automatic DSP classification yet. See docs/ARCHITECTURE_FIRST_AUTOMATION.md. Owner's multiband example remains user-reported until supplied and verified. Full new CI pending; no production changes.

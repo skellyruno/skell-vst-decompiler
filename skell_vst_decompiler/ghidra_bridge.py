@@ -43,14 +43,16 @@ def launcher(home):
     return path
 
 
-def command(analyzer, project, binary, output, plan, seconds=300):
+def command(analyzer, project, binary, output, plan, seconds=300, *, retain_project=False):
     if not 1 <= seconds <= 3600:
         raise ValueError('Analysis time limit must be 1..3600 seconds')
     # No user-supplied Ghidra script or options; fixed script and isolated project.
     args = [str(analyzer), str(project), 'SkellResearch', '-import', str(binary),
             '-analysisTimeoutPerFile', str(seconds), '-max-cpu', '2',
             '-scriptPath', str(SCRIPT.parent), '-postScript', SCRIPT.name, str(output),
-            plan['binary_sha256'], *(x['requested_rva'] for x in plan['targets']), '-deleteProject']
+            plan['binary_sha256'], *(x['requested_rva'] for x in plan['targets'])]
+    if not retain_project:
+        args.append('-deleteProject')
     if os.name == 'nt' and any(re.search(r'[&|<>^%!\r\n"]', a) for a in args):
         raise ValueError('Windows batch launcher paths must not contain shell metacharacters')
     return args
@@ -126,7 +128,7 @@ def validate_links(folder, rows):
     return links
 
 
-def run_analysis(pe, plan, home, work_root, seconds=300):
+def run_analysis(pe, plan, home, work_root, seconds=300, *, retain_project=False):
     analyzer = launcher(home)
     if plan != make_plan(pe, [int(x['requested_rva'],16) for x in plan['targets']]):
         raise ValueError('Plan differs from source-validated targets')
@@ -138,7 +140,7 @@ def run_analysis(pe, plan, home, work_root, seconds=300):
     project = job / 'project'; project.mkdir()
     output = job / 'private'; output.mkdir()
     (job / 'plan.json').write_text(json.dumps(plan, indent=2), encoding='utf-8')
-    args = command(analyzer, project, pe.path.resolve(), output, plan, seconds)
+    args = command(analyzer, project, pe.path.resolve(), output, plan, seconds, retain_project=retain_project)
     # Merged streams avoid separate stdout/stderr pipe deadlocks. Unique project
     # ensures -deleteProject cannot remove a previous research project.
     with (job / 'analyzer.log').open('wb') as log:
@@ -154,6 +156,7 @@ def run_analysis(pe, plan, home, work_root, seconds=300):
             pe.at_rva(int(row['entry_rva'],16),1,executable=True)
     for edge in result['call_links']:
         pe.at_rva(int(edge['related_rva'],16),1,executable=True)
+    result['project_retention_requested'] = retain_project
     (job / 'result.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
     return {'job': str(job), **result}
 
@@ -167,6 +170,7 @@ def main(argv=None):
     p.add_argument('--query', default='', help='Filter catalog evidence by keywords')
     p.add_argument('--ghidra-home', type=Path, help='Installed official Ghidra; omit to produce a plan only')
     p.add_argument('--work-root', type=Path, default=Path('local/ghidra'))
+    p.add_argument('--retain-project', action='store_true', help='Keep isolated private Ghidra project for manual continuation')
     p.add_argument('--seconds', type=int, default=300)
     a = p.parse_args(argv)
     pe = PE(a.binary)
@@ -177,7 +181,7 @@ def main(argv=None):
     elif a.query:
         p.error('--query requires --catalog-dir')
     plan = make_plan(pe, targets, [json.loads(x.read_text(encoding='utf-8')) for x in a.report])
-    result = run_analysis(pe, plan, a.ghidra_home, a.work_root, a.seconds) if a.ghidra_home else plan
+    result = run_analysis(pe, plan, a.ghidra_home, a.work_root, a.seconds, retain_project=a.retain_project) if a.ghidra_home else plan
     print(json.dumps(result, indent=2))
     return 0
 

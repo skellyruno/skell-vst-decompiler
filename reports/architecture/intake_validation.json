@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "report_kind": "architecture_intake_validation",
+  "sources": [
+    {
+      "name": "Gem Dopamine-64.vst3",
+      "sha256": "dc923f6507cc891e0417854178f1db2eb84965040aa661c9c144649548dffb6f",
+      "ordinary_import_module_count": 15
+    },
+    {
+      "name": "TVB Rack V2.vst3",
+      "sha256": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
+      "ordinary_import_module_count": 36
+    },
+    {
+      "name": "Virtual Mix Rack.vst3",
+      "sha256": "8da77cc3d3e9935db56f56dabc586f1ff38dc1e667fa9ff6a9fbc2302f66c838",
+      "ordinary_import_module_count": 32
+    }
+  ],
+  "common_loader_api_imports": [
+    "GetProcAddress",
+    "LoadLibraryA",
+    "LoadLibraryExW",
+    "LoadLibraryW"
+  ],
+  "fixture_static_edge": {
+    "wrapper_sha256": "e86c737b39c0176266fdd262b515b11c602d7b753bfe8bad8152fb847a637876",
+    "engine_sha256": "6ff34af377a88b3750b22fd48c427c0ec5b2af05ab90a3c539cbcbb7830e997b",
+    "module": "engine.dll",
+    "symbol": "CreateEngine",
+    "independent_objdump_agreement": true
+  },
+  "synthetic_state_corpus": {
+    "expected_bytes": 124,
+    "records": 4,
+    "matching_size": 3,
+    "unique_matching_contents": 2,
+    "rejected_size_or_file": 1,
+    "declared_mapped_bytes": 4,
+    "declared_opaque_bytes": 120,
+    "unclassified_bytes": 0
+  },
+  "archived_local_tests": {
+    "passed": 76,
+    "new": 4
+  },
+  "limits": "Metadata only; no vendor runtime, actual multiband state corpus, dynamic load mapping or real Ghidra retention tested."
+}
