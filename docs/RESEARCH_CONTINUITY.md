@@ -165,3 +165,6 @@ Local g++ C++17 -O3 -Wall -Wextra -Werror and ASan/UBSan passed at 44.1/48/96/19
 Locally tested Git blob IDs: header 90658e9ff2900c39e317469beb40d432bcffa8a4; test a19eb8e8c3cce47352e8a7b91313c7a15b54ae24.
 
 Transferred identical independent code to SkellCore draft PR #48 (e8acc7ac63e9a1af0acbe883751629f3a9436318) and Skelliere draft PR #3 (4fe181024b830f5693a8a1b7da2837e45dbcb798). Exact-head CI pending.
+
+## Full FDN peak-memory validation
+Original optional 1 ms peak-memory candidate evaluated on two real recordings and nonoverlapping excerpts. Both native tests and sanitizers passed; active wet energy within 0.21 dB of baseline, first-second tails less attenuated. Details and limitations in docs/WET_DUCK_PEAK_MEMORY.md. No production or vendor changes; exact-head CI pending.
