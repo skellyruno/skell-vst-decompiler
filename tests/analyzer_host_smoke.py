@@ -5,7 +5,7 @@ from pathlib import Path
 import tempfile
 import numpy as np
 import soundfile as sf
-from skell_vst_decompiler.analyzer_worker import run_sweep
+from skell_vst_decompiler.analyzer_worker import run_sweep, run_parameter_map
 from skell_vst_decompiler.host_capture import bundle_hash,run_matrix
 from skell_vst_decompiler.reference_lab import digest
 
@@ -22,8 +22,14 @@ def main():
     assert abs(result['rows'][0]['metrics']['quiet']['gain']-.25)<1e-6,result
     assert row['state_difference']['status']=='CANDIDATE' and row['state_difference']['stable_changed_bytes']>0,result
     delay=run_sweep(spec,'creative_delay',[0.,1.]);assert all(r['status']=='captured' for r in delay['rows']),delay
-    assert delay['repeat_metrics_stable'] and delay['rows'][0]['metrics']['first_arrival']==0 and delay['rows'][-1]['metrics']['first_arrival']==130,delay
+    assert delay['repeat_metrics_stable'] and delay['rows'][0]['metrics']['first_arrival']==0 and delay['rows'][-1]['metrics']['first_arrival']==137,delay
     assert delay['rows'][-1]['behavior_candidate']=='delay',delay
+    # Common default state: gain .5 and creative_delay off. Repeat every changed point.
+    mapping=run_parameter_map(spec,{'gain':[.5,.25,.75],'creative_delay':[0.,1.]})
+    assert mapping['status']=='CANDIDATE',mapping
+    controls={r['parameter']:r for r in mapping['mapping']['controls']}
+    assert all(r['observed_state_byte_count']>0 and all(o['status']=='STATE_AND_AUDIO' for o in r['observations']) for r in controls.values()),mapping
+    print('SKELL_OWNED_PARAMETER_MAP '+json.dumps(mapping['mapping'],sort_keys=True))
     # The analyzer front-end itself must be transparent at both block sizes.
     with tempfile.TemporaryDirectory() as tmp:
         root=Path(tmp)/'probes';root.mkdir();fs=48000;t=np.arange(4813)/fs

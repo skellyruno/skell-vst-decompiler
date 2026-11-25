@@ -8,6 +8,7 @@ import subprocess
 import sys
 import tempfile
 import numpy as np
+from .parameter_evidence import replicated_delta, summarize_map
 
 MAX_STATE=4*1024*1024
 
@@ -109,19 +110,21 @@ def installed_capture(spec):
     after={k:float(v.raw_value) for k,v in fx.parameters.items()}
     if bundle_hash(path)!=spec['sha256'] or hashlib.sha256(module.read_bytes()).hexdigest()!=module_sha or after!=readback:raise ValueError('Source or parameter readback changed')
     result={'binary_sha256':spec['sha256'],'version':str(fx.version),'host_module_sha256':module_sha,'parameters':readback,'metrics':describe(probes,rendered),
-            'state_sha256':hashlib.sha256(raw).hexdigest(),'reported_latency':int(fx.reported_latency_samples),'alignment':'host_compensated_unverified'}
+            'state_sha256':hashlib.sha256(raw).hexdigest(),'sample_rate':fs,'reported_latency':int(fx.reported_latency_samples),'alignment':'host_compensated_unverified'}
     result['behavior_candidate']=behavior_candidate(result['metrics'])
     return result,raw
 
 
-def run_sweep(spec, key, values, timeout=90):
-    """One fresh child per setting plus repeated baseline. Private temp state only."""
+def run_sweep(spec, key, values, timeout=90, *, repeat_changed=False):
+    """Fresh child per setting; optional replication of every changed setting."""
     if not isinstance(values,list) or not 2<=len(values)<=16 or any(type(v) not in (int,float) or not math.isfinite(v) or not 0<=v<=1 for v in values) or len(set(values))!=len(values):raise ValueError('Invalid sweep points')
     if not isinstance(key,str) or not key or len(key)>256 or type(timeout) is not int or not 5<=timeout<=300:raise ValueError('Invalid sweep budget')
+    if type(repeat_changed) is not bool:raise ValueError('Invalid replication flag')
+    points=[v for v in values for _ in range(2)] if repeat_changed else [values[0]]+values
     rows=[];states=[]
     with tempfile.TemporaryDirectory(prefix='skell-analyzer-') as tmp:
         root=Path(tmp)
-        for i,v in enumerate([values[0]]+values):
+        for i,v in enumerate(points):
             job=root/f'{i}.json';out=root/f'{i}.out';state=root/f'{i}.state'
             job.write_text(json.dumps(dict(spec,parameter=key,normalized=v),allow_nan=False))
             try:
@@ -132,21 +135,45 @@ def run_sweep(spec, key, values, timeout=90):
                 rows.append({'value':v,'status':'captured',**row});states.append(raw)
             except (OSError,ValueError,KeyError,subprocess.SubprocessError) as e:
                 rows.append({'value':v,'status':'failed','error':str(e)[:300]});states.append(None)
-        baseline_stable=states[0] is not None and states[1] is not None and rows[0]['parameters']==rows[1]['parameters'] and rows[0]['metrics']==rows[1]['metrics']
+        def equivalent(i,j):
+            return states[i] is not None and states[j] is not None and all(rows[i].get(k)==rows[j].get(k) for k in ('parameters','metrics','binary_sha256','host_module_sha256','version','sample_rate','reported_latency'))
+        baseline_stable=equivalent(0,1)
         if baseline_stable:
-            for i in range(2,len(rows)):
-                if states[i] is not None:
+            for i in range(2,len(rows),2 if repeat_changed else 1):
+                if repeat_changed:
+                    rows[i]['replicate_verified']=equivalent(i,i+1)
+                    if not rows[i]['replicate_verified']:continue
+                    rows[i]['state_difference']=replicated_delta(states[0],states[1],states[i],states[i+1])
+                elif states[i] is not None:
                     rows[i]['state_difference']=state_difference(states[0],states[1],states[i])
-                    rows[i]['other_changed_controls']=[k for k,v in rows[0]['parameters'].items() if k!=key and rows[i]['parameters'].get(k)!=v]
-                    rows[i]['observable_metrics_changed']=rows[i]['metrics']!=rows[0]['metrics']
-    return {'parameter':key,'rows':rows,'repeat_metrics_stable':baseline_stable,'note':'Public host keys, not numeric VST3 IDs. State locations are candidates; no private bytes exported. Process isolation is not a security sandbox.'}
+                else:continue
+                before,after=rows[0]['parameters'],rows[i]['parameters']
+                rows[i]['other_changed_controls']=sorted(k for k in before.keys()|after.keys() if k!=key and before.get(k)!=after.get(k))
+                rows[i]['observable_metrics_changed']=rows[i]['metrics']!=rows[0]['metrics']
+    return {'parameter':key,'rows':rows,'repeat_changed':repeat_changed,'repeat_metrics_stable':baseline_stable,'note':'Public host keys, not numeric VST3 IDs. State locations are candidates; no private bytes exported. Process isolation is not a security sandbox.'}
+
+
+def run_parameter_map(spec, plan, timeout=90):
+    """Explicit bounded one-control-at-a-time plan, with all other controls at default."""
+    if not isinstance(plan,dict) or not 1<=len(plan)<=8 or any(not isinstance(k,str) or not k or len(k)>256 or not isinstance(v,list) or not 2<=len(v)<=16 for k,v in plan.items()):
+        raise ValueError('Invalid parameter map plan')
+    if sum(len(v) for v in plan.values())>32:raise ValueError('Parameter map budget exceeded')
+    if any(any(type(x) not in (int,float) or not math.isfinite(x) or not 0<=x<=1 for x in v) or len(set(v))!=len(v) for v in plan.values()):
+        raise ValueError('Invalid map sweep points')
+    reports=[run_sweep(spec,key,values,timeout,repeat_changed=True) for key,values in plan.items()]
+    try:
+        mapping=summarize_map(reports)
+    except (ValueError,KeyError,TypeError) as exc:
+        return {'status':'UNRESOLVED','reason':str(exc)[:300],'sweeps':reports}
+    return {'status':'CANDIDATE' if mapping['complete_comparison'] else 'PARTIAL','mapping':mapping,'sweeps':reports}
 
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);s=p.add_subparsers(dest='mode',required=True)
     c=s.add_parser('child');c.add_argument('spec');c.add_argument('output');c.add_argument('state')
     inv=s.add_parser('inventory');inv.add_argument('spec')
-    q=s.add_parser('sweep');q.add_argument('spec');q.add_argument('parameter');q.add_argument('values',nargs='+',type=float)
+    q=s.add_parser('sweep');q.add_argument('spec');q.add_argument('parameter');q.add_argument('values',nargs='+',type=float);q.add_argument('--repeat-changed',action='store_true')
+    m=s.add_parser('map');m.add_argument('spec');m.add_argument('plan')
     a=p.parse_args();spec=json.loads(Path(a.spec).read_text())
     if a.mode=='child':
         result,raw=installed_capture(spec);Path(a.state).write_bytes(raw);Path(a.output).write_text(json.dumps(result,allow_nan=False));return 0
@@ -157,7 +184,11 @@ def main():
             job.write_text(json.dumps(dict(spec,parameter=None,normalized=None),allow_nan=False))
             subprocess.run([sys.executable,'-m','skell_vst_decompiler.analyzer_worker','child',str(job),str(out),str(state)],check=True,timeout=90)
             result=json.loads(out.read_text());print(json.dumps(result,indent=2,allow_nan=False));return 0
-    result=run_sweep(spec,a.parameter,a.values);print(json.dumps(result,indent=2,allow_nan=False));return int(any(r['status']!='captured' for r in result['rows']))
+    if a.mode=='map':
+        plan=Path(a.plan)
+        if plan.stat().st_size>65536:raise ValueError('Map plan too large')
+        result=run_parameter_map(spec,json.loads(plan.read_text()));print(json.dumps(result,indent=2,allow_nan=False));return int(result['status']!='CANDIDATE')
+    result=run_sweep(spec,a.parameter,a.values,repeat_changed=a.repeat_changed);print(json.dumps(result,indent=2,allow_nan=False));return int(any(r['status']!='captured' for r in result['rows']) or (a.repeat_changed and (not result['repeat_metrics_stable'] or any(not r.get('replicate_verified') for r in result['rows'][2::2]))))
 
 
 if __name__=='__main__':raise SystemExit(main())
