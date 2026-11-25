@@ -1,0 +1,151 @@
+{
+  "module_sha256": "82edf9789d1f2632f6f707ee9739f9d1e54f9e5e0781d829a9016ddc513876c3",
+  "source_checkout": "7a6b51210a4409610625aada8903913a933e3c08",
+  "rows": [
+    {
+      "source_id": "input",
+      "parameter_struct_offset": "0x0",
+      "target_offset": "0x88",
+      "current_offset": "0x80",
+      "coefficient_offset": "0x90",
+      "setter_read": "0x139e22",
+      "setter_store": "0x139e89",
+      "recurrence_start": "0x13a680",
+      "recurrence_steps": [
+        "0x13a69b",
+        "0x13a69f",
+        "0x13a6a8",
+        "0x13a6ac"
+      ]
+    },
+    {
+      "source_id": "drive",
+      "parameter_struct_offset": "0x8",
+      "target_offset": "0xa0",
+      "current_offset": "0x98",
+      "coefficient_offset": "0xa8",
+      "setter_read": "0x139e91",
+      "setter_store": "0x139ec5",
+      "recurrence_start": "0x13a6de",
+      "recurrence_steps": [
+        "0x13a6f9",
+        "0x13a6fd",
+        "0x13a706",
+        "0x13a70a"
+      ]
+    },
+    {
+      "source_id": "glue",
+      "parameter_struct_offset": "0x10",
+      "target_offset": "0xb8",
+      "current_offset": "0xb0",
+      "coefficient_offset": "0xc0",
+      "setter_read": "0x139ecd",
+      "setter_store": "0x139f31",
+      "recurrence_start": "0x13a72b",
+      "recurrence_steps": [
+        "0x13a746",
+        "0x13a74a",
+        "0x13a753",
+        "0x13a760"
+      ]
+    },
+    {
+      "source_id": "dynamics",
+      "parameter_struct_offset": "0x18",
+      "target_offset": "0xd0",
+      "current_offset": "0xc8",
+      "coefficient_offset": "0xd8",
+      "setter_read": "0x139ee8",
+      "setter_store": "0x139f3e",
+      "recurrence_start": "0x13a77d",
+      "recurrence_steps": [
+        "0x13a798",
+        "0x13a79c",
+        "0x13a7a5",
+        "0x13a7b2"
+      ]
+    },
+    {
+      "source_id": "lows",
+      "parameter_struct_offset": "0x20",
+      "target_offset": "0xe8",
+      "current_offset": "0xe0",
+      "coefficient_offset": "0xf0",
+      "setter_read": "0x139f39",
+      "setter_store": "0x139f5c",
+      "recurrence_start": "0x13a7cf",
+      "recurrence_steps": [
+        "0x13a7ea",
+        "0x13a7ee",
+        "0x13a7f7",
+        "0x13a801"
+      ]
+    },
+    {
+      "source_id": "highs",
+      "parameter_struct_offset": "0x28",
+      "target_offset": "0x100",
+      "current_offset": "0xf8",
+      "coefficient_offset": "0x108",
+      "setter_read": "0x139f64",
+      "setter_store": "0x139f7f",
+      "recurrence_start": "0x13a81e",
+      "recurrence_steps": [
+        "0x13a839",
+        "0x13a83d",
+        "0x13a846",
+        "0x13a850"
+      ]
+    },
+    {
+      "source_id": "sauce",
+      "parameter_struct_offset": "0x30",
+      "target_offset": "0x118",
+      "current_offset": "0x110",
+      "coefficient_offset": "0x120",
+      "setter_read": "0x139f87",
+      "setter_store": "0x139fa7",
+      "recurrence_start": "0x13a86d",
+      "recurrence_steps": [
+        "0x13a888",
+        "0x13a88c",
+        "0x13a895",
+        "0x13a89f"
+      ]
+    },
+    {
+      "source_id": "transients",
+      "parameter_struct_offset": "0x50",
+      "target_offset": "0x130",
+      "current_offset": "0x128",
+      "coefficient_offset": "0x138",
+      "setter_read": "0x13a04d",
+      "setter_store": "0x13a068",
+      "recurrence_start": "0x13a8bc",
+      "recurrence_steps": [
+        "0x13a8d7",
+        "0x13a8db",
+        "0x13a8e4",
+        "0x13a8f1"
+      ]
+    },
+    {
+      "source_id": "output",
+      "parameter_struct_offset": "0x58",
+      "target_offset": "0x148",
+      "current_offset": "0x140",
+      "coefficient_offset": "0x150",
+      "setter_read": "0x13a070",
+      "setter_store": "0x13a0bf",
+      "recurrence_start": "0x13aaa8",
+      "recurrence_steps": [
+        "0x13aac3",
+        "0x13aac7",
+        "0x13aad0",
+        "0x13aadd"
+      ]
+    }
+  ],
+  "limits": "Source-known setter member endpoints and local register-linked smoother recurrence. Not all control-flow paths, coefficients, or downstream audio consumption."
+}

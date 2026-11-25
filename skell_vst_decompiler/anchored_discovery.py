@@ -7,6 +7,7 @@ from .classgraph import class_graph
 from .navigation import runtime_ranges, containing_range
 from .disasm import disassemble
 from .dsp_discovery import features, discover
+from .function_roles import role_evidence
 
 
 def call_edges(pe, instructions):
@@ -56,7 +57,7 @@ def anchored(path, limit=64, tool='objdump'):
         # Local arithmetic plus loop structure, not a semantic proof.
         row={'start_rva':hex(start),'end_rva_exclusive':region['end_rva_exclusive'],
              'region_sha256':hashlib.sha256(pe.at_rva(start,region['bytes'],executable=True)).hexdigest(),
-             **f,'depth':depth,'root_slots':roots.get(start,[]),
+             **f,'local_role_evidence':role_evidence(ins),'depth':depth,'root_slots':roots.get(start,[]),
              'status':'CANDIDATE' if f['arithmetic']>=4 and f['vector_memory']>=2 else 'UNRESOLVED'}
         rows[start]=row
         return list(call_edges(pe,ins))

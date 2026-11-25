@@ -1,0 +1,56 @@
+[
+  {
+    "plugin": "A1",
+    "sha256": "83a50c120301173e1aec1e537fa131b460d593fc7141fb4f39c8e813d99dabfc",
+    "scope": "processor",
+    "start_rva": "0x10ff20",
+    "end_rva": "0x111469",
+    "gnu": "PROCESSING_CANDIDATE",
+    "llvm": "PROCESSING_CANDIDATE"
+  },
+  {
+    "plugin": "A1",
+    "sha256": "83a50c120301173e1aec1e537fa131b460d593fc7141fb4f39c8e813d99dabfc",
+    "scope": "text_helper",
+    "start_rva": "0x266e0",
+    "end_rva": "0x2686f",
+    "gnu": "BYTE_PROCESSING_CANDIDATE",
+    "llvm": "BYTE_PROCESSING_CANDIDATE"
+  },
+  {
+    "plugin": "Gem",
+    "sha256": "dc923f6507cc891e0417854178f1db2eb84965040aa661c9c144649548dffb6f",
+    "scope": "filter_window",
+    "start_rva": "0x560150",
+    "end_rva": "0x560250",
+    "gnu": "UNRESOLVED",
+    "llvm": "UNRESOLVED"
+  },
+  {
+    "plugin": "Gem",
+    "sha256": "dc923f6507cc891e0417854178f1db2eb84965040aa661c9c144649548dffb6f",
+    "scope": "bank",
+    "start_rva": "0x58bbe0",
+    "end_rva": "0x58bef5",
+    "gnu": "UNRESOLVED",
+    "llvm": "UNRESOLVED"
+  },
+  {
+    "plugin": "Gem",
+    "sha256": "dc923f6507cc891e0417854178f1db2eb84965040aa661c9c144649548dffb6f",
+    "scope": "output_curve",
+    "start_rva": "0x553140",
+    "end_rva": "0x5536c3",
+    "gnu": "PROCESSING_CANDIDATE",
+    "llvm": "PROCESSING_CANDIDATE"
+  },
+  {
+    "plugin": "TVB",
+    "sha256": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
+    "scope": "detector_scratch",
+    "start_rva": "0x35b71f",
+    "end_rva": "0x35bd80",
+    "gnu": "PROCESSING_CANDIDATE",
+    "llvm": "PROCESSING_CANDIDATE"
+  }
+]

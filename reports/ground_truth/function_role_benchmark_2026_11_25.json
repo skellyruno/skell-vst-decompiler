@@ -1,0 +1,276 @@
+{
+  "schema_version": 1,
+  "type": "source_known_local_role_benchmark",
+  "fixture": {
+    "toolchain": "Clang/LLD x64 Windows",
+    "cases": 16,
+    "known_dsp": 6,
+    "known_nondsp": 8,
+    "unknown": 2,
+    "old": {
+      "true_positive": 3,
+      "false_positive": 5,
+      "false_negative": 3,
+      "precision": 0.375,
+      "recall": 0.5
+    },
+    "new": {
+      "true_positive": 5,
+      "false_positive": 2,
+      "false_negative": 1,
+      "precision": 0.7142857142857143,
+      "recall": 0.8333333333333334
+    },
+    "rows": [
+      {
+        "name": "byte_copy",
+        "opt": "-O1",
+        "truth": false,
+        "old": false,
+        "role": "BYTE_PROCESSING_CANDIDATE",
+        "decoder_agreement": true,
+        "binary_sha256": "82d09dd9fc382a0608b71e4912b67a8d70b4b7dd712524c66c06816cede85b04"
+      },
+      {
+        "name": "curve",
+        "opt": "-O1",
+        "truth": true,
+        "old": false,
+        "role": "PROCESSING_CANDIDATE",
+        "decoder_agreement": true,
+        "binary_sha256": "82d09dd9fc382a0608b71e4912b67a8d70b4b7dd712524c66c06816cede85b04"
+      },
+      {
+        "name": "filter",
+        "opt": "-O1",
+        "truth": true,
+        "old": true,
+        "role": "PROCESSING_CANDIDATE",
+        "decoder_agreement": true,
+        "binary_sha256": "82d09dd9fc382a0608b71e4912b67a8d70b4b7dd712524c66c06816cede85b04"
+      },
+      {
+        "name": "gain",
+        "opt": "-O1",
+        "truth": true,
+        "old": false,
+        "role": "UNRESOLVED",
+        "decoder_agreement": true,
+        "binary_sha256": "82d09dd9fc382a0608b71e4912b67a8d70b4b7dd712524c66c06816cede85b04"
+      },
+      {
+        "name": "geometry",
+        "opt": "-O1",
+        "truth": false,
+        "old": false,
+        "role": "PROCESSING_CANDIDATE",
+        "decoder_agreement": true,
+        "binary_sha256": "82d09dd9fc382a0608b71e4912b67a8d70b4b7dd712524c66c06816cede85b04"
+      },
+      {
+        "name": "scalar_math",
+        "opt": "-O1",
+        "truth": false,
+        "old": true,
+        "role": "UNRESOLVED",
+        "decoder_agreement": true,
+        "binary_sha256": "82d09dd9fc382a0608b71e4912b67a8d70b4b7dd712524c66c06816cede85b04"
+      },
+      {
+        "name": "setup",
+        "opt": "-O1",
+        "truth": false,
+        "old": true,
+        "role": "UNRESOLVED",
+        "decoder_agreement": true,
+        "binary_sha256": "82d09dd9fc382a0608b71e4912b67a8d70b4b7dd712524c66c06816cede85b04"
+      },
+      {
+        "name": "unknown",
+        "opt": "-O1",
+        "truth": null,
+        "old": false,
+        "role": "UNRESOLVED",
+        "decoder_agreement": true,
+        "binary_sha256": "82d09dd9fc382a0608b71e4912b67a8d70b4b7dd712524c66c06816cede85b04"
+      },
+      {
+        "name": "byte_copy",
+        "opt": "-O3",
+        "truth": false,
+        "old": false,
+        "role": "UNRESOLVED",
+        "decoder_agreement": true,
+        "binary_sha256": "ea572aee3fb168cd1680fdfeabf82a39b09d2cc57e6ea84cc2d3c24537362289"
+      },
+      {
+        "name": "curve",
+        "opt": "-O3",
+        "truth": true,
+        "old": true,
+        "role": "PROCESSING_CANDIDATE",
+        "decoder_agreement": true,
+        "binary_sha256": "ea572aee3fb168cd1680fdfeabf82a39b09d2cc57e6ea84cc2d3c24537362289"
+      },
+      {
+        "name": "filter",
+        "opt": "-O3",
+        "truth": true,
+        "old": true,
+        "role": "PROCESSING_CANDIDATE",
+        "decoder_agreement": true,
+        "binary_sha256": "ea572aee3fb168cd1680fdfeabf82a39b09d2cc57e6ea84cc2d3c24537362289"
+      },
+      {
+        "name": "gain",
+        "opt": "-O3",
+        "truth": true,
+        "old": false,
+        "role": "PROCESSING_CANDIDATE",
+        "decoder_agreement": true,
+        "binary_sha256": "ea572aee3fb168cd1680fdfeabf82a39b09d2cc57e6ea84cc2d3c24537362289"
+      },
+      {
+        "name": "geometry",
+        "opt": "-O3",
+        "truth": false,
+        "old": true,
+        "role": "PROCESSING_CANDIDATE",
+        "decoder_agreement": true,
+        "binary_sha256": "ea572aee3fb168cd1680fdfeabf82a39b09d2cc57e6ea84cc2d3c24537362289"
+      },
+      {
+        "name": "scalar_math",
+        "opt": "-O3",
+        "truth": false,
+        "old": true,
+        "role": "UNRESOLVED",
+        "decoder_agreement": true,
+        "binary_sha256": "ea572aee3fb168cd1680fdfeabf82a39b09d2cc57e6ea84cc2d3c24537362289"
+      },
+      {
+        "name": "setup",
+        "opt": "-O3",
+        "truth": false,
+        "old": true,
+        "role": "UNRESOLVED",
+        "decoder_agreement": true,
+        "binary_sha256": "ea572aee3fb168cd1680fdfeabf82a39b09d2cc57e6ea84cc2d3c24537362289"
+      },
+      {
+        "name": "unknown",
+        "opt": "-O3",
+        "truth": null,
+        "old": false,
+        "role": "UNRESOLVED",
+        "decoder_agreement": true,
+        "binary_sha256": "ea572aee3fb168cd1680fdfeabf82a39b09d2cc57e6ea84cc2d3c24537362289"
+      }
+    ]
+  },
+  "master": {
+    "source_checkout": "7a6b51210a4409610625aada8903913a933e3c08",
+    "module_sha256": "82edf9789d1f2632f6f707ee9739f9d1e54f9e5e0781d829a9016ddc513876c3",
+    "rows": [
+      {
+        "name": "processFrame",
+        "start": "0x13a610",
+        "end": "0x14041d",
+        "truth": true,
+        "old": true,
+        "gnu": "PROCESSING_CANDIDATE",
+        "llvm": "PROCESSING_CANDIDATE",
+        "role": "PROCESSING_CANDIDATE"
+      },
+      {
+        "name": "processBlock",
+        "start": "0x12f820",
+        "end": "0x133ed9",
+        "truth": true,
+        "old": true,
+        "gnu": "PROCESSING_CANDIDATE",
+        "llvm": "PROCESSING_CANDIDATE",
+        "role": "PROCESSING_CANDIDATE"
+      },
+      {
+        "name": "setParameters",
+        "start": "0x139dd0",
+        "end": "0x13a60c",
+        "truth": false,
+        "old": true,
+        "gnu": "UNRESOLVED",
+        "llvm": "UNRESOLVED",
+        "role": "UNRESOLVED"
+      },
+      {
+        "name": "prepare",
+        "start": "0x140a00",
+        "end": "0x1420b3",
+        "truth": false,
+        "old": true,
+        "gnu": "PROCESSING_CANDIDATE",
+        "llvm": "PROCESSING_CANDIDATE",
+        "role": "PROCESSING_CANDIDATE"
+      },
+      {
+        "name": "getStateInformation",
+        "start": "0x133f50",
+        "end": "0x1344bc",
+        "truth": false,
+        "old": false,
+        "gnu": "UNRESOLVED",
+        "llvm": "UNRESOLVED",
+        "role": "UNRESOLVED"
+      },
+      {
+        "name": "setStateInformation",
+        "start": "0x1344c0",
+        "end": "0x13617e",
+        "truth": false,
+        "old": false,
+        "gnu": "UNRESOLVED",
+        "llvm": "UNRESOLVED",
+        "role": "UNRESOLVED"
+      },
+      {
+        "name": "atomicMax",
+        "start": "0x133ee0",
+        "end": "0x133f41",
+        "truth": false,
+        "old": false,
+        "gnu": "UNRESOLVED",
+        "llvm": "UNRESOLVED",
+        "role": "UNRESOLVED"
+      },
+      {
+        "name": "createEditor",
+        "start": "0x12ee90",
+        "end": "0x12eecd",
+        "truth": false,
+        "old": false,
+        "gnu": "UNRESOLVED",
+        "llvm": "UNRESOLVED",
+        "role": "UNRESOLVED"
+      },
+      {
+        "name": "createParameterLayout",
+        "start": "0x1382e0",
+        "end": "0x13893d",
+        "truth": false,
+        "old": false,
+        "gnu": "UNRESOLVED",
+        "llvm": "UNRESOLVED",
+        "role": "UNRESOLVED"
+      }
+    ],
+    "old": {
+      "true_positive": 2,
+      "false_positive": 2
+    },
+    "new": {
+      "true_positive": 2,
+      "false_positive": 1
+    }
+  },
+  "limits": "Small source-known development fixtures and previously researched Master production functions, not genuinely independent held-out production plugins. No semantic family classification or DSP equivalence. Geometry and prepare remain false positives; O1 gain abstains. Unresolved is not a verified utility."
+}

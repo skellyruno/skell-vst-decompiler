@@ -7,6 +7,7 @@ import re
 from .pe import PE
 from .navigation import runtime_ranges
 from .disasm import disassemble
+from .function_roles import role_evidence
 
 
 def features(instructions):
@@ -44,8 +45,9 @@ def discover(path, limit=64, rvas=(), tool='objdump'):
     rows=[]
     for lo,hi,_ in selected:
         data=pe.at_rva(lo,hi-lo,executable=True)
-        f=features(disassemble(pe,lo,hi-lo,tool))
-        rows.append({'start_rva':hex(lo),'end_rva_exclusive':hex(hi),'region_sha256':hashlib.sha256(data).hexdigest(),**f,
+        ins=disassemble(pe,lo,hi-lo,tool)
+        f=features(ins)
+        rows.append({'start_rva':hex(lo),'end_rva_exclusive':hex(hi),'region_sha256':hashlib.sha256(data).hexdigest(),**f,'local_role_evidence':role_evidence(ins),
                      'status':'CANDIDATE' if f['arithmetic']>=4 and f['vector_memory']>=2 else 'UNRESOLVED'})
     if hashlib.sha256(path.read_bytes()).hexdigest()!=pe.sha256:raise ValueError('Source changed during scan')
     rows.sort(key=lambda r:(r['status']!='CANDIDATE',-r['score'],r['start_rva']))

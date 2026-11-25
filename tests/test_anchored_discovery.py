@@ -43,6 +43,8 @@ class AnchoredTests(unittest.TestCase):
             with patch('skell_vst_decompiler.anchored_discovery.PE',return_value=pe),patch('skell_vst_decompiler.anchored_discovery.runtime_ranges',return_value=[(0x1000,0x1040,1),(0x2000,0x2040,1)]),patch('skell_vst_decompiler.anchored_discovery.processor_names',return_value=['TestAudioProcessor']),patch('skell_vst_decompiler.anchored_discovery.class_graph',return_value=graph),patch('skell_vst_decompiler.anchored_discovery.disassemble',side_effect=instructions):
                 report=anchored(path,8)
             self.assertEqual(report['scanned_records'],2)
+            self.assertTrue(all('local_role_evidence' in row for row in report['candidates']))
+            self.assertEqual(report['candidates'][0]['local_role_evidence']['role'],'UNRESOLVED')
             self.assertEqual(report['candidates'][0]['root_slots'][0]['slot'],7)
             self.assertEqual(report['candidates'][1]['depth'],1)
             self.assertEqual(report['direct_edges'][0]['containing_rva'],'0x2000')

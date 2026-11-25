@@ -31,6 +31,8 @@ jobs:
         run: PYTHONPATH=. python tests/shared_code_smoke.py
       - name: Owned structural mnemonic variant comparison
         run: PYTHONPATH=. python tests/structural_match_smoke.py
+      - name: Owned DSP versus numerical-utility role benchmark
+        run: PYTHONPATH=. python tests/function_roles_smoke.py
       - name: Owned-source blind PE recognition and native behavioral benchmark
         run: PYTHONPATH=. python tests/ground_truth_smoke.py
       - name: Owned wrapper and engine import verification
