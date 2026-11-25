@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "report_kind": "flangus_static_intake_and_original_reference",
+  "source_commit": "a122e2f1a1c3cbba5553d10859d51d5d0fc998df",
+  "archive": {
+    "sha256": "621a9c265903bf2c0d174c33e2379935e5a56df045f1c3f682d43f59b0bfcf31",
+    "bytes": 1279221,
+    "entries": 3,
+    "crc_pass": true,
+    "contains_source": false
+  },
+  "binary": {
+    "sha256": "a50a746189b267a682e63993249247a4ba73b3fbff01a7fd3d4070053ec1a0c1",
+    "bytes": 3730944,
+    "arch": "x64",
+    "format": "PE32+",
+    "section_count": 10,
+    "executable_sections": 1,
+    "executable_virtual_bytes": 2957296,
+    "coff_symbols": 0,
+    "named_exports": 3,
+    "public_factory": "CreatePlugInstance",
+    "unwind_records": 11871,
+    "unwind_version_1": 11871,
+    "overlapping_adjacent_records": 0,
+    "unwind_flag_counts": {
+      "0": 10077,
+      "2": 1219,
+      "3": 575
+    },
+    "public_factory_window": {
+      "rva": "0x2bf6c0",
+      "bytes": 79,
+      "sha256": "5195f69d408438ccde9d6074f4f14c8370da72603ddcf60a3d1066b7a3adcdb1",
+      "gnu_spans": 26,
+      "llvm_spans": 26,
+      "matching_spans": 26,
+      "matching_bytes": 79,
+      "direct_rel32_call_observations": 3
+    }
+  },
+  "public_behavior_source": "https://cluster.image-line.com/fl-studio-learning/fl-studio-online-manual/html/plugins/Fruity%20Flangus.htm",
+  "original_prototype": {
+    "tested_blobs": {
+      "experiments/flangus_reference/StackedFlanger.h": "4f00fc8e06a5b4d3470d3c74f684acce4d84b172",
+      "experiments/flangus_reference/test_stacked.cpp": "811b1b83d6916662d232a4169360200684cd4d9e"
+    },
+    "local_optimized_pass": true,
+    "local_asan_ubsan_pass": true,
+    "sample_rates": [
+      44100,
+      48000,
+      96000,
+      192000
+    ],
+    "optimized_ns_per_frame_single_run": [
+      3800.84,
+      1715.6,
+      1488.07,
+      935.453
+    ],
+    "limits": "Original independent parameter ranges, modulation and mixing. Not vendor DSP. Local timings noisy, not host or plugin CPU benchmark. No actual vendor output or perceptual comparison. No JUCE or VST3 integration."
+  },
+  "prior_ci": {
+    "commit": "b72419677c83fde4af253919efeadbc8de948e9f",
+    "tests": 163,
+    "all_eight_passed": true,
+    "run_ids": [
+      45500495568,
+      45500494899,
+      45500494973,
+      45500495182,
+      45500495005,
+      45500495025,
+      45500494984,
+      45500495085
+    ]
+  },
+  "intervening_evo_commit_ci_at_observation": [
+    {
+      "name": "Independent PE oracle (owned fixtures)",
+      "id": 45523107731,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Reccmp export comparison (owned fixture)",
+      "id": 45523107551,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Craft Anything metadata (owned fixtures)",
+      "id": 45523107604,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Real Rizin smoke (owned fixture)",
+      "id": 45523107535,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Real Ghidra smoke (owned fixture)",
+      "id": 45523107593,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "REA PE imports (owned fixtures)",
+      "id": 45523107582,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Python static-analysis tests",
+      "id": 45523107538,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Unified engines (owned fixture)",
+      "id": 45523107577,
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "limitations": "Archive contains compiled binary plus RTF/NFO, no source. No target execution, private code upload, vendor algorithm recovery or production change. Factory is interface entry, not DSP body; unwind records do not prove functions. FG-2A follow-up deferred after new user upload."
+}
