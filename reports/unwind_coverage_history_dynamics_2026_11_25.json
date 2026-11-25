@@ -1,0 +1,469 @@
+{
+  "schema_version": 1,
+  "parent": "2d5195d0e7928a36bb07f32d22a4b427ae0383fe",
+  "prior_census_replayed": 34,
+  "modules": [
+    {
+      "name": "AirEQAir.epl",
+      "source_sha256": "c75499749848d64aa9a72298204087d5a78f685e7d960beacecd6644d9e3136b",
+      "executable_virtual_file_bytes": 16944128,
+      "unwind_covered_bytes": 15921047,
+      "unwind_ranges": 21418,
+      "relocation_slots": 40481,
+      "unique_code_targets": 28821,
+      "unique_targets_without_unwind": 23887
+    },
+    {
+      "name": "AirEQEarth.epl",
+      "source_sha256": "e5b254ee4173e142b6822e807cee916b745b32b5ae5f38e24814e7c8b7c875f7",
+      "executable_virtual_file_bytes": 14400000,
+      "unwind_covered_bytes": 13402117,
+      "unwind_ranges": 19403,
+      "relocation_slots": 39912,
+      "unique_code_targets": 28417,
+      "unique_targets_without_unwind": 23844
+    },
+    {
+      "name": "Blackbird Studio.epl",
+      "source_sha256": "44bee8e698af4a7c48f9de78bf0110d629c215aa66c999d01bd76f9d041d9a3d",
+      "executable_virtual_file_bytes": 14994944,
+      "unwind_covered_bytes": 13899914,
+      "unwind_ranges": 20221,
+      "relocation_slots": 43005,
+      "unique_code_targets": 31139,
+      "unique_targets_without_unwind": 26450
+    },
+    {
+      "name": "CS-EQ.epl",
+      "source_sha256": "a4a8c92d6ea80acc16a314b23cf727c0bd86cb92a40351efb03f6892605571d0",
+      "executable_virtual_file_bytes": 14578688,
+      "unwind_covered_bytes": 13575367,
+      "unwind_ranges": 19499,
+      "relocation_slots": 40115,
+      "unique_code_targets": 28426,
+      "unique_targets_without_unwind": 23853
+    },
+    {
+      "name": "CS-Lift.epl",
+      "source_sha256": "62ae20d8bbb4ec84960aca0325fdb61e5f551ff83943bb633759d4561f8b7ae6",
+      "executable_virtual_file_bytes": 14565376,
+      "unwind_covered_bytes": 13562695,
+      "unwind_ranges": 19397,
+      "relocation_slots": 39963,
+      "unique_code_targets": 28526,
+      "unique_targets_without_unwind": 23980
+    },
+    {
+      "name": "Classic Instruments.epl",
+      "source_sha256": "12fe5020e71374ff14e3f3aba553a578718de886024445733bcfc148142f52f6",
+      "executable_virtual_file_bytes": 15334912,
+      "unwind_covered_bytes": 14237330,
+      "unwind_ranges": 21066,
+      "relocation_slots": 43546,
+      "unique_code_targets": 31252,
+      "unique_targets_without_unwind": 26457
+    },
+    {
+      "name": "Custom Opto.epl",
+      "source_sha256": "e697454a539b54b6a610d486bac0fef0bd8f04295da020d6b6f196a44dc55bd3",
+      "executable_virtual_file_bytes": 15278080,
+      "unwind_covered_bytes": 14252057,
+      "unwind_ranges": 19861,
+      "relocation_slots": 40637,
+      "unique_code_targets": 29039,
+      "unique_targets_without_unwind": 24438
+    },
+    {
+      "name": "FG-116 Modern.epl",
+      "source_sha256": "6782b73fb9d4a3c1dade5406fe6ea1bead30699529082ea9f9a8dfe04056a664",
+      "executable_virtual_file_bytes": 14970880,
+      "unwind_covered_bytes": 13910235,
+      "unwind_ranges": 20150,
+      "relocation_slots": 41284,
+      "unique_code_targets": 29675,
+      "unique_targets_without_unwind": 25020
+    },
+    {
+      "name": "FG-116 Vintage.epl",
+      "source_sha256": "6e80b5108f805a0c4ee11fce56d56f149dc4a449c575108e5249e848a4638e7f",
+      "executable_virtual_file_bytes": 14987776,
+      "unwind_covered_bytes": 13927353,
+      "unwind_ranges": 20154,
+      "relocation_slots": 41284,
+      "unique_code_targets": 29675,
+      "unique_targets_without_unwind": 25020
+    },
+    {
+      "name": "FG-116.epl",
+      "source_sha256": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+      "executable_virtual_file_bytes": 14986240,
+      "unwind_covered_bytes": 13937451,
+      "unwind_ranges": 20110,
+      "relocation_slots": 40931,
+      "unique_code_targets": 29372,
+      "unique_targets_without_unwind": 24725
+    },
+    {
+      "name": "FG-2A.epl",
+      "source_sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+      "executable_virtual_file_bytes": 15167488,
+      "unwind_covered_bytes": 14141781,
+      "unwind_ranges": 19781,
+      "relocation_slots": 40438,
+      "unique_code_targets": 28992,
+      "unique_targets_without_unwind": 24412
+    },
+    {
+      "name": "FG-401.epl",
+      "source_sha256": "0cc3444f095ccf4aa751f653e6aceb484d7bfaea73df30ccb68a7f2fccf46ef6",
+      "executable_virtual_file_bytes": 14897664,
+      "unwind_covered_bytes": 13859733,
+      "unwind_ranges": 20020,
+      "relocation_slots": 40585,
+      "unique_code_targets": 29059,
+      "unique_targets_without_unwind": 24431
+    },
+    {
+      "name": "FG-73.epl",
+      "source_sha256": "b5204a61666943438690994b19ed52747de754aa0b6f741fe36a18df43053746",
+      "executable_virtual_file_bytes": 14631424,
+      "unwind_covered_bytes": 13613174,
+      "unwind_ranges": 19649,
+      "relocation_slots": 40161,
+      "unique_code_targets": 28823,
+      "unique_targets_without_unwind": 24254
+    },
+    {
+      "name": "FG-76.epl",
+      "source_sha256": "1b4180667292124de2b2c64b20c581d2eb752ebffbb526c4d31c1ad9d1b237d8",
+      "executable_virtual_file_bytes": 15051264,
+      "unwind_covered_bytes": 14006339,
+      "unwind_ranges": 20171,
+      "relocation_slots": 41006,
+      "unique_code_targets": 29528,
+      "unique_targets_without_unwind": 24861
+    },
+    {
+      "name": "FG-A.epl",
+      "source_sha256": "badeddab00efec8f803a56f6dd00a3cec7a7204d7ac3ba4793c095dbbb11c3cb",
+      "executable_virtual_file_bytes": 14821376,
+      "unwind_covered_bytes": 13822001,
+      "unwind_ranges": 19733,
+      "relocation_slots": 39617,
+      "unique_code_targets": 28121,
+      "unique_targets_without_unwind": 23556
+    },
+    {
+      "name": "FG-Bomber.epl",
+      "source_sha256": "fb42be0d32d2c661da652f41efd0c51e530b29d3a25aab2cd46f509fa3ddfa2c",
+      "executable_virtual_file_bytes": 15043584,
+      "unwind_covered_bytes": 13994642,
+      "unwind_ranges": 20102,
+      "relocation_slots": 40559,
+      "unique_code_targets": 29170,
+      "unique_targets_without_unwind": 24550
+    },
+    {
+      "name": "FG-N.epl",
+      "source_sha256": "e5a998d11bc57660fb7e500ad6805a2df1c0356650f43ce8eaefb8a4db9fc10b",
+      "executable_virtual_file_bytes": 14767616,
+      "unwind_covered_bytes": 13757151,
+      "unwind_ranges": 19796,
+      "relocation_slots": 39839,
+      "unique_code_targets": 28523,
+      "unique_targets_without_unwind": 23953
+    },
+    {
+      "name": "FG-S.epl",
+      "source_sha256": "9c28aaba2ee2dc61f00d9231b9c84f02e364d8a323a93ccab7b7a08956da9a45",
+      "executable_virtual_file_bytes": 14854144,
+      "unwind_covered_bytes": 13844205,
+      "unwind_ranges": 19887,
+      "relocation_slots": 39796,
+      "unique_code_targets": 28426,
+      "unique_targets_without_unwind": 23837
+    },
+    {
+      "name": "FG-Stress.epl",
+      "source_sha256": "2509a6f3480481feb15a0fde97abcb4acccfc6fc936f55f5e8c88b7c98edcd26",
+      "executable_virtual_file_bytes": 15124992,
+      "unwind_covered_bytes": 14076468,
+      "unwind_ranges": 20224,
+      "relocation_slots": 41278,
+      "unique_code_targets": 29456,
+      "unique_targets_without_unwind": 24773
+    },
+    {
+      "name": "Gate Classic.epl",
+      "source_sha256": "c29d1d3a1d1a5047401613369bfa2df3492f3153ef134c0fa66c9c3d9cc92320",
+      "executable_virtual_file_bytes": 14834688,
+      "unwind_covered_bytes": 13770692,
+      "unwind_ranges": 20066,
+      "relocation_slots": 41896,
+      "unique_code_targets": 30116,
+      "unique_targets_without_unwind": 25461
+    },
+    {
+      "name": "Gate Drums.epl",
+      "source_sha256": "3a2d979be9e3a684ba4274b7f481d10dbef9754ee93a9f671d2cd1daeb8c30f3",
+      "executable_virtual_file_bytes": 14926336,
+      "unwind_covered_bytes": 13862838,
+      "unwind_ranges": 20112,
+      "relocation_slots": 41845,
+      "unique_code_targets": 30011,
+      "unique_targets_without_unwind": 25329
+    },
+    {
+      "name": "Hollywood.epl",
+      "source_sha256": "39e8a0b74093ee654dd2f7ce8aeee0b46f7279b19133226c3c952177863cf607",
+      "executable_virtual_file_bytes": 15090688,
+      "unwind_covered_bytes": 14058637,
+      "unwind_ranges": 20294,
+      "relocation_slots": 40494,
+      "unique_code_targets": 28975,
+      "unique_targets_without_unwind": 24302
+    },
+    {
+      "name": "London.epl",
+      "source_sha256": "f4ac602d67b03e8f13bcdb04841aba7159a43c4a8c113861e711ed0bd67d30ce",
+      "executable_virtual_file_bytes": 15109120,
+      "unwind_covered_bytes": 14078347,
+      "unwind_ranges": 20277,
+      "relocation_slots": 40493,
+      "unique_code_targets": 28974,
+      "unique_targets_without_unwind": 24302
+    },
+    {
+      "name": "New York.epl",
+      "source_sha256": "0258b5817750ad82c89dbee50bafdb41cad65edfcbd0d323a6a6124b3a2bccd1",
+      "executable_virtual_file_bytes": 15195136,
+      "unwind_covered_bytes": 14163608,
+      "unwind_ranges": 20286,
+      "relocation_slots": 40493,
+      "unique_code_targets": 28974,
+      "unique_targets_without_unwind": 24293
+    },
+    {
+      "name": "Revival.epl",
+      "source_sha256": "f486272dc9741a6e3ef3f393cd14ef6cebbc795e4f3ac8fa20a683fbeb146867",
+      "executable_virtual_file_bytes": 15119360,
+      "unwind_covered_bytes": 14083894,
+      "unwind_ranges": 19733,
+      "relocation_slots": 40718,
+      "unique_code_targets": 29382,
+      "unique_targets_without_unwind": 24818
+    },
+    {
+      "name": "The Monster.epl",
+      "source_sha256": "6aae06918694f6d9197f396896adbe9c8af150289930c466d7361d2b01aff45b",
+      "executable_virtual_file_bytes": 15283712,
+      "unwind_covered_bytes": 14243521,
+      "unwind_ranges": 20052,
+      "relocation_slots": 40539,
+      "unique_code_targets": 29063,
+      "unique_targets_without_unwind": 24418
+    },
+    {
+      "name": "Trimmer.epl",
+      "source_sha256": "5dbed8fad7ff3e79263d00108bdedf766ca83c88b103e5e3613bf6567f73bb0c",
+      "executable_virtual_file_bytes": 15070208,
+      "unwind_covered_bytes": 14036439,
+      "unwind_ranges": 19653,
+      "relocation_slots": 40739,
+      "unique_code_targets": 29391,
+      "unique_targets_without_unwind": 24819
+    },
+    {
+      "name": "U73b.epl",
+      "source_sha256": "47d8393eddba99816151e47dd0538fa012a9ea8b39b4547ef9afd19d88472856",
+      "executable_virtual_file_bytes": 15092224,
+      "unwind_covered_bytes": 14018283,
+      "unwind_ranges": 21092,
+      "relocation_slots": 42279,
+      "unique_code_targets": 30274,
+      "unique_targets_without_unwind": 25539
+    },
+    {
+      "name": "VCC Channel.epl",
+      "source_sha256": "73747020e8996938b8e6fdff51004cff4ea85c95f992cbc8bc0d0896a80aad87",
+      "executable_virtual_file_bytes": 15241728,
+      "unwind_covered_bytes": 14142533,
+      "unwind_ranges": 20481,
+      "relocation_slots": 43132,
+      "unique_code_targets": 31346,
+      "unique_targets_without_unwind": 26584
+    },
+    {
+      "name": "VCC MixBuss.epl",
+      "source_sha256": "fe077912d5396577fc6b32bcf0c4ba4b61d5e1f8089e961ce68dae22e1b0b500",
+      "executable_virtual_file_bytes": 15087616,
+      "unwind_covered_bytes": 13986386,
+      "unwind_ranges": 20282,
+      "relocation_slots": 43150,
+      "unique_code_targets": 31374,
+      "unique_targets_without_unwind": 26623
+    },
+    {
+      "name": "VMC Classic Tubes.epl",
+      "source_sha256": "df4635dda8db8c15a3f1c478e39f8814d21370f05fa84a64d4cc1fb57762e0ef",
+      "executable_virtual_file_bytes": 15216640,
+      "unwind_covered_bytes": 14119014,
+      "unwind_ranges": 20734,
+      "relocation_slots": 43359,
+      "unique_code_targets": 31209,
+      "unique_targets_without_unwind": 26461
+    },
+    {
+      "name": "Gem Dopamine-64.vst3",
+      "source_sha256": "dc923f6507cc891e0417854178f1db2eb84965040aa661c9c144649548dffb6f",
+      "executable_virtual_file_bytes": 6756968,
+      "unwind_covered_bytes": 5436921,
+      "unwind_ranges": 35760,
+      "relocation_slots": 31439,
+      "unique_code_targets": 8358,
+      "unique_targets_without_unwind": 4273
+    },
+    {
+      "name": "TVB Rack V2.vst3",
+      "source_sha256": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
+      "executable_virtual_file_bytes": 9275275,
+      "unwind_covered_bytes": 8196183,
+      "unwind_ranges": 34461,
+      "relocation_slots": 38589,
+      "unique_code_targets": 13054,
+      "unique_targets_without_unwind": 9106
+    },
+    {
+      "name": "A1TriggerGate-x64.vst3",
+      "source_sha256": "83a50c120301173e1aec1e537fa131b460d593fc7141fb4f39c8e813d99dabfc",
+      "executable_virtual_file_bytes": 3124964,
+      "unwind_covered_bytes": 2794988,
+      "unwind_ranges": 12143,
+      "relocation_slots": 17174,
+      "unique_code_targets": 4288,
+      "unique_targets_without_unwind": 2000
+    },
+    {
+      "name": "TRACKSPACE.vst3",
+      "source_sha256": "4964c856700126a97db3884f34d8dff7eb441cb8d516b6bceed79f6c3bcd5b84",
+      "executable_virtual_file_bytes": 5339088,
+      "unwind_covered_bytes": 5171716,
+      "unwind_ranges": 18937,
+      "relocation_slots": 25678,
+      "unique_code_targets": 7107,
+      "unique_targets_without_unwind": 289
+    }
+  ],
+  "totals": {
+    "executable_virtual_file_bytes": 491164327,
+    "unwind_covered_bytes": 455905060,
+    "unwind_ranges": 725005,
+    "relocation_slots": 1386454,
+    "unique_code_targets": 946336,
+    "unique_targets_without_unwind": 784918
+  },
+  "history_compressor": {
+    "rate_order": [
+      44100,
+      48000,
+      96000,
+      192000
+    ],
+    "fixed_recovery90_ms": [
+      [
+        151.3832,
+        151.3832
+      ],
+      [
+        151.3958,
+        151.3958
+      ],
+      [
+        151.4062,
+        151.4062
+      ],
+      [
+        151.4115,
+        151.4115
+      ]
+    ],
+    "history_recovery90_ms": [
+      [
+        169.2517,
+        384.195
+      ],
+      [
+        169.25,
+        384.2083
+      ],
+      [
+        169.2708,
+        384.2083
+      ],
+      [
+        169.2708,
+        384.2135
+      ]
+    ],
+    "hold_ms": [
+      40,
+      1000
+    ],
+    "threshold_db": -18,
+    "ratio": 4,
+    "knee_db": 6,
+    "stimulus_peak": 0.7,
+    "real_audio": "Three owner 4s excerpts with warmup; no isolated compressor reference, no promotion. Private metrics kept outside Git."
+  },
+  "original_space": {
+    "rate_order": [
+      44100,
+      48000,
+      96000,
+      192000
+    ],
+    "late_vs_first_second_energy_db": [
+      -41.1031,
+      -41.2972,
+      -43.6245,
+      -46.2105
+    ],
+    "last_vs_first_second_energy_db": [
+      -110.1484,
+      -110.3882,
+      -112.6232,
+      -115.2307
+    ],
+    "stereo_correlation": [
+      0.027787,
+      0.026543,
+      0.015613,
+      0.008569
+    ],
+    "stimulus": "single left discrete impulse; not bandlimited matched source at each rate"
+  },
+  "spectral4_edges": {
+    "rate_order": [
+      8000,
+      22050,
+      44100,
+      48000,
+      96000,
+      192000,
+      384000
+    ],
+    "max_neutral_error": [
+      6.66133814775e-16,
+      7.77156117238e-16,
+      6.66133814775e-16,
+      8.881784197e-16,
+      7.77156117238e-16,
+      5.55111512313e-16,
+      4.4408920985e-16
+    ],
+    "edge_sets": 4,
+    "optimized": "pass",
+    "sanitizer": "pass"
+  },
+  "limits": "Metadata coverage is not function discovery or algorithm coverage. New original experiments, no new proprietary transfer functions. No private recordings or vendor code."
+}
