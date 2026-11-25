@@ -16,7 +16,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install audio analysis dependencies
-        run: python -m pip install "numpy>=1.26,<3" "scipy>=1.13,<2" "soundfile>=0.12,<1"
+        run: python -m pip install "numpy>=1.26,<3" "scipy>=1.13,<2" "soundfile>=0.12,<1" "pedalboard==0.9.23"
       - name: Install C++ PE fixture compiler and linker
         run: |
           sudo apt-get update -qq
@@ -63,8 +63,11 @@ jobs:
         env:
           OPENBLAS_NUM_THREADS: '1'
         run: |
-          python -m pip install 'pedalboard==0.9.23'
           PYTHONPATH=. python tests/system_id_native_smoke.py
+      - name: Automated fresh-process native capture matrix
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+        run: PYTHONPATH=. python tests/host_capture_smoke.py
       - name: Compile all research Python
         run: python -m compileall -q skell_vst_decompiler
       - name: Compile and test original native DSP prototypes
@@ -96,3 +99,37 @@ jobs:
           /tmp/skell_stacked_flanger
           g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer experiments/flangus_reference/test_stacked.cpp -o /tmp/skell_stacked_flanger_sanitized
           /tmp/skell_stacked_flanger_sanitized
+
+  windows-owned-vst3-host:
+    runs-on: windows-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+          architecture: x64
+      - name: Install host dependencies
+        run: python -m pip install "numpy>=1.26,<3" "scipy>=1.13,<2" "soundfile>=0.12,<1" "pedalboard==0.9.23"
+      - name: Fetch verified JUCE source
+        shell: pwsh
+        run: |
+          git clone --depth 1 --branch 8.0.12 https://github.com/juce-framework/JUCE.git "$env:RUNNER_TEMP/JUCE"
+          if ($LASTEXITCODE -ne 0) { throw "JUCE clone failed" }
+          $sha = git -C "$env:RUNNER_TEMP/JUCE" rev-parse HEAD
+          if ($sha -ne "29396c22c93392d6738e021b83196283d6e4d850") { throw "JUCE fingerprint mismatch" }
+      - name: Build original owned test VST3
+        shell: pwsh
+        run: |
+          cmake -S experiments/host_fixture -B "$env:RUNNER_TEMP/skell-host-build" -A x64 "-DJUCE_DIR=$env:RUNNER_TEMP/JUCE"
+          if ($LASTEXITCODE -ne 0) { throw "Configure failed" }
+          cmake --build "$env:RUNNER_TEMP/skell-host-build" --config Release --target SkellHostFixture_VST3 --parallel 2
+          if ($LASTEXITCODE -ne 0) { throw "Build failed" }
+      - name: Load only the owned fixture and verify four renders
+        shell: pwsh
+        run: |
+          $plugin = "$env:RUNNER_TEMP/skell-host-build/SkellHostFixture_artefacts/Release/VST3/Skell Host Fixture.vst3"
+          if (!(Test-Path $plugin)) { throw "Owned VST3 output missing" }
+          $env:PYTHONPATH = "."
+          python tests/host_vst3_smoke.py $plugin
+          if ($LASTEXITCODE -ne 0) { throw "Host smoke failed" }
