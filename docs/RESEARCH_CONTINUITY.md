@@ -177,3 +177,6 @@ Parent 00d44bd passed all eight exact-head CI workflows. New exact-build manifes
 
 ## Five-track native research intake — 2026-11-25
 Recovered verified original VMR archive (31 EPL files), added complete fingerprint inventory and eight priority paired dispatch targets. 17 TVB endpoint checks, 16 scoped wrappers and 32 indexed call sites; 4 local tests and archived 72/72 passed. See docs/FIVE_TRACK_RESEARCH_INTAKE.md and reports/rack_intake/vmr_inventory.json. Static scope only, no new plugin changes or vendor execution. Full current-branch CI pending.
+
+## Gem Dopamine intake — 2026-11-25
+Added owner-supplied Gem Dopamine-64.vst3 to the research queue. SHA-256 dc923f6507cc891e0417854178f1db2eb84965040aa661c9c144649548dffb6f; 16,981,384 bytes; PE32+ x64 DLL, standard VST3 factory/init/exit exports observed with GNU objdump. Embedded 1.1.5 version string, de-esser labels and two RTTI name candidates are navigation clues only. See reports/rack_intake/gem_dopamine.json. Priority: frequency-selective dynamics, excitation, de-esser and parameter provenance. No DSP algorithm verified, no binary executed or committed. Existing TVB/VMR priorities unchanged. Metadata-only addition; no new software tests or UI build. JUCE retrieval attempted, DNS unavailable.
