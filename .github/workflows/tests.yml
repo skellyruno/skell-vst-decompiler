@@ -68,6 +68,10 @@ jobs:
         env:
           OPENBLAS_NUM_THREADS: '1'
         run: PYTHONPATH=. python tests/host_capture_smoke.py
+      - name: Seeded multi-rate automated capture regression
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+        run: PYTHONPATH=. python tests/host_matrix_extended_smoke.py
       - name: Compile all research Python
         run: python -m compileall -q skell_vst_decompiler
       - name: Compile and test original native DSP prototypes

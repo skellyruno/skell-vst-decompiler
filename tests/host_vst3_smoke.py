@@ -20,7 +20,7 @@ def main():
         plan=[]
         for n in (64,1024):
             for gain in (.25,.75):
-                plan.append({'id':f'g{int(gain*100)}_{n}','case':'probe','spec':{'backend':'installed_vst3','authorization':'installed_and_licensed','purpose':'owned_fixture','path':str(plugin),'sha256':sha,'version':'1.0.0','parameters':{'gain':gain},'block_size':n,'target_stage':'output'}})
+                plan.append({'id':f'g{int(gain*100)}_{n}','case':'probe','spec':{'backend':'installed_vst3','authorization':'installed_and_licensed','purpose':'owned_fixture','path':str(plugin),'sha256':sha,'version':'1.0.0','parameters':{'gain':gain},'expected_normalized':{'gain':gain},'block_size':n,'target_stage':'output'}})
         out=Path(tmp)/'capture';rows=run_matrix(root,plan,out,authorized=True,timeout=90)
         assert all(r['status']=='captured' for r in rows),rows
         summary=[]

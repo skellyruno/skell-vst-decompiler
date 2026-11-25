@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "report_kind": "host_capture_hardening_and_seeded_validation",
+  "source_commit": "193a6d095f443ec0e5a17a439363c6234ef36114",
+  "prior_linux_ci": {
+    "run_id": 45536284379,
+    "job_id": 138943558181,
+    "conclusion": "success",
+    "tests": 195
+  },
+  "prior_windows_ci": {
+    "job_id": 138943557986,
+    "status": "completed",
+    "conclusion": "failure"
+  },
+  "local": {
+    "host": "Pedalboard 0.9.23",
+    "numpy": "2.3.5",
+    "unit_tests": 5,
+    "unit_result": "pass",
+    "unit_seconds": 5.914,
+    "syntax": "pass",
+    "tested_blobs": {
+      "skell_vst_decompiler/host_capture.py": "fe9b27c498e9142f37cae292cfd00ac0998e4274",
+      "tests/test_host_capture.py": "73d57bbfc56544c3af2b1dfaf527fb0113c2e9cd",
+      "tests/host_vst3_smoke.py": "faff8927195a82c6c286ef765be96a2c7f911fe7",
+      "tests/host_matrix_extended_smoke.py": "e84bc358d7c72d63f58c613849c2690902ed1299"
+    },
+    "native_history_matrix": {
+      "renders": 7,
+      "sample_rate": 48000,
+      "block_sizes": [
+        64,
+        1024
+      ],
+      "zero_tolerance_comparisons": 4,
+      "compared_sample_values": 2182080,
+      "mismatches": 0,
+      "model_selected_by_validation": "amplitude",
+      "test_rmse_db": {
+        "single": 0.3768475788307072,
+        "dual": 0.4420928808570854,
+        "power": 0.1341930732164535,
+        "amplitude": 0.07867525587630586
+      }
+    },
+    "seeded_matrix": {
+      "renders": 12,
+      "seed_formula": "291 + sample rate",
+      "block_sizes": [
+        64,
+        1024
+      ],
+      "compared_sample_values": 188100,
+      "mismatches": 0,
+      "cases": [
+        {
+          "sample_rate": 44100,
+          "frames": 11025,
+          "effect": "Gain",
+          "gain_db": -13.824462172556686,
+          "oracle_max_error": 7.450580596923828e-9
+        },
+        {
+          "sample_rate": 44100,
+          "frames": 11025,
+          "effect": "Compressor",
+          "threshold_db": -28.387955469175232,
+          "ratio": 4.480107175509614,
+          "attack_ms": 7.491736783907248,
+          "release_ms": 85.22387080164391
+        },
+        {
+          "sample_rate": 48000,
+          "frames": 12000,
+          "effect": "Gain",
+          "gain_db": -11.495443118153041,
+          "oracle_max_error": 1.4901161193847656e-8
+        },
+        {
+          "sample_rate": 48000,
+          "frames": 12000,
+          "effect": "Compressor",
+          "threshold_db": -31.14308387703273,
+          "ratio": 2.0176488098543537,
+          "attack_ms": 1.3749293525272135,
+          "release_ms": 160.37587802689427
+        },
+        {
+          "sample_rate": 96000,
+          "frames": 24000,
+          "effect": "Gain",
+          "gain_db": -12.701962783089513,
+          "oracle_max_error": 0
+        },
+        {
+          "sample_rate": 96000,
+          "frames": 24000,
+          "effect": "Compressor",
+          "threshold_db": -19.908588751267303,
+          "ratio": 2.2671926718486253,
+          "attack_ms": 20.838251462772078,
+          "release_ms": 73.12477096262555
+        }
+      ]
+    }
+  },
+  "limits": "No target plugin execution, no recovered vendor source or target DSP matching, Windows adapter runtime not tested locally, readback helper tested on synthetic object, host-reported compensation is not measured latency. Whole parameter inventory stability deliberately fails closed on changing meter/read-only parameters; legitimate target-specific handling pending. No UI changes, JUCE local fetch DNS failure; native Windows build status in preceding CI recorded above."
+}

@@ -4,7 +4,7 @@ import tempfile
 import unittest
 import numpy as np
 import soundfile as sf
-from skell_vst_decompiler.host_capture import bundle_hash, validate, capture, run_matrix
+from skell_vst_decompiler.host_capture import bundle_hash, validate, capture, run_matrix, normalized_readback
 from skell_vst_decompiler.reference_lab import digest, measure
 from skell_vst_decompiler.divergence import first_difference
 
@@ -23,6 +23,15 @@ class HostTests(unittest.TestCase):
         self.assertEqual(validate(spec())['name'],'Gain')
         for s in (dict(spec(),block_size=0),dict(spec(),parameters={'gain_db':float('nan')}),dict(spec(),name='load_plugin'),dict(spec(),backend='installed_vst3')):
             with self.assertRaises(ValueError):validate(s)
+
+    def test_readback_requires_expected_normalized_value(self):
+        from types import SimpleNamespace as NS
+        fx=NS(parameters={"gain":NS(raw_value=.25)})
+        self.assertEqual(normalized_readback(fx,{"gain":.25}),{"gain":.25})
+        for expected in ({"gain":.75},{"missing":.25}):
+            with self.assertRaises(ValueError):normalized_readback(fx,expected)
+        fx.parameters["gain"].raw_value=float("nan")
+        with self.assertRaises(ValueError):normalized_readback(fx,{})
 
     def test_fingerprint(self):
         with tempfile.TemporaryDirectory() as d:
@@ -51,6 +60,9 @@ class HostTests(unittest.TestCase):
             self.assertIsNone(first_difference(a,b,48000,atol=0,rtol=0)['first_difference'])
             with self.assertRaises(FileExistsError):run_matrix(p/'probes',plan,p/'out')
             with self.assertRaises(ValueError):run_matrix(p/'probes',plan+plan,p/'other')
+            for reserved in ('results','A','CON','LPT1'):
+                with self.assertRaises(ValueError):run_matrix(p/'probes',plan+[dict(plan[0],id=reserved)],p/'other')
+            self.assertFalse((p/'other').exists())
 
 
 if __name__=='__main__':unittest.main()
