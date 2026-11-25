@@ -12,3 +12,5 @@ Opt-in backend='fft' computes the same fixed-window squared differences via conv
 Historical public architecture source and new independent comparison: see HISTORICAL_PITCH_AND_DYNAMICS.md. Do not infer Evo uses the identical patent implementation.
 
 Historical manual pp.23–24 supplies additional public behavioral evidence; see PUBLIC_DSP_BEHAVIOR.md. Independent sustained-note smoothing is not the commercial Humanize mapping.
+
+Relocation-backed public math import observations are documented in EVO_MATH_IMPORT_AUDIT.md. Observed jump stubs do not identify the pitch algorithm.

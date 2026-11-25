@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "report_kind": "evo_relocation_backed_import_observation",
+  "source_commit": "b72419677c83fde4af253919efeadbc8de948e9f",
+  "binary_sha256": "278d03b4a88fe6ef59b48e5c1f70bc921b3ae530ea672879ef2ae21f0ce873d5",
+  "binary_unchanged_after_analysis": true,
+  "bytes": 8790016,
+  "resource_bytes": 8454144,
+  "executable_bytes": 253952,
+  "import_descriptors": 8,
+  "import_slots": 174,
+  "highlow_relocations": 7877,
+  "padding_entries": 27,
+  "tool_versions": {
+    "gnu": "2.44",
+    "llvm": "17.0.0"
+  },
+  "sections": [
+    {
+      "section": ".text",
+      "scope_sha256": "4b7394e97eb4e47aedbc8840222801c4e5ec6f309f7214e733e04639a1bf10a1",
+      "bytes": 212992,
+      "agreed_spans": 73581,
+      "relocation_backed_iat_calls": 433,
+      "relocation_backed_iat_jumps": 57,
+      "iat_candidates_without_relocation": 0,
+      "absolute_transfers_not_in_import_table": 1,
+      "public_math_call_counts": {},
+      "public_math_jump_counts": {
+        "_CIcos": 1,
+        "_CIexp": 1,
+        "_CIlog": 1,
+        "_CIlog10": 1,
+        "_CIpow": 1,
+        "_CIsin": 1,
+        "_CIsqrt": 1,
+        "floor": 1
+      }
+    },
+    {
+      "section": ".ftext",
+      "scope_sha256": "698f4b48426ecba2bada8727d3120a5b2f0e23101b6198917d38e690b5dffa94",
+      "bytes": 8192,
+      "agreed_spans": 3406,
+      "relocation_backed_iat_calls": 1,
+      "relocation_backed_iat_jumps": 0,
+      "iat_candidates_without_relocation": 0,
+      "absolute_transfers_not_in_import_table": 0,
+      "public_math_call_counts": {},
+      "public_math_jump_counts": {}
+    },
+    {
+      "section": ".code",
+      "scope_sha256": "ecbc0eaf1b4ba10957ffe875304b20fe425bfe7c7dc0d2c9a8ed8abb2b3ad73c",
+      "bytes": 32768,
+      "agreed_spans": 11820,
+      "relocation_backed_iat_calls": 92,
+      "relocation_backed_iat_jumps": 29,
+      "iat_candidates_without_relocation": 0,
+      "absolute_transfers_not_in_import_table": 251,
+      "public_math_call_counts": {},
+      "public_math_jump_counts": {}
+    }
+  ],
+  "public_math_imports": [
+    "_CIcos",
+    "_CIexp",
+    "_CIlog",
+    "_CIlog10",
+    "_CIpow",
+    "_CIsin",
+    "_CIsqrt",
+    "floor"
+  ],
+  "prior_ci": {
+    "tests": 163,
+    "all_eight_passed": true,
+    "run_ids": [
+      45500495568,
+      45500494899,
+      45500494973,
+      45500495182,
+      45500495005,
+      45500495025,
+      45500494984,
+      45500495085
+    ]
+  },
+  "local_validation": {
+    "unit_tests": 5,
+    "result": "pass",
+    "fixture_result": "pass",
+    "owned_consumer_sha256": "b8270ab3c8071942e831fb83870df327a58ee50ae9ed98c38d3ed5f504cbd073",
+    "fixture_iat_calls": 1,
+    "fixture_highlow_relocations": 1,
+    "legacy_dependency_blob": "dbfef865bc840abb560d054e1aae5d294463382e",
+    "tested_blobs": {
+      "skell_vst_decompiler/legacy_math_audit.py": "9c33d5f683f07471982da56dd76613718fbf5322",
+      "tests/test_legacy_math_audit.py": "0e522844405cc93d0e92f567f21a685dad0011cc",
+      "tests/legacy_math_smoke.py": "e1e50ce0f01071a210be5571da1efdd715f70da8"
+    }
+  },
+  "limitations": "PE32 linear static decode of unprefixed FF15 and FF25 only. Not a full import call graph, runtime reachability, DSP code recovery, or implementation attribution. Math observations all jump forms; no direct math import calls in scope. No private source or binary bytes committed. FG-2A follow-up deferred after user pivot."
+}

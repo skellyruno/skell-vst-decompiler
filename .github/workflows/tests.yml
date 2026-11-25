@@ -55,6 +55,8 @@ jobs:
         run: PYTHONPATH=. python tests/static_flow_smoke.py
       - name: Context sensitivity and exact decoder alias checks on owned PE fixtures
         run: PYTHONPATH=. python tests/context_flow_smoke.py
+      - name: Relocation-backed legacy import evidence on owned PE fixture
+        run: PYTHONPATH=. python tests/legacy_math_smoke.py
       - name: Compile all research Python
         run: python -m compileall -q skell_vst_decompiler
       - name: Compile and test original native DSP prototypes
