@@ -22,3 +22,10 @@ target_link_libraries(SkellHostFixture PRIVATE juce::juce_audio_processors juce:
 
 # Share the pinned JUCE checkout with the original analyzer target.
 add_subdirectory(../analyzer_plugin analyzer)
+
+# Public numeric ParamID inventory, isolated executable; no hosting inside analyzer.
+juce_add_console_app(SkellParamIds PRODUCT_NAME "SkellParamIds")
+target_sources(SkellParamIds PRIVATE ParamIds.cpp)
+target_compile_features(SkellParamIds PRIVATE cxx_std_17)
+target_compile_definitions(SkellParamIds PRIVATE JUCE_PLUGINHOST_VST3=1 JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0 JUCE_VST3_CAN_REPLACE_VST2=0)
+target_link_libraries(SkellParamIds PRIVATE juce::juce_audio_processors juce::juce_gui_basics juce::juce_cryptography juce::juce_recommended_config_flags)

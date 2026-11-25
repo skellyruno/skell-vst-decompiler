@@ -36,7 +36,7 @@ def main():
         x=np.column_stack((.2*np.sin(2*np.pi*997*t),.3*np.cos(2*np.pi*701*t))).astype(np.float32)
         source=root/'probe.wav';sf.write(source,x,fs,subtype='FLOAT')
         (root/'manifest.json').write_text(json.dumps({'schema':1,'sample_rate':fs,'cases':[{'id':'probe','family':'linear','file':source.name,'sha256':digest(source),'frames':len(x),'windows':[]}]}))
-        spec={'backend':'installed_vst3','authorization':'installed_and_licensed','purpose':'owned_fixture','path':str(analyzer),'sha256':bundle_hash(analyzer),'version':'0.1.0','parameters':{},'expected_normalized':{},'target_stage':'output'}
+        spec={'backend':'installed_vst3','authorization':'installed_and_licensed','purpose':'owned_fixture','path':str(analyzer),'sha256':bundle_hash(analyzer),'version':'0.2.0','parameters':{},'expected_normalized':{},'target_stage':'output'}
         plan=[{'id':f'analyzer_{n}','case':'probe','spec':dict(spec,block_size=n)} for n in (64,1024)]
         out=Path(tmp)/'capture';rows=run_matrix(root,plan,out,authorized=True,timeout=90)
         assert all(r['status']=='captured' for r in rows),rows

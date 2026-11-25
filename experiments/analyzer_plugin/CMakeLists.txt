@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.22)
-project(SkellAnalyzer VERSION 0.1.0 LANGUAGES C CXX)
+project(SkellAnalyzer VERSION 0.2.0 LANGUAGES C CXX)
 if(NOT TARGET juce::juce_audio_processors)
     if(NOT DEFINED JUCE_DIR)
         message(FATAL_ERROR "Pass -DJUCE_DIR=<checked-out JUCE source>")
@@ -11,7 +11,7 @@ juce_add_plugin(SkellAnalyzer
     PLUGIN_MANUFACTURER_CODE Skll
     PLUGIN_CODE SAnl
     PRODUCT_NAME "Skell Analyzer"
-    VERSION 0.1.0
+    VERSION 0.2.0
     FORMATS VST3
     IS_SYNTH FALSE
     NEEDS_MIDI_INPUT FALSE

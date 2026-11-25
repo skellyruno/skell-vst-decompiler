@@ -151,7 +151,7 @@ jobs:
 
   windows-owned-vst3-host:
     runs-on: windows-latest
-    timeout-minutes: 35
+    timeout-minutes: 50
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
@@ -197,9 +197,31 @@ jobs:
           $env:PYTHONPATH = "."
           python tests/analyzer_host_smoke.py $fixture $analyzer
           if ($LASTEXITCODE -ne 0) { throw "Analyzer host smoke failed" }
+      - name: Build and verify actual numeric VST3 parameter IDs
+        shell: pwsh
+        run: |
+          cmake --build "$env:RUNNER_TEMP/skell-host-build" --config Release --target SkellParamIds --parallel 2
+          if ($LASTEXITCODE -ne 0) { throw "ParamID host build failed" }
+          $exe = "$env:RUNNER_TEMP/skell-host-build/SkellParamIds_artefacts/Release/SkellParamIds.exe"
+          $bundle = "$env:RUNNER_TEMP/skell-host-build/SkellHostFixture_artefacts/Release/VST3/Skell Host Fixture.vst3"
+          $module = "$bundle/Contents/x86_64-win/Skell Host Fixture.vst3"
+          $sha = (Get-FileHash $module -Algorithm SHA256).Hash.ToLower()
+          $json = & $exe --authorized-owned $bundle $sha
+          if ($LASTEXITCODE -ne 0) { throw "ParamID inventory failed" }
+          $report = ($json -join "`n") | ConvertFrom-Json
+          if ($report.module_sha256 -ne $sha) { throw "ParamID source mismatch" }
+          $gain = @($report.parameters | Where-Object {$_.name -eq "Gain"})
+          $delay = @($report.parameters | Where-Object {$_.name -eq "Creative Delay"})
+          if ($gain.Count -ne 1 -or $delay.Count -ne 1) { throw "Fixture parameters missing" }
+          $expectedGain = python -c "from skell_vst_decompiler.owned_state import juce_param_id; print(juce_param_id('gain'))"
+          $expectedDelay = python -c "from skell_vst_decompiler.owned_state import juce_param_id; print(juce_param_id('creative_delay'))"
+          if ($gain[0].param_id -ne [long]$expectedGain -or $delay[0].param_id -ne [long]$expectedDelay) { throw "Observed VST3 ID differs from source prediction" }
+          Write-Output ("SKELL_PUBLIC_PARAM_IDS " + ($report | ConvertTo-Json -Depth 6 -Compress))
       - name: Upload verified owned analyzer build
         uses: actions/upload-artifact@v4
         with:
           name: Skell-Analyzer-Windows-VST3
-          path: ${{ runner.temp }}/skell-host-build/analyzer/SkellAnalyzer_artefacts/Release/VST3/
+          path: |
+            ${{ runner.temp }}/skell-host-build/analyzer/SkellAnalyzer_artefacts/Release/VST3/
+            ${{ runner.temp }}/skell-host-build/SkellParamIds_artefacts/Release/SkellParamIds.exe
           if-no-files-found: error
