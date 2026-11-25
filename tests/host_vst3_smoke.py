@@ -7,6 +7,7 @@ import numpy as np
 import soundfile as sf
 from skell_vst_decompiler.host_capture import bundle_hash,run_matrix
 from skell_vst_decompiler.reference_lab import digest
+from skell_vst_decompiler.impulse_calibration import inspect_impulse
 
 
 def main():
@@ -28,6 +29,23 @@ def main():
             y,_=sf.read(out/row['id']/'render.wav',always_2d=True);gain=job['spec']['parameters']['gain'];meta=row['metadata']
             err=float(np.max(abs(y-x*gain)));assert err<1e-7 and meta['evidence']=='EXEC: fixture' and abs(meta['parameter_readback']['gain']-gain)<1e-5
             summary.append({'id':row['id'],'max_error':err,'latency_reported':meta['reported_latency_samples']})
+        # Additional independent impulse case, with exact creative delay and reported zero latency.
+        impulse=np.zeros((4813,2),np.float32);impulse[7,1]=.5
+        f=root/'impulse.wav';sf.write(f,impulse,fs,subtype='FLOAT')
+        m=json.loads((root/'manifest.json').read_text());m['cases'].append({'id':'impulse','family':'linear','file':f.name,'sha256':digest(f),'frames':len(impulse),'windows':[]});(root/'manifest.json').write_text(json.dumps(m))
+        delay_plan=[]
+        for n in (64,1024):
+            spec=dict(plan[0]['spec'],parameters={'gain':.5,'creative_delay':True},expected_normalized={'gain':.5,'creative_delay':1.},block_size=n)
+            delay_plan.append({'id':f'delay_{n}','case':'impulse','spec':spec})
+        d_out=Path(tmp)/'delay';d_rows=run_matrix(root,delay_plan,d_out,authorized=True,timeout=90)
+        assert all(r['status']=='captured' for r in d_rows),d_rows
+        for row in d_rows:
+            y,_=sf.read(d_out/row['id']/'render.wav',always_2d=True);meta=row['metadata']
+            expected=np.zeros_like(impulse);expected[137:]=impulse[:-137]*.5
+            err=float(np.max(abs(y-expected)));assert err==0 and meta['reported_latency_samples']==0
+            timing=inspect_impulse(impulse,y,fs,reported_latency=meta['reported_latency_samples'])
+            assert timing['outputs'][1]['first_arrival_samples']==137 and timing['outputs'][0]['first_arrival_samples'] is None
+            summary.append({'id':row['id'],'max_error':err,'latency_reported':0,'creative_delay_samples':137})
         print('SKELL_OWNED_VST3_RESULT '+json.dumps({'bundle_sha256':sha,'cases':summary},sort_keys=True))
 
 

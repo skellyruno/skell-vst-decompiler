@@ -72,6 +72,14 @@ jobs:
         env:
           OPENBLAS_NUM_THREADS: '1'
         run: PYTHONPATH=. python tests/host_matrix_extended_smoke.py
+      - name: Native delay impulse timing and state reset
+        run: PYTHONPATH=. python tests/impulse_native_smoke.py
+      - name: Original owned delay fixture native and sanitizer tests
+        run: |
+          g++ -std=c++17 -O2 -Wall -Wextra -Werror experiments/host_fixture/test_delay_fixture.cpp -o /tmp/skell_delay_fixture
+          /tmp/skell_delay_fixture
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer experiments/host_fixture/test_delay_fixture.cpp -o /tmp/skell_delay_fixture_san
+          /tmp/skell_delay_fixture_san
       - name: Compile all research Python
         run: python -m compileall -q skell_vst_decompiler
       - name: Compile and test original native DSP prototypes
@@ -129,7 +137,7 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "Configure failed" }
           cmake --build "$env:RUNNER_TEMP/skell-host-build" --config Release --target SkellHostFixture_VST3 --parallel 2
           if ($LASTEXITCODE -ne 0) { throw "Build failed" }
-      - name: Load only the owned fixture and verify four renders
+      - name: Load only the owned fixture and verify gain and creative delay renders
         shell: pwsh
         run: |
           $plugin = "$env:RUNNER_TEMP/skell-host-build/SkellHostFixture_artefacts/Release/VST3/Skell Host Fixture.vst3"

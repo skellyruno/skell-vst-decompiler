@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "kind": "owned_host_verification_and_impulse_calibration",
+  "source_commit": "3dac0b84b4734e7030a72ba352a192d13342ec2e",
+  "previous_ci": {
+    "tests": 197,
+    "all_eight_passed": true,
+    "run_ids": [
+      45537455206,
+      45537455104,
+      45537455084,
+      45537455041,
+      45537455004,
+      45537455014,
+      45537455171,
+      45537455048
+    ],
+    "windows_job_id": 138947509869,
+    "linux_job_id": 138947510380,
+    "owned_vst3_bundle_sha256": "0a01f8e6a0b6885329c62eb4a4e1f161f37ee9ff21cd8b2b33f8a07d2bb741c1",
+    "owned_vst3_cases": [
+      {
+        "id": "g25_64",
+        "latency_reported": 0,
+        "max_error": 0
+      },
+      {
+        "id": "g75_64",
+        "latency_reported": 0,
+        "max_error": 0
+      },
+      {
+        "id": "g25_1024",
+        "latency_reported": 0,
+        "max_error": 0
+      },
+      {
+        "id": "g75_1024",
+        "latency_reported": 0,
+        "max_error": 0
+      }
+    ]
+  },
+  "local": {
+    "unit_tests": 3,
+    "unit_result": "pass",
+    "native_host": "Pedalboard 0.9.23",
+    "sample_rate_cases": [
+      {
+        "sample_rate": 44100,
+        "frames": 11038,
+        "block_size": 64,
+        "requested_delay_seconds": 0.01,
+        "first_arrival_samples": 440,
+        "echo_peaks": [
+          {
+            "gain": 1,
+            "offset_samples": 440
+          },
+          {
+            "gain": 0.5,
+            "offset_samples": 880
+          },
+          {
+            "gain": 0.25,
+            "offset_samples": 1320
+          },
+          {
+            "gain": 0.125,
+            "offset_samples": 1760
+          }
+        ],
+        "split_error": 0,
+        "reset_peak": 0
+      },
+      {
+        "sample_rate": 44100,
+        "frames": 11038,
+        "block_size": 1024,
+        "requested_delay_seconds": 0.01,
+        "first_arrival_samples": 440,
+        "echo_peaks": [
+          {
+            "gain": 1,
+            "offset_samples": 440
+          },
+          {
+            "gain": 0.5,
+            "offset_samples": 880
+          },
+          {
+            "gain": 0.25,
+            "offset_samples": 1320
+          },
+          {
+            "gain": 0.125,
+            "offset_samples": 1760
+          }
+        ],
+        "split_error": 0,
+        "reset_peak": 0
+      },
+      {
+        "sample_rate": 48000,
+        "frames": 12013,
+        "block_size": 64,
+        "requested_delay_seconds": 0.01,
+        "first_arrival_samples": 479,
+        "echo_peaks": [
+          {
+            "gain": 1,
+            "offset_samples": 479
+          },
+          {
+            "gain": 0.5,
+            "offset_samples": 958
+          },
+          {
+            "gain": 0.25,
+            "offset_samples": 1437
+          },
+          {
+            "gain": 0.125,
+            "offset_samples": 1916
+          }
+        ],
+        "split_error": 0,
+        "reset_peak": 0
+      },
+      {
+        "sample_rate": 48000,
+        "frames": 12013,
+        "block_size": 1024,
+        "requested_delay_seconds": 0.01,
+        "first_arrival_samples": 479,
+        "echo_peaks": [
+          {
+            "gain": 1,
+            "offset_samples": 479
+          },
+          {
+            "gain": 0.5,
+            "offset_samples": 958
+          },
+          {
+            "gain": 0.25,
+            "offset_samples": 1437
+          },
+          {
+            "gain": 0.125,
+            "offset_samples": 1916
+          }
+        ],
+        "split_error": 0,
+        "reset_peak": 0
+      },
+      {
+        "sample_rate": 96000,
+        "frames": 24013,
+        "block_size": 64,
+        "requested_delay_seconds": 0.01,
+        "first_arrival_samples": 959,
+        "echo_peaks": [
+          {
+            "gain": 1,
+            "offset_samples": 959
+          },
+          {
+            "gain": 0.5,
+            "offset_samples": 1918
+          },
+          {
+            "gain": 0.25,
+            "offset_samples": 2877
+          },
+          {
+            "gain": 0.125,
+            "offset_samples": 3836
+          }
+        ],
+        "split_error": 0,
+        "reset_peak": 0
+      },
+      {
+        "sample_rate": 96000,
+        "frames": 24013,
+        "block_size": 1024,
+        "requested_delay_seconds": 0.01,
+        "first_arrival_samples": 959,
+        "echo_peaks": [
+          {
+            "gain": 1,
+            "offset_samples": 959
+          },
+          {
+            "gain": 0.5,
+            "offset_samples": 1918
+          },
+          {
+            "gain": 0.25,
+            "offset_samples": 2877
+          },
+          {
+            "gain": 0.125,
+            "offset_samples": 3836
+          }
+        ],
+        "split_error": 0,
+        "reset_peak": 0
+      }
+    ],
+    "block_comparisons": 3,
+    "block_comparison_mismatches": 0,
+    "compared_sample_values": 94128,
+    "owned_delay_cpp": {
+      "optimized": "pass",
+      "asan_ubsan": "pass",
+      "creative_delay_samples": 137
+    },
+    "windows_smoke_python_syntax": "pass",
+    "tested_and_prepared_source_blobs": {
+      "skell_vst_decompiler/impulse_calibration.py": "03966a39345f41e7cf71026b0f7cffcca4bd7ffa",
+      "tests/test_impulse_calibration.py": "d741bc60f6feeed021e5957d43e28d2ee2ec48be",
+      "tests/impulse_native_smoke.py": "957a42280da0d85571f002c0c684808f69f95945",
+      "experiments/host_fixture/DelayFixture.h": "409be9a4bb64699e7712dff0f326a59d98ed9bac",
+      "experiments/host_fixture/test_delay_fixture.cpp": "d20da1a065b7eec0df5311bb62fce655f280fac7",
+      "experiments/host_fixture/Fixture.cpp": "c9c3c5f9ba2dad6831cadb07d62383982b7ad5bd",
+      "tests/host_vst3_smoke.py": "86ef2228718d2712df116af5ab13c385f0df8dd6"
+    }
+  },
+  "limitations": "Previous Windows gain fixture verified. New JUCE delay fixture source and two added Windows cases not built or loaded locally; local JUCE fetch DNS failed. Native delay observed one sample earlier than nominal, cause not established. Impulse analysis measures output timing, not transport latency; nonzero reported-latency compensation remains untested. No reference execution, source recovery or production modification."
+}
