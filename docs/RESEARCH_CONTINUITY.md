@@ -186,3 +186,5 @@ New exact-build evidence: Gem nonlinear/filter paths and utility classification,
 
 ## Architecture-first automation foundation
 Parent 163ce35 all eight CI workflows passed. Added explicit adjacent-engine import/literal inventory, extracted-state audit and opt-in private Ghidra project retention. 76/76 archived tests passed; compiled owned two-DLL static edge independently confirmed with objdump; actual Gem/TVB/VMR metadata scanned. No real Ghidra retention, Delphi VMT, FLP/FST extraction or automatic DSP classification yet. See docs/ARCHITECTURE_FIRST_AUTOMATION.md. Owner's multiband example remains user-reported until supplied and verified. Full new CI pending; no production changes.
+
+Architecture readback correction: TVB 37 and VMR rack 33 ordinary imported modules (Gem 15 unchanged). New owned wrapper/engine native smoke passed locally and added to existing CI; parent report retained in history.

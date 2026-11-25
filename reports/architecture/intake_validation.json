@@ -10,12 +10,12 @@
     {
       "name": "TVB Rack V2.vst3",
       "sha256": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
-      "ordinary_import_module_count": 36
+      "ordinary_import_module_count": 37
     },
     {
       "name": "Virtual Mix Rack.vst3",
       "sha256": "8da77cc3d3e9935db56f56dabc586f1ff38dc1e667fa9ff6a9fbc2302f66c838",
-      "ordinary_import_module_count": 32
+      "ordinary_import_module_count": 33
     }
   ],
   "common_loader_api_imports": [
@@ -45,5 +45,6 @@
     "passed": 76,
     "new": 4
   },
-  "limits": "Metadata only; no vendor runtime, actual multiband state corpus, dynamic load mapping or real Ghidra retention tested."
+  "limits": "Metadata only; no vendor runtime, actual multiband state corpus, dynamic load mapping or real Ghidra retention tested.",
+  "owned_native_smoke": "locally passed; new CI pending"
 }

@@ -25,6 +25,8 @@ jobs:
           command -v lld-link
       - name: Unit tests (no vendor binaries)
         run: python -m unittest discover -s tests -v
+      - name: Owned wrapper and engine import verification
+        run: PYTHONPATH=. python tests/architecture_native_smoke.py
       - name: Real GNU and LLVM comparison on owned fixture
         run: PYTHONPATH=. python tests/engine_smoke.py
       - name: Persistent external-engine cache and bounded parallel smoke
