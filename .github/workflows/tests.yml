@@ -121,6 +121,12 @@ jobs:
           g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Iexperiments/skelliere experiments/skelliere/test_wet_duck.cpp -o /tmp/skell_wet_duck_san
           /tmp/skell_wet_duck_san
 
+      - name: Independent three-engine DSP lab and sanitizers
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/engine_lab/test_engines.cpp -o /tmp/skell_engines
+          /tmp/skell_engines
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -Wextra -Werror experiments/engine_lab/test_engines.cpp -o /tmp/skell_engines_san
+          /tmp/skell_engines_san
       - name: Peak-memory duck regression and full FDN comparison harness
         run: |
           g++ -std=c++17 -O3 -Wall -Wextra -Werror -Iexperiments/skelliere experiments/skelliere/test_peak_duck.cpp -o /tmp/skell_peak_duck
