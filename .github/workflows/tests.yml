@@ -106,6 +106,23 @@ jobs:
           PYTHONPATH=. python tests/spacer_selectivity_smoke.py /tmp/skell_spacer_compare_san
           g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie experiments/engine_lab/native_behavior_matrix.cpp -o /tmp/skell_behavior_matrix_san
           PYTHONPATH=. python tests/native_behavior_matrix_smoke.py /tmp/skell_behavior_matrix_san
+      - name: Original optimized engine parity and held-out frequency coverage
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/engine_lab/test_fast_engines.cpp -o /tmp/skell_fast
+          /tmp/skell_fast
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/engine_lab/coverage_and_chain.cpp -o /tmp/skell_coverage
+          PYTHONPATH=. python tests/coverage_and_chain_smoke.py /tmp/skell_coverage
+      - name: Original optimized engine bounded sanitizer checks
+        run: |
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie experiments/engine_lab/test_fast_engines.cpp -o /tmp/skell_fast_san
+          /tmp/skell_fast_san quick
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie experiments/engine_lab/coverage_and_chain.cpp -o /tmp/skell_coverage_san
+          /tmp/skell_coverage_san coverage 48000 > /tmp/coverage_san.txt
+          /tmp/skell_coverage_san chain 48000 > /tmp/chain_san.bin
+          /tmp/skell_coverage coverage 48000 > /tmp/coverage_opt.txt
+          /tmp/skell_coverage chain 48000 > /tmp/chain_opt.bin
+          cmp /tmp/coverage_san.txt /tmp/coverage_opt.txt
+          cmp /tmp/chain_san.bin /tmp/chain_opt.bin
       - name: Compile all research Python
         run: python -m compileall -q skell_vst_decompiler
       - name: Compile and test original native DSP prototypes
