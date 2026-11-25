@@ -112,6 +112,13 @@ jobs:
           g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer experiments/flangus_reference/test_stacked.cpp -o /tmp/skell_stacked_flanger_sanitized
           /tmp/skell_stacked_flanger_sanitized
 
+      - name: Independent wet duck recovery regression
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror -Iexperiments/skelliere experiments/skelliere/test_wet_duck.cpp -o /tmp/skell_wet_duck
+          /tmp/skell_wet_duck
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Iexperiments/skelliere experiments/skelliere/test_wet_duck.cpp -o /tmp/skell_wet_duck_san
+          /tmp/skell_wet_duck_san
+
   windows-owned-vst3-host:
     runs-on: windows-latest
     timeout-minutes: 35
