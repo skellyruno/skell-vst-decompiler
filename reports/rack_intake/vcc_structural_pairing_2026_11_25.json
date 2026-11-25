@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "type": "verified_vcc_structural_function_comparison",
+  "rows": [
+    {
+      "schema_version": 1,
+      "type": "native_mnemonic_comparison",
+      "left": {
+        "source": "VCC Channel.epl",
+        "binary_sha256": "73747020e8996938b8e6fdff51004cff4ea85c95f992cbc8bc0d0896a80aad87",
+        "region_rva": "0x176970",
+        "bytes": 627,
+        "region_sha256": "9cd10632a8fbe86871f160b92c815b3007f4c226b159eb66659df2e465f9e79a",
+        "instruction_count": 134
+      },
+      "right": {
+        "source": "VCC MixBuss.epl",
+        "binary_sha256": "fe077912d5396577fc6b32bcf0c4ba4b61d5e1f8089e961ce68dae22e1b0b500",
+        "region_rva": "0x152670",
+        "bytes": 627,
+        "region_sha256": "9a4760a6ce869d6bf6bb0b92335114396f8bee223725957c953444983d8bde44",
+        "instruction_count": 134
+      },
+      "ordered_mnemonic_similarity": 1.0,
+      "ordered_mnemonics_identical": true,
+      "exact_region_bytes_identical": false,
+      "decoder_consensus": true,
+      "decoders": [
+        "objdump",
+        "llvm-objdump"
+      ],
+      "limits": "Identical opcode sequences and/or exact function bytes do not prove identical coefficients, object state, routing, sound, source code or runtime DSP. External data and callee targets may differ."
+    },
+    {
+      "schema_version": 1,
+      "type": "native_mnemonic_comparison",
+      "left": {
+        "source": "VCC Channel.epl",
+        "binary_sha256": "73747020e8996938b8e6fdff51004cff4ea85c95f992cbc8bc0d0896a80aad87",
+        "region_rva": "0x176610",
+        "bytes": 215,
+        "region_sha256": "f0375b0a6aa02927970d65742bd5b0fda8de07eb5b02c3ddadd4620205393f04",
+        "instruction_count": 49
+      },
+      "right": {
+        "source": "VCC MixBuss.epl",
+        "binary_sha256": "fe077912d5396577fc6b32bcf0c4ba4b61d5e1f8089e961ce68dae22e1b0b500",
+        "region_rva": "0x152310",
+        "bytes": 215,
+        "region_sha256": "1c1f55e86e1a92dc2f206ba6ebe9e170a06adebd8b39379253141e3382aaec93",
+        "instruction_count": 49
+      },
+      "ordered_mnemonic_similarity": 1.0,
+      "ordered_mnemonics_identical": true,
+      "exact_region_bytes_identical": false,
+      "decoder_consensus": true,
+      "decoders": [
+        "objdump",
+        "llvm-objdump"
+      ],
+      "limits": "Identical opcode sequences and/or exact function bytes do not prove identical coefficients, object state, routing, sound, source code or runtime DSP. External data and callee targets may differ."
+    },
+    {
+      "schema_version": 1,
+      "type": "native_mnemonic_comparison",
+      "left": {
+        "source": "VCC Channel.epl",
+        "binary_sha256": "73747020e8996938b8e6fdff51004cff4ea85c95f992cbc8bc0d0896a80aad87",
+        "region_rva": "0x19ac10",
+        "bytes": 568,
+        "region_sha256": "3d45d78f9d139c14c1ac9dd95a6400e9e00fcb6886910466e4b413099eca4c64",
+        "instruction_count": 131
+      },
+      "right": {
+        "source": "VCC MixBuss.epl",
+        "binary_sha256": "fe077912d5396577fc6b32bcf0c4ba4b61d5e1f8089e961ce68dae22e1b0b500",
+        "region_rva": "0x172a50",
+        "bytes": 584,
+        "region_sha256": "37ebaf483738123a11c8588a2c0f4faf766b60b84dbc29bafe2ecd65516d5fc4",
+        "instruction_count": 132
+      },
+      "ordered_mnemonic_similarity": 0.942966,
+      "ordered_mnemonics_identical": false,
+      "exact_region_bytes_identical": false,
+      "decoder_consensus": true,
+      "decoders": [
+        "objdump",
+        "llvm-objdump"
+      ],
+      "limits": "Identical opcode sequences and/or exact function bytes do not prove identical coefficients, object state, routing, sound, source code or runtime DSP. External data and callee targets may differ."
+    }
+  ],
+  "limits": "This is source-fingerprint-scoped static structural similarity, not verified vendor DSP equivalence, source recovery or runtime signal routing."
+}
