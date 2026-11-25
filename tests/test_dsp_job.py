@@ -47,3 +47,13 @@ class DSPJobTests(unittest.TestCase):
                  patch('skell_vst_decompiler.dsp_job.annotate_shared',side_effect=ValueError('Target not in corpus')):
                 self.assertEqual(run_job(binary,out,shared_corpus=root),1)
             self.assertEqual(json.loads(out.read_text())['type'],'dsp_discovery_error')
+
+    def test_explicit_context_manifest(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);binary=root/'fixture.dll';manifest=root/'context.json';out=root/'report.json'
+            manifest.write_text('{}')
+            sample={'type':'dsp_discovery','binary_sha256':'a'*64,'candidates':[]}
+            with patch('skell_vst_decompiler.dsp_job.shutil.which',return_value='/bin/objdump'), patch('skell_vst_decompiler.dsp_job.discover',return_value=sample), patch('skell_vst_decompiler.dsp_job.review_manifest',return_value={'binary_sha256':'a'*64,'scopes':[]}) as review:
+                self.assertEqual(run_job(binary,out,context_manifest=manifest),0)
+                review.assert_called_once_with(binary,{},tools=('objdump','llvm-objdump'))
+                self.assertEqual(json.loads(out.read_text())['caller_context']['scopes'],[])

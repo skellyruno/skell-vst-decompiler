@@ -6,9 +6,10 @@ import shutil
 from .anchored_discovery import anchored as discover
 from .parameter_xrefs import scan as scan_parameters
 from .shared_code import annotate as annotate_shared, scan_modules
+from .context_paths import review_manifest
 
 
-def run_job(binary, output, parameters=(), shared_corpus=None):
+def run_job(binary, output, parameters=(), shared_corpus=None, context_manifest=None):
     binary,output=Path(binary),Path(output)
     if not binary.is_absolute() or not output.is_absolute() or output.suffix.lower()!='.json':
         raise ValueError('Absolute module and JSON output paths required')
@@ -33,6 +34,13 @@ def run_job(binary, output, parameters=(), shared_corpus=None):
                 'fingerprints_in_all_modules':full['fingerprints_in_all_modules'],
                 'regions_matching_at_least_10_modules':full['regions_matching_at_least_10_modules'],
                 'note':'Exact complete unwind-region byte matching. Common code is not automatically a utility, and unique code is not automatically DSP.'}
+        if context_manifest is not None:
+            manifest=Path(context_manifest)
+            if not 0<manifest.stat().st_size<=65536:raise ValueError('Context manifest exceeds bound')
+            decoders=tuple(t for t in ('objdump','llvm-objdump') if shutil.which(t))
+            context=review_manifest(binary,json.loads(manifest.read_text()),tools=decoders)
+            if context['binary_sha256']!=report['binary_sha256']:raise ValueError('Context source mismatch')
+            report['caller_context']=context
         status=0
     except (ValueError,OSError,RuntimeError) as exc:
         report={'schema_version':1,'type':'dsp_discovery_error','error':str(exc)[:300]}
@@ -49,8 +57,9 @@ def main():
     p.add_argument('--output',required=True)
     p.add_argument('--parameter',action='append',default=[])
     p.add_argument('--shared-corpus',type=Path,help='Optional local adjacent EPL modules for read-only code-frequency evidence')
+    p.add_argument('--context-manifest',type=Path,help='Optional exact-SHA explicit role roots and scopes')
     a=p.parse_args()
-    return run_job(a.binary,a.output,a.parameter,a.shared_corpus)
+    return run_job(a.binary,a.output,a.parameter,a.shared_corpus,a.context_manifest)
 
 
 if __name__=='__main__':raise SystemExit(main())

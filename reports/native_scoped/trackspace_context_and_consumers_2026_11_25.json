@@ -1,0 +1,1085 @@
+{
+  "trackspace": {
+    "binary_sha256": "4964c856700126a97db3884f34d8dff7eb441cb8d516b6bceed79f6c3bcd5b84",
+    "scope_count": 12,
+    "agreed_edge_count": 123,
+    "scopes": [
+      {
+        "start_rva": "0x2caf0",
+        "end_rva": "0x2cb13",
+        "region_sha256": "67e959c94eb156294228e982ffa7bf2bba53ba029fa3ab11c3633b428ca357cb",
+        "local_role_evidence": {
+          "role": "UNRESOLVED",
+          "features": {
+            "instructions": 10,
+            "calls": 1
+          }
+        },
+        "unresolved_control_transfers": [
+          0,
+          0
+        ],
+        "decoder_edge_counts": [
+          2,
+          2
+        ],
+        "agreed_edge_count": 2,
+        "observed_root_contexts": [
+          "setup"
+        ],
+        "context_status": "NON_AUDIO_CONTEXT_ONLY"
+      },
+      {
+        "start_rva": "0x2cff0",
+        "end_rva": "0x2da62",
+        "region_sha256": "2edcaf0ccd1375e2b2e035fbe38ea1995776a7c029780803dfecf584df4ea7ae",
+        "local_role_evidence": {
+          "role": "PROCESSING_CANDIDATE",
+          "features": {
+            "instructions": 568,
+            "calls": 17,
+            "vector_memory": 31,
+            "nonstack_vector_reads": 22,
+            "byte_memory": 5,
+            "nonstack_vector_stores": 9,
+            "indexed_vector_stores": 7,
+            "back_edges": 39,
+            "fp_arithmetic": 11
+          }
+        },
+        "unresolved_control_transfers": [
+          0,
+          0
+        ],
+        "decoder_edge_counts": [
+          17,
+          17
+        ],
+        "agreed_edge_count": 17,
+        "observed_root_contexts": [
+          "audio"
+        ],
+        "context_status": "AUDIO_CONTEXT_CANDIDATE"
+      },
+      {
+        "start_rva": "0x2da70",
+        "end_rva": "0x2da78",
+        "region_sha256": "290d281384f469b5214392e6342e3ee735d0df66392174ed777b521dec768e93",
+        "local_role_evidence": {
+          "role": "UNRESOLVED",
+          "features": {
+            "instructions": 2
+          }
+        },
+        "unresolved_control_transfers": [
+          0,
+          0
+        ],
+        "decoder_edge_counts": [
+          1,
+          1
+        ],
+        "agreed_edge_count": 1,
+        "observed_root_contexts": [
+          "audio"
+        ],
+        "context_status": "UNRESOLVED"
+      },
+      {
+        "start_rva": "0x2da80",
+        "end_rva": "0x2da8b",
+        "region_sha256": "a3a8e60f4848413cafa4df2f2258f5ad5b6822b35d22aaf424731514151ef542",
+        "local_role_evidence": {
+          "role": "UNRESOLVED",
+          "features": {
+            "instructions": 2
+          }
+        },
+        "unresolved_control_transfers": [
+          0,
+          0
+        ],
+        "decoder_edge_counts": [
+          1,
+          1
+        ],
+        "agreed_edge_count": 1,
+        "observed_root_contexts": [
+          "audio"
+        ],
+        "context_status": "UNRESOLVED"
+      },
+      {
+        "start_rva": "0x2ef40",
+        "end_rva": "0x2fef7",
+        "region_sha256": "a3fb7dee61f08e290843bc9faa7a2ce1aeaebfa8e9ad1cf2d100093d545cd808",
+        "local_role_evidence": {
+          "role": "UNRESOLVED",
+          "features": {
+            "instructions": 828,
+            "vector_memory": 1,
+            "nonstack_vector_stores": 1,
+            "calls": 105,
+            "back_edges": 55
+          }
+        },
+        "unresolved_control_transfers": [
+          21,
+          21
+        ],
+        "decoder_edge_counts": [
+          84,
+          84
+        ],
+        "agreed_edge_count": 84,
+        "observed_root_contexts": [
+          "setup"
+        ],
+        "context_status": "NON_AUDIO_CONTEXT_ONLY"
+      },
+      {
+        "start_rva": "0x2e6f40",
+        "end_rva": "0x2e6fbd",
+        "region_sha256": "24a46aa0f7e82e0a5f1b0d5c2b72432d102f21a6e780de3bf543208a2a6f7450",
+        "local_role_evidence": {
+          "role": "UNRESOLVED",
+          "features": {
+            "instructions": 31,
+            "vector_memory": 12,
+            "nonstack_vector_stores": 9,
+            "nonstack_vector_reads": 3,
+            "fp_arithmetic": 6
+          }
+        },
+        "unresolved_control_transfers": [
+          0,
+          0
+        ],
+        "decoder_edge_counts": [
+          0,
+          0
+        ],
+        "agreed_edge_count": 0,
+        "observed_root_contexts": [],
+        "context_status": "UNRESOLVED"
+      },
+      {
+        "start_rva": "0x2e6fc0",
+        "end_rva": "0x2e707c",
+        "region_sha256": "44f6a60fb569844209a4ea58b6b88fe5fec5c59d41ae50499bef8dca03019a50",
+        "local_role_evidence": {
+          "role": "UNRESOLVED",
+          "features": {
+            "instructions": 39,
+            "calls": 1,
+            "fp_arithmetic": 8,
+            "vector_memory": 8,
+            "nonstack_vector_stores": 8
+          }
+        },
+        "unresolved_control_transfers": [
+          0,
+          0
+        ],
+        "decoder_edge_counts": [
+          1,
+          1
+        ],
+        "agreed_edge_count": 1,
+        "observed_root_contexts": [],
+        "context_status": "UNRESOLVED"
+      },
+      {
+        "start_rva": "0x2e7080",
+        "end_rva": "0x2e719e",
+        "region_sha256": "c4e71df0bae2285124d1a2587650068e9d1d18f0a69f3a906f16b50fc5c252bb",
+        "local_role_evidence": {
+          "role": "PROCESSING_CANDIDATE",
+          "features": {
+            "instructions": 66,
+            "fp_arithmetic": 17,
+            "calls": 1,
+            "vector_memory": 12,
+            "nonstack_vector_stores": 9,
+            "nonstack_vector_reads": 3,
+            "back_edges": 1
+          }
+        },
+        "unresolved_control_transfers": [
+          0,
+          0
+        ],
+        "decoder_edge_counts": [
+          1,
+          1
+        ],
+        "agreed_edge_count": 1,
+        "observed_root_contexts": [],
+        "context_status": "UNRESOLVED"
+      },
+      {
+        "start_rva": "0x2e71a0",
+        "end_rva": "0x2e72d1",
+        "region_sha256": "14efad4a589386d74522a71dcea605b7021fa2495b74f47fcf1ad4b6d3c2955c",
+        "local_role_evidence": {
+          "role": "PROCESSING_CANDIDATE",
+          "features": {
+            "instructions": 77,
+            "calls": 1,
+            "fp_arithmetic": 18,
+            "vector_memory": 12,
+            "nonstack_vector_stores": 9,
+            "nonstack_vector_reads": 3,
+            "back_edges": 1
+          }
+        },
+        "unresolved_control_transfers": [
+          0,
+          0
+        ],
+        "decoder_edge_counts": [
+          1,
+          1
+        ],
+        "agreed_edge_count": 1,
+        "observed_root_contexts": [
+          "audio"
+        ],
+        "context_status": "AUDIO_CONTEXT_CANDIDATE"
+      },
+      {
+        "start_rva": "0x2e72e0",
+        "end_rva": "0x2e785d",
+        "region_sha256": "01e581720c2251d035979770c4ecee56056d4e49b5d3c3aef6fb725d3ce8d230",
+        "local_role_evidence": {
+          "role": "UNRESOLVED",
+          "features": {
+            "instructions": 242,
+            "vector_memory": 77,
+            "nonstack_vector_stores": 77,
+            "back_edges": 3
+          }
+        },
+        "unresolved_control_transfers": [
+          0,
+          0
+        ],
+        "decoder_edge_counts": [
+          0,
+          0
+        ],
+        "agreed_edge_count": 0,
+        "observed_root_contexts": [
+          "setup"
+        ],
+        "context_status": "NON_AUDIO_CONTEXT_ONLY"
+      },
+      {
+        "start_rva": "0x2e7860",
+        "end_rva": "0x2e7b30",
+        "region_sha256": "2cff61bfd246e75c9ed7152a61981cc749be74fd137d0c95a683fd673198eca4",
+        "local_role_evidence": {
+          "role": "PROCESSING_CANDIDATE",
+          "features": {
+            "instructions": 129,
+            "fp_arithmetic": 18,
+            "vector_memory": 20,
+            "nonstack_vector_reads": 2,
+            "byte_memory": 1,
+            "calls": 2,
+            "nonstack_vector_stores": 18,
+            "back_edges": 2
+          }
+        },
+        "unresolved_control_transfers": [
+          0,
+          0
+        ],
+        "decoder_edge_counts": [
+          3,
+          3
+        ],
+        "agreed_edge_count": 3,
+        "observed_root_contexts": [
+          "setup"
+        ],
+        "context_status": "NON_AUDIO_CONTEXT_ONLY"
+      },
+      {
+        "start_rva": "0x2e7dd0",
+        "end_rva": "0x2ea230",
+        "region_sha256": "9cac5246b4ba9c83328846aba5fa79abc4ffdb5df91dac516b61765a8dff9352",
+        "local_role_evidence": {
+          "role": "PROCESSING_CANDIDATE",
+          "features": {
+            "instructions": 1680,
+            "vector_memory": 327,
+            "nonstack_vector_reads": 223,
+            "fp_arithmetic": 338,
+            "calls": 12,
+            "byte_memory": 7,
+            "nonstack_vector_stores": 104,
+            "back_edges": 53,
+            "indexed_vector_stores": 3
+          }
+        },
+        "unresolved_control_transfers": [
+          0,
+          0
+        ],
+        "decoder_edge_counts": [
+          12,
+          12
+        ],
+        "agreed_edge_count": 12,
+        "observed_root_contexts": [
+          "audio"
+        ],
+        "context_status": "AUDIO_CONTEXT_CANDIDATE"
+      }
+    ],
+    "limits": "Explicit root labels, selected complete unwind regions only. Reachability is static, not execution; unknown and mixed context remain unresolved. Pointer-slot edges excluded from reachability.",
+    "selected_edges": [
+      {
+        "caller": "0x2caf0",
+        "site": "0x2caff",
+        "kind": "relative_call",
+        "target": "0x2e7860"
+      },
+      {
+        "caller": "0x2caf0",
+        "site": "0x2cb0e",
+        "kind": "relative_jump",
+        "target": "0x3aea0"
+      },
+      {
+        "caller": "0x2cff0",
+        "site": "0x2d4af",
+        "kind": "relative_call",
+        "target": "0x2e7dd0"
+      },
+      {
+        "caller": "0x2da70",
+        "site": "0x2da73",
+        "kind": "relative_jump",
+        "target": "0x2cff0"
+      },
+      {
+        "caller": "0x2da80",
+        "site": "0x2da86",
+        "kind": "relative_jump",
+        "target": "0x2cff0"
+      },
+      {
+        "caller": "0x2e7860",
+        "site": "0x2e7b1e",
+        "kind": "relative_jump",
+        "target": "0x2e72e0"
+      },
+      {
+        "caller": "0x2e7dd0",
+        "site": "0x2e8dd6",
+        "kind": "relative_call",
+        "target": "0x2e71a0"
+      },
+      {
+        "caller": "0x2e7dd0",
+        "site": "0x2e8e27",
+        "kind": "relative_call",
+        "target": "0x2e71a0"
+      },
+      {
+        "caller": "0x2e7dd0",
+        "site": "0x2e8e57",
+        "kind": "relative_call",
+        "target": "0x2e71a0"
+      }
+    ],
+    "bytes": 16930183,
+    "runtime_records": 18937,
+    "format": "Windows x64 PE32+ VST3",
+    "root_basis": "Retained COFF symbols, explicit source roles not inferred from slot indices",
+    "reported_latency_setting": 0,
+    "controls": [
+      "Amount",
+      "Low-cut",
+      "High-cut",
+      "Attack",
+      "Release",
+      "Pan / Mid-Side balance",
+      "Processing mode",
+      "Freeze",
+      "Sidechain listen",
+      "Bypass",
+      "Delta monitor"
+    ],
+    "engine_symbol": "trackspace::SpectralEngine",
+    "notes": "Static call endpoints only; no runtime latency or reference audio verification. Conditional allocator calls in wrapper; no measured glitch."
+  },
+  "gem": {
+    "binary_sha256": "dc923f6507cc891e0417854178f1db2eb84965040aa661c9c144649548dffb6f",
+    "scope_count": 5,
+    "agreed_edge_count": 8,
+    "scopes": [
+      {
+        "start_rva": "0x55f730",
+        "end_rva": "0x55f80a",
+        "region_sha256": "5629bf840046ae4be1fe94066ca6284f2e62e38b2dad90b435221d8d7db560e4",
+        "local_role_evidence": {
+          "role": "UNRESOLVED",
+          "features": {
+            "instructions": 49,
+            "fp_arithmetic": 16,
+            "vector_memory": 6,
+            "nonstack_vector_reads": 1,
+            "nonstack_vector_stores": 5
+          }
+        },
+        "unresolved_control_transfers": [
+          0,
+          0
+        ],
+        "decoder_edge_counts": [
+          0,
+          0
+        ],
+        "agreed_edge_count": 0,
+        "observed_root_contexts": [
+          "setup"
+        ],
+        "context_status": "NON_AUDIO_CONTEXT_ONLY"
+      },
+      {
+        "start_rva": "0x55f810",
+        "end_rva": "0x55f8d3",
+        "region_sha256": "a9f2dbca597ee7f438caa44288bff70640fdc37ab70cf1267dc4405ba2dd3fcd",
+        "local_role_evidence": {
+          "role": "UNRESOLVED",
+          "features": {
+            "instructions": 47,
+            "fp_arithmetic": 16,
+            "vector_memory": 6,
+            "nonstack_vector_reads": 1,
+            "nonstack_vector_stores": 5
+          }
+        },
+        "unresolved_control_transfers": [
+          0,
+          0
+        ],
+        "decoder_edge_counts": [
+          0,
+          0
+        ],
+        "agreed_edge_count": 0,
+        "observed_root_contexts": [
+          "setup"
+        ],
+        "context_status": "NON_AUDIO_CONTEXT_ONLY"
+      },
+      {
+        "start_rva": "0x58bf50",
+        "end_rva": "0x58c005",
+        "region_sha256": "e8f5ce5418bea032c012911512e3741385d55d189a2fb54c57f081aa31701703",
+        "local_role_evidence": {
+          "role": "UNRESOLVED",
+          "features": {
+            "instructions": 34,
+            "vector_memory": 3,
+            "nonstack_vector_stores": 3,
+            "calls": 4,
+            "back_edges": 1
+          }
+        },
+        "unresolved_control_transfers": [
+          0,
+          0
+        ],
+        "decoder_edge_counts": [
+          4,
+          4
+        ],
+        "agreed_edge_count": 4,
+        "observed_root_contexts": [
+          "setup"
+        ],
+        "context_status": "NON_AUDIO_CONTEXT_ONLY"
+      },
+      {
+        "start_rva": "0x58c100",
+        "end_rva": "0x58c4a0",
+        "region_sha256": "70e418b9639783147a74026ccb24c6ccb81c7c4a5e4fa3d309350a60b0db751f",
+        "local_role_evidence": {
+          "role": "PROCESSING_CANDIDATE",
+          "features": {
+            "instructions": 235,
+            "vector_memory": 49,
+            "nonstack_vector_reads": 33,
+            "fp_arithmetic": 96,
+            "nonstack_vector_stores": 16,
+            "back_edges": 1
+          }
+        },
+        "unresolved_control_transfers": [
+          0,
+          0
+        ],
+        "decoder_edge_counts": [
+          1,
+          1
+        ],
+        "agreed_edge_count": 1,
+        "observed_root_contexts": [
+          "audio"
+        ],
+        "context_status": "AUDIO_CONTEXT_CANDIDATE"
+      },
+      {
+        "start_rva": "0x58c4c0",
+        "end_rva": "0x58c594",
+        "region_sha256": "45b52b2c72d68463b67003f1e82f1a905dc2c53bf0049a7e05d66fb627f99957",
+        "local_role_evidence": {
+          "role": "UNRESOLVED",
+          "features": {
+            "instructions": 41,
+            "fp_arithmetic": 9,
+            "calls": 3,
+            "vector_memory": 2,
+            "nonstack_vector_stores": 2
+          }
+        },
+        "unresolved_control_transfers": [
+          0,
+          0
+        ],
+        "decoder_edge_counts": [
+          3,
+          3
+        ],
+        "agreed_edge_count": 3,
+        "observed_root_contexts": [
+          "setup"
+        ],
+        "context_status": "NON_AUDIO_CONTEXT_ONLY"
+      }
+    ],
+    "limits": "Explicit root labels, selected complete unwind regions only. Reachability is static, not execution; unknown and mixed context remain unresolved. Pointer-slot edges excluded from reachability.",
+    "selected_edges": [
+      {
+        "caller": "0x58bf50",
+        "site": "0x58bf94",
+        "kind": "relative_call",
+        "target": "0x55f810"
+      },
+      {
+        "caller": "0x58bf50",
+        "site": "0x58bfb0",
+        "kind": "relative_call",
+        "target": "0x55f730"
+      },
+      {
+        "caller": "0x58bf50",
+        "site": "0x58bfcc",
+        "kind": "relative_call",
+        "target": "0x55f730"
+      },
+      {
+        "caller": "0x58bf50",
+        "site": "0x58bfe6",
+        "kind": "relative_call",
+        "target": "0x58c4c0"
+      },
+      {
+        "caller": "0x58c100",
+        "site": "0x58c49b",
+        "kind": "relative_jump",
+        "target": "0x553140"
+      },
+      {
+        "caller": "0x58c4c0",
+        "site": "0x58c50e",
+        "kind": "relative_call",
+        "target": "0x3278b0"
+      },
+      {
+        "caller": "0x58c4c0",
+        "site": "0x58c532",
+        "kind": "relative_call",
+        "target": "0x3278b0"
+      },
+      {
+        "caller": "0x58c4c0",
+        "site": "0x58c562",
+        "kind": "relative_call",
+        "target": "0x3278b0"
+      }
+    ]
+  },
+  "vcc": {
+    "binary_sha256": "73747020e8996938b8e6fdff51004cff4ea85c95f992cbc8bc0d0896a80aad87",
+    "scope_count": 8,
+    "agreed_edge_count": 16,
+    "scopes": [
+      {
+        "start_rva": "0x19ac10",
+        "end_rva": "0x19ae48",
+        "region_sha256": "3d45d78f9d139c14c1ac9dd95a6400e9e00fcb6886910466e4b413099eca4c64",
+        "local_role_evidence": {
+          "role": "UNRESOLVED",
+          "features": {
+            "instructions": 131,
+            "vector_memory": 3,
+            "nonstack_vector_reads": 3,
+            "calls": 7,
+            "back_edges": 2
+          }
+        },
+        "unresolved_control_transfers": [
+          3,
+          3
+        ],
+        "decoder_edge_counts": [
+          4,
+          4
+        ],
+        "agreed_edge_count": 4,
+        "observed_root_contexts": [
+          "audio"
+        ],
+        "context_status": "UNRESOLVED"
+      },
+      {
+        "start_rva": "0x19ae50",
+        "end_rva": "0x19b05d",
+        "region_sha256": "69dfc4d11b1a6c1c32d4fb8615d78f07be5e0528f6c8fcd073a5e15a5ecaafb4",
+        "local_role_evidence": {
+          "role": "UNRESOLVED",
+          "features": {
+            "instructions": 117,
+            "vector_memory": 4,
+            "nonstack_vector_reads": 4,
+            "calls": 9
+          }
+        },
+        "unresolved_control_transfers": [
+          3,
+          3
+        ],
+        "decoder_edge_counts": [
+          6,
+          6
+        ],
+        "agreed_edge_count": 6,
+        "observed_root_contexts": [
+          "audio"
+        ],
+        "context_status": "UNRESOLVED"
+      },
+      {
+        "start_rva": "0x19bf80",
+        "end_rva": "0x19c08d",
+        "region_sha256": "719aab25b8978a14b4a26a023a5f9f4ac2aa6b86f13709928dc147c22e22c572",
+        "local_role_evidence": {
+          "role": "PROCESSING_CANDIDATE",
+          "features": {
+            "instructions": 64,
+            "calls": 1,
+            "fp_arithmetic": 14,
+            "vector_memory": 16,
+            "nonstack_vector_reads": 12,
+            "nonstack_vector_stores": 4,
+            "indexed_vector_stores": 2,
+            "back_edges": 1
+          }
+        },
+        "unresolved_control_transfers": [
+          1,
+          1
+        ],
+        "decoder_edge_counts": [
+          0,
+          0
+        ],
+        "agreed_edge_count": 0,
+        "observed_root_contexts": [],
+        "context_status": "UNRESOLVED"
+      },
+      {
+        "start_rva": "0x19c090",
+        "end_rva": "0x19c16d",
+        "region_sha256": "664fdc6c93c26f28b7db6b53657bedd6f5adee2711176c28934d6274d148535b",
+        "local_role_evidence": {
+          "role": "PROCESSING_CANDIDATE",
+          "features": {
+            "instructions": 53,
+            "calls": 1,
+            "fp_arithmetic": 11,
+            "vector_memory": 11,
+            "nonstack_vector_reads": 8,
+            "nonstack_vector_stores": 3,
+            "indexed_vector_stores": 1,
+            "back_edges": 1
+          }
+        },
+        "unresolved_control_transfers": [
+          1,
+          1
+        ],
+        "decoder_edge_counts": [
+          0,
+          0
+        ],
+        "agreed_edge_count": 0,
+        "observed_root_contexts": [],
+        "context_status": "UNRESOLVED"
+      },
+      {
+        "start_rva": "0x19b800",
+        "end_rva": "0x19ba20",
+        "region_sha256": "8206c499123657b9387ba708bbbcb471b2db48bffe5278b1db4dfb0fc65e4a9e",
+        "local_role_evidence": {
+          "role": "PROCESSING_CANDIDATE",
+          "features": {
+            "instructions": 124,
+            "vector_memory": 22,
+            "nonstack_vector_stores": 7,
+            "fp_arithmetic": 14,
+            "nonstack_vector_reads": 15,
+            "indexed_vector_stores": 4,
+            "back_edges": 2,
+            "calls": 2
+          }
+        },
+        "unresolved_control_transfers": [
+          1,
+          1
+        ],
+        "decoder_edge_counts": [
+          1,
+          1
+        ],
+        "agreed_edge_count": 1,
+        "observed_root_contexts": [],
+        "context_status": "UNRESOLVED"
+      },
+      {
+        "start_rva": "0x19ba20",
+        "end_rva": "0x19bbc5",
+        "region_sha256": "043d54c0d2837961f6f6b7af45b600b9d4e0e633269dbeaf6b1bcf27aee0a18f",
+        "local_role_evidence": {
+          "role": "PROCESSING_CANDIDATE",
+          "features": {
+            "instructions": 98,
+            "vector_memory": 15,
+            "nonstack_vector_stores": 5,
+            "fp_arithmetic": 11,
+            "nonstack_vector_reads": 10,
+            "indexed_vector_stores": 2,
+            "back_edges": 2,
+            "calls": 2
+          }
+        },
+        "unresolved_control_transfers": [
+          1,
+          1
+        ],
+        "decoder_edge_counts": [
+          1,
+          1
+        ],
+        "agreed_edge_count": 1,
+        "observed_root_contexts": [],
+        "context_status": "UNRESOLVED"
+      },
+      {
+        "start_rva": "0x199230",
+        "end_rva": "0x19928b",
+        "region_sha256": "dc7eecd5b2477245aba6ba95b03e13e80b6917d08df5d11f31b8e83f0855add8",
+        "local_role_evidence": {
+          "role": "UNRESOLVED",
+          "features": {
+            "instructions": 23,
+            "calls": 2
+          }
+        },
+        "unresolved_control_transfers": [
+          0,
+          1
+        ],
+        "decoder_edge_counts": [
+          2,
+          2
+        ],
+        "agreed_edge_count": 2,
+        "observed_root_contexts": [],
+        "context_status": "UNRESOLVED"
+      },
+      {
+        "start_rva": "0x199290",
+        "end_rva": "0x1992eb",
+        "region_sha256": "b96b8642110c74aae0316cc6c90cf31d00fafa7a1b0ceed8722e03a38002b154",
+        "local_role_evidence": {
+          "role": "UNRESOLVED",
+          "features": {
+            "instructions": 23,
+            "calls": 2
+          }
+        },
+        "unresolved_control_transfers": [
+          0,
+          1
+        ],
+        "decoder_edge_counts": [
+          2,
+          2
+        ],
+        "agreed_edge_count": 2,
+        "observed_root_contexts": [],
+        "context_status": "UNRESOLVED"
+      }
+    ],
+    "limits": "Explicit root labels, selected complete unwind regions only. Reachability is static, not execution; unknown and mixed context remain unresolved. Pointer-slot edges excluded from reachability.",
+    "selected_edges": [
+      {
+        "caller": "0x19ac10",
+        "site": "0x19add1",
+        "kind": "file_pointer_slot",
+        "slot": "0x10e7798",
+        "target": "0x17a9a0"
+      },
+      {
+        "caller": "0x19ae50",
+        "site": "0x19b008",
+        "kind": "file_pointer_slot",
+        "slot": "0x10e7658",
+        "target": "0x17a9a0"
+      }
+    ]
+  },
+  "glitch": {
+    "binary_sha256": "6fdc2176006fd3677e10af86e6c73e00a7392427310df6836ba6a7e291b7d9d0",
+    "scope_count": 5,
+    "agreed_edge_count": 209,
+    "scopes": [
+      {
+        "start_rva": "0x3c0930",
+        "end_rva": "0x3c12d9",
+        "region_sha256": "58f5251ba09a5d592188672c975ae95cd614715507df00e5d3b2d2f51ed60016",
+        "local_role_evidence": {
+          "role": "PROCESSING_CANDIDATE",
+          "features": {
+            "instructions": 554,
+            "vector_memory": 30,
+            "nonstack_vector_stores": 17,
+            "calls": 38,
+            "nonstack_vector_reads": 13,
+            "fp_arithmetic": 6,
+            "back_edges": 5,
+            "byte_memory": 2
+          }
+        },
+        "unresolved_control_transfers": [
+          0,
+          0
+        ],
+        "decoder_edge_counts": [
+          38,
+          38
+        ],
+        "agreed_edge_count": 38,
+        "observed_root_contexts": [
+          "setup"
+        ],
+        "context_status": "NON_AUDIO_CONTEXT_ONLY"
+      },
+      {
+        "start_rva": "0x3c3c70",
+        "end_rva": "0x3c3e3c",
+        "region_sha256": "43c1f629c13ea17657c6ace41777234ba308ad5c447948f58ce52d099b50288f",
+        "local_role_evidence": {
+          "role": "UNRESOLVED",
+          "features": {
+            "instructions": 125,
+            "calls": 5,
+            "back_edges": 5,
+            "vector_memory": 4,
+            "nonstack_vector_reads": 2,
+            "nonstack_vector_stores": 2,
+            "indexed_vector_stores": 2,
+            "byte_memory": 1
+          }
+        },
+        "unresolved_control_transfers": [
+          0,
+          1
+        ],
+        "decoder_edge_counts": [
+          5,
+          5
+        ],
+        "agreed_edge_count": 5,
+        "observed_root_contexts": [
+          "audio"
+        ],
+        "context_status": "UNRESOLVED"
+      },
+      {
+        "start_rva": "0x3c3e50",
+        "end_rva": "0x3c407e",
+        "region_sha256": "52319d7dade6d3a8016b175a07a242a08a57e48b6861737998060a48fc11ba3f",
+        "local_role_evidence": {
+          "role": "BYTE_PROCESSING_CANDIDATE",
+          "features": {
+            "instructions": 151,
+            "calls": 31,
+            "byte_memory": 2,
+            "back_edges": 1
+          }
+        },
+        "unresolved_control_transfers": [
+          0,
+          0
+        ],
+        "decoder_edge_counts": [
+          31,
+          31
+        ],
+        "agreed_edge_count": 31,
+        "observed_root_contexts": [
+          "utility"
+        ],
+        "context_status": "NON_AUDIO_CONTEXT_ONLY"
+      },
+      {
+        "start_rva": "0x3c4090",
+        "end_rva": "0x3c4309",
+        "region_sha256": "494f4aa66fc99f90690069873406accc4dd0723f709dba6a6b649f38b38dbf1f",
+        "local_role_evidence": {
+          "role": "BYTE_PROCESSING_CANDIDATE",
+          "features": {
+            "instructions": 169,
+            "calls": 35,
+            "byte_memory": 2,
+            "back_edges": 1
+          }
+        },
+        "unresolved_control_transfers": [
+          0,
+          0
+        ],
+        "decoder_edge_counts": [
+          35,
+          35
+        ],
+        "agreed_edge_count": 35,
+        "observed_root_contexts": [
+          "utility"
+        ],
+        "context_status": "NON_AUDIO_CONTEXT_ONLY"
+      },
+      {
+        "start_rva": "0x3c12f0",
+        "end_rva": "0x3c3c63",
+        "region_sha256": "ec32c659bcbcb8e6faa3485fcc65ba6fe817eb42839f99b074ff6521150a37b2",
+        "local_role_evidence": {
+          "role": "PROCESSING_CANDIDATE",
+          "features": {
+            "instructions": 2394,
+            "vector_memory": 151,
+            "nonstack_vector_stores": 44,
+            "calls": 101,
+            "byte_memory": 16,
+            "back_edges": 11,
+            "nonstack_vector_reads": 107,
+            "fp_arithmetic": 168,
+            "indexed_vector_stores": 19
+          }
+        },
+        "unresolved_control_transfers": [
+          1,
+          1
+        ],
+        "decoder_edge_counts": [
+          100,
+          100
+        ],
+        "agreed_edge_count": 100,
+        "observed_root_contexts": [
+          "audio"
+        ],
+        "context_status": "AUDIO_CONTEXT_CANDIDATE"
+      }
+    ],
+    "limits": "Explicit root labels, selected complete unwind regions only. Reachability is static, not execution; unknown and mixed context remain unresolved. Pointer-slot edges excluded from reachability.",
+    "selected_edges": [
+      {
+        "caller": "0x3c3c70",
+        "site": "0x3c3d9d",
+        "kind": "relative_call",
+        "target": "0x3c12f0"
+      }
+    ],
+    "repository": "skellyruno/skell-gate-vst",
+    "source_revision": "7109c7835f84da01c6e4659ecaefda1b9d483d54",
+    "source_blob": "41d8d133021b207da11174ea09111e849bdee91e",
+    "artifact_id": 15030787050,
+    "run_id": 45630413977,
+    "artifact_sha256": "a29bbd37a6d11563293b006f68524179187488a2dca96b6caf00146c4801caca",
+    "source_label_basis": "Known source prepare, float/double process, serialization; static matches by string references and direct double-wrapper call, not blind full-plugin classification",
+    "notes": "Preparation false-positive rejected by explicit setup context. Float path retained. Double wrapper remains unresolved local processing role. Not a full function-level holdout benchmark."
+  },
+  "master": {
+    "module_sha256": "82edf9789d1f2632f6f707ee9739f9d1e54f9e5e0781d829a9016ddc513876c3",
+    "checkpoint_count": 16,
+    "source_ids": [
+      "input",
+      "drive",
+      "output"
+    ],
+    "sites": [
+      "0x13a6ac",
+      "0x13a70a",
+      "0x13aad4",
+      "0x13aadd",
+      "0x13ac9a",
+      "0x13aca9",
+      "0x13acba",
+      "0x13acc8",
+      "0x13acce",
+      "0x13ad07",
+      "0x13ad17",
+      "0x13ad1d",
+      "0x13ad2d",
+      "0x13c8a7",
+      "0x13c8c2",
+      "0x13c8c6"
+    ],
+    "limits": "Source-known local consumer endpoints; not a general or complete reaching-definition proof. Drive branch and stereo peak computation are observed, complete nonlinear mapping remains open."
+  },
+  "independent_spacer": {
+    "sample_rates": [
+      44100,
+      48000,
+      96000,
+      192000
+    ],
+    "depth_zero_reconstruction": "passed",
+    "dry_impulse": "sample 0",
+    "synthetic_48k": {
+      "100Hz_sidechain_100Hz_input_db": -9.680188,
+      "100Hz_sidechain_9000Hz_input_db": -2.042595,
+      "silent_sidechain_db": 0.0,
+      "optimized_us_per_48_stereo_frames": 1.043937
+    },
+    "real_music": {
+      "rate": 44100,
+      "frames": 176400,
+      "same_signal_as_detector_then_silence": true,
+      "depth_zero_max_error": 0.0,
+      "active_rms_change_db": -1.9010350704193115,
+      "peak": 0.9999383091926575,
+      "last_half_second_difference_rms": 4.578683654443694e-09
+    },
+    "limits": "Original complementary 3-band experiment, no reference match, broad overlapping responses, no host latency/automation or true peak guarantee. Local Linux CPU timing only."
+  }
+}
