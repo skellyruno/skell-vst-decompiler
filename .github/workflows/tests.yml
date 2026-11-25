@@ -137,6 +137,15 @@ jobs:
           python tests/limited_color_smoke.py /tmp/skell_limited_san
       - name: Owned PE direct caller census
         run: PYTHONPATH=. python tests/direct_caller_smoke.py
+      - name: Owned PE relocation reference census
+        run: PYTHONPATH=. python tests/relocation_navigation_smoke.py
+      - name: Original native dual detector gate
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/skelliere/test_dual_detector_gate.cpp -o /tmp/skell_dual_gate
+          /tmp/skell_dual_gate
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/skelliere/render_dual_detector_gate.cpp -o /tmp/skell_gate_render
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie -Wall -Wextra -Werror experiments/skelliere/test_dual_detector_gate.cpp -o /tmp/skell_dual_gate_san
+          /tmp/skell_dual_gate_san
       - name: Compile all research Python
         run: python -m compileall -q skell_vst_decompiler
       - name: Compile and test original native DSP prototypes

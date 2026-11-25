@@ -1,0 +1,684 @@
+{
+  "schema_version": 1,
+  "parent": "8a343fc136653dc8cce0f8bea51df1d57f6056fa",
+  "archive_sha256": "353f23373ac05d7b2121c313073f08c708e879d839115d4ce5d30657732f481e",
+  "archive_bytes": 795482157,
+  "archive_entries": 899,
+  "modules": [
+    {
+      "name": "AirEQAir.epl",
+      "source_sha256": "c75499749848d64aa9a72298204087d5a78f685e7d960beacecd6644d9e3136b",
+      "slots": 40481,
+      "unique_code_targets": 28821,
+      "unwind_ranges": 21418,
+      "categories": {
+        "no_unwind_range": 28542,
+        "unwind_start": 7330,
+        "unwind_interior": 86,
+        "non_code_target": 4523
+      }
+    },
+    {
+      "name": "AirEQEarth.epl",
+      "source_sha256": "e5b254ee4173e142b6822e807cee916b745b32b5ae5f38e24814e7c8b7c875f7",
+      "slots": 39912,
+      "unique_code_targets": 28417,
+      "unwind_ranges": 19403,
+      "categories": {
+        "no_unwind_range": 28401,
+        "unwind_start": 6917,
+        "unwind_interior": 79,
+        "non_code_target": 4515
+      }
+    },
+    {
+      "name": "Blackbird Studio.epl",
+      "source_sha256": "44bee8e698af4a7c48f9de78bf0110d629c215aa66c999d01bd76f9d041d9a3d",
+      "slots": 43005,
+      "unique_code_targets": 31139,
+      "unwind_ranges": 20221,
+      "categories": {
+        "no_unwind_range": 31225,
+        "unwind_start": 7107,
+        "unwind_interior": 79,
+        "non_code_target": 4594
+      }
+    },
+    {
+      "name": "CS-EQ.epl",
+      "source_sha256": "a4a8c92d6ea80acc16a314b23cf727c0bd86cb92a40351efb03f6892605571d0",
+      "slots": 40115,
+      "unique_code_targets": 28426,
+      "unwind_ranges": 19499,
+      "categories": {
+        "no_unwind_range": 28596,
+        "unwind_start": 6961,
+        "unwind_interior": 79,
+        "non_code_target": 4479
+      }
+    },
+    {
+      "name": "CS-Lift.epl",
+      "source_sha256": "62ae20d8bbb4ec84960aca0325fdb61e5f551ff83943bb633759d4561f8b7ae6",
+      "slots": 39963,
+      "unique_code_targets": 28526,
+      "unwind_ranges": 19397,
+      "categories": {
+        "no_unwind_range": 28560,
+        "unwind_start": 6864,
+        "unwind_interior": 79,
+        "non_code_target": 4460
+      }
+    },
+    {
+      "name": "Classic Instruments.epl",
+      "source_sha256": "12fe5020e71374ff14e3f3aba553a578718de886024445733bcfc148142f52f6",
+      "slots": 43546,
+      "unique_code_targets": 31252,
+      "unwind_ranges": 21066,
+      "categories": {
+        "no_unwind_range": 31283,
+        "unwind_start": 7225,
+        "unwind_interior": 79,
+        "non_code_target": 4959
+      }
+    },
+    {
+      "name": "Custom Opto.epl",
+      "source_sha256": "e697454a539b54b6a610d486bac0fef0bd8f04295da020d6b6f196a44dc55bd3",
+      "slots": 40637,
+      "unique_code_targets": 29039,
+      "unwind_ranges": 19861,
+      "categories": {
+        "no_unwind_range": 29090,
+        "unwind_start": 6970,
+        "unwind_interior": 79,
+        "non_code_target": 4498
+      }
+    },
+    {
+      "name": "FG-116 Modern.epl",
+      "source_sha256": "6782b73fb9d4a3c1dade5406fe6ea1bead30699529082ea9f9a8dfe04056a664",
+      "slots": 41284,
+      "unique_code_targets": 29675,
+      "unwind_ranges": 20150,
+      "categories": {
+        "no_unwind_range": 29647,
+        "unwind_start": 7027,
+        "unwind_interior": 79,
+        "non_code_target": 4531
+      }
+    },
+    {
+      "name": "FG-116 Vintage.epl",
+      "source_sha256": "6e80b5108f805a0c4ee11fce56d56f149dc4a449c575108e5249e848a4638e7f",
+      "slots": 41284,
+      "unique_code_targets": 29675,
+      "unwind_ranges": 20154,
+      "categories": {
+        "no_unwind_range": 29648,
+        "unwind_start": 7026,
+        "unwind_interior": 79,
+        "non_code_target": 4531
+      }
+    },
+    {
+      "name": "FG-116.epl",
+      "source_sha256": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+      "slots": 40931,
+      "unique_code_targets": 29372,
+      "unwind_ranges": 20110,
+      "categories": {
+        "no_unwind_range": 29326,
+        "unwind_start": 7011,
+        "unwind_interior": 79,
+        "non_code_target": 4515
+      }
+    },
+    {
+      "name": "FG-2A.epl",
+      "source_sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+      "slots": 40438,
+      "unique_code_targets": 28992,
+      "unwind_ranges": 19781,
+      "categories": {
+        "no_unwind_range": 28973,
+        "unwind_start": 6904,
+        "unwind_interior": 79,
+        "non_code_target": 4482
+      }
+    },
+    {
+      "name": "FG-401.epl",
+      "source_sha256": "0cc3444f095ccf4aa751f653e6aceb484d7bfaea73df30ccb68a7f2fccf46ef6",
+      "slots": 40585,
+      "unique_code_targets": 29059,
+      "unwind_ranges": 20020,
+      "categories": {
+        "no_unwind_range": 28997,
+        "unwind_start": 6970,
+        "unwind_interior": 79,
+        "non_code_target": 4539
+      }
+    },
+    {
+      "name": "FG-73.epl",
+      "source_sha256": "b5204a61666943438690994b19ed52747de754aa0b6f741fe36a18df43053746",
+      "slots": 40161,
+      "unique_code_targets": 28823,
+      "unwind_ranges": 19649,
+      "categories": {
+        "no_unwind_range": 28753,
+        "unwind_start": 6872,
+        "unwind_interior": 79,
+        "non_code_target": 4457
+      }
+    },
+    {
+      "name": "FG-76.epl",
+      "source_sha256": "1b4180667292124de2b2c64b20c581d2eb752ebffbb526c4d31c1ad9d1b237d8",
+      "slots": 41006,
+      "unique_code_targets": 29528,
+      "unwind_ranges": 20171,
+      "categories": {
+        "no_unwind_range": 29401,
+        "unwind_start": 7013,
+        "unwind_interior": 79,
+        "non_code_target": 4513
+      }
+    },
+    {
+      "name": "FG-A.epl",
+      "source_sha256": "badeddab00efec8f803a56f6dd00a3cec7a7204d7ac3ba4793c095dbbb11c3cb",
+      "slots": 39617,
+      "unique_code_targets": 28121,
+      "unwind_ranges": 19733,
+      "categories": {
+        "no_unwind_range": 28152,
+        "unwind_start": 6931,
+        "unwind_interior": 79,
+        "non_code_target": 4455
+      }
+    },
+    {
+      "name": "FG-Bomber.epl",
+      "source_sha256": "fb42be0d32d2c661da652f41efd0c51e530b29d3a25aab2cd46f509fa3ddfa2c",
+      "slots": 40559,
+      "unique_code_targets": 29170,
+      "unwind_ranges": 20102,
+      "categories": {
+        "no_unwind_range": 29060,
+        "unwind_start": 6951,
+        "unwind_interior": 79,
+        "non_code_target": 4469
+      }
+    },
+    {
+      "name": "FG-N.epl",
+      "source_sha256": "e5a998d11bc57660fb7e500ad6805a2df1c0356650f43ce8eaefb8a4db9fc10b",
+      "slots": 39839,
+      "unique_code_targets": 28523,
+      "unwind_ranges": 19796,
+      "categories": {
+        "no_unwind_range": 28421,
+        "unwind_start": 6876,
+        "unwind_interior": 79,
+        "non_code_target": 4463
+      }
+    },
+    {
+      "name": "FG-S.epl",
+      "source_sha256": "9c28aaba2ee2dc61f00d9231b9c84f02e364d8a323a93ccab7b7a08956da9a45",
+      "slots": 39796,
+      "unique_code_targets": 28426,
+      "unwind_ranges": 19887,
+      "categories": {
+        "no_unwind_range": 28342,
+        "unwind_start": 6921,
+        "unwind_interior": 79,
+        "non_code_target": 4454
+      }
+    },
+    {
+      "name": "FG-Stress.epl",
+      "source_sha256": "2509a6f3480481feb15a0fde97abcb4acccfc6fc936f55f5e8c88b7c98edcd26",
+      "slots": 41278,
+      "unique_code_targets": 29456,
+      "unwind_ranges": 20224,
+      "categories": {
+        "no_unwind_range": 29578,
+        "unwind_start": 7104,
+        "unwind_interior": 79,
+        "non_code_target": 4517
+      }
+    },
+    {
+      "name": "Gate Classic.epl",
+      "source_sha256": "c29d1d3a1d1a5047401613369bfa2df3492f3153ef134c0fa66c9c3d9cc92320",
+      "slots": 41896,
+      "unique_code_targets": 30116,
+      "unwind_ranges": 20066,
+      "categories": {
+        "no_unwind_range": 30198,
+        "unwind_start": 7053,
+        "unwind_interior": 79,
+        "non_code_target": 4566
+      }
+    },
+    {
+      "name": "Gate Drums.epl",
+      "source_sha256": "3a2d979be9e3a684ba4274b7f481d10dbef9754ee93a9f671d2cd1daeb8c30f3",
+      "slots": 41845,
+      "unique_code_targets": 30011,
+      "unwind_ranges": 20112,
+      "categories": {
+        "no_unwind_range": 30096,
+        "unwind_start": 7093,
+        "unwind_interior": 79,
+        "non_code_target": 4577
+      }
+    },
+    {
+      "name": "Hollywood.epl",
+      "source_sha256": "39e8a0b74093ee654dd2f7ce8aeee0b46f7279b19133226c3c952177863cf607",
+      "slots": 40494,
+      "unique_code_targets": 28975,
+      "unwind_ranges": 20294,
+      "categories": {
+        "no_unwind_range": 28881,
+        "unwind_start": 7025,
+        "unwind_interior": 79,
+        "non_code_target": 4509
+      }
+    },
+    {
+      "name": "London.epl",
+      "source_sha256": "f4ac602d67b03e8f13bcdb04841aba7159a43c4a8c113861e711ed0bd67d30ce",
+      "slots": 40493,
+      "unique_code_targets": 28974,
+      "unwind_ranges": 20277,
+      "categories": {
+        "no_unwind_range": 28881,
+        "unwind_start": 7024,
+        "unwind_interior": 79,
+        "non_code_target": 4509
+      }
+    },
+    {
+      "name": "New York.epl",
+      "source_sha256": "0258b5817750ad82c89dbee50bafdb41cad65edfcbd0d323a6a6124b3a2bccd1",
+      "slots": 40493,
+      "unique_code_targets": 28974,
+      "unwind_ranges": 20286,
+      "categories": {
+        "no_unwind_range": 28859,
+        "unwind_start": 7046,
+        "unwind_interior": 79,
+        "non_code_target": 4509
+      }
+    },
+    {
+      "name": "Revival.epl",
+      "source_sha256": "f486272dc9741a6e3ef3f393cd14ef6cebbc795e4f3ac8fa20a683fbeb146867",
+      "slots": 40718,
+      "unique_code_targets": 29382,
+      "unwind_ranges": 19733,
+      "categories": {
+        "no_unwind_range": 29294,
+        "unwind_start": 6881,
+        "unwind_interior": 79,
+        "non_code_target": 4464
+      }
+    },
+    {
+      "name": "The Monster.epl",
+      "source_sha256": "6aae06918694f6d9197f396896adbe9c8af150289930c466d7361d2b01aff45b",
+      "slots": 40539,
+      "unique_code_targets": 29063,
+      "unwind_ranges": 20052,
+      "categories": {
+        "no_unwind_range": 28951,
+        "unwind_start": 7017,
+        "unwind_interior": 79,
+        "non_code_target": 4492
+      }
+    },
+    {
+      "name": "Trimmer.epl",
+      "source_sha256": "5dbed8fad7ff3e79263d00108bdedf766ca83c88b103e5e3613bf6567f73bb0c",
+      "slots": 40739,
+      "unique_code_targets": 29391,
+      "unwind_ranges": 19653,
+      "categories": {
+        "no_unwind_range": 29307,
+        "unwind_start": 6885,
+        "unwind_interior": 79,
+        "non_code_target": 4468
+      }
+    },
+    {
+      "name": "U73b.epl",
+      "source_sha256": "47d8393eddba99816151e47dd0538fa012a9ea8b39b4547ef9afd19d88472856",
+      "slots": 42279,
+      "unique_code_targets": 30274,
+      "unwind_ranges": 21092,
+      "categories": {
+        "no_unwind_range": 30184,
+        "unwind_start": 7074,
+        "unwind_interior": 79,
+        "non_code_target": 4942
+      }
+    },
+    {
+      "name": "VCC Channel.epl",
+      "source_sha256": "73747020e8996938b8e6fdff51004cff4ea85c95f992cbc8bc0d0896a80aad87",
+      "slots": 43132,
+      "unique_code_targets": 31346,
+      "unwind_ranges": 20481,
+      "categories": {
+        "no_unwind_range": 31284,
+        "unwind_start": 7130,
+        "unwind_interior": 79,
+        "non_code_target": 4639
+      }
+    },
+    {
+      "name": "VCC MixBuss.epl",
+      "source_sha256": "fe077912d5396577fc6b32bcf0c4ba4b61d5e1f8089e961ce68dae22e1b0b500",
+      "slots": 43150,
+      "unique_code_targets": 31374,
+      "unwind_ranges": 20282,
+      "categories": {
+        "no_unwind_range": 31315,
+        "unwind_start": 7117,
+        "unwind_interior": 79,
+        "non_code_target": 4639
+      }
+    },
+    {
+      "name": "VMC Classic Tubes.epl",
+      "source_sha256": "df4635dda8db8c15a3f1c478e39f8814d21370f05fa84a64d4cc1fb57762e0ef",
+      "slots": 43359,
+      "unique_code_targets": 31209,
+      "unwind_ranges": 20734,
+      "categories": {
+        "no_unwind_range": 31258,
+        "unwind_start": 7171,
+        "unwind_interior": 79,
+        "non_code_target": 4851
+      }
+    },
+    {
+      "name": "Gem Dopamine-64.vst3",
+      "source_sha256": "dc923f6507cc891e0417854178f1db2eb84965040aa661c9c144649548dffb6f",
+      "slots": 31439,
+      "unique_code_targets": 8358,
+      "unwind_ranges": 35760,
+      "categories": {
+        "no_unwind_range": 12532,
+        "unwind_start": 11550,
+        "unwind_interior": 0,
+        "non_code_target": 7357
+      }
+    },
+    {
+      "name": "TVB Rack V2.vst3",
+      "source_sha256": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
+      "slots": 38589,
+      "unique_code_targets": 13054,
+      "unwind_ranges": 34461,
+      "categories": {
+        "no_unwind_range": 16917,
+        "unwind_start": 8221,
+        "unwind_interior": 0,
+        "non_code_target": 13451
+      }
+    },
+    {
+      "name": "A1TriggerGate-x64.vst3",
+      "source_sha256": "83a50c120301173e1aec1e537fa131b460d593fc7141fb4f39c8e813d99dabfc",
+      "slots": 17174,
+      "unique_code_targets": 4288,
+      "unwind_ranges": 12143,
+      "categories": {
+        "no_unwind_range": 6901,
+        "unwind_start": 5530,
+        "unwind_interior": 0,
+        "non_code_target": 4743
+      }
+    }
+  ],
+  "anchors": [
+    {
+      "name": "VCC Channel.epl",
+      "label": "wrapper_a",
+      "anchor_rva": "0x19ac10",
+      "scope_start": "0x19ac10",
+      "exact_anchor_slots": 2,
+      "scope_start_slots": 2,
+      "direct_scope_start_calls": 0
+    },
+    {
+      "name": "VCC Channel.epl",
+      "label": "wrapper_b",
+      "anchor_rva": "0x19ae50",
+      "scope_start": "0x19ae50",
+      "exact_anchor_slots": 2,
+      "scope_start_slots": 2,
+      "direct_scope_start_calls": 0
+    },
+    {
+      "name": "VCC Channel.epl",
+      "label": "gain_ramp",
+      "anchor_rva": "0x176970",
+      "scope_start": "0x176970",
+      "exact_anchor_slots": 0,
+      "scope_start_slots": 0,
+      "direct_scope_start_calls": 4
+    },
+    {
+      "name": "FG-2A.epl",
+      "label": "setup_anchor",
+      "anchor_rva": "0x14b805",
+      "scope_start": "0x14b5e0",
+      "exact_anchor_slots": 0,
+      "scope_start_slots": 0,
+      "direct_scope_start_calls": 1
+    },
+    {
+      "name": "FG-2A.epl",
+      "label": "filter_process",
+      "anchor_rva": "0x14d590",
+      "scope_start": "0x14d590",
+      "exact_anchor_slots": 0,
+      "scope_start_slots": 0,
+      "direct_scope_start_calls": 1
+    },
+    {
+      "name": "FG-2A.epl",
+      "label": "feedback_process",
+      "anchor_rva": "0x14f340",
+      "scope_start": "0x14f340",
+      "exact_anchor_slots": 0,
+      "scope_start_slots": 0,
+      "direct_scope_start_calls": 1
+    },
+    {
+      "name": "FG-2A.epl",
+      "label": "curve_setup",
+      "anchor_rva": "0x149a90",
+      "scope_start": "0x149a90",
+      "exact_anchor_slots": 0,
+      "scope_start_slots": 0,
+      "direct_scope_start_calls": 1
+    },
+    {
+      "name": "FG-116.epl",
+      "label": "local_state_setup",
+      "anchor_rva": "0x15e732",
+      "scope_start": "0x15e670",
+      "exact_anchor_slots": 0,
+      "scope_start_slots": 0,
+      "direct_scope_start_calls": 1
+    },
+    {
+      "name": "FG-116.epl",
+      "label": "control_envelope",
+      "anchor_rva": "0x161880",
+      "scope_start": null,
+      "exact_anchor_slots": 0,
+      "scope_start_slots": null,
+      "direct_scope_start_calls": null
+    },
+    {
+      "name": "FG-116.epl",
+      "label": "gain_ramp",
+      "anchor_rva": "0x1619a0",
+      "scope_start": "0x1619a0",
+      "exact_anchor_slots": 2,
+      "scope_start_slots": 2,
+      "direct_scope_start_calls": 0
+    },
+    {
+      "name": "FG-401.epl",
+      "label": "directional_smoothing",
+      "anchor_rva": "0x15e050",
+      "scope_start": null,
+      "exact_anchor_slots": 0,
+      "scope_start_slots": null,
+      "direct_scope_start_calls": null
+    },
+    {
+      "name": "AirEQAir.epl",
+      "label": "fir_history",
+      "anchor_rva": "0x246e80",
+      "scope_start": "0x246e80",
+      "exact_anchor_slots": 0,
+      "scope_start_slots": 0,
+      "direct_scope_start_calls": 2
+    },
+    {
+      "name": "AirEQEarth.epl",
+      "label": "dispatch_groups",
+      "anchor_rva": "0x145340",
+      "scope_start": "0x145340",
+      "exact_anchor_slots": 2,
+      "scope_start_slots": 2,
+      "direct_scope_start_calls": 0
+    },
+    {
+      "name": "Gem Dopamine-64.vst3",
+      "label": "filter_setup",
+      "anchor_rva": "0x58bf50",
+      "scope_start": "0x58bf50",
+      "exact_anchor_slots": 0,
+      "scope_start_slots": 0,
+      "direct_scope_start_calls": 2
+    },
+    {
+      "name": "Gem Dopamine-64.vst3",
+      "label": "iir_helper",
+      "anchor_rva": "0x560150",
+      "scope_start": null,
+      "exact_anchor_slots": 0,
+      "scope_start_slots": null,
+      "direct_scope_start_calls": null
+    },
+    {
+      "name": "Gem Dopamine-64.vst3",
+      "label": "parallel_filter_anchor",
+      "anchor_rva": "0x58bbe0",
+      "scope_start": "0x58bbe0",
+      "exact_anchor_slots": 0,
+      "scope_start_slots": 0,
+      "direct_scope_start_calls": 2
+    },
+    {
+      "name": "Gem Dopamine-64.vst3",
+      "label": "nonlinear_envelope",
+      "anchor_rva": "0x58c100",
+      "scope_start": "0x58c100",
+      "exact_anchor_slots": 0,
+      "scope_start_slots": 0,
+      "direct_scope_start_calls": 4
+    },
+    {
+      "name": "TVB Rack V2.vst3",
+      "label": "compressor_entry",
+      "anchor_rva": "0x5cfa50",
+      "scope_start": "0x5cfa50",
+      "exact_anchor_slots": 1,
+      "scope_start_slots": 1,
+      "direct_scope_start_calls": 0
+    },
+    {
+      "name": "TVB Rack V2.vst3",
+      "label": "limiter_delay_setup",
+      "anchor_rva": "0x5dc801",
+      "scope_start": "0x5dc7c0",
+      "exact_anchor_slots": 0,
+      "scope_start_slots": 1,
+      "direct_scope_start_calls": 0
+    },
+    {
+      "name": "TVB Rack V2.vst3",
+      "label": "limiter_fir_setup",
+      "anchor_rva": "0x5dcc72",
+      "scope_start": "0x5dcbc6",
+      "exact_anchor_slots": 0,
+      "scope_start_slots": 0,
+      "direct_scope_start_calls": 0
+    },
+    {
+      "name": "TVB Rack V2.vst3",
+      "label": "limiter_envelope",
+      "anchor_rva": "0x5ddd17",
+      "scope_start": "0x5dd090",
+      "exact_anchor_slots": 0,
+      "scope_start_slots": 1,
+      "direct_scope_start_calls": 0
+    },
+    {
+      "name": "A1TriggerGate-x64.vst3",
+      "label": "processor_candidate",
+      "anchor_rva": "0x10ff20",
+      "scope_start": "0x10ff20",
+      "exact_anchor_slots": 1,
+      "scope_start_slots": 1,
+      "direct_scope_start_calls": 0
+    }
+  ],
+  "totals": {
+    "modules": 34,
+    "relocation_slots": 1360776,
+    "unique_code_target_occurrences": 939229,
+    "no_unwind_range": 948853,
+    "unwind_start": 242797,
+    "unwind_interior": 2456,
+    "non_code_target": 166670,
+    "direct_scope_start_calls": 19
+  },
+  "native_gate": {
+    "rates": [
+      44100,
+      48000,
+      96000,
+      192000
+    ],
+    "expansion": [
+      0,
+      0.5,
+      4,
+      12
+    ],
+    "max_parity_error": 1.45933612417e-14,
+    "local_48k_us_per_48_stereo_frames": {
+      "log_reference": 1.015565,
+      "power_domain": 0.201709
+    },
+    "optimized": "passed",
+    "asan_ubsan": "passed",
+    "real_owner_pair": "prior-model float32 parity passed; private scores retained locally, no independent performance or vendor matching"
+  },
+  "limits": "Metadata slots, not executed calls, proprietary algorithm recovery or vendor parity. Per-module unique target occurrences are not cross-module unique functions. Full private recordings and vendor bytes excluded."
+}
