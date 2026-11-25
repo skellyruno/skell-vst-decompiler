@@ -1,0 +1,315 @@
+{
+  "schema_version": 1,
+  "type": "owned_source_ground_truth_baseline",
+  "source_sha256": "01344cb72d0a9851edf0dd29486d98b14497e274b7121c18b8d6757be917c5fe",
+  "toolchain": {
+    "windows_static": "clang/LLD 17.0.0",
+    "native_linux": "GCC 14.2.0",
+    "decoders": "GNU binutils 2.44 and LLVM 17"
+  },
+  "training": [
+    {
+      "family": "gain",
+      "sha256": "b0def6a76064075916a2e5cc9bfbdca903e4f1ac8c7593ca61a06a1c4b00d566",
+      "optimization": "-O2",
+      "variant": 0
+    },
+    {
+      "family": "clip",
+      "sha256": "0633a39e33b1a42106da4ef98a23fc9123877bbdd3b01883eaf29079b2359a22",
+      "optimization": "-O2",
+      "variant": 0
+    },
+    {
+      "family": "filter",
+      "sha256": "5166cc3ccb00ea1f6d8574caeebdef38229e97d863f39f6d53972c12d040577d",
+      "optimization": "-O2",
+      "variant": 0
+    },
+    {
+      "family": "delay",
+      "sha256": "88c01da399d196b9261a2c9a94c1133761affb394ad3200f4455b5b853dea97a",
+      "optimization": "-O2",
+      "variant": 0
+    },
+    {
+      "family": "envelope",
+      "sha256": "3fd79102f7caf1e4bd10da06e03927efaddab907a229a3ac2d767e1c9a792b21",
+      "optimization": "-O2",
+      "variant": 0
+    }
+  ],
+  "holdout": [
+    {
+      "id": "h0_0",
+      "sha256": "8c4fa926b6e1e03b9f49888158d7e6984e869d7e0b98cf6ec203334a8640cecd",
+      "expected": "gain",
+      "candidate": "gain",
+      "optimization": "-O1",
+      "variant": 1,
+      "verified_direct_parameter_join": true
+    },
+    {
+      "id": "h0_1",
+      "sha256": "b2aa8132a31043bd8a2a31229d68c423b5b405a404875ff77ad4cb57bfaca7b7",
+      "expected": "clip",
+      "candidate": "clip",
+      "optimization": "-O1",
+      "variant": 1,
+      "verified_direct_parameter_join": true
+    },
+    {
+      "id": "h0_2",
+      "sha256": "654de4ad66e482493763d4d4b9aebe48a89c3768ca5f86f3ac217343feb0e0e7",
+      "expected": "filter",
+      "candidate": "filter",
+      "optimization": "-O1",
+      "variant": 1,
+      "verified_direct_parameter_join": true
+    },
+    {
+      "id": "h0_3",
+      "sha256": "93e1bd478bc42c71d5cd73a2fc22844748d390d09f487de145866cdc83a4b6a8",
+      "expected": "delay",
+      "candidate": "delay",
+      "optimization": "-O1",
+      "variant": 1,
+      "verified_direct_parameter_join": true
+    },
+    {
+      "id": "h0_4",
+      "sha256": "b54625ab671f722f2a4fafbd96a0fa5aabb41740e0cf9ed5f6ed2db36c6f3708",
+      "expected": "envelope",
+      "candidate": "envelope",
+      "optimization": "-O1",
+      "variant": 1,
+      "verified_direct_parameter_join": true
+    },
+    {
+      "id": "h0_5",
+      "sha256": "36ac3f1b8118e98bab3b9adc2b3f4abc12d0aeb7d5e815cfe6d6c13cc4051ebd",
+      "expected": null,
+      "candidate": null,
+      "optimization": "-O1",
+      "variant": 1,
+      "verified_direct_parameter_join": false
+    },
+    {
+      "id": "h1_0",
+      "sha256": "59fda0b0969ccda307ecc510c587383338e0c043f85d7b41d4fcb8dc15c79720",
+      "expected": "gain",
+      "candidate": "gain",
+      "optimization": "-O3",
+      "variant": 1,
+      "verified_direct_parameter_join": true
+    },
+    {
+      "id": "h1_1",
+      "sha256": "46b32a6b6331c9b9cb2cc8b9e7faf9da2d6d5728566fcb1f726372927ac46ac2",
+      "expected": "clip",
+      "candidate": "clip",
+      "optimization": "-O3",
+      "variant": 1,
+      "verified_direct_parameter_join": true
+    },
+    {
+      "id": "h1_2",
+      "sha256": "7e81b17888ad6ea23674100bb08f1fc0adfc026a7f1227d073b3bce9f311802b",
+      "expected": "filter",
+      "candidate": "filter",
+      "optimization": "-O3",
+      "variant": 1,
+      "verified_direct_parameter_join": true
+    },
+    {
+      "id": "h1_3",
+      "sha256": "684dbdd7551962ed99d7d7aec0806c05fba8b52362d6295fb8befee3215e66eb",
+      "expected": "delay",
+      "candidate": "delay",
+      "optimization": "-O3",
+      "variant": 1,
+      "verified_direct_parameter_join": true
+    },
+    {
+      "id": "h1_4",
+      "sha256": "1f1232dbe96db76639953b72a011164dab7b66390bc5efefee04f288436b9655",
+      "expected": "envelope",
+      "candidate": "envelope",
+      "optimization": "-O3",
+      "variant": 1,
+      "verified_direct_parameter_join": true
+    },
+    {
+      "id": "h1_5",
+      "sha256": "a7241cbd4efd2a28bd0eaee5eb79ba272550c20b7bf59c2bdc28df764213ba3e",
+      "expected": null,
+      "candidate": null,
+      "optimization": "-O3",
+      "variant": 1,
+      "verified_direct_parameter_join": false
+    },
+    {
+      "id": "h2_0",
+      "sha256": "b9f9d9cac6ae12de0c387c946261af99d80e9e676b9a44b567282df353ad67a5",
+      "expected": "gain",
+      "candidate": "filter",
+      "optimization": "-O0",
+      "variant": 1,
+      "verified_direct_parameter_join": false
+    },
+    {
+      "id": "h2_1",
+      "sha256": "60c962445455a6b438901bd748a7bdcc0e51b9efa2ccc318b5b0c507c760205d",
+      "expected": "clip",
+      "candidate": null,
+      "optimization": "-O0",
+      "variant": 1,
+      "verified_direct_parameter_join": false
+    },
+    {
+      "id": "h2_2",
+      "sha256": "436fedcf0e2bfcb52386003a84b7592e3c0a8fe1fd767357ec5b6cbadfb9e02c",
+      "expected": "filter",
+      "candidate": null,
+      "optimization": "-O0",
+      "variant": 1,
+      "verified_direct_parameter_join": false
+    },
+    {
+      "id": "h2_3",
+      "sha256": "8bc129ed1df60465d4ee685ed77ecb4d5717e83e137ee501edd7efbdef734ebe",
+      "expected": "delay",
+      "candidate": "delay",
+      "optimization": "-O0",
+      "variant": 1,
+      "verified_direct_parameter_join": false
+    },
+    {
+      "id": "h2_4",
+      "sha256": "e0a7a3c373ba7d49364ed6124718aab8c21ea13c24d4f8fa0680e3d50045456c",
+      "expected": "envelope",
+      "candidate": null,
+      "optimization": "-O0",
+      "variant": 1,
+      "verified_direct_parameter_join": false
+    },
+    {
+      "id": "h2_5",
+      "sha256": "637000043719b099cb514f323b3b63869a91e173bc4f06d39fa21a19c7fcda6d",
+      "expected": null,
+      "candidate": null,
+      "optimization": "-O0",
+      "variant": 1,
+      "verified_direct_parameter_join": false
+    }
+  ],
+  "static_metrics": {
+    "cases": 18,
+    "known_cases": 15,
+    "correct_known": 11,
+    "attempted": 12,
+    "incorrect": 1,
+    "abstained": 6,
+    "unknown_correct": 3,
+    "known_recall": 0.7333333333333333,
+    "precision": 0.9166666666666666
+  },
+  "direct_parameter_join_count": 10,
+  "behavioral_owned_native": [
+    {
+      "sha256": "cf29f84b2b25c1eb97c07e185694ceac93490a2bc61a02cac899bd0f3981a995",
+      "family": "gain",
+      "behavior": "gain",
+      "state_spans": [
+        [
+          2,
+          4
+        ]
+      ],
+      "parameter_changes_audio": true,
+      "recovery_difference": 0,
+      "first_arrival_samples": 0,
+      "changed_first_arrival_samples": 0
+    },
+    {
+      "sha256": "1572910473164430258419ff6d4ccfd8b72514c5a7f6605d504570f19c5e3c40",
+      "family": "clip",
+      "behavior": "level_dependent_no_observed_memory",
+      "state_spans": [
+        [
+          2,
+          4
+        ]
+      ],
+      "parameter_changes_audio": true,
+      "recovery_difference": 0,
+      "first_arrival_samples": 0,
+      "changed_first_arrival_samples": 0
+    },
+    {
+      "sha256": "2ba5c25e9d19a60560fa1e5dc9c1fc9f5e15fcabb3471276ea88c637ca20e3fd",
+      "family": "filter",
+      "behavior": "filter",
+      "state_spans": [
+        [
+          2,
+          4
+        ]
+      ],
+      "parameter_changes_audio": true,
+      "recovery_difference": 1.9548671245574951,
+      "first_arrival_samples": 0,
+      "changed_first_arrival_samples": 0
+    },
+    {
+      "sha256": "c911490ee9078df60afc7da56f34ada7cba2121a1c4904753da04b7183ed021d",
+      "family": "delay",
+      "behavior": "delay",
+      "state_spans": [
+        [
+          2,
+          4
+        ]
+      ],
+      "parameter_changes_audio": true,
+      "recovery_difference": 1.4101934432983398,
+      "first_arrival_samples": 2,
+      "changed_first_arrival_samples": 5
+    },
+    {
+      "sha256": "542d3824df506da78164f35a1a857382a4806b06dbefcc0704f7302b6f5f896b",
+      "family": "envelope",
+      "behavior": "level_dependent_memory",
+      "state_spans": [
+        [
+          2,
+          4
+        ]
+      ],
+      "parameter_changes_audio": true,
+      "recovery_difference": 0.5330495238304138,
+      "first_arrival_samples": 0,
+      "changed_first_arrival_samples": 0
+    },
+    {
+      "sha256": "a338fdf2ca2feefc09e77c28beef0dc06b97db2940f1541f386f782f2636e6d6",
+      "family": "unknown",
+      "behavior": "unresolved",
+      "state_spans": [
+        [
+          2,
+          4
+        ]
+      ],
+      "parameter_changes_audio": false,
+      "recovery_difference": 0,
+      "first_arrival_samples": 0,
+      "changed_first_arrival_samples": 0
+    }
+  ],
+  "archived_local_tests": {
+    "passed": 88,
+    "new": 4
+  },
+  "limits": "Development benchmark, not independent real-world accuracy. Holdouts share compiler and partly identical source with training; native audio from separate Linux builds. Windows VST3 worker and GUI build/smoke pending. No production-plugin corpus or vendor execution."
+}

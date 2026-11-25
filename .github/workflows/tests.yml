@@ -25,6 +25,8 @@ jobs:
           command -v lld-link
       - name: Unit tests (no vendor binaries)
         run: python -m unittest discover -s tests -v
+      - name: Owned-source blind PE recognition and native behavioral benchmark
+        run: PYTHONPATH=. python tests/ground_truth_smoke.py
       - name: Owned wrapper and engine import verification
         run: PYTHONPATH=. python tests/architecture_native_smoke.py
       - name: Real GNU and LLVM comparison on owned fixture
@@ -180,3 +182,24 @@ jobs:
           $env:PYTHONPATH = "."
           python tests/host_vst3_smoke.py $plugin
           if ($LASTEXITCODE -ne 0) { throw "Host smoke failed" }
+
+      - name: Build original Skell Analyzer VST3
+        shell: pwsh
+        run: |
+          cmake --build "$env:RUNNER_TEMP/skell-host-build" --config Release --target SkellAnalyzer_VST3 --parallel 2
+          if ($LASTEXITCODE -ne 0) { throw "Analyzer build failed" }
+      - name: Verify public-parameter sweep and analyzer pass-through
+        shell: pwsh
+        run: |
+          $fixture = "$env:RUNNER_TEMP/skell-host-build/SkellHostFixture_artefacts/Release/VST3/Skell Host Fixture.vst3"
+          $analyzer = "$env:RUNNER_TEMP/skell-host-build/analyzer/SkellAnalyzer_artefacts/Release/VST3/Skell Analyzer.vst3"
+          if (!(Test-Path $analyzer)) { throw "Analyzer output missing" }
+          $env:PYTHONPATH = "."
+          python tests/analyzer_host_smoke.py $fixture $analyzer
+          if ($LASTEXITCODE -ne 0) { throw "Analyzer host smoke failed" }
+      - name: Upload verified owned analyzer build
+        uses: actions/upload-artifact@v4
+        with:
+          name: Skell-Analyzer-Windows-VST3
+          path: ${{ runner.temp }}/skell-host-build/analyzer/SkellAnalyzer_artefacts/Release/VST3/
+          if-no-files-found: error

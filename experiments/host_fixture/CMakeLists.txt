@@ -19,3 +19,6 @@ target_sources(SkellHostFixture PRIVATE Fixture.cpp)
 target_compile_features(SkellHostFixture PRIVATE cxx_std_17)
 target_compile_definitions(SkellHostFixture PUBLIC JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0 JUCE_VST3_CAN_REPLACE_VST2=0)
 target_link_libraries(SkellHostFixture PRIVATE juce::juce_audio_processors juce::juce_recommended_config_flags)
+
+# Share the pinned JUCE checkout with the original analyzer target.
+add_subdirectory(../analyzer_plugin analyzer)
