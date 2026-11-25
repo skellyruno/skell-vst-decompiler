@@ -6,6 +6,7 @@ on:
       - 'skell_vst_decompiler/ghidra_bridge.py'
       - 'skell_vst_decompiler/ghidra_scripts/**'
       - 'tests/ghidra_smoke.py'
+      - 'tests/pcode_smoke.py'
       - 'tests/fixtures/ghidra_fixture.c'
   workflow_dispatch:
 permissions:
@@ -16,7 +17,7 @@ concurrency:
 jobs:
   real-smoke:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
@@ -44,3 +45,4 @@ jobs:
           home=$(find "$RUNNER_TEMP/ghidra" -mindepth 1 -maxdepth 1 -type d -name 'ghidra_*' -print -quit)
           test -n "$home"
           PYTHONPATH=. python tests/ghidra_smoke.py --ghidra-home "$home"
+          PYTHONPATH=. python tests/pcode_smoke.py --ghidra-home "$home"
