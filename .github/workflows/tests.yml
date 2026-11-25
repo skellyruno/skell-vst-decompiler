@@ -57,6 +57,8 @@ jobs:
         run: PYTHONPATH=. python tests/context_flow_smoke.py
       - name: Relocation-backed legacy import evidence on owned PE fixture
         run: PYTHONPATH=. python tests/legacy_math_smoke.py
+      - name: Executable extent union coverage on owned PE fixtures
+        run: PYTHONPATH=. python tests/extent_coverage_smoke.py
       - name: Compile all research Python
         run: python -m compileall -q skell_vst_decompiler
       - name: Compile and test original native DSP prototypes
