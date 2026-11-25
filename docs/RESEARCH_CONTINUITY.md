@@ -174,3 +174,6 @@ See docs/TVB_LIMITER_INITIALIZATION.md and reports/limiter_setup/tvb_limiter_set
 
 ## Limiter release and delay native paths — 2026-11-25
 Parent 00d44bd passed all eight exact-head CI workflows. New exact-build manifest covers seven bounded regions with 170 GNU/LLVM checkpoints, 13 math imports, 20 constants. Verified three indexed limiter coefficient configurations, dual release and secondary attack, tempo delay and 120 ms time smoothing, feedback filter/routing and 5/250 ms wet ducking. Three focused tests and archived 71/71 regression pass; current full-head CI pending. See docs/TVB_LIMITER_RELEASE_DELAY.md and reports/limiter_setup/tvb_release_delay.json. No vendor execution or production changes. Keep decompiler-only.
+
+## Five-track native research intake — 2026-11-25
+Recovered verified original VMR archive (31 EPL files), added complete fingerprint inventory and eight priority paired dispatch targets. 17 TVB endpoint checks, 16 scoped wrappers and 32 indexed call sites; 4 local tests and archived 72/72 passed. See docs/FIVE_TRACK_RESEARCH_INTAKE.md and reports/rack_intake/vmr_inventory.json. Static scope only, no new plugin changes or vendor execution. Full current-branch CI pending.
