@@ -168,3 +168,6 @@ Transferred identical independent code to SkellCore draft PR #48 (e8acc7ac63e9a1
 
 ## Full FDN peak-memory validation
 Original optional 1 ms peak-memory candidate evaluated on two real recordings and nonoverlapping excerpts. Both native tests and sanitizers passed; active wet energy within 0.21 dB of baseline, first-second tails less attenuated. Details and limitations in docs/WET_DUCK_PEAK_MEMORY.md. No production or vendor changes; exact-head CI pending.
+
+## Focused TVB limiter static research
+See docs/TVB_LIMITER_INITIALIZATION.md and reports/limiter_setup/tvb_limiter_setup.json. Exact private original binary reverified, 67 cross-decoder instruction checkpoints, 20 constants, 4 math calls, 4 new tests, archived 72/72 local tests passed. Full current-head CI unverified. New FIR generation, lookahead, attack and envelope-mode evidence. Further SkellCore and Skelliere integration is deferred to separate chats per owner direction.
