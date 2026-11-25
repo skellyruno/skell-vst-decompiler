@@ -21,7 +21,8 @@ public:
         const double fs=bound(fsInput,8000,384000,48000);
         double prev=35;
         for(int k=0;k<3;++k) {
-            const double f=bound(crossovers[k],prev+30,fs*0.46,prev+500);
+            const double lo=prev+30, hi=fs*0.45-30*(2-k);
+            const double f=std::clamp(std::isfinite(crossovers[k])?crossovers[k]:prev+500,lo,hi);
             prev=f;
             for(int channel=0;channel<2;++channel)
                 for(int stage=0;stage<2;++stage)

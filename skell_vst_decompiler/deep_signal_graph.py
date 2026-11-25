@@ -73,8 +73,27 @@ def verify(pe, report, objdump='objdump'):
             raise ValueError('Dispatch target cardinality mismatch')
         for ptr in pointers:pe.at_rva(ptr,1,executable=True)
         tables+=1
-    return {'sha256':pe.sha256,'regions':len(matched),'checkpoints':count,
-            'direct_calls':len(calls),'scalar_constants':constants,'dispatch_tables':tables}
+    result = {'sha256':pe.sha256,'regions':len(matched),'checkpoints':count,
+              'direct_calls':len(calls),'scalar_constants':constants,'dispatch_tables':tables}
+    if 'transition_tables' in report:
+        resets = {int(r['start'],16) for r in matched if r['id'].startswith('transition_reset_')}
+        returns = {int(r['start'],16) for r in matched if r['id']=='no_op'}
+        dispatch = {int(r['start'],16) for r in matched if r['id'].startswith('countdown_dispatch_')}
+        rows = [r for r in report['transition_tables'] if r['file']==pe.path.name]
+        if len(rows)>64 or len({r['dispatch_rva'] for r in rows})!=len(rows):
+            raise ValueError('Invalid transition table list')
+        for r in rows:
+            if r['binary_sha256']!=pe.sha256 or r['target_count']!=2 or int(r['dispatch_rva'],16) not in dispatch:
+                raise ValueError('Invalid transition table identity')
+            raw=pe.at_rva(int(r['table_rva'],16),16)
+            if hashlib.sha256(raw).hexdigest()!=r['table_sha256']:
+                raise ValueError('Transition table hash mismatch')
+            first,second=(p-pe.image_base for p in struct.unpack('<2Q',raw))
+            if first not in resets or second not in returns:
+                raise ValueError('Transition table target class mismatch')
+            pe.at_rva(first,1,executable=True);pe.at_rva(second,1,executable=True)
+        result['transition_tables']=len(rows)
+    return result
 
 
 def main():
