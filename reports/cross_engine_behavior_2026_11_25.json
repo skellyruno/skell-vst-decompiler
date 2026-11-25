@@ -1,0 +1,258 @@
+{
+  "parent": "71219f9a9784aa4c0d118582f6f91f28a236da2c",
+  "scope": "Owned prototype measurements; synthetic input, no vendor execution or algorithm reconstruction",
+  "existing_source_git_blobs": {
+    "Spacer3.h": "283cea3c646b2e07268f9dcdb5696d610a430d13",
+    "IndependentEngines.h": "b81bc2cba042148e1c809f072c70ad0d4b22dba0",
+    "ColorOversampled.h": "9d403ac669479bb6629a39f8ae2f9bded737844d",
+    "StackedFlanger.h": "4f00fc8e06a5b4d3470d3c74f684acce4d84b172"
+  },
+  "spacer": {
+    "tone_hz": [
+      100,
+      1000,
+      9000
+    ],
+    "detector_hz": [
+      100,
+      1000,
+      9000
+    ],
+    "detector_channel": "left",
+    "detector_peak": 0.5,
+    "attack_ms": 5,
+    "release_ms": 50,
+    "depth": 0.85,
+    "measure_seconds": 1,
+    "settle_seconds": 1,
+    "results": [
+      {
+        "fs": 44100,
+        "baseline": [
+          [
+            -9.68276,
+            -5.540726,
+            -2.089648
+          ],
+          [
+            -6.417841,
+            -9.037021,
+            -6.568943
+          ],
+          [
+            -1.5876,
+            -5.574547,
+            -8.386934
+          ]
+        ],
+        "candidate": [
+          [
+            -5.180304,
+            -0.110934,
+            -0.001754
+          ],
+          [
+            -0.100643,
+            -8.808864,
+            -0.142234
+          ],
+          [
+            -0.001374,
+            -0.114201,
+            -5.655444
+          ]
+        ]
+      },
+      {
+        "fs": 48000,
+        "baseline": [
+          [
+            -9.680374,
+            -5.52368,
+            -2.042615
+          ],
+          [
+            -6.419297,
+            -9.046539,
+            -6.578848
+          ],
+          [
+            -1.573175,
+            -5.561956,
+            -8.486307
+          ]
+        ],
+        "candidate": [
+          [
+            -5.180352,
+            -0.110917,
+            -0.001731
+          ],
+          [
+            -0.100691,
+            -8.79357,
+            -0.138154
+          ],
+          [
+            -0.001415,
+            -0.116905,
+            -5.536953
+          ]
+        ]
+      },
+      {
+        "fs": 96000,
+        "baseline": [
+          [
+            -9.667222,
+            -5.423946,
+            -1.77614
+          ],
+          [
+            -6.41683,
+            -9.086195,
+            -6.648839
+          ],
+          [
+            -1.522206,
+            -5.487251,
+            -9.005912
+          ]
+        ],
+        "candidate": [
+          [
+            -5.180501,
+            -0.110848,
+            -0.00171
+          ],
+          [
+            -0.100799,
+            -8.802582,
+            -0.128773
+          ],
+          [
+            -0.001607,
+            -0.130174,
+            -5.351215
+          ]
+        ]
+      },
+      {
+        "fs": 192000,
+        "baseline": [
+          [
+            -9.660253,
+            -5.372084,
+            -1.641744
+          ],
+          [
+            -6.418927,
+            -9.113683,
+            -6.692518
+          ],
+          [
+            -1.510424,
+            -5.478544,
+            -9.310379
+          ]
+        ],
+        "candidate": [
+          [
+            -5.180594,
+            -0.110831,
+            -0.001715
+          ],
+          [
+            -0.10083,
+            -8.804563,
+            -0.127432
+          ],
+          [
+            -0.001658,
+            -0.13389,
+            -5.325949
+          ]
+        ]
+      }
+    ],
+    "max_off_target_db": 0.14223443800562688,
+    "right_channel_abs_db_below": 0.000001,
+    "benchmark_us_48_stereo_frames": {
+      "baseline": 1.1444,
+      "candidate": 17.9869
+    },
+    "sanitized_vs_optimized_gain_max_delta": 0
+  },
+  "leveler": {
+    "drive_seconds": [
+      0.04,
+      0.2,
+      1
+    ],
+    "recovery_95_ms": [
+      425,
+      475,
+      495
+    ]
+  },
+  "presence": {
+    "input_scale": [
+      0.04,
+      0.3
+    ],
+    "gain_db_9khz": [
+      2.9889465225,
+      1.9204949552
+    ]
+  },
+  "color": {
+    "fs": 48000,
+    "tone_hz": 11000,
+    "input_peak": 0.5,
+    "oversampling": [
+      1,
+      2,
+      4
+    ],
+    "fold_15khz_dbc": [
+      -15.4794442756,
+      -114.3671350525,
+      -111.3487350593
+    ],
+    "output_peak": [
+      0.963994205,
+      1.109083056,
+      1.117083311
+    ],
+    "max_sample_peak_all_cases": 1.2307502031
+  },
+  "flang": {
+    "fs": 48000,
+    "carrier_hz": 1000,
+    "modulation_hz": 4,
+    "depth_ms": [
+      0,
+      0.2,
+      1
+    ],
+    "sideband_amplitude_squared_sum": [
+      1.5550048844541783e-30,
+      0.016450755681877576,
+      0.08144279707500615
+    ]
+  },
+  "tests": {
+    "local_python": "9/9",
+    "native_optimized": "both matrices passed",
+    "native_sanitizers": "both matrices passed",
+    "cross_engine_report_equality": true,
+    "full_ci": "pending"
+  },
+  "limitations": [
+    "Standalone synthetic tests only; no real commercial A/B or production integration.",
+    "Spacer fixed filter setup, no live parameter automation; weaker off-center target reduction and higher CPU.",
+    "No added delay buffer; phase and actual host latency not measured.",
+    "Selected fold bin is not total aliasing or a certified true-peak test.",
+    "JUCE retrieval unavailable locally, UI unchanged."
+  ]
+}

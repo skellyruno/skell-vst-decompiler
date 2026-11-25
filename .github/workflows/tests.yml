@@ -92,6 +92,20 @@ jobs:
           /tmp/skell_delay_fixture
           g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer experiments/host_fixture/test_delay_fixture.cpp -o /tmp/skell_delay_fixture_san
           /tmp/skell_delay_fixture_san
+      - name: Owned spectral selectivity and cross-engine behavior matrix
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/engine_lab/compare_spacer_selectivity.cpp -o /tmp/skell_spacer_compare
+          /tmp/skell_spacer_compare
+          PYTHONPATH=. python tests/spacer_selectivity_smoke.py /tmp/skell_spacer_compare
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/engine_lab/native_behavior_matrix.cpp -o /tmp/skell_behavior_matrix
+          PYTHONPATH=. python tests/native_behavior_matrix_smoke.py /tmp/skell_behavior_matrix
+      - name: Owned spectral and behavior native sanitizers
+        run: |
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie experiments/engine_lab/compare_spacer_selectivity.cpp -o /tmp/skell_spacer_compare_san
+          /tmp/skell_spacer_compare_san
+          PYTHONPATH=. python tests/spacer_selectivity_smoke.py /tmp/skell_spacer_compare_san
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie experiments/engine_lab/native_behavior_matrix.cpp -o /tmp/skell_behavior_matrix_san
+          PYTHONPATH=. python tests/native_behavior_matrix_smoke.py /tmp/skell_behavior_matrix_san
       - name: Compile all research Python
         run: python -m compileall -q skell_vst_decompiler
       - name: Compile and test original native DSP prototypes
