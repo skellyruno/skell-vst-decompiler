@@ -171,3 +171,6 @@ Original optional 1 ms peak-memory candidate evaluated on two real recordings an
 
 ## Focused TVB limiter static research
 See docs/TVB_LIMITER_INITIALIZATION.md and reports/limiter_setup/tvb_limiter_setup.json. Exact private original binary reverified, 67 cross-decoder instruction checkpoints, 20 constants, 4 math calls, 4 new tests, archived 72/72 local tests passed. Full current-head CI unverified. New FIR generation, lookahead, attack and envelope-mode evidence. Further SkellCore and Skelliere integration is deferred to separate chats per owner direction.
+
+## Limiter release and delay native paths — 2026-11-25
+Parent 00d44bd passed all eight exact-head CI workflows. New exact-build manifest covers seven bounded regions with 170 GNU/LLVM checkpoints, 13 math imports, 20 constants. Verified three indexed limiter coefficient configurations, dual release and secondary attack, tempo delay and 120 ms time smoothing, feedback filter/routing and 5/250 ms wet ducking. Three focused tests and archived 71/71 regression pass; current full-head CI pending. See docs/TVB_LIMITER_RELEASE_DELAY.md and reports/limiter_setup/tvb_release_delay.json. No vendor execution or production changes. Keep decompiler-only.
