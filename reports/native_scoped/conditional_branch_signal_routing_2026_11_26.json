@@ -1,0 +1,217 @@
+{
+  "schema": 1,
+  "parent": "c12ada72261716bd1254653b647808dbb0b0b607",
+  "modules": [
+    {
+      "name": "Trackspacer25.vst3",
+      "sha256": "f7dab96048b6d0def84b0be2395244f01e54dc71d6b99e769630fbe6c37b6242",
+      "scopes": [
+        {
+          "start": "0x152600",
+          "bytes": 447,
+          "scope_sha256": "7a6d7b9e4917baacc921c1cc4ec5eb84b5418035263f06c50d46a109a18c7e58",
+          "conditional_edges": 3,
+          "backward_edges": 3,
+          "rejected_conditional_sites": 0,
+          "mnemonic_agreements": 92,
+          "direct_rel32_edges": 6
+        },
+        {
+          "start": "0x1527bf",
+          "bytes": 682,
+          "scope_sha256": "be0ab95c0d858ebc443a92dcd19afe679990eb4e8a0ced619581fb5e51624052",
+          "conditional_edges": 4,
+          "backward_edges": 0,
+          "rejected_conditional_sites": 0,
+          "mnemonic_agreements": 137,
+          "direct_rel32_edges": 3
+        },
+        {
+          "start": "0x19070",
+          "bytes": 238,
+          "scope_sha256": "779b6936f5324a6d551cabda55e41e5aa467914eb66149880b07e2ef7c3c6e58",
+          "conditional_edges": 9,
+          "backward_edges": 0,
+          "rejected_conditional_sites": 0,
+          "mnemonic_agreements": 57,
+          "direct_rel32_edges": 4
+        },
+        {
+          "start": "0x653c0",
+          "bytes": 349,
+          "scope_sha256": "9243a613af0a09077b18697638d969097b866d35f9ad2c3cd557abe76b126b72",
+          "conditional_edges": 14,
+          "backward_edges": 6,
+          "rejected_conditional_sites": 0,
+          "mnemonic_agreements": 94,
+          "direct_rel32_edges": 0
+        },
+        {
+          "start": "0x65a90",
+          "bytes": 384,
+          "scope_sha256": "dfcfff05477b689f79963782bd190ca098ec838dbcb3ef1dffff017f0aa1ad62",
+          "conditional_edges": 14,
+          "backward_edges": 6,
+          "rejected_conditional_sites": 0,
+          "mnemonic_agreements": 105,
+          "direct_rel32_edges": 0
+        },
+        {
+          "start": "0x65520",
+          "bytes": 485,
+          "scope_sha256": "dcfc1a24439d30f56aed38bc1148d4d10ba16fbfd7ca4f54ce78fdee95a3ec01",
+          "conditional_edges": 19,
+          "backward_edges": 7,
+          "rejected_conditional_sites": 0,
+          "mnemonic_agreements": 135,
+          "direct_rel32_edges": 0
+        }
+      ]
+    },
+    {
+      "name": "StandardCLIP.vst3",
+      "sha256": "000aff8f9983d55bcb91853c4639e2063185ca036039adaf1cc82bfb0abd7f8b",
+      "scopes": [
+        {
+          "start": "0x241a90",
+          "bytes": 213,
+          "scope_sha256": "9e3b6a874aab39050ec68ec7a519673d9124dd36707aa6aeaf5e5e2f3942ee71",
+          "conditional_edges": 4,
+          "backward_edges": 1,
+          "rejected_conditional_sites": 0,
+          "mnemonic_agreements": 55,
+          "direct_rel32_edges": 4
+        },
+        {
+          "start": "0x2419b0",
+          "bytes": 213,
+          "scope_sha256": "e8ff109399d7716be75d2535eb7787fca5a3120bdacb44ab468ce84db4ee5f72",
+          "conditional_edges": 4,
+          "backward_edges": 1,
+          "rejected_conditional_sites": 0,
+          "mnemonic_agreements": 55,
+          "direct_rel32_edges": 4
+        },
+        {
+          "start": "0x359a80",
+          "bytes": 1584,
+          "scope_sha256": "6b54e4a7d5729034effa930af72e1e95f79a7a0df9a7b54a6b567bfcbd4b122c",
+          "conditional_edges": 26,
+          "backward_edges": 3,
+          "rejected_conditional_sites": 0,
+          "mnemonic_agreements": 360,
+          "direct_rel32_edges": 26
+        },
+        {
+          "start": "0x35a0b0",
+          "bytes": 1584,
+          "scope_sha256": "1ef4531084483b55f51319bd398a1bc95b51dfac4b537e150d3e6479e30fc36c",
+          "conditional_edges": 26,
+          "backward_edges": 3,
+          "rejected_conditional_sites": 0,
+          "mnemonic_agreements": 360,
+          "direct_rel32_edges": 26
+        },
+        {
+          "start": "0x424c00",
+          "bytes": 3794,
+          "scope_sha256": "0e0e52a93fbf73e74b012daa131dc04ea27ebb48c5da9db20641e8943c18b251",
+          "conditional_edges": 105,
+          "backward_edges": 23,
+          "rejected_conditional_sites": 0,
+          "mnemonic_agreements": 874,
+          "direct_rel32_edges": 24
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "scopes": 11,
+    "conditional_edges": 228,
+    "backward_edges": 53,
+    "mnemonic_agreements": 2324,
+    "direct_rel32_edges": 97,
+    "rejected_conditional_sites": 0
+  },
+  "trackspacer": {
+    "setup_back_edges": [
+      [
+        "0x15275b",
+        "0x152680"
+      ],
+      [
+        "0x1527b3",
+        "0x152770"
+      ],
+      [
+        "0x1527b9",
+        "0x152671"
+      ]
+    ],
+    "scratch_row_scope": {
+      "start": "0x15284e",
+      "bytes": 539,
+      "sha256": "0c72f922c55720bc758b79806ea13b67fb0a9d3d2479a6be673a692e8f24bc46",
+      "row_pointer_stores": 32,
+      "stride_updates": 31,
+      "first_store": "0x152860",
+      "last_store": "0x152a40"
+    },
+    "routing_incoming_sites": [
+      "0x150b69",
+      "0x151617",
+      "0x151642"
+    ],
+    "routing_helper": "0x19070",
+    "routing_targets": [
+      [
+        "0x1912f",
+        "0x653c0"
+      ],
+      [
+        "0x1913b",
+        "0x10efe0"
+      ],
+      [
+        "0x19150",
+        "0x65a90"
+      ],
+      [
+        "0x19158",
+        "0x65520"
+      ]
+    ],
+    "selected_operand_checks": {
+      "strict_agreements": 27,
+      "total": 30,
+      "formatting_disagreements": [
+        "0x6550a",
+        "0x65b96",
+        "0x15284e"
+      ]
+    }
+  },
+  "shared_utility_comparison": {
+    "trackspacer": {
+      "start": "0x10efe0",
+      "scope_sha256": "821f14912b6cf5c2f912dce02e844f9db0b9a1afc77e9416258409c096434cb2"
+    },
+    "standardclip": {
+      "start": "0x3e6360",
+      "scope_sha256": "231f3461b200c4fefedadd1e4fb538e5fa92a7f396060e6c9c404ffe06c78f94"
+    },
+    "bytes": 1653,
+    "equal_byte_positions": 1626,
+    "relative_mnemonic_agreements": {
+      "gnu": 346,
+      "llvm": 346
+    },
+    "limits": "Memory-copy-like utility evidence, not proof of authorship, compiler origin, or shared audio processing."
+  },
+  "tests": {
+    "local_targeted_unittest": "3/3 passed",
+    "tool_blob": "cc5db4d2df1ff1d52215a41beb891958932295f1",
+    "test_blob": "7374e90672cb1b3c75fa19e9630c723a78ed3562"
+  },
+  "limits": "Static linear decode only. No vendor execution, runtime routing, reconstructed algorithm, private audio, or production changes."
+}
