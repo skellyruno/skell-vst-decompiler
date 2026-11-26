@@ -200,6 +200,21 @@ jobs:
           g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/milestone/render_motion.cpp -o /tmp/motion_render
           g++ -std=c++17 -O1 -g -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie experiments/milestone/test_motion.cpp -o /tmp/motion_san
           /tmp/motion_san
+      - name: Wet balance and motion integration
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/milestone/test_wet_balance.cpp -o /tmp/wet_balance
+          /tmp/wet_balance
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/milestone/render_balance.cpp -o /tmp/render_balance
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/milestone/test_motion_balance.cpp -o /tmp/motion_balance
+          /tmp/motion_balance
+          g++ -std=c++17 -O1 -g -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie experiments/milestone/test_wet_balance.cpp -o /tmp/wet_balance_san
+          /tmp/wet_balance_san
+          g++ -std=c++17 -O1 -g -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie experiments/milestone/test_motion_balance.cpp -o /tmp/motion_balance_san
+          /tmp/motion_balance_san
+      - name: Frequency-ducking transient probe known answers
+        run: |
+          python -m pip install numpy soundfile
+          python tools/dynamic_probe.py selftest
       - name: Compile all research Python
         run: python -m compileall -q skell_vst_decompiler
       - name: Compile and test original native DSP prototypes

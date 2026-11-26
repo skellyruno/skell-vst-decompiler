@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "prior": {
+    "decompiler": "27d68ed0af14f09f390d4be42576c9ef3e37bf6c",
+    "core": "b876faccd8c07c4e0d7f6d08ea5f23a51d861dfa",
+    "prior_ci": "8/8 and 3/3 passed"
+  },
+  "wet_balance": {
+    "rates": [
+      44100,
+      48000,
+      96000,
+      192000
+    ],
+    "frames": 600000,
+    "peak": 1,
+    "strict": "pass",
+    "asan_ubsan": "pass",
+    "real_fixture_count": 8,
+    "worst_rms_loss_db_before": 5.195187020858282,
+    "worst_rms_loss_db_after": 1.2609982434041975,
+    "limits": "Real input plus analytic moving panning, not MotionField/vendor output. Sample peak only, feasible dry contribution."
+  },
+  "probe": {
+    "rows": 24,
+    "expected_attack_ms": [
+      40,
+      70
+    ],
+    "expected_recovery_ms": 80,
+    "selftest": "pass",
+    "bad_bypass_rejected": true
+  },
+  "integration": "experimental opt-in; CI pending; local standalone only"
+}

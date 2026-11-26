@@ -1,0 +1,16 @@
+# Motion wet balance and frequency-ducking transient evidence — 2026-11-26
+
+Exact prior decompiler 27d68ed all eight CI passed, Core b876fac all three passed, Key f500ed4 Windows workflow passed. Local JUCE git lookup DNS failed. No new vendor code or binary analysis in this batch; existing 44 active targets and prior research preserved.
+
+## Independent wet balance
+WetBalance estimates pre-mix dry/wet energy with 125ms smoothing, caps adaptive boost at +9dB by default, smooths correction at 80ms, and restricts the linked nonnegative wet gain to the feasible sample-headroom interval in both channels. 25ms headroom recovery; immediate reduction. Dry contribution unchanged; if dry alone exceeds ceiling, mute wet and report dry overload rather than clipping dry. This is sample-peak control, not intersample/true-peak control. Silence returns toward unity; fixed storage, no delay, no allocation. Enabling during processing is not a smoothed transition; configure before reset. Adaptation can counteract manual wet trim; use neutral trim for comparisons. Gain can pump or reduce intended depth motion; no listening, DAW CPU or promotion claim.
+
+Local strict optimized and ASan/UBSan passed 600000 seeded stress frames at 44.1/48/96/192k, max sample peak 1.0 for feasible dry, invalid input, dry overload reporting, silence, capped boost and exact dry tests. Native renderer compiled. Real owner Club gate input (527928 frames) and 8s master excerpt at 44.1k (352800 frames) used with four explicitly analytic moving-pan wet fixtures, NOT actual MotionField or Brauer/Panagement renders. Mix .65, first second excluded for metrics. Worst RMS loss across 8 fixtures 5.19519dB -> 1.260998dB; all measured balanced peaks <=1.0. All finite. No full-chain reference match, and level/phase changes may affect creative intent. Private audio and detailed measurements not uploaded.
+
+Opt-in MotionField adaptive branch added with original arithmetic preserved when off. New integrated tests exercise hard-pan level, headroom, dry and restoration at four rates; integrated build and sanitizer CI pending (local test was standalone WetBalance, not integrated MotionField). No production state/IDs/UI changes; Panagement remains Wobble reference.
+
+## Original Trackspacer transient probe
+tools/dynamic_probe.py generates 6s 48k stereo PCM24 main 100/1000/9000Hz and independent 1k key bursts 1–2s and 3–4s at amplitudes .4/.1. Measures per-frequency per-channel 10ms cut curves, last-200ms steady delta, 63.2% cut onset and recovery to 10% cut. Weak cuts below .5dB not timed. Exact hash, formats, frame count, explicit offset, bypass identity and gain checks. Known-answer self-test passed 24 channel/frequency/burst rows: expected onset 40/70ms and recovery 80ms; wrongly scaled bypass rejected. Not fitted detector time constants; possible time-varying spectral leakage, metadata is operator supplied. Original and Skell wet renders still missing. Complement previous steady-state two-way kit, not a replacement. No new vendor score.
+
+## Next
+Use isolated authorized installed reference renders with this kit, compare real held-out vocals and tracks. Revisit motion compensation and true-peak loudness after matched render data; continue dynamics, Evo, Auto-Key and VMR investigations. Do not promote experimental engines or overwrite approved presets.
