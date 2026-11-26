@@ -1,0 +1,1079 @@
+{
+  "schema": 1,
+  "baseline": "a547965d145dfbfd5b6bc1aadc66c11390b54643",
+  "scope": "static read-only, exact module fingerprints; historical retired TRACKSPACE excluded; legacy Evo/Flangus not in this x64 corpus",
+  "method_references": [
+    "https://learn.microsoft.com/en-us/cpp/build/exception-handling-x64",
+    "https://llvm.org/docs/CommandGuide/llvm-objdump.html"
+  ],
+  "tested_blobs": {
+    "source": "334c417d4e5332767af42439da3b3f75304ff78e",
+    "test": "cf2dd2904ca323b7ffef2856faab4588f871648c"
+  },
+  "census": {
+    "modules": 44,
+    "totals": {
+      "records": 863555,
+      "resolved_chain_edges": 174161,
+      "multi_range_families": 61328,
+      "records_in_multi_range_families": 235489
+    },
+    "rows": [
+      {
+        "name": "AirEQAir.epl",
+        "sha256": "c75499749848d64aa9a72298204087d5a78f685e7d960beacecd6644d9e3136b",
+        "records": 21418,
+        "resolved_chain_edges": 4123,
+        "multi_range_families": 1392,
+        "records_in_multi_range_families": 5515,
+        "largest_family_records": 23,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 21418
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "AirEQEarth.epl",
+        "sha256": "e5b254ee4173e142b6822e807cee916b745b32b5ae5f38e24814e7c8b7c875f7",
+        "records": 19403,
+        "resolved_chain_edges": 3542,
+        "multi_range_families": 1278,
+        "records_in_multi_range_families": 4820,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 19403
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "Blackbird Studio.epl",
+        "sha256": "44bee8e698af4a7c48f9de78bf0110d629c215aa66c999d01bd76f9d041d9a3d",
+        "records": 20221,
+        "resolved_chain_edges": 3625,
+        "multi_range_families": 1300,
+        "records_in_multi_range_families": 4925,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 20221
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "CS-EQ.epl",
+        "sha256": "a4a8c92d6ea80acc16a314b23cf727c0bd86cb92a40351efb03f6892605571d0",
+        "records": 19499,
+        "resolved_chain_edges": 3578,
+        "multi_range_families": 1289,
+        "records_in_multi_range_families": 4867,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 19499
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "CS-Lift.epl",
+        "sha256": "62ae20d8bbb4ec84960aca0325fdb61e5f551ff83943bb633759d4561f8b7ae6",
+        "records": 19397,
+        "resolved_chain_edges": 3539,
+        "multi_range_families": 1276,
+        "records_in_multi_range_families": 4815,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 19397
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "Classic Instruments.epl",
+        "sha256": "12fe5020e71374ff14e3f3aba553a578718de886024445733bcfc148142f52f6",
+        "records": 21066,
+        "resolved_chain_edges": 4026,
+        "multi_range_families": 1411,
+        "records_in_multi_range_families": 5437,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 21066
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "Custom Opto.epl",
+        "sha256": "e697454a539b54b6a610d486bac0fef0bd8f04295da020d6b6f196a44dc55bd3",
+        "records": 19861,
+        "resolved_chain_edges": 3611,
+        "multi_range_families": 1298,
+        "records_in_multi_range_families": 4909,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 19861
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "FG-116 Modern.epl",
+        "sha256": "6782b73fb9d4a3c1dade5406fe6ea1bead30699529082ea9f9a8dfe04056a664",
+        "records": 20150,
+        "resolved_chain_edges": 3751,
+        "multi_range_families": 1307,
+        "records_in_multi_range_families": 5058,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 20150
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "FG-116 Vintage.epl",
+        "sha256": "6e80b5108f805a0c4ee11fce56d56f149dc4a449c575108e5249e848a4638e7f",
+        "records": 20154,
+        "resolved_chain_edges": 3744,
+        "multi_range_families": 1306,
+        "records_in_multi_range_families": 5050,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 20154
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "FG-116.epl",
+        "sha256": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+        "records": 20110,
+        "resolved_chain_edges": 3706,
+        "multi_range_families": 1298,
+        "records_in_multi_range_families": 5004,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 20110
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "FG-2A.epl",
+        "sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+        "records": 19781,
+        "resolved_chain_edges": 3594,
+        "multi_range_families": 1290,
+        "records_in_multi_range_families": 4884,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 19781
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "FG-401.epl",
+        "sha256": "0cc3444f095ccf4aa751f653e6aceb484d7bfaea73df30ccb68a7f2fccf46ef6",
+        "records": 20020,
+        "resolved_chain_edges": 3686,
+        "multi_range_families": 1293,
+        "records_in_multi_range_families": 4979,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 20020
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "FG-73.epl",
+        "sha256": "b5204a61666943438690994b19ed52747de754aa0b6f741fe36a18df43053746",
+        "records": 19649,
+        "resolved_chain_edges": 3527,
+        "multi_range_families": 1271,
+        "records_in_multi_range_families": 4798,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 19649
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "FG-76.epl",
+        "sha256": "1b4180667292124de2b2c64b20c581d2eb752ebffbb526c4d31c1ad9d1b237d8",
+        "records": 20171,
+        "resolved_chain_edges": 3814,
+        "multi_range_families": 1297,
+        "records_in_multi_range_families": 5111,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 20171
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "FG-A.epl",
+        "sha256": "badeddab00efec8f803a56f6dd00a3cec7a7204d7ac3ba4793c095dbbb11c3cb",
+        "records": 19733,
+        "resolved_chain_edges": 3564,
+        "multi_range_families": 1289,
+        "records_in_multi_range_families": 4853,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 19733
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "FG-Bomber.epl",
+        "sha256": "fb42be0d32d2c661da652f41efd0c51e530b29d3a25aab2cd46f509fa3ddfa2c",
+        "records": 20102,
+        "resolved_chain_edges": 3751,
+        "multi_range_families": 1292,
+        "records_in_multi_range_families": 5043,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 20102
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "FG-N.epl",
+        "sha256": "e5a998d11bc57660fb7e500ad6805a2df1c0356650f43ce8eaefb8a4db9fc10b",
+        "records": 19796,
+        "resolved_chain_edges": 3572,
+        "multi_range_families": 1283,
+        "records_in_multi_range_families": 4855,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 19796
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "FG-S.epl",
+        "sha256": "9c28aaba2ee2dc61f00d9231b9c84f02e364d8a323a93ccab7b7a08956da9a45",
+        "records": 19887,
+        "resolved_chain_edges": 3715,
+        "multi_range_families": 1290,
+        "records_in_multi_range_families": 5005,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 19887
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "FG-Stress.epl",
+        "sha256": "2509a6f3480481feb15a0fde97abcb4acccfc6fc936f55f5e8c88b7c98edcd26",
+        "records": 20224,
+        "resolved_chain_edges": 3725,
+        "multi_range_families": 1305,
+        "records_in_multi_range_families": 5030,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 20224
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "Gate Classic.epl",
+        "sha256": "c29d1d3a1d1a5047401613369bfa2df3492f3153ef134c0fa66c9c3d9cc92320",
+        "records": 20066,
+        "resolved_chain_edges": 3725,
+        "multi_range_families": 1312,
+        "records_in_multi_range_families": 5037,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 20066
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "Gate Drums.epl",
+        "sha256": "3a2d979be9e3a684ba4274b7f481d10dbef9754ee93a9f671d2cd1daeb8c30f3",
+        "records": 20112,
+        "resolved_chain_edges": 3589,
+        "multi_range_families": 1296,
+        "records_in_multi_range_families": 4885,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 20112
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "Hollywood.epl",
+        "sha256": "39e8a0b74093ee654dd2f7ce8aeee0b46f7279b19133226c3c952177863cf607",
+        "records": 20294,
+        "resolved_chain_edges": 3783,
+        "multi_range_families": 1305,
+        "records_in_multi_range_families": 5088,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 20294
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "London.epl",
+        "sha256": "f4ac602d67b03e8f13bcdb04841aba7159a43c4a8c113861e711ed0bd67d30ce",
+        "records": 20277,
+        "resolved_chain_edges": 3769,
+        "multi_range_families": 1303,
+        "records_in_multi_range_families": 5072,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 20277
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "New York.epl",
+        "sha256": "0258b5817750ad82c89dbee50bafdb41cad65edfcbd0d323a6a6124b3a2bccd1",
+        "records": 20286,
+        "resolved_chain_edges": 3769,
+        "multi_range_families": 1303,
+        "records_in_multi_range_families": 5072,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 20286
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "Revival.epl",
+        "sha256": "f486272dc9741a6e3ef3f393cd14ef6cebbc795e4f3ac8fa20a683fbeb146867",
+        "records": 19733,
+        "resolved_chain_edges": 3542,
+        "multi_range_families": 1277,
+        "records_in_multi_range_families": 4819,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 19733
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "The Monster.epl",
+        "sha256": "6aae06918694f6d9197f396896adbe9c8af150289930c466d7361d2b01aff45b",
+        "records": 20052,
+        "resolved_chain_edges": 3696,
+        "multi_range_families": 1295,
+        "records_in_multi_range_families": 4991,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 20052
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "Trimmer.epl",
+        "sha256": "5dbed8fad7ff3e79263d00108bdedf766ca83c88b103e5e3613bf6567f73bb0c",
+        "records": 19653,
+        "resolved_chain_edges": 3521,
+        "multi_range_families": 1271,
+        "records_in_multi_range_families": 4792,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 19653
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "U73b.epl",
+        "sha256": "47d8393eddba99816151e47dd0538fa012a9ea8b39b4547ef9afd19d88472856",
+        "records": 21092,
+        "resolved_chain_edges": 4344,
+        "multi_range_families": 1523,
+        "records_in_multi_range_families": 5867,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 21092
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "VCC Channel.epl",
+        "sha256": "73747020e8996938b8e6fdff51004cff4ea85c95f992cbc8bc0d0896a80aad87",
+        "records": 20481,
+        "resolved_chain_edges": 3865,
+        "multi_range_families": 1327,
+        "records_in_multi_range_families": 5192,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 20481
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "VCC MixBuss.epl",
+        "sha256": "fe077912d5396577fc6b32bcf0c4ba4b61d5e1f8089e961ce68dae22e1b0b500",
+        "records": 20282,
+        "resolved_chain_edges": 3694,
+        "multi_range_families": 1313,
+        "records_in_multi_range_families": 5007,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 20282
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "VMC Classic Tubes.epl",
+        "sha256": "df4635dda8db8c15a3f1c478e39f8814d21370f05fa84a64d4cc1fb57762e0ef",
+        "records": 20734,
+        "resolved_chain_edges": 3832,
+        "multi_range_families": 1378,
+        "records_in_multi_range_families": 5210,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 20734
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "Auburn Sounds Panagement 2-64.vst3",
+        "sha256": "2a18419eff9338b67d22049dc6b7b628e7b420bf48850e66ed5dee7a7c398f25",
+        "records": 2796,
+        "resolved_chain_edges": 4,
+        "multi_range_families": 2,
+        "records_in_multi_range_families": 6,
+        "largest_family_records": 3,
+        "max_chain_depth": 1,
+        "versions": {
+          "1": 2794,
+          "2": 2
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "Auto-Key.vst3",
+        "sha256": "5b75ab74781e4108b09d035a4a140e714da648968d64114f9337d76598a42dbc",
+        "records": 24483,
+        "resolved_chain_edges": 5223,
+        "multi_range_families": 1846,
+        "records_in_multi_range_families": 7069,
+        "largest_family_records": 13,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 24479,
+          "2": 4
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "DeeDoubler.vst3",
+        "sha256": "0fca35f1e73496a967fb871b83efcbf17de825e574e1a943bb2cd7bb28d3a56c",
+        "records": 18343,
+        "resolved_chain_edges": 6000,
+        "multi_range_families": 2133,
+        "records_in_multi_range_families": 8133,
+        "largest_family_records": 17,
+        "max_chain_depth": 15,
+        "versions": {
+          "1": 18340,
+          "2": 3
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "MB MixHead.vst3",
+        "sha256": "9575f1a0cdc5152045c2f631a047648cacca6e49d7b515f6fd7994adc703075f",
+        "records": 10008,
+        "resolved_chain_edges": 2993,
+        "multi_range_families": 1091,
+        "records_in_multi_range_families": 4084,
+        "largest_family_records": 12,
+        "max_chain_depth": 4,
+        "versions": {
+          "1": 10008
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "MixWave DW Fearn VT-5.vst3",
+        "sha256": "e90bef94adad1518c828d1a23704bd11d998c55c137939830beb4402e67c8e04",
+        "records": 24562,
+        "resolved_chain_edges": 5085,
+        "multi_range_families": 1807,
+        "records_in_multi_range_families": 6892,
+        "largest_family_records": 17,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 24562
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "SSL Fusion Stereo Image.vst3",
+        "sha256": "31de6c45f42af28bbb74d144c6dd3b9116f1d0d8c22a0eef508df37279b1eaf5",
+        "records": 18145,
+        "resolved_chain_edges": 3413,
+        "multi_range_families": 1181,
+        "records_in_multi_range_families": 4594,
+        "largest_family_records": 15,
+        "max_chain_depth": 4,
+        "versions": {
+          "1": 18143,
+          "2": 2
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "StandardCLIP.vst3",
+        "sha256": "000aff8f9983d55bcb91853c4639e2063185ca036039adaf1cc82bfb0abd7f8b",
+        "records": 21082,
+        "resolved_chain_edges": 6083,
+        "multi_range_families": 1950,
+        "records_in_multi_range_families": 8033,
+        "largest_family_records": 16,
+        "max_chain_depth": 4,
+        "versions": {
+          "1": 21080,
+          "2": 2
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "Trackspacer25.vst3",
+        "sha256": "f7dab96048b6d0def84b0be2395244f01e54dc71d6b99e769630fbe6c37b6242",
+        "records": 14013,
+        "resolved_chain_edges": 3698,
+        "multi_range_families": 1307,
+        "records_in_multi_range_families": 5005,
+        "largest_family_records": 13,
+        "max_chain_depth": 4,
+        "versions": {
+          "1": 14011,
+          "2": 2
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "Brauer Motion.dll",
+        "sha256": "8d76785017eb57c3cdab85a964bf559706450800159e65e84fdce377c541f2e5",
+        "records": 1631,
+        "resolved_chain_edges": 228,
+        "multi_range_families": 75,
+        "records_in_multi_range_families": 303,
+        "largest_family_records": 7,
+        "max_chain_depth": 3,
+        "versions": {
+          "1": 1631
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "Waves StudioRack for OBS.dll",
+        "sha256": "918cbd319b28d10ad72758476172549b402d69c06fe5d9b61f3a10665dde6067",
+        "records": 22424,
+        "resolved_chain_edges": 4133,
+        "multi_range_families": 1480,
+        "records_in_multi_range_families": 5613,
+        "largest_family_records": 12,
+        "max_chain_depth": 4,
+        "versions": {
+          "1": 22424
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "A1TriggerGate-x64.vst3",
+        "sha256": "83a50c120301173e1aec1e537fa131b460d593fc7141fb4f39c8e813d99dabfc",
+        "records": 12143,
+        "resolved_chain_edges": 3002,
+        "multi_range_families": 1092,
+        "records_in_multi_range_families": 4094,
+        "largest_family_records": 13,
+        "max_chain_depth": 4,
+        "versions": {
+          "1": 12141,
+          "2": 2
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "Gem Dopamine-64.vst3",
+        "sha256": "dc923f6507cc891e0417854178f1db2eb84965040aa661c9c144649548dffb6f",
+        "records": 35760,
+        "resolved_chain_edges": 7663,
+        "multi_range_families": 2807,
+        "records_in_multi_range_families": 10470,
+        "largest_family_records": 23,
+        "max_chain_depth": 4,
+        "versions": {
+          "1": 35758,
+          "2": 2
+        },
+        "unresolved": {}
+      },
+      {
+        "name": "TVB Rack V2.vst3",
+        "sha256": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
+        "records": 34461,
+        "resolved_chain_edges": 11314,
+        "multi_range_families": 3889,
+        "records_in_multi_range_families": 15203,
+        "largest_family_records": 13,
+        "max_chain_depth": 5,
+        "versions": {
+          "1": 34461
+        },
+        "unresolved": {}
+      }
+    ]
+  },
+  "control_flow": {
+    "attempted_modules": 16,
+    "modules_with_scopes": 15,
+    "totals": {
+      "scopes": 91,
+      "calls": 839,
+      "jumps": 700,
+      "indirect_sites": 145,
+      "gnu_side_decoder_disagreements": 1438
+    },
+    "rows": [
+      {
+        "name": "Trackspacer25.vst3",
+        "sha256": "f7dab96048b6d0def84b0be2395244f01e54dc71d6b99e769630fbe6c37b6242",
+        "anchors": [
+          "0x152600",
+          "0x1507d0",
+          "0x152420",
+          "0x3576b0",
+          "0x188f0",
+          "0x18570",
+          "0x19200",
+          "0x192c0"
+        ],
+        "scopes": 8,
+        "calls": 95,
+        "jumps": 47,
+        "targets": {
+          "unwind_entry": 75,
+          "unwind_interior": 47,
+          "executable_uncovered": 20,
+          "outside_file_backed_executable": 0
+        },
+        "indirect_sites": 6,
+        "uncovered_anchors": [],
+        "gnu_side_decoder_disagreements": 106
+      },
+      {
+        "name": "DeeDoubler.vst3",
+        "sha256": "0fca35f1e73496a967fb871b83efcbf17de825e574e1a943bb2cd7bb28d3a56c",
+        "anchors": [
+          "0x20b320",
+          "0x20a1f0",
+          "0x20ac00",
+          "0x40a840",
+          "0x40a950",
+          "0x40aa30"
+        ],
+        "scopes": 10,
+        "calls": 23,
+        "jumps": 13,
+        "targets": {
+          "unwind_entry": 17,
+          "unwind_interior": 13,
+          "executable_uncovered": 6,
+          "outside_file_backed_executable": 0
+        },
+        "indirect_sites": 2,
+        "uncovered_anchors": [],
+        "gnu_side_decoder_disagreements": 72
+      },
+      {
+        "name": "Auburn Sounds Panagement 2-64.vst3",
+        "sha256": "2a18419eff9338b67d22049dc6b7b628e7b420bf48850e66ed5dee7a7c398f25",
+        "anchors": [
+          "0x93e00",
+          "0x833e0",
+          "0x83540",
+          "0x83690",
+          "0x837f0"
+        ],
+        "scopes": 5,
+        "calls": 76,
+        "jumps": 0,
+        "targets": {
+          "unwind_entry": 56,
+          "unwind_interior": 0,
+          "executable_uncovered": 20,
+          "outside_file_backed_executable": 0
+        },
+        "indirect_sites": 0,
+        "uncovered_anchors": [],
+        "gnu_side_decoder_disagreements": 4
+      },
+      {
+        "name": "Brauer Motion.dll",
+        "sha256": "8d76785017eb57c3cdab85a964bf559706450800159e65e84fdce377c541f2e5",
+        "anchors": [
+          "0x4b050",
+          "0x2b010",
+          "0x38370",
+          "0x2c040",
+          "0x2e080",
+          "0x3bee0",
+          "0x29eb0",
+          "0x26110"
+        ],
+        "scopes": 8,
+        "calls": 138,
+        "jumps": 44,
+        "targets": {
+          "unwind_entry": 102,
+          "unwind_interior": 43,
+          "executable_uncovered": 37,
+          "outside_file_backed_executable": 0
+        },
+        "indirect_sites": 64,
+        "uncovered_anchors": [],
+        "gnu_side_decoder_disagreements": 75
+      },
+      {
+        "name": "StandardCLIP.vst3",
+        "sha256": "000aff8f9983d55bcb91853c4639e2063185ca036039adaf1cc82bfb0abd7f8b",
+        "anchors": [
+          "0x424c00",
+          "0x424ad0",
+          "0x246550",
+          "0x2463b0"
+        ],
+        "scopes": 4,
+        "calls": 65,
+        "jumps": 32,
+        "targets": {
+          "unwind_entry": 37,
+          "unwind_interior": 32,
+          "executable_uncovered": 28,
+          "outside_file_backed_executable": 0
+        },
+        "indirect_sites": 16,
+        "uncovered_anchors": [],
+        "gnu_side_decoder_disagreements": 15
+      },
+      {
+        "name": "MixWave DW Fearn VT-5.vst3",
+        "sha256": "e90bef94adad1518c828d1a23704bd11d998c55c137939830beb4402e67c8e04",
+        "anchors": [
+          "0x3dc1f0",
+          "0x3dc4f0",
+          "0x3df840",
+          "0x3dafb0",
+          "0x3d9ef0",
+          "0x3d9f90"
+        ],
+        "scopes": 6,
+        "calls": 50,
+        "jumps": 178,
+        "targets": {
+          "unwind_entry": 2,
+          "unwind_interior": 194,
+          "executable_uncovered": 31,
+          "outside_file_backed_executable": 1
+        },
+        "indirect_sites": 25,
+        "uncovered_anchors": [],
+        "gnu_side_decoder_disagreements": 278
+      },
+      {
+        "name": "SSL Fusion Stereo Image.vst3",
+        "sha256": "31de6c45f42af28bbb74d144c6dd3b9116f1d0d8c22a0eef508df37279b1eaf5",
+        "anchors": [
+          "0x1288830",
+          "0x12872b0",
+          "0x1285b80",
+          "0x984240"
+        ],
+        "scopes": 8,
+        "calls": 70,
+        "jumps": 155,
+        "targets": {
+          "unwind_entry": 40,
+          "unwind_interior": 178,
+          "executable_uncovered": 4,
+          "outside_file_backed_executable": 3
+        },
+        "indirect_sites": 20,
+        "uncovered_anchors": [],
+        "gnu_side_decoder_disagreements": 384
+      },
+      {
+        "name": "TVB Rack V2.vst3",
+        "sha256": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
+        "anchors": [
+          "0x5cfa50",
+          "0x5dc801",
+          "0x5dcc72",
+          "0x5ddd17",
+          "0x35ba5a",
+          "0x5a5090"
+        ],
+        "scopes": 20,
+        "calls": 124,
+        "jumps": 145,
+        "targets": {
+          "unwind_entry": 18,
+          "unwind_interior": 145,
+          "executable_uncovered": 106,
+          "outside_file_backed_executable": 0
+        },
+        "indirect_sites": 2,
+        "uncovered_anchors": [],
+        "gnu_side_decoder_disagreements": 195
+      },
+      {
+        "name": "Gem Dopamine-64.vst3",
+        "sha256": "dc923f6507cc891e0417854178f1db2eb84965040aa661c9c144649548dffb6f",
+        "anchors": [
+          "0x58bf50",
+          "0x58bbe0",
+          "0x58c100",
+          "0x560150"
+        ],
+        "scopes": 3,
+        "calls": 18,
+        "jumps": 10,
+        "targets": {
+          "unwind_entry": 10,
+          "unwind_interior": 9,
+          "executable_uncovered": 9,
+          "outside_file_backed_executable": 0
+        },
+        "indirect_sites": 0,
+        "uncovered_anchors": [
+          "0x560150"
+        ],
+        "gnu_side_decoder_disagreements": 5
+      },
+      {
+        "name": "A1TriggerGate-x64.vst3",
+        "sha256": "83a50c120301173e1aec1e537fa131b460d593fc7141fb4f39c8e813d99dabfc",
+        "anchors": [
+          "0x10ff20",
+          "0x266e0"
+        ],
+        "scopes": 6,
+        "calls": 34,
+        "jumps": 33,
+        "targets": {
+          "unwind_entry": 30,
+          "unwind_interior": 33,
+          "executable_uncovered": 4,
+          "outside_file_backed_executable": 0
+        },
+        "indirect_sites": 2,
+        "uncovered_anchors": [],
+        "gnu_side_decoder_disagreements": 22
+      },
+      {
+        "name": "FG-2A.epl",
+        "sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+        "anchors": [
+          "0x14b805",
+          "0x14d590",
+          "0x14f340",
+          "0x149a90"
+        ],
+        "scopes": 4,
+        "calls": 89,
+        "jumps": 27,
+        "targets": {
+          "unwind_entry": 38,
+          "unwind_interior": 27,
+          "executable_uncovered": 51,
+          "outside_file_backed_executable": 0
+        },
+        "indirect_sites": 0,
+        "uncovered_anchors": [],
+        "gnu_side_decoder_disagreements": 193
+      },
+      {
+        "name": "FG-116.epl",
+        "sha256": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+        "anchors": [
+          "0x15e732",
+          "0x161880",
+          "0x1619a0"
+        ],
+        "scopes": 2,
+        "calls": 38,
+        "jumps": 13,
+        "targets": {
+          "unwind_entry": 12,
+          "unwind_interior": 13,
+          "executable_uncovered": 26,
+          "outside_file_backed_executable": 0
+        },
+        "indirect_sites": 0,
+        "uncovered_anchors": [
+          "0x161880"
+        ],
+        "gnu_side_decoder_disagreements": 65
+      },
+      {
+        "name": "FG-401.epl",
+        "sha256": "0cc3444f095ccf4aa751f653e6aceb484d7bfaea73df30ccb68a7f2fccf46ef6",
+        "anchors": [
+          "0x15e050"
+        ],
+        "scopes": 0,
+        "calls": 0,
+        "jumps": 0,
+        "targets": {
+          "unwind_entry": 0,
+          "unwind_interior": 0,
+          "executable_uncovered": 0,
+          "outside_file_backed_executable": 0
+        },
+        "indirect_sites": 0,
+        "uncovered_anchors": [
+          "0x15e050"
+        ],
+        "gnu_side_decoder_disagreements": 0
+      },
+      {
+        "name": "AirEQAir.epl",
+        "sha256": "c75499749848d64aa9a72298204087d5a78f685e7d960beacecd6644d9e3136b",
+        "anchors": [
+          "0x246e80"
+        ],
+        "scopes": 3,
+        "calls": 0,
+        "jumps": 0,
+        "targets": {
+          "unwind_entry": 0,
+          "unwind_interior": 0,
+          "executable_uncovered": 0,
+          "outside_file_backed_executable": 0
+        },
+        "indirect_sites": 0,
+        "uncovered_anchors": [],
+        "gnu_side_decoder_disagreements": 3
+      },
+      {
+        "name": "AirEQEarth.epl",
+        "sha256": "e5b254ee4173e142b6822e807cee916b745b32b5ae5f38e24814e7c8b7c875f7",
+        "anchors": [
+          "0x145340"
+        ],
+        "scopes": 1,
+        "calls": 4,
+        "jumps": 0,
+        "targets": {
+          "unwind_entry": 0,
+          "unwind_interior": 0,
+          "executable_uncovered": 4,
+          "outside_file_backed_executable": 0
+        },
+        "indirect_sites": 0,
+        "uncovered_anchors": [],
+        "gnu_side_decoder_disagreements": 7
+      },
+      {
+        "name": "VCC Channel.epl",
+        "sha256": "73747020e8996938b8e6fdff51004cff4ea85c95f992cbc8bc0d0896a80aad87",
+        "anchors": [
+          "0x19ac10",
+          "0x19ae50",
+          "0x176970"
+        ],
+        "scopes": 3,
+        "calls": 15,
+        "jumps": 3,
+        "targets": {
+          "unwind_entry": 9,
+          "unwind_interior": 3,
+          "executable_uncovered": 6,
+          "outside_file_backed_executable": 0
+        },
+        "indirect_sites": 8,
+        "uncovered_anchors": [],
+        "gnu_side_decoder_disagreements": 14
+      }
+    ],
+    "limits": "Bounded linear dual-decoder observations with exact rel8/rel32 target check; jumps are not calls; four out-of-executable targets excluded from DSP claims; indirect unresolved. GNU-side disagreement count excludes LLVM-only sites. No reachable execution or DSP completeness inferred."
+  },
+  "previous_checkpoints": {
+    "old_verified": 106,
+    "newly_resolved": 4,
+    "sites": [
+      [
+        "Brauer Motion.dll",
+        "0x4ac4a"
+      ],
+      [
+        "Brauer Motion.dll",
+        "0x4af7a"
+      ],
+      [
+        "StandardCLIP.vst3",
+        "0x424c00"
+      ],
+      [
+        "DeeDoubler.vst3",
+        "0x40aa30"
+      ]
+    ]
+  },
+  "targeted": {
+    "trackspacer": {
+      "setup": "0x152600",
+      "dirty_recalculation": "0x150e65",
+      "math_helper": "0x3576b0",
+      "checkpoints": [
+        9,
+        22,
+        12
+      ],
+      "basis_identity_checks": [
+        true,
+        true
+      ],
+      "finding": "Both rate/time-derived detector coefficients feed same exponential-family helper; recalculated on dirty state; separate rise/fall selection and one-pole state update. Exact host time control mapping unverified."
+    },
+    "deedoubler": {
+      "filter": "0x40a950",
+      "verified_sites": 20,
+      "checked_sites": 20,
+      "finding": "Indexed double-precision two prior input/two prior output direct form with denominator normalization and tiny-value suppression; independent state indices; coefficient control mapping unresolved."
+    },
+    "vt5": {
+      "dispatcher": "0x3dc1f0",
+      "table": "0x3dc434",
+      "case_count": 16,
+      "unique_cases": 16,
+      "entry_agreement": 16,
+      "local_return_cases": 3,
+      "tail_dispatch_cases": 13,
+      "findings": "Exact 16 table entries within function body; no host semantic mapping."
+    }
+  },
+  "local_tests": "2 owned PE fixture tests passed; full branch CI pending",
+  "limitations": "No vendor runtime execution, vendor source or coefficient tables copied; no new production integration; no measured commercial completeness percentage."
+}
