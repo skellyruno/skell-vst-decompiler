@@ -44,7 +44,7 @@ class PE:
             raise PEFormatError("Unexpected section count or optional header")
         self.image_base = self._unpack("<Q", optional_offset+24)[0]
         directory_count = self._unpack("<I",optional_offset+108)[0]
-        self.import_directory_rva = self._unpack("<I",optional_offset+120)[0] if optional_size>=128 else 0
+        self.import_directory_rva, self.import_directory_size = self._unpack("<II",optional_offset+120) if optional_size>=128 and directory_count>=2 else (0,0)
         self.exception_directory = self._unpack("<II",optional_offset+136) if optional_size>=144 and directory_count>=4 else (0,0)
         section_start = optional_offset + optional_size
         if section_start + section_count*40 > len(b):
@@ -89,31 +89,63 @@ class PE:
         if e<0:raise PEFormatError("Unterminated bounded C string")
         return raw[:e].decode("ascii","replace")
 
-    def imports(self):
-        """IAT slot RVA -> DLL/symbol, with hard caps on malformed input."""
-        found={}
-        if not self.import_directory_rva:return found
-        for i in range(256):
-            pos=self.import_directory_rva+20*i
-            oft,timestamp,chain,dll,iat=struct.unpack("<IIIII",self.at_rva(pos,20))
-            if not any((oft,timestamp,chain,dll,iat)):
-                return found
+    def audit_imports(self):
+        """Parse bounded ordinary import descriptors, with explicit null-tail compatibility.
+
+        Return the existing IAT identity map and metadata about the declared
+        descriptor boundary. Only an all-zero descriptor immediately after
+        the declared table may be accepted; never consume extra nonzero rows.
+        """
+        found = {}
+        rva, size = self.import_directory_rva, self.import_directory_size
+        metadata = {"rva": rva, "declared_bytes": size, "descriptors": 0,
+                    "terminator": "absent"}
+        if not rva and not size:
+            return found, metadata
+        if not rva or not 20 <= size <= 256 * 20 or size % 20:
+            raise PEFormatError("Invalid ordinary import directory size")
+        table = self.at_rva(rva, size)
+        for oft, timestamp, chain, dll, iat in struct.iter_unpack("<IIIII", table):
+            if not any((oft, timestamp, chain, dll, iat)):
+                metadata["terminator"] = "inside_directory"
+                return found, metadata
             if not dll or not iat:
                 raise PEFormatError("Incomplete import descriptor")
-            dllname=self.cstring_rva(dll)
-            thunks=oft or iat
+            dllname = self.cstring_rva(dll)
+            if not dllname:
+                raise PEFormatError("Empty import library name")
+            metadata["descriptors"] += 1
+            thunks = oft or iat
             for n in range(8192):
-                pointer=struct.unpack("<Q",self.at_rva(thunks+8*n,8))[0]
-                if pointer==0:break
-                if pointer>>63:
-                    name="#"+str(pointer&0xffff)
+                pointer = struct.unpack("<Q", self.at_rva(thunks + 8*n, 8))[0]
+                slot = iat + 8*n
+                self.at_rva(slot, 8)
+                if pointer == 0:
+                    break
+                if slot in found:
+                    raise PEFormatError("Duplicate ordinary import slot")
+                if pointer >> 63:
+                    if pointer & 0x7fffffffffff0000:
+                        raise PEFormatError("Invalid import ordinal reserved bits")
+                    name = "#" + str(pointer & 0xffff)
                 else:
-                    if pointer >= 1<<32:
-                        raise PEFormatError("Unexpected 64-bit import name RVA")
-                    name=self.cstring_rva(pointer+2)
-                found[iat+8*n]={"dll":dllname,"symbol":name}
-            else: raise PEFormatError("Import thunk count exceeded safety limit")
-        raise PEFormatError("Import descriptor count exceeded safety limit")
+                    if pointer >= 1 << 31:
+                        raise PEFormatError("Unexpected import name RVA")
+                    self.at_rva(pointer, 2)
+                    name = self.cstring_rva(pointer + 2)
+                    if not name:
+                        raise PEFormatError("Empty import symbol name")
+                found[slot] = {"dll": dllname, "symbol": name}
+            else:
+                raise PEFormatError("Import thunk count exceeded safety limit")
+        if self.at_rva(rva + size, 20) == bytes(20):
+            metadata["terminator"] = "adjacent_null_compatibility"
+            return found, metadata
+        raise PEFormatError("Missing ordinary import terminator at declared boundary")
+
+    def imports(self):
+        """IAT slot RVA -> DLL/symbol; identity map, not a loaded address."""
+        return self.audit_imports()[0]
 
     def u32(self,rva): return struct.unpack("<I",self.at_rva(rva,4))[0]
     def f32(self,rva): return struct.unpack("<f",self.at_rva(rva,4))[0]

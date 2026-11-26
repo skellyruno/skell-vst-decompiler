@@ -1,0 +1,418 @@
+{
+  "schema": 1,
+  "baseline": "af6d6b6f64da216d7fe9e46deed563e9e83cceae",
+  "prior_ci": [
+    {
+      "id": 45879170586,
+      "name": "Python static-analysis tests",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 45879170510,
+      "name": "Independent PE oracle (owned fixtures)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 45879170501,
+      "name": "Craft Anything metadata (owned fixtures)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 45879170594,
+      "name": "Reccmp export comparison (owned fixture)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 45879170500,
+      "name": "Real Rizin smoke (owned fixture)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 45879170505,
+      "name": "REA PE imports (owned fixtures)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 45879170745,
+      "name": "Real Ghidra smoke (owned fixture)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 45879170526,
+      "name": "Unified engines (owned fixture)",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "source_blobs": {
+    "pe": "40be92efc73172a5d838c73b4ce8fe8b868624c0",
+    "boundary": "88680db423da81719d6f64400ed0b26ba6a8bea1",
+    "test_bounds": "907a669a1774b9ab7f69088f955ca5c3da6084c0",
+    "test_candidates": "2b368a6a3d699f631d42f5e968fac91945515c4e"
+  },
+  "corpus": {
+    "modules": 44,
+    "unchanged_ordinary_slots": 26466,
+    "inside_directory": 41,
+    "adjacent_null_compatibility": 3,
+    "rows": [
+      {
+        "name": "A1TriggerGate-x64.vst3",
+        "sha256": "83a50c120301173e1aec1e537fa131b460d593fc7141fb4f39c8e813d99dabfc",
+        "ordinary_slots": 354,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "AirEQAir.epl",
+        "sha256": "c75499749848d64aa9a72298204087d5a78f685e7d960beacecd6644d9e3136b",
+        "ordinary_slots": 619,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "AirEQEarth.epl",
+        "sha256": "e5b254ee4173e142b6822e807cee916b745b32b5ae5f38e24814e7c8b7c875f7",
+        "ordinary_slots": 619,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "Auburn Sounds Panagement 2-64.vst3",
+        "sha256": "2a18419eff9338b67d22049dc6b7b628e7b420bf48850e66ed5dee7a7c398f25",
+        "ordinary_slots": 195,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "Auto-Key.vst3",
+        "sha256": "5b75ab74781e4108b09d035a4a140e714da648968d64114f9337d76598a42dbc",
+        "ordinary_slots": 304,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "Blackbird Studio.epl",
+        "sha256": "44bee8e698af4a7c48f9de78bf0110d629c215aa66c999d01bd76f9d041d9a3d",
+        "ordinary_slots": 621,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "Brauer Motion.dll",
+        "sha256": "8d76785017eb57c3cdab85a964bf559706450800159e65e84fdce377c541f2e5",
+        "ordinary_slots": 1120,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "CS-EQ.epl",
+        "sha256": "a4a8c92d6ea80acc16a314b23cf727c0bd86cb92a40351efb03f6892605571d0",
+        "ordinary_slots": 620,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "CS-Lift.epl",
+        "sha256": "62ae20d8bbb4ec84960aca0325fdb61e5f551ff83943bb633759d4561f8b7ae6",
+        "ordinary_slots": 620,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "Classic Instruments.epl",
+        "sha256": "12fe5020e71374ff14e3f3aba553a578718de886024445733bcfc148142f52f6",
+        "ordinary_slots": 621,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "Custom Opto.epl",
+        "sha256": "e697454a539b54b6a610d486bac0fef0bd8f04295da020d6b6f196a44dc55bd3",
+        "ordinary_slots": 625,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "DeeDoubler.vst3",
+        "sha256": "0fca35f1e73496a967fb871b83efcbf17de825e574e1a943bb2cd7bb28d3a56c",
+        "ordinary_slots": 377,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "FG-116 Modern.epl",
+        "sha256": "6782b73fb9d4a3c1dade5406fe6ea1bead30699529082ea9f9a8dfe04056a664",
+        "ordinary_slots": 620,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "FG-116 Vintage.epl",
+        "sha256": "6e80b5108f805a0c4ee11fce56d56f149dc4a449c575108e5249e848a4638e7f",
+        "ordinary_slots": 621,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "FG-116.epl",
+        "sha256": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+        "ordinary_slots": 620,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "FG-2A.epl",
+        "sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+        "ordinary_slots": 624,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "FG-401.epl",
+        "sha256": "0cc3444f095ccf4aa751f653e6aceb484d7bfaea73df30ccb68a7f2fccf46ef6",
+        "ordinary_slots": 621,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "FG-73.epl",
+        "sha256": "b5204a61666943438690994b19ed52747de754aa0b6f741fe36a18df43053746",
+        "ordinary_slots": 619,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "FG-76.epl",
+        "sha256": "1b4180667292124de2b2c64b20c581d2eb752ebffbb526c4d31c1ad9d1b237d8",
+        "ordinary_slots": 619,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "FG-A.epl",
+        "sha256": "badeddab00efec8f803a56f6dd00a3cec7a7204d7ac3ba4793c095dbbb11c3cb",
+        "ordinary_slots": 620,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "FG-Bomber.epl",
+        "sha256": "fb42be0d32d2c661da652f41efd0c51e530b29d3a25aab2cd46f509fa3ddfa2c",
+        "ordinary_slots": 621,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "FG-N.epl",
+        "sha256": "e5a998d11bc57660fb7e500ad6805a2df1c0356650f43ce8eaefb8a4db9fc10b",
+        "ordinary_slots": 620,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "FG-S.epl",
+        "sha256": "9c28aaba2ee2dc61f00d9231b9c84f02e364d8a323a93ccab7b7a08956da9a45",
+        "ordinary_slots": 620,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "FG-Stress.epl",
+        "sha256": "2509a6f3480481feb15a0fde97abcb4acccfc6fc936f55f5e8c88b7c98edcd26",
+        "ordinary_slots": 620,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "Gate Classic.epl",
+        "sha256": "c29d1d3a1d1a5047401613369bfa2df3492f3153ef134c0fa66c9c3d9cc92320",
+        "ordinary_slots": 620,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "Gate Drums.epl",
+        "sha256": "3a2d979be9e3a684ba4274b7f481d10dbef9754ee93a9f671d2cd1daeb8c30f3",
+        "ordinary_slots": 621,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "Gem Dopamine-64.vst3",
+        "sha256": "dc923f6507cc891e0417854178f1db2eb84965040aa661c9c144649548dffb6f",
+        "ordinary_slots": 449,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "Hollywood.epl",
+        "sha256": "39e8a0b74093ee654dd2f7ce8aeee0b46f7279b19133226c3c952177863cf607",
+        "ordinary_slots": 621,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "London.epl",
+        "sha256": "f4ac602d67b03e8f13bcdb04841aba7159a43c4a8c113861e711ed0bd67d30ce",
+        "ordinary_slots": 621,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "MB MixHead.vst3",
+        "sha256": "9575f1a0cdc5152045c2f631a047648cacca6e49d7b515f6fd7994adc703075f",
+        "ordinary_slots": 447,
+        "exact_prior_import_map": true,
+        "terminator": "adjacent_null_compatibility"
+      },
+      {
+        "name": "MixWave DW Fearn VT-5.vst3",
+        "sha256": "e90bef94adad1518c828d1a23704bd11d998c55c137939830beb4402e67c8e04",
+        "ordinary_slots": 917,
+        "exact_prior_import_map": true,
+        "terminator": "adjacent_null_compatibility"
+      },
+      {
+        "name": "New York.epl",
+        "sha256": "0258b5817750ad82c89dbee50bafdb41cad65edfcbd0d323a6a6124b3a2bccd1",
+        "ordinary_slots": 621,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "Revival.epl",
+        "sha256": "f486272dc9741a6e3ef3f393cd14ef6cebbc795e4f3ac8fa20a683fbeb146867",
+        "ordinary_slots": 621,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "SSL Fusion Stereo Image.vst3",
+        "sha256": "31de6c45f42af28bbb74d144c6dd3b9116f1d0d8c22a0eef508df37279b1eaf5",
+        "ordinary_slots": 404,
+        "exact_prior_import_map": true,
+        "terminator": "adjacent_null_compatibility"
+      },
+      {
+        "name": "StandardCLIP.vst3",
+        "sha256": "000aff8f9983d55bcb91853c4639e2063185ca036039adaf1cc82bfb0abd7f8b",
+        "ordinary_slots": 692,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "TVB Rack V2.vst3",
+        "sha256": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
+        "ordinary_slots": 761,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "The Monster.epl",
+        "sha256": "6aae06918694f6d9197f396896adbe9c8af150289930c466d7361d2b01aff45b",
+        "ordinary_slots": 621,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "Trackspacer25.vst3",
+        "sha256": "f7dab96048b6d0def84b0be2395244f01e54dc71d6b99e769630fbe6c37b6242",
+        "ordinary_slots": 367,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "Trimmer.epl",
+        "sha256": "5dbed8fad7ff3e79263d00108bdedf766ca83c88b103e5e3613bf6567f73bb0c",
+        "ordinary_slots": 619,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "U73b.epl",
+        "sha256": "47d8393eddba99816151e47dd0538fa012a9ea8b39b4547ef9afd19d88472856",
+        "ordinary_slots": 626,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "VCC Channel.epl",
+        "sha256": "73747020e8996938b8e6fdff51004cff4ea85c95f992cbc8bc0d0896a80aad87",
+        "ordinary_slots": 623,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "VCC MixBuss.epl",
+        "sha256": "fe077912d5396577fc6b32bcf0c4ba4b61d5e1f8089e961ce68dae22e1b0b500",
+        "ordinary_slots": 623,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "VMC Classic Tubes.epl",
+        "sha256": "df4635dda8db8c15a3f1c478e39f8814d21370f05fa84a64d4cc1fb57762e0ef",
+        "ordinary_slots": 621,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      },
+      {
+        "name": "Waves StudioRack for OBS.dll",
+        "sha256": "918cbd319b28d10ad72758476172549b402d69c06fe5d9b61f3a10665dde6067",
+        "ordinary_slots": 831,
+        "exact_prior_import_map": true,
+        "terminator": "inside_directory"
+      }
+    ]
+  },
+  "replay": {
+    "scopes": 114,
+    "prior_import_boundaries": 74,
+    "new_import_boundaries": 74,
+    "prior_rejections": 1,
+    "new_rejections": 1,
+    "new_adjacent_import_candidates": 0
+  },
+  "compatibility_examples": [
+    {
+      "name": "MB MixHead.vst3",
+      "directory_rva": "0x37c634",
+      "declared_bytes": 500,
+      "descriptors": 25
+    },
+    {
+      "name": "MixWave DW Fearn VT-5.vst3",
+      "directory_rva": "0x3604204",
+      "declared_bytes": 640,
+      "descriptors": 32
+    },
+    {
+      "name": "SSL Fusion Stereo Image.vst3",
+      "directory_rva": "0x2f91438",
+      "declared_bytes": 300,
+      "descriptors": 15
+    }
+  ],
+  "tests": {
+    "local": "7/7 passed",
+    "new_tests": 4,
+    "existing_boundary_tests": 3,
+    "owned_fixture_patterns": [
+      "ordinary prefixed RIP CALL/JMP",
+      "adjacent IAT MOV then register call (two positive, two excluded)",
+      "changed register/displacement/truncation rejection",
+      "directory count/size",
+      "adjacent zero compatibility",
+      "unbacked IAT and reserved ordinal bits"
+    ]
+  },
+  "limits": "No new vendor dynamic targets or prior decoder discrepancy resolution; no bypass or vendor execution; no production DSP or audio changes."
+}

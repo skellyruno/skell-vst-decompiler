@@ -281,3 +281,6 @@ Prior 5004b38 all 8 CI passed. Same 91 scopes replay: 1454 strict disagreements 
 
 ## Ordinary dependency boundaries — 2026-11-26
 Prior 3774458 all 8 workflows passed. Added bounded delay import parser and ordinary thunk navigator. 44-module import census 26466 ordinary slots, zero delayed. 114 selected ranges in 41 modules: 1283 local entries, 74 external boundaries (Brauer 23 WavesLib plus 13 runtime; TVB 19, VT-5 11, Panagement 8), four outside executable, one rejection. Three local owned fixture tests pass. Not comparable scope to previous 91 regions; dynamic sites remain unresolved, Auto-Key metadata-only, no protection bypass. See docs/DEPENDENCY_BOUNDARY_AUDIT_20261126.md. No production changes.
+
+## Import bounds and ordinary register-import candidates — 2026-11-26
+PE parser now honors directory count/size and validates IAT, name and ordinal bounds; explicit single adjacent-null compatibility. All 44 exact modules preserve 26466 import identities; 41 internal nulls, 3 adjacent nulls (MixHead, VT-5, SSL). Byte-checked redundant REX.W ordinary RIP branches and adjacent IAT load/register-call candidates added. 7 local tests passed (4 new). 114-scope replay unchanged 74 boundaries/1 rejection; zero new adjacent candidates. Prior dynamic/decoder gaps remain. See docs/IMPORT_BOUNDS_AND_CANDIDATES_20261126.md. No bypass, audio, or production changes.
