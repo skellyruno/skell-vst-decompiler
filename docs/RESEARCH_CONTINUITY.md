@@ -296,3 +296,6 @@ Previous 781c65e exact CI 8/8 passed. Four entry thunks and wrapper bodies verif
 
 ## Eight-target RIP-relative floating-point audit — 2026-11-26
 All eight exact inputs verified, 47 scopes/71,030 bytes, 197 read-only references, 20 exclusions, no values read or runtime algorithms established. Original narrow byte/dual-decoder validator with five targeted local tests passing and matched Git hashes. FG-2A generator candidate 40 references, Trackspacer main candidate 34, DeeDoubler seven shared data locations; other limits documented. See docs/EIGHT_TARGET_RIP_AUDIT_20261126.md. No production or SkellCore changes. Full CI unverified.
+
+## Deeper signal paths — 2026-11-26
+Eight exact binaries / 47 prior scope hashes replayed; 135 selected normalized operand agreements (90 stricter, 45 formatting reconciled). StandardCLIP two byte-checked in-place call candidates, FG-2A 20 ordinary math import calls + six output endpoints, Trackspacer coefficient precision, DeeDoubler four ramp-state updates. New narrow checker owned fixture passed with positive and negative cases, exact source/test blobs; local prior PE snapshot differs from current branch, new CI pending. No complete algorithms, runtime, production changes or advances claimed for other four targets. See docs/DEEPER_SIGNAL_PATH_EVIDENCE_20261126.md.
