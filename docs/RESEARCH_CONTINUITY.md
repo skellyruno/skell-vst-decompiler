@@ -302,3 +302,6 @@ Eight exact binaries / 47 prior scope hashes replayed; 135 selected normalized o
 
 ## Backward branch envelopes and traversal — 2026-11-26
 8 exact binaries/47 prior scopes verified, 208 byte-backed backward intervals, 59 with selected matching FP arithmetic. StandardCLIP buffer-first vs position-first candidate traversal, 45 selected operand agreements (32 strict). Local PE dependency mismatch resolved; exact dependency/source/test blobs, three targeted local tests passed. Other targets reprioritized by evidence, no complete DSP algorithms, production changes or audio parity established. See docs/LOOP_ENVELOPES_20261126.md. Full current-head CI pending.
+
+## Full-scope consensus and ordinary math boundaries — 2026-11-26
+Prior c9e85ff CI 8/8 passed. Eight exact binaries and 47 prior scope hashes verified. 16,795 matching mnemonic/inferred-span sites; 1,136 distinct selected arithmetic sites (165 outside prior intervals). 57 mnemonic/12 span/18 one-decoder/47 terminal exclusions. 100 selected ordinary CRT math import slots, 42 verified direct calls (FG-2A 36, VT-5 6). Three owned/local tests pass after terminal accounting fix; exact tested source/test and PE/disasm blobs match. Same bounded regions, no new anchors or full DSP algorithms established. See docs/SCOPE_CONSENSUS_20261126.md. No production changes; new CI pending.

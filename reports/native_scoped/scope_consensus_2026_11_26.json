@@ -1,0 +1,176 @@
+{
+  "schema": 1,
+  "parent": "c9e85ff9c17177d5f3d48e90cac3c3d4df997eb3",
+  "scope_plan": "reports/native_scoped/eight_target_rip_audit_2026_11_26.json",
+  "prior_intervals": "reports/native_scoped/loop_envelopes_2026_11_26.json",
+  "full_local_report_sha256": "05a5772814fa3aa53df6805635e0b43f4cdd1f4e2773cdad00a1c544b9dad045",
+  "totals": {
+    "binaries": 8,
+    "scopes": 47,
+    "agreed_sites": 16795,
+    "agreed_inferred_span_bytes": 70623,
+    "mnemonic_disagreement": 57,
+    "span_disagreement": 12,
+    "one_decoder_only": 18,
+    "terminal_unbounded": 47,
+    "unique_selected_arithmetic_sites": 1136,
+    "inside_prior_intervals": 971,
+    "outside_prior_intervals": 165,
+    "selected_crt_math_import_slots": 100,
+    "verified_direct_math_thunk_call_sites": 42
+  },
+  "modules": [
+    {
+      "name": "StandardCLIP.vst3",
+      "scopes": 5,
+      "agreed_sites": 2375,
+      "agreed_span_bytes": 9912,
+      "unique_fp_sites": 60,
+      "inside": 45,
+      "outside": 15,
+      "ordinary_import_slots": 692,
+      "selected_crt_math_slots": 0,
+      "verified_direct_math_calls": 0,
+      "fp_families": {
+        "scalar32": 43,
+        "scalar64": 17
+      },
+      "math_symbols": {}
+    },
+    {
+      "name": "Trackspacer25.vst3",
+      "scopes": 6,
+      "agreed_sites": 2491,
+      "agreed_span_bytes": 11227,
+      "unique_fp_sites": 268,
+      "inside": 201,
+      "outside": 67,
+      "ordinary_import_slots": 367,
+      "selected_crt_math_slots": 0,
+      "verified_direct_math_calls": 0,
+      "fp_families": {
+        "scalar32": 149,
+        "scalar64": 87,
+        "packed32": 32
+      },
+      "math_symbols": {}
+    },
+    {
+      "name": "FG-2A.epl",
+      "scopes": 8,
+      "agreed_sites": 2516,
+      "agreed_span_bytes": 12612,
+      "unique_fp_sites": 667,
+      "inside": 658,
+      "outside": 9,
+      "ordinary_import_slots": 624,
+      "selected_crt_math_slots": 30,
+      "verified_direct_math_calls": 36,
+      "fp_families": {
+        "scalar64": 665,
+        "packed64": 2
+      },
+      "math_symbols": {
+        "log": 5,
+        "exp": 5,
+        "log10": 4,
+        "pow": 4,
+        "sqrt": 11,
+        "tan": 7
+      }
+    },
+    {
+      "name": "Auburn Sounds Panagement 2-64.vst3",
+      "scopes": 5,
+      "agreed_sites": 774,
+      "agreed_span_bytes": 3815,
+      "unique_fp_sites": 0,
+      "inside": 0,
+      "outside": 0,
+      "ordinary_import_slots": 195,
+      "selected_crt_math_slots": 0,
+      "verified_direct_math_calls": 0,
+      "fp_families": {},
+      "math_symbols": {}
+    },
+    {
+      "name": "DeeDoubler.vst3",
+      "scopes": 7,
+      "agreed_sites": 878,
+      "agreed_span_bytes": 4533,
+      "unique_fp_sites": 121,
+      "inside": 65,
+      "outside": 56,
+      "ordinary_import_slots": 377,
+      "selected_crt_math_slots": 0,
+      "verified_direct_math_calls": 0,
+      "fp_families": {
+        "scalar64": 117,
+        "packed64": 4
+      },
+      "math_symbols": {}
+    },
+    {
+      "name": "MixWave DW Fearn VT-5.vst3",
+      "scopes": 6,
+      "agreed_sites": 3970,
+      "agreed_span_bytes": 14323,
+      "unique_fp_sites": 14,
+      "inside": 0,
+      "outside": 14,
+      "ordinary_import_slots": 917,
+      "selected_crt_math_slots": 36,
+      "verified_direct_math_calls": 6,
+      "fp_families": {
+        "scalar32": 10,
+        "scalar64": 4
+      },
+      "math_symbols": {
+        "roundf": 6
+      }
+    },
+    {
+      "name": "SSL Fusion Stereo Image.vst3",
+      "scopes": 4,
+      "agreed_sites": 3253,
+      "agreed_span_bytes": 11866,
+      "unique_fp_sites": 6,
+      "inside": 2,
+      "outside": 4,
+      "ordinary_import_slots": 404,
+      "selected_crt_math_slots": 0,
+      "verified_direct_math_calls": 0,
+      "fp_families": {
+        "x87": 2,
+        "scalar64": 4
+      },
+      "math_symbols": {}
+    },
+    {
+      "name": "MB MixHead.vst3",
+      "scopes": 6,
+      "agreed_sites": 538,
+      "agreed_span_bytes": 2335,
+      "unique_fp_sites": 0,
+      "inside": 0,
+      "outside": 0,
+      "ordinary_import_slots": 447,
+      "selected_crt_math_slots": 34,
+      "verified_direct_math_calls": 0,
+      "fp_families": {},
+      "math_symbols": {}
+    }
+  ],
+  "tests": {
+    "passed": 3,
+    "source_blob": "1c80cdcb8b233b3d4e56ed82588fee3530656911",
+    "test_blob": "78d29e58d513d680577fd156737fb993e5792e3f",
+    "dependencies": {
+      "pe": "40be92efc73172a5d838c73b4ce8fe8b868624c0",
+      "disasm": "d4e87f3dc1760a46907b388a06c8383377d05afc"
+    },
+    "parent_ci": "8/8 success",
+    "quick4_checksums": "13/13 passed"
+  },
+  "limits": "Existing 47 scopes only. Agreed lengths inferred from consecutive decoded addresses, not independent instruction-length validation. Arithmetic categories are deliberately incomplete and not DSP classification. Terminal sites excluded; no vendor code or coefficient values published. Direct ordinary CRT math calls only; absence does not establish no math or no DSP."
+}
