@@ -161,6 +161,13 @@ jobs:
           /tmp/spec_edges
           g++ -std=c++17 -O1 -g -D_GLIBCXX_ASSERTIONS -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie -Wall -Wextra -Werror experiments/engine_lab/test_spectral4_edges.cpp -o /tmp/spec_edges_san
           /tmp/spec_edges_san
+      - name: Independent spatial, tone, doubling and oversampled clipper milestone
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/milestone/test_spatial_color.cpp -o /tmp/spatial_color
+          /tmp/spatial_color
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/milestone/render_spatial_color.cpp -o /tmp/spatial_render
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie -Wall -Wextra -Werror experiments/milestone/test_spatial_color.cpp -o /tmp/spatial_color_san
+          /tmp/spatial_color_san
       - name: Compile all research Python
         run: python -m compileall -q skell_vst_decompiler
       - name: Compile and test original native DSP prototypes
