@@ -293,3 +293,6 @@ Previous 781c65e exact CI 8/8 passed. Four entry thunks and wrapper bodies verif
 
 ## Conditional branch and signal-routing audit — 2026-11-26
 11 scoped regions, 228 byte-backed conditional edges (53 backward, zero rejected), Trackspacer 32 scratch pointers/31 stride updates and three incoming/four outgoing routing relationships. 27/30 selected operands strictly agree; retain three formatting disagreements. StandardCLIP/Trackspacer copy-like utility comparison 1626/1653 equal byte positions, 346 matching relative mnemonic sites per decoder. New branch_evidence tool and targeted local tests 3/3 pass, exact blobs matched. No clipping curve/oversampling or complete routing claim; no vendor source, protection bypass, audio or production changes. See docs/CONDITIONAL_BRANCH_SIGNAL_ROUTING_20261126.md.
+
+## Eight-target RIP-relative floating-point audit — 2026-11-26
+All eight exact inputs verified, 47 scopes/71,030 bytes, 197 read-only references, 20 exclusions, no values read or runtime algorithms established. Original narrow byte/dual-decoder validator with five targeted local tests passing and matched Git hashes. FG-2A generator candidate 40 references, Trackspacer main candidate 34, DeeDoubler seven shared data locations; other limits documented. See docs/EIGHT_TARGET_RIP_AUDIT_20261126.md. No production or SkellCore changes. Full CI unverified.
