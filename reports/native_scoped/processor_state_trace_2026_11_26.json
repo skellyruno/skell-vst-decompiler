@@ -1,0 +1,411 @@
+{
+  "schema": 1,
+  "parent": "f833643e1f3dd63169f0f23816b583d554144cee",
+  "scope": "static_only",
+  "method": "Exact source fingerprints, bounded GNU and LLVM disassembly, normalized instruction-text agreement. Not runtime equivalence.",
+  "modules": {
+    "Trackspacer25.vst3": {
+      "binary_sha256": "f7dab96048b6d0def84b0be2395244f01e54dc71d6b99e769630fbe6c37b6242",
+      "scopes": [
+        {
+          "start": "0x152600",
+          "bytes": 2574,
+          "scope_sha256": "8e7d82f0695e0ea7524ba016a57644de8c0bfcd1e2165c516ecc3daeed3d4fb1",
+          "gnu_instructions": 534,
+          "llvm_instructions": 534,
+          "exact_normalized_agreement": 493,
+          "verified_sites": [
+            "0x152654",
+            "0x152671",
+            "0x152757",
+            "0x15275b",
+            "0x152761",
+            "0x1527ab",
+            "0x1526fa",
+            "0x152715"
+          ],
+          "unverified_sites": []
+        },
+        {
+          "start": "0x1507d0",
+          "bytes": 7236,
+          "scope_sha256": "208dfb9631e7c90df0071fa0194458d52ba87af349b53167288bd47fe9ea0711",
+          "gnu_instructions": 1620,
+          "llvm_instructions": 1620,
+          "exact_normalized_agreement": 1580,
+          "verified_sites": [
+            "0x150891",
+            "0x1508af",
+            "0x150a37",
+            "0x150c31",
+            "0x150cc0",
+            "0x150d26",
+            "0x150f0d",
+            "0x150fee",
+            "0x151081",
+            "0x151092",
+            "0x1511d0",
+            "0x1511e8",
+            "0x151349",
+            "0x15134d",
+            "0x151b60"
+          ],
+          "unverified_sites": []
+        }
+      ]
+    },
+    "DeeDoubler.vst3": {
+      "binary_sha256": "0fca35f1e73496a967fb871b83efcbf17de825e574e1a943bb2cd7bb28d3a56c",
+      "scopes": [
+        {
+          "start": "0x20b320",
+          "bytes": 839,
+          "scope_sha256": "da432f1086410f13d05a546dc8b421e87aa0012bb43994d5a3d37f0b5eab371b",
+          "gnu_instructions": 143,
+          "llvm_instructions": 143,
+          "exact_normalized_agreement": 83,
+          "verified_sites": [
+            "0x20b36f",
+            "0x20b3f0"
+          ],
+          "unverified_sites": []
+        },
+        {
+          "start": "0x20a1f0",
+          "bytes": 2557,
+          "scope_sha256": "e959b3cd14b85c732e48e61a32473e8a3d397f27c286ab7e7a59ffa0895cff55",
+          "gnu_instructions": 510,
+          "llvm_instructions": 510,
+          "exact_normalized_agreement": 507,
+          "verified_sites": [
+            "0x20a973",
+            "0x20a99c",
+            "0x20a9ab",
+            "0x20a9bd",
+            "0x20aa1f",
+            "0x20aa61",
+            "0x20aa72",
+            "0x20a7c9"
+          ],
+          "unverified_sites": []
+        },
+        {
+          "start": "0x20ac00",
+          "bytes": 489,
+          "scope_sha256": "4ccbd2cc53032929661b9432481fd2f50d6402214840bb5c45adfc29d5d0bf54",
+          "gnu_instructions": 140,
+          "llvm_instructions": 140,
+          "exact_normalized_agreement": 135,
+          "verified_sites": [
+            "0x20ad83",
+            "0x20ad89",
+            "0x20ad8c",
+            "0x20adb7"
+          ],
+          "unverified_sites": []
+        },
+        {
+          "start": "0x40a840",
+          "bytes": 262,
+          "scope_sha256": "923d1a4fb3a45393302023cad639b6c83232c5830748d0abf76b1d075a5391aa",
+          "gnu_instructions": 47,
+          "llvm_instructions": 47,
+          "exact_normalized_agreement": 47,
+          "verified_sites": [
+            "0x40a840"
+          ],
+          "unverified_sites": []
+        },
+        {
+          "start": "0x40a950",
+          "bytes": 211,
+          "scope_sha256": "980eecd3da5be32ce6ca5512f25a8ca75ff921376ae57e21598942caa5f55b9b",
+          "gnu_instructions": 36,
+          "llvm_instructions": 36,
+          "exact_normalized_agreement": 36,
+          "verified_sites": [
+            "0x40a950"
+          ],
+          "unverified_sites": []
+        },
+        {
+          "start": "0x40aa30",
+          "bytes": 790,
+          "scope_sha256": "c505289602ebd45caa81355569914fc2f2fc4286e9f4a5b7400b624885f4ea25",
+          "gnu_instructions": 168,
+          "llvm_instructions": 168,
+          "exact_normalized_agreement": 162,
+          "verified_sites": [
+            "0x40ac0d",
+            "0x40ac1b",
+            "0x40ac9b",
+            "0x40ad23"
+          ],
+          "unverified_sites": [
+            "0x40aa30"
+          ]
+        }
+      ],
+      "unwind_family": [
+        {
+          "start": "0x20a1f0",
+          "end": "0x20a2c1",
+          "unwind": "0x98ff78",
+          "parent": null
+        },
+        {
+          "start": "0x20a2c1",
+          "end": "0x20a6c3",
+          "unwind": "0x98ff8c",
+          "parent": "0x20a1f0"
+        },
+        {
+          "start": "0x20a6c3",
+          "end": "0x20ab98",
+          "unwind": "0x98ffbc",
+          "parent": "0x20a2c1"
+        },
+        {
+          "start": "0x20ab98",
+          "end": "0x20abdd",
+          "unwind": "0x98ffdc",
+          "parent": "0x20a2c1"
+        },
+        {
+          "start": "0x20abdd",
+          "end": "0x20abed",
+          "unwind": "0x98ffec",
+          "parent": "0x20a1f0"
+        }
+      ]
+    },
+    "Auburn Sounds Panagement 2-64.vst3": {
+      "binary_sha256": "2a18419eff9338b67d22049dc6b7b628e7b420bf48850e66ed5dee7a7c398f25",
+      "scopes": [
+        {
+          "start": "0x93e00",
+          "bytes": 2493,
+          "scope_sha256": "dc2ba35db2430a7f80c08f4cfb768bad985d1021f9f7c5fd1d470c8dd95f5b07",
+          "gnu_instructions": 442,
+          "llvm_instructions": 442,
+          "exact_normalized_agreement": 442,
+          "verified_sites": [
+            "0x93fcc",
+            "0x93fde",
+            "0x93fe3",
+            "0x93fe8",
+            "0x94000",
+            "0x94012",
+            "0x94017",
+            "0x9401c",
+            "0x9403d",
+            "0x9404f",
+            "0x94054",
+            "0x94059",
+            "0x94079",
+            "0x94093",
+            "0x94098",
+            "0x9409d",
+            "0x940b6",
+            "0x940d0",
+            "0x940d8",
+            "0x940dd",
+            "0x940f6",
+            "0x94108",
+            "0x94110",
+            "0x94115",
+            "0x9412e",
+            "0x94140",
+            "0x94148",
+            "0x94166",
+            "0x9417f",
+            "0x94191",
+            "0x94199",
+            "0x9419e"
+          ],
+          "unverified_sites": []
+        },
+        {
+          "start": "0x833e0",
+          "bytes": 338,
+          "scope_sha256": "577fd490a85c469aa95bcc34de0ed367e34d6e6155a9f7438ad17c9641702dd4",
+          "gnu_instructions": 84,
+          "llvm_instructions": 85,
+          "exact_normalized_agreement": 83,
+          "verified_sites": [
+            "0x8340e",
+            "0x8346e"
+          ],
+          "unverified_sites": []
+        },
+        {
+          "start": "0x83540",
+          "bytes": 332,
+          "scope_sha256": "a85dc578ceda427a99575c67211f19982ae36526c8dfe650f98aa8461daf0160",
+          "gnu_instructions": 87,
+          "llvm_instructions": 88,
+          "exact_normalized_agreement": 86,
+          "verified_sites": [
+            "0x8355e",
+            "0x835be"
+          ],
+          "unverified_sites": []
+        },
+        {
+          "start": "0x83690",
+          "bytes": 341,
+          "scope_sha256": "a9f43f59a7a727e8f142fcd166ea7a0175bca1a5f26ab3f5bcd082efb99919bc",
+          "gnu_instructions": 86,
+          "llvm_instructions": 87,
+          "exact_normalized_agreement": 85,
+          "verified_sites": [
+            "0x836b7",
+            "0x8371e"
+          ],
+          "unverified_sites": []
+        },
+        {
+          "start": "0x837f0",
+          "bytes": 338,
+          "scope_sha256": "82642df0d923433ec4d99556f1a9e87513b2bda1c18ccab04c00c38680b581ab",
+          "gnu_instructions": 84,
+          "llvm_instructions": 85,
+          "exact_normalized_agreement": 83,
+          "verified_sites": [
+            "0x8381e",
+            "0x8387e"
+          ],
+          "unverified_sites": []
+        }
+      ]
+    },
+    "Brauer Motion.dll": {
+      "binary_sha256": "8d76785017eb57c3cdab85a964bf559706450800159e65e84fdce377c541f2e5",
+      "scopes": [
+        {
+          "start": "0x4ac40",
+          "bytes": 17,
+          "scope_sha256": "8aaaa4e5af5095e3ee31a04ad9115e7522e9c3f823969243e3ff9d10a52c4197",
+          "gnu_instructions": 3,
+          "llvm_instructions": 3,
+          "exact_normalized_agreement": 2,
+          "verified_sites": [
+            "0x4ac40",
+            "0x4ac47"
+          ],
+          "unverified_sites": [
+            "0x4ac4a"
+          ]
+        },
+        {
+          "start": "0x4af70",
+          "bytes": 17,
+          "scope_sha256": "e85bef8e013f9b31d92a3c492c0174aa349a67a2d805e64b91698d0edd4fa7d1",
+          "gnu_instructions": 3,
+          "llvm_instructions": 3,
+          "exact_normalized_agreement": 2,
+          "verified_sites": [
+            "0x4af70",
+            "0x4af77"
+          ],
+          "unverified_sites": [
+            "0x4af7a"
+          ]
+        },
+        {
+          "start": "0x4b050",
+          "bytes": 29,
+          "scope_sha256": "806d23a0c6f79c44d6b30183c028619c41824fe6a82f49ce9a3a9b801ba39e55",
+          "gnu_instructions": 8,
+          "llvm_instructions": 8,
+          "exact_normalized_agreement": 8,
+          "verified_sites": [
+            "0x4b054",
+            "0x4b060"
+          ],
+          "unverified_sites": []
+        },
+        {
+          "start": "0x2b010",
+          "bytes": 472,
+          "scope_sha256": "b362242336d3e498dbe3c3a1a37262b4b4c2aa468d96fc1b71d771be3b6270a8",
+          "gnu_instructions": 116,
+          "llvm_instructions": 116,
+          "exact_normalized_agreement": 115,
+          "verified_sites": [
+            "0x2b08a",
+            "0x2b0ac",
+            "0x2b0ea",
+            "0x2b147"
+          ],
+          "unverified_sites": []
+        },
+        {
+          "start": "0x38370",
+          "bytes": 2198,
+          "scope_sha256": "1ce7e1cc5c6901ce90449ca97b5dd47bc17768549affc5314d0f593c49ae596a",
+          "gnu_instructions": 514,
+          "llvm_instructions": 515,
+          "exact_normalized_agreement": 505,
+          "verified_sites": [
+            "0x38370"
+          ],
+          "unverified_sites": []
+        }
+      ]
+    },
+    "StandardCLIP.vst3": {
+      "binary_sha256": "000aff8f9983d55bcb91853c4639e2063185ca036039adaf1cc82bfb0abd7f8b",
+      "scopes": [
+        {
+          "start": "0x424c00",
+          "bytes": 3794,
+          "scope_sha256": "0e0e52a93fbf73e74b012daa131dc04ea27ebb48c5da9db20641e8943c18b251",
+          "gnu_instructions": 875,
+          "llvm_instructions": 875,
+          "exact_normalized_agreement": 862,
+          "verified_sites": [
+            "0x424c78",
+            "0x424c8b",
+            "0x424cba"
+          ],
+          "unverified_sites": [
+            "0x424c00"
+          ]
+        }
+      ]
+    },
+    "MixWave DW Fearn VT-5.vst3": {
+      "binary_sha256": "e90bef94adad1518c828d1a23704bd11d998c55c137939830beb4402e67c8e04",
+      "scopes": [
+        {
+          "start": "0x3dc1f0",
+          "bytes": 644,
+          "scope_sha256": "7c7f432d315a828cbffb567168fbf3f4ef0be07fcb6fffb45c35c4a161c53bad",
+          "gnu_instructions": 151,
+          "llvm_instructions": 152,
+          "exact_normalized_agreement": 146,
+          "verified_sites": [
+            "0x3dc1fd",
+            "0x3dc202",
+            "0x3dc209",
+            "0x3dc20f",
+            "0x3dc222",
+            "0x3dc22c",
+            "0x3dc238",
+            "0x3dc25a",
+            "0x3dc267"
+          ],
+          "unverified_sites": []
+        }
+      ]
+    }
+  },
+  "total": {
+    "modules": 6,
+    "scopes": 20,
+    "verified_sites": 106,
+    "unverified_sites": 4
+  },
+  "limitations": "Instruction agreement is not semantic proof. Selected checkpoints only, including textual discrepancies. No vendor binaries, coefficient arrays or disassembly listings included."
+}
