@@ -215,6 +215,14 @@ jobs:
         run: |
           python -m pip install numpy soundfile
           python tools/dynamic_probe.py selftest
+      - name: Signed finite reconstruction bound and paired-transfer known answers
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/milestone/test_signed_peak.cpp -o /tmp/signed_peak
+          /tmp/signed_peak
+          g++ -std=c++17 -O1 -g -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie experiments/milestone/test_signed_peak.cpp -o /tmp/signed_peak_san
+          /tmp/signed_peak_san
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/milestone/render_signed_peak.cpp -o /tmp/signed_render
+          OPENBLAS_NUM_THREADS=1 python tools/paired_transfer.py --selftest
       - name: Compile all research Python
         run: python -m compileall -q skell_vst_decompiler
       - name: Compile and test original native DSP prototypes

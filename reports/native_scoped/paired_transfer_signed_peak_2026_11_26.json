@@ -1,0 +1,112 @@
+{
+  "schema": 1,
+  "baseline": {
+    "decompiler": "1bf7518bbae0212504b8b17269883fcbc6aba3c0",
+    "core": "6c98bcdf7c2c9384a4a167317e943dfb6d7fc4d7"
+  },
+  "ci_failure": {
+    "jobs": [
+      140040686477,
+      140040896738
+    ],
+    "message": "FAIL disabled parity",
+    "local_fma_reproduction": "failed before, passed after; numerical tolerance 1e-15; exact dry remains"
+  },
+  "signed_peak": {
+    "stress_frames": 800000,
+    "rates": [
+      44100,
+      48000,
+      96000,
+      192000
+    ],
+    "peak": 0.891250938134,
+    "latency": 16,
+    "rms_recovery_db": [
+      1.166911,
+      1.164258,
+      0.723024,
+      0.684681
+    ],
+    "real_raw_master_excerpts": 6,
+    "real_rms_recovery_db": [
+      0.204298,
+      0.25388,
+      2.237399,
+      1.335858,
+      2.265153,
+      2.278472
+    ],
+    "worst_estimated_16x_peak_dbfs": -1.857131,
+    "limits": "same song; absolute-sum comparator, no upstream clipper; exact finite kernel only"
+  },
+  "paired": {
+    "method": "40/20/40 FIR diagnostic 11025Hz",
+    "later_nmse": {
+      "gate": [
+        0.00027,
+        null
+      ],
+      "muffle": [
+        0.47666,
+        1.00465
+      ],
+      "wobble": [
+        0.84878,
+        1.00285
+      ],
+      "zaam": [
+        0.8583,
+        0.97064
+      ],
+      "angelic_base": [
+        1.12483,
+        0.99909
+      ],
+      "angelic_delay": [
+        1.10668,
+        0.99931
+      ]
+    },
+    "limits": "same previously used performance; stage/timing unverified; no fitted coefficients"
+  },
+  "binary_labels": [
+    {
+      "name": "Panagement",
+      "sha256": "2a18419eff9338b67d22049dc6b7b628e7b420bf48850e66ed5dee7a7c398f25",
+      "offsets": {
+        "wave": "0x24a7b3",
+        "tempo": "0x24a7bc",
+        "phase": "0x24a7c6",
+        "frequency": "0x24a7d0",
+        "pan": "0x24a7dc",
+        "far": "0x24a7e6",
+        "gain": "0x24a7f0",
+        "tilt": "0x24a7fb"
+      }
+    },
+    {
+      "name": "StandardCLIP",
+      "sha256": "000aff8f9983d55bcb91853c4639e2063185ca036039adaf1cc82bfb0abd7f8b",
+      "first_offsets": {
+        "bandlimit_filter_size": "0x9aaa10",
+        "nyquist_cutoff": "0x7e49b9",
+        "factor": "0x7e499f",
+        "offline_factor": "0x7e4cef",
+        "minimum_phase_order": "0x7e4a24",
+        "minimum_phase_enable": "0x7e4a05"
+      }
+    },
+    {
+      "name": "Trackspacer25",
+      "sha256": "f7dab96048b6d0def84b0be2395244f01e54dc71d6b99e769630fbe6c37b6242",
+      "first_offsets": {
+        "attack": "0x386234",
+        "release": "0x387fc8",
+        "sidechain": "0x387f90"
+      }
+    }
+  ],
+  "local_tests": "optimized, ASan/UBSan, fused-arithmetic regression and known answers passed",
+  "limitations": "No vendor runtime or production changes"
+}
