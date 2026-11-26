@@ -299,3 +299,6 @@ All eight exact inputs verified, 47 scopes/71,030 bytes, 197 read-only reference
 
 ## Deeper signal paths — 2026-11-26
 Eight exact binaries / 47 prior scope hashes replayed; 135 selected normalized operand agreements (90 stricter, 45 formatting reconciled). StandardCLIP two byte-checked in-place call candidates, FG-2A 20 ordinary math import calls + six output endpoints, Trackspacer coefficient precision, DeeDoubler four ramp-state updates. New narrow checker owned fixture passed with positive and negative cases, exact source/test blobs; local prior PE snapshot differs from current branch, new CI pending. No complete algorithms, runtime, production changes or advances claimed for other four targets. See docs/DEEPER_SIGNAL_PATH_EVIDENCE_20261126.md.
+
+## Backward branch envelopes and traversal — 2026-11-26
+8 exact binaries/47 prior scopes verified, 208 byte-backed backward intervals, 59 with selected matching FP arithmetic. StandardCLIP buffer-first vs position-first candidate traversal, 45 selected operand agreements (32 strict). Local PE dependency mismatch resolved; exact dependency/source/test blobs, three targeted local tests passed. Other targets reprioritized by evidence, no complete DSP algorithms, production changes or audio parity established. See docs/LOOP_ENVELOPES_20261126.md. Full current-head CI pending.
