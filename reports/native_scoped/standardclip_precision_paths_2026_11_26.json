@@ -1,0 +1,231 @@
+{
+  "schema": 1,
+  "module": "StandardCLIP.vst3",
+  "source_sha256": "000aff8f9983d55bcb91853c4639e2063185ca036039adaf1cc82bfb0abd7f8b",
+  "parent": "781c65e821d2df20dbf82566bb979eb06fa24d89",
+  "scopes": [
+    {
+      "start": "0x246370",
+      "bytes": 5,
+      "scope_sha256": "a73bcb76a8a176c57a6108ac4f49cecda1b144528b05e56754530087fef78b5f",
+      "gnu_sites": 1,
+      "llvm_sites": 1,
+      "mnemonic_agreement": 1,
+      "direct_edges": 1,
+      "selected_opcode_sites": 0
+    },
+    {
+      "start": "0x246380",
+      "bytes": 5,
+      "scope_sha256": "1ad98d5d45fdabdaf6b2d281f34565772aad1b6ff83d7707cbc6559e6bda6ee2",
+      "gnu_sites": 1,
+      "llvm_sites": 1,
+      "mnemonic_agreement": 1,
+      "direct_edges": 1,
+      "selected_opcode_sites": 0
+    },
+    {
+      "start": "0x246390",
+      "bytes": 5,
+      "scope_sha256": "af952e750fa5ad0e01c78ffcafad9cad1728d864319c08ecb04b0143647ff363",
+      "gnu_sites": 1,
+      "llvm_sites": 1,
+      "mnemonic_agreement": 1,
+      "direct_edges": 1,
+      "selected_opcode_sites": 0
+    },
+    {
+      "start": "0x2463a0",
+      "bytes": 5,
+      "scope_sha256": "74d3d0aa6e17b0616d71a0e6b14d2d1b566c6e942ed0fdc14c99ced6ebdf1869",
+      "gnu_sites": 1,
+      "llvm_sites": 1,
+      "mnemonic_agreement": 1,
+      "direct_edges": 1,
+      "selected_opcode_sites": 0
+    },
+    {
+      "start": "0x3471f0",
+      "bytes": 1617,
+      "scope_sha256": "d1fa0d60507fe0549b311eba51c981b755761222c23f4c24497cc4e85f5fbd47",
+      "gnu_sites": 430,
+      "llvm_sites": 432,
+      "mnemonic_agreement": 430,
+      "direct_edges": 12,
+      "selected_opcode_sites": 5
+    },
+    {
+      "start": "0x347850",
+      "bytes": 1373,
+      "scope_sha256": "c3ed87e7986e81603a56cccdac8e5ae5005a8742713e137bb6e7eba1ca6dcdac",
+      "gnu_sites": 358,
+      "llvm_sites": 358,
+      "mnemonic_agreement": 358,
+      "direct_edges": 11,
+      "selected_opcode_sites": 5
+    },
+    {
+      "start": "0x347db0",
+      "bytes": 515,
+      "scope_sha256": "7b3440ee5a52e332814931704cbcd1140698944d5c52242f77ea25e23b9a3193",
+      "gnu_sites": 119,
+      "llvm_sites": 119,
+      "mnemonic_agreement": 118,
+      "direct_edges": 4,
+      "selected_opcode_sites": 4
+    },
+    {
+      "start": "0x347fc0",
+      "bytes": 515,
+      "scope_sha256": "b9fa7687c6b694317ece44e55121dba79efe5f23cbb44ef03666a6f3350d32cd",
+      "gnu_sites": 119,
+      "llvm_sites": 119,
+      "mnemonic_agreement": 118,
+      "direct_edges": 4,
+      "selected_opcode_sites": 4
+    },
+    {
+      "start": "0x4d38b0",
+      "bytes": 371,
+      "scope_sha256": "6999b8ec5aae2a9f85453c2fff9fba5c0ae268a09ea1c8dbb5b66c07e6600f8a",
+      "gnu_sites": 98,
+      "llvm_sites": 98,
+      "mnemonic_agreement": 98,
+      "direct_edges": 0,
+      "selected_opcode_sites": 9
+    },
+    {
+      "start": "0x4d3a30",
+      "bytes": 355,
+      "scope_sha256": "45c1018c0abcbd50ed4676ab21a80c608de23eecfd15570a537c17e1f2ae032b",
+      "gnu_sites": 99,
+      "llvm_sites": 99,
+      "mnemonic_agreement": 98,
+      "direct_edges": 0,
+      "selected_opcode_sites": 9
+    },
+    {
+      "start": "0x33e4b0",
+      "bytes": 556,
+      "scope_sha256": "0bc69f5809c050b6a74185a67c09627c61c3b5fbabd1d4064648b18dcc15040b",
+      "gnu_sites": 161,
+      "llvm_sites": 161,
+      "mnemonic_agreement": 160,
+      "direct_edges": 3,
+      "selected_opcode_sites": 0
+    },
+    {
+      "start": "0x353380",
+      "bytes": 556,
+      "scope_sha256": "a843b6f87b7ff8cd2f93e741bb3b4c33fe6b2c27f698a89fe803f18b6cffc4f6",
+      "gnu_sites": 161,
+      "llvm_sites": 161,
+      "mnemonic_agreement": 160,
+      "direct_edges": 3,
+      "selected_opcode_sites": 0
+    },
+    {
+      "start": "0x33e2d0",
+      "bytes": 468,
+      "scope_sha256": "8f7360e319252d6233b427e2843a9e638472ac3ad090e762b826fba3854536cd",
+      "gnu_sites": 140,
+      "llvm_sites": 140,
+      "mnemonic_agreement": 140,
+      "direct_edges": 3,
+      "selected_opcode_sites": 0
+    },
+    {
+      "start": "0x3531a0",
+      "bytes": 468,
+      "scope_sha256": "02941f415d7f8564e03000e1126cfddc97430dc342457190cf9dbaad119042a3",
+      "gnu_sites": 140,
+      "llvm_sites": 140,
+      "mnemonic_agreement": 140,
+      "direct_edges": 3,
+      "selected_opcode_sites": 0
+    },
+    {
+      "start": "0x34cac0",
+      "bytes": 156,
+      "scope_sha256": "664c7c6c99fa227cd7e79c61de35ba8bd7000664cbbe3d2c578cc54fa6191e5e",
+      "gnu_sites": 43,
+      "llvm_sites": 43,
+      "mnemonic_agreement": 43,
+      "direct_edges": 1,
+      "selected_opcode_sites": 0
+    },
+    {
+      "start": "0x35b250",
+      "bytes": 156,
+      "scope_sha256": "20296653eb9b1dcc60ed5dfaacb4eeaa8b80fff96a4f459d668d94f08b95d447",
+      "gnu_sites": 43,
+      "llvm_sites": 43,
+      "mnemonic_agreement": 43,
+      "direct_edges": 1,
+      "selected_opcode_sites": 0
+    }
+  ],
+  "totals": {
+    "scopes": 16,
+    "gnu_sites": 1915,
+    "llvm_sites": 1917,
+    "mnemonic_agreement": 1910,
+    "direct_edges": 49,
+    "selected_opcode_sites": 36
+  },
+  "wrapper_targets": [
+    "0x3471f0",
+    "0x347850",
+    "0x347db0",
+    "0x347fc0"
+  ],
+  "each_wrapper": {
+    "stmxcsr": 1,
+    "ldmxcsr": 2,
+    "ftz_daz_mask_or": 1
+  },
+  "selected_leafs": [
+    {
+      "rva": "0x4d38b0",
+      "packed_double_add": 4,
+      "scalar_double_add": 5
+    },
+    {
+      "rva": "0x4d3a30",
+      "packed_float_add": 4,
+      "scalar_float_add": 5
+    }
+  ],
+  "precision_copy": [
+    {
+      "rva": "0x34cac0",
+      "element_bytes": 4,
+      "scale_check_sites": [
+        "0x34cb08",
+        "0x34cb1e",
+        "0x34cb2d"
+      ],
+      "call_site": "0x34cb31"
+    },
+    {
+      "rva": "0x35b250",
+      "element_bytes": 8,
+      "scale_check_sites": [
+        "0x35b298",
+        "0x35b2ae",
+        "0x35b2bd"
+      ],
+      "call_site": "0x35b2c1"
+    }
+  ],
+  "shared_copy_like_target": "0x3e6360",
+  "local_test": {
+    "owned_pe_unittest": "passed",
+    "dependencies_verified_blobs": {
+      "pe": "40be92efc73172a5d838c73b4ce8fe8b868624c0",
+      "disasm": "d4e87f3dc1760a46907b388a06c8383377d05afc",
+      "navigation": "5de1b251f55d029c524fc3018d5d7080b2d5bc26"
+    }
+  },
+  "limitations": "Selected bounded windows only; no full operand agreement, path reachability, clipping transfer, oversampling reconstruction, vendor execution, or production changes."
+}
