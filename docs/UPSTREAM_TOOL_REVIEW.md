@@ -62,3 +62,6 @@ Pinned JUCE commit 29396c22c93392d6738e021b83196283d6e4d850: inspected juce_audi
 
 ## Analyzer external worker and public Windows ParamID API
 Pinned JUCE 8.0.12 commit 29396c22: inspected modules/juce_core/threads/juce_ChildProcess.h, modules/juce_audio_processors_headless/processors/juce_AudioPluginInstance.h, format/juce_AudioPluginFormatManager.h and format_types/juce_VST3PluginFormatImpl.h. Public APIs only; external worker uses existing GNU/LLVM reader, no target execution. JUCE dual commercial/AGPLv3 licensing; no copied SDK implementation. Windows target and UI pending CI.
+
+## PE import/relocation and decoder comparison — 2026-11-26
+Reviewed public Microsoft PE format documentation https://learn.microsoft.com/en-us/windows/win32/debug/pe-format and LLVM object dumper guide https://llvm.org/docs/CommandGuide/llvm-objdump.html. Existing installed GNU binutils 2.44 (GPLv3+) and LLVM 17.0.0 (Apache-2.0 with LLVM exceptions) used as external read-only processes; no new third-party code copied or dependencies added. Independent width-aware comparison and narrow byte checks, import/relocation classifications and RTTI wrapper navigation. No runtime targets inferred from writable table contents.

@@ -1,0 +1,1049 @@
+{
+  "schema": 1,
+  "baseline": "5004b38eecd9555eed752e64af1d50edafb8ab67",
+  "prior_report": "reports/native_scoped/corpus_unwind_state_provenance_2026_11_26.json",
+  "scope": "Read-only static research. Local GNU 2.44 and LLVM 17.0.0; exact source fingerprint replay. No vendor binaries, extracted implementations or audio in Git.",
+  "tested_blobs": {
+    "dispatch_audit": "c5022ae4b166eaea6fe7939b6da673a8497e89f9",
+    "wrapper_dispatch": "5c6b3f15279a14e4fe2a79e3207dcf32c268117f",
+    "test": "039bdef3097196bfaaf71269adb2d5f42025aba5"
+  },
+  "replay": {
+    "scopes": 91,
+    "gnu_sites": 26921,
+    "llvm_sites": 26927,
+    "strict_disagreements": 1454,
+    "remaining_gnu_disagreements": 74,
+    "gnu_only_sites": 9,
+    "llvm_only_sites": 15,
+    "prior_report_disagreements_after_narrow_aliases": 1438,
+    "prior_indirect_sites": 145,
+    "new_indirect_sites": 151,
+    "import_boundary": 2,
+    "mutable_pointer_candidate": 2,
+    "memory_dynamic": 127,
+    "register_dynamic": 20,
+    "rows": [
+      {
+        "name": "Trackspacer25.vst3",
+        "sha256": "f7dab96048b6d0def84b0be2395244f01e54dc71d6b99e769630fbe6c37b6242",
+        "scopes": 8,
+        "strict": 109,
+        "remaining": 5,
+        "memory_dynamic": 6,
+        "register_dynamic": 0,
+        "import_boundary": 0,
+        "mutable_pointer_candidate": 0
+      },
+      {
+        "name": "DeeDoubler.vst3",
+        "sha256": "0fca35f1e73496a967fb871b83efcbf17de825e574e1a943bb2cd7bb28d3a56c",
+        "scopes": 10,
+        "strict": 74,
+        "remaining": 1,
+        "memory_dynamic": 2,
+        "register_dynamic": 0,
+        "import_boundary": 0,
+        "mutable_pointer_candidate": 0
+      },
+      {
+        "name": "Auburn Sounds Panagement 2-64.vst3",
+        "sha256": "2a18419eff9338b67d22049dc6b7b628e7b420bf48850e66ed5dee7a7c398f25",
+        "scopes": 5,
+        "strict": 4,
+        "remaining": 4,
+        "memory_dynamic": 0,
+        "register_dynamic": 0,
+        "import_boundary": 0,
+        "mutable_pointer_candidate": 0
+      },
+      {
+        "name": "Brauer Motion.dll",
+        "sha256": "8d76785017eb57c3cdab85a964bf559706450800159e65e84fdce377c541f2e5",
+        "scopes": 8,
+        "strict": 79,
+        "remaining": 0,
+        "memory_dynamic": 61,
+        "register_dynamic": 3,
+        "import_boundary": 0,
+        "mutable_pointer_candidate": 0
+      },
+      {
+        "name": "StandardCLIP.vst3",
+        "sha256": "000aff8f9983d55bcb91853c4639e2063185ca036039adaf1cc82bfb0abd7f8b",
+        "scopes": 4,
+        "strict": 16,
+        "remaining": 4,
+        "memory_dynamic": 14,
+        "register_dynamic": 2,
+        "import_boundary": 0,
+        "mutable_pointer_candidate": 0
+      },
+      {
+        "name": "MixWave DW Fearn VT-5.vst3",
+        "sha256": "e90bef94adad1518c828d1a23704bd11d998c55c137939830beb4402e67c8e04",
+        "scopes": 6,
+        "strict": 282,
+        "remaining": 29,
+        "memory_dynamic": 14,
+        "register_dynamic": 11,
+        "import_boundary": 0,
+        "mutable_pointer_candidate": 0
+      },
+      {
+        "name": "SSL Fusion Stereo Image.vst3",
+        "sha256": "31de6c45f42af28bbb74d144c6dd3b9116f1d0d8c22a0eef508df37279b1eaf5",
+        "scopes": 8,
+        "strict": 386,
+        "remaining": 20,
+        "memory_dynamic": 16,
+        "register_dynamic": 4,
+        "import_boundary": 0,
+        "mutable_pointer_candidate": 0
+      },
+      {
+        "name": "TVB Rack V2.vst3",
+        "sha256": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
+        "scopes": 20,
+        "strict": 195,
+        "remaining": 3,
+        "memory_dynamic": 0,
+        "register_dynamic": 0,
+        "import_boundary": 2,
+        "mutable_pointer_candidate": 0
+      },
+      {
+        "name": "Gem Dopamine-64.vst3",
+        "sha256": "dc923f6507cc891e0417854178f1db2eb84965040aa661c9c144649548dffb6f",
+        "scopes": 3,
+        "strict": 5,
+        "remaining": 0,
+        "memory_dynamic": 0,
+        "register_dynamic": 0,
+        "import_boundary": 0,
+        "mutable_pointer_candidate": 0
+      },
+      {
+        "name": "A1TriggerGate-x64.vst3",
+        "sha256": "83a50c120301173e1aec1e537fa131b460d593fc7141fb4f39c8e813d99dabfc",
+        "scopes": 6,
+        "strict": 22,
+        "remaining": 3,
+        "memory_dynamic": 2,
+        "register_dynamic": 0,
+        "import_boundary": 0,
+        "mutable_pointer_candidate": 0
+      },
+      {
+        "name": "FG-2A.epl",
+        "sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+        "scopes": 4,
+        "strict": 193,
+        "remaining": 3,
+        "memory_dynamic": 0,
+        "register_dynamic": 0,
+        "import_boundary": 0,
+        "mutable_pointer_candidate": 0
+      },
+      {
+        "name": "FG-116.epl",
+        "sha256": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+        "scopes": 2,
+        "strict": 65,
+        "remaining": 1,
+        "memory_dynamic": 0,
+        "register_dynamic": 0,
+        "import_boundary": 0,
+        "mutable_pointer_candidate": 0
+      },
+      {
+        "name": "FG-401.epl",
+        "sha256": "0cc3444f095ccf4aa751f653e6aceb484d7bfaea73df30ccb68a7f2fccf46ef6",
+        "scopes": 0,
+        "strict": 0,
+        "remaining": 0,
+        "memory_dynamic": 0,
+        "register_dynamic": 0,
+        "import_boundary": 0,
+        "mutable_pointer_candidate": 0
+      },
+      {
+        "name": "AirEQAir.epl",
+        "sha256": "c75499749848d64aa9a72298204087d5a78f685e7d960beacecd6644d9e3136b",
+        "scopes": 3,
+        "strict": 3,
+        "remaining": 0,
+        "memory_dynamic": 0,
+        "register_dynamic": 0,
+        "import_boundary": 0,
+        "mutable_pointer_candidate": 0
+      },
+      {
+        "name": "AirEQEarth.epl",
+        "sha256": "e5b254ee4173e142b6822e807cee916b745b32b5ae5f38e24814e7c8b7c875f7",
+        "scopes": 1,
+        "strict": 7,
+        "remaining": 0,
+        "memory_dynamic": 6,
+        "register_dynamic": 0,
+        "import_boundary": 0,
+        "mutable_pointer_candidate": 0
+      },
+      {
+        "name": "VCC Channel.epl",
+        "sha256": "73747020e8996938b8e6fdff51004cff4ea85c95f992cbc8bc0d0896a80aad87",
+        "scopes": 3,
+        "strict": 14,
+        "remaining": 1,
+        "memory_dynamic": 6,
+        "register_dynamic": 0,
+        "import_boundary": 0,
+        "mutable_pointer_candidate": 2
+      }
+    ],
+    "rip_evidence": [
+      {
+        "module": "TVB Rack V2.vst3",
+        "site": "0x5d1576",
+        "iat": "0x8db3c0",
+        "dll": "api-ms-win-crt-math-l1-1-0.dll"
+      },
+      {
+        "module": "TVB Rack V2.vst3",
+        "site": "0x5d18ff",
+        "iat": "0x8db4f0",
+        "dll": "api-ms-win-crt-math-l1-1-0.dll"
+      },
+      {
+        "module": "VCC Channel.epl",
+        "site": "0x19add1",
+        "slot": "0x10e7798",
+        "file_target": "0x17a9a0",
+        "mutable": true
+      },
+      {
+        "module": "VCC Channel.epl",
+        "site": "0x19b008",
+        "slot": "0x10e7658",
+        "file_target": "0x17a9a0",
+        "mutable": true
+      }
+    ]
+  },
+  "vmr": {
+    "modules": 31,
+    "wrappers": 62,
+    "indexed_sites": 124,
+    "sites_with_compatible_table_candidates": 124,
+    "load_candidates": 155,
+    "table_occurrences": 62,
+    "writable_load_candidates": 155,
+    "prefix_counts": {
+      "6": 5,
+      "8": 150
+    },
+    "rows": [
+      {
+        "name": "AirEQAir.epl",
+        "sha256": "c75499749848d64aa9a72298204087d5a78f685e7d960beacecd6644d9e3136b",
+        "wrappers": [
+          {
+            "rva": "0x246a40",
+            "bytes": 341,
+            "selector_offset": 848,
+            "sites": 2
+          },
+          {
+            "rva": "0x246670",
+            "bytes": 537,
+            "selector_offset": 1600,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0x1326568",
+          "0x1326598"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "AirEQEarth.epl",
+        "sha256": "e5b254ee4173e142b6822e807cee916b745b32b5ae5f38e24814e7c8b7c875f7",
+        "wrappers": [
+          {
+            "rva": "0x142030",
+            "bytes": 341,
+            "selector_offset": 448,
+            "sites": 2
+          },
+          {
+            "rva": "0x141c60",
+            "bytes": 537,
+            "selector_offset": 800,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0xf72560",
+          "0xf72590"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "Blackbird Studio.epl",
+        "sha256": "44bee8e698af4a7c48f9de78bf0110d629c215aa66c999d01bd76f9d041d9a3d",
+        "wrappers": [
+          {
+            "rva": "0x16b9a0",
+            "bytes": 335,
+            "selector_offset": 64,
+            "sites": 2
+          },
+          {
+            "rva": "0x16b5e0",
+            "bytes": 534,
+            "selector_offset": 64,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0x100f4b8",
+          "0x100f600"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "CS-EQ.epl",
+        "sha256": "a4a8c92d6ea80acc16a314b23cf727c0bd86cb92a40351efb03f6892605571d0",
+        "wrappers": [
+          {
+            "rva": "0x146ca0",
+            "bytes": 341,
+            "selector_offset": 1024,
+            "sites": 2
+          },
+          {
+            "rva": "0x1468d0",
+            "bytes": 537,
+            "selector_offset": 1024,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0xf75520",
+          "0xf75550"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "CS-Lift.epl",
+        "sha256": "62ae20d8bbb4ec84960aca0325fdb61e5f551ff83943bb633759d4561f8b7ae6",
+        "wrappers": [
+          {
+            "rva": "0x145f90",
+            "bytes": 341,
+            "selector_offset": 496,
+            "sites": 2
+          },
+          {
+            "rva": "0x145bc0",
+            "bytes": 537,
+            "selector_offset": 496,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0xf71520",
+          "0xf71550"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "Classic Instruments.epl",
+        "sha256": "12fe5020e71374ff14e3f3aba553a578718de886024445733bcfc148142f52f6",
+        "wrappers": [
+          {
+            "rva": "0x1af510",
+            "bytes": 341,
+            "selector_offset": 144,
+            "sites": 2
+          },
+          {
+            "rva": "0x1af140",
+            "bytes": 537,
+            "selector_offset": 144,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0x1044518",
+          "0x1044870"
+        ],
+        "minimum_sampled_prefix": 6,
+        "load_candidates": 5
+      },
+      {
+        "name": "Custom Opto.epl",
+        "sha256": "e697454a539b54b6a610d486bac0fef0bd8f04295da020d6b6f196a44dc55bd3",
+        "wrappers": [
+          {
+            "rva": "0x1565f0",
+            "bytes": 341,
+            "selector_offset": 864,
+            "sites": 2
+          },
+          {
+            "rva": "0x156220",
+            "bytes": 537,
+            "selector_offset": 864,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0x10244e8",
+          "0x1024518"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "FG-116 Modern.epl",
+        "sha256": "6782b73fb9d4a3c1dade5406fe6ea1bead30699529082ea9f9a8dfe04056a664",
+        "wrappers": [
+          {
+            "rva": "0x15e3f0",
+            "bytes": 341,
+            "selector_offset": 656,
+            "sites": 2
+          },
+          {
+            "rva": "0x15e020",
+            "bytes": 537,
+            "selector_offset": 656,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0xfee518",
+          "0xfee548"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "FG-116 Vintage.epl",
+        "sha256": "6e80b5108f805a0c4ee11fce56d56f149dc4a449c575108e5249e848a4638e7f",
+        "wrappers": [
+          {
+            "rva": "0x160890",
+            "bytes": 341,
+            "selector_offset": 656,
+            "sites": 2
+          },
+          {
+            "rva": "0x1604c0",
+            "bytes": 537,
+            "selector_offset": 656,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0xff2520",
+          "0xff2550"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "FG-116.epl",
+        "sha256": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+        "wrappers": [
+          {
+            "rva": "0x160910",
+            "bytes": 341,
+            "selector_offset": 208,
+            "sites": 2
+          },
+          {
+            "rva": "0x160540",
+            "bytes": 537,
+            "selector_offset": 208,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0xfef518",
+          "0xfef548"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "FG-2A.epl",
+        "sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+        "wrappers": [
+          {
+            "rva": "0x156590",
+            "bytes": 341,
+            "selector_offset": 400,
+            "sites": 2
+          },
+          {
+            "rva": "0x1561c0",
+            "bytes": 537,
+            "selector_offset": 400,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0x10084e8",
+          "0x1008518"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "FG-401.epl",
+        "sha256": "0cc3444f095ccf4aa751f653e6aceb484d7bfaea73df30ccb68a7f2fccf46ef6",
+        "wrappers": [
+          {
+            "rva": "0x15def0",
+            "bytes": 341,
+            "selector_offset": 160,
+            "sites": 2
+          },
+          {
+            "rva": "0x15db20",
+            "bytes": 537,
+            "selector_offset": 160,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0xfd9520",
+          "0xfd9550"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "FG-73.epl",
+        "sha256": "b5204a61666943438690994b19ed52747de754aa0b6f741fe36a18df43053746",
+        "wrappers": [
+          {
+            "rva": "0x14b320",
+            "bytes": 335,
+            "selector_offset": 96,
+            "sites": 2
+          },
+          {
+            "rva": "0x14af60",
+            "bytes": 534,
+            "selector_offset": 96,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0xf81520",
+          "0xf81560"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "FG-76.epl",
+        "sha256": "1b4180667292124de2b2c64b20c581d2eb752ebffbb526c4d31c1ad9d1b237d8",
+        "wrappers": [
+          {
+            "rva": "0x17d8d0",
+            "bytes": 341,
+            "selector_offset": 128,
+            "sites": 2
+          },
+          {
+            "rva": "0x17d500",
+            "bytes": 537,
+            "selector_offset": 128,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0x1087520",
+          "0x1087560"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "FG-A.epl",
+        "sha256": "badeddab00efec8f803a56f6dd00a3cec7a7204d7ac3ba4793c095dbbb11c3cb",
+        "wrappers": [
+          {
+            "rva": "0x13cb60",
+            "bytes": 341,
+            "selector_offset": 1000,
+            "sites": 2
+          },
+          {
+            "rva": "0x13c790",
+            "bytes": 537,
+            "selector_offset": 1000,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0xfbd4f8",
+          "0xfbd528"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "FG-Bomber.epl",
+        "sha256": "fb42be0d32d2c661da652f41efd0c51e530b29d3a25aab2cd46f509fa3ddfa2c",
+        "wrappers": [
+          {
+            "rva": "0x178370",
+            "bytes": 341,
+            "selector_offset": 224,
+            "sites": 2
+          },
+          {
+            "rva": "0x177fa0",
+            "bytes": 537,
+            "selector_offset": 224,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0x104e520",
+          "0x104e560"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "FG-N.epl",
+        "sha256": "e5a998d11bc57660fb7e500ad6805a2df1c0356650f43ce8eaefb8a4db9fc10b",
+        "wrappers": [
+          {
+            "rva": "0x14b490",
+            "bytes": 341,
+            "selector_offset": 800,
+            "sites": 2
+          },
+          {
+            "rva": "0x14b0c0",
+            "bytes": 537,
+            "selector_offset": 800,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0xfa5520",
+          "0xfa5550"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "FG-S.epl",
+        "sha256": "9c28aaba2ee2dc61f00d9231b9c84f02e364d8a323a93ccab7b7a08956da9a45",
+        "wrappers": [
+          {
+            "rva": "0x16de30",
+            "bytes": 341,
+            "selector_offset": 768,
+            "sites": 2
+          },
+          {
+            "rva": "0x16da60",
+            "bytes": 537,
+            "selector_offset": 768,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0x105b520",
+          "0x105b550"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "FG-Stress.epl",
+        "sha256": "2509a6f3480481feb15a0fde97abcb4acccfc6fc936f55f5e8c88b7c98edcd26",
+        "wrappers": [
+          {
+            "rva": "0x160e00",
+            "bytes": 341,
+            "selector_offset": 864,
+            "sites": 2
+          },
+          {
+            "rva": "0x160a30",
+            "bytes": 537,
+            "selector_offset": 864,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0x1014558",
+          "0x1014588"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "Gate Classic.epl",
+        "sha256": "c29d1d3a1d1a5047401613369bfa2df3492f3153ef134c0fa66c9c3d9cc92320",
+        "wrappers": [
+          {
+            "rva": "0x1621b0",
+            "bytes": 341,
+            "selector_offset": 596,
+            "sites": 2
+          },
+          {
+            "rva": "0x161de0",
+            "bytes": 537,
+            "selector_offset": 596,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0xfcd520",
+          "0xfcd550"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "Gate Drums.epl",
+        "sha256": "3a2d979be9e3a684ba4274b7f481d10dbef9754ee93a9f671d2cd1daeb8c30f3",
+        "wrappers": [
+          {
+            "rva": "0x15ba70",
+            "bytes": 341,
+            "selector_offset": 1556,
+            "sites": 2
+          },
+          {
+            "rva": "0x15b6a0",
+            "bytes": 537,
+            "selector_offset": 1556,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0xfd2528",
+          "0xfd2578"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "Hollywood.epl",
+        "sha256": "39e8a0b74093ee654dd2f7ce8aeee0b46f7279b19133226c3c952177863cf607",
+        "wrappers": [
+          {
+            "rva": "0x17a3d0",
+            "bytes": 341,
+            "selector_offset": 752,
+            "sites": 2
+          },
+          {
+            "rva": "0x17a000",
+            "bytes": 537,
+            "selector_offset": 752,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0x10904d8",
+          "0x1090518"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "London.epl",
+        "sha256": "f4ac602d67b03e8f13bcdb04841aba7159a43c4a8c113861e711ed0bd67d30ce",
+        "wrappers": [
+          {
+            "rva": "0x1795f0",
+            "bytes": 341,
+            "selector_offset": 752,
+            "sites": 2
+          },
+          {
+            "rva": "0x179220",
+            "bytes": 537,
+            "selector_offset": 752,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0x10954e0",
+          "0x1095520"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "New York.epl",
+        "sha256": "0258b5817750ad82c89dbee50bafdb41cad65edfcbd0d323a6a6124b3a2bccd1",
+        "wrappers": [
+          {
+            "rva": "0x17a800",
+            "bytes": 341,
+            "selector_offset": 800,
+            "sites": 2
+          },
+          {
+            "rva": "0x17a430",
+            "bytes": 537,
+            "selector_offset": 800,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0x10aa4d8",
+          "0x10aa518"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "Revival.epl",
+        "sha256": "f486272dc9741a6e3ef3f393cd14ef6cebbc795e4f3ac8fa20a683fbeb146867",
+        "wrappers": [
+          {
+            "rva": "0x14cc30",
+            "bytes": 335,
+            "selector_offset": 64,
+            "sites": 2
+          },
+          {
+            "rva": "0x14c870",
+            "bytes": 534,
+            "selector_offset": 64,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0xffb528",
+          "0xffb568"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "The Monster.epl",
+        "sha256": "6aae06918694f6d9197f396896adbe9c8af150289930c466d7361d2b01aff45b",
+        "wrappers": [
+          {
+            "rva": "0x159d90",
+            "bytes": 341,
+            "selector_offset": 784,
+            "sites": 2
+          },
+          {
+            "rva": "0x1599c0",
+            "bytes": 537,
+            "selector_offset": 784,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0x1038520",
+          "0x1038550"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "Trimmer.epl",
+        "sha256": "5dbed8fad7ff3e79263d00108bdedf766ca83c88b103e5e3613bf6567f73bb0c",
+        "wrappers": [
+          {
+            "rva": "0x149050",
+            "bytes": 335,
+            "selector_offset": 24,
+            "sites": 2
+          },
+          {
+            "rva": "0x148c90",
+            "bytes": 534,
+            "selector_offset": 24,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0xfee528",
+          "0xfee568"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "U73b.epl",
+        "sha256": "47d8393eddba99816151e47dd0538fa012a9ea8b39b4547ef9afd19d88472856",
+        "wrappers": [
+          {
+            "rva": "0x1497a0",
+            "bytes": 335,
+            "selector_offset": 64,
+            "sites": 2
+          },
+          {
+            "rva": "0x1493e0",
+            "bytes": 534,
+            "selector_offset": 64,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0x10124d8",
+          "0x1012508"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "VCC Channel.epl",
+        "sha256": "73747020e8996938b8e6fdff51004cff4ea85c95f992cbc8bc0d0896a80aad87",
+        "wrappers": [
+          {
+            "rva": "0x198ac0",
+            "bytes": 341,
+            "selector_offset": 128,
+            "sites": 2
+          },
+          {
+            "rva": "0x1986f0",
+            "bytes": 537,
+            "selector_offset": 128,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0x10e7520",
+          "0x10e7660"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "VCC MixBuss.epl",
+        "sha256": "fe077912d5396577fc6b32bcf0c4ba4b61d5e1f8089e961ce68dae22e1b0b500",
+        "wrappers": [
+          {
+            "rva": "0x170a00",
+            "bytes": 341,
+            "selector_offset": 128,
+            "sites": 2
+          },
+          {
+            "rva": "0x170630",
+            "bytes": 537,
+            "selector_offset": 128,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0x1027520",
+          "0x1027660"
+        ],
+        "minimum_sampled_prefix": 8,
+        "load_candidates": 5
+      },
+      {
+        "name": "VMC Classic Tubes.epl",
+        "sha256": "df4635dda8db8c15a3f1c478e39f8814d21370f05fa84a64d4cc1fb57762e0ef",
+        "wrappers": [
+          {
+            "rva": "0x19de70",
+            "bytes": 335,
+            "selector_offset": 64,
+            "sites": 2
+          },
+          {
+            "rva": "0x19dab0",
+            "bytes": 534,
+            "selector_offset": 64,
+            "sites": 2
+          }
+        ],
+        "table_candidates": [
+          "0x104e4e0",
+          "0x104e788"
+        ],
+        "minimum_sampled_prefix": 6,
+        "load_candidates": 5
+      }
+    ],
+    "limits": "Earlier compatible address loads, not CFG reaching definitions. Eight-entry maximum sample, not table extent. Writable initial file-image data, not runtime selection."
+  },
+  "uncovered_leaf_windows": [
+    {
+      "name": "FG-116.epl",
+      "sha256": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+      "anchor": "0x161880",
+      "window_bytes": 288,
+      "window_sha256": "199a2696eb1ab8c8fd3a1c91b276a705674757f4eb07312d4d3f68a1770bbdc0",
+      "gnu": 76,
+      "llvm": 76,
+      "agreed": 76,
+      "return_sites": [
+        "0x16195b",
+        "0x161997"
+      ],
+      "confirmed_direct_calls": 4,
+      "caller_scopes": 4
+    },
+    {
+      "name": "FG-401.epl",
+      "sha256": "0cc3444f095ccf4aa751f653e6aceb484d7bfaea73df30ccb68a7f2fccf46ef6",
+      "anchor": "0x15e050",
+      "window_bytes": 336,
+      "window_sha256": "d889616bc4a403257e7f37ed665d94aeb750e00accc23597901cacfca5332575",
+      "gnu": 92,
+      "llvm": 92,
+      "agreed": 92,
+      "return_sites": [
+        "0x15e156",
+        "0x15e19c"
+      ],
+      "confirmed_direct_calls": 5,
+      "caller_scopes": 3
+    },
+    {
+      "name": "Gem Dopamine-64.vst3",
+      "sha256": "dc923f6507cc891e0417854178f1db2eb84965040aa661c9c144649548dffb6f",
+      "anchor": "0x560150",
+      "window_bytes": 1792,
+      "window_sha256": "af19510ac7672fc80029804e6f0f57a7621fdf74e18614f0ea1c0a80b0f42873",
+      "gnu": 473,
+      "llvm": 473,
+      "agreed": 473,
+      "return_sites": [
+        "0x560605",
+        "0x560662",
+        "0x56071e",
+        "0x56078f",
+        "0x5607c5",
+        "0x56083c"
+      ],
+      "confirmed_direct_calls": 12,
+      "caller_scopes": 7
+    }
+  ],
+  "local_tests": "2 tests passed, including compiled owned PE fixture; actual FG-116 CLI wrapper mode 2 wrappers/4 sites",
+  "limitations": "147 dynamic sites unresolved plus two mutable pointer candidates, 74 GNU-side disagreements including 9 GNU-only, 15 LLVM-only. Other commercial targets not fully analyzed. No runtime proof or 80% claim."
+}
