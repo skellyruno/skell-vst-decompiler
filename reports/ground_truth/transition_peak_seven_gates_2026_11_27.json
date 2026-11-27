@@ -1,0 +1,278 @@
+{
+  "schema": 1,
+  "parent": "001c96f633652bb757a4a6f06a150279198890bb",
+  "source_blobs": {
+    "experiments/engine_lab/TransitionPeakResearch.h": "56bb413e7a772d30047c463c5a1b501f6581b99f",
+    "tests/test_transition_peak.cpp": "721c8c826c7f43019f9f36c5b6a4b59be78223c7",
+    "tests/fixtures/owned_transition_peak.cpp": "e53d8d13d95b518ab29528cdf9205d38c3328f7d",
+    "benchmarks/owned_transition_peak.py": "6c39f5da3ba0dad64f63f3b896f1c1e2735333ad",
+    "benchmarks/owned_multi_instance.cpp": "9fe5d8948f3043604248e227939684b6ae777b07"
+  },
+  "baseline_blobs": {
+    "AdaptiveResearch": "ae8a458ff14bccce9aedc808cc873ea2d4ab31a0",
+    "ColorSplitNative": "a8ca37712920c31a041f86c8a7bdf31c7d3449bf"
+  },
+  "private_report_sha256": {
+    "transition_peak": "ddbadef059572c2a18d266f3d187f5974b6dceeccc3ec7dd65965e4d30ec82c0",
+    "pitch": "122fe90717d2b54a4a7f01419a34cfab8de3cd25e53db326f095ac3f3ee7d929"
+  },
+  "kit": "13/13",
+  "inputs": {
+    "count": 36,
+    "fingerprint_verified": 36,
+    "archive_labeled_dry": 2,
+    "processed": 34
+  },
+  "limiter": {
+    "latency_samples": 16,
+    "ceiling_db": -1,
+    "release_ms": 60,
+    "order": [
+      "untrimmed",
+      "fixed_minus3",
+      "signed_prediction",
+      "absolute_bound"
+    ],
+    "max_sample_dbfs": [
+      1.453070685366984,
+      -1.5469293146330163,
+      -1,
+      -2.144393057578919
+    ],
+    "max_4x_estimated_dbfs": [
+      1.9871327167747683,
+      -1.0128672832252308,
+      -0.8985304182127436,
+      -1.5053816537702835
+    ],
+    "max_16x_estimated_dbfs": [
+      1.9871438606375382,
+      -1.0128561393624622,
+      -0.6756747106879045,
+      -1.482511533877759
+    ],
+    "sample_overload_excerpts": [
+      14,
+      0,
+      0,
+      0
+    ],
+    "estimated_4x_overload_excerpts": [
+      18,
+      0,
+      0,
+      0
+    ],
+    "estimated_16x_overload_excerpts": [
+      19,
+      0,
+      0,
+      0
+    ],
+    "median_gain_db": [
+      0,
+      -3,
+      -0.20625977055381706,
+      -3.87709305364769
+    ],
+    "native_oracle_max_linear": 0.8839872029556628,
+    "limits": "Conservative triangle inequality bound applies to declared finite four-phase kernel, not analog or certified true peak. Signed prediction can fail when gains change; no universal guarantee. 16x Kaiser estimates independent of declared kernel."
+  },
+  "delay": {
+    "vocal_renders": 36,
+    "feedback": 0.7,
+    "requested_ms": [
+      120,
+      180,
+      90
+    ],
+    "fractional_samples": 0.5,
+    "warmup": "ceil(target samples)+128",
+    "crossfade_ms": 25,
+    "max_sample_peak_dbfs": 3.0249669180063936,
+    "min_250ms_tail_rms": 0.000365170730121117,
+    "median_native_ms_per_audio_second": 0.4712805542835221,
+    "limits": "Two separate preallocated fixed sections, no in-place time-varying recursion. Warmup latency, retiring old tail, near-integer rounding, no BPM mapping or rapid modulation verified; not integrated."
+  },
+  "saturation": {
+    "order": [
+      "40span450/450",
+      "40span450/475",
+      "80span450/475",
+      "80span465/475"
+    ],
+    "tone_settings": 36,
+    "tone_renders": 144,
+    "vocal_renders": 144,
+    "latency_samples": [
+      40,
+      40,
+      80,
+      80
+    ],
+    "example_44100_20004hz_amp0_5": {
+      "fundamental_dbfs": [
+        -9.733429331160162,
+        -4.325797861299129,
+        -3.7690799945016433,
+        0.2056030385291907
+      ],
+      "absolute_residual_rms_dbfs": [
+        -90.63665732972956,
+        -90.63827119837345,
+        -105.78836390669579,
+        -63.25577166424399
+      ]
+    },
+    "gate_vs_original_counts": [
+      0,
+      6,
+      4,
+      2
+    ],
+    "gate_vs_40split_counts": [
+      null,
+      null,
+      4,
+      2
+    ],
+    "max_vocal_peak_dbfs": [
+      1.506501860312923,
+      1.453070685366984,
+      1.4823869963058613,
+      1.5150661085883939
+    ],
+    "median_native_ms_per_audio_second": [
+      18.500003482030635,
+      18.661841565844306,
+      31.346084735746658,
+      30.909080671127704
+    ],
+    "limits": "Nonharmonic residual omits coincident aliases; timing from concurrently batched benchmark not paired host CPU. 80 sample alignment not compatible with 40 sample production PDC without migration."
+  },
+  "presence": {
+    "groups": 3,
+    "comparisons": 6,
+    "files": 15,
+    "max_rms_delta_db": 2.448945277975993e-8,
+    "max_4x_estimated_peak_dbfs": -0.99999964219155,
+    "artifact": "private self-contained blind listening page, no audio committed",
+    "listening": "pending user votes; browser interaction not tested"
+  },
+  "pitch": {
+    "playground_branch_head": "1a32b8f033c859ff9d5a30b6cda3a92bc502c5eb",
+    "archive_source": "292b03f858f99dbdfcd041b07a75f5ecc6719a57",
+    "verified_normalized_blobs": {
+      "PlaygroundBank": "b466aff0ab36b78e7ac622b4a8ac58ec2fd7d2a9",
+      "FinalListeningPolicy": "0f449d9de20a671c208ca5a5e0d80d76b66f8edc",
+      "sweep": "a63eddd595263e990a5c900f3afafbffc9ee3fcd"
+    },
+    "snap_sha256": "ca46212c500efe397968a2ef9869050f26b0ea015b5f462fd8ac99ffb6b3672b",
+    "candidate": "temporary local finalMotionSpeed factor .70/.80 -> .85/.90 only for TESTTUNE/META; restored original source after compile",
+    "inputs": 2,
+    "pairs": 32,
+    "renders": 64,
+    "protected_exact_pairs": 16,
+    "over_scale_samples": 0,
+    "pdc_samples": 110,
+    "retune_ms": [
+      0,
+      10,
+      25,
+      100
+    ],
+    "test_scale_mask": 2773,
+    "metrics": {
+      "testtune": {
+        "exact_pairs": 6,
+        "median_pitch_cents": [
+          4.2044928437103835,
+          4.2044928437103835
+        ],
+        "median_envelope_db": [
+          0.637397938702793,
+          0.6762084114672916
+        ],
+        "median_coverage": [
+          0.956858407079646,
+          0.9524336283185841
+        ]
+      },
+      "meta": {
+        "exact_pairs": 4,
+        "median_pitch_cents": [
+          5.4946929312921,
+          5.4946929312921
+        ],
+        "median_envelope_db": [
+          0.9490749072868707,
+          0.9509117206460578
+        ],
+        "median_coverage": [
+          0.9535398230088495,
+          0.9524336283185841
+        ]
+      }
+    },
+    "decision": "reject candidate; no engine/default changes",
+    "limits": "Portable four-engine build only. Full MetaTune 2.5 not tested. Fixed scale not song-verified. Not independent held-out performance evidence."
+  },
+  "native_multi_instance": {
+    "one_thread": true,
+    "fs": 44100,
+    "block": 128,
+    "measured_blocks": 512,
+    "warmup_blocks": 64,
+    "chain": "40-sample split color -> 2-bank transition delay -> signed prediction guard",
+    "budget_ms": 2.902494331,
+    "instances": [
+      1,
+      4,
+      8,
+      16
+    ],
+    "median_ms": [
+      0.044387,
+      0.188935,
+      0.409407,
+      0.781819
+    ],
+    "p99_ms": [
+      0.117428,
+      0.364961,
+      1.082103,
+      1.87581
+    ],
+    "max_ms": [
+      0.3048,
+      0.579724,
+      2.422956,
+      3.32678
+    ],
+    "deadline_misses": [
+      0,
+      0,
+      0,
+      2
+    ],
+    "limits": "one dry recording, one local native run, not a plugin host or real-time thread; no claim of DAW CPU or release capacity"
+  },
+  "compression": {
+    "status": "real bass and drum validation blocked by lack of identified verified stems in checked Library and archive files; no new compressor render in this batch"
+  },
+  "validation": {
+    "parent_ci": "8/8 completed success",
+    "optimized_and_sanitized": "passed at six rates",
+    "exact_tested_blobs": true,
+    "new_ci": "pending"
+  },
+  "remaining": {
+    "vendor_unknown": 854,
+    "vendor_boundary_conflicts": 90,
+    "local_candidates": 692,
+    "production_adoption": false,
+    "Windows_VST3": "not built",
+    "UI": "not modified",
+    "host": "not run"
+  }
+}
