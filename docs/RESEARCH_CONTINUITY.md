@@ -308,3 +308,6 @@ Prior c9e85ff CI 8/8 passed. Eight exact binaries and 47 prior scope hashes veri
 
 ## Expanded arithmetic-anchor survey — 2026-11-26
 Prior d7ee7fd CI 8/8 passed. Eight exact binaries and 47 prior scope hashes verified. New candidate selection across 128,730 unwind records, 54,953 eligible extents; 432 additional disassembled windows, 26,063 matching arithmetic sites. 291 windows >=8 selected FP sites, 45 flagged in 20 cross-module shape groups, 246 remain (not confirmed DSP). Panagement 43 and MixHead 47 remain after shape flags. Two owned PE tests passed, exact dependency/source/test blobs matched. See docs/ARITHMETIC_ANCHOR_SURVEY_20261126.md. No new algorithm or runtime claims; new CI unverified.
+
+## Memory-effect evidence — 2026-11-26
+Eight exact binaries, 432 prior scope hashes and FP counts replayed. 21,345 selected legacy SSE memory sites verified via bytes and dual operand text; 165/246 prior high unflagged candidates have general-register read/write forms. 15 contiguous narrow local patterns across five windows (Panagement 11, SSL 3, MixHead 1), not confirmed audio buffers or algorithms. Two new + two prior local test methods passed; exact source/test blobs matched. See docs/MEMORY_EFFECT_EVIDENCE_20261126.md. No production changes; new CI unverified.
