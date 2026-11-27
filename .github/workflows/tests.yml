@@ -308,6 +308,13 @@ jobs:
           g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie -Wall -Wextra -Werror tests/test_leveler_single_attack.cpp -o /tmp/skell_leveler_attack_san
           /tmp/skell_leveler_attack_san
 
+      - name: Independent crest-hold and residual color regression
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror tests/test_refinement_tracks.cpp -o /tmp/skell_tracks
+          /tmp/skell_tracks
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_refinement_tracks.cpp -o /tmp/skell_tracks_san
+          /tmp/skell_tracks_san
+
   windows-owned-vst3-host:
     runs-on: windows-latest
     timeout-minutes: 50
