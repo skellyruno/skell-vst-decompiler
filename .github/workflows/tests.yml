@@ -294,6 +294,13 @@ jobs:
           /tmp/skell_peak_duck_san
           g++ -std=c++17 -O3 -Wall -Wextra -Werror -Iexperiments/skelliere experiments/skelliere/space_duck_compare.cpp -o /tmp/skell_space_compare
 
+      - name: Independent complementary presence neutral and stereo regression
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror tests/test_presence_complementary.cpp -o /tmp/skell_presence_comp
+          /tmp/skell_presence_comp
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie -Wall -Wextra -Werror tests/test_presence_complementary.cpp -o /tmp/skell_presence_comp_san
+          /tmp/skell_presence_comp_san
+
   windows-owned-vst3-host:
     runs-on: windows-latest
     timeout-minutes: 50
