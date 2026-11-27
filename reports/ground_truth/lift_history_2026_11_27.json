@@ -1,0 +1,133 @@
+{
+  "schema": 1,
+  "parent": "ac88dcacffed901caf5f3dc589e1096aba1c30fc",
+  "source_blobs": {
+    "experiments/engine_lab/PreparedPairBound.h": "c4a9e1b308e3049a6bfa64c68586d705a175a1ee",
+    "experiments/engine_lab/PreparedPairGuard.h": "69f2965ad6ccb510bbe2ff9ebeb804d048233b7f",
+    "experiments/engine_lab/HistoryCapGuard.h": "6da54028d7a77c345f8b16048680729aeef1e6fa",
+    "experiments/engine_lab/ColorLiftedResearch.h": "aacb7b65c9d65e605922dca295b71fa34e7a0935",
+    "tests/test_history_cap.cpp": "03fd9fb98f04b4afc6eb58bcbaf7c28a0ba5476a",
+    "tests/test_lift_prepared.cpp": "af1d35fe4d47d174088e2ffddad2ede7a81c533a",
+    "tests/fixtures/owned_lift_history.cpp": "29b54db1e75a82a32e380c62705ea524b7968403",
+    "benchmarks/owned_lift_history.py": "b063ee5296cef4f4c5d3b0cc6b814feccb33d75b"
+  },
+  "private_report_sha256": "ea9690fcbbecb4b29146ae1fceed20f66522f0eb47a6289e8d152d70a6062a97",
+  "kit": "13/13",
+  "corpus": {
+    "vocal_excerpts": 36,
+    "vocal_seconds": 159.25009070294786,
+    "music_sources": 3,
+    "music_excerpts": 9,
+    "music_seconds": 90,
+    "source_hashes_verified": 39,
+    "limits": "Reused material; correlated excerpts within each music source, no isolated stems or held-out validation."
+  },
+  "color": {
+    "order": [
+      "symmetric_reference",
+      "direct_lift",
+      "difference_lift",
+      "paired_interpolation"
+    ],
+    "latency": 40,
+    "native_channel_checks_per_run": 5308416,
+    "test_factors": [
+      2,
+      4
+    ],
+    "stress_max_error": [
+      2.712691182793492e-13,
+      7.968625759247061e-14,
+      7.382983113757291e-15
+    ],
+    "real_max_error": [
+      6.92501612e-14,
+      1.87627691e-14,
+      8.21565038e-15
+    ],
+    "vocal_median_ms_per_audio_sec": [
+      14.18731588,
+      16.78047989,
+      17.06281058,
+      13.63271427
+    ],
+    "music_median_ms_per_audio_sec": [
+      16.61458503,
+      19.57523223,
+      20.01229767,
+      16.01900642
+    ],
+    "vocal_paired_timing_change_percent": [
+      0,
+      18.77549006,
+      20.99852917,
+      -3.63502972
+    ],
+    "music_paired_timing_change_percent": [
+      0,
+      17.64144295,
+      19.35648234,
+      -3.28496007
+    ],
+    "decision": "Lifted DC correct within measured tolerance but slower due longer nonsymmetric convolution. Paired interpolation modest candidate; no promotion or 8x validation."
+  },
+  "limiter": {
+    "order": [
+      "pairwise",
+      "prepared_prefix",
+      "history_cap"
+    ],
+    "latency": 16,
+    "exact_stream_channels": 589824,
+    "exact_dual_checks": 60000,
+    "history_reconstruction_checks": 4621824,
+    "history_improved_channels_stress": 15088,
+    "history_min_magnitude_delta_stress": 0,
+    "history_max_reconstruction_stress": 0.8912509381337456,
+    "real_prepared_exact_pairs": 45,
+    "history_improved_excerpts_gt_1e_6_db": 1,
+    "history_max_rms_advantage_db": 0.000011623812830346969,
+    "history_median_paired_gain_delta_db": [
+      0,
+      0
+    ],
+    "vocal_paired_time_change_percent": [
+      0,
+      0.35221498,
+      22.51069158
+    ],
+    "music_paired_time_change_percent": [
+      0,
+      -1.02174356,
+      27.49129491
+    ],
+    "worst_est16_dbfs": [
+      -0.67839399,
+      -0.97265026
+    ],
+    "full_scale_overloads": 0,
+    "two_tone_conditions": 27,
+    "two_tone_renders": 54,
+    "sideband_metric_delta_db_max": 0,
+    "example_50hz_amp1p5_carrier7khz_sideband_dbc": -26.10959250227854,
+    "decision": "Shared prefix exact but no reliable speedup. History bound adds substantial cost with negligible audio improvement; retain as research only."
+  },
+  "validation": {
+    "optimized_and_sanitized": "local tests passed; prior kernel-only dependency shim retained locally, full include graph unverified",
+    "source_hashes": "8/8 exact tested sources",
+    "parent_ci": "7 completed successful, Python static-analysis in progress when checked",
+    "new_ci": "pending",
+    "batch_execution": "Initial vocal execution limit; resumed remaining 9 vocals, split each music source; all 45 rows complete"
+  },
+  "remaining": {
+    "native_8x": "unverified",
+    "master_transfer": "not performed; no new candidate merits automatic adoption",
+    "host_ui": "not run",
+    "vendor_backlog": [
+      854,
+      90,
+      692
+    ],
+    "production_changed": false
+  }
+}
