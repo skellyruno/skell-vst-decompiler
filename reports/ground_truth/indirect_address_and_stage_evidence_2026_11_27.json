@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "parent": "908a3a2fd7d2a3e0774db94ee2932a16d41a5f1b",
+  "kind": "owned static operand diagnostic and previously measured vocal report aggregation",
+  "source_blobs": {
+    "skell_vst_decompiler/indirect_address_evidence.py": "3a47e1933d40da1d42de4a107d8ede30d732bf6a",
+    "tests/test_indirect_address_evidence.py": "b9464438044e3100fe5396f79477eee84a835854"
+  },
+  "fixture": {
+    "generated_forms": 960,
+    "decoders": 2,
+    "correct_operands_accepted": 1920,
+    "wrong_displacement_mutations_rejected": 1920,
+    "additional_fixture_forms": 8,
+    "additional_decoder_acceptances": 16,
+    "targeted_tests_passed": 4,
+    "toolchain": "clang Windows x64 target, lld-link, GNU objdump and LLVM objdump",
+    "execution": "no PE fixture execution"
+  },
+  "scope": "ordinary FF /2 and /4 memory operands, unprefixed or one REX; symbolic register coefficients and signed displacement, qword width; no pointer dereference or destination resolution; unsupported forms conservatively rejected",
+  "prior_audio": {
+    "report_sha256": "3b12cac34bf09c5893135f1fc6c7150515ecbfdbf61c68a6d5f9b96bde48e280",
+    "input_count": 36,
+    "new_audio_renders": 0,
+    "groups": [
+      {
+        "stage": "archive-labeled dry",
+        "n": 2,
+        "lower_peak": 2,
+        "median_peak_change_db": -0.5197217659025153,
+        "median_allpass_minus_linear_echo6_relative_level_db": 0.09286518047310999
+      },
+      {
+        "stage": "processed module input",
+        "n": 1,
+        "lower_peak": 1,
+        "median_peak_change_db": -0.004317749765604617,
+        "median_allpass_minus_linear_echo6_relative_level_db": 0.17836411096758198
+      },
+      {
+        "stage": "processed main/full",
+        "n": 18,
+        "lower_peak": 14,
+        "median_peak_change_db": -0.0772772353210982,
+        "median_allpass_minus_linear_echo6_relative_level_db": 0.21253326103500747
+      },
+      {
+        "stage": "processed adlib",
+        "n": 15,
+        "lower_peak": 11,
+        "median_peak_change_db": -0.5761106244007479,
+        "median_allpass_minus_linear_echo6_relative_level_db": 0.13217464048236138
+      }
+    ],
+    "limits": "Stage metadata is from the earlier private report. No new renders or independent held-out performances; no private identifiers committed. Peak comparison at same nominal attack setting, not matched t90; allpass metric is paired difference in echo6 minus echo1 RMS level, not frequency-specific loss."
+  },
+  "kit": "13/13 verified",
+  "previous_ci": "7 completed successful, Python static-analysis in progress at last check",
+  "new_ci": "unverified",
+  "backlog": {
+    "unknown_destinations": 854,
+    "boundary_conflicts": 90,
+    "local_value_flow_candidates": 692
+  },
+  "limits": "New diagnostic is standalone, not yet used to reinterpret earlier corpus classifications. No vendor binary replay or new vendor DSP equation, no runtime target resolution, no production change or GUI capture."
+}
