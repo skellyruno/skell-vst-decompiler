@@ -1,0 +1,223 @@
+{
+  "schema": 1,
+  "parent": "ca1f2a95a027b251b1b3851b4151a9bce47d629a",
+  "source_blobs": {
+    "experiments/engine_lab/BoundedPeakResearch.h": "d7efe98c26ab4a477ac54f4c574a11bfd70c9bfc",
+    "experiments/engine_lab/DrainingDelayResearch.h": "ededd7587a023751f78d619d86d773784b90619a",
+    "tests/test_bounded_peak.cpp": "d743a08a9dda0ae3ac3b3b3826606c9a52ea61d9",
+    "tests/test_draining_delay.cpp": "95a92a0e048d4235436c88359f511c53beb0522c",
+    "tests/fixtures/owned_bounded_peak.cpp": "e4c3435f9a6e85f6780406ef3caae7ddf787bdc0",
+    "tests/fixtures/owned_draining_delay.cpp": "7b293d69dbb69b9a035eaf46f4940cde5feee73b",
+    "benchmarks/owned_bounded_peak.py": "d05b3b7ff51cd4934b340134209241b83d9356bd",
+    "benchmarks/owned_draining_delay.py": "0212a0880f36a9f4f939f05bf35fee57cbc30dd4",
+    "benchmarks/owned_mixed_music.py": "15176f9975a4494cd37b825f6d84289fe8b28721"
+  },
+  "baseline_blobs": {
+    "TransitionPeakResearch": "56bb413e7a772d30047c463c5a1b501f6581b99f",
+    "AdaptiveResearch": "ae8a458ff14bccce9aedc808cc873ea2d4ab31a0",
+    "ColorSplitNative": "a8ca37712920c31a041f86c8a7bdf31c7d3449bf",
+    "owned_transition_peak": "e53d8d13d95b518ab29528cdf9205d38c3328f7d",
+    "owned_adaptive_native": "afd823084d4280fe87f65c5b5c09e3a5987d21b7"
+  },
+  "private_report_sha256": {
+    "bounded_peak": "c77372b4d2c1cf941acbcd60336a7843027b2ce241fcb56f044c79d8ea85b5ef",
+    "draining_delay": "5ace6438b8a65fa5be717e631d12d910e8c6cdeea35112606bf42bf58f0cbc0a",
+    "mixed_music": "ed144791a10a29d3026158cc8ba435bdb97b3f79558f852fe8013d8da5fb8677"
+  },
+  "kit": "13/13",
+  "native_hardware": "AMD EPYC 9V74 x86_64 Debian 13, five visible CPUs",
+  "vocal_inputs": {
+    "count": 36,
+    "fingerprints_verified": true,
+    "dry": 2,
+    "processed": 34
+  },
+  "limiter": {
+    "order": [
+      "old_signed",
+      "old_absolute",
+      "new_absolute",
+      "signed_lobe",
+      "release_prefix"
+    ],
+    "latency_samples": 16,
+    "ceiling_db": -1,
+    "release_ms": 60,
+    "declared_kernel_checks_per_run": 5370624,
+    "stress_rates": [
+      8000,
+      44100,
+      48000,
+      96000,
+      192000,
+      384000
+    ],
+    "stress_release_ms": [
+      1,
+      60,
+      1000
+    ],
+    "stress_signals": 3,
+    "all_bounded_max_linear": 0.891250938134,
+    "old_signed_max_linear": 0.922444108097,
+    "old_signed_max_dbfs": -0.7011987750402959,
+    "vocal_median_gain_db": [
+      -0.20625977055381706,
+      -3.87709305364769,
+      -3.87709305364769,
+      -1.9839961145716791,
+      -0.6416914817152616
+    ],
+    "vocal_max_est16_dbfs": [
+      -0.6756747106879045,
+      -1.482511533877759,
+      -1.482511533877759,
+      -1.1108039399853338,
+      -0.8786815320010295
+    ],
+    "vocal_est16_overload_excerpts": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "paired_median_gain_improvement_over_absolute_db": 3.247686135338811,
+    "optimized_median_native_ms_per_audio_second": [
+      2.069935125,
+      2.5014508125,
+      3.52090075671611,
+      3.395200134524771,
+      10.407271928001204
+    ],
+    "initial_prefix_median_native_ms_per_audio_second": 15.87798326,
+    "optimized_audio_metric_max_delta": 0,
+    "limits": "Declared finite kernel and bounded finite inputs, nonnegative gain and bounded positive slew only; not certified true peak. Timing unpaired, concurrently batched, includes prepare. No production or host claim."
+  },
+  "delay": {
+    "order": [
+      "previous_output_crossfade",
+      "draining_input_crossfade",
+      "draining_plus_release_bound"
+    ],
+    "echo_checks": 60,
+    "rates": 6,
+    "feedback": 0.7,
+    "transition_requests_ms": [
+      120,
+      180,
+      90
+    ],
+    "max_sample_peak_dbfs": [
+      3.02496692,
+      3.668916,
+      -1.81585362
+    ],
+    "max_16x_estimated_dbfs": [
+      3.08952503,
+      3.71180777,
+      -1.76852107
+    ],
+    "est16_overload_excerpts": [
+      2,
+      2,
+      0
+    ],
+    "median_tail_rms": [
+      0.06337677,
+      0.08314584,
+      0.08314584
+    ],
+    "median_paired_tail_gain_db": 2.6172267056425063,
+    "more_tail_excerpts": 34,
+    "guard_attenuated_excerpts": 5,
+    "guard_worst_rms_change_db": -1.115345156655726,
+    "first_active_target_median_ms": [
+      207.91383219954648,
+      0
+    ],
+    "second_active_target_completed": [
+      36,
+      25
+    ],
+    "second_completed_median_ms": [
+      117.91383219954649,
+      970.0226757369614
+    ],
+    "second_completed_max_ms": 1172.9024943310658,
+    "limits": "Different active target semantics: old crossfade completion versus new-bank acceptance. Does not measure time of audible echo. 250ms measured tail only; coalesces requests while old bank drains, not ideal for rapid tempo automation. Near-integer rounding; no DAW transport."
+  },
+  "mixed_music": {
+    "source_files": 3,
+    "source_type": "Drive filename-labeled stereo MP3 instrumental beats, 48kHz; no human listening or isolated stem confirmation",
+    "excerpts": 9,
+    "excerpt_seconds": 10,
+    "selection": "quarter, half, three-quarter duration centers; correlated within source",
+    "leveler_order": [
+      "original",
+      "fixed12",
+      "fixed20",
+      "adaptive"
+    ],
+    "adaptive_vs_original": {
+      "full": {
+        "median_paired_raw_gain_delta_db": 0.17623292,
+        "median_paired_matched_peak_delta_db": -0.09185265,
+        "lower_raw_peak": 2,
+        "lower_matched_peak": 8,
+        "median_paired_matched_onset_peak_delta_db": 0.12257287
+      },
+      "lowpass_120hz": {
+        "median_paired_raw_gain_delta_db": 0.14810245,
+        "median_paired_matched_peak_delta_db": -0.75209659,
+        "lower_raw_peak": 8,
+        "lower_matched_peak": 9,
+        "median_paired_matched_onset_peak_delta_db": -0.23272922
+      },
+      "highpass_120hz": {
+        "median_paired_raw_gain_delta_db": 0.40565095,
+        "median_paired_matched_peak_delta_db": -0.84487004,
+        "lower_raw_peak": 5,
+        "lower_matched_peak": 9,
+        "median_paired_matched_onset_peak_delta_db": -0.11025677
+      }
+    },
+    "color_max_est16_dbfs": [
+      2.41968152,
+      2.41481941,
+      2.43371213,
+      2.43371192
+    ],
+    "color_est16_overloads": [
+      9,
+      9,
+      9,
+      9
+    ],
+    "guard_median_gain_db": -2.1728206429686288,
+    "guard_max_est16_dbfs": -0.9999225831570101,
+    "guard_est16_overloads": 0,
+    "limits": "Diagnostic filtered copies are not stems. RMS-matched onset proxy uses top decile of input peak rises in 5ms windows, not perceptual transient quality. No new spectral sweep. MP3 decoded source may already be mastered."
+  },
+  "presence": {
+    "html_sha256": "03f296b5dc92da938c97b5e4feb3ff4d1823cd70f4f3d366b5a9a70190d29c42",
+    "browser": "Chromium Playwright",
+    "navigation": "file URL blocked by administrator policy; set_content loaded controls, media readiness timed out",
+    "listening": "no user votes, playback and export not verified"
+  },
+  "validation": {
+    "parent_ci": "8/8 success",
+    "optimized_and_asan_ubsan": "both new tests passed at six rates; initial drain test duration underestimated retirement; corrected expectation and end fade, reran",
+    "exact_tested_blobs": true,
+    "new_ci": "pending"
+  },
+  "remaining": {
+    "isolated_bass_drum": "not found; real mixed instrumental validation completed",
+    "pitch": "no new challenger this batch; prior portable four-engine evidence retained, fifth engine unverified",
+    "host": "local dependency development pkg-config entries unavailable; no native plugin or Windows/FL Studio host built in this batch",
+    "vendor_unknown": 854,
+    "vendor_boundary_conflicts": 90,
+    "local_candidates": 692,
+    "production_adoption": false
+  }
+}

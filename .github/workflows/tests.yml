@@ -329,6 +329,15 @@ jobs:
           g++ -std=c++17 -O1 -g -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_transition_peak.cpp -o /tmp/skell_transition_peak_san
           /tmp/skell_transition_peak_san
 
+      - name: Release-constrained reconstruction and draining delay regression
+        run: |
+          for test in bounded_peak draining_delay; do
+            g++ -std=c++17 -O3 -UNDEBUG -Wall -Wextra -Werror tests/test_${test}.cpp -o /tmp/skell_${test}
+            /tmp/skell_${test}
+            g++ -std=c++17 -O1 -g -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_${test}.cpp -o /tmp/skell_${test}_san
+            /tmp/skell_${test}_san
+          done
+
   windows-owned-vst3-host:
     runs-on: windows-latest
     timeout-minutes: 50
