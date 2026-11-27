@@ -364,6 +364,13 @@ jobs:
           g++ -std=c++17 -O1 -g -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_bass_cascade.cpp -o /tmp/skell_bass_cascade_san
           /tmp/skell_bass_cascade_san
 
+      - name: Scheduled recovery finite-kernel regression
+        run: |
+          g++ -std=c++17 -O3 -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror tests/test_scheduled_recovery.cpp -o /tmp/skell_scheduled_recovery
+          /tmp/skell_scheduled_recovery
+          g++ -std=c++17 -O1 -g -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_scheduled_recovery.cpp -o /tmp/skell_scheduled_recovery_san
+          /tmp/skell_scheduled_recovery_san
+
   windows-owned-vst3-host:
     runs-on: windows-latest
     timeout-minutes: 50
