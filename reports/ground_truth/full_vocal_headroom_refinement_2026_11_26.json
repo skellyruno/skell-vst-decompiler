@@ -1,0 +1,159 @@
+{
+  "schema": 1,
+  "parent": "ab8a907817b327eb5f7037c907b90562bd453138",
+  "corpus": {
+    "inputs": 36,
+    "sample_rate": 44100,
+    "duration_seconds": 159.25009070294786,
+    "stages": {
+      "archive_labeled_dry": 2,
+      "processed_module_input": 1,
+      "processed_main_or_full": 18,
+      "processed_adlib": 15
+    },
+    "all_manifest_fingerprints_matched": true,
+    "batches": 4
+  },
+  "headroom": {
+    "trim_db": -12,
+    "configurations": 7,
+    "comparisons": 252,
+    "max_scale_error": 0,
+    "max_before_estimated_peak_dbfs": 3.437600080805397,
+    "max_after_estimated_peak_dbfs": -8.562399919194606,
+    "samples_above_full_scale_after": 0,
+    "median_after_raw_rms_gain_db": -1.147910787443671,
+    "range_after_raw_rms_gain_db": [
+      -3.7158724174216267,
+      -0.0956461625741644
+    ],
+    "native_adapter_sha256": "325b9954a9dfb2a76ab86cf85f21935ed7367e95eb003800577bd408fda6e7a5",
+    "full_private_report_sha256": "82e78f8a50f6a0fc74a3c5ef1db755ba008b65f3bf1ac48ac9fc6d719f5a46de"
+  },
+  "presence": {
+    "wet_trim_db": -4,
+    "full_wet_scale_max_error": 0,
+    "mix_cases": 108,
+    "zero_trim_parity_max_error": 0,
+    "wet_only_blend_max_error": 0,
+    "rows": [
+      {
+        "wet": 0,
+        "max_before_estimated_peak_dbfs": -1.352033573302787,
+        "max_after_estimated_peak_dbfs": -1.352033573302787,
+        "samples_above_full_scale_after": 0,
+        "median_after_raw_gain_db": 0
+      },
+      {
+        "wet": 0.5,
+        "max_before_estimated_peak_dbfs": -0.7796026664992051,
+        "max_after_estimated_peak_dbfs": -3.4364377830223463,
+        "samples_above_full_scale_after": 0,
+        "median_after_raw_gain_db": -2.977354674283095
+      },
+      {
+        "wet": 1,
+        "max_before_estimated_peak_dbfs": 2.3158892139161087,
+        "max_after_estimated_peak_dbfs": -1.6841107860838898,
+        "samples_above_full_scale_after": 0,
+        "median_after_raw_gain_db": -3.75061660239456
+      }
+    ]
+  },
+  "contiguous": {
+    "pair_configurations": 216,
+    "exact": 216,
+    "max_error": 0,
+    "dry_alignment_checks": 72,
+    "dry_delay_samples": 40,
+    "timed_runs": 432,
+    "rows": [
+      {
+        "factor": 2,
+        "paired_cases": 108,
+        "exact": 108,
+        "median_baseline_ms_per_audio_second": 9.141179190859962,
+        "median_contiguous_ms_per_audio_second": 9.038754851450364,
+        "median_paired_reduction_percent": 1.6629764023404936,
+        "contiguous_faster_excerpts": 26
+      },
+      {
+        "factor": 4,
+        "paired_cases": 108,
+        "exact": 108,
+        "median_baseline_ms_per_audio_second": 18.006511702380955,
+        "median_contiguous_ms_per_audio_second": 17.418003513538622,
+        "median_paired_reduction_percent": 3.3443104619565514,
+        "contiguous_faster_excerpts": 34
+      }
+    ],
+    "native_adapter_sha256": "64fb19ff6f49ab8c35023dd800db0aa907e406011e51c63ac82c044e6f87d9d3",
+    "full_private_report_sha256": "e2243c7034c80d1404c632204014ae6a3491a457329f9ce74d460c121fc295c7"
+  },
+  "validation": {
+    "targeted_local_tests_passed": 31,
+    "new_methods": 3,
+    "offline_kit": "13/13 passed",
+    "exact_tested_source_blobs": {
+      "tests/fixtures/owned_vocal_refinement.cpp": "76172b428bdad7c84aa56e501ed80fa8a5bb15c6",
+      "benchmarks/owned_vocal_refinement.py": "67594b3fd5e5d65960b2b86456253b775d3f34b3",
+      "tests/test_owned_vocal_refinement.py": "20261d01e5bcd746c4421c1686e2525111b81d44"
+    },
+    "existing_engine_blobs": {
+      "independent": "b81bc2cba042148e1c809f072c70ad0d4b22dba0",
+      "oversampled": "a4c7ee52708a9412b3c31f755b65ea9450271c08",
+      "contiguous": "4c2785fe1efda481e569886b5987091d1fe092b3"
+    },
+    "parent_runs": [
+      {
+        "name": "Craft Anything metadata (owned fixtures)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Real Ghidra smoke (owned fixture)",
+        "status": "completed",
+        "conclusion": "failure"
+      },
+      {
+        "name": "Independent PE oracle (owned fixtures)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Reccmp export comparison (owned fixture)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "REA PE imports (owned fixtures)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Real Rizin smoke (owned fixture)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Unified engines (owned fixture)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Python static-analysis tests",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "ghidra_failure": {
+      "run_id": 45929614744,
+      "job_id": 140278946667,
+      "step": "Install PE fixture linker",
+      "cause": "HTTP 403 from packages.microsoft.com/ubuntu/26.04/prod/dists/resolute/InRelease; apt exit 100; actual Ghidra test skipped",
+      "change": "Pin ubuntu-24.04, use preinstalled clang/lld-link when available, fallback to apt; preserve real smoke tests and hash verification",
+      "new_ci": "unverified"
+    }
+  },
+  "limits": "Local private excerpts, not necessarily independent performances. All audio at original 44.1 kHz; new owned synthetic test controls at 44.1/48/96 kHz. Fixed wet-path trims are not limiters or universal safety guarantees; peak estimates not certified true peak. Timing includes preparation, uncontrolled container load, not host CPU. Existing production/default engines unchanged. Vendor static research not replayed this batch; prior 854 unknown destinations, 90 conflicts and 692 candidates unchanged."
+}
