@@ -6,6 +6,7 @@ from .disasm import disassemble
 from .memory_effects import FORMS, PREFIX, decode_memory, operand_matches, address_class
 from .pe import PEFormatError
 from .scope_consensus import reconcile
+from .flow_guards import transparent
 
 MOVES = {'movss','movsd','movups','movupd','movaps','movapd'}
 BINARY = {0x58,0x59,0x5c,0x5d,0x5e,0x5f}
@@ -32,16 +33,22 @@ def decode_register(raw):
     return name,width,dst,src
 
 
-def scan(left,right,raw,va,*,limit=16):
+def scan(left,right,raw,va,*,limit=16,entries=(),allow_transparent=False):
     """Count contiguous selected value paths, stopping at every unknown op.
 
     Tracks only the named scalar lane or complete named packed precision.
     General registers cannot change inside supported instructions. This is
     syntactic possible dependence, not numerical dependence or reachability.
     A memory store is a barrier after its own classification (alias unknown).
+    Optional observed entry boundaries clear origins. The transparent mode
+    accepts only byte-checked NOP and register-only CMP/TEST. Neither mode
+    establishes complete control flow.
     """
     if type(limit) is not int or not 3<=limit<=64:
         raise ValueError('Flow limit must be 3..64')
+    entries = set(entries)
+    if any(type(x) is not int or not va<=x<va+len(raw) for x in entries):
+        raise ValueError("Invalid flow entry boundary")
     reconcile(left,right,va,va+len(raw))  # reject duplicate/unordered addresses
     streams=[[x for x in s if va<=x.address<va+len(raw)] for s in (left,right)]
     maps=[{x.address:(x,y.address) for x,y in zip(s,s[1:])} for s in streams]
@@ -49,7 +56,7 @@ def scan(left,right,raw,va,*,limit=16):
     # value = (precision suffix, { (effective-address syntax, load ordinal): depth }).
     # Age each origin independently instead of chopping an arbitrary fixed block.
     for ordinal,site in enumerate(sorted(maps[0].keys() | maps[1].keys())):
-        if site!=prev:
+        if site!=prev or site in entries:
             state.clear()
         prev=None
         if site not in maps[0] or site not in maps[1]:
@@ -58,6 +65,9 @@ def scan(left,right,raw,va,*,limit=16):
         if end!=end2 or not 1<=end-site<=15:
             state.clear(); continue
         chunk=raw[site-va:end-va]
+        if allow_transparent and transparent(chunk,a,b):
+            prev=end
+            continue
         d=decode_memory(chunk); reg=None
         if d is not None:
             if not operand_matches(a,d) or not operand_matches(b,d):

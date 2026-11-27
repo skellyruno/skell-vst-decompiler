@@ -311,3 +311,9 @@ Prior d7ee7fd CI 8/8 passed. Eight exact binaries and 47 prior scope hashes veri
 
 ## Memory-effect evidence — 2026-11-26
 Eight exact binaries, 432 prior scope hashes and FP counts replayed. 21,345 selected legacy SSE memory sites verified via bytes and dual operand text; 165/246 prior high unflagged candidates have general-register read/write forms. 15 contiguous narrow local patterns across five windows (Panagement 11, SSL 3, MixHead 1), not confirmed audio buffers or algorithms. Two new + two prior local test methods passed; exact source/test blobs matched. See docs/MEMORY_EFFECT_EVIDENCE_20261126.md. No production changes; new CI unverified.
+
+## Bounded local value flow — 2026-11-26 (prior milestone reconciliation)
+Commit a0de211 adds bounded SSE register and memory origin tracking; 479 scope hashes, 721 limit-16 candidate stores in 83 windows. Six local tests passed; exact commit CI now 8/8 passed. See docs/BOUNDED_VALUE_FLOW_20261126.md. This records the earlier interrupted-turn milestone without overwriting it.
+
+## Entry-guarded local value flow — 2026-11-26
+Replayed all 8 fingerprints and 479 prior scopes exactly. Added opt-in observed direct-entry barriers; 721 -> 692 candidate stores in 82 windows, 29 conservative exclusions across six regions (FG-2A 28, MixHead 1). 10,688 verified in-window transfer observations, 7,872 per-window distinct boundaries, 941 unresolved and 89 noncommon targets. Optional transparent register comparisons/NOP pass owned fixture, no additional corpus paths. Nine local tests pass, exact source/test blobs match; new CI pending. See docs/GUARDED_VALUE_FLOW_20261126.md. No algorithm reconstruction or production changes.
