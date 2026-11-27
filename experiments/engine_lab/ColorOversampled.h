@@ -5,10 +5,12 @@
 #include <array>
 
 namespace skell_lab {
-template<int Factor> class ColorOversampledFixed {
+template<int Factor, int BaseSpan=40, int CutoffMilli=450> class ColorOversampledFixed {
     static_assert(Factor==2 || Factor==4,"Choose 2x or 4x");
+    static_assert(BaseSpan>=16 && BaseSpan<=128 && BaseSpan%2==0,"Even bounded research span");
+    static_assert(CutoffMilli>=400 && CutoffMilli<500,"Cutoff below base Nyquist");
 public:
-    static constexpr int factor=Factor, taps=40*factor+1, history=(taps-1)/factor+1;
+    static constexpr int factor=Factor, taps=BaseSpan*factor+1, history=(taps-1)/factor+1;
     static constexpr int latency=(taps-1)/factor;
 private:
     std::array<double,taps> coeff{};
@@ -31,8 +33,8 @@ public:
         drive=fromDb(bound(driveDb,0,24,12));bias=bound(asymmetry,-.3,.3,.12);
         mix=bound(wetMix,0,1,.6);makeup=fromDb(bound(outputDb,-18,18,0));
         norm=1.0/std::max(1e-6,std::tanh(drive));dcPole=std::exp(-2*pi*5/(fs*factor));
-        // Blackman-windowed sinc. Cutoff 0.45 cycles/base-rate sample.
-        const double fc=.45/factor;double sum=0;
+        // Blackman-windowed sinc. Default cutoff 0.45 cycles/base-rate sample.
+        const double fc=(CutoffMilli/1000.0)/factor;double sum=0;
         for(int i=0;i<taps;++i){
             const int d=i-(taps-1)/2;
             const double sinc=d?std::sin(2*pi*fc*d)/(pi*d):2*fc;
@@ -55,7 +57,7 @@ public:
                 if(--ix<0)ix=history-1;
             }
             output[outPos]={shape(up.l,0),shape(up.r,1)};
-            // Decimate at phase zero: both FIRs total exactly 40 base-rate samples.
+            // Decimate at phase zero: both FIRs total exactly BaseSpan base-rate samples.
             if(phase==0){int j=outPos;for(int k=0;k<taps;++k){wet.l+=coeff[k]*output[j].l;wet.r+=coeff[k]*output[j].r;if(--j<0)j=taps-1;}}
             if(++outPos==taps)outPos=0;
         }

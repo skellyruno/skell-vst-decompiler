@@ -20,6 +20,7 @@ from skell_vst_decompiler.disasm import disassemble
 from skell_vst_decompiler.transfer_triage import raw_decode
 from skell_vst_decompiler.window_reconcile import Window, inspect, reconcile_windows
 from skell_vst_decompiler.value_flow import scan
+from skell_vst_decompiler.mask_diagnostic import scan as scan_masks
 from skell_vst_decompiler.scope_consensus import audit_scope
 
 ROLES = {'audio_gain': 'audio_math', 'geometry_scale': 'ui_math',
@@ -64,6 +65,7 @@ def static_fixture(work, opt):
     guards,counts=reconcile_windows(windows)
     for i,name in enumerate(order):
         rows[name]['local_transformed_stores']=scan(*streams[i],raw[i],windows[i].start,entries=guards[i])['total']
+        rows[name]['mask_diagnostic']=scan_masks(*windows[i].maps,raw[i],windows[i].start,entries=guards[i])
     same=raw[order.index('audio_gain')]==raw[order.index('geometry_scale')]
     assert same, 'Fixture must have byte-identical gain and geometry windows'
     assert rows['dispatch']['indirect_sites']>=1
