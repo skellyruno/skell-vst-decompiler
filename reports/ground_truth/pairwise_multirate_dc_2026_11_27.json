@@ -1,0 +1,188 @@
+{
+  "schema": 1,
+  "parent": "a1204e285a4e39884e841e0f62113ed45015c47b",
+  "source_blobs": {
+    "benchmarks/alias_reference.py": "ea2d14049e565d4cdab9b2c0a37a397ee8b87e03",
+    "benchmarks/pair_bound.py": "e802f4f5a2522f67d67e11e7452b5772b258971e",
+    "benchmarks/factor_isolation.py": "f5eaa61e34f4d1fd75bbeb9cbe8799247a0cce15",
+    "benchmarks/dc_isolation.py": "0ba8d41fcf90eb8dd455b81b35ad06bfd8ddc63a",
+    "benchmarks/lifted_dc.py": "a7ef65d11db42f0d26eea594b96389a2f739f726"
+  },
+  "private_report_sha256": {
+    "higher_rate_reference": "888e123cf176d1e2c4c6b4cab311911073b55668e574340b2b0e34b276e00fb6",
+    "peak_dual_oracle": "cbbe05fc4fb0f45886a3d4dbe7c5c20524d0ee8dea792f60f288e5eadafaca5e",
+    "factor_isolation": "dc8b8fd2c6097f3a95d9e4667666ebbbfcbf68720d5cb2677aeec3ff9c253317",
+    "dc_isolation": "f7398548a5289f84244b8ba120667f375ed43766cd9129c35deed244a7049169",
+    "lifted_dc": "0aa11069d27c8d632759498bae993741cd260babed3261c99544ff3230c073a3"
+  },
+  "inputs": {
+    "vocal_sources": 36,
+    "archive_labeled_dry": 2,
+    "music_sources": 3,
+    "music_excerpts": 9,
+    "analyzed_excerpt_seconds": 0.5,
+    "context_seconds": 1,
+    "vocal_hashes_matched_to_previous_manifest": 36,
+    "music_hashes": "computed from local MP3s and checked by harnesses, not compared to prior MP3 manifest",
+    "limits": "same cohort, correlated excerpts, not isolated stems"
+  },
+  "kit": "13/13 verified, prior build cache absent in fresh runtime",
+  "prior_ci": {
+    "decompiler": "8/8 passed a1204e2",
+    "core": "4/4 passed e3c9a51"
+  },
+  "pairwise": {
+    "random_windows": 128,
+    "random_hot": 58,
+    "random_improved": 58,
+    "real_windows": 144,
+    "real_hot": 85,
+    "real_improved": 81,
+    "random_hot_median_cap_advantage_db": 0.14846310131750395,
+    "real_hot_median_cap_advantage_db": 0.599069545026621,
+    "real_max_advantage_db": 0.728376083671694,
+    "max_lp_peak": 0.8912509381337457,
+    "ceiling": 0.8912509381337456,
+    "linear_programs": 2432,
+    "limits": "offline per-window LP oracle, not rendered loudness or certified true peak"
+  },
+  "high_rate_reference": {
+    "design_order": [
+      "4x_blackman",
+      "4x_kaiser10",
+      "8x_blackman",
+      "16x_ref",
+      "32x_ref"
+    ],
+    "tone_conditions": 54,
+    "tone_renders": 270,
+    "vocal_renders": 180,
+    "median_matched_difference_db_tones": [
+      -53.65755075,
+      -53.65283808,
+      -57.28743172,
+      -135.4627521,
+      -300
+    ],
+    "median_matched_difference_db_vocals": [
+      -50.56694291,
+      -50.44688739,
+      -50.5669476,
+      -146.95554498,
+      -300
+    ],
+    "worst_ref16_tones_db": -127.4884215,
+    "limits": "wide reference has different bandwidth, not pure alias error"
+  },
+  "factor": {
+    "order": [
+      4,
+      8,
+      16,
+      32
+    ],
+    "tone_renders": 216,
+    "audio_renders": 180,
+    "median_matched_difference_db_tones": [
+      -108.64292154,
+      -121.57511049,
+      -135.55834897,
+      -300
+    ],
+    "median_matched_difference_db_vocals": [
+      -120.59234927,
+      -133.06730735,
+      -147.04918813,
+      -300
+    ],
+    "median_matched_difference_db_music": [
+      -127.56585725,
+      -140.04166285,
+      -154.02375512,
+      -300
+    ],
+    "worst_4x_8x_tones_db": [
+      -42.10019003,
+      -78.561941
+    ],
+    "improvement_8x_count": [
+      54,
+      36,
+      9
+    ],
+    "fft_convolution_oracle_max_error": 5.551115123125783e-15,
+    "limits": "same normalized cutoff/window/span, sampled FIR and DC differences remain"
+  },
+  "dc": {
+    "subset_sources": 11,
+    "source_breakdown": [
+      2,
+      6,
+      3
+    ],
+    "renders": 99,
+    "median_4x_8x_difference_db": {
+      "linear": [
+        -194.06979581,
+        -218.98823008
+      ],
+      "nonlinear_no_dc": [
+        -179.1004775,
+        -204.41294028
+      ],
+      "nonlinear_dc": [
+        -127.7781751,
+        -140.24646747
+      ]
+    },
+    "limits": "do not remove DC protection"
+  },
+  "lifted": {
+    "stress_conditions": 96,
+    "stress_rates": [
+      8000,
+      44100,
+      48000,
+      96000,
+      192000,
+      384000
+    ],
+    "stress_factors": [
+      2,
+      4,
+      8,
+      16
+    ],
+    "stress_max_error": 1.5579759704564822e-12,
+    "audio_excerpts": 45,
+    "audio_pairs": 90,
+    "max_abs_errors": {
+      "factor4_vocals": 1.2545520178264269e-14,
+      "factor4_music": 1.4654943925052066e-14,
+      "factor8_vocals": 2.220446049250313e-14,
+      "factor8_music": 2.7533531010703882e-14
+    },
+    "factor4_fir_taps": [
+      161,
+      165
+    ],
+    "factor8_fir_taps": [
+      321,
+      329
+    ],
+    "limits": "zero-state fixed-parameter offline identity, not native timing or arbitrary-state/automation proof"
+  },
+  "remaining": {
+    "vendor_backlog": [
+      854,
+      90,
+      692
+    ],
+    "native_pairwise": "not implemented",
+    "native_lifted": "not implemented",
+    "pitch": "not resumed in current runtime",
+    "host": "not tested",
+    "new_ci": "unverified",
+    "production": "unchanged"
+  }
+}
