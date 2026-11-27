@@ -1,0 +1,340 @@
+{
+  "schema": 1,
+  "parent": "65805e839da2a1b357ad2b8ebc616722d83904d5",
+  "mask_replay": {
+    "binaries": 8,
+    "existing_windows": 479,
+    "scope_hashes_verified": 479,
+    "bitwise_register_ops": 1781,
+    "comparison_masks": 37,
+    "complementary_mask_select_candidates": 5,
+    "windows_with_select": 4,
+    "modules": [
+      {
+        "name": "StandardCLIP",
+        "bitwise": 123,
+        "compare": 0,
+        "select": 0,
+        "windows": 0
+      },
+      {
+        "name": "Trackspacer",
+        "bitwise": 222,
+        "compare": 0,
+        "select": 0,
+        "windows": 0
+      },
+      {
+        "name": "FG-2A",
+        "bitwise": 115,
+        "compare": 0,
+        "select": 0,
+        "windows": 0
+      },
+      {
+        "name": "Panagement",
+        "bitwise": 576,
+        "compare": 37,
+        "select": 5,
+        "windows": 4
+      },
+      {
+        "name": "DeeDoubler",
+        "bitwise": 165,
+        "compare": 0,
+        "select": 0,
+        "windows": 0
+      },
+      {
+        "name": "VT-5",
+        "bitwise": 196,
+        "compare": 0,
+        "select": 0,
+        "windows": 0
+      },
+      {
+        "name": "SSL Fusion Stereo Image",
+        "bitwise": 144,
+        "compare": 0,
+        "select": 0,
+        "windows": 0
+      },
+      {
+        "name": "MixHead",
+        "bitwise": 240,
+        "compare": 0,
+        "select": 0,
+        "windows": 0
+      }
+    ],
+    "full_local_report_sha256": "e9fc5e2c54654c4072faad596fb7a2a67993b0df318119d84d4035aa32552a8b",
+    "limits": "Existing bounded windows only; selected legacy register-only forms. No inferred audio role, new target traversal or indirect target resolution."
+  },
+  "vocal": {
+    "inputs": 36,
+    "duration_seconds": 159.25009070294786,
+    "sample_rate": 44100,
+    "stage_counts": {
+      "archive_labeled_dry": 2,
+      "processed_module_input": 1,
+      "processed_main_or_full": 18,
+      "processed_adlib": 15
+    },
+    "archived_playback_checksum_and_frame_matches": 33,
+    "excluded_historical_different_take": 3,
+    "duplicate_decoded_inputs": 0,
+    "configurations": 9,
+    "wet_cases": 324,
+    "timing_repeats": 3,
+    "timed_runs": 972,
+    "exact_delay_aligned_dry_cases": 324,
+    "exact_block_partition_cases": 180,
+    "inputs_estimated_above_full_scale": 0,
+    "bands_hz": [
+      [
+        80,
+        250
+      ],
+      [
+        250,
+        1000
+      ],
+      [
+        1000,
+        4000
+      ],
+      [
+        4000,
+        8000
+      ],
+      [
+        8000,
+        16000
+      ],
+      [
+        16000,
+        20000
+      ]
+    ],
+    "metrics": [
+      {
+        "engine": "presence",
+        "median_raw_rms_gain_db": 0.2494,
+        "median_rms_matched_peak_delta_db": 0.4069,
+        "raw_overload_excerpt_count": 2,
+        "estimated_peak_over_full_scale_excerpt_count": 2,
+        "max_estimated_peak_dbfs": 2.3159,
+        "median_crest_change_db": 0.4447,
+        "median_rms_matched_band_delta_db": [
+          -0.2503,
+          -0.2417,
+          0.3483,
+          1.9363,
+          2.0212,
+          2.1831
+        ],
+        "median_wall_ms_per_audio_second": 1.3271,
+        "median_rms_matched_difference_vs_default_4x_db": null,
+        "delay_samples": 0
+      },
+      {
+        "engine": "leveler",
+        "median_raw_rms_gain_db": -2.5174,
+        "median_rms_matched_peak_delta_db": 0.8902,
+        "raw_overload_excerpt_count": 0,
+        "estimated_peak_over_full_scale_excerpt_count": 0,
+        "max_estimated_peak_dbfs": -2.4393,
+        "median_crest_change_db": 0.9914,
+        "median_rms_matched_band_delta_db": [
+          0.2745,
+          -0.1148,
+          -0.0617,
+          0.1723,
+          0.1923,
+          0.2864
+        ],
+        "median_wall_ms_per_audio_second": 0.961,
+        "median_rms_matched_difference_vs_default_4x_db": null,
+        "delay_samples": 0
+      },
+      {
+        "engine": "color_1x",
+        "median_raw_rms_gain_db": 10.8535,
+        "median_rms_matched_peak_delta_db": -4.1859,
+        "raw_overload_excerpt_count": 5,
+        "estimated_peak_over_full_scale_excerpt_count": 22,
+        "max_estimated_peak_dbfs": 3.4376,
+        "median_crest_change_db": -4.8073,
+        "median_rms_matched_band_delta_db": [
+          0.2943,
+          0.0055,
+          -0.1727,
+          0.3319,
+          0.1761,
+          0.3783
+        ],
+        "median_wall_ms_per_audio_second": 1.1764,
+        "median_rms_matched_difference_vs_default_4x_db": -39.5769,
+        "delay_samples": 0
+      },
+      {
+        "engine": "color_2x",
+        "median_raw_rms_gain_db": 10.8512,
+        "median_rms_matched_peak_delta_db": -4.6434,
+        "raw_overload_excerpt_count": 15,
+        "estimated_peak_over_full_scale_excerpt_count": 19,
+        "max_estimated_peak_dbfs": 2.2531,
+        "median_crest_change_db": -4.8012,
+        "median_rms_matched_band_delta_db": [
+          0.2973,
+          0.0057,
+          -0.1698,
+          0.332,
+          0.1732,
+          -0.3417
+        ],
+        "median_wall_ms_per_audio_second": 9.2877,
+        "median_rms_matched_difference_vs_default_4x_db": -91.4019,
+        "delay_samples": 40
+      },
+      {
+        "engine": "color_4x",
+        "median_raw_rms_gain_db": 10.8504,
+        "median_rms_matched_peak_delta_db": -4.6412,
+        "raw_overload_excerpt_count": 15,
+        "estimated_peak_over_full_scale_excerpt_count": 19,
+        "max_estimated_peak_dbfs": 2.122,
+        "median_crest_change_db": -4.8012,
+        "median_rms_matched_band_delta_db": [
+          0.2973,
+          0.0057,
+          -0.1698,
+          0.332,
+          0.1731,
+          -0.3418
+        ],
+        "median_wall_ms_per_audio_second": 18.377,
+        "median_rms_matched_difference_vs_default_4x_db": -300,
+        "delay_samples": 40
+      },
+      {
+        "engine": "color_2x_wide40",
+        "median_raw_rms_gain_db": 10.8518,
+        "median_rms_matched_peak_delta_db": -4.622,
+        "raw_overload_excerpt_count": 14,
+        "estimated_peak_over_full_scale_excerpt_count": 19,
+        "max_estimated_peak_dbfs": 2.1065,
+        "median_crest_change_db": -4.6581,
+        "median_rms_matched_band_delta_db": [
+          0.2954,
+          0.0055,
+          -0.1717,
+          0.3319,
+          0.1721,
+          0.1995
+        ],
+        "median_wall_ms_per_audio_second": 9.2465,
+        "median_rms_matched_difference_vs_default_4x_db": -44.786,
+        "delay_samples": 40
+      },
+      {
+        "engine": "color_4x_wide40",
+        "median_raw_rms_gain_db": 10.851,
+        "median_rms_matched_peak_delta_db": -4.619,
+        "raw_overload_excerpt_count": 14,
+        "estimated_peak_over_full_scale_excerpt_count": 19,
+        "max_estimated_peak_dbfs": 2.0091,
+        "median_crest_change_db": -4.6581,
+        "median_rms_matched_band_delta_db": [
+          0.2954,
+          0.0055,
+          -0.1717,
+          0.3319,
+          0.1719,
+          0.1995
+        ],
+        "median_wall_ms_per_audio_second": 18.222,
+        "median_rms_matched_difference_vs_default_4x_db": -44.7887,
+        "delay_samples": 40
+      },
+      {
+        "engine": "color_2x_wide80",
+        "median_raw_rms_gain_db": 10.8518,
+        "median_rms_matched_peak_delta_db": -4.6115,
+        "raw_overload_excerpt_count": 14,
+        "estimated_peak_over_full_scale_excerpt_count": 20,
+        "max_estimated_peak_dbfs": 2.1672,
+        "median_crest_change_db": -4.6577,
+        "median_rms_matched_band_delta_db": [
+          0.295,
+          0.0055,
+          -0.1722,
+          0.3319,
+          0.1719,
+          0.3445
+        ],
+        "median_wall_ms_per_audio_second": 15.6603,
+        "median_rms_matched_difference_vs_default_4x_db": -42.5565,
+        "delay_samples": 80
+      },
+      {
+        "engine": "color_4x_wide80",
+        "median_raw_rms_gain_db": 10.851,
+        "median_rms_matched_peak_delta_db": -4.6082,
+        "raw_overload_excerpt_count": 14,
+        "estimated_peak_over_full_scale_excerpt_count": 20,
+        "max_estimated_peak_dbfs": 2.0761,
+        "median_crest_change_db": -4.6577,
+        "median_rms_matched_band_delta_db": [
+          0.295,
+          0.0055,
+          -0.1723,
+          0.3319,
+          0.1718,
+          0.3443
+        ],
+        "median_wall_ms_per_audio_second": 30.7584,
+        "median_rms_matched_difference_vs_default_4x_db": -42.558,
+        "delay_samples": 80
+      }
+    ],
+    "listening_pack": {
+      "groups": 3,
+      "files": 30,
+      "sample_alignment_verified": true,
+      "maximum_absolute_rms_delta_db": 2.1249909471359908e-8,
+      "max_estimated_peak_dbfs": -0.99999964219155
+    },
+    "headroom": {
+      "trim_db": -12,
+      "completed_inputs": 3,
+      "completed_configurations": 21,
+      "highest_before_dbfs": 2.736825884568642,
+      "highest_after_dbfs": -9.263174115431358,
+      "max_waveform_scale_error": 0,
+      "samples_above_full_scale_after": 0,
+      "full_corpus_attempt": "timed out before report completion; no incomplete results counted",
+      "scope": "Full wet only; fixed output gain, not a limiter or automatic gain compensation."
+    },
+    "limits": "Private local real vocals, possibly overlapping same takes, not independent performances or vendor-processor isolated reference outputs. Native lab builds only at original 44.1 kHz. Fourfold interpolated peaks are estimates, not certified true peak. RMS matching and relative waveform differences do not measure aliasing or perceptual similarity. Timing includes prepare and native adapter; uncontrolled container load; not FL Studio CPU. Private audio, source filenames, individual metrics and audio checksums not committed."
+  },
+  "validation": {
+    "local_unittest_methods": 28,
+    "previous": 25,
+    "new": 3,
+    "offline_kit": "13/13 passed",
+    "parent_ci": "8/8 passed",
+    "exact_tested_source_blobs": {
+      "benchmarks/owned_private_vocal.py": "a47b35350b883eba06ea315a1f79ef31df907aff",
+      "tests/test_owned_private_vocal.py": "79b9b76ccaedb0f291720b1b8617bcca6c1ef697",
+      "tests/fixtures/owned_color_headroom.cpp": "78590e41fa1514f54d90e5f029896d39ff401693",
+      "benchmarks/owned_private_headroom.py": "17dbf4326e3d28feaeded252d1ffc5cd33a583cb"
+    }
+  },
+  "remaining": {
+    "unknown_destinations": 854,
+    "boundary_conflicts": 90,
+    "previous_value_flow_candidates": 692,
+    "production_changes": false
+  }
+}
