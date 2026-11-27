@@ -338,6 +338,15 @@ jobs:
             /tmp/skell_${test}_san
           done
 
+      - name: Polarity bounds, multi-bank delay and mirrored FIR parity regression
+        run: |
+          for test in polarity_peak multi_drain color_mirrored; do
+            g++ -std=c++17 -O3 -UNDEBUG -Wall -Wextra -Werror tests/test_${test}.cpp -o /tmp/skell_${test}
+            /tmp/skell_${test}
+            g++ -std=c++17 -O1 -g -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_${test}.cpp -o /tmp/skell_${test}_san
+            /tmp/skell_${test}_san
+          done
+
   windows-owned-vst3-host:
     runs-on: windows-latest
     timeout-minutes: 50
