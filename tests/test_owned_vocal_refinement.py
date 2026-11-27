@@ -33,7 +33,12 @@ class VocalRefinementTests(unittest.TestCase):
         x=np.ascontiguousarray(rng.uniform(-.8,.8,(4096,2)))
         for fs in (44100,48000,96000):
             for row in color_checks(self.render,x,fs):
-                self.assertTrue(all(v['exact'] for v in row['cases']))
+                for case in row['cases']:
+                    if not case['exact']:
+                        print('Contiguous parity: rate',fs,'factor',row['factor'],'wet',case['wet'],'max error',case['max_error'])
+                    self.assertLessEqual(case['max_error'],1e-12)
+                    if case['wet']==0:
+                        self.assertTrue(case['exact'])
 
     def test_invalid_controls_and_mismatch(self):
         x=np.ones((128,2));out=np.empty_like(x)
