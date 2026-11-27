@@ -1,0 +1,322 @@
+{
+  "schema": 1,
+  "parent": "5311bb096c7b7c1d256b592d3929ec84d3d9555e",
+  "source_blobs": {
+    "experiments/engine_lab/AdaptiveResearch.h": "ae8a458ff14bccce9aedc808cc873ea2d4ab31a0",
+    "experiments/engine_lab/ColorSplitNative.h": "a8ca37712920c31a041f86c8a7bdf31c7d3449bf",
+    "tests/fixtures/owned_adaptive_native.cpp": "afd823084d4280fe87f65c5b5c09e3a5987d21b7",
+    "tests/test_adaptive_native.cpp": "fabd2cb6c35f954c0d5451678b81d7b27abc6b45",
+    "benchmarks/owned_adaptive_native.py": "b49f4f178b5a651ba40f0e2fdd736e58a8e2ff29",
+    "benchmarks/owned_headroom_timing.py": "fc911048f137c2a3bb061e42fb738d5b32a6f7b5"
+  },
+  "original_blobs": {
+    "IndependentEngines": "b81bc2cba042148e1c809f072c70ad0d4b22dba0",
+    "LevelerPeakHold": "f72fbdf3bd883a2845186295b363b1cb35311f1b",
+    "ColorOversampled": "a4c7ee52708a9412b3c31f755b65ea9450271c08"
+  },
+  "private_report_sha256": {
+    "main": "6c224e6010de81015c1e0b2399b148b2c715beb5a00338e16266c45dc692b247",
+    "timing_subset": "81f7f1e04536a72c78639294bcfc70e63d4a2ac1be8d4bfd0ba21d46f8cc460c"
+  },
+  "inputs": {
+    "count": 36,
+    "fingerprints_verified": 36,
+    "archive_labeled_dry": 2,
+    "processed": 34
+  },
+  "kit": "13/13 passed",
+  "leveler": {
+    "order": [
+      "original",
+      "fixed12",
+      "fixed20",
+      "adaptive"
+    ],
+    "hold_range_ms": [
+      2,
+      32
+    ],
+    "matched_attack_ms": [
+      7.8342437744140625,
+      7.8280181884765625,
+      7.833101272583008
+    ],
+    "tone_conditions": 18,
+    "tone_renders": 72,
+    "recovery_conditions": 12,
+    "recovery_renders": 48,
+    "vocal_renders": 144,
+    "thd_48000_dbc": {
+      "20": [
+        -62.256,
+        -62.348,
+        -75.595,
+        -119.265
+      ],
+      "30": [
+        -69.312,
+        -76.122,
+        -121.764,
+        -121.764
+      ],
+      "50": [
+        -78.223,
+        -125.438,
+        -125.438,
+        -125.438
+      ],
+      "100": [
+        -90.292,
+        -130.78,
+        -130.78,
+        -130.78
+      ],
+      "200": [
+        -102.31,
+        -136.451,
+        -136.451,
+        -136.451
+      ],
+      "1000": [
+        -129.849,
+        -148.865,
+        -148.865,
+        -148.865
+      ]
+    },
+    "median_rms_gain_db": [
+      -2.51737474,
+      -1.86504729,
+      -1.86799622,
+      -1.86268454
+    ],
+    "median_raw_peak_dbfs": [
+      -7.44938422,
+      -7.31981955,
+      -7.31988469,
+      -7.31979667
+    ],
+    "median_matched_peak_dbfs": [
+      -7.44938422,
+      -7.98138726,
+      -7.97877699,
+      -7.98303595
+    ],
+    "lower_raw_peak": [
+      0,
+      1,
+      1,
+      1
+    ],
+    "lower_matched_peak": [
+      0,
+      28,
+      28,
+      28
+    ],
+    "release_48k": {
+      "burst_ms": [
+        10,
+        50,
+        250,
+        1000
+      ],
+      "original_ms": [
+        386.0208333333333,
+        384.0833333333333,
+        434.8125,
+        457.3125
+      ],
+      "adaptive_ms": [
+        333.2708333333333,
+        383.9166666666667,
+        434.8125,
+        457.3125
+      ]
+    },
+    "limits": "Same t90 for one step, not identical dynamic behavior; brief burst initial GR differs. Crest estimator not pitch detector. No bass or drum corpus."
+  },
+  "allpass": {
+    "native_impulse_checks": 90,
+    "max_complex_error": 9.930136612989092e-16,
+    "closer_to_ideal_group_delay": 81,
+    "example_44100_fraction0_5": {
+      "hz": [
+        1000,
+        4000,
+        8000,
+        12000,
+        16000,
+        20000
+      ],
+      "target": 1.5,
+      "first_plus_integer": [
+        1.501907095239169,
+        1.5315007716972615,
+        1.6396612381548825,
+        1.8724866931328226,
+        2.3126845461436853,
+        2.8805343079424244
+      ],
+      "second": [
+        1.5000093855661556,
+        1.5023905412761696,
+        1.5381648738345433,
+        1.7005037779302319,
+        2.2040377136643223,
+        3.2808246648403703
+      ]
+    },
+    "limits": "Fixed standalone section, not integrated feedback or modulation; near Nyquist regression."
+  },
+  "color": {
+    "tone_conditions": 36,
+    "native_tone_renders": 144,
+    "native_vocal_renders": 144,
+    "equal_cutoff_parity_conditions": 72,
+    "latency_samples": 40,
+    "example_44100_20004hz_amp0_5": {
+      "order": [
+        "original",
+        "down475",
+        "up475"
+      ],
+      "fundamental_dbfs": [
+        -9.733429331160162,
+        -4.325797861299129,
+        -6.748778138288127
+      ],
+      "absolute_nonharmonic_residual_dbfs": [
+        -90.63665732972956,
+        -90.63827119837345,
+        -64.13699610067295
+      ]
+    },
+    "down_only_pass_conditions": 6,
+    "limits": "Nonharmonic residual excludes harmonic-coincident aliases; no full alias guarantee."
+  },
+  "headroom": {
+    "order": [
+      "untrimmed_split",
+      "sample_guard_minus1",
+      "fixed_minus3"
+    ],
+    "max_sample_dbfs": [
+      1.45307069,
+      -1,
+      -1.54692931
+    ],
+    "max_4x_estimated_dbfs": [
+      1.993005,
+      0.96619597,
+      -1.006995
+    ],
+    "sample_overload_excerpts": [
+      14,
+      0,
+      0
+    ],
+    "estimated_overload_excerpts": [
+      18,
+      8,
+      0
+    ],
+    "median_guard_gain_relative_to_untrimmed_db": -0.15113143,
+    "limits": "Fully wet color only; no certified true peak. Guard changes waveform, fixed trim not universal."
+  },
+  "subset": {
+    "n": 6,
+    "dry": 2,
+    "processed": 4,
+    "initial_full_run": "timed out after 24; no complete report retained or counted",
+    "paired_repeats": 3,
+    "timed_renders": 72,
+    "median_native_ms_per_audio_second": [
+      [
+        0.826817,
+        0.80840241
+      ],
+      [
+        18.64197513,
+        18.02634963
+      ]
+    ],
+    "median_paired_time_change_percent": [
+      2.730645,
+      -1.39245556
+    ],
+    "peak_order": [
+      "untrimmed",
+      "fixed_minus3",
+      "guard_minus1",
+      "guard_minus1_then_minus2p5"
+    ],
+    "max_16x_estimate_dbfs": [
+      1.98714386,
+      -1.01285614,
+      0.36875265,
+      -2.13124735
+    ],
+    "limits": "Local wall time includes prepare and adapter, no DAW CPU claim. Six selected examples, not full-corpus 16x guarantee."
+  },
+  "validation": {
+    "optimized": "passed six rates 8/44.1/48/96/192/384 kHz",
+    "asan_ubsan": "passed same six rates",
+    "equal_cutoff_max_error": 0,
+    "dry_alignment": "exact",
+    "parent_ci": [
+      [
+        "Real Rizin smoke (owned fixture)",
+        "completed",
+        "success"
+      ],
+      [
+        "Independent PE oracle (owned fixtures)",
+        "completed",
+        "success"
+      ],
+      [
+        "REA PE imports (owned fixtures)",
+        "completed",
+        "success"
+      ],
+      [
+        "Real Ghidra smoke (owned fixture)",
+        "completed",
+        "success"
+      ],
+      [
+        "Craft Anything metadata (owned fixtures)",
+        "completed",
+        "success"
+      ],
+      [
+        "Reccmp export comparison (owned fixture)",
+        "completed",
+        "success"
+      ],
+      [
+        "Unified engines (owned fixture)",
+        "completed",
+        "success"
+      ],
+      [
+        "Python static-analysis tests",
+        "completed",
+        "success"
+      ]
+    ],
+    "new_ci": "pending"
+  },
+  "remaining": {
+    "vendor_unknown": 854,
+    "vendor_boundary_conflicts": 90,
+    "local_candidates": 692,
+    "production_adoption": false,
+    "presence_listening": "not completed",
+    "pitch_new_challenger": "not completed",
+    "DAW_CPU": "not verified",
+    "Windows_VST3": "not built for new research",
+    "UI": "unchanged; no new capture"
+  }
+}

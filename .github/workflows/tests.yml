@@ -315,6 +315,13 @@ jobs:
           g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_refinement_tracks.cpp -o /tmp/skell_tracks_san
           /tmp/skell_tracks_san
 
+      - name: Independent adaptive hold, allpass and split color regression
+        run: |
+          g++ -std=c++17 -O3 -UNDEBUG -Wall -Wextra -Werror tests/test_adaptive_native.cpp -o /tmp/skell_adaptive_native
+          /tmp/skell_adaptive_native
+          g++ -std=c++17 -O1 -g -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_adaptive_native.cpp -o /tmp/skell_adaptive_native_san
+          /tmp/skell_adaptive_native_san
+
   windows-owned-vst3-host:
     runs-on: windows-latest
     timeout-minutes: 50
