@@ -1,0 +1,276 @@
+{
+  "schema": 1,
+  "parent": "e025d77c05e3a403b6c84eabef1f65fb98231f8e",
+  "source_blobs": {
+    "experiments/engine_lab/QuietFastPolarity.h": "7f30b2dff2ca5d4e2877875e49aaf0debcce2f67",
+    "experiments/engine_lab/ReleaseSelectedGuard.h": "047147ae8cd104122b042aaefaa59aa4fa45a15a",
+    "experiments/engine_lab/WetBudgetResearch.h": "e624e194b2237feebec461f0dec1c9235e2eb037",
+    "experiments/engine_lab/BudgetedMultiDrainDelay.h": "e695aa037d77a79284ab72343fcb293dda4ea92a",
+    "experiments/engine_lab/ColorSplitSymmetric.h": "128c04e75c19bb7baa715bf2dba0ee96206e0316",
+    "tests/test_budget_quiet_symmetric.cpp": "fc65576089a3897de80f0137602635d37790c9ad",
+    "tests/fixtures/owned_budget_quiet_symmetric.cpp": "16b630df41fdbf567a0d8c30c309d9cf99b91960",
+    "benchmarks/owned_budget_quiet_symmetric.py": "b45fe1144fab8b4178462b5c20b60e663db4530a"
+  },
+  "private_report_sha256": "4ed96ad19942fda7f5cc9969a2c000516e1529d81f3b10f5039fa0627f708f6b",
+  "inputs": {
+    "vocal_excerpts": 36,
+    "vocal_frames": 7022929,
+    "archive_labeled_dry": 2,
+    "music_sources": 3,
+    "music_excerpts": 9,
+    "music_frames": 4320000,
+    "private_source_hashes_verified": true,
+    "limits": "Prior corpus reused; music excerpts correlated within source, no isolated stems."
+  },
+  "kit": "13/13 verified; isolated Debian13 overlay package verification and pkg-config probe passed",
+  "guard": {
+    "latency_samples": 16,
+    "ceiling_db": -1,
+    "quiet_window_rule": "max absolute input across stereo window <= ceiling/(max phase L1 norm * (1+1e-12)); every lobe cap then unity; preserve previously accumulated caps and gain state",
+    "native_exact_channel_comparisons": 864000,
+    "real_audio_parity": "45 excerpts x 3 releases, two exact pair checks each",
+    "quiet_fraction_median": [
+      0.6272559639165429,
+      0.36584405519816005
+    ],
+    "corpus_order": [
+      "vocals",
+      "music"
+    ],
+    "timing_release_ms": 1,
+    "timing_reps": 3,
+    "median_ms_per_audio_second": [
+      [
+        9.53356173,
+        4.06038401
+      ],
+      [
+        10.3531276,
+        7.5746486
+      ]
+    ],
+    "paired_median_percent": [
+      -56.303639295681734,
+      -29.0284084943655
+    ],
+    "faster_count": [
+      35,
+      7
+    ],
+    "selector": "prepare-time <=10ms quiet polarity, otherwise previous prefix. Experimental threshold, not automated release changes.",
+    "release_ms": [
+      1,
+      10,
+      60
+    ],
+    "paired_rms_advantage_db": [
+      [
+        0.6294568426326541,
+        0.09593324521427901,
+        0.01992683981685539
+      ],
+      [
+        1.3747488751044032,
+        0.16999017330627408,
+        0.0323120315414287
+      ]
+    ],
+    "tone_settings": 60,
+    "tone_renders": 120,
+    "polarity_thd_worse_by_gt_point1_db": 6,
+    "example_50hz_amp1p5": {
+      "release_ms": [
+        1,
+        5,
+        10,
+        20,
+        60,
+        1000
+      ],
+      "prefix_thd_dbc": [
+        -12.144,
+        -15.682,
+        -18.864,
+        -22.521,
+        -29.399,
+        -51.234
+      ],
+      "polarity_thd_dbc": [
+        -12.679,
+        -16.722,
+        -19.417,
+        -22.816,
+        -29.506,
+        -51.242
+      ]
+    },
+    "limits": "48k coherent tone second of two seconds, harmonic-bin metric omits aliases coincident with harmonics and nonharmonic residual. 1000ms may not fully settle. Peak guarantee inherited only for declared finite kernel, not certified true peak. No new audio true peak sweep for standalone limiter; exact parity with previous."
+  },
+  "delay": {
+    "order": [
+      "raw_four_bank",
+      "sample_budget",
+      "raw_plus_prefix",
+      "budget_plus_prefix"
+    ],
+    "sample_budget_db": -1,
+    "release_ms": 30,
+    "feedback": 0.7,
+    "request_interval_ms": 250,
+    "vocal_max_sample_dbfs": [
+      4.5232603,
+      -1,
+      -1.86945442,
+      -1.86953564
+    ],
+    "music_max_sample_dbfs": [
+      10.2862031,
+      -1,
+      -1.2268214,
+      -1.22221504
+    ],
+    "vocal_max_est16_dbfs": [
+      4.55504635,
+      -0.80212772,
+      -1.82214775,
+      -1.82310911
+    ],
+    "music_max_est16_dbfs": [
+      10.28933105,
+      0.09876533,
+      -1.08746027,
+      -1.01303588
+    ],
+    "vocal_est16_overloads": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "music_est16_overloads": [
+      9,
+      1,
+      0,
+      0
+    ],
+    "music_median_rms_gain_db": [
+      0,
+      -2.29257499,
+      -3.44738952,
+      -3.13244143
+    ],
+    "music_paired_gain_advantage_budget_then_guard_vs_guard": 0.31494809042632754,
+    "music_median_paired_tail_change_db": -1.6608385271514323,
+    "vocal_median_paired_tail_change_db": 0,
+    "stress_sample_peak_linear": 0.891250938133746,
+    "limits": "Budget caps primary if over ceiling then stereo-linked signed tail cap, output-only; does not alter recursive state or scheduling. Fully wet only sample ceiling; dry/partial wet mix not peak protected. No universal true-peak ceiling. Faster response may change sound and drain tails. Native scheduling equivalence in stress tests, not new host tempo results."
+  },
+  "color": {
+    "latency_samples": 40,
+    "stress_max_error": 2.44249065417534e-15,
+    "vocal_max_error": 1.9984014443252818e-15,
+    "music_max_error": 2.886579864025407e-15,
+    "real_audio_pairs": 45,
+    "reps": 3,
+    "median_ms_per_audio_second": [
+      [
+        17.63245846,
+        14.65562581
+      ],
+      [
+        20.68004486,
+        17.2775514
+      ]
+    ],
+    "paired_median_time_change_percent": [
+      -17.62634831026022,
+      -15.93668185489091
+    ],
+    "faster_count": [
+      35,
+      9
+    ],
+    "limits": "Symmetric paired down FIR uses averaged coefficient and reordered accumulation, not bit exact. 4x40 450/475 tested, no new multistage/alias sweep. Paired native wall time includes prepare and adapter; concurrently batched."
+  },
+  "presence": {
+    "html_v2_sha256": "03e349267c3058e82558e04c333a5014e8b3a5dfe14ba16a62f915759b68274f",
+    "html_bytes": 49399167,
+    "audio_files": 15,
+    "pcm24_wav_roundtrip_exact": true,
+    "max_est4_dbfs": -0.99999964219155,
+    "chromium": "set_content, explicit no-user-gesture-required test flag, A playback advances, B retains position ~0.615547s after switch, comparison reset removes src, six synthetic tie vote export valid, zero page errors",
+    "limits": "No subjective votes. Browser test set_content not actual user app or file navigation. Private HTML/audio omitted from Git."
+  },
+  "pitch_host": {
+    "source_archive_revisions": {
+      "playground": "ac9af2a5f87b56340e2c7a995cd623c431b7a646",
+      "meta": "73d759307ce9536e522b2cf78dc1da943afc8f3d",
+      "snap": "8a4876259ebf30dd100204be1cf9beae2c3b5f03",
+      "skellcore": "4c499c58cb3b2791eed2d5dcef6d8d543fcaea8d",
+      "juce": "29396c22c93392d6738e021b83196283d6e4d850"
+    },
+    "offline_dependency_probe": "passed; ALSA/Freetype/Fontconfig/GL found, GTK/WebKit missing",
+    "configure_attempts": 2,
+    "status": "both timed out Building juceaide, retained cache (11MiB at last check), no full plugin or renderer build, no full-engine renders, no native UI or host results",
+    "limits": "Archived corresponding source, not proven identical to current full branch; no protected engine changes."
+  },
+  "validation": {
+    "optimized": "passed six rates",
+    "asan_ubsan": "passed six rates",
+    "initial_compile": "missing includes, corrected and retested",
+    "source_hashes": "8/8 exact tested Git blobs",
+    "parent_ci": [
+      [
+        "Craft Anything metadata (owned fixtures)",
+        "completed",
+        "success"
+      ],
+      [
+        "Real Ghidra smoke (owned fixture)",
+        "completed",
+        "success"
+      ],
+      [
+        "REA PE imports (owned fixtures)",
+        "completed",
+        "success"
+      ],
+      [
+        "Independent PE oracle (owned fixtures)",
+        "completed",
+        "success"
+      ],
+      [
+        "Reccmp export comparison (owned fixture)",
+        "completed",
+        "success"
+      ],
+      [
+        "Real Rizin smoke (owned fixture)",
+        "completed",
+        "success"
+      ],
+      [
+        "Unified engines (owned fixture)",
+        "completed",
+        "success"
+      ],
+      [
+        "Python static-analysis tests",
+        "completed",
+        "failure"
+      ]
+    ],
+    "new_ci": "pending"
+  },
+  "remaining": {
+    "compression": "No new transient discriminator or isolated bass/drums tests this batch",
+    "multistage_oversampling": "not tested",
+    "pitch": "full five-engine compare not completed",
+    "host": "not run",
+    "vendor_unknown": 854,
+    "vendor_boundary_conflicts": 90,
+    "local_candidates": 692,
+    "production_adoption": false
+  }
+}
