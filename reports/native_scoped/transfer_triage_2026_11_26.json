@@ -1,0 +1,262 @@
+{
+  "schema": 1,
+  "parent": "dc2d54631cfcb2652dec9c47d3573f06678688ec",
+  "prior_report_sha256": "7d6cdd58396a855ca7da340537132cc06246c7e23467ed3b8d944d5092119b88",
+  "full_local_report_sha256": "ef58d36fe4f2ed66813924bfc42a28292ce8c871cf56059235432bc7d864476b",
+  "totals": {
+    "binaries": 8,
+    "windows": 479,
+    "previous_unresolved": 941,
+    "classification": {
+      "direct_byte_verified": 87,
+      "indirect_memory": 762,
+      "indirect_register": 81,
+      "other_unresolved": 10,
+      "raw_span_unreconciled": 1
+    },
+    "remaining_unresolved": 854,
+    "recovered_direct": {
+      "common_boundary": 30,
+      "outside_window": 56,
+      "noncommon_boundary": 1
+    },
+    "previous_boundary_conflicts": {
+      "interior_interior": 85,
+      "interior_uncovered": 1,
+      "start_interior": 2,
+      "start_uncovered": 1
+    },
+    "new_total_boundary_conflicts": 90,
+    "added_unique_guards": 15,
+    "old_guarded_paths": 692,
+    "new_guarded_paths": 692
+  },
+  "modules": [
+    {
+      "name": "StandardCLIP.vst3",
+      "windows": 41,
+      "previous_unresolved": 48,
+      "classification": {
+        "direct_byte_verified": 11,
+        "indirect_memory": 32,
+        "indirect_register": 5,
+        "other_unresolved": 0,
+        "raw_span_unreconciled": 0
+      },
+      "recovered_direct": {
+        "common_boundary": 8,
+        "outside_window": 3,
+        "noncommon_boundary": 0
+      },
+      "added_unique_guards": 6,
+      "old_guarded_paths": 35,
+      "new_guarded_paths": 35,
+      "previous_boundary_conflicts": {
+        "interior_interior": 0,
+        "interior_uncovered": 0,
+        "start_interior": 0,
+        "start_uncovered": 0
+      }
+    },
+    {
+      "name": "Trackspacer25.vst3",
+      "windows": 42,
+      "previous_unresolved": 58,
+      "classification": {
+        "direct_byte_verified": 9,
+        "indirect_memory": 45,
+        "indirect_register": 4,
+        "other_unresolved": 0,
+        "raw_span_unreconciled": 0
+      },
+      "recovered_direct": {
+        "common_boundary": 2,
+        "outside_window": 7,
+        "noncommon_boundary": 0
+      },
+      "added_unique_guards": 0,
+      "old_guarded_paths": 60,
+      "new_guarded_paths": 60,
+      "previous_boundary_conflicts": {
+        "interior_interior": 0,
+        "interior_uncovered": 0,
+        "start_interior": 0,
+        "start_uncovered": 0
+      }
+    },
+    {
+      "name": "FG-2A.epl",
+      "windows": 44,
+      "previous_unresolved": 60,
+      "classification": {
+        "direct_byte_verified": 8,
+        "indirect_memory": 43,
+        "indirect_register": 8,
+        "other_unresolved": 1,
+        "raw_span_unreconciled": 0
+      },
+      "recovered_direct": {
+        "common_boundary": 5,
+        "outside_window": 3,
+        "noncommon_boundary": 0
+      },
+      "added_unique_guards": 1,
+      "old_guarded_paths": 205,
+      "new_guarded_paths": 205,
+      "previous_boundary_conflicts": {
+        "interior_interior": 4,
+        "interior_uncovered": 0,
+        "start_interior": 0,
+        "start_uncovered": 0
+      }
+    },
+    {
+      "name": "Auburn Sounds Panagement 2-64.vst3",
+      "windows": 77,
+      "previous_unresolved": 81,
+      "classification": {
+        "direct_byte_verified": 8,
+        "indirect_memory": 63,
+        "indirect_register": 8,
+        "other_unresolved": 2,
+        "raw_span_unreconciled": 0
+      },
+      "recovered_direct": {
+        "common_boundary": 4,
+        "outside_window": 4,
+        "noncommon_boundary": 0
+      },
+      "added_unique_guards": 1,
+      "old_guarded_paths": 99,
+      "new_guarded_paths": 99,
+      "previous_boundary_conflicts": {
+        "interior_interior": 0,
+        "interior_uncovered": 0,
+        "start_interior": 0,
+        "start_uncovered": 0
+      }
+    },
+    {
+      "name": "DeeDoubler.vst3",
+      "windows": 43,
+      "previous_unresolved": 62,
+      "classification": {
+        "direct_byte_verified": 7,
+        "indirect_memory": 40,
+        "indirect_register": 14,
+        "other_unresolved": 1,
+        "raw_span_unreconciled": 0
+      },
+      "recovered_direct": {
+        "common_boundary": 1,
+        "outside_window": 6,
+        "noncommon_boundary": 0
+      },
+      "added_unique_guards": 0,
+      "old_guarded_paths": 89,
+      "new_guarded_paths": 89,
+      "previous_boundary_conflicts": {
+        "interior_interior": 0,
+        "interior_uncovered": 0,
+        "start_interior": 0,
+        "start_uncovered": 0
+      }
+    },
+    {
+      "name": "MixWave DW Fearn VT-5.vst3",
+      "windows": 78,
+      "previous_unresolved": 266,
+      "classification": {
+        "direct_byte_verified": 15,
+        "indirect_memory": 225,
+        "indirect_register": 23,
+        "other_unresolved": 3,
+        "raw_span_unreconciled": 0
+      },
+      "recovered_direct": {
+        "common_boundary": 4,
+        "outside_window": 11,
+        "noncommon_boundary": 0
+      },
+      "added_unique_guards": 4,
+      "old_guarded_paths": 90,
+      "new_guarded_paths": 90,
+      "previous_boundary_conflicts": {
+        "interior_interior": 35,
+        "interior_uncovered": 1,
+        "start_interior": 0,
+        "start_uncovered": 0
+      }
+    },
+    {
+      "name": "SSL Fusion Stereo Image.vst3",
+      "windows": 76,
+      "previous_unresolved": 178,
+      "classification": {
+        "direct_byte_verified": 17,
+        "indirect_memory": 144,
+        "indirect_register": 13,
+        "other_unresolved": 3,
+        "raw_span_unreconciled": 1
+      },
+      "recovered_direct": {
+        "common_boundary": 3,
+        "outside_window": 13,
+        "noncommon_boundary": 1
+      },
+      "added_unique_guards": 1,
+      "old_guarded_paths": 64,
+      "new_guarded_paths": 64,
+      "previous_boundary_conflicts": {
+        "interior_interior": 46,
+        "interior_uncovered": 0,
+        "start_interior": 2,
+        "start_uncovered": 1
+      }
+    },
+    {
+      "name": "MB MixHead.vst3",
+      "windows": 78,
+      "previous_unresolved": 188,
+      "classification": {
+        "direct_byte_verified": 12,
+        "indirect_memory": 170,
+        "indirect_register": 6,
+        "other_unresolved": 0,
+        "raw_span_unreconciled": 0
+      },
+      "recovered_direct": {
+        "common_boundary": 3,
+        "outside_window": 9,
+        "noncommon_boundary": 0
+      },
+      "added_unique_guards": 2,
+      "old_guarded_paths": 50,
+      "new_guarded_paths": 50,
+      "previous_boundary_conflicts": {
+        "interior_interior": 0,
+        "interior_uncovered": 0,
+        "start_interior": 0,
+        "start_uncovered": 0
+      }
+    }
+  ],
+  "validation": {
+    "local_unittest_methods_passed": 13,
+    "new": 4,
+    "previous": 9,
+    "source_blob": "cbfe06be65a65284588424101ac11490d0988b22",
+    "test_blob": "f44084843c71ffe79190e133cde2c9fb9e9838e2",
+    "dependencies": {
+      "pe": "40be92efc73172a5d838c73b4ce8fe8b868624c0",
+      "disasm": "d4e87f3dc1760a46907b388a06c8383377d05afc",
+      "scope_consensus": "1c80cdcb8b233b3d4e56ed82588fee3530656911",
+      "flow_guards": "4d5e6b2619923d4c021aa731ac1ddc4847b298b7",
+      "value_flow": "1c1339b37437289f95d28fa1cbe9cee464849c89",
+      "memory_effects": "4158bbe295eb87d6faa1d0d3a3a3ebf047574e68"
+    },
+    "offline_kit": "13/13 passed",
+    "parent_ci_last_observed": "7 successes, Python in progress"
+  },
+  "limits": "Observation counts, not unique whole-binary edges. Indirect classification checks ordinary opcode/addressing length and operand kind, not memory expression or runtime destination. Printed spans are not independent semantic proof. No conflict target re-decoding, no out-of-window target traversal, no protection analysis, no proprietary DSP reconstruction."
+}
