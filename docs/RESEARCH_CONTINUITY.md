@@ -410,3 +410,6 @@ Independent fixture asymmetry reveals earlier linked-detector assumption invalid
 
 ## Isolated reference intake — 2026-11-27
 264 independent fixture renders, 11 local tests passed, five exact tested source blobs. Manual capture session validates hashes, format, relations, declarations, bypass and headroom, no alignment fitting or authenticated provenance. Three wet reverb sessions exceeded full scale; all screened at half-level original probes after recapture, not output normalization. Commercial captures still absent; production unchanged. Preserve active PR CI rather than superseding pending independent Windows host. See docs/CAPTURE_INTAKE_20261127.md.
+
+## Finite complementary stereo measurement — 2026-11-27
+108 independent fixture renders, eight local tests, 12/12 fixed-response cases consistent, six nonlinear/time-varying cases rejected; two reused private recorded holdouts. Six equal-peak known FIR noise comparisons 63.9–64.3x lower error (unequal energy). 12s/96k known cross route peak 960017 exact, max RSS 640224 to 457932 KiB with array lifetime optimization. Four original probe WAVs verified. Previous db898f3 independent Windows pluginval acceptance completed successfully (46103974354). No vendor or production changes. See docs/FINITE_STEREO_20261127.md.
