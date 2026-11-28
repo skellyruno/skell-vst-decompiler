@@ -434,6 +434,16 @@ jobs:
           g++ -std=c++17 -O1 -g -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_cascade_id.cpp experiments/CascadeIdentification.cpp -o /tmp/skell_cascade_id_san
           /tmp/skell_cascade_id_san
 
+      - name: Phase-clock and causal halfband parity regression
+        run: |
+          for pair in "test_phase_clock.cpp PhaseClockProbe.cpp" "test_halfband.cpp HalfbandColor.cpp"; do
+            read -r test source <<< "$pair"
+            g++ -std=c++17 -O3 -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror "tests/$test" "experiments/$source" -o /tmp/skell_clock_hb
+            /tmp/skell_clock_hb
+            g++ -std=c++17 -O1 -g -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie "tests/$test" "experiments/$source" -o /tmp/skell_clock_hb_san
+            /tmp/skell_clock_hb_san
+          done
+
   windows-owned-vst3-host:
     runs-on: windows-latest
     timeout-minutes: 50
