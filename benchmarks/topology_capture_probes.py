@@ -7,9 +7,11 @@ import numpy as np
 import soundfile as sf
 
 
-def generate(folder, fs=48000):
+def generate(folder, fs=48000, level_divisor=1):
     if fs not in (44100, 48000, 96000):
         raise ValueError('unsupported sample rate')
+    if type(level_divisor) is not int or level_divisor not in (1,2,4,8):
+        raise ValueError('unsupported level divisor')
     root=Path(folder);root.mkdir(parents=True,exist_ok=False)
     rng=np.random.default_rng(818);n=fs;shift=fs//20
     x=rng.uniform(-.4,.4,(n,2)).astype(np.float32)
@@ -22,12 +24,12 @@ def generate(folder, fs=48000):
     cases=[('base',x),('repeat',x),('half',.5*x),('other',z),('sum',x+z),('alternate_prefix',alternate),('shifted',delayed),('quiet_left',q),('loud_right',w),('quiet_right',q[:,::-1]),('loud_left',w[:,::-1])]
     rows=[]
     for key,a in cases:
-        file=root/(key+'.wav');sf.write(file,a,fs,subtype='FLOAT')
+        file=root/(key+'.wav');sf.write(file,a/level_divisor,fs,subtype='FLOAT')
         rows.append(dict(id=key,family='topology',file=file.name,sha256=hashlib.sha256(file.read_bytes()).hexdigest(),frames=len(a),channels=2,windows=[]))
-    manifest=dict(schema=1,sample_rate=fs,cases=rows,suffix_start=n//2,shift_samples=shift,note='Render each separately from reset at identical settings; no normalization or alignment changes.')
+    manifest=dict(schema=1,sample_rate=fs,level_divisor=level_divisor,cases=rows,suffix_start=n//2,shift_samples=shift,note='Render each separately from reset at identical settings; no normalization or alignment changes.')
     (root/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
     return manifest
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('folder');p.add_argument('--rate',type=int,default=48000);a=p.parse_args();generate(a.folder,a.rate)
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('folder');p.add_argument('--rate',type=int,default=48000);p.add_argument('--level-divisor',type=int,default=1);a=p.parse_args();generate(a.folder,a.rate,a.level_divisor)

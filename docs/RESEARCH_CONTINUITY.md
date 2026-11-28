@@ -407,3 +407,6 @@ Independent fixture asymmetry reveals earlier linked-detector assumption invalid
 
 ## Topology-first diagnostics and commercial capture preparation — 2026-11-27
 309 independent fixture renders (previous local batch), 8 Python methods and optimized/sanitized C++ rechecked. Feedforward amplitude candidate heldout absolute RMS 1.29885e-7; competing descriptions worse. Finite family rejection gates, hard-knee and observed recovery signatures. Original 11-probe generator, 33 WAV relations verified across three rates, manual isolated-capture packet. Seven exact source blobs verified. No commercial capture, no approved sound changes. Prior Linux job passed; Windows independent-host gate pending before new commit. See docs/TOPOLOGY_CAPTURE_20261127.md.
+
+## Isolated reference intake — 2026-11-27
+264 independent fixture renders, 11 local tests passed, five exact tested source blobs. Manual capture session validates hashes, format, relations, declarations, bypass and headroom, no alignment fitting or authenticated provenance. Three wet reverb sessions exceeded full scale; all screened at half-level original probes after recapture, not output normalization. Commercial captures still absent; production unchanged. Preserve active PR CI rather than superseding pending independent Windows host. See docs/CAPTURE_INTAKE_20261127.md.
