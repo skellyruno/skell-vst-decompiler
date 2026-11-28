@@ -420,6 +420,13 @@ jobs:
           g++ -std=c++17 -O1 -g -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_stereo_detector.cpp experiments/StereoDetectorProbe.cpp -o /tmp/skell_stereo_detector_san
           /tmp/skell_stereo_detector_san
 
+      - name: Topology hypothesis steady-state regression
+        run: |
+          g++ -std=c++17 -O3 -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror tests/test_topology_dynamics.cpp experiments/TopologyDynamics.cpp -o /tmp/skell_topology
+          /tmp/skell_topology
+          g++ -std=c++17 -O1 -g -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_topology_dynamics.cpp experiments/TopologyDynamics.cpp -o /tmp/skell_topology_san
+          /tmp/skell_topology_san
+
   windows-owned-vst3-host:
     runs-on: windows-latest
     timeout-minutes: 50
