@@ -491,6 +491,24 @@ jobs:
           $env:PYTHONPATH = "."
           python tests/ir_host_smoke.py $plugin
           if ($LASTEXITCODE -ne 0) { throw "IR fixture host comparison failed" }
+      - name: Independent pluginval owned-fixture acceptance
+        shell: pwsh
+        run: |
+          $zip = "$env:RUNNER_TEMP/pluginval-beta3.zip"
+          Invoke-WebRequest -Uri "https://github.com/Tracktion/pluginval/releases/download/v2.0.0-beta3/pluginval_Windows.zip" -OutFile $zip
+          if ((Get-FileHash $zip -Algorithm SHA256).Hash.ToLower() -ne "da158e918b60430c6a5223cd99cc2e746bda604e583258c400898caf4e95c523") { throw "pluginval release digest mismatch" }
+          $dir = "$env:RUNNER_TEMP/pluginval-beta3"
+          Expand-Archive -Path $zip -DestinationPath $dir
+          $exe = @(Get-ChildItem $dir -Recurse -File -Filter pluginval.exe)
+          if ($exe.Count -ne 1) { throw "Unexpected pluginval archive layout" }
+          $golden = "$env:RUNNER_TEMP/skell-analytic-golden"
+          python tests/pluginval_reference_cases.py $golden
+          if ($LASTEXITCODE -ne 0) { throw "Golden generation failed" }
+          $plugin = "$env:RUNNER_TEMP/skell-host-build/SkellHostFixture_artefacts/Release/VST3/Skell Host Fixture.vst3"
+          foreach ($case in @("gain", "delay")) {
+            & $exe[0].FullName test "$golden/$case.json" --plugin $plugin --timeout-ms 60000
+            if ($LASTEXITCODE -ne 0) { throw "Independent host acceptance failed: $case" }
+          }
       - name: Upload verified owned analyzer build
         uses: actions/upload-artifact@v4
         with:
