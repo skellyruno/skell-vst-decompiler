@@ -29,3 +29,20 @@ target_sources(SkellParamIds PRIVATE ParamIds.cpp)
 target_compile_features(SkellParamIds PRIVATE cxx_std_17)
 target_compile_definitions(SkellParamIds PRIVATE JUCE_PLUGINHOST_VST3=1 JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0 JUCE_VST3_CAN_REPLACE_VST2=0)
 target_link_libraries(SkellParamIds PRIVATE juce::juce_audio_processors juce::juce_gui_basics juce::juce_cryptography juce::juce_recommended_config_flags)
+
+# Separate owned headless convolution fixture; existing fixture/parameter IDs unchanged.
+juce_add_plugin(SkellIRHostFixture
+    COMPANY_NAME "Skell Research"
+    PLUGIN_MANUFACTURER_CODE Skll
+    PLUGIN_CODE IrFx
+    PRODUCT_NAME "Skell IR Host Fixture"
+    VERSION 1.0.0
+    FORMATS VST3
+    IS_SYNTH FALSE
+    NEEDS_MIDI_INPUT FALSE
+    NEEDS_MIDI_OUTPUT FALSE
+    COPY_PLUGIN_AFTER_BUILD FALSE)
+target_sources(SkellIRHostFixture PRIVATE IRFixture.cpp)
+target_compile_features(SkellIRHostFixture PRIVATE cxx_std_17)
+target_compile_definitions(SkellIRHostFixture PUBLIC JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0 JUCE_VST3_CAN_REPLACE_VST2=0)
+target_link_libraries(SkellIRHostFixture PRIVATE juce::juce_audio_processors juce::juce_recommended_config_flags)

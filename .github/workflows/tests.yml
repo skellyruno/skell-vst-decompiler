@@ -403,6 +403,16 @@ jobs:
           g++ -std=c++17 -O1 -g -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_native_stereo_ir.cpp -o /tmp/skell_native_stereo_ir_san
           /tmp/skell_native_stereo_ir_san
 
+      - name: Fast convolution and detector-first regression
+        run: |
+          for mode in optimized sanitized; do
+            if [ "$mode" = optimized ]; then flags="-O3"; else flags="-O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie"; fi
+            g++ -std=c++17 $flags -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror tests/test_fast_stereo_ir.cpp -o /tmp/skell_fast_ir
+            /tmp/skell_fast_ir
+            g++ -std=c++17 $flags -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror tests/test_detector_probe.cpp experiments/ir/EnvelopeDetectorProbe.cpp -o /tmp/skell_detector_probe
+            /tmp/skell_detector_probe
+          done
+
   windows-owned-vst3-host:
     runs-on: windows-latest
     timeout-minutes: 50
@@ -471,6 +481,16 @@ jobs:
           $expectedDelay = python -c "from skell_vst_decompiler.owned_state import juce_param_id; print(juce_param_id('creative_delay'))"
           if ($gain[0].param_id -ne [long]$expectedGain -or $delay[0].param_id -ne [long]$expectedDelay) { throw "Observed VST3 ID differs from source prediction" }
           Write-Output ("SKELL_PUBLIC_PARAM_IDS " + ($report | ConvertTo-Json -Depth 6 -Compress))
+      - name: Build and render separate owned convolution fixture
+        shell: pwsh
+        run: |
+          cmake --build "$env:RUNNER_TEMP/skell-host-build" --config Release --target SkellIRHostFixture_VST3 --parallel 2
+          if ($LASTEXITCODE -ne 0) { throw "IR fixture build failed" }
+          $plugin = "$env:RUNNER_TEMP/skell-host-build/SkellIRHostFixture_artefacts/Release/VST3/Skell IR Host Fixture.vst3"
+          if (!(Test-Path $plugin)) { throw "IR fixture output missing" }
+          $env:PYTHONPATH = "."
+          python tests/ir_host_smoke.py $plugin
+          if ($LASTEXITCODE -ne 0) { throw "IR fixture host comparison failed" }
       - name: Upload verified owned analyzer build
         uses: actions/upload-artifact@v4
         with:
