@@ -416,3 +416,6 @@ Independent fixture asymmetry reveals earlier linked-detector assumption invalid
 
 ## Cascaded dynamics model selection — 2026-11-27
 34 independent built-in fixture renders; selected one vs two stages correctly for chosen settings. Synthetic training at 48k, separate validation and 12 reused audio/rate holdouts per fixture. Cascade mean relative RMS .0486775 to 9.16715e-6, all 12 improved, no refit. Native optimized/sanitizer tests pass. Previous owned pluginval Windows acceptance passed. Cached Quick4 13/13. No commercial or production changes. See docs/CASCADE_IDENTIFICATION_20261127.md.
+
+## Block-oriented nonlinear model selection — 2026-11-27
+Initial second-order-only descriptions rejected, isolated fixture checks reveal first-order filter. Final 52-render combined two-order six-placement comparison selects pre/post/split correctly, rejects unrelated compressor chain; 36 reused recording/rate holdouts through 192k. Split mean relative RMS .1616754 simpler -> 2.09683e-7, worst 4.73254e-7. Six tests including second-order known answer. 124 renders including rejected/repeated batches and isolation. Cached kit 13/13; three exact tested blobs. No commercial or production changes. Preserve current PR CI, continuation branch only. See docs/BLOCK_IDENTIFICATION_20261127.md.
