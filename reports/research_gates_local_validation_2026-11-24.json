@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "report_kind": "independent_research_gates_local_validation",
+  "source_commit": "89efb82d9b53b4efb8fb945fcefe71af34b84a7d",
+  "local_tests": 3,
+  "local_result": "pass",
+  "tested_blobs": {
+    "skell_vst_decompiler/gated_pitch.py": "c71970397d447caf3a65927232624986581cb4e5",
+    "skell_vst_decompiler/alias_measure.py": "94715868c59a0dfbccad8a80364688d258f03ec8",
+    "skell_vst_decompiler/recovery_alternatives.py": "09d89b5b1fcda6e051cd2925ca7e0a29039b2f75",
+    "tests/test_research_gates.py": "1084e04d9b50c07aecb8eceabd303368890459e8",
+    "tests/research_gates_smoke.py": "d08db6c5a2ae06174f864ae71a3968cbdf704337"
+  },
+  "previous_ci": {
+    "tests": 136,
+    "all_eight_passed": true,
+    "run_ids": [
+      45446978539,
+      45446978148,
+      45446978138,
+      45446978477,
+      45446978135,
+      45446978449,
+      45446978488,
+      45446978142
+    ]
+  },
+  "pitch": {
+    "5": {
+      "old_center_rmse": 0.8476972982140545,
+      "new_center_rmse": 0.8476984589200028,
+      "rate_support_fraction": 1
+    },
+    "7": {
+      "old_center_rmse": 0.9079994671162249,
+      "new_center_rmse": 0.9079988520533346,
+      "rate_support_fraction": 1
+    },
+    "3.5": {
+      "old_center_rmse": 0.6970077046073063,
+      "new_center_rmse": 0.6970257366638476,
+      "rate_support_fraction": 1
+    },
+    "4.7": {
+      "old_center_rmse": 1.2868001634250457,
+      "new_center_rmse": 0.8411290252091225,
+      "rate_support_fraction": 1
+    },
+    "5.7": {
+      "old_center_rmse": 1.1995374294966912,
+      "new_center_rmse": 0.9235366364259031,
+      "rate_support_fraction": 1
+    },
+    "7.5": {
+      "old_center_rmse": 0.9306471887747118,
+      "new_center_rmse": 0.9306470074820221,
+      "rate_support_fraction": 1
+    },
+    "chirp": {
+      "old_center_rmse": 1.4563207248413794,
+      "new_center_rmse": 1.387917414268382,
+      "rate_support_fraction": 1
+    },
+    "none": {
+      "old_center_rmse": 0.6696707876439622,
+      "new_center_rmse": 0.7076820501669084,
+      "rate_support_fraction": 0
+    },
+    "step": {
+      "old_center_rmse": 0.951883585103391,
+      "new_center_rmse": 0.9840152871653578,
+      "rate_support_fraction": 0
+    },
+    "weak": {
+      "old_center_rmse": 0.8247333812273713,
+      "new_center_rmse": 1.3453384830228006,
+      "rate_support_fraction": 0
+    }
+  },
+  "recovery": {
+    "dual": {
+      "trials": 12,
+      "old_dual_preferred": 12,
+      "new_dual_preferred": 11
+    },
+    "stretched": {
+      "trials": 12,
+      "old_dual_preferred": 12,
+      "new_dual_preferred": 0
+    },
+    "single": {
+      "trials": 12,
+      "old_dual_preferred": 0,
+      "new_dual_preferred": 0
+    },
+    "example_stretched": {
+      "true_beta": 0.55,
+      "estimated_beta": 0.5525771358830497,
+      "dual_heldout_rmse": 0.2153772788692047,
+      "stretched_heldout_rmse": 0.032275264754929124
+    }
+  },
+  "alias": {
+    "48000_11003": {
+      "direct_nonharmonic_db": -11.617586895194618,
+      "adaa_nonharmonic_db": -23.33151176734741,
+      "direct_fundamental_rms": 0.8604785686378631,
+      "adaa_fundamental_rms": 0.757432073351289
+    },
+    "48000_7001": {
+      "direct_nonharmonic_db": -20.382037829529473,
+      "adaa_nonharmonic_db": -32.91233014515648,
+      "direct_fundamental_rms": 0.860478568637871,
+      "adaa_fundamental_rms": 0.8221451229773665
+    },
+    "48000_997": {
+      "direct_nonharmonic_db": -102.70709074552619,
+      "adaa_nonharmonic_db": -107.26339453433866,
+      "direct_fundamental_rms": 0.8604785686378708,
+      "adaa_fundamental_rms": 0.8597411057521254
+    },
+    "96000_11003": {
+      "direct_nonharmonic_db": -20.382037829530297,
+      "adaa_nonharmonic_db": -27.101566188859564,
+      "direct_fundamental_rms": 0.8604785686378699,
+      "adaa_fundamental_rms": 0.8372976427190783
+    },
+    "96000_7001": {
+      "direct_nonharmonic_db": -28.714972757630505,
+      "adaa_nonharmonic_db": -33.65946286388923,
+      "direct_fundamental_rms": 0.860478568637871,
+      "adaa_fundamental_rms": 0.8512767762310163
+    },
+    "96000_997": {
+      "direct_nonharmonic_db": -201.31631339498315,
+      "adaa_nonharmonic_db": -205.53892883311858,
+      "direct_fundamental_rms": 0.8604785686378708,
+      "adaa_fundamental_rms": 0.8602943497989967
+    }
+  },
+  "limits": "Synthetic controls only; no vendor binary analysis or real audio. Pitch after 1.5 s; heuristic support, weak vibrato missed, provisional early estimates, more models; no latency/CPU claim. Recovery only three known generators and one noise level; no internal state inference. Nonharmonic bins normalized to fundamental, not total alias energy; differing harmonic response and amplitude; ideal periodic truncation noncausal."
+}

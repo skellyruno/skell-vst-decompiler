@@ -1,0 +1,117 @@
+{
+  "schema": 1,
+  "parent": "f9f0dff25aed303173025ee995a2b47cf3a1ae04",
+  "source_blobs": {
+    "experiments/engine_lab/PairwiseRecoveryBound.h": "503b6e5a06b6d38b6439ba1ec0f19684bfb7c9c7",
+    "experiments/engine_lab/PairwiseScheduledGuard.h": "e894bedf336e1dbe412c12c3d78df7bd60bc51c8",
+    "tests/test_forward_pair.cpp": "54beeb35c2f120753c99dd43056ff807b7065782",
+    "tests/test_forward_pair_stream.cpp": "9081c0332eb1f865bdb7286cfd40b8ad02bf07ae",
+    "tests/fixtures/owned_forward_pair_cap.cpp": "2ed4079d64a413c27ff8a92d916b003b02d6af31",
+    "tests/fixtures/owned_forward_pair_stream.cpp": "a64550d083c20efa620f84588ba08d0cc18ede52",
+    "benchmarks/owned_forward_pair.py": "1038d6ccd67972b9a466487b9b398895794a809b"
+  },
+  "baseline_blob": "88df42346cfc10343ea2fc9f2fcd5d1aaeb2767a",
+  "private_report_sha256": "2fcbd92e109254ba85c108415a557a17bed33a03f2fc521d03721559e1ccfb5c",
+  "kit": "13/13 verified cached checksums",
+  "inputs": {
+    "source_hashes_verified": 39,
+    "vocal_excerpts": 36,
+    "music_sources": 3,
+    "music_excerpts": 9,
+    "excerpt_seconds": 1,
+    "limits": "Reused corpus, only two archive-labeled dry vocals, music excerpts correlated within sources. No independent held-out recordings."
+  },
+  "oracle": {
+    "random": 256,
+    "audio_windows": 180,
+    "lp_solves": 3136,
+    "max_lp_peak": 0.8912509381337456,
+    "vocal_limiting": 85,
+    "vocal_improved": 81,
+    "vocal_median_cap_advantage_db": 0.6105833663171566,
+    "music_limiting": 31,
+    "music_improved": 30,
+    "music_median_cap_advantage_db": 0.04768381014966877,
+    "random_limiting": 141,
+    "random_improved": 141,
+    "random_median_cap_advantage_db": 0.17152862038656821
+  },
+  "native": {
+    "rates": [
+      8000,
+      44100,
+      48000,
+      96000,
+      192000,
+      384000
+    ],
+    "feasible_sequence_checks_per_run": 960000,
+    "stream_reconstruction_checks_per_run": 2373120,
+    "max_stress_reconstruction": 0.8912476872501685,
+    "min_magnitude_delta": 0,
+    "latency_samples": 16,
+    "optimized": "pass",
+    "asan_ubsan": "pass",
+    "dependency_scope": "Local CachedScheduledGuard and IndependentEngines exact Git hashes; local ReconstructionGuard dependency shim uses exact fetched kernel arithmetic, not full repository include graph. Full CI compilation pending."
+  },
+  "audio": {
+    "order": [
+      "cached_scheduled",
+      "forward_pair"
+    ],
+    "vocals": {
+      "median_gain_db": [
+        -0.31522423,
+        -0.16948213
+      ],
+      "median_paired_improvement_db": 0.13805577914851386,
+      "max_paired_improvement_db": 0.5167971554451141,
+      "improved_gt_1e_6": 33,
+      "median_native_ms_per_audio_second": [
+        5.558492,
+        6.4523385
+      ],
+      "paired_timing_increase_percent": 16.251802523791582,
+      "worst_est16_peak_dbfs": [
+        -0.75333801,
+        -0.73326684
+      ]
+    },
+    "music": {
+      "median_gain_db": [
+        -1.80123779,
+        -1.70919418
+      ],
+      "median_paired_improvement_db": 0.06358875031536143,
+      "max_paired_improvement_db": 0.30401751995982784,
+      "improved_gt_1e_6": 9,
+      "median_native_ms_per_audio_second": [
+        11.4207,
+        15.548532
+      ],
+      "paired_timing_increase_percent": 30.3056480628908,
+      "worst_est16_peak_dbfs": [
+        -1.01255491,
+        -0.99514115
+      ]
+    },
+    "full_scale_overloads": 0,
+    "limits": "One-second offline color preprocessed excerpts; compared native guards, not native color. All output windows checked using independent declared kernel. 16x estimates not certified true peak. Three alternating native wall-time repetitions, includes setup/adapter, not host CPU."
+  },
+  "validation": {
+    "previous_ci": "8/8 success",
+    "new_ci": "pending",
+    "exact_source_blobs": "6 tested sources match; benchmark path relocation verified by hash, not rerun from repository checkout"
+  },
+  "remaining": {
+    "production_adoption": false,
+    "static_vendor_backlog": [
+      854,
+      90,
+      692
+    ],
+    "new_delay_compression_pitch": "not tested",
+    "host_ui": "not tested",
+    "lifted_dc": "not implemented natively"
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "schema": 1,
+  "parent": "01aa68f0a6ccf4e8d58c0a459895ebf0a22c7fb6",
+  "source_blobs": {
+    "experiments/engine_lab/ScheduledRecoveryGuard.h": "217cb5762f6f7fb4ec4c491f0df409ddc167412e",
+    "tests/test_scheduled_recovery.cpp": "be3c6142a91b1067dcf25569531572c66e9d747d",
+    "tests/fixtures/owned_scheduled_recovery.cpp": "ab933fbc63dc322ec7199a606791c14919c1c3ad",
+    "benchmarks/owned_scheduled_recovery.py": "715a755e547f3532dcd91c98b937e5a0646e229d",
+    "benchmarks/owned_cascade_selectivity.py": "362fae348879addfe85949419b954e5ccacca3b8"
+  },
+  "baseline_blobs": {
+    "BassAwarePeakGuard": "345854400e5b996809b81d683cc026f7fbcf3c8a",
+    "ColorCascadeResearch": "83241b18df540dde10b02efbe11e8123580002c7",
+    "ColorSplitSymmetric": "128c04e75c19bb7baa715bf2dba0ee96206e0316"
+  },
+  "private_report_sha256": "1ccadd272bef9ad119140fffb3e1f2e2cda36ddd6a24b0e5934256968aa653d0",
+  "offline_screen_sha256": "62988d41f514a1c425ef2210d0009ce6e9d05e4d4aed7a5b2bb15923e480ca04",
+  "kit": "13/13",
+  "inputs": {
+    "vocal_excerpts": 36,
+    "music_sources": 3,
+    "music_excerpts": 9,
+    "music_seconds": 90,
+    "fingerprints_verified": true,
+    "limits": "Same earlier recordings, correlated within sources; not isolated stems or independent new performances."
+  },
+  "scheduled_recovery": {
+    "latency": 16,
+    "order": [
+      "bass_aware_fixed_fast_bound",
+      "scheduled_recovery"
+    ],
+    "stress_rates": [
+      8000,
+      44100,
+      48000,
+      96000,
+      192000,
+      384000
+    ],
+    "stress_release_ms": [
+      1,
+      10,
+      60
+    ],
+    "stress_ceiling_db": [
+      -1,
+      -12
+    ],
+    "checks_per_run": 4621824,
+    "max_declared_kernel_peak": 0.8912509381337457,
+    "min_gain_delta": -5.995204332975845e-15,
+    "vocal_median_gain_db": [
+      -0.30371314,
+      -0.30312286
+    ],
+    "music_median_gain_db": [
+      -2.45553341,
+      -1.9679001
+    ],
+    "vocal_paired_median_improvement_db": 0.00004129436801027751,
+    "music_paired_median_improvement_db": 0.49931904669010274,
+    "music_paired_range_db": [
+      0.17210521414527258,
+      0.6139335587851433
+    ],
+    "vocal_improved_gt_1e_6": 21,
+    "music_improved_gt_1e_6": 9,
+    "vocal_max_est16_dbfs": [
+      -0.69598667,
+      -0.69598667
+    ],
+    "music_max_est16_dbfs": [
+      -1.19243301,
+      -0.98566446
+    ],
+    "full_scale_overloads": 0,
+    "timing_repetitions": 3,
+    "vocal_median_ms_per_audio_second": [
+      4.44212379,
+      5.59168457
+    ],
+    "music_median_ms_per_audio_second": [
+      8.214355,
+      10.9208595
+    ],
+    "paired_time_increase_percent": [
+      22.487635070896218,
+      30.18636896041855
+    ],
+    "tone_conditions": 16,
+    "tone_renders": 32,
+    "example_48k_amp1p5": {
+      "hz": [
+        20,
+        30,
+        50,
+        80,
+        100,
+        200,
+        1000,
+        4000
+      ],
+      "thd_dbc": [
+        [
+          -21.897,
+          -23.693
+        ],
+        [
+          -24.265,
+          -26.121
+        ],
+        [
+          -27.582,
+          -29.506
+        ],
+        [
+          -17.67,
+          -18.888
+        ],
+        [
+          -16.45,
+          -17.393
+        ],
+        [
+          -17.063,
+          -17.292
+        ],
+        [
+          -45.612,
+          -45.612
+        ],
+        [
+          -258.591,
+          -258.586
+        ]
+      ]
+    },
+    "limits": "Declared finite reconstruction kernel, bounded finite input, scheduled pole fixed for each sample and matching output recovery. Independent estimates not certified true peak. Timing local concurrent batches, includes setup, no DAW or subjective claims."
+  },
+  "cascade_screen": {
+    "designs": 13,
+    "reference_count": 1,
+    "tone_conditions": 45,
+    "renders": 630,
+    "latency_samples": 40,
+    "columns": [
+      "design",
+      "near_parity_gate_count",
+      "strict_improvement_gate_count",
+      "worst_residual_increase_db",
+      "minimum_fundamental_change_db"
+    ],
+    "rows": [
+      [
+        "blackman_65_33",
+        21,
+        0,
+        26.7934395018,
+        -0.6083859911
+      ],
+      [
+        "eq_73_17_0.205_0.275_1",
+        10,
+        5,
+        34.419474242,
+        0.002288923
+      ],
+      [
+        "eq_73_17_0.215_0.275_3",
+        8,
+        5,
+        34.581869382,
+        0.0051839718
+      ],
+      [
+        "eq_73_17_0.225_0.275_10",
+        8,
+        5,
+        39.712580359,
+        0.004144969
+      ],
+      [
+        "eq_65_33_0.205_0.275_1",
+        13,
+        3,
+        28.620473042,
+        -0.0000566729
+      ],
+      [
+        "eq_65_33_0.215_0.275_3",
+        9,
+        6,
+        38.437980116,
+        -0.0039097566
+      ],
+      [
+        "eq_65_33_0.225_0.275_10",
+        9,
+        4,
+        44.455278386,
+        -0.0065602133
+      ],
+      [
+        "eq_57_49_0.205_0.275_1",
+        12,
+        8,
+        40.572951023,
+        -0.00330782096
+      ],
+      [
+        "eq_57_49_0.215_0.275_3",
+        9,
+        5,
+        47.717118157,
+        -0.0098146122
+      ],
+      [
+        "eq_57_49_0.225_0.275_10",
+        9,
+        5,
+        52.561858967,
+        -0.0417006871
+      ],
+      [
+        "eq_49_65_0.205_0.275_1",
+        7,
+        4,
+        46.407595,
+        0.000561202
+      ],
+      [
+        "eq_49_65_0.215_0.275_3",
+        9,
+        9,
+        47.97012591,
+        -0.0375729665
+      ],
+      [
+        "eq_49_65_0.225_0.275_10",
+        7,
+        2,
+        53.614145637,
+        -0.0969178177
+      ]
+    ],
+    "near_parity_gate": "fundamental change >= -0.1dB and absolute residual increase <=0.1dB",
+    "strict_gate": "fundamental improvement >0.01dB and absolute residual increase <=0.1dB",
+    "offline_native_baseline_max_difference_db": [
+      5.32907052e-15,
+      0.000148983411
+    ],
+    "limits": "Offline independent SciPy screen, not native candidate or CPU proof; no new real audio cascade renders. Nonharmonic bins omit DC and harmonic-coincident aliases. All candidate designs screened on same tone set, no held-out gate.",
+    "decision": "No promotion; reference preserved."
+  },
+  "validation": {
+    "optimized": "pass",
+    "asan_ubsan": "pass",
+    "source_blobs_exact": "5/5",
+    "previous_ci": [
+      [
+        "Independent PE oracle (owned fixtures)",
+        "completed",
+        "success"
+      ],
+      [
+        "Craft Anything metadata (owned fixtures)",
+        "completed",
+        "success"
+      ],
+      [
+        "Reccmp export comparison (owned fixture)",
+        "completed",
+        "success"
+      ],
+      [
+        "Real Rizin smoke (owned fixture)",
+        "completed",
+        "success"
+      ],
+      [
+        "Unified engines (owned fixture)",
+        "completed",
+        "success"
+      ],
+      [
+        "REA PE imports (owned fixtures)",
+        "completed",
+        "success"
+      ],
+      [
+        "Real Ghidra smoke (owned fixture)",
+        "completed",
+        "success"
+      ],
+      [
+        "Python static-analysis tests",
+        "completed",
+        "success"
+      ]
+    ],
+    "new_ci": "pending"
+  },
+  "remaining": {
+    "vendor_backlog": [
+      854,
+      90,
+      692
+    ],
+    "compression": "not newly tested",
+    "delay": "not newly tested",
+    "presence": "subjective votes pending",
+    "pitch": "full five-engine build not resumed this turn",
+    "host": "no actual new VST3 or UI capture",
+    "production_adoption": false
+  }
+}

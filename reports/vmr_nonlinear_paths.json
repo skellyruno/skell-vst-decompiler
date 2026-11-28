@@ -1,0 +1,661 @@
+[
+  {
+    "schema_version": 1,
+    "source": "FG-116.epl",
+    "binary_sha256": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+    "regions": [
+      {
+        "id": "fg116_clamped_state_setup",
+        "title": "FG-116 clamped-state coefficient and bounds setup",
+        "equation": "Loads coefficients a, k1, k0 at offsets 0x160/168/170, previous state at channel record +0x60, and signed clamp bounds from file-backed constants.",
+        "confidence": "instruction-verified local arithmetic; runtime dispatch unverified",
+        "direct_calls": [
+          {
+            "site_rva": "0x15e7bf",
+            "target_rva": "0x6f840"
+          }
+        ],
+        "checkpoint_rvas": [
+          "0x15e732",
+          "0x15e742",
+          "0x15e74f",
+          "0x15e75b",
+          "0x15e764",
+          "0x15e768",
+          "0x15e7c4",
+          "0x15e7d0",
+          "0x15e7dc",
+          "0x15e821"
+        ],
+        "start_rva": "0x15e732",
+        "end_rva_exclusive": "0x15e88c",
+        "sha256": "26965602851d62108dc360a3b7ccd5608019185f050d1f323b859bc373e8da7f",
+        "checkpoint_count": 10,
+        "math_call_count": 0
+      },
+      {
+        "id": "fg116_clamped_integrator",
+        "title": "FG-116 clamped two-output integrator and branch-dependent coefficient",
+        "equation": "Finite input/state: c=clamp(s,-0.053088,0.046774); d=a*(x-s); q=c+d; s_next=c+2*d; flag=(s!=c); k=(1-flag)*k0+flag*k1. q, flag, and k enter separate scratch arrays. No physical circuit or knob interpretation asserted.",
+        "confidence": "instruction-verified local arithmetic; runtime dispatch unverified",
+        "direct_calls": [],
+        "checkpoint_rvas": [
+          "0x15eab8",
+          "0x15eabf",
+          "0x15eac9",
+          "0x15ead0",
+          "0x15ead4",
+          "0x15ead9",
+          "0x15eadd",
+          "0x15eae4",
+          "0x15eae8",
+          "0x15eaef",
+          "0x15eaf1",
+          "0x15eaf5",
+          "0x15eb06",
+          "0x15eb0c",
+          "0x15eb0f",
+          "0x15eb13",
+          "0x15eb1b",
+          "0x15eb1f",
+          "0x15eb24",
+          "0x15eb29",
+          "0x15eb2d",
+          "0x15eb3b"
+        ],
+        "start_rva": "0x15eaa1",
+        "end_rva_exclusive": "0x15eb40",
+        "sha256": "3f79c6426bfa160124dc6bd77f83e94a86825e83407a29eb712ee6eeeaf4b28a",
+        "checkpoint_count": 22,
+        "math_call_count": 0
+      },
+      {
+        "id": "fg116_selected_retention",
+        "title": "FG-116 minimum envelope of selected coefficients",
+        "equation": "The branch-selected k stream feeds k_s=min(k,k+a_r*(k_s_prev-k)), using retention field 0x178 and channel state +0x58.",
+        "confidence": "instruction-verified local arithmetic; runtime dispatch unverified",
+        "direct_calls": [],
+        "checkpoint_rvas": [
+          "0x15eb47",
+          "0x15eb50",
+          "0x15ec5a",
+          "0x15ec5f",
+          "0x15ec64",
+          "0x15ec68",
+          "0x15ec6c",
+          "0x15ec70",
+          "0x15ec74",
+          "0x15ec79"
+        ],
+        "start_rva": "0x15eb40",
+        "end_rva_exclusive": "0x15ec87",
+        "sha256": "f12c4b40fbff51119a44221b5af26072ef2405f60aba924bf9e130cf8f53d0d1",
+        "checkpoint_count": 10,
+        "math_call_count": 0
+      },
+      {
+        "id": "fg116_variable_integrator",
+        "title": "FG-116 variable-coefficient state and residual output",
+        "equation": "The smoothed k stream feeds an independent state: e=x-v; v_next=v+k_s*e. Writes residual e to scratch and stores v at channel state +0x68. Local signal path, not a complete compressor gain equation.",
+        "confidence": "instruction-verified local arithmetic; runtime dispatch unverified",
+        "direct_calls": [],
+        "checkpoint_rvas": [
+          "0x15ec87",
+          "0x15ec8c",
+          "0x15ed88",
+          "0x15ed8d",
+          "0x15ed94",
+          "0x15ed99",
+          "0x15eda1",
+          "0x15edab"
+        ],
+        "start_rva": "0x15ec87",
+        "end_rva_exclusive": "0x15edb0",
+        "sha256": "aa75c52a706fea73c342c96995d8acfb7f05183e07c6fc86712af4af83a084e6",
+        "checkpoint_count": 8,
+        "math_call_count": 0
+      }
+    ],
+    "constants": {
+      "0xe7dc60": -0.0,
+      "0xe7cd88": 1.0,
+      "0xe979a8": 0.046774,
+      "0xe979a0": 0.053088
+    },
+    "dispatches": [],
+    "checkpoint_count": 50,
+    "limits": "Local arithmetic and candidate helper paths, not complete vendor source or runtime gain laws."
+  },
+  {
+    "schema_version": 1,
+    "source": "FG-2A.epl",
+    "binary_sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+    "regions": [
+      {
+        "id": "fg2a_signed_curve",
+        "title": "FG-2A signed biased piecewise quadratic and plateau",
+        "equation": "u=x+bias; p=abs(u); F(p)=p if p<=lo, plateau if p>hi and p>lo, A*p*p+B*p+C otherwise; v=sign(u)*F(p)-offset (sign(0)=+1). Finite values only. Exact runtime coefficients and physical purpose unknown.",
+        "confidence": "instruction-verified local arithmetic; runtime dispatch unverified",
+        "direct_calls": [],
+        "checkpoint_rvas": [
+          "0x14d9d2",
+          "0x14d9d8",
+          "0x14d9e0",
+          "0x14d9e4",
+          "0x14d9e6",
+          "0x14d9eb",
+          "0x14d9f1",
+          "0x14d9f5",
+          "0x14d9fd",
+          "0x14da01",
+          "0x14da03",
+          "0x14da0b",
+          "0x14da0d",
+          "0x14da1d",
+          "0x14da25",
+          "0x14da29",
+          "0x14da34",
+          "0x14da38",
+          "0x14da40",
+          "0x14da44",
+          "0x14da4c"
+        ],
+        "start_rva": "0x14d9c1",
+        "end_rva_exclusive": "0x14da5e",
+        "sha256": "d378814056fab1a842384fc9c8a4cdaf4cf3a40e0e2c2147091ec0159fec53ed",
+        "checkpoint_count": 21,
+        "math_call_count": 0
+      },
+      {
+        "id": "fg2a_curve_sign_setup",
+        "title": "FG-2A signed curve constant setup",
+        "equation": "Loads +1, -1 and zero used for sign and absolute magnitude in the piecewise branch.",
+        "confidence": "instruction-verified local arithmetic; runtime dispatch unverified",
+        "direct_calls": [],
+        "checkpoint_rvas": [
+          "0x14d748",
+          "0x14d757",
+          "0x14d766"
+        ],
+        "start_rva": "0x14d748",
+        "end_rva_exclusive": "0x14d76d",
+        "sha256": "51375d8348cb5be026b59a92fd0afe44ee2ca3b964a7740bd94b20fbde2be211",
+        "checkpoint_count": 3,
+        "math_call_count": 0
+      },
+      {
+        "id": "fg2a_even_power_chain",
+        "title": "FG-2A even-power nonlinear polynomial candidate",
+        "equation": "On the inspected scalar helper dispatch paths: v2=v*v; v4=v2*v2; v6=v4*v2; v8=v4*v4; p=A*v4+B*v6+C*v8. Coefficients are fields 0x560,0x568,0x578. All seven square slots checked; scalar candidate multiply/scale/add semantics established, not every alternative helper slot. Not claimed to be the final gain computer.",
+        "confidence": "instruction-verified call/argument chain with inspected helper candidates; runtime selector unverified",
+        "direct_calls": [
+          {
+            "site_rva": "0x14da6f",
+            "target_rva": "0x75f40"
+          },
+          {
+            "site_rva": "0x14da85",
+            "target_rva": "0x75f40"
+          },
+          {
+            "site_rva": "0x14daa2",
+            "target_rva": "0x6f8a0"
+          },
+          {
+            "site_rva": "0x14dab6",
+            "target_rva": "0x75f40"
+          },
+          {
+            "site_rva": "0x14dacb",
+            "target_rva": "0x6f7e0"
+          },
+          {
+            "site_rva": "0x14dae2",
+            "target_rva": "0x6f7e0"
+          },
+          {
+            "site_rva": "0x14daf6",
+            "target_rva": "0x6f840"
+          },
+          {
+            "site_rva": "0x14db14",
+            "target_rva": "0x6f820"
+          },
+          {
+            "site_rva": "0x14db28",
+            "target_rva": "0x6f840"
+          }
+        ],
+        "checkpoint_rvas": [
+          "0x14da61",
+          "0x14da68",
+          "0x14da6f",
+          "0x14da77",
+          "0x14da7e",
+          "0x14da85",
+          "0x14da8d",
+          "0x14da94",
+          "0x14da9b",
+          "0x14daa2",
+          "0x14daaa",
+          "0x14daaf",
+          "0x14dab6",
+          "0x14dabb",
+          "0x14dacb",
+          "0x14dad0",
+          "0x14dae2",
+          "0x14daf6",
+          "0x14dafb",
+          "0x14db0d",
+          "0x14db14",
+          "0x14db28"
+        ],
+        "start_rva": "0x14da5e",
+        "end_rva_exclusive": "0x14db2d",
+        "sha256": "0c0df2b48a43dea032c67f6c69811fad75e7381f1415eaff4715c7eb4ffe717b",
+        "checkpoint_count": 22,
+        "math_call_count": 0
+      },
+      {
+        "id": "fg2a_square_dispatch",
+        "title": "FG-2A square dispatcher and seven forwarding entries",
+        "equation": "Seven explicit dispatch slots lead through forwarding stubs to four file-backed square candidate routines.",
+        "confidence": "instruction-verified local arithmetic; runtime dispatch unverified",
+        "direct_calls": [],
+        "checkpoint_rvas": [
+          "0x75f40",
+          "0x75f47",
+          "0x75f4e",
+          "0x75f64",
+          "0x75f84",
+          "0x75fa4",
+          "0x75fc5",
+          "0x75fe4",
+          "0x76004",
+          "0x76024"
+        ],
+        "start_rva": "0x75f40",
+        "end_rva_exclusive": "0x76030",
+        "sha256": "029c257caaeda942bb214591cf76728789f9c2887da57fbe3fa73895915df3e2",
+        "checkpoint_count": 10,
+        "math_call_count": 0
+      },
+      {
+        "id": "fg2a_square_kernels",
+        "title": "FG-2A scalar, SSE, AVX square arithmetic",
+        "equation": "All four candidate entry routines contain scalar or packed self-multiplication; the scalar body explicitly stores x*x. No claim of runtime dispatch selection.",
+        "confidence": "instruction-verified local arithmetic; runtime dispatch unverified",
+        "direct_calls": [
+          {
+            "site_rva": "0x76a38",
+            "target_rva": "0xd38410"
+          },
+          {
+            "site_rva": "0x76a5e",
+            "target_rva": "0xd38410"
+          },
+          {
+            "site_rva": "0x76a87",
+            "target_rva": "0xd38410"
+          }
+        ],
+        "checkpoint_rvas": [
+          "0x76065",
+          "0x7606a",
+          "0x7606e",
+          "0x761a5",
+          "0x761d5",
+          "0x76548",
+          "0x76566",
+          "0x768c8",
+          "0x76936"
+        ],
+        "start_rva": "0x76040",
+        "end_rva_exclusive": "0x76a90",
+        "sha256": "5d27da7e43bcb86b9ab43decf2ec7c94badbdecc332880ffb38cae7c62c4fe27",
+        "checkpoint_count": 9,
+        "math_call_count": 0
+      },
+      {
+        "id": "fg2a_helper_6f7e0",
+        "title": "In-place scalar multiply",
+        "equation": "dst*=scalar for inspected first dispatch slot; other slots not established.",
+        "confidence": "instruction-verified local arithmetic; runtime dispatch unverified",
+        "direct_calls": [],
+        "checkpoint_rvas": [
+          "0x7173d",
+          "0x71745",
+          "0x71749"
+        ],
+        "start_rva": "0x7173d",
+        "end_rva_exclusive": "0x7174e",
+        "sha256": "04bb515cf1a82e345210aafed302be2f9f323e2aedc16c233b785649d6d53545",
+        "checkpoint_count": 3,
+        "math_call_count": 0
+      },
+      {
+        "id": "fg2a_helper_6f840",
+        "title": "In-place vector sum",
+        "equation": "dst+=src for inspected first dispatch slot; other slots not established.",
+        "confidence": "instruction-verified local arithmetic; runtime dispatch unverified",
+        "direct_calls": [],
+        "checkpoint_rvas": [
+          "0x7277b",
+          "0x72781",
+          "0x72787"
+        ],
+        "start_rva": "0x7277b",
+        "end_rva_exclusive": "0x7278d",
+        "sha256": "bf4ba93684ef6be10f1ff37105d42a2dd3e0868eb00970666187422472800400",
+        "checkpoint_count": 3,
+        "math_call_count": 0
+      },
+      {
+        "id": "fg2a_helper_6f8a0",
+        "title": "Vector multiply",
+        "equation": "dst=src1*src2 for inspected first dispatch slot; other slots not established.",
+        "confidence": "instruction-verified local arithmetic; runtime dispatch unverified",
+        "direct_calls": [],
+        "checkpoint_rvas": [
+          "0x73571",
+          "0x73577",
+          "0x7357d"
+        ],
+        "start_rva": "0x73571",
+        "end_rva_exclusive": "0x73583",
+        "sha256": "0d76b1a65756fceb27144f8e97f3622f04250c8ec0c4ca1fd22bede1966d0954",
+        "checkpoint_count": 3,
+        "math_call_count": 0
+      },
+      {
+        "id": "fg2a_helper_6f820",
+        "title": "Out-of-place scalar multiply",
+        "equation": "dst=src*scalar for inspected first dispatch slot; other slots not established.",
+        "confidence": "instruction-verified local arithmetic; runtime dispatch unverified",
+        "direct_calls": [],
+        "checkpoint_rvas": [
+          "0x721a1",
+          "0x721a6",
+          "0x721aa"
+        ],
+        "start_rva": "0x721a1",
+        "end_rva_exclusive": "0x721b0",
+        "sha256": "092d9aa34d80a96c5836d4f94b5d797df7b143f485ad07a583f122eb22437a78",
+        "checkpoint_count": 3,
+        "math_call_count": 0
+      },
+      {
+        "id": "fg2a_biquad_after_polynomial",
+        "title": "FG-2A post-polynomial DF2T filter",
+        "equation": "Standard double DF2T recurrence follows the even-power sum scratch; coefficients 0x360/368/370/380/388. Frequency response, actual runtime values and ultimate role remain unknown.",
+        "confidence": "instruction-verified local arithmetic; runtime dispatch unverified",
+        "direct_calls": [],
+        "checkpoint_rvas": [
+          "0x14db50",
+          "0x14db5f",
+          "0x14db67",
+          "0x14db6f",
+          "0x14db75",
+          "0x14db7d",
+          "0x14db85",
+          "0x14db8d",
+          "0x14db91",
+          "0x14db99",
+          "0x14dba1",
+          "0x14dbaf",
+          "0x14dbb3"
+        ],
+        "start_rva": "0x14db50",
+        "end_rva_exclusive": "0x14dbbb",
+        "sha256": "e5dbd93f8c108b7e304f8683ee5bff7312baa538af81707a2e5abc52ccab3337",
+        "checkpoint_count": 13,
+        "math_call_count": 0
+      }
+    ],
+    "constants": {
+      "0xea9448": 1.0,
+      "0xeaa4b8": -1.0
+    },
+    "dispatches": [
+      {
+        "table_rva": "0x10160e0",
+        "slots": [
+          {
+            "slot": 0,
+            "target_rva": "0x75f60",
+            "executable_file_backed": true
+          },
+          {
+            "slot": 1,
+            "target_rva": "0x75f80",
+            "executable_file_backed": true
+          },
+          {
+            "slot": 2,
+            "target_rva": "0x75fa0",
+            "executable_file_backed": true
+          },
+          {
+            "slot": 3,
+            "target_rva": "0x75fc0",
+            "executable_file_backed": true
+          },
+          {
+            "slot": 4,
+            "target_rva": "0x75fe0",
+            "executable_file_backed": true
+          },
+          {
+            "slot": 5,
+            "target_rva": "0x76000",
+            "executable_file_backed": true
+          },
+          {
+            "slot": 6,
+            "target_rva": "0x76020",
+            "executable_file_backed": true
+          }
+        ],
+        "note": "Inspected entries only; runtime selector not recovered."
+      },
+      {
+        "table_rva": "0x1016120",
+        "slots": [
+          {
+            "slot": 0,
+            "target_rva": "0x76040",
+            "executable_file_backed": true
+          }
+        ],
+        "note": "Inspected entries only; runtime selector not recovered."
+      },
+      {
+        "table_rva": "0x1016148",
+        "slots": [
+          {
+            "slot": 0,
+            "target_rva": "0x760a0",
+            "executable_file_backed": true
+          }
+        ],
+        "note": "Inspected entries only; runtime selector not recovered."
+      },
+      {
+        "table_rva": "0x1016170",
+        "slots": [
+          {
+            "slot": 0,
+            "target_rva": "0x760a0",
+            "executable_file_backed": true
+          }
+        ],
+        "note": "Inspected entries only; runtime selector not recovered."
+      },
+      {
+        "table_rva": "0x1016198",
+        "slots": [
+          {
+            "slot": 0,
+            "target_rva": "0x760a0",
+            "executable_file_backed": true
+          }
+        ],
+        "note": "Inspected entries only; runtime selector not recovered."
+      },
+      {
+        "table_rva": "0x10161c0",
+        "slots": [
+          {
+            "slot": 0,
+            "target_rva": "0x76440",
+            "executable_file_backed": true
+          }
+        ],
+        "note": "Inspected entries only; runtime selector not recovered."
+      },
+      {
+        "table_rva": "0x10161e8",
+        "slots": [
+          {
+            "slot": 0,
+            "target_rva": "0x767a0",
+            "executable_file_backed": true
+          }
+        ],
+        "note": "Inspected entries only; runtime selector not recovered."
+      },
+      {
+        "table_rva": "0x1015e78",
+        "slots": [
+          {
+            "slot": 0,
+            "target_rva": "0x716b0",
+            "executable_file_backed": true
+          }
+        ],
+        "note": "Inspected entries only; runtime selector not recovered."
+      },
+      {
+        "table_rva": "0x1015f20",
+        "slots": [
+          {
+            "slot": 0,
+            "target_rva": "0x72710",
+            "executable_file_backed": true
+          }
+        ],
+        "note": "Inspected entries only; runtime selector not recovered."
+      },
+      {
+        "table_rva": "0x1015fc8",
+        "slots": [
+          {
+            "slot": 0,
+            "target_rva": "0x73500",
+            "executable_file_backed": true
+          }
+        ],
+        "note": "Inspected entries only; runtime selector not recovered."
+      },
+      {
+        "table_rva": "0x1015ee8",
+        "slots": [
+          {
+            "slot": 0,
+            "target_rva": "0x72110",
+            "executable_file_backed": true
+          }
+        ],
+        "note": "Inspected entries only; runtime selector not recovered."
+      }
+    ],
+    "checkpoint_count": 90,
+    "limits": "Local arithmetic and candidate helper paths, not complete vendor source or runtime gain laws."
+  },
+  {
+    "schema_version": 1,
+    "source": "FG-Stress.epl",
+    "binary_sha256": "2509a6f3480481feb15a0fde97abcb4acccfc6fc936f55f5e8c88b7c98edcd26",
+    "regions": [
+      {
+        "id": "stress_piecewise",
+        "title": "FG-Stress affine/quadratic/identity nonlinear branch",
+        "equation": "Ordered finite thresholds lo<=hi: F(x)=x for x>=hi, A*x+B for x<lo, C*x*x+D*x+E otherwise. Coefficients at object offsets 0xd8..0xf8; continuity, target parameter mapping and gain-law role unknown.",
+        "confidence": "instruction-verified local arithmetic; runtime dispatch unverified",
+        "direct_calls": [
+          {
+            "site_rva": "0x1632f4",
+            "target_rva": "0x6f840"
+          }
+        ],
+        "checkpoint_rvas": [
+          "0x16327e",
+          "0x163283",
+          "0x16328c",
+          "0x16328e",
+          "0x163297",
+          "0x16329c",
+          "0x1632a5",
+          "0x1632a9",
+          "0x1632b2",
+          "0x1632b6",
+          "0x1632bf",
+          "0x1632c3",
+          "0x1632c5",
+          "0x1632ce",
+          "0x1632d7",
+          "0x1632f4"
+        ],
+        "start_rva": "0x163270",
+        "end_rva_exclusive": "0x1632f9",
+        "sha256": "3f78bfc377b0146c69e84e569ab97dfa25f332e33a5167d1a89f2e12f07a18d6",
+        "checkpoint_count": 16,
+        "math_call_count": 0
+      },
+      {
+        "id": "stress_curve_caller",
+        "title": "FG-Stress nonlinear scratch flow into downstream effect routine",
+        "equation": "The transformed channel stream is consumed by subsequent vector calls and is passed alongside derived scratch buffers to the downstream candidate at 0x15d420. Its complete effect on output has not been proven.",
+        "confidence": "instruction-verified local arithmetic; runtime dispatch unverified",
+        "direct_calls": [
+          {
+            "site_rva": "0x163335",
+            "target_rva": "0x6f8a0"
+          },
+          {
+            "site_rva": "0x163343",
+            "target_rva": "0x6f9c0"
+          },
+          {
+            "site_rva": "0x16335e",
+            "target_rva": "0x6f800"
+          },
+          {
+            "site_rva": "0x1633f1",
+            "target_rva": "0x15d420"
+          }
+        ],
+        "checkpoint_rvas": [
+          "0x163300",
+          "0x163308",
+          "0x163332",
+          "0x163335",
+          "0x163343",
+          "0x16335e",
+          "0x1633a4",
+          "0x1633af",
+          "0x1633f1"
+        ],
+        "start_rva": "0x163300",
+        "end_rva_exclusive": "0x1633f6",
+        "sha256": "70f6f2a748efabe8479bc6e744b725692b6c4bb662305f7df03a8a39011a45d3",
+        "checkpoint_count": 9,
+        "math_call_count": 0
+      }
+    ],
+    "constants": {},
+    "dispatches": [],
+    "checkpoint_count": 25,
+    "limits": "Local arithmetic and candidate helper paths, not complete vendor source or runtime gain laws."
+  }
+]

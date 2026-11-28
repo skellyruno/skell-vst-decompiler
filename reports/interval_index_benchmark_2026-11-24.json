@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "report_kind": "synthetic_lookup_benchmark",
+  "source_commit": "69f91f4a45471184724d34c08e7e8c5695d754ac",
+  "scope": "Synthetic interval lookup only; no new vendor analysis, decompilation or audio benchmark.",
+  "seed": 420,
+  "region_count": 40000,
+  "queries": 500,
+  "repetitions": 3,
+  "median_linear_seconds": 0.8410504920000221,
+  "median_index_build_seconds": 0.01395538400015539,
+  "median_indexed_query_seconds": 0.0006078619999243529,
+  "median_end_to_end_seconds": 0.014512170000216429,
+  "python": "3.13.5",
+  "platform": "x86_64",
+  "cpu": "AMD EPYC 9V74 80-Core Processor (5 visible CPUs)",
+  "all_equal": true,
+  "local_tests_passed": 9,
+  "randomized_oracle_queries": 1000
+}

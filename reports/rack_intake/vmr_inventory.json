@@ -1,0 +1,344 @@
+{
+  "schema_version": 1,
+  "archive_sha256": "353f23373ac05d7b2121c313073f08c708e879d839115d4ce5d30657732f481e",
+  "archive_bytes": 795482157,
+  "archive_entries": 899,
+  "inventory": [
+    {
+      "name": "AirEQAir.epl",
+      "size": 20932608,
+      "sha256": "c75499749848d64aa9a72298204087d5a78f685e7d960beacecd6644d9e3136b"
+    },
+    {
+      "name": "AirEQEarth.epl",
+      "size": 16998400,
+      "sha256": "e5b254ee4173e142b6822e807cee916b745b32b5ae5f38e24814e7c8b7c875f7"
+    },
+    {
+      "name": "Blackbird Studio.epl",
+      "size": 17681408,
+      "sha256": "44bee8e698af4a7c48f9de78bf0110d629c215aa66c999d01bd76f9d041d9a3d"
+    },
+    {
+      "name": "Classic Instruments.epl",
+      "size": 17916928,
+      "sha256": "12fe5020e71374ff14e3f3aba553a578718de886024445733bcfc148142f52f6"
+    },
+    {
+      "name": "CS-EQ.epl",
+      "size": 17014272,
+      "sha256": "a4a8c92d6ea80acc16a314b23cf727c0bd86cb92a40351efb03f6892605571d0"
+    },
+    {
+      "name": "CS-Lift.epl",
+      "size": 16988672,
+      "sha256": "62ae20d8bbb4ec84960aca0325fdb61e5f551ff83943bb633759d4561f8b7ae6"
+    },
+    {
+      "name": "Custom Opto.epl",
+      "size": 17740288,
+      "sha256": "e697454a539b54b6a610d486bac0fef0bd8f04295da020d6b6f196a44dc55bd3"
+    },
+    {
+      "name": "FG-116 Modern.epl",
+      "size": 17571328,
+      "sha256": "6782b73fb9d4a3c1dade5406fe6ea1bead30699529082ea9f9a8dfe04056a664"
+    },
+    {
+      "name": "FG-116 Vintage.epl",
+      "size": 17589248,
+      "sha256": "6e80b5108f805a0c4ee11fce56d56f149dc4a449c575108e5249e848a4638e7f"
+    },
+    {
+      "name": "FG-116.epl",
+      "size": 17575936,
+      "sha256": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2"
+    },
+    {
+      "name": "FG-2A.epl",
+      "size": 17622016,
+      "sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573"
+    },
+    {
+      "name": "FG-401.epl",
+      "size": 17477632,
+      "sha256": "0cc3444f095ccf4aa751f653e6aceb484d7bfaea73df30ccb68a7f2fccf46ef6"
+    },
+    {
+      "name": "FG-73.epl",
+      "size": 17061888,
+      "sha256": "b5204a61666943438690994b19ed52747de754aa0b6f741fe36a18df43053746"
+    },
+    {
+      "name": "FG-76.epl",
+      "size": 18150912,
+      "sha256": "1b4180667292124de2b2c64b20c581d2eb752ebffbb526c4d31c1ad9d1b237d8"
+    },
+    {
+      "name": "FG-A.epl",
+      "size": 17304064,
+      "sha256": "badeddab00efec8f803a56f6dd00a3cec7a7204d7ac3ba4793c095dbbb11c3cb"
+    },
+    {
+      "name": "FG-Bomber.epl",
+      "size": 17989120,
+      "sha256": "fb42be0d32d2c661da652f41efd0c51e530b29d3a25aab2cd46f509fa3ddfa2c"
+    },
+    {
+      "name": "FG-N.epl",
+      "size": 17211392,
+      "sha256": "e5a998d11bc57660fb7e500ad6805a2df1c0356650f43ce8eaefb8a4db9fc10b"
+    },
+    {
+      "name": "FG-S.epl",
+      "size": 17956352,
+      "sha256": "9c28aaba2ee2dc61f00d9231b9c84f02e364d8a323a93ccab7b7a08956da9a45"
+    },
+    {
+      "name": "FG-Stress.epl",
+      "size": 17732096,
+      "sha256": "2509a6f3480481feb15a0fde97abcb4acccfc6fc936f55f5e8c88b7c98edcd26"
+    },
+    {
+      "name": "Gate Classic.epl",
+      "size": 17442304,
+      "sha256": "c29d1d3a1d1a5047401613369bfa2df3492f3153ef134c0fa66c9c3d9cc92320"
+    },
+    {
+      "name": "Gate Drums.epl",
+      "size": 17419264,
+      "sha256": "3a2d979be9e3a684ba4274b7f481d10dbef9754ee93a9f671d2cd1daeb8c30f3"
+    },
+    {
+      "name": "Hollywood.epl",
+      "size": 18198016,
+      "sha256": "39e8a0b74093ee654dd2f7ce8aeee0b46f7279b19133226c3c952177863cf607"
+    },
+    {
+      "name": "London.epl",
+      "size": 18215424,
+      "sha256": "f4ac602d67b03e8f13bcdb04841aba7159a43c4a8c113861e711ed0bd67d30ce"
+    },
+    {
+      "name": "New York.epl",
+      "size": 18302976,
+      "sha256": "0258b5817750ad82c89dbee50bafdb41cad65edfcbd0d323a6a6124b3a2bccd1"
+    },
+    {
+      "name": "Revival.epl",
+      "size": 17570304,
+      "sha256": "f486272dc9741a6e3ef3f393cd14ef6cebbc795e4f3ac8fa20a683fbeb146867"
+    },
+    {
+      "name": "The Monster.epl",
+      "size": 17866240,
+      "sha256": "6aae06918694f6d9197f396896adbe9c8af150289930c466d7361d2b01aff45b"
+    },
+    {
+      "name": "Trimmer.epl",
+      "size": 17517568,
+      "sha256": "5dbed8fad7ff3e79263d00108bdedf766ca83c88b103e5e3613bf6567f73bb0c"
+    },
+    {
+      "name": "U73b.epl",
+      "size": 17700352,
+      "sha256": "47d8393eddba99816151e47dd0538fa012a9ea8b39b4547ef9afd19d88472856"
+    },
+    {
+      "name": "VCC Channel.epl",
+      "size": 18577408,
+      "sha256": "73747020e8996938b8e6fdff51004cff4ea85c95f992cbc8bc0d0896a80aad87"
+    },
+    {
+      "name": "VCC MixBuss.epl",
+      "size": 17790976,
+      "sha256": "fe077912d5396577fc6b32bcf0c4ba4b61d5e1f8089e961ce68dae22e1b0b500"
+    },
+    {
+      "name": "VMC Classic Tubes.epl",
+      "size": 17951744,
+      "sha256": "df4635dda8db8c15a3f1c478e39f8814d21370f05fa84a64d4cc1fb57762e0ef"
+    }
+  ],
+  "targets": [
+    {
+      "name": "FG-116",
+      "sha256": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+      "variants": [
+        {
+          "wrapper": "0x160910",
+          "table": "0xfef518",
+          "slots_4_5": [
+            "0x162420",
+            "0x162420"
+          ]
+        },
+        {
+          "wrapper": "0x160540",
+          "table": "0xfef548",
+          "slots_4_5": [
+            "0x1619a0",
+            "0x1619a0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FG-2A",
+      "sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+      "variants": [
+        {
+          "wrapper": "0x156590",
+          "table": "0x10084e8",
+          "slots_4_5": [
+            "0x157000",
+            "0x157000"
+          ]
+        },
+        {
+          "wrapper": "0x1561c0",
+          "table": "0x1008518",
+          "slots_4_5": [
+            "0x156b20",
+            "0x156b20"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FG-Stress",
+      "sha256": "2509a6f3480481feb15a0fde97abcb4acccfc6fc936f55f5e8c88b7c98edcd26",
+      "variants": [
+        {
+          "wrapper": "0x160e00",
+          "table": "0x1014558",
+          "slots_4_5": [
+            "0x1638c0",
+            "0x1638c0"
+          ]
+        },
+        {
+          "wrapper": "0x160a30",
+          "table": "0x1014588",
+          "slots_4_5": [
+            "0x162790",
+            "0x162790"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FG-401",
+      "sha256": "0cc3444f095ccf4aa751f653e6aceb484d7bfaea73df30ccb68a7f2fccf46ef6",
+      "variants": [
+        {
+          "wrapper": "0x15def0",
+          "table": "0xfd9520",
+          "slots_4_5": [
+            "0x15f490",
+            "0x15f490"
+          ]
+        },
+        {
+          "wrapper": "0x15db20",
+          "table": "0xfd9550",
+          "slots_4_5": [
+            "0x15ede0",
+            "0x15ede0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AirEQAir",
+      "sha256": "c75499749848d64aa9a72298204087d5a78f685e7d960beacecd6644d9e3136b",
+      "variants": [
+        {
+          "wrapper": "0x246a40",
+          "table": "0x1326568",
+          "slots_4_5": [
+            "0x2490f0",
+            "0x2490f0"
+          ]
+        },
+        {
+          "wrapper": "0x246670",
+          "table": "0x1326598",
+          "slots_4_5": [
+            "0x248db0",
+            "0x248db0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AirEQEarth",
+      "sha256": "e5b254ee4173e142b6822e807cee916b745b32b5ae5f38e24814e7c8b7c875f7",
+      "variants": [
+        {
+          "wrapper": "0x142030",
+          "table": "0xf72560",
+          "slots_4_5": [
+            "0x145580",
+            "0x145580"
+          ]
+        },
+        {
+          "wrapper": "0x141c60",
+          "table": "0xf72590",
+          "slots_4_5": [
+            "0x145340",
+            "0x145340"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VCC Channel",
+      "sha256": "73747020e8996938b8e6fdff51004cff4ea85c95f992cbc8bc0d0896a80aad87",
+      "variants": [
+        {
+          "wrapper": "0x198ac0",
+          "table": "0x10e7520",
+          "slots_4_5": [
+            "0x19ae50",
+            "0x19ae50"
+          ]
+        },
+        {
+          "wrapper": "0x1986f0",
+          "table": "0x10e7660",
+          "slots_4_5": [
+            "0x19ac10",
+            "0x19ac10"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VCC MixBuss",
+      "sha256": "fe077912d5396577fc6b32bcf0c4ba4b61d5e1f8089e961ce68dae22e1b0b500",
+      "variants": [
+        {
+          "wrapper": "0x170a00",
+          "table": "0x1027520",
+          "slots_4_5": [
+            "0x172ca0",
+            "0x172ca0"
+          ]
+        },
+        {
+          "wrapper": "0x170630",
+          "table": "0x1027660",
+          "slots_4_5": [
+            "0x172a50",
+            "0x172a50"
+          ]
+        }
+      ]
+    }
+  ],
+  "tvb_sha256": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
+  "tvb_endpoint_count": 17,
+  "limits": "Inventory and static navigation only; candidate dispatch not confirmed runtime processing. No vendor binary, audio, or coefficient arrays."
+}

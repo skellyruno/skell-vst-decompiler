@@ -1,0 +1,72 @@
+name: Unified engines (owned fixture)
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/unified-engines.yml'
+      - 'tests/unified_engine_smoke.py'
+      - 'tests/fixtures/ghidra_fixture.c'
+      - 'skell_vst_decompiler/multi_engine.py'
+      - 'skell_vst_decompiler/boundary_audit.py'
+      - 'skell_vst_decompiler/navigation.py'
+      - 'skell_vst_decompiler/engine_agreement.py'
+      - 'skell_vst_decompiler/classgraph.py'
+      - 'skell_vst_decompiler/ghidra_bridge.py'
+      - 'skell_vst_decompiler/verification.py'
+      - 'skell_vst_decompiler/ghidra_scripts/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || format('protected-{0}-{1}', github.ref, github.run_id) }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '25'
+      - name: Install fixture tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y clang lld llvm binutils file
+      - name: Install verified analyzer releases
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 2 --max-time 300 https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_12.2_build/ghidra_12.2_PUBLIC_20261016.zip -o "$RUNNER_TEMP/ghidra.zip"
+          echo "2c2cd776db3c1f6a097ba418922378ac3649cadd5e844a6f5f088ae628a7be67  $RUNNER_TEMP/ghidra.zip" | sha256sum -c -
+          unzip -q "$RUNNER_TEMP/ghidra.zip" -d "$RUNNER_TEMP/ghidra"
+          curl --fail --location --retry 2 --max-time 180 https://github.com/rizinorg/rizin/releases/download/v0.9.1/rizin-v0.9.1-static-x86_64.tar.xz -o "$RUNNER_TEMP/rizin.tar.xz"
+          echo "9102249a9f0b6319c5334a2e5cf8d9cc3f2035e1d3def027c41f6a90f647e8cf  $RUNNER_TEMP/rizin.tar.xz" | sha256sum -c -
+          mkdir -p "$RUNNER_TEMP/rizin"
+          tar -xJf "$RUNNER_TEMP/rizin.tar.xz" -C "$RUNNER_TEMP/rizin"
+          curl --fail --location --retry 2 --max-time 180 https://github.com/radareorg/radare2/releases/download/6.2.6/radare2_6.2.6_amd64.deb -o "$RUNNER_TEMP/radare2.deb"
+          echo "0dddf90e217e38a6a658881b9ec7e217198487c75b7f82a332b3cbd30834636f  $RUNNER_TEMP/radare2.deb" | sha256sum -c -
+          sudo apt-get install -y "$RUNNER_TEMP/radare2.deb"
+          r2 -v
+      - name: Install pinned Revenant source
+        run: |
+          set -euo pipefail
+          git clone https://github.com/DatanoiseTV/revenant.git "$RUNNER_TEMP/revenant-src"
+          git -C "$RUNNER_TEMP/revenant-src" checkout --detach ec81fc0ddecfa736494d9cb365adf6edccbfc41b
+          test "$(git -C "$RUNNER_TEMP/revenant-src" rev-parse HEAD)" = ec81fc0ddecfa736494d9cb365adf6edccbfc41b
+          python -m pip install --no-deps "$RUNNER_TEMP/revenant-src"
+          revenant --version
+      - name: Compare all engines on the same owned PE
+        run: |
+          set -euo pipefail
+          home=$(find "$RUNNER_TEMP/ghidra" -mindepth 1 -maxdepth 1 -type d -name 'ghidra_*' -print -quit)
+          rz=$(find "$RUNNER_TEMP/rizin" -type f -name rizin -perm -u+x -print -quit)
+          test -n "$home"
+          test -n "$rz"
+          for opt in O0 O1 O2 O3 Os; do
+            PYTHONPATH=. python tests/unified_engine_smoke.py --ghidra-home "$home" --rizin "$rz" --revenant "$(command -v revenant)" --optimization "$opt"
+          done

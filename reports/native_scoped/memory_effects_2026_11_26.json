@@ -1,0 +1,243 @@
+{
+  "schema": 1,
+  "parent": "1ef74cfad0a5a23cd66da1e971b8108fd006ce94",
+  "source_report_sha256": "36f7bfa0d8273c1160a9d1e14253a5dc2a77f6eb053802e5da5458105812c50a",
+  "local_full_report_sha256": "584dfe8493de8793fbacb0df01e4067dcda979bda5290ca039366d9497427e32",
+  "totals": {
+    "binaries": 8,
+    "scopes": 432,
+    "verified_memory_sites": 21345,
+    "operand_rejections": 0,
+    "prior_unflagged_high_arithmetic": 246,
+    "both_general_register_read_write": 165,
+    "local_pattern_windows": 5,
+    "local_patterns": 15,
+    "local_patterns_in_shared_shape_windows": 0,
+    "memory_classes": {
+      "read_general_register": 7744,
+      "write_general_register": 4070,
+      "read_rip_relative": 3055,
+      "write_rip_relative": 10,
+      "read_stack_pointer": 2346,
+      "write_stack_pointer": 2272,
+      "read_frame_or_general": 866,
+      "write_frame_or_general": 982
+    }
+  },
+  "modules": [
+    {
+      "name": "StandardCLIP.vst3",
+      "scopes": 36,
+      "verified_memory_sites": 2376,
+      "prior_high_candidates": 25,
+      "both_general_read_write": 23,
+      "pattern_windows": 0,
+      "local_patterns": 0,
+      "memory_classes": {
+        "read_general_register": 852,
+        "write_general_register": 389,
+        "read_rip_relative": 451,
+        "write_rip_relative": 0,
+        "read_stack_pointer": 93,
+        "write_stack_pointer": 89,
+        "read_frame_or_general": 262,
+        "write_frame_or_general": 240
+      }
+    },
+    {
+      "name": "Trackspacer25.vst3",
+      "scopes": 36,
+      "verified_memory_sites": 2258,
+      "prior_high_candidates": 20,
+      "both_general_read_write": 13,
+      "pattern_windows": 0,
+      "local_patterns": 0,
+      "memory_classes": {
+        "read_general_register": 931,
+        "write_general_register": 617,
+        "read_rip_relative": 184,
+        "write_rip_relative": 0,
+        "read_stack_pointer": 223,
+        "write_stack_pointer": 230,
+        "read_frame_or_general": 33,
+        "write_frame_or_general": 40
+      }
+    },
+    {
+      "name": "FG-2A.epl",
+      "scopes": 36,
+      "verified_memory_sites": 2615,
+      "prior_high_candidates": 20,
+      "both_general_read_write": 18,
+      "pattern_windows": 0,
+      "local_patterns": 0,
+      "memory_classes": {
+        "read_general_register": 1049,
+        "write_general_register": 495,
+        "read_rip_relative": 235,
+        "write_rip_relative": 9,
+        "read_stack_pointer": 471,
+        "write_stack_pointer": 259,
+        "read_frame_or_general": 47,
+        "write_frame_or_general": 50
+      }
+    },
+    {
+      "name": "Auburn Sounds Panagement 2-64.vst3",
+      "scopes": 72,
+      "verified_memory_sites": 3669,
+      "prior_high_candidates": 43,
+      "both_general_read_write": 24,
+      "pattern_windows": 3,
+      "local_patterns": 11,
+      "memory_classes": {
+        "read_general_register": 1001,
+        "write_general_register": 472,
+        "read_rip_relative": 1023,
+        "write_rip_relative": 0,
+        "read_stack_pointer": 610,
+        "write_stack_pointer": 555,
+        "read_frame_or_general": 3,
+        "write_frame_or_general": 5
+      }
+    },
+    {
+      "name": "DeeDoubler.vst3",
+      "scopes": 36,
+      "verified_memory_sites": 1937,
+      "prior_high_candidates": 24,
+      "both_general_read_write": 12,
+      "pattern_windows": 0,
+      "local_patterns": 0,
+      "memory_classes": {
+        "read_general_register": 546,
+        "write_general_register": 390,
+        "read_rip_relative": 172,
+        "write_rip_relative": 0,
+        "read_stack_pointer": 116,
+        "write_stack_pointer": 209,
+        "read_frame_or_general": 273,
+        "write_frame_or_general": 231
+      }
+    },
+    {
+      "name": "MixWave DW Fearn VT-5.vst3",
+      "scopes": 72,
+      "verified_memory_sites": 3868,
+      "prior_high_candidates": 34,
+      "both_general_read_write": 24,
+      "pattern_windows": 0,
+      "local_patterns": 0,
+      "memory_classes": {
+        "read_general_register": 1732,
+        "write_general_register": 651,
+        "read_rip_relative": 294,
+        "write_rip_relative": 0,
+        "read_stack_pointer": 378,
+        "write_stack_pointer": 371,
+        "read_frame_or_general": 131,
+        "write_frame_or_general": 311
+      }
+    },
+    {
+      "name": "SSL Fusion Stereo Image.vst3",
+      "scopes": 72,
+      "verified_memory_sites": 2238,
+      "prior_high_candidates": 33,
+      "both_general_read_write": 20,
+      "pattern_windows": 1,
+      "local_patterns": 3,
+      "memory_classes": {
+        "read_general_register": 747,
+        "write_general_register": 463,
+        "read_rip_relative": 369,
+        "write_rip_relative": 0,
+        "read_stack_pointer": 239,
+        "write_stack_pointer": 350,
+        "read_frame_or_general": 30,
+        "write_frame_or_general": 40
+      }
+    },
+    {
+      "name": "MB MixHead.vst3",
+      "scopes": 72,
+      "verified_memory_sites": 2384,
+      "prior_high_candidates": 47,
+      "both_general_read_write": 31,
+      "pattern_windows": 1,
+      "local_patterns": 1,
+      "memory_classes": {
+        "read_general_register": 886,
+        "write_general_register": 593,
+        "read_rip_relative": 327,
+        "write_rip_relative": 1,
+        "read_stack_pointer": 216,
+        "write_stack_pointer": 209,
+        "read_frame_or_general": 87,
+        "write_frame_or_general": 65
+      }
+    }
+  ],
+  "pattern_windows": [
+    {
+      "name": "Auburn Sounds Panagement 2-64.vst3",
+      "start": "0xa8e80",
+      "bytes": 7084,
+      "scope_sha256": "3b7f420712ea5c1212d9157c1e1313b36a47b67735e4a0401d5d584ad15fe64f",
+      "local_patterns": 8,
+      "selected_fp_sites": 223,
+      "prior_shared_shape_flag": false
+    },
+    {
+      "name": "Auburn Sounds Panagement 2-64.vst3",
+      "start": "0x649b0",
+      "bytes": 5167,
+      "scope_sha256": "a38f0fe78b2c4271e4882dfb55d17149c131ee79cf2af7c38d65db3985ebf35c",
+      "local_patterns": 2,
+      "selected_fp_sites": 212,
+      "prior_shared_shape_flag": false
+    },
+    {
+      "name": "Auburn Sounds Panagement 2-64.vst3",
+      "start": "0x2ba60",
+      "bytes": 1725,
+      "scope_sha256": "4754a0eed2a7ca5aa78b7f9532ab9d69e5de1c1c0e8727122b91385d57dbda87",
+      "local_patterns": 1,
+      "selected_fp_sites": 63,
+      "prior_shared_shape_flag": false
+    },
+    {
+      "name": "SSL Fusion Stereo Image.vst3",
+      "start": "0x3b440",
+      "bytes": 3726,
+      "scope_sha256": "d9e0237cfceab146e839717a833a070eadd83cbeab19357250dd8f138f8c02c1",
+      "local_patterns": 3,
+      "selected_fp_sites": 60,
+      "prior_shared_shape_flag": false
+    },
+    {
+      "name": "MB MixHead.vst3",
+      "start": "0x1124a0",
+      "bytes": 3272,
+      "scope_sha256": "e7d0f24560d3460c25c2b559398636b3de03fba7af0cc84386e48b40f972a81c",
+      "local_patterns": 1,
+      "selected_fp_sites": 57,
+      "prior_shared_shape_flag": false
+    }
+  ],
+  "tests": {
+    "local_methods_passed": 4,
+    "new": 2,
+    "prior": 2,
+    "source_blob": "4158bbe295eb87d6faa1d0d3a3a3ebf047574e68",
+    "test_blob": "bb160a20b9590a0df53a7511c3d9d3fd919fe867",
+    "dependencies": {
+      "pe": "40be92efc73172a5d838c73b4ce8fe8b868624c0",
+      "disasm": "d4e87f3dc1760a46907b388a06c8383377d05afc",
+      "scope_consensus": "1c80cdcb8b233b3d4e56ed82588fee3530656911",
+      "anchor_survey": "a927248da7a30b6432628fcb001b5e89a508b6a4"
+    },
+    "offline_kit": "cached archive manifest 13/13 passed"
+  },
+  "limits": "Selected legacy SSE forms only, matched adjacent decoded addresses and exact opcode/ModRM/SIB/displacement, two operand-text checks. Zero rejections is conditional on supported jointly bounded byte forms; unsupported/missing/terminal instructions not counted. Syntax categories do not establish address identity, stack aliasing, mutability, runtime reachability, audio or vendor DSP behavior."
+}

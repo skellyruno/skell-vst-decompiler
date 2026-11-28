@@ -1,0 +1,308 @@
+{
+  "schema": 1,
+  "parent": "d7ee7fdfdcac266d75298e1136ca2a98fbbdfdcf",
+  "prior_scope_plan": "reports/native_scoped/eight_target_rip_audit_2026_11_26.json",
+  "local_full_report_sha256": "36f7bfa0d8273c1160a9d1e14253a5dc2a77f6eb053802e5da5458105812c50a",
+  "scope_method": "128..8192 byte complete nonoverlapping ordinary .text unwind records, excluding any overlap with previous 47 scopes. Three deterministic lanes: RVA stratified, unaligned legacy SSE marker count and marker density. 12 per lane for four modules; 24 per lane for Panagement, VT-5, SSL, MixHead. Reconcile actual GNU/LLVM address, mnemonic, inferred span.",
+  "totals": {
+    "runtime_records": 128730,
+    "eligible_extents": 54953,
+    "marker_positive_extents": 5057,
+    "sampled_extents": 432,
+    "sampled_bytes": 588196,
+    "agreed_sites": 131854,
+    "agreed_inferred_span_bytes": 583044,
+    "selected_fp_sites": 26063,
+    "mnemonic_disagreement": 347,
+    "span_disagreement": 232,
+    "one_decoder_only": 250,
+    "terminal_unbounded": 431,
+    "extents_with_at_least_8_fp_sites": 291
+  },
+  "lanes": {
+    "stratified": {
+      "windows": 144,
+      "fp_sites": 280,
+      "at_least_8": 9
+    },
+    "marker_count": {
+      "windows": 144,
+      "fp_sites": 21275,
+      "at_least_8": 144
+    },
+    "marker_density": {
+      "windows": 144,
+      "fp_sites": 4508,
+      "at_least_8": 138
+    }
+  },
+  "structural_comparison": {
+    "prefilter_groups": 23,
+    "attempted_windows": 55,
+    "excluded": 10,
+    "matched_cross_module_groups": 20,
+    "matched_windows": 45,
+    "matched_fp_sites": 2852,
+    "remaining_high_arithmetic_windows": 246,
+    "examples": [
+      {
+        "modules": [
+          "FG-2A",
+          "VT-5",
+          "SSL"
+        ],
+        "bytes": 2381,
+        "fp_sites_per_window": 272
+      },
+      {
+        "modules": [
+          "Trackspacer",
+          "MixHead"
+        ],
+        "bytes": 3075,
+        "fp_sites_per_window": 222
+      }
+    ],
+    "limits": "Same extent size and FP family histogram prefilter, then exact matching dual-decoder relative mnemonic/inferred-span sequence except terminal site. Operands omitted; neither library origin nor semantics proven. Remaining windows include potential duplicates not examined or not detected."
+  },
+  "modules": [
+    {
+      "name": "StandardCLIP.vst3",
+      "sha256": "000aff8f9983d55bcb91853c4639e2063185ca036039adaf1cc82bfb0abd7f8b",
+      "runtime_records": 21082,
+      "eligible_extents": 8779,
+      "marker_positive_extents": 1356,
+      "sampled_extents": 36,
+      "sampled_bytes": 47985,
+      "fp_sites": 4058,
+      "high_arithmetic": 25,
+      "shared_windows": 0,
+      "shared_fp_sites": 0,
+      "remaining_high_arithmetic": 25,
+      "top_remaining_candidates": [
+        {
+          "start": "0x668320",
+          "bytes": 5871,
+          "fp_sites": 493,
+          "scope_sha256": "805168bbe993fc1dc01ff1af94473cc74f1c8a2606d27dd239691c6fa758e089"
+        },
+        {
+          "start": "0x29a60",
+          "bytes": 2976,
+          "fp_sites": 274,
+          "scope_sha256": "75d4ccb2e3bb65deabb7046e2ead6fabb62ca0f5998cb09f347d1d5e422b3c9d"
+        }
+      ]
+    },
+    {
+      "name": "Trackspacer25.vst3",
+      "sha256": "f7dab96048b6d0def84b0be2395244f01e54dc71d6b99e769630fbe6c37b6242",
+      "runtime_records": 14013,
+      "eligible_extents": 5728,
+      "marker_positive_extents": 726,
+      "sampled_extents": 36,
+      "sampled_bytes": 49975,
+      "fp_sites": 3258,
+      "high_arithmetic": 25,
+      "shared_windows": 5,
+      "shared_fp_sites": 365,
+      "remaining_high_arithmetic": 20,
+      "top_remaining_candidates": [
+        {
+          "start": "0x322820",
+          "bytes": 5850,
+          "fp_sites": 493,
+          "scope_sha256": "bca5eb62ccb3e5d2d2b4805cdf3e420600c14a56f763fa7152dd34dd59144b1f"
+        },
+        {
+          "start": "0xe80d0",
+          "bytes": 4465,
+          "fp_sites": 385,
+          "scope_sha256": "2d9928dcc26f066f106265065b1442fbf58995bf16dc7e695e17075dca5a0ac3"
+        }
+      ]
+    },
+    {
+      "name": "FG-2A.epl",
+      "sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+      "runtime_records": 19781,
+      "eligible_extents": 8194,
+      "marker_positive_extents": 491,
+      "sampled_extents": 36,
+      "sampled_bytes": 59819,
+      "fp_sites": 3351,
+      "high_arithmetic": 24,
+      "shared_windows": 4,
+      "shared_fp_sites": 337,
+      "remaining_high_arithmetic": 20,
+      "top_remaining_candidates": [
+        {
+          "start": "0xbf2330",
+          "bytes": 4211,
+          "fp_sites": 337,
+          "scope_sha256": "a03982f8be060598d8f2623a98678c65fda40dde1573d6728508c5817b06f9a2"
+        },
+        {
+          "start": "0xbfa8a0",
+          "bytes": 4920,
+          "fp_sites": 331,
+          "scope_sha256": "db5d93ff34d9d21da62f6d813c84176706009e39a6ab5d75ffdbc67fa54810fc"
+        }
+      ]
+    },
+    {
+      "name": "Auburn Sounds Panagement 2-64.vst3",
+      "sha256": "2a18419eff9338b67d22049dc6b7b628e7b420bf48850e66ed5dee7a7c398f25",
+      "runtime_records": 2796,
+      "eligible_extents": 1480,
+      "marker_positive_extents": 166,
+      "sampled_extents": 72,
+      "sampled_bytes": 110630,
+      "fp_sites": 3887,
+      "high_arithmetic": 44,
+      "shared_windows": 1,
+      "shared_fp_sites": 21,
+      "remaining_high_arithmetic": 43,
+      "top_remaining_candidates": [
+        {
+          "start": "0x8e9e0",
+          "bytes": 7062,
+          "fp_sites": 235,
+          "scope_sha256": "4ca9795d26a2f8b6baf9b77ad8be8b99d98911b5b38b7290fae22a088bbcbdf2"
+        },
+        {
+          "start": "0xa8e80",
+          "bytes": 7084,
+          "fp_sites": 223,
+          "scope_sha256": "3b7f420712ea5c1212d9157c1e1313b36a47b67735e4a0401d5d584ad15fe64f"
+        }
+      ]
+    },
+    {
+      "name": "DeeDoubler.vst3",
+      "sha256": "0fca35f1e73496a967fb871b83efcbf17de825e574e1a943bb2cd7bb28d3a56c",
+      "runtime_records": 18343,
+      "eligible_extents": 6962,
+      "marker_positive_extents": 625,
+      "sampled_extents": 36,
+      "sampled_bytes": 55868,
+      "fp_sites": 1875,
+      "high_arithmetic": 25,
+      "shared_windows": 1,
+      "shared_fp_sites": 46,
+      "remaining_high_arithmetic": 24,
+      "top_remaining_candidates": [
+        {
+          "start": "0x30ed60",
+          "bytes": 4117,
+          "fp_sites": 247,
+          "scope_sha256": "0bf5dca776f43d3d45b58d191aa9380ed7016183f3c2c5a24dd7546afff1eb1e"
+        },
+        {
+          "start": "0x2dc140",
+          "bytes": 2098,
+          "fp_sites": 166,
+          "scope_sha256": "3b6197f48592973f4b070964668adbb97a6ef8f1ac6816ec0d1c4e627ea13750"
+        }
+      ]
+    },
+    {
+      "name": "MixWave DW Fearn VT-5.vst3",
+      "sha256": "e90bef94adad1518c828d1a23704bd11d998c55c137939830beb4402e67c8e04",
+      "runtime_records": 24562,
+      "eligible_extents": 11597,
+      "marker_positive_extents": 649,
+      "sampled_extents": 72,
+      "sampled_bytes": 101265,
+      "fp_sites": 3570,
+      "high_arithmetic": 48,
+      "shared_windows": 14,
+      "shared_fp_sites": 844,
+      "remaining_high_arithmetic": 34,
+      "top_remaining_candidates": [
+        {
+          "start": "0x412440",
+          "bytes": 2435,
+          "fp_sites": 276,
+          "scope_sha256": "d68fcb5464891e1ec4adfb9cebbde4d81b1c8a1e93d9471e627fa5413726d1cd"
+        },
+        {
+          "start": "0x410950",
+          "bytes": 4712,
+          "fp_sites": 188,
+          "scope_sha256": "ced856301dd5a49401ff22352348f7db73e3b037553aac658b64d9aaddff3e95"
+        }
+      ]
+    },
+    {
+      "name": "SSL Fusion Stereo Image.vst3",
+      "sha256": "31de6c45f42af28bbb74d144c6dd3b9116f1d0d8c22a0eef508df37279b1eaf5",
+      "runtime_records": 18145,
+      "eligible_extents": 8073,
+      "marker_positive_extents": 501,
+      "sampled_extents": 72,
+      "sampled_bytes": 99848,
+      "fp_sites": 2970,
+      "high_arithmetic": 50,
+      "shared_windows": 17,
+      "shared_fp_sites": 965,
+      "remaining_high_arithmetic": 33,
+      "top_remaining_candidates": [
+        {
+          "start": "0x6892b0",
+          "bytes": 5777,
+          "fp_sites": 167,
+          "scope_sha256": "751b6e97a0f022c91bb88929caa077d19dfad68e0ce4c96f5fadf9be58fd2e0d"
+        },
+        {
+          "start": "0x6c55c",
+          "bytes": 2127,
+          "fp_sites": 138,
+          "scope_sha256": "14fa8edd1d4a1772548530a4952ccb490d85588880bac524451a092fe9e82d6a"
+        }
+      ]
+    },
+    {
+      "name": "MB MixHead.vst3",
+      "sha256": "9575f1a0cdc5152045c2f631a047648cacca6e49d7b515f6fd7994adc703075f",
+      "runtime_records": 10008,
+      "eligible_extents": 4140,
+      "marker_positive_extents": 543,
+      "sampled_extents": 72,
+      "sampled_bytes": 62806,
+      "fp_sites": 3094,
+      "high_arithmetic": 50,
+      "shared_windows": 3,
+      "shared_fp_sites": 274,
+      "remaining_high_arithmetic": 47,
+      "top_remaining_candidates": [
+        {
+          "start": "0xe9b50",
+          "bytes": 2466,
+          "fp_sites": 272,
+          "scope_sha256": "6c4776010e312b21aad75a619bd209b4caa99ef1cb0a726aacd47015ff1fda38"
+        },
+        {
+          "start": "0x21c4c0",
+          "bytes": 2999,
+          "fp_sites": 270,
+          "scope_sha256": "2f0f7309057f0473f38a58461b17e3a7a383e56dea4659151bc8a34af6342fb3"
+        }
+      ]
+    }
+  ],
+  "tests": {
+    "passed": 2,
+    "source_blob": "a927248da7a30b6432628fcb001b5e89a508b6a4",
+    "test_blob": "7829f359f868bc882673041a935b905f90ac071c",
+    "dependencies": {
+      "pe": "40be92efc73172a5d838c73b4ce8fe8b868624c0",
+      "disasm": "d4e87f3dc1760a46907b388a06c8383377d05afc",
+      "navigation": "5de1b251f55d029c524fc3018d5d7080b2d5bc26",
+      "scope_consensus": "1c80cdcb8b233b3d4e56ed82588fee3530656911"
+    },
+    "parent_ci": "8/8 success",
+    "offline_kit": "13/13 passed"
+  },
+  "limits": "No runtime reachability, validated signal path, coefficient values, recovered vendor implementation or audio equivalence. Screening is biased and not a whole-binary decode. Ordinary .text only; no protection analysis."
+}

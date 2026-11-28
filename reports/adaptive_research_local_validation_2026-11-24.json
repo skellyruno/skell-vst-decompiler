@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "report_kind": "independent_adaptive_research_local_validation",
+  "source_commit": "a7698ae45855243d21372ccefcb8e8eb08b3be22",
+  "local_tested_code_blob": "36d48d90251500a59690eedc6e8ecdf9992a9bab",
+  "local_tests": 3,
+  "local_result": "pass",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "previous_ci": {
+    "tests": 133,
+    "all_eight_passed": true,
+    "run_ids": [
+      45445999914,
+      45445999989,
+      45446000214,
+      45445999855,
+      45446000098,
+      45445999896,
+      45446000155,
+      45445999876
+    ]
+  },
+  "pitch": {
+    "4": {
+      "fixed_center_rmse": 4.9945010842609125,
+      "adaptive_center_rmse": 0.8597283703849288,
+      "fixed_vibrato_rmse": 8.753389133587104,
+      "adaptive_vibrato_rmse": 0.9941252054802792,
+      "mean_bank_frequency_hz": 4
+    },
+    "5": {
+      "fixed_center_rmse": 0.861148977254291,
+      "adaptive_center_rmse": 0.8611489772542891,
+      "fixed_vibrato_rmse": 0.8434121740081871,
+      "adaptive_vibrato_rmse": 0.8434121740081869,
+      "mean_bank_frequency_hz": 5
+    },
+    "6": {
+      "fixed_center_rmse": 3.439400157835989,
+      "adaptive_center_rmse": 1.019804091957479,
+      "fixed_vibrato_rmse": 8.363940740668223,
+      "adaptive_vibrato_rmse": 1.0168727363462444,
+      "mean_bank_frequency_hz": 6
+    },
+    "7": {
+      "fixed_center_rmse": 4.329584291240408,
+      "adaptive_center_rmse": 0.839854430412022,
+      "fixed_vibrato_rmse": 12.595455152531127,
+      "adaptive_vibrato_rmse": 0.9813249678398573,
+      "mean_bank_frequency_hz": 7
+    },
+    "3.5": {
+      "fixed_center_rmse": 7.3444957869398895,
+      "adaptive_center_rmse": 0.7556143310856093,
+      "fixed_vibrato_rmse": 11.880707151378505,
+      "adaptive_vibrato_rmse": 0.8513340520318745,
+      "mean_bank_frequency_hz": 3.5
+    },
+    "4.7": {
+      "fixed_center_rmse": 1.644226357742594,
+      "adaptive_center_rmse": 1.2472133943586443,
+      "fixed_vibrato_rmse": 2.9253744604249916,
+      "adaptive_vibrato_rmse": 2.3416667926482306,
+      "mean_bank_frequency_hz": 4.500117652060612
+    },
+    "5.7": {
+      "fixed_center_rmse": 2.876306993000296,
+      "adaptive_center_rmse": 1.341182918066909,
+      "fixed_vibrato_rmse": 6.626308667017117,
+      "adaptive_vibrato_rmse": 2.3045881600540508,
+      "mean_bank_frequency_hz": 5.500960741113336
+    },
+    "7.5": {
+      "fixed_center_rmse": 4.321277754741122,
+      "adaptive_center_rmse": 0.6700506794064649,
+      "fixed_vibrato_rmse": 13.649088405115869,
+      "adaptive_vibrato_rmse": 0.9824683067955673,
+      "mean_bank_frequency_hz": 7.5
+    },
+    "chirp": {
+      "fixed_center_rmse": 3.2967492474810585,
+      "adaptive_center_rmse": 1.3073698991802438,
+      "fixed_vibrato_rmse": 9.393512708669515,
+      "adaptive_vibrato_rmse": 2.7174531269633,
+      "mean_bank_frequency_hz": 5.818504534024552
+    },
+    "none": {
+      "fixed_center_rmse": 0.7993631202644174,
+      "adaptive_center_rmse": 0.7794935066042078,
+      "fixed_vibrato_rmse": 0.9515574370074734,
+      "adaptive_vibrato_rmse": 0.945648655250025,
+      "mean_bank_frequency_hz": 5.673816094445585
+    }
+  },
+  "recovery": {
+    "single_0.03": {
+      "trials": 12,
+      "dual_preferred": 0
+    },
+    "single_0.1": {
+      "trials": 12,
+      "dual_preferred": 0
+    },
+    "single_0.3": {
+      "trials": 12,
+      "dual_preferred": 0
+    },
+    "separated_dual_0.03": {
+      "trials": 12,
+      "dual_preferred": 12
+    },
+    "separated_dual_0.1": {
+      "trials": 12,
+      "dual_preferred": 12
+    },
+    "separated_dual_0.3": {
+      "trials": 12,
+      "dual_preferred": 0
+    },
+    "close_dual_0.03": {
+      "trials": 12,
+      "dual_preferred": 0
+    },
+    "close_dual_0.1": {
+      "trials": 12,
+      "dual_preferred": 0
+    },
+    "close_dual_0.3": {
+      "trials": 12,
+      "dual_preferred": 0
+    }
+  },
+  "limits": "Synthetic pitch trajectories and known exponential generators only; warmup 1.5 seconds excluded; weighted frequency is meaningless without vibrato. Recovery gate chosen heuristically and noise SD supplied exactly; no general false-positive guarantee or internal state identification. No vendor code, real audio, native CPU or latency measurement."
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "name": "Gem Dopamine",
+  "filename": "Gem Dopamine-64.vst3",
+  "sha256": "dc923f6507cc891e0417854178f1db2eb84965040aa661c9c144649548dffb6f",
+  "size_bytes": 16981384,
+  "format": "Windows x64 PE32+ DLL",
+  "embedded_version_candidate": "1.1.5",
+  "exports": [
+    "ExitDll",
+    "GetPluginFactory",
+    "InitDll"
+  ],
+  "embedded_label_candidates": [
+    "De-esser Freq",
+    "De-esser Amount",
+    "De-esser cue onoff"
+  ],
+  "rtti_name_candidates": [
+    "Dolby361",
+    "GemDopamine"
+  ],
+  "status": "FINGERPRINTED_QUEUED",
+  "research_priorities": [
+    "Trace excitation and frequency-selective dynamics paths",
+    "Identify de-esser detector and gain routing",
+    "Identify parameter mapping and stereo processing",
+    "Measure transfer, recovery, and harmonic behavior using authorized reference renders"
+  ],
+  "limitations": "Metadata and strings inspected only, no verified DSP equations, runtime version, or audio behavior. Private binary not committed or executed."
+}

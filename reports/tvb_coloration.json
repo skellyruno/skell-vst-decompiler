@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "source": "TVB Rack V2.vst3",
+  "binary_sha256": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
+  "checkpoint_count": 84,
+  "linked_reference_count": 10,
+  "mode1_filter_bank": {
+    "rows": 6,
+    "stages_per_row": 3,
+    "coefficient_count": 90,
+    "sha256": "65fb2fab65dd33906cb881bfe4171c994994ad963d6539d45732e5e7cd760c45",
+    "rate_summaries": [
+      {
+        "sample_rate": 44100.0,
+        "max_pole_radius": 0.9999855169958063,
+        "stable": true,
+        "linear_response_db": {
+          "20": -0.042353,
+          "100": -0.04216,
+          "1000": -0.023448,
+          "5000": 0.03651,
+          "10000": -0.725399,
+          "20000": -7.557399
+        }
+      },
+      {
+        "sample_rate": 48000.0,
+        "max_pole_radius": 0.9948040951489349,
+        "stable": true,
+        "linear_response_db": {
+          "20": 0.289291,
+          "100": -0.147846,
+          "1000": 0.007448,
+          "5000": -0.060447,
+          "10000": -0.60703,
+          "20000": -7.740471
+        }
+      },
+      {
+        "sample_rate": 88200.0,
+        "max_pole_radius": 0.9999325361372701,
+        "stable": true,
+        "linear_response_db": {
+          "20": -0.056523,
+          "100": -0.056123,
+          "1000": -0.021413,
+          "5000": 0.005813,
+          "10000": -0.644888,
+          "20000": -7.818853
+        }
+      },
+      {
+        "sample_rate": 96000.0,
+        "max_pole_radius": 0.9999588894710307,
+        "stable": true,
+        "linear_response_db": {
+          "20": -0.061369,
+          "100": -0.061005,
+          "1000": -0.029349,
+          "5000": -0.005824,
+          "10000": -0.628904,
+          "20000": -7.726856
+        }
+      },
+      {
+        "sample_rate": 176400.0,
+        "max_pole_radius": 0.9999528678077532,
+        "stable": true,
+        "linear_response_db": {
+          "20": -0.061851,
+          "100": -0.061523,
+          "1000": -0.032469,
+          "5000": -0.003268,
+          "10000": -0.621715,
+          "20000": -7.71437
+        }
+      },
+      {
+        "sample_rate": 192000.0,
+        "max_pole_radius": 0.9999555552695734,
+        "stable": true,
+        "linear_response_db": {
+          "20": -0.061846,
+          "100": -0.061516,
+          "1000": -0.032314,
+          "5000": -0.003403,
+          "10000": -0.621677,
+          "20000": -7.715941
+        }
+      }
+    ],
+    "limits": "Linear filter-only math, not a measurement of a plugin output."
+  },
+  "rate_selection_examples": {
+    "44100": 44100.0,
+    "50000": 48000.0,
+    "64000": 48000.0,
+    "70000": 88200.0,
+    "192000": 192000.0
+  },
+  "color_calibration_fingerprints": [
+    {
+      "rva": "0x77a0b18",
+      "float32_words": 3,
+      "sha256": "9a59aa55f0f990ad7480613abd97717add4d0aabe04cd6ad0a0fc258e3bd8028",
+      "section": ".data",
+      "writable": true
+    },
+    {
+      "rva": "0x77a0b98",
+      "float32_words": 3,
+      "sha256": "c8aca49ca023392e012a11aedcda4cd544b5b2659b5446f19cad88066b91fbbc",
+      "section": ".data",
+      "writable": true
+    }
+  ],
+  "coefficient_setup_math_calls": [
+    {
+      "site_rva": "0x5d29f3",
+      "target_rva": "0x87f1f2",
+      "iat_rva": "0x8db4b8",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "tan"
+    },
+    {
+      "site_rva": "0x5d2a0e",
+      "target_rva": "0x87f1c2",
+      "iat_rva": "0x8db3f8",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "pow"
+    },
+    {
+      "site_rva": "0x5d2a7b",
+      "target_rva": "0x87f1ec",
+      "iat_rva": "0x8db4b0",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "sin"
+    },
+    {
+      "site_rva": "0x5d2a96",
+      "target_rva": "0x87f1c2",
+      "iat_rva": "0x8db3f8",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "pow"
+    },
+    {
+      "site_rva": "0x5d2ab8",
+      "target_rva": "0x87f1e6",
+      "iat_rva": "0x8db4a8",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "cos"
+    }
+  ],
+  "host_lookup_slots": [
+    {
+      "name": "fx_comp_compress",
+      "string_rva": "0x923650",
+      "lookup_rva": "0x33c7e4",
+      "slot_write_rva": "0x33c802",
+      "literal_base": "rbx",
+      "slot_offset": "0x48",
+      "string_helper_rva": "0xb7fa0",
+      "lookup_helper_rva": "0x326b70"
+    },
+    {
+      "name": "fx_comp_algorithm",
+      "string_rva": "0x923668",
+      "lookup_rva": "0x33c806",
+      "slot_write_rva": "0x33c824",
+      "literal_base": "rbx",
+      "slot_offset": "0x50",
+      "string_helper_rva": "0xb7fa0",
+      "lookup_helper_rva": "0x326b70"
+    },
+    {
+      "name": "fx_comp_la2a_limit",
+      "string_rva": "0x923680",
+      "lookup_rva": "0x33c828",
+      "slot_write_rva": "0x33c846",
+      "literal_base": "rbx",
+      "slot_offset": "0x58",
+      "string_helper_rva": "0xb7fa0",
+      "lookup_helper_rva": "0x326b70"
+    },
+    {
+      "name": "fx_comp_la2a_hifreq",
+      "string_rva": "0x923698",
+      "lookup_rva": "0x33c84a",
+      "slot_write_rva": "0x33c868",
+      "literal_base": "rbx",
+      "slot_offset": "0x60",
+      "string_helper_rva": "0xb7fa0",
+      "lookup_helper_rva": "0x326b70"
+    }
+  ],
+  "regions": [
+    {
+      "id": "mode1_audio_color",
+      "title": "FET mode output coloration",
+      "start_rva": "0x5d1e8a",
+      "end_rva_exclusive": "0x5d1ee1",
+      "confidence": "instruction-verified local recurrence",
+      "equation": "With x the post-gain sample, asymmetric polynomial max(floor,x+a*x*x+b*x*abs(x)) feeds three serial DF2T stages. Scalar constants fingerprinted, not exported."
+    },
+    {
+      "id": "mode2_audio_color",
+      "title": "Optical mode output coloration",
+      "start_rva": "0x5d1d79",
+      "end_rva_exclusive": "0x5d1e88",
+      "confidence": "instruction-verified local recurrence",
+      "equation": "With x the post-gain sample, x+(a*x*x+b*x*abs(x))/(1+abs(x)/c) feeds two serial DF2T-shaped double-precision stages. Mode-specific data references verified."
+    },
+    {
+      "id": "fet_color_filter",
+      "title": "Three post-gain filter sections",
+      "start_rva": "0x5d2330",
+      "end_rva_exclusive": "0x5d241d",
+      "confidence": "instruction-verified structure",
+      "equation": "Selected row contains 15 double coefficients in 120 bytes, three stages with 6 double state values per channel. Linear responses computed locally, no vendor coefficient arrays published."
+    },
+    {
+      "id": "nearest_rate",
+      "title": "FET filter coefficient row selection",
+      "start_rva": "0x5cf350",
+      "end_rva_exclusive": "0x5cf468",
+      "confidence": "instruction-verified structure",
+      "equation": "Choose row by minimum absolute difference from six rate anchors; strict comparisons preserve earlier index at ties. Actual host behavior not measured."
+    },
+    {
+      "id": "opto_color_filter_setup",
+      "title": "Rate-dependent optical output filter coefficients",
+      "start_rva": "0x5d29e6",
+      "end_rva_exclusive": "0x5d2b46",
+      "confidence": "instruction-verified structure",
+      "equation": "First filter is first order (b2=a2=0); second is a biquad with b1=a1. Coefficient generation uses tan, pow, sin, cos with stored rate. Full runtime response not measured."
+    },
+    {
+      "id": "parameter_lookup",
+      "title": "Four named host lookup slots",
+      "start_rva": "0x33c7e4",
+      "end_rva_exclusive": "0x33c86f",
+      "confidence": "instruction-verified handle lookup; DSP binding unresolved",
+      "equation": "Names resolve through common lookup helpers to literal pointer slots. This does not establish the destination compressor fields or setter path."
+    }
+  ],
+  "limits": [
+    "No raw vendor coefficient or calibration arrays, binary code, or reconstructed processor exported.",
+    "The host lookup object is not proven identical to the DSP object. Matching displacement alone is insufficient.",
+    "No VST3 execution, actual sound equivalence, VMR algorithm or production DSP changes."
+  ]
+}

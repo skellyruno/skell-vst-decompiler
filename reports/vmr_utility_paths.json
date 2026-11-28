@@ -1,0 +1,124 @@
+[
+  {
+    "source": "FG-116.epl",
+    "binary_sha256": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+    "records": [
+      {
+        "dispatcher_rva": "0x6f740",
+        "slot0_rva": "0x70550",
+        "helper_rva": "0x6ffc0",
+        "kind": "8-byte element buffer copy",
+        "confidence": "instruction-verified byte and 16-byte vector copy"
+      },
+      {
+        "dispatcher_rva": "0x6f780",
+        "slot0_rva": "0x70930",
+        "kind": "float32 to float64",
+        "confidence": "decoded scalar/vector conversion evidence",
+        "verified_opcodes": [
+          "cvtss2sd",
+          "cvtps2pd"
+        ]
+      },
+      {
+        "dispatcher_rva": "0x6f7a0",
+        "slot0_rva": "0x70d70",
+        "kind": "float64 to float32 with clamp",
+        "confidence": "decoded scalar/vector conversion evidence",
+        "verified_opcodes": [
+          "cvtsd2ss",
+          "minsd",
+          "maxsd"
+        ]
+      }
+    ],
+    "limits": "Only sampled slot 0. These utilities are not effect gain-law or oversampling proof. Runtime dispatch and module-specific engines remain unresolved."
+  },
+  {
+    "source": "FG-2A.epl",
+    "binary_sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+    "records": [
+      {
+        "dispatcher_rva": "0x6f740",
+        "slot0_rva": "0x704d0",
+        "helper_rva": "0x6ff40",
+        "kind": "8-byte element buffer copy",
+        "confidence": "instruction-verified byte and 16-byte vector copy"
+      },
+      {
+        "dispatcher_rva": "0x6f780",
+        "slot0_rva": "0x708b0",
+        "kind": "float32 to float64",
+        "confidence": "decoded scalar/vector conversion evidence",
+        "verified_opcodes": [
+          "cvtss2sd",
+          "cvtps2pd"
+        ]
+      },
+      {
+        "dispatcher_rva": "0x6f7a0",
+        "slot0_rva": "0x70cf0",
+        "kind": "float64 to float32 with clamp",
+        "confidence": "decoded scalar/vector conversion evidence",
+        "verified_opcodes": [
+          "cvtsd2ss",
+          "minsd",
+          "maxsd"
+        ]
+      }
+    ],
+    "limits": "Only sampled slot 0. These utilities are not effect gain-law or oversampling proof. Runtime dispatch and module-specific engines remain unresolved."
+  },
+  {
+    "source": "FG-Stress.epl",
+    "binary_sha256": "2509a6f3480481feb15a0fde97abcb4acccfc6fc936f55f5e8c88b7c98edcd26",
+    "records": [
+      {
+        "dispatcher_rva": "0x6f740",
+        "slot0_rva": "0x70610",
+        "helper_rva": "0x70080",
+        "kind": "8-byte element buffer copy",
+        "confidence": "instruction-verified byte and 16-byte vector copy"
+      },
+      {
+        "dispatcher_rva": "0x6f7a0",
+        "slot0_rva": "0x70b30",
+        "kind": "float32 to float64",
+        "confidence": "decoded scalar/vector conversion evidence",
+        "verified_opcodes": [
+          "cvtss2sd",
+          "cvtps2pd"
+        ]
+      },
+      {
+        "dispatcher_rva": "0x6f7c0",
+        "slot0_rva": "0x70f70",
+        "kind": "float64 to float32 with clamp",
+        "confidence": "decoded scalar/vector conversion evidence",
+        "verified_opcodes": [
+          "cvtsd2ss",
+          "minsd",
+          "maxsd"
+        ]
+      },
+      {
+        "kind": "32-frame wrapper and unresolved indirect calls",
+        "vtable_rva": "0xe9f848",
+        "checkpoint_rvas": [
+          "0x160a81",
+          "0x160b63",
+          "0x160b6f",
+          "0x160b96",
+          "0x160bfd",
+          "0x160c25"
+        ],
+        "start_rva": "0x160a30",
+        "end_rva_exclusive": "0x160c49",
+        "sha256": "c1c1f761aace9189190bccafbcb461a1f7b334c77f6df36cb9cefeb20762dfc3",
+        "checkpoint_count": 6,
+        "math_call_count": 0
+      }
+    ],
+    "limits": "Only sampled slot 0. These utilities are not effect gain-law or oversampling proof. Runtime dispatch and module-specific engines remain unresolved."
+  }
+]

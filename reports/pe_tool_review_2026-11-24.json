@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "report_kind": "upstream_tool_review_and_reccmp_failure",
+  "source_commit": "84fcfabab0dd200732ddeeb12df3ce6abc40a5be",
+  "previous_ci": {
+    "static": {
+      "run": 45431680574,
+      "tests": 104,
+      "conclusion": "success"
+    },
+    "unified": {
+      "run": 45431680951,
+      "conclusion": "success"
+    },
+    "ghidra": {
+      "run": 45431680557,
+      "conclusion": "success"
+    },
+    "rizin": {
+      "run": 45431680724,
+      "conclusion": "success"
+    },
+    "reccmp": {
+      "run": 45431681185,
+      "conclusion": "failure",
+      "installed": "0.1.9",
+      "error": "InvalidVirtualAddressError reading exported name",
+      "source_review": "reccmp/formats/pe.py exports assumes function/name tables follow directory header, ignores declared table pointers and name ordinals; incompatible with modern fixture layout is leading explanation, new preflight pending."
+    }
+  },
+  "redasm": {
+    "version": "v4.0.0-beta4",
+    "commit": "474bc030e8bb39628bc2851aeae20a8cb7efc90d",
+    "license": "GPL-3.0",
+    "status": "reviewed, not installed or executed",
+    "notes": "GUI repository; core C17 headless library separate; upstream explicitly says no decompiler yet. x86/x64 PE support documented, RTTI/EH experimental. Network-enabled setting exists: no private targets or network analysis."
+  },
+  "pefile": {
+    "version": "2024.8.26",
+    "commit": "4b3b1e2e568a88d4f1897d694d684f23d9e270c4",
+    "license": "MIT",
+    "status": "new pinned-version owned fixture oracle; pending CI"
+  },
+  "gist": {
+    "url": "https://gist.github.com/whitequark/2bf913cdb65c1c313bf2d747f79223c5",
+    "reviewed": true,
+    "selection": [
+      "pefile",
+      "Zydis",
+      "BinDiff",
+      "BinSync",
+      "LIEF"
+    ],
+    "notes": "Curated reference, author marks untested tools with percent. No wholesale installation or code copied. Only pefile integrated in this batch."
+  },
+  "limits": "No vendor analysis, no new vendor DSP, no Reccmp success or REDasm runtime claimed."
+}

@@ -1,0 +1,37 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+*.vst3
+*.dll
+*.exe
+*.epl
+*.esr
+*.epf
+*.aaxplugin
+*.component
+*.vst
+*.wav
+*.flac
+*.zip
+*.bin
+*.dmp
+*.pdb
+*.idb
+*.ilk
+*.i64
+*.i64.gz
+*.gpr
+*.gdb
+local/
+work/
+
+# Local Ghidra projects and generated analysis output (never commit pseudocode).
+skell-ghidra-*/
+*.c.txt
+
+# Private DAW projects, presets and analyzer projects.
+*.flp
+*.fst
+*.vstpreset
+*.ghidra

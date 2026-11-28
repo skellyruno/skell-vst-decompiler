@@ -1,0 +1,270 @@
+{
+  "schema": 1,
+  "parent": "12fcff52d9c202bc12c571949f2f446f5743a746",
+  "source_blobs": {
+    "experiments/engine_lab/BassAwarePeakGuard.h": "345854400e5b996809b81d683cc026f7fbcf3c8a",
+    "experiments/engine_lab/ColorCascadeResearch.h": "83241b18df540dde10b02efbe11e8123580002c7",
+    "tests/test_bass_cascade.cpp": "b012b1c7d94cd9ad40637594e8189a3a2cd3d3bd",
+    "tests/test_color_mirrored.cpp": "8274becbfdbc37f522c4dde90dc607fb0cd04783",
+    "tests/fixtures/owned_bass_cascade.cpp": "982fb22ae271e0e8fd7d34eb01c8d86a4e0c57ab",
+    "benchmarks/owned_bass_cascade.py": "0625542237a11c024d634bfb9eaaf3b49214fd8f"
+  },
+  "private_report_sha256": "61f0dab04c28b78b59ff804266f2e8c734dc410a53384be07132c238bd438b2d",
+  "kit": "13/13 verified cached offline kit",
+  "inputs": {
+    "vocal_excerpts": 36,
+    "music_sources": 3,
+    "music_excerpts": 9,
+    "music_seconds": 90,
+    "fingerprints_verified": true,
+    "limits": "Same prior corpus, only two labeled dry vocals, mixed music not isolated instruments."
+  },
+  "ci_diagnosis": {
+    "failed_heads": [
+      "e025d77c05e3a403b6c84eabef1f65fb98231f8e",
+      "12fcff52d9c202bc12c571949f2f446f5743a746"
+    ],
+    "failed_run_ids": [
+      46068018813,
+      46069907753
+    ],
+    "failed_job_ids": [
+      140737937141,
+      140744087173
+    ],
+    "prior_workflows_success": 7,
+    "total_workflows": 8,
+    "failed_assertion": "test_color_mirrored.cpp F=2 S=40 U=450 D=450",
+    "runner": "Ubuntu 26.04, amd64v3",
+    "local_gcc": "14.2",
+    "local_clang": "17",
+    "local_reproducer": "g++ -std=c++17 -O3 -march=x86-64-v3 -ffp-contract=fast",
+    "first_mismatch": {
+      "fs": 8000,
+      "wet": 0.5,
+      "drive_db": 0,
+      "frame": 2,
+      "channel": 0,
+      "reference": -7.653115704864585e-10,
+      "candidate": -7.653115704864586e-10,
+      "error": 1.0339757656912846e-25
+    },
+    "channel_comparisons": 1769472,
+    "nonidentical_contracted": 1069850,
+    "max_abs_difference_contracted": 7.327471962526033e-15,
+    "strict_no_contraction_unequal": 0,
+    "diagnostic_tolerance": 2e-12,
+    "strict_dry": true,
+    "decision": "Preserve strict equality default invocation under -ffp-contract=off. Separately log compiler-native numerical mismatch count and bound. Prior local parity claims conditional on compiler. Reproduced mechanism, hosted fix not verified."
+  },
+  "guard": {
+    "order": [
+      "polarity_1ms",
+      "polarity_60ms",
+      "bass_aware"
+    ],
+    "latency": 16,
+    "detector": "120Hz one-pole stereo linked energy fraction, 20ms smoothing, recovery pole between fastest and 60ms; bound uses fastest pole",
+    "reconstruction_checks_per_run": 1734912,
+    "max_declared_kernel_peak_linear": 0.891250938133746,
+    "tone_conditions": 16,
+    "tone_renders": 48,
+    "improved_thd_gt_point1_db_vs_fast": 12,
+    "worse_thd_gt_point1_db_vs_fast": 0,
+    "example_48k_amp1p5": {
+      "hz": [
+        20,
+        30,
+        50,
+        80,
+        100,
+        200,
+        1000,
+        4000
+      ],
+      "thd_dbc": [
+        [
+          -11.986,
+          -23.693,
+          -21.897
+        ],
+        [
+          -12.204,
+          -26.121,
+          -24.265
+        ],
+        [
+          -12.679,
+          -29.506,
+          -27.582
+        ],
+        [
+          -13.443,
+          -32.934,
+          -17.67
+        ],
+        [
+          -13.967,
+          -34.672,
+          -16.45
+        ],
+        [
+          -16.598,
+          -40.673,
+          -17.063
+        ],
+        [
+          -45.612,
+          -73.544,
+          -45.612
+        ],
+        [
+          -258.702,
+          -263.977,
+          -258.702
+        ]
+      ]
+    },
+    "vocal_median_gain_db": [
+      -0.30328621,
+      -0.62003074,
+      -0.30371314
+    ],
+    "music_median_gain_db": [
+      -1.93153031,
+      -2.14050861,
+      -2.45553341
+    ],
+    "vocal_paired_adaptive_minus_fast_slow_db": [
+      -0.00000567341911,
+      0.21597715
+    ],
+    "music_paired_adaptive_minus_fast_slow_db": [
+      -0.58824438,
+      -0.31777717
+    ],
+    "vocal_max_est16_dbfs": [
+      -0.69598667,
+      -0.85100584,
+      -0.69598667
+    ],
+    "music_max_est16_dbfs": [
+      -1.19243301,
+      -0.98566446,
+      -1.19243301
+    ],
+    "estimated_overloads": [
+      0,
+      0,
+      0
+    ],
+    "limits": "Bounded finite inputs and fixed fastest pole; guarantee only declared reconstruction kernel, not certified true peak. Tone harmonic bins only. Actual pole interpolation is not linear time-constant interpolation. More attenuation on music; no promotion."
+  },
+  "cascade": {
+    "order": [
+      "single_stage_symmetric",
+      "65_33",
+      "49_65"
+    ],
+    "latency_samples": [
+      40,
+      40,
+      40
+    ],
+    "tone_settings": 45,
+    "tone_renders": 135,
+    "real_audio_pairs": 45,
+    "paired_repetitions": 3,
+    "vocal_median_ms_per_audio_second": [
+      14.89501271,
+      11.93110244,
+      14.70071328
+    ],
+    "music_median_ms_per_audio_second": [
+      17.5447804,
+      14.614108,
+      17.2912875
+    ],
+    "vocal_paired_delta_percent": [
+      -19.63268947,
+      -2.10496787
+    ],
+    "music_paired_delta_percent": [
+      -17.00015885,
+      -2.12333528
+    ],
+    "vocal_median_matched_difference_db": [
+      -300,
+      -56.9880924,
+      -48.03001995
+    ],
+    "music_median_matched_difference_db": [
+      -300,
+      -73.85296694,
+      -66.18403177
+    ],
+    "fundamental_improvement_and_residual_gate_count": [
+      0,
+      0
+    ],
+    "residual_worsening_le_point1_db_count": [
+      25,
+      17
+    ],
+    "max_fundamental_loss_db": [
+      -0.60838599,
+      -1.72277592
+    ],
+    "max_absolute_residual_increase_db": [
+      26.7934395,
+      44.48466252
+    ],
+    "worst_residual_case": {
+      "fs": 44100,
+      "hz": 3004,
+      "amplitude": 0.5,
+      "absolute_nonharmonic_residual_dbfs": [
+        -140.10775322442348,
+        -113.31431372289389,
+        -95.62309070883526
+      ]
+    },
+    "example_20k": {
+      "fs": 44100,
+      "hz": 20004,
+      "amp": 0.5,
+      "fundamental_dbfs": [
+        -4.325797861299129,
+        -4.74186961340054,
+        -5.288789715190871
+      ],
+      "absolute_residual_dbfs": [
+        -90.638271198374,
+        -91.62074463200682,
+        -65.79957545573379
+      ]
+    },
+    "decision": "Retain existing symmetric single stage; neither cascade meets quality gate. Investigate stage-specific stopband and transition widths under matched latency.",
+    "limits": "45 coherent tone conditions, residual excludes harmonic-coincident alias and DC; not full alias metric. Timing local includes setup; concurrent batches. Aligned dry exact for default cascade, finite/reset checked both, stereo swap default. No host or subjective testing."
+  },
+  "validation": {
+    "six_rate_optimized_and_sanitized": "passed",
+    "cross_compiler": "GCC14 and Clang17 optimized; strict mirrored GCC/Clang with and without local FMA except contracted GCC documented difference; prior quiet guard and new regression pass local x86-64-v3 with contraction both on/off",
+    "initial_adapter_compile": "missing QuietFastPolarity include; corrected and all batches completed",
+    "source_hashes": "6/6 tested Git blobs exact",
+    "latest_ci": "pending"
+  },
+  "remaining": {
+    "delay": "not newly tested",
+    "compression": "isolated instruments/transient discrimination pending",
+    "presence": "no subjective votes",
+    "pitch": "no full fifth engine build or new challenger",
+    "host": "no actual host/UI capture",
+    "vendor_backlog": [
+      854,
+      90,
+      692
+    ],
+    "production_adoption": false
+  }
+}

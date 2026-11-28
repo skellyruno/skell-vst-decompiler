@@ -1,0 +1,413 @@
+{
+  "schema": 1,
+  "parent": "34a7c5add83a60a1ab580f18829928d40f4bd47e",
+  "full_local_report_sha256": "7fc2fa580d2b86d76a3bc2f3676c8521a01bed9a75f29c05568c7a94ee60824f",
+  "totals": {
+    "modules": 8,
+    "scopes": 47,
+    "bytes": 71030,
+    "verified": 197,
+    "rejected": 20,
+    "read_readonly": 197
+  },
+  "tested_blobs": {
+    "source": "9a31ef585c2624b6d88e550025424d3cbca62078",
+    "test": "9c95994774cb89eec81965a5f9922342bab08ca0"
+  },
+  "modules": [
+    {
+      "name": "StandardCLIP.vst3",
+      "sha256": "000aff8f9983d55bcb91853c4639e2063185ca036039adaf1cc82bfb0abd7f8b",
+      "distinct_targets": 9,
+      "shared_targets": 2,
+      "scopes": [
+        {
+          "start": "0x424c00",
+          "bytes": 3794,
+          "verified": 8,
+          "distinct": 7,
+          "rejected": 2
+        },
+        {
+          "start": "0x359a80",
+          "bytes": 1584,
+          "verified": 0,
+          "distinct": 0,
+          "rejected": 0
+        },
+        {
+          "start": "0x35a0b0",
+          "bytes": 1584,
+          "verified": 0,
+          "distinct": 0,
+          "rejected": 0
+        },
+        {
+          "start": "0x3471f0",
+          "bytes": 1617,
+          "verified": 2,
+          "distinct": 2,
+          "rejected": 0
+        },
+        {
+          "start": "0x347850",
+          "bytes": 1373,
+          "verified": 2,
+          "distinct": 2,
+          "rejected": 0
+        }
+      ]
+    },
+    {
+      "name": "Trackspacer25.vst3",
+      "sha256": "f7dab96048b6d0def84b0be2395244f01e54dc71d6b99e769630fbe6c37b6242",
+      "distinct_targets": 21,
+      "shared_targets": 5,
+      "scopes": [
+        {
+          "start": "0x152600",
+          "bytes": 2574,
+          "verified": 4,
+          "distinct": 4,
+          "rejected": 0
+        },
+        {
+          "start": "0x1507d0",
+          "bytes": 7236,
+          "verified": 34,
+          "distinct": 17,
+          "rejected": 0
+        },
+        {
+          "start": "0x18570",
+          "bytes": 355,
+          "verified": 2,
+          "distinct": 2,
+          "rejected": 0
+        },
+        {
+          "start": "0x188f0",
+          "bytes": 678,
+          "verified": 3,
+          "distinct": 3,
+          "rejected": 0
+        },
+        {
+          "start": "0x19200",
+          "bytes": 191,
+          "verified": 2,
+          "distinct": 2,
+          "rejected": 0
+        },
+        {
+          "start": "0x192c0",
+          "bytes": 235,
+          "verified": 2,
+          "distinct": 2,
+          "rejected": 0
+        }
+      ]
+    },
+    {
+      "name": "FG-2A.epl",
+      "sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+      "distinct_targets": 43,
+      "shared_targets": 6,
+      "scopes": [
+        {
+          "start": "0x14b5e0",
+          "bytes": 1196,
+          "verified": 6,
+          "distinct": 6,
+          "rejected": 0
+        },
+        {
+          "start": "0x14d590",
+          "bytes": 3393,
+          "verified": 2,
+          "distinct": 2,
+          "rejected": 0
+        },
+        {
+          "start": "0x14f340",
+          "bytes": 2833,
+          "verified": 3,
+          "distinct": 3,
+          "rejected": 0
+        },
+        {
+          "start": "0x149a90",
+          "bytes": 1765,
+          "verified": 19,
+          "distinct": 18,
+          "rejected": 16
+        },
+        {
+          "start": "0xbf7cd0",
+          "bytes": 22,
+          "verified": 0,
+          "distinct": 0,
+          "rejected": 0
+        },
+        {
+          "start": "0xbfa810",
+          "bytes": 139,
+          "verified": 0,
+          "distinct": 0,
+          "rejected": 0
+        },
+        {
+          "start": "0xbf5290",
+          "bytes": 3239,
+          "verified": 40,
+          "distinct": 24,
+          "rejected": 2
+        },
+        {
+          "start": "0xbfc260",
+          "bytes": 77,
+          "verified": 0,
+          "distinct": 0,
+          "rejected": 0
+        }
+      ]
+    },
+    {
+      "name": "Auburn Sounds Panagement 2-64.vst3",
+      "sha256": "2a18419eff9338b67d22049dc6b7b628e7b420bf48850e66ed5dee7a7c398f25",
+      "distinct_targets": 12,
+      "shared_targets": 0,
+      "scopes": [
+        {
+          "start": "0x93e00",
+          "bytes": 2493,
+          "verified": 12,
+          "distinct": 12,
+          "rejected": 0
+        },
+        {
+          "start": "0x833e0",
+          "bytes": 338,
+          "verified": 0,
+          "distinct": 0,
+          "rejected": 0
+        },
+        {
+          "start": "0x83540",
+          "bytes": 332,
+          "verified": 0,
+          "distinct": 0,
+          "rejected": 0
+        },
+        {
+          "start": "0x83690",
+          "bytes": 341,
+          "verified": 0,
+          "distinct": 0,
+          "rejected": 0
+        },
+        {
+          "start": "0x837f0",
+          "bytes": 338,
+          "verified": 0,
+          "distinct": 0,
+          "rejected": 0
+        }
+      ]
+    },
+    {
+      "name": "DeeDoubler.vst3",
+      "sha256": "0fca35f1e73496a967fb871b83efcbf17de825e574e1a943bb2cd7bb28d3a56c",
+      "distinct_targets": 24,
+      "shared_targets": 7,
+      "scopes": [
+        {
+          "start": "0x20b320",
+          "bytes": 839,
+          "verified": 1,
+          "distinct": 1,
+          "rejected": 0
+        },
+        {
+          "start": "0x20a1f0",
+          "bytes": 209,
+          "verified": 0,
+          "distinct": 0,
+          "rejected": 0
+        },
+        {
+          "start": "0x20a2c1",
+          "bytes": 1026,
+          "verified": 12,
+          "distinct": 11,
+          "rejected": 0
+        },
+        {
+          "start": "0x20a6c3",
+          "bytes": 1237,
+          "verified": 15,
+          "distinct": 13,
+          "rejected": 0
+        },
+        {
+          "start": "0x40a840",
+          "bytes": 262,
+          "verified": 5,
+          "distinct": 5,
+          "rejected": 0
+        },
+        {
+          "start": "0x40a950",
+          "bytes": 211,
+          "verified": 1,
+          "distinct": 1,
+          "rejected": 0
+        },
+        {
+          "start": "0x40aa30",
+          "bytes": 790,
+          "verified": 1,
+          "distinct": 1,
+          "rejected": 0
+        }
+      ]
+    },
+    {
+      "name": "MixWave DW Fearn VT-5.vst3",
+      "sha256": "e90bef94adad1518c828d1a23704bd11d998c55c137939830beb4402e67c8e04",
+      "distinct_targets": 12,
+      "shared_targets": 0,
+      "scopes": [
+        {
+          "start": "0x3dc1f0",
+          "bytes": 644,
+          "verified": 13,
+          "distinct": 8,
+          "rejected": 0
+        },
+        {
+          "start": "0x3dc4f0",
+          "bytes": 4385,
+          "verified": 0,
+          "distinct": 0,
+          "rejected": 0
+        },
+        {
+          "start": "0x3df840",
+          "bytes": 501,
+          "verified": 4,
+          "distinct": 4,
+          "rejected": 0
+        },
+        {
+          "start": "0x3dafb0",
+          "bytes": 4660,
+          "verified": 0,
+          "distinct": 0,
+          "rejected": 0
+        },
+        {
+          "start": "0x3d9ef0",
+          "bytes": 144,
+          "verified": 0,
+          "distinct": 0,
+          "rejected": 0
+        },
+        {
+          "start": "0x3d9f90",
+          "bytes": 4108,
+          "verified": 0,
+          "distinct": 0,
+          "rejected": 0
+        }
+      ]
+    },
+    {
+      "name": "SSL Fusion Stereo Image.vst3",
+      "sha256": "31de6c45f42af28bbb74d144c6dd3b9116f1d0d8c22a0eef508df37279b1eaf5",
+      "distinct_targets": 3,
+      "shared_targets": 0,
+      "scopes": [
+        {
+          "start": "0x1288830",
+          "bytes": 222,
+          "verified": 1,
+          "distinct": 1,
+          "rejected": 0
+        },
+        {
+          "start": "0x12872b0",
+          "bytes": 5492,
+          "verified": 0,
+          "distinct": 0,
+          "rejected": 0
+        },
+        {
+          "start": "0x1285b80",
+          "bytes": 5861,
+          "verified": 3,
+          "distinct": 2,
+          "rejected": 0
+        },
+        {
+          "start": "0x984240",
+          "bytes": 367,
+          "verified": 0,
+          "distinct": 0,
+          "rejected": 0
+        }
+      ]
+    },
+    {
+      "name": "MB MixHead.vst3",
+      "sha256": "9575f1a0cdc5152045c2f631a047648cacca6e49d7b515f6fd7994adc703075f",
+      "distinct_targets": 0,
+      "shared_targets": 0,
+      "scopes": [
+        {
+          "start": "0x21d150",
+          "bytes": 304,
+          "verified": 0,
+          "distinct": 0,
+          "rejected": 0
+        },
+        {
+          "start": "0x260790",
+          "bytes": 554,
+          "verified": 0,
+          "distinct": 0,
+          "rejected": 0
+        },
+        {
+          "start": "0x2616a0",
+          "bytes": 993,
+          "verified": 0,
+          "distinct": 0,
+          "rejected": 0
+        },
+        {
+          "start": "0x261a90",
+          "bytes": 278,
+          "verified": 0,
+          "distinct": 0,
+          "rejected": 0
+        },
+        {
+          "start": "0x2615f0",
+          "bytes": 173,
+          "verified": 0,
+          "distinct": 0,
+          "rejected": 0
+        },
+        {
+          "start": "0x21b3d0",
+          "bytes": 43,
+          "verified": 0,
+          "distinct": 0,
+          "rejected": 0
+        }
+      ]
+    }
+  ],
+  "limits": "Bounded static legacy SSE reads; no coefficient values, no algorithm recovery percentage, no runtime execution."
+}

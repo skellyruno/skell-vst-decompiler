@@ -1,0 +1,161 @@
+{
+  "schema": 1,
+  "parent": "3cb4e032ac079221c08e94af744a174baccecc10",
+  "validation": {
+    "parent_ci": "8/8 passed",
+    "kit": "13/13 passed",
+    "input_fingerprints": "36/36 matched previous source digests",
+    "baseline_engine_blob": "b81bc2cba042148e1c809f072c70ad0d4b22dba0",
+    "source_blobs": {
+      "experiments/engine_lab/PresenceComplementary.h": "083f569f0b0cf13dc78256dd56b94f8f8de97d60",
+      "tests/fixtures/owned_presence_phase.cpp": "68c8d114eadb7459a5cf2b31e6c041af20d0dba8",
+      "tests/test_presence_complementary.cpp": "1bb8a1faf2243cabd1cb84568e1761bd1f4255c3",
+      "benchmarks/owned_presence_phase.py": "40b8f228b76cc16e67beb6b4cfbf006f285b1fcd"
+    },
+    "optimized": "passed",
+    "asan_ubsan": "passed",
+    "rates": [
+      8000,
+      44100,
+      48000,
+      96000,
+      192000,
+      384000
+    ],
+    "test_mix_positions": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "hosted_new_ci": "unverified"
+  },
+  "presence": {
+    "private_report_sha256": "557c7c9b58c40401b55e24d4710a1325e61e1d4d39790dd4184d660233c85daa",
+    "tone_pairs": 108,
+    "vocal_inputs": 36,
+    "vocal_pairs": 144,
+    "neutral_exact_candidate_pairs": 72,
+    "neutral_tone_exact_pairs": 54,
+    "neutral_2600hz_48000_half_mix_gain_db": [
+      -243.0152845576953,
+      0
+    ],
+    "active_2600hz_48000_half_mix_gain_db": [
+      -19.731930238877013,
+      0.8903642241121634
+    ],
+    "neutral_half_mix_median_rms_db": [
+      -1.3355112,
+      0
+    ],
+    "neutral_half_mix_worst_rms_db": [
+      -2.3412803,
+      0
+    ],
+    "bands_hz": [
+      [
+        80,
+        250
+      ],
+      [
+        250,
+        1000
+      ],
+      [
+        1000,
+        4000
+      ],
+      [
+        4000,
+        8000
+      ],
+      [
+        8000,
+        16000
+      ]
+    ],
+    "neutral_half_median_matched_band_db": [
+      [
+        1.28614929,
+        0.84130905,
+        -3.87286356,
+        -0.76918332,
+        0.85850605
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "active_half_median_matched_band_db": [
+      [
+        1.19394768,
+        0.74333969,
+        -3.71908714,
+        0.02222102,
+        1.83165846
+      ],
+      [
+        -0.19554888,
+        -0.11550329,
+        0.25633782,
+        0.82992714,
+        0.97790798
+      ]
+    ],
+    "active_full_median_matched_band_db": [
+      [
+        -0.25029929,
+        -0.24168166,
+        0.34832739,
+        1.93632381,
+        2.02115843
+      ],
+      [
+        -0.4154507,
+        -0.24582861,
+        0.50489732,
+        1.5357768,
+        1.74495645
+      ]
+    ],
+    "active_full_max_sample_peak_dbfs": [
+      2.07463687,
+      -0.46077557
+    ],
+    "active_full_over_scale_excerpt_count": [
+      2,
+      0
+    ],
+    "active_full_median_raw_rms_gain_db": [
+      0.2493834,
+      0.43406551
+    ]
+  },
+  "delay": {
+    "repo": "skellyruno/skellay",
+    "commit": "6271e2fc7136c4144d2254e83af4d51e270f51b1",
+    "previous_interpolation_commit": "0c603680874ee1d94387fb5731493e086f0ff654",
+    "previous_windows_ci": "passed",
+    "feedback_impulse_decay_oracles": 45,
+    "stereo_impulse_observations": 72,
+    "vocal_echo_renders": 108,
+    "wet_trim_pairs": 288,
+    "wet_trim_renders": 576,
+    "max_before_sample_peak_dbfs": 0.6530961290837649,
+    "max_after_sample_peak_dbfs": -2.3469039412741517,
+    "over_scale_after": 0,
+    "report_path": "docs/RESEARCH_DELAY_FEEDBACK.json"
+  },
+  "remaining": {
+    "unknown_destinations": 854,
+    "boundary_conflicts": 90,
+    "value_flow_candidates": 692
+  },
+  "limits": "Independent original DSP only; no new vendor replay or algorithm reconstruction. Real corpus includes two dry inputs and 34 processed excerpts, not independent performances necessarily. Sample peaks only, no certified true peak, CPU or listening validation. Original PresenceEngine and existing plugin defaults unchanged. ResearchDelay is not a selectable model. No private audio or per-input rows committed."
+}

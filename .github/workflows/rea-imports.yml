@@ -1,0 +1,40 @@
+name: REA PE imports (owned fixtures)
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/rea-imports.yml'
+      - 'skell_vst_decompiler/rea_metadata.py'
+      - 'tests/rea_metadata_smoke.py'
+      - 'tests/test_rea_metadata.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || format('protected-{0}-{1}', github.ref, github.run_id) }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  imports:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          package-manager-cache: false
+          node-version: '24.22.1'
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Install fixture compiler and pinned readers
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y clang lld
+          python -m pip install pefile==2024.8.26
+          npm install --prefix "$RUNNER_TEMP/rea-tool" --no-audit --no-fund --ignore-scripts --save-exact rea-agents@6.10.1
+          echo "$RUNNER_TEMP/rea-tool/node_modules/.bin" >> "$GITHUB_PATH"
+      - name: Run read-only import comparison
+        run: |
+          rea --version
+          PYTHONPATH=. python tests/rea_metadata_smoke.py

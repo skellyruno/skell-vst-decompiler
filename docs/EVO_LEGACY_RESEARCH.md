@@ -1,0 +1,16 @@
+# Legacy pitch-correction reference: Evo 6.0.9
+
+Uploaded DLL fingerprint and limited metadata in reports/evo_legacy_metadata_2026-11-24.json. Original stays private and is never loaded, patched or sent to CI. Header is i386 PE32 rather than PE32+; there is no x64 exception directory. Separate legacy_pe.py preserves existing x64 analyzer assumptions. CLI: python -m skell_vst_decompiler.legacy_pe /private/path/to/authorized.dll. The reader inventories public VST2 export names and metadata, not private implementation or runtime ABI behavior. File metadata is not authentication. The internal UI string says 6.0.0 while VERSIONINFO text and fixed numeric version say 6.0.9; use the latter as recorded version metadata.
+
+Historical context: Antares describes Evo as version 6 and Classic mode as a pre-Evo Auto-Tune 5 sound. See https://www.antarestech.com/blog/auto-tune-pro-x-tutorial-overview and https://www.antarestech.com/blog/introducing-autotune-advanced . Do not equate Evo with Classic or infer code identity from the product name. No fresh algorithm recovery claimed.
+
+Independent reference: de Cheveigne and Kawahara (2002), YIN, doi:10.1121/1.1458024, https://pubmed.ncbi.nlm.nih.gov/12002874/ . pitch_reference.py implements an offline normalized difference detector with first qualifying minimum and sub-sample interpolation, plus silence/noise rejection. No borrowed vendor constants, no synthesis, no real-time claim. Test corpus: 65 ms stationary harmonic frames at 82.41,110,220,440,880 Hz, three sample rates, harmonic sets (1,2,3) and (2,3,4). Local 30/30 accepted within 2 cents, max 0.352433 cents, median 0.007024 cents. Periodicity score is not calibrated probability. Next: voiced/unvoiced transitions, octave errors, noisy vocals, retune step response, note hysteresis, formant and real audio evaluation with authorized renders. Keep this independent baseline separate from the seven existing Playground engines; no production code replaced.
+
+### Independent reference extension
+Opt-in backend='fft' computes the same fixed-window squared differences via convolution and cumulative power; direct remains the baseline/default. RetuneControl converts accepted estimates to cents correction using an explicit MIDI note set, hysteresis and exponential timing; zero milliseconds responds immediately, no voice resets state. This is control-domain research, not an audio shifter or Evo implementation. New numerical CI measures backend parity, noisy harmonic errors and timing. No latency claim; 65 ms analysis frame is not total plugin latency.
+
+Historical public architecture source and new independent comparison: see HISTORICAL_PITCH_AND_DYNAMICS.md. Do not infer Evo uses the identical patent implementation.
+
+Historical manual pp.23–24 supplies additional public behavioral evidence; see PUBLIC_DSP_BEHAVIOR.md. Independent sustained-note smoothing is not the commercial Humanize mapping.
+
+Relocation-backed public math import observations are documented in EVO_MATH_IMPORT_AUDIT.md. Observed jump stubs do not identify the pitch algorithm.

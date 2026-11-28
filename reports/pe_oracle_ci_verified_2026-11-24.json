@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "report_kind": "verified_pe_oracle_ci",
+  "source_commit": "ee05b21f26cc3ba086936ecdb01234236f094217",
+  "tests": 106,
+  "run_ids": {
+    "reccmp": 45433804223,
+    "rizin": 45433804259,
+    "static": 45433804489,
+    "unified": 45433804438,
+    "oracle": 45433804383,
+    "ghidra": 45433804001
+  },
+  "oracle": {
+    "version": "2024.8.26",
+    "cases": 8,
+    "all_agreed": true,
+    "all_contiguous_assumption_false": true,
+    "architectures": [
+      "x86",
+      "x64"
+    ],
+    "optimizations": [
+      "O0",
+      "O2"
+    ]
+  },
+  "reccmp": {
+    "conclusion": "failure",
+    "layout_preflight_all_three_false": true,
+    "error": "InvalidVirtualAddressError",
+    "resolution": "Independent metadata oracle passed; upstream tool still incompatible on these fixtures."
+  },
+  "limits": "Owned fixtures only. No vendor algorithm evidence."
+}

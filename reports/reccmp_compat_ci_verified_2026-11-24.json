@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "report_kind": "verified_reccmp_compatibility_ci",
+  "source_commit": "e2065085b6bdc9ce91b800564a1d3df46ed1cd23",
+  "tests": 121,
+  "run_ids": {
+    "static": 45439758510,
+    "reccmp": 45439758319,
+    "ghidra": 45439758777,
+    "rizin": 45439758887,
+    "craft": 45439758549,
+    "pe_oracle": 45439758893,
+    "unified": 45439758685
+  },
+  "confirmed_success": 6,
+  "unified_status_at_observation": "in_progress",
+  "reccmp": {
+    "stock_exit": 1,
+    "compatibility_adapter": true,
+    "same_exports_pass": true,
+    "changed_exports_detected": true,
+    "original_sha256": "0225fb615aaee5e84582407c027eb593411e1ad8024b4993bf904906cd65eef4",
+    "same_sha256": "e58cb4b958692124c9fdd8d96e0dad3763350892a8a2d548ab3c25ac10bd1bd4",
+    "different_sha256": "c767ef574aab872c63ad0a1003e67b4e3e12df55ff6d60940817e0c646d2415a"
+  },
+  "limits": "Owned i386 named export comparisons only; stock upstream unchanged; no function equivalence established."
+}

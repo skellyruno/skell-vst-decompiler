@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "report_kind": "evidence_protocol_and_first_divergence",
+  "source_commit": "dcd98f81b8e95086018489048deb9a7979869f6a",
+  "previous_ci": {
+    "tests": 186,
+    "all_eight_passed": true,
+    "run_ids": [
+      45531125718,
+      45531125573,
+      45531126450,
+      45531125649,
+      45531125586,
+      45531125477,
+      45531125506,
+      45531125504
+    ]
+  },
+  "local_tests": 5,
+  "local_result": "pass",
+  "local_seconds": 0.729,
+  "known_fixture": {
+    "first_sample_index": 513,
+    "channel_index": 1,
+    "block_index": 2,
+    "mismatched_frames": 2,
+    "mismatched_samples": 3
+  },
+  "tested_blobs": {
+    "skell_vst_decompiler/divergence.py": "eb29c70b4275404fe0026812d63dfdda53257086",
+    "skell_vst_decompiler/listening_bridge.py": "f92a9be37923e3e7a3332defdba708639d4f83e1",
+    "tests/test_divergence.py": "949580f6cf9cb615faa823e56a25bba9b9227443"
+  },
+  "limits": "Owned audio only; no reference execution, no internal state logging or target decompilation. Default numerical tolerances not an audio parity threshold. Host automation unimplemented."
+}

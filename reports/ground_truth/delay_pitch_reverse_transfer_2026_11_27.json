@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "parent": "662706b5d60239a7b4cdce7da644333bd8494ba2",
+  "previous_ci": "8/8 passed",
+  "core_previous_ci": "4/4 passed",
+  "kit": "13/13 passed",
+  "skellay": {
+    "commit": "4175b662b6545ce66295dd96a32eb909da692abf",
+    "native_rates": 6,
+    "real_vocal_inputs": 36,
+    "renders": 108,
+    "exact_dry": 36,
+    "nonzero_tails": 72,
+    "over_scale_samples": 0,
+    "windows_workflow": "passed",
+    "plugin_selection": "not integrated"
+  },
+  "playground": {
+    "commit": "1a32b8f033c859ff9d5a30b6cda3a92bc502c5eb",
+    "dry_inputs": 2,
+    "portable_engines": 4,
+    "pairs": 32,
+    "renders": 64,
+    "protected_exact_pairs": 16,
+    "over_scale_samples": 0,
+    "pdc_samples": 110,
+    "promotion": false,
+    "full_fifth_engine": "not locally verified"
+  },
+  "flang": {
+    "commit": "fad039cdcfc6118288168418b6ea16ab59d6cbb3",
+    "production_source_changed": false,
+    "inputs": 3,
+    "exact_pairs_per_candidate": 9,
+    "inner_loop_savings_percent": [
+      28.33,
+      -10.86,
+      8.33
+    ],
+    "specialized_savings_percent": [
+      34.06,
+      -4.18,
+      16.03
+    ],
+    "promotion": false,
+    "full_run": "timed out",
+    "local_source": "isolated owned kernel, not entire current header"
+  },
+  "static_backlog": {
+    "unknown_destinations": 854,
+    "boundary_conflicts": 90,
+    "value_flow_candidates": 692
+  },
+  "limits": "No new vendor target analysis. Native timing not DAW CPU. Existing sounds preserved. Other plugins not updated."
+}

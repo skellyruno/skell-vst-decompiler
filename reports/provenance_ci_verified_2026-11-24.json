@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "report_kind": "verified_provenance_ci",
+  "source_commit": "0472b759312a277778cbbb7918517314372e2ba7",
+  "tests": 118,
+  "run_ids": {
+    "ghidra": 45438714723,
+    "unified": 45438713728,
+    "craft": 45438714532,
+    "rizin": 45438713764,
+    "reccmp": 45438713744,
+    "pe_oracle": 45438714496,
+    "static": 45438713881
+  },
+  "success_count": 6,
+  "failed_count": 1,
+  "compatibility_parser_local_tests": 3,
+  "compatibility_parser_blob": "e8feff2ec054885b4cdc8cb79d6dfe22a78f6d6e",
+  "limits": "Local synthetic export-reader tests passed; actual compatibility-wrapped Reccmp CLI still pending CI."
+}

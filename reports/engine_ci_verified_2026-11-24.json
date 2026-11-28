@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "report_kind": "verified_predecessor_ci",
+  "source_commit": "eee476982f1e3f7a33e036cd113b1c4413812f4f",
+  "static": {
+    "run_id": 45424076890,
+    "tests": 92,
+    "conclusion": "success",
+    "cache_hits": 38,
+    "serial_seconds": 0.46356581900000293,
+    "parallel_seconds": 0.33310311299999995,
+    "warm_seconds": 0.03483064000000269
+  },
+  "ghidra": {
+    "run_id": 45424076693,
+    "conclusion": "success",
+    "functions": 2,
+    "links": 3
+  },
+  "rizin": {
+    "run_id": 45424076949,
+    "conclusion": "success",
+    "fixture_sha256": "5cf9331c1d185dfb79a46a13634fadaf24a5760a91b6efa37876afb1246d4bbd",
+    "exact_unwind_start": 2,
+    "inside_unwind_range": 0,
+    "no_unwind_record": 1,
+    "not_file_backed_executable": 0
+  },
+  "limits": "Distinct fixture builds; no cross-engine equality inferred across different fingerprints."
+}

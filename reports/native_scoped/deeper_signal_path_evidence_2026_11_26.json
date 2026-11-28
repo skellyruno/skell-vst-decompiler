@@ -1,0 +1,139 @@
+{
+  "schema": 1,
+  "parent": "b57bc85f3f6e0f8913e843e441870e308b1788ac",
+  "local_full_report_sha256": "7c4988f614de8d7087efc1a8d2869c8193f92dbd6108fc103c57576b03b78e48",
+  "input_replay": {
+    "scope_plan": "reports/native_scoped/eight_target_rip_audit_2026_11_26.json",
+    "binaries": 8,
+    "scopes": 47,
+    "all_scope_hashes_match": true,
+    "counts": [
+      [
+        "StandardCLIP",
+        5,
+        2
+      ],
+      [
+        "Trackspacer",
+        6,
+        0
+      ],
+      [
+        "FG-2A",
+        8,
+        0
+      ],
+      [
+        "Panagement",
+        5,
+        0
+      ],
+      [
+        "DeeDoubler",
+        7,
+        0
+      ],
+      [
+        "VT-5",
+        6,
+        0
+      ],
+      [
+        "SSL Stereo Image",
+        4,
+        0
+      ],
+      [
+        "MixHead",
+        6,
+        0
+      ]
+    ]
+  },
+  "checkpoint_method": "Dual decoders, lowercase/whitespace/comment normalization, remove trailing symbol annotation, normalize explicit scale one and zero displacement and multiplication order. 90 strict with only case/whitespace/comments, 45 additionally reconciled; not whole-function semantics.",
+  "selected_checkpoints": {
+    "StandardCLIP": {
+      "scope": "0x424c00",
+      "bytes": 3794,
+      "sha256": "0e0e52a93fbf73e74b012daa131dc04ea27ebb48c5da9db20641e8943c18b251",
+      "agreed": 46,
+      "strict": 36,
+      "candidates": [
+        {
+          "call_site": "0x425231",
+          "sample_store": "0x425234",
+          "slot_byte_offset": 8
+        },
+        {
+          "call_site": "0x425365",
+          "sample_store": "0x42536c",
+          "slot_byte_offset": 8
+        }
+      ]
+    },
+    "Trackspacer": {
+      "scopes": [
+        [
+          "0x188f0",
+          678,
+          "10ccee229fa735db1c7d129324bf6b58e008d8091abdddfc8709ff503871b17f",
+          27
+        ],
+        [
+          "0x192c0",
+          235,
+          "0b0616e6004a8a89af5105065940ce5d686f587954aba5620a803c9c6f2e26b5",
+          12
+        ],
+        [
+          "0x19200",
+          191,
+          "056b7ee6ddc202ae27f341837399b35eda6add60e48e818bfd5ca9c5928a5803",
+          12
+        ]
+      ],
+      "agreed": 51,
+      "strict": 42
+    },
+    "DeeDoubler": {
+      "scope": "0x40aa30",
+      "bytes": 790,
+      "sha256": "c505289602ebd45caa81355569914fc2f2fc4286e9f4a5b7400b624885f4ea25",
+      "agreed": 32,
+      "strict": 6,
+      "unity_identity": true
+    },
+    "FG2A": {
+      "scope": "0xbf5290",
+      "bytes": 3239,
+      "sha256": "fb6f35a424afae0c10b81fd84a3ff95291b765a28d1ac1b773ab00ffb135b285",
+      "agreed": 6,
+      "strict": 6,
+      "math_imports": {
+        "sqrt": 11,
+        "tan": 7,
+        "exp": 1,
+        "log": 1
+      },
+      "import_validation": "Both decoders and original direct call displacement, ordinary import thunk and IAT mapping"
+    }
+  },
+  "tests": {
+    "owned_PE_fixture": {
+      "passed": true,
+      "positive_patterns": 2,
+      "negative_patterns": 2,
+      "invalid_fingerprint": true,
+      "invalid_range": true,
+      "negative_window": true
+    },
+    "source_blob": "1d9c20608392b9a0bf532919ce347cb2044f51b1",
+    "test_blob": "0838ed60a5f465279b6d62e11c7a00e1a4f669c9",
+    "local_dependencies": {
+      "disasm": "d4e87f3dc1760a46907b388a06c8383377d05afc",
+      "pe": "54f9e7020f67277dd6018c7e141e37e9a9921daf",
+      "note": "Local PE reader is from prior offline checkpoint; current branch PE reader differs, CI required for exact integration."
+    }
+  },
+  "limits": "No vendor execution, protected code, reconstructed vendor algorithm, coefficient arrays, audio equivalence or production integration. Four remaining targets replayed but no new algorithm claims."
+}

@@ -1,0 +1,208 @@
+{
+  "schema": 1,
+  "parent": "54f58d37019fcc3bf76610d61cbaca036f89bb65",
+  "source_blobs": {
+    "experiments/engine_lab/CachedScheduledGuard.h": "88df42346cfc10343ea2fc9f2fcd5d1aaeb2767a",
+    "experiments/engine_lab/BandBudgetDelay.h": "0eab002022403ae8c0969fcd591be6c6129914be",
+    "experiments/engine_lab/BandTailBudget.h": "ea1d44cfe0a6355b12f7281e1303a01a2430e427",
+    "experiments/engine_lab/RegularCrestHold.h": "114e7168359188153edd5a102684a4937c690ad2",
+    "tests/test_cached_band_crest.cpp": "1b5c1ca1530f979715812c91a4a94ed8476faa0f",
+    "tests/fixtures/owned_cached_band_crest.cpp": "f51bd68584f9e8cf7c21bab41db8436403c26785",
+    "benchmarks/owned_cached_band_crest.py": "ccd7e400164ee17536b904abdc9dfa50ed19c2c0",
+    "benchmarks/owned_independent_stopbands.py": "abe32fdfdc671dde3ae5b7914f573cd95358c48a"
+  },
+  "private_report_sha256": "355b8a8da00bc4e66644da7faae1919446ac895b10ec2c4b0396afea962bf60b",
+  "offline_report_sha256": "50e58cc76222d6938c621c69192b4c80535db5fc1e05a2d271673ae8ebe20c98",
+  "kit": "13/13 verified cached kit",
+  "inputs": {
+    "vocal_excerpts": 36,
+    "music_excerpts": 9,
+    "music_sources": 3,
+    "music_seconds": 90,
+    "fingerprints_verified": true
+  },
+  "cached_guard": {
+    "latency": 16,
+    "parity_channels_per_run": 1158912,
+    "kernel_checks_per_run": 4621824,
+    "real_audio_exact_pairs": 45,
+    "timing_repetitions": 3,
+    "median_ms_audio_second": [
+      [
+        5.80268471,
+        5.5373386
+      ],
+      [
+        10.258287,
+        10.1353746
+      ]
+    ],
+    "paired_time_percent": [
+      -4.595166780332632,
+      -1.1981766546402817
+    ],
+    "faster_count": [
+      30,
+      5
+    ],
+    "limits": "native wall time includes prepare and adapter, concurrent batches; not DAW CPU; declared finite kernel only"
+  },
+  "delay": {
+    "cutoff_hz": 250,
+    "ceiling_db": -1,
+    "stress_max_linear": 0.8912509381337457,
+    "fully_wet": true,
+    "order": [
+      "previous_wet_budget",
+      "band_priority"
+    ],
+    "vocal_max_sample_dbfs": [
+      -1,
+      -1
+    ],
+    "music_max_sample_dbfs": [
+      -1,
+      -1
+    ],
+    "vocal_max_est16_dbfs": [
+      -0.80212772,
+      -0.82200366
+    ],
+    "music_max_est16_dbfs": [
+      0.09876533,
+      0.09876533
+    ],
+    "music_est16_overloads": [
+      1,
+      1
+    ],
+    "guarded_music_max_est16_dbfs": [
+      -0.97968923,
+      -0.97968923
+    ],
+    "guarded_vocal_max_est16_dbfs": [
+      -2.04894319,
+      -2.04894319
+    ],
+    "music_paired_guarded_gain_delta_db": -0.20832212113035942,
+    "music_paired_tail_rms_db": -0.10343669240867832,
+    "music_paired_low_tail_rms_db": -0.11469574833129144,
+    "music_paired_high_tail_rms_db": 0.17178050840308723,
+    "vocal_median_tail_deltas_db": [
+      0,
+      0,
+      0
+    ],
+    "limits": "output-only budget, exact schedule and dry in stress, no intersample guarantee or subjective improvement, partial wet not peak protected"
+  },
+  "compressor": {
+    "order": [
+      "adaptive_hold",
+      "regular_crest"
+    ],
+    "rule": "two consecutive crest intervals within 20%, otherwise shorten outstanding hold; existing peak and threshold gates",
+    "vocal_paired_rms_gain_delta_db": 0.000021205203491803104,
+    "music_paired_rms_gain_delta_db": 0.0000013714813142939875,
+    "vocal_paired_matched_peak_delta_db": -0.000021205203492691282,
+    "music_paired_matched_peak_delta_db": -0.0000013714813140719428,
+    "vocal_paired_onset_delta_db": -1.0302501607384329e-7,
+    "music_paired_onset_delta_db": 8.579084287418937e-8,
+    "vocal_median_relative_null_db": -96.17627724,
+    "music_median_relative_null_db": -113.28450134,
+    "decision": "no promotion; negligible change on reused corpus; isolated stems missing"
+  },
+  "filter": {
+    "design_count": 25,
+    "reference_included": true,
+    "tone_conditions": 45,
+    "renders": 1125,
+    "latency": 40,
+    "gate": "fundamental change >= -0.1dB and absolute residual increase <=0.1dB",
+    "best_nonreference": {
+      "up": [
+        0.45,
+        10
+      ],
+      "down": [
+        0.475,
+        null
+      ],
+      "near_parity": 40,
+      "strict_improvement": 2,
+      "worst_residual_increase_db": 0.6580060830234515,
+      "min_fundamental_change_db": -0.15292384937557735,
+      "up_stopband_max_db": -101.11634741732476,
+      "reference_up_stopband_max_db": -75.30170639343326,
+      "up_nyquist_db": -34.490275450542406,
+      "reference_up_nyquist_db": -39.361500389539586
+    },
+    "down_only_kaiser8": {
+      "near_parity": 39,
+      "strict_improvement": 6,
+      "worst_residual_increase_db": 8.074316897326923
+    },
+    "limits": "offline screen; no new native candidate, held-out or alias completeness; stopband measured >=.55 cycles/base sample; Nyquist attenuation distinct"
+  },
+  "validation": {
+    "optimized": "pass six rates",
+    "asan_ubsan": "pass six rates",
+    "blobs": "8/8 exact",
+    "parent_ci": [
+      [
+        "Real Ghidra smoke (owned fixture)",
+        "completed",
+        "success"
+      ],
+      [
+        "Unified engines (owned fixture)",
+        "completed",
+        "success"
+      ],
+      [
+        "Craft Anything metadata (owned fixtures)",
+        "completed",
+        "success"
+      ],
+      [
+        "Independent PE oracle (owned fixtures)",
+        "completed",
+        "success"
+      ],
+      [
+        "Python static-analysis tests",
+        "in_progress",
+        null
+      ],
+      [
+        "Real Rizin smoke (owned fixture)",
+        "completed",
+        "success"
+      ],
+      [
+        "Reccmp export comparison (owned fixture)",
+        "completed",
+        "success"
+      ],
+      [
+        "REA PE imports (owned fixtures)",
+        "completed",
+        "success"
+      ]
+    ],
+    "new_ci": "pending"
+  },
+  "pitch": {
+    "status": "resumed existing juceaide cache with pinned overlay, bounded 12s run exit124; 11MiB cache retained; no fifth engine render or actual host"
+  },
+  "remaining": {
+    "isolated_stems": "unverified",
+    "presence": "subjective votes pending",
+    "production": "no changes",
+    "vendor_backlog": [
+      854,
+      90,
+      692
+    ],
+    "transfer": "separate opt-in Core transfer attempted independently; no production plugin consumer changed"
+  }
+}

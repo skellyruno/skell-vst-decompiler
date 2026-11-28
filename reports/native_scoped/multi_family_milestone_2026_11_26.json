@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "reference": {
+    "name": "Trackspacer25.vst3",
+    "bytes": 19171840,
+    "source_sha256": "f7dab96048b6d0def84b0be2395244f01e54dc71d6b99e769630fbe6c37b6242",
+    "format": "PE32+ x64",
+    "exports": [
+      "ExitDll",
+      "GetPluginFactory",
+      "InitDll"
+    ],
+    "export_module": "Trackspacer25.dll",
+    "identity_strings": [
+      "Wavesfactory",
+      "Trackspacer"
+    ],
+    "executable_virtual_file_bytes": 3627852,
+    "unwind_covered_bytes": 3268122,
+    "unwind_ranges": 14013,
+    "relocation_slots": 24054,
+    "categories": {
+      "no_unwind_range": 8043,
+      "non_code_target": 8909,
+      "unwind_start": 7102
+    },
+    "unique_code_targets": 5016,
+    "unique_targets_without_unwind": 2435,
+    "limits": "Distinct from recreation; identity consistent with named original, not authenticated installation/version or runtime."
+  },
+  "candidate_tests": {
+    "rates": [
+      44100,
+      48000,
+      96000,
+      192000
+    ],
+    "mid_sum_error": 5.55e-17,
+    "low_side_gain_db": [
+      8.9285,
+      8.9285,
+      8.9282,
+      8.928
+    ],
+    "high_side_gain_db": [
+      3.1345,
+      3.1249,
+      3.0701,
+      3.0424
+    ],
+    "far_ear_first_samples": [
+      22,
+      24,
+      49,
+      99
+    ],
+    "clip_latency_samples": 40,
+    "selected_fold_reduction_db": -48.5169,
+    "clip_sample_peak": 1.13086,
+    "optimized": "pass",
+    "asan_ubsan": "pass",
+    "real_music": "six finite independent mode renders, no vendor comparison, private report local only"
+  },
+  "limits": "Not vendor behavior equivalence; peak overshoot and overly aggressive width prevent promotion."
+}

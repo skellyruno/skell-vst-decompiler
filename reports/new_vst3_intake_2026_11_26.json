@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "source": "Seven owner-supplied VST3 files, 2026-11-26",
+  "method": "Read-only PE headers, public factory export and existing bounds-checked unwind/relocation coverage audit. No execution, vendor code, protection inspection or algorithm match.",
+  "modules": [
+    {
+      "name": "Auburn Sounds Panagement 2-64.vst3",
+      "bytes": 2902904,
+      "sha256": "2a18419eff9338b67d22049dc6b7b628e7b420bf48850e66ed5dee7a7c398f25",
+      "format": "Windows x64 PE32+",
+      "sections": 7,
+      "exports": 5,
+      "vst3_factory_export": true,
+      "executable_virtual_file_bytes": 1168592,
+      "unwind_covered_bytes": 1099568,
+      "unwind_ranges": 2796,
+      "relocation_slots": 11050,
+      "unique_code_targets": 1589,
+      "unique_targets_without_unwind": 716,
+      "categories": {
+        "no_unwind_range": 3807,
+        "non_code_target": 5123,
+        "unwind_start": 2120,
+        "unwind_interior": 0,
+        "executable_source_slot": 0
+      },
+      "research_question": "Spatial processing / panning / ambience",
+      "status": "intake_metadata_only"
+    },
+    {
+      "name": "Auto-Key.vst3",
+      "bytes": 14452736,
+      "sha256": "5b75ab74781e4108b09d035a4a140e714da648968d64114f9337d76598a42dbc",
+      "format": "Windows x64 PE32+",
+      "sections": 14,
+      "exports": 23,
+      "vst3_factory_export": true,
+      "executable_virtual_file_bytes": 7851520,
+      "unwind_covered_bytes": 6877445,
+      "unwind_ranges": 24483,
+      "relocation_slots": 4753,
+      "unique_code_targets": 195,
+      "unique_targets_without_unwind": 188,
+      "categories": {
+        "no_unwind_range": 631,
+        "non_code_target": 69,
+        "unwind_start": 6,
+        "unwind_interior": 3,
+        "executable_source_slot": 4044
+      },
+      "research_question": "Key detection and confidence",
+      "status": "intake_metadata_only"
+    },
+    {
+      "name": "DeeDoubler.vst3",
+      "bytes": 10681952,
+      "sha256": "0fca35f1e73496a967fb871b83efcbf17de825e574e1a943bb2cd7bb28d3a56c",
+      "format": "Windows x64 PE32+",
+      "sections": 8,
+      "exports": 3,
+      "vst3_factory_export": true,
+      "executable_virtual_file_bytes": 4872428,
+      "unwind_covered_bytes": 4420966,
+      "unwind_ranges": 18343,
+      "relocation_slots": 20300,
+      "unique_code_targets": 4962,
+      "unique_targets_without_unwind": 2160,
+      "categories": {
+        "no_unwind_range": 8290,
+        "non_code_target": 5412,
+        "unwind_start": 6598,
+        "unwind_interior": 0,
+        "executable_source_slot": 0
+      },
+      "research_question": "Vocal doubling and stereo timing",
+      "status": "intake_metadata_only"
+    },
+    {
+      "name": "MB MixHead.vst3",
+      "bytes": 3899904,
+      "sha256": "9575f1a0cdc5152045c2f631a047648cacca6e49d7b515f6fd7994adc703075f",
+      "format": "Windows x64 PE32+",
+      "sections": 6,
+      "exports": 2,
+      "vst3_factory_export": true,
+      "executable_virtual_file_bytes": 2670592,
+      "unwind_covered_bytes": 2471708,
+      "unwind_ranges": 10008,
+      "relocation_slots": 21411,
+      "unique_code_targets": 4438,
+      "unique_targets_without_unwind": 2072,
+      "categories": {
+        "no_unwind_range": 11738,
+        "non_code_target": 3180,
+        "unwind_start": 6493,
+        "unwind_interior": 0,
+        "executable_source_slot": 0
+      },
+      "research_question": "Identify effect family and controls before modeling",
+      "status": "intake_metadata_only"
+    },
+    {
+      "name": "MixWave DW Fearn VT-5.vst3",
+      "bytes": 57888256,
+      "sha256": "e90bef94adad1518c828d1a23704bd11d998c55c137939830beb4402e67c8e04",
+      "format": "Windows x64 PE32+",
+      "sections": 9,
+      "exports": 94,
+      "vst3_factory_export": true,
+      "executable_virtual_file_bytes": 22286336,
+      "unwind_covered_bytes": 21571907,
+      "unwind_ranges": 24562,
+      "relocation_slots": 35305,
+      "unique_code_targets": 13929,
+      "unique_targets_without_unwind": 9838,
+      "categories": {
+        "no_unwind_range": 18183,
+        "non_code_target": 8142,
+        "unwind_start": 8980,
+        "unwind_interior": 0,
+        "executable_source_slot": 0
+      },
+      "research_question": "EQ, phase and coloration",
+      "status": "intake_metadata_only"
+    },
+    {
+      "name": "SSL Fusion Stereo Image.vst3",
+      "bytes": 50461696,
+      "sha256": "31de6c45f42af28bbb74d144c6dd3b9116f1d0d8c22a0eef508df37279b1eaf5",
+      "format": "Windows x64 PE32+",
+      "sections": 10,
+      "exports": 506,
+      "vst3_factory_export": true,
+      "executable_virtual_file_bytes": 19926016,
+      "unwind_covered_bytes": 19544364,
+      "unwind_ranges": 18145,
+      "relocation_slots": 20148,
+      "unique_code_targets": 5890,
+      "unique_targets_without_unwind": 1947,
+      "categories": {
+        "no_unwind_range": 7339,
+        "non_code_target": 5341,
+        "unwind_start": 7468,
+        "unwind_interior": 0,
+        "executable_source_slot": 0
+      },
+      "research_question": "Stereo width, mono compatibility and spatial response",
+      "status": "intake_metadata_only"
+    },
+    {
+      "name": "StandardCLIP.vst3",
+      "bytes": 11557216,
+      "sha256": "000aff8f9983d55bcb91853c4639e2063185ca036039adaf1cc82bfb0abd7f8b",
+      "format": "Windows x64 PE32+",
+      "sections": 9,
+      "exports": 3,
+      "vst3_factory_export": true,
+      "executable_virtual_file_bytes": 7750846,
+      "unwind_covered_bytes": 7184871,
+      "unwind_ranges": 21082,
+      "relocation_slots": 35011,
+      "unique_code_targets": 7656,
+      "unique_targets_without_unwind": 3466,
+      "categories": {
+        "no_unwind_range": 14448,
+        "non_code_target": 8906,
+        "unwind_start": 11657,
+        "unwind_interior": 0,
+        "executable_source_slot": 0
+      },
+      "research_question": "Clip transfer, oversampling, intersample peak and latency",
+      "status": "intake_metadata_only"
+    }
+  ],
+  "totals": {
+    "binaries": 7,
+    "bytes": 151844664,
+    "executable_virtual_file_bytes": 66526330,
+    "unwind_ranges": 119419,
+    "relocation_slots": 147978
+  },
+  "policy": {
+    "trackspace": "archived supporting evidence; no separate active research or new recreation analysis",
+    "trackspacer": "primary external reference, original unavailable",
+    "skell_spacer": "independent production engine; preserve verified V17 baseline"
+  },
+  "limits": "No new transfer equations, verified runtime controls, or original audio renders."
+}

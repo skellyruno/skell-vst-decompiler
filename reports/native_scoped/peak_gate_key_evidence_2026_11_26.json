@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "kind": "independent_candidate_evidence",
+  "source_blobs": {
+    "header": "583e4041f87090203b5818ab4e5ee915924bf3de",
+    "test": "be0cef77f8026bb718c48177f7ba0755f982e1e0",
+    "renderer": "eb5f52bdcbea0fa8aeb2807ec9dd881bff9e5c4b"
+  },
+  "peak": {
+    "rates": [
+      44100,
+      48000,
+      96000,
+      192000
+    ],
+    "stress_frames": 600000,
+    "finite_kernel_max_linear": 0.891250938,
+    "latency_samples": 16,
+    "combined_samples": 56,
+    "estimate16x_old_misses": 2,
+    "estimate16x_new_misses": 0,
+    "excerpts": 6,
+    "limits": "Exact finite FIR only; conservative loudness loss; not certified true peak."
+  },
+  "gate": {
+    "total_settings": 57,
+    "selection": "40/20 train/validation; final 40 reused later section",
+    "quiet_nmse_live": 0.0680312675345127,
+    "quiet_nmse_candidate": 0.014339704501098244,
+    "quiet_nmse_old_fitted": 0.019911913736390976,
+    "onset_samples": 59,
+    "status": "experimental; no promotion"
+  },
+  "key": {
+    "repo": "skellyruno/skell-key-vst",
+    "commit": "f500ed4d0150fab374245a486239c612073fa9c9",
+    "prior": "80f509a09435d46e6f7637591724e45758f83b16",
+    "synthetic_cases": 120,
+    "rates": [
+      44100,
+      48000,
+      96000,
+      192000,
+      384000
+    ],
+    "first_decision_seconds": [
+      23.962993,
+      23.978667,
+      23.978667,
+      23.978667,
+      23.978667
+    ],
+    "standard_rate_fixture_parity": true
+  },
+  "tests": {
+    "strict": "pass",
+    "asan_ubsan": "pass"
+  },
+  "limits": "No new vendor waveform or exact commercial algorithms. No production promotion."
+}

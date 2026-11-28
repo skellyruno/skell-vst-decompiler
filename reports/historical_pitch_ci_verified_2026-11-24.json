@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "report_kind": "verified_historical_pitch_ci",
+  "source_commit": "ae2c64e307658a249b90167619c9671500bb9111",
+  "tests": 118,
+  "run_ids": {
+    "craft": 45436592126,
+    "pe_oracle": 45436591826,
+    "reccmp": 45436591960,
+    "rizin": 45436591988,
+    "static": 45436592129,
+    "ghidra": 45436592393,
+    "unified": 45436592253
+  },
+  "success_count": 6,
+  "failed_count": 1,
+  "two_period": {
+    "accepted": 90,
+    "cases": 90,
+    "gross_errors_over_50_cents": 0,
+    "max_abs_cents": 45.899204581364486,
+    "median_abs_cents": 1.1120325299358453,
+    "rejected": 0
+  },
+  "yin_fft": {
+    "accepted": 90,
+    "cases": 90,
+    "gross_errors_over_50_cents": 0,
+    "max_abs_cents": 27.720094388096022,
+    "median_abs_cents": 0.30850511019182564,
+    "rejected": 0
+  },
+  "limits": "Synthetic stationary harmonic/noise cases only. Neither detector established as Evo implementation."
+}

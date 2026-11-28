@@ -1,0 +1,230 @@
+{
+  "sha256": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
+  "region_rva": "0x5cfa7f-0x5d07bf",
+  "math_call_counts": {
+    "expf": 16,
+    "powf": 10,
+    "logf": 5
+  },
+  "verified_import_call_count": 31,
+  "calls": [
+    {
+      "site_rva": "0x5cff0f",
+      "target_rva": "0x87f1aa",
+      "iat_rva": "0x8db490",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "expf"
+    },
+    {
+      "site_rva": "0x5cff57",
+      "target_rva": "0x87f1aa",
+      "iat_rva": "0x8db490",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "expf"
+    },
+    {
+      "site_rva": "0x5cff96",
+      "target_rva": "0x87f1aa",
+      "iat_rva": "0x8db490",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "expf"
+    },
+    {
+      "site_rva": "0x5cfff6",
+      "target_rva": "0x87f1aa",
+      "iat_rva": "0x8db490",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "expf"
+    },
+    {
+      "site_rva": "0x5d001b",
+      "target_rva": "0x87f1aa",
+      "iat_rva": "0x8db490",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "expf"
+    },
+    {
+      "site_rva": "0x5d0045",
+      "target_rva": "0x87f1c8",
+      "iat_rva": "0x8db400",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "powf"
+    },
+    {
+      "site_rva": "0x5d005c",
+      "target_rva": "0x87f1bc",
+      "iat_rva": "0x8db3f0",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "logf"
+    },
+    {
+      "site_rva": "0x5d00d8",
+      "target_rva": "0x87f1c8",
+      "iat_rva": "0x8db400",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "powf"
+    },
+    {
+      "site_rva": "0x5d012a",
+      "target_rva": "0x87f1bc",
+      "iat_rva": "0x8db3f0",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "logf"
+    },
+    {
+      "site_rva": "0x5d013a",
+      "target_rva": "0x87f1bc",
+      "iat_rva": "0x8db3f0",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "logf"
+    },
+    {
+      "site_rva": "0x5d015f",
+      "target_rva": "0x87f1c8",
+      "iat_rva": "0x8db400",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "powf"
+    },
+    {
+      "site_rva": "0x5d016b",
+      "target_rva": "0x87f1c8",
+      "iat_rva": "0x8db400",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "powf"
+    },
+    {
+      "site_rva": "0x5d0191",
+      "target_rva": "0x87f1aa",
+      "iat_rva": "0x8db490",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "expf"
+    },
+    {
+      "site_rva": "0x5d01f1",
+      "target_rva": "0x87f1bc",
+      "iat_rva": "0x8db3f0",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "logf"
+    },
+    {
+      "site_rva": "0x5d0201",
+      "target_rva": "0x87f1bc",
+      "iat_rva": "0x8db3f0",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "logf"
+    },
+    {
+      "site_rva": "0x5d0226",
+      "target_rva": "0x87f1c8",
+      "iat_rva": "0x8db400",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "powf"
+    },
+    {
+      "site_rva": "0x5d0232",
+      "target_rva": "0x87f1c8",
+      "iat_rva": "0x8db400",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "powf"
+    },
+    {
+      "site_rva": "0x5d026c",
+      "target_rva": "0x87f1c8",
+      "iat_rva": "0x8db400",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "powf"
+    },
+    {
+      "site_rva": "0x5d028f",
+      "target_rva": "0x87f1aa",
+      "iat_rva": "0x8db490",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "expf"
+    },
+    {
+      "site_rva": "0x5d02cf",
+      "target_rva": "0x87f1aa",
+      "iat_rva": "0x8db490",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "expf"
+    },
+    {
+      "site_rva": "0x5d0379",
+      "target_rva": "0x87f1aa",
+      "iat_rva": "0x8db490",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "expf"
+    },
+    {
+      "site_rva": "0x5d03a5",
+      "target_rva": "0x87f1aa",
+      "iat_rva": "0x8db490",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "expf"
+    },
+    {
+      "site_rva": "0x5d0414",
+      "target_rva": "0x87f1aa",
+      "iat_rva": "0x8db490",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "expf"
+    },
+    {
+      "site_rva": "0x5d043d",
+      "target_rva": "0x87f1aa",
+      "iat_rva": "0x8db490",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "expf"
+    },
+    {
+      "site_rva": "0x5d0471",
+      "target_rva": "0x87f1aa",
+      "iat_rva": "0x8db490",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "expf"
+    },
+    {
+      "site_rva": "0x5d0496",
+      "target_rva": "0x87f1aa",
+      "iat_rva": "0x8db490",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "expf"
+    },
+    {
+      "site_rva": "0x5d04bb",
+      "target_rva": "0x87f1aa",
+      "iat_rva": "0x8db490",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "expf"
+    },
+    {
+      "site_rva": "0x5d04de",
+      "target_rva": "0x87f1aa",
+      "iat_rva": "0x8db490",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "expf"
+    },
+    {
+      "site_rva": "0x5d0564",
+      "target_rva": "0x87f1c8",
+      "iat_rva": "0x8db400",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "powf"
+    },
+    {
+      "site_rva": "0x5d05ae",
+      "target_rva": "0x87f1c8",
+      "iat_rva": "0x8db400",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "powf"
+    },
+    {
+      "site_rva": "0x5d05e6",
+      "target_rva": "0x87f1c8",
+      "iat_rva": "0x8db400",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "powf"
+    }
+  ],
+  "status": "instruction/import-thunk verified, mapping of controls to coefficients unknown"
+}

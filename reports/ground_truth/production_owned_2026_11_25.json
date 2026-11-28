@@ -1,0 +1,1000 @@
+{
+  "schema_version": 1,
+  "type": "owned_production_ground_truth",
+  "juce_review": {
+    "commit": "29396c22c93392d6738e021b83196283d6e4d850",
+    "rule": "32-bit multiply-by-31 string hash, default positive-ID mask; source predictions only until controller enumeration"
+  },
+  "windows_analyzer": {
+    "head": "0fe9b2e2a4eb658425bc75eb69ee0f57a065c9fd",
+    "run": 45583612609,
+    "job": 139099518543,
+    "build": "passed",
+    "host_smoke": "passed",
+    "artifact_upload": "failed_storage_quota",
+    "linux_unit_tests": 237,
+    "other_workflows_passed": 7,
+    "fixture_state_map": [
+      {
+        "key": "gain",
+        "spans": [
+          [
+            82,
+            84
+          ]
+        ],
+        "shared_bytes": 0
+      },
+      {
+        "key": "creative_delay",
+        "spans": [
+          [
+            84,
+            85
+          ]
+        ],
+        "delay_samples": 137,
+        "shared_bytes": 0
+      }
+    ],
+    "transparent_block_sizes": [
+      64,
+      1024
+    ]
+  },
+  "master": {
+    "repository": "skellyruno/skell-master-vst",
+    "pr_head": "9f23fd9fb17434a07bf514d21a5e0978be8033c5",
+    "actual_checkout": "7a6b51210a4409610625aada8903913a933e3c08",
+    "run": 45570772893,
+    "artifacts": [
+      {
+        "platform": "Windows",
+        "artifact_id": 15002014248,
+        "zip_sha256": "27e0570b1ffbe640eb63957ce03130c8eb77871485417bcb1f4bbdd54c4ca010",
+        "module_sha256": "cc1945eecaefc53131b2d59ebe66c4da415549dae3bfc7bbfdce28abc87ab238"
+      },
+      {
+        "platform": "Linux",
+        "artifact_id": 15002151801,
+        "zip_sha256": "c01d234f6852be3662fd72d9e91859df43fe13887c3f27d58da70bd892c2cfb0",
+        "module_sha256": "82edf9789d1f2632f6f707ee9739f9d1e54f9e5e0781d829a9016ddc513876c3"
+      }
+    ],
+    "source_blobs": {
+      "Source/PluginProcessor.cpp": "6664e9649a18deb4111cee73f07d8d650c2816fb",
+      "Source/DSP/MasteringEngine.h": "684a9e40d054b7a258c524d8e5a5241bc0987cb0",
+      "CMakeLists.txt": "1d2a4ed8c02e57cec105b9fc2d145feb44cc4756"
+    },
+    "controller": {
+      "platform": "Linux x64",
+      "module_sha256": "82edf9789d1f2632f6f707ee9739f9d1e54f9e5e0781d829a9016ddc513876c3",
+      "method": "IEditController::getParameterInfo",
+      "parameters": [
+        {
+          "source_id": "input",
+          "title": "Input",
+          "id": 100358090,
+          "units": "dB",
+          "default_normalized": 0.5,
+          "index": 0,
+          "steps": 0,
+          "flags": 1,
+          "source_prediction_matches": true
+        },
+        {
+          "source_id": "drive",
+          "title": "Drive",
+          "id": 95852938,
+          "units": "%",
+          "default_normalized": 0,
+          "index": 1,
+          "steps": 0,
+          "flags": 1,
+          "source_prediction_matches": true
+        },
+        {
+          "source_id": "glue",
+          "title": "Glue",
+          "id": 3175989,
+          "units": "%",
+          "default_normalized": 0,
+          "index": 2,
+          "steps": 0,
+          "flags": 1,
+          "source_prediction_matches": true
+        },
+        {
+          "source_id": "dynamics",
+          "title": "Dynamics",
+          "id": 1443276820,
+          "units": "%",
+          "default_normalized": 0,
+          "index": 3,
+          "steps": 0,
+          "flags": 1,
+          "source_prediction_matches": true
+        },
+        {
+          "source_id": "lows",
+          "title": "Lows",
+          "id": 3327903,
+          "units": "dB",
+          "default_normalized": 0.5,
+          "index": 4,
+          "steps": 0,
+          "flags": 1,
+          "source_prediction_matches": true
+        },
+        {
+          "source_id": "highs",
+          "title": "Highs",
+          "id": 99276561,
+          "units": "dB",
+          "default_normalized": 0.5,
+          "index": 5,
+          "steps": 0,
+          "flags": 1,
+          "source_prediction_matches": true
+        },
+        {
+          "source_id": "sauce",
+          "title": "Sauce",
+          "id": 109210249,
+          "units": "%",
+          "default_normalized": 0,
+          "index": 6,
+          "steps": 0,
+          "flags": 1,
+          "source_prediction_matches": true
+        },
+        {
+          "source_id": "transients",
+          "title": "Transients",
+          "id": 422883113,
+          "units": "%",
+          "default_normalized": 0,
+          "index": 7,
+          "steps": 0,
+          "flags": 1,
+          "source_prediction_matches": true
+        },
+        {
+          "source_id": "output",
+          "title": "Output Trim",
+          "id": 1141971201,
+          "units": "dB",
+          "default_normalized": 0.6000000238418579,
+          "index": 8,
+          "steps": 0,
+          "flags": 1,
+          "source_prediction_matches": true
+        },
+        {
+          "source_id": "ceiling",
+          "title": "Ceiling Adjust",
+          "id": 660387005,
+          "units": "step",
+          "default_normalized": 0.5,
+          "index": 9,
+          "steps": 0,
+          "flags": 1,
+          "source_prediction_matches": true
+        },
+        {
+          "source_id": "clipper",
+          "title": "Clip",
+          "id": 860916685,
+          "units": "%",
+          "default_normalized": 0,
+          "index": 10,
+          "steps": 0,
+          "flags": 1,
+          "source_prediction_matches": true
+        },
+        {
+          "source_id": "bypass",
+          "title": "Bypass",
+          "id": 773352680,
+          "units": "",
+          "default_normalized": 0,
+          "index": 11,
+          "steps": 1,
+          "flags": 1,
+          "source_prediction_matches": true
+        },
+        {
+          "source_id": "deuceMatch",
+          "title": "Deuce Match",
+          "id": 191285231,
+          "units": "",
+          "default_normalized": 0,
+          "index": 12,
+          "steps": 1,
+          "flags": 1,
+          "source_prediction_matches": true
+        },
+        {
+          "source_id": "width",
+          "title": "Width",
+          "id": 113126854,
+          "units": "%",
+          "default_normalized": 0.625,
+          "index": 13,
+          "steps": 0,
+          "flags": 1,
+          "source_prediction_matches": true
+        },
+        {
+          "source_id": "spatialWidth",
+          "title": "Spatial Width",
+          "id": 999301922,
+          "units": "%",
+          "default_normalized": 0,
+          "index": 14,
+          "steps": 0,
+          "flags": 1,
+          "source_prediction_matches": true
+        },
+        {
+          "source_id": null,
+          "title": "Bypass",
+          "id": 1652125811,
+          "index": 15,
+          "units": "",
+          "default_normalized": 0,
+          "steps": 1,
+          "flags": 65537
+        }
+      ],
+      "source_ids_matched": 15
+    },
+    "audio": {
+      "platform": "Linux x64",
+      "host": "Pedalboard 0.9.23",
+      "sample_rate": 48000,
+      "block_size": 256,
+      "probe_duration_seconds": 1,
+      "synthetic_probes": [
+        "100Hz stereo mono tone",
+        "7000Hz stereo mono tone",
+        "1000Hz level sequence",
+        "mixed mid/side tones"
+      ],
+      "fresh_processes": 18,
+      "baseline_normalized": {
+        "input_db": 0.5,
+        "drive": 0.10000000149011612,
+        "glue": 0,
+        "dynamics": 0,
+        "lows_db": 0.5,
+        "highs_db": 0.5,
+        "sauce": 0,
+        "transients": 0,
+        "output_trim_db": 0.6000000238418579,
+        "ceiling_adjust_step": 0.5,
+        "clip": 0,
+        "bypass": 0,
+        "deuce_match": 0,
+        "width": 0.625,
+        "spatial_width": 0
+      },
+      "reported_latency_after_process": 0,
+      "latency_note": "Host compensation semantics unresolved; not physical or Windows latency measurement."
+    },
+    "compiled_endpoints": {
+      "platform": "Linux x64",
+      "module_sha256": "82edf9789d1f2632f6f707ee9739f9d1e54f9e5e0781d829a9016ddc513876c3",
+      "decoder_agreement": [
+        "GNU objdump",
+        "LLVM objdump"
+      ],
+      "address_kind": "ELF virtual address, not Windows RVA",
+      "process_block": [
+        "0x12f820",
+        "0x133ed9"
+      ],
+      "lookup_target": "0x168370",
+      "set_parameters_target": "0x139dd0",
+      "set_parameters_call": "0x12fe32",
+      "process_frame_target": "0x13a610",
+      "process_frame_calls": [
+        "0x130294",
+        "0x133c00"
+      ],
+      "rows": [
+        {
+          "source_id": "input",
+          "host_key": "input_db",
+          "numeric_id": 100358090,
+          "normalized": [
+            0.5,
+            0.75
+          ],
+          "plain_state_values": [
+            0,
+            9
+          ],
+          "state_changed_fields": [
+            "input"
+          ],
+          "repeat_exact": true,
+          "audio_changed": true,
+          "nonparameter_properties_and_opaque_tail_equal": true,
+          "source_location": {
+            "processor_line": 136,
+            "engine_line": 965,
+            "stage": "Input gain"
+          },
+          "static_endpoints": {
+            "string_va": "0x785ddc",
+            "string_ref": "0x12f93d",
+            "lookup_call": "0x12f984",
+            "store_va": "0x12f99b",
+            "stack_offset": "0x160",
+            "parameter_struct_offset": "0x0",
+            "setter_member_reads": [
+              "0x139e22"
+            ]
+          },
+          "measurement": {
+            "metric": "low",
+            "baseline": 0.13420832202383345,
+            "changed": 0.37301102496292227
+          }
+        },
+        {
+          "source_id": "drive",
+          "host_key": "drive",
+          "numeric_id": 95852938,
+          "normalized": [
+            0.10000000149011612,
+            0.6000000238418579
+          ],
+          "plain_state_values": [
+            10,
+            60
+          ],
+          "state_changed_fields": [
+            "drive"
+          ],
+          "repeat_exact": true,
+          "audio_changed": true,
+          "nonparameter_properties_and_opaque_tail_equal": true,
+          "source_location": {
+            "processor_line": 137,
+            "engine_line": 966,
+            "stage": "Drive shaper"
+          },
+          "static_endpoints": {
+            "string_va": "0x73c30c",
+            "string_ref": "0x12f989",
+            "lookup_call": "0x12f9b4",
+            "store_va": "0x12f9d3",
+            "stack_offset": "0x168",
+            "parameter_struct_offset": "0x8",
+            "setter_member_reads": [
+              "0x139e91"
+            ]
+          },
+          "measurement": {
+            "metric": "level",
+            "baseline": 0.5183224496126051,
+            "changed": 0.6337991834066911
+          }
+        },
+        {
+          "source_id": "glue",
+          "host_key": "glue",
+          "numeric_id": 3175989,
+          "normalized": [
+            0,
+            0.6499999761581421
+          ],
+          "plain_state_values": [
+            0,
+            65
+          ],
+          "state_changed_fields": [
+            "glue"
+          ],
+          "repeat_exact": true,
+          "audio_changed": true,
+          "nonparameter_properties_and_opaque_tail_equal": true,
+          "source_location": {
+            "processor_line": 138,
+            "engine_line": 967,
+            "stage": "Glue compressor"
+          },
+          "static_endpoints": {
+            "string_va": "0x73c312",
+            "string_ref": "0x12f9b9",
+            "lookup_call": "0x12f9ec",
+            "store_va": "0x12fa0b",
+            "stack_offset": "0x170",
+            "parameter_struct_offset": "0x10",
+            "setter_member_reads": [
+              "0x139ecd"
+            ]
+          },
+          "measurement": {
+            "metric": "level",
+            "baseline": 0.5183224496126051,
+            "changed": 0.4011046535297643
+          }
+        },
+        {
+          "source_id": "lows",
+          "host_key": "lows_db",
+          "numeric_id": 3327903,
+          "normalized": [
+            0.5,
+            0.75
+          ],
+          "plain_state_values": [
+            0,
+            3
+          ],
+          "state_changed_fields": [
+            "lows"
+          ],
+          "repeat_exact": true,
+          "audio_changed": true,
+          "nonparameter_properties_and_opaque_tail_equal": true,
+          "source_location": {
+            "processor_line": 140,
+            "engine_line": 976,
+            "stage": "Low EQ gain"
+          },
+          "static_endpoints": {
+            "string_va": "0x73c320",
+            "string_ref": "0x12fa29",
+            "lookup_call": "0x12fa5c",
+            "store_va": "0x12fa73",
+            "stack_offset": "0x180",
+            "parameter_struct_offset": "0x20",
+            "setter_member_reads": [
+              "0x139f39"
+            ]
+          },
+          "measurement": {
+            "metric": "low",
+            "baseline": 0.13420832202383345,
+            "changed": 0.16598910324840416
+          }
+        },
+        {
+          "source_id": "highs",
+          "host_key": "highs_db",
+          "numeric_id": 99276561,
+          "normalized": [
+            0.5,
+            0.75
+          ],
+          "plain_state_values": [
+            0,
+            3
+          ],
+          "state_changed_fields": [
+            "highs"
+          ],
+          "repeat_exact": true,
+          "audio_changed": true,
+          "nonparameter_properties_and_opaque_tail_equal": true,
+          "source_location": {
+            "processor_line": 141,
+            "engine_line": 977,
+            "stage": "High EQ gain"
+          },
+          "static_endpoints": {
+            "string_va": "0x73c325",
+            "string_ref": "0x12fa61",
+            "lookup_call": "0x12fa8c",
+            "store_va": "0x12faa3",
+            "stack_offset": "0x188",
+            "parameter_struct_offset": "0x28",
+            "setter_member_reads": [
+              "0x139f64"
+            ]
+          },
+          "measurement": {
+            "metric": "high",
+            "baseline": 0.134375943399013,
+            "changed": 0.15262941405844524
+          }
+        },
+        {
+          "source_id": "width",
+          "host_key": "width",
+          "numeric_id": 113126854,
+          "normalized": [
+            0.625,
+            0.25
+          ],
+          "plain_state_values": [
+            100,
+            40
+          ],
+          "state_changed_fields": [
+            "width"
+          ],
+          "repeat_exact": true,
+          "audio_changed": true,
+          "nonparameter_properties_and_opaque_tail_equal": true,
+          "source_location": {
+            "processor_line": 143,
+            "engine_line": 979,
+            "stage": "Stereo side-width offset"
+          },
+          "static_endpoints": {
+            "string_va": "0x750bae",
+            "string_ref": "0x12fac1",
+            "lookup_call": "0x12faf4",
+            "store_va": "0x12fb13",
+            "stack_offset": "0x198",
+            "parameter_struct_offset": "0x38",
+            "setter_member_reads": [
+              "0x139fa2"
+            ]
+          },
+          "measurement": {
+            "metric": "stereo_side",
+            "baseline": 0.1114209012429335,
+            "changed": 0.04457230121027361
+          }
+        },
+        {
+          "source_id": "spatialWidth",
+          "host_key": "spatial_width",
+          "numeric_id": 999301922,
+          "normalized": [
+            0,
+            0.6499999761581421
+          ],
+          "plain_state_values": [
+            0,
+            65
+          ],
+          "state_changed_fields": [
+            "spatialWidth"
+          ],
+          "repeat_exact": true,
+          "audio_changed": true,
+          "nonparameter_properties_and_opaque_tail_equal": true,
+          "source_location": {
+            "processor_line": 144,
+            "engine_line": 980,
+            "stage": "Spatial width amount"
+          },
+          "static_endpoints": {
+            "string_va": "0x73c331",
+            "string_ref": "0x12faf9",
+            "lookup_call": "0x12fb2c",
+            "store_va": "0x12fb4b",
+            "stack_offset": "0x1a0",
+            "parameter_struct_offset": "0x40",
+            "setter_member_reads": [
+              "0x139fe8"
+            ]
+          },
+          "measurement": {
+            "metric": "stereo_side",
+            "baseline": 0.1114209012429335,
+            "changed": 0.12005061418049477
+          }
+        },
+        {
+          "source_id": "clipper",
+          "host_key": "clip",
+          "numeric_id": 860916685,
+          "normalized": [
+            0,
+            0.550000011920929
+          ],
+          "plain_state_values": [
+            0,
+            55
+          ],
+          "state_changed_fields": [
+            "clipper"
+          ],
+          "repeat_exact": true,
+          "audio_changed": true,
+          "nonparameter_properties_and_opaque_tail_equal": true,
+          "source_location": {
+            "processor_line": 153,
+            "engine_line": 988,
+            "stage": "Clip amount; mode-dependent routing"
+          },
+          "static_endpoints": {
+            "string_va": "0x73d415",
+            "string_ref": "0x12fc07",
+            "lookup_call": "0x12fc32",
+            "store_va": "0x12fc49",
+            "stack_offset": "0x1c0",
+            "parameter_struct_offset": "0x60",
+            "setter_member_reads": [
+              "0x13a0c7"
+            ]
+          },
+          "measurement": {
+            "metric": "level_peak",
+            "baseline": 0.8151341080665588,
+            "changed": 0.7364991307258606
+          }
+        }
+      ]
+    },
+    "limitations": "Exact source-known training case; endpoints establish wrapper-to-setParameters reads, not full per-sample machine-code dataflow. Numeric IDs observed in Linux controller, not Windows. Audio perturbations measured on synthetic test signals; not vendor parity or FL Studio validation."
+  },
+  "flang": {
+    "repository": "skellyruno/skell-flang-vst",
+    "pr_head": "618f15cf38a3f3cc5cb98bb42035653d9f02c510",
+    "actual_checkout": "da24e224563644722352c2c4b81149a2b5eb76ce",
+    "run": 45548660083,
+    "artifact_id": 14993122591,
+    "zip_sha256": "96563cfd9e9c7f125190237f935c7c95abe3abe6d0472d828c5308baee94bd7c",
+    "module_sha256": "7aa775fa9109971739404853e8685ac391df24e1ffc58f942bc39f1fc9bd44d1",
+    "source_blobs": {
+      "Source/PluginProcessor.cpp": "1fe42427f7c80e9acade363ef4d264e85de8c40c",
+      "Source/FlangDSP.h": "5c7afb5714f7c28255f7489f51089b8e71be83f1",
+      "Source/ClassicChorusSettings.h": "bf2c7018ace15360fb3f76a213591df5b726ccfa",
+      "Source/SkellRawFlangusPath.h": "5a5c214772a00044807d57673f7fcd57d9f957bd",
+      "Source/NativeClassicChorusPath.h": "2b8fea56b6bd84cb724e18f79267e816794f9b18",
+      "CMakeLists.txt": "1f7bf72ef871ebc63c1db91bfdbc989ff831912f"
+    },
+    "parameter_candidates": [
+      {
+        "source_id": "power",
+        "predicted_numeric_id": 106858757,
+        "binary_ascii_null_terminated_file_offset": 3206048,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "mode",
+        "predicted_numeric_id": 3357091,
+        "binary_ascii_null_terminated_file_offset": 3115397,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "morphTarget",
+        "predicted_numeric_id": 1554032825,
+        "binary_ascii_null_terminated_file_offset": 3206192,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "morph",
+        "predicted_numeric_id": 104083720,
+        "binary_ascii_null_terminated_file_offset": 3206212,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "order",
+        "predicted_numeric_id": 106006350,
+        "binary_ascii_null_terminated_file_offset": 3206220,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "depth",
+        "predicted_numeric_id": 95472323,
+        "binary_ascii_null_terminated_file_offset": 3139596,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "speed",
+        "predicted_numeric_id": 109641799,
+        "binary_ascii_null_terminated_file_offset": 3206236,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "delay",
+        "predicted_numeric_id": 95467907,
+        "binary_ascii_null_terminated_file_offset": 3206244,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "spread",
+        "predicted_numeric_id": 1251799411,
+        "binary_ascii_null_terminated_file_offset": 3206252,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "cross",
+        "predicted_numeric_id": 94935104,
+        "binary_ascii_null_terminated_file_offset": 3206276,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "dry",
+        "predicted_numeric_id": 99755,
+        "binary_ascii_null_terminated_file_offset": 3206284,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "wet",
+        "predicted_numeric_id": 117606,
+        "binary_ascii_null_terminated_file_offset": 3206288,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "feedback",
+        "predicted_numeric_id": 1955982213,
+        "binary_ascii_null_terminated_file_offset": 3206312,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "tone",
+        "predicted_numeric_id": 3565938,
+        "binary_ascii_null_terminated_file_offset": 3206332,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "output",
+        "predicted_numeric_id": 1141971201,
+        "binary_ascii_null_terminated_file_offset": 3139913,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "extra0",
+        "predicted_numeric_id": 858451488,
+        "binary_ascii_null_terminated_file_offset": 3206980,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "extra1",
+        "predicted_numeric_id": 858451489,
+        "binary_ascii_null_terminated_file_offset": 3206988,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "extra2",
+        "predicted_numeric_id": 858451490,
+        "binary_ascii_null_terminated_file_offset": 3206996,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "extra3",
+        "predicted_numeric_id": 858451491,
+        "binary_ascii_null_terminated_file_offset": 3207004,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "lfoShape",
+        "predicted_numeric_id": 686216812,
+        "binary_ascii_null_terminated_file_offset": 3206448,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "lfoSync",
+        "predicted_numeric_id": 91426416,
+        "binary_ascii_null_terminated_file_offset": 3206480,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "tnSource",
+        "predicted_numeric_id": 1626021685,
+        "binary_ascii_null_terminated_file_offset": 3206520,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "tnRoot",
+        "predicted_numeric_id": 1277638268,
+        "binary_ascii_null_terminated_file_offset": 3206540,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "tnScale",
+        "predicted_numeric_id": 952633072,
+        "binary_ascii_null_terminated_file_offset": 3206608,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "layerMode",
+        "predicted_numeric_id": 482833044,
+        "binary_ascii_null_terminated_file_offset": 3206640,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "layerChorus",
+        "predicted_numeric_id": 2001158743,
+        "binary_ascii_null_terminated_file_offset": 3205960,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "layerFlanger",
+        "predicted_numeric_id": 375377008,
+        "binary_ascii_null_terminated_file_offset": 3205976,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "layerFlangus",
+        "predicted_numeric_id": 375377505,
+        "binary_ascii_null_terminated_file_offset": 3205992,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "layerOrbit",
+        "predicted_numeric_id": 2084857209,
+        "binary_ascii_null_terminated_file_offset": 3206008,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "layerDimension",
+        "predicted_numeric_id": 155853589,
+        "binary_ascii_null_terminated_file_offset": 3206024,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "skellyRawFlangusEnabled",
+        "predicted_numeric_id": 1095371,
+        "binary_ascii_null_terminated_file_offset": 3205136,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "skellyRawOrder",
+        "predicted_numeric_id": 1162297074,
+        "binary_ascii_null_terminated_file_offset": 3205008,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "skellyRawDepth",
+        "predicted_numeric_id": 1151763047,
+        "binary_ascii_null_terminated_file_offset": 3205024,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "skellyRawSpeed",
+        "predicted_numeric_id": 1165932523,
+        "binary_ascii_null_terminated_file_offset": 3205040,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "skellyRawDelay",
+        "predicted_numeric_id": 1151758631,
+        "binary_ascii_null_terminated_file_offset": 3205056,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "skellyRawSpread",
+        "predicted_numeric_id": 1784557135,
+        "binary_ascii_null_terminated_file_offset": 3205072,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "skellyRawCross",
+        "predicted_numeric_id": 1151225828,
+        "binary_ascii_null_terminated_file_offset": 3205088,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "skellyRawDry",
+        "predicted_numeric_id": 59299407,
+        "binary_ascii_null_terminated_file_offset": 3205104,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "skellyRawWet",
+        "predicted_numeric_id": 59317258,
+        "binary_ascii_null_terminated_file_offset": 3205120,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "enhancedMotion",
+        "predicted_numeric_id": 555962060,
+        "binary_ascii_null_terminated_file_offset": 3206832,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "skellyRawExclusiveLegacy",
+        "predicted_numeric_id": 1607019179,
+        "binary_ascii_null_terminated_file_offset": 3206888,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "nativeChorusDelay",
+        "predicted_numeric_id": 757633766,
+        "binary_ascii_null_terminated_file_offset": 3204272,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "nativeChorusDepth",
+        "predicted_numeric_id": 757638182,
+        "binary_ascii_null_terminated_file_offset": 3204296,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "nativeChorusStereo",
+        "predicted_numeric_id": 307423989,
+        "binary_ascii_null_terminated_file_offset": 3204320,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "nativeChorusLfo1Rate",
+        "predicted_numeric_id": 452476761,
+        "binary_ascii_null_terminated_file_offset": 3204344,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "nativeChorusLfo2Rate",
+        "predicted_numeric_id": 453400282,
+        "binary_ascii_null_terminated_file_offset": 3204368,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "nativeChorusLfo3Rate",
+        "predicted_numeric_id": 454323803,
+        "binary_ascii_null_terminated_file_offset": 3204392,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "nativeChorusLfo1Wave",
+        "predicted_numeric_id": 452625778,
+        "binary_ascii_null_terminated_file_offset": 3204416,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "nativeChorusLfo2Wave",
+        "predicted_numeric_id": 453549299,
+        "binary_ascii_null_terminated_file_offset": 3204440,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "nativeChorusLfo3Wave",
+        "predicted_numeric_id": 454472820,
+        "binary_ascii_null_terminated_file_offset": 3204464,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "nativeChorusCrossType",
+        "predicted_numeric_id": 1587604349,
+        "binary_ascii_null_terminated_file_offset": 3204488,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "nativeChorusCrossCutoff",
+        "predicted_numeric_id": 484131696,
+        "binary_ascii_null_terminated_file_offset": 3204512,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      },
+      {
+        "source_id": "nativeChorusWetOnly",
+        "predicted_numeric_id": 1926121685,
+        "binary_ascii_null_terminated_file_offset": 3204536,
+        "status": "SOURCE_AND_STRING_CANDIDATE"
+      }
+    ],
+    "source_routes": [
+      {
+        "group": "legacy controls",
+        "processor_lines": [
+          150,
+          153,
+          250,
+          271,
+          285,
+          296,
+          311
+        ],
+        "engine": "EngineBank::process; active mode and layer routing"
+      },
+      {
+        "group": "native chorus",
+        "processor_lines": [
+          122,
+          197
+        ],
+        "engine": "NativeClassicChorusPath::beginBlock/renderChunk/update; mode 0 or active chorus layer"
+      },
+      {
+        "group": "raw Flangus",
+        "processor_lines": [
+          138,
+          203
+        ],
+        "engine": "RawFlangusPath::beginBlock/renderChunk/blendLayer; mode 6 or active Flangus layer"
+      }
+    ],
+    "limits": "Static string presence and source-derived ID predictions only; no controller runtime or per-control audio probe. Source paths only, no native proprietary implementation copied."
+  },
+  "local_new_unit_tests_passed": 3
+}

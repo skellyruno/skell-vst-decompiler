@@ -1,0 +1,231 @@
+{
+  "schema": 1,
+  "parent": "de93266123c81ce5a68cfb862e1f0d9d7ddf2360",
+  "source_blobs": {
+    "experiments/engine_lab/LevelerPeakHold.h": "f72fbdf3bd883a2845186295b363b1cb35311f1b",
+    "experiments/engine_lab/ColorResidualBypass.h": "619f616431d0b5cb83ce218e30a903df1b5344c0",
+    "tests/fixtures/owned_refinement_tracks.cpp": "1ef1803fd8b661b92170d5c5c21782fbbd2d3c19",
+    "tests/test_refinement_tracks.cpp": "f25401b0716d00e7a667cb0df8e7c09fd2780eb1",
+    "benchmarks/owned_refinement_tracks.py": "7524ed90fcbad85e47ce782b3bc98a88d5e5736b"
+  },
+  "baseline_blobs": {
+    "independent": "b81bc2cba042148e1c809f072c70ad0d4b22dba0",
+    "single_attack": "c6a077a7195eb1cd45550d5f5e42758a6695e084",
+    "color": "a4c7ee52708a9412b3c31f755b65ea9450271c08",
+    "presence": "083f569f0b0cf13dc78256dd56b94f8f8de97d60",
+    "delay": "6dad6c09adca53c92627251956477cfc4579d770",
+    "allpass": "7bfe2aa507536dad6689c0918d7953c8aa628be3"
+  },
+  "corpus": {
+    "inputs": 36,
+    "seconds": 159.25009070294786,
+    "rate": 44100,
+    "stages": "2 dry archive-labeled and 34 processed",
+    "batches": [
+      9,
+      9,
+      9,
+      9
+    ],
+    "prior_full_attempt": "timed out, partial results discarded",
+    "private_report_sha256": "3b12cac34bf09c5893135f1fc6c7150515ecbfdbf61c68a6d5f9b96bde48e280"
+  },
+  "leveler": {
+    "hold_ms": 12,
+    "nominal_attack_ms": 4,
+    "order": [
+      "legacy",
+      "single attack",
+      "peak hold"
+    ],
+    "vocal_renders": 108,
+    "lower_peak_counts": [
+      0,
+      28,
+      28
+    ],
+    "median_gain_db": [
+      -2.51737474,
+      -2.60918377,
+      -2.61119774
+    ],
+    "max_sample_peak_dbfs": [
+      -3.0417895,
+      -3.20790568,
+      -3.20839029
+    ],
+    "over_scale_samples": 0,
+    "t90_ms_48000": [
+      16.0625,
+      8.208333333333334,
+      8.208333333333334
+    ],
+    "thd_dbc_48000": [
+      {
+        "hz": 50,
+        "values": [
+          -78.223,
+          -75.617,
+          -129.975
+        ]
+      },
+      {
+        "hz": 100,
+        "values": [
+          -90.292,
+          -87.43,
+          -134.774
+        ]
+      },
+      {
+        "hz": 200,
+        "values": [
+          -102.31,
+          -99.303,
+          -140.486
+        ]
+      },
+      {
+        "hz": 1000,
+        "values": [
+          -129.849,
+          -126.717,
+          -154.588
+        ]
+      }
+    ],
+    "decision": "promising separate candidate; hold may alter recovery; matched response/release and listening gates open"
+  },
+  "saturation": {
+    "order": [
+      "original",
+      "correction .25",
+      "correction .5",
+      "correction 1"
+    ],
+    "tone_settings": 60,
+    "tone_renders_including_zero_parity": 300,
+    "vocal_renders_including_zero_parity": 180,
+    "exact_zero_correction_cases": 96,
+    "dry_delay_samples": 40,
+    "max_sample_peak_dbfs": [
+      1.50650186,
+      1.65872283,
+      1.92171157,
+      3.70467189
+    ],
+    "over_scale_excerpt_counts": [
+      15,
+      17,
+      18,
+      17
+    ],
+    "case_44100_20000hz_input_peak_0_5": {
+      "fundamental_amplitudes": [
+        0.328,
+        0.72924,
+        1.13047,
+        1.93295
+      ],
+      "relative_residual_dbc": [
+        -77.839,
+        -84.778,
+        -88.586,
+        -93.246
+      ],
+      "absolute_equivalent_residual_dbfs": [
+        -87.521,
+        -87.521,
+        -87.521,
+        -87.521
+      ]
+    },
+    "decision": "reject promotion; relative residual improvement is due to larger fundamental at selected case, strong input overcompensated, no demonstrated absolute alias suppression"
+  },
+  "delay": {
+    "commit": "72522005da84c9e6b53d8f3b7e218e4f2b903652",
+    "configs": 432,
+    "complex_checks": 17280,
+    "max_complex_error": 3.21824074021e-15,
+    "private_vocal_renders": 72,
+    "median_echo6_minus_echo1_db": [
+      -12.66484043,
+      -12.49387366
+    ],
+    "max_sample_peak_dbfs": [
+      -2.94465897,
+      -2.81032399
+    ],
+    "limits": "fixed time, no dynamic tempo/jump stability claim, float vs double baseline/candidate"
+  },
+  "presence": {
+    "vocal_renders": 144,
+    "mix": [
+      0.5,
+      1
+    ],
+    "private_listening_groups": 3,
+    "files": 15,
+    "max_rms_mismatch_db": 2.448945277975993e-8,
+    "estimated_peak_max_dbfs": -0.99999964219155,
+    "decision": "level-matched listening files produced and verified, no subjective listening preference"
+  },
+  "pitch": {
+    "commit": "1a32b8f033c859ff9d5a30b6cda3a92bc502c5eb",
+    "ci": "three applicable workflow runs passed; test-only Mini META Lab skipped",
+    "new_candidate": false,
+    "protected_engines": "Classic and Crystal untouched",
+    "limits": "no fresh pitch render or full fifth-engine local check this batch"
+  },
+  "validation": {
+    "native_optimized": "passed",
+    "asan_ubsan": "passed",
+    "six_rates": true,
+    "zero_correction_max_error": 0,
+    "kit": "13/13 passed",
+    "parent_runs": [
+      {
+        "name": "Real Ghidra smoke (owned fixture)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Unified engines (owned fixture)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Independent PE oracle (owned fixtures)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Craft Anything metadata (owned fixtures)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Real Rizin smoke (owned fixture)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Reccmp export comparison (owned fixture)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "REA PE imports (owned fixtures)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Python static-analysis tests",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "new_ci": "pending"
+  },
+  "limits": "No new vendor binary analysis, no UI/production default changes, no host CPU, true peak, listening preference, vendor equivalence or release claims. Private audio and individual data not committed."
+}

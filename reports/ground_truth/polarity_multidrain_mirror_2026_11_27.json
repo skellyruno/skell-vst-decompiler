@@ -1,0 +1,232 @@
+{
+  "schema": 1,
+  "parent": "32b090c4b7c85986ffdedad720d9715281a4c575",
+  "source_blobs": {
+    "experiments/engine_lab/PolarityPeakResearch.h": "82d5741e2f3dfffd396bd621006e7d42a8f755d4",
+    "experiments/engine_lab/MultiDrainResearch.h": "571394a14fb9269db949edb3a1906dae3dd9c094",
+    "experiments/engine_lab/ColorSplitMirrored.h": "2c9e468ea29e78a9f90662ef713664771bccd30b",
+    "tests/test_polarity_peak.cpp": "b4e25e8d4b23322a0e9cb62c92f36e67f3c1761d",
+    "tests/test_multi_drain.cpp": "28bba50c099b9907ae4df2116e7dde9abd0d4985",
+    "tests/test_color_mirrored.cpp": "b50b056119f34e4dd9e7104791a9b0a306a79d9b",
+    "tests/fixtures/owned_polarity_multidrain.cpp": "0b717a21fb1880680a30037cb19eadaa9e61626f",
+    "tests/fixtures/owned_color_mirrored.cpp": "dbdc4e47f0001302a412752e72ea23cb67096585",
+    "benchmarks/owned_polarity_multidrain.py": "b83da0c77e1c27e8d15d4c9f081efaaa286f1f6a",
+    "benchmarks/owned_color_mirrored.py": "8633a62d215753dabdce790d0ffa08097113132e"
+  },
+  "baseline_blobs": {
+    "BoundedPeakResearch": "d7efe98c26ab4a477ac54f4c574a11bfd70c9bfc",
+    "DrainingDelayResearch": "ededd7587a023751f78d619d86d773784b90619a",
+    "ColorSplitNative": "a8ca37712920c31a041f86c8a7bdf31c7d3449bf"
+  },
+  "private_report_sha256": "3e6a1d401c6276980c7d824424e6ca9818b9723231d8418e655dbbcb670bf76f",
+  "kit": "13/13",
+  "inputs": {
+    "vocal_excerpts": 36,
+    "vocal_frames": 7022929,
+    "archive_labeled_dry": 2,
+    "music_sources": 3,
+    "music_excerpts": 9,
+    "music_frames": 4320000,
+    "music_seconds": 90,
+    "fingerprints_verified": true,
+    "limits": "Same previously used recordings, not new independent performances; music excerpts correlated within each source, not isolated stems."
+  },
+  "limiter": {
+    "latency_samples": 16,
+    "ceiling_db": -1,
+    "checks_per_run": 7160832,
+    "old_signed_max_linear": 0.922444108097,
+    "bounded_max_linear": 0.891250938134,
+    "order": [
+      "release_prefix",
+      "polarity"
+    ],
+    "release_ms": [
+      1,
+      60,
+      1000
+    ],
+    "vocal_median_gain_db": [
+      [
+        -0.99917058,
+        -0.30328621
+      ],
+      [
+        -0.64169148,
+        -0.62003074
+      ],
+      [
+        -1.35828019,
+        -1.35656289
+      ]
+    ],
+    "vocal_paired_gain_improvement_db": [
+      0.62945684,
+      0.01992684,
+      0.00163598
+    ],
+    "vocal_worst_est16_dbfs": [
+      [
+        -0.74929872,
+        -0.69598667
+      ],
+      [
+        -0.87868153,
+        -0.85100584
+      ],
+      [
+        -0.90678725,
+        -0.90489555
+      ]
+    ],
+    "music_median_gain_db": [
+      [
+        -3.30627918,
+        -1.93153031
+      ],
+      [
+        -2.17282064,
+        -2.14050861
+      ],
+      [
+        -2.72731012,
+        -2.7253001
+      ]
+    ],
+    "music_paired_gain_improvement_db": [
+      1.37474888,
+      0.03231203,
+      0.00213994
+    ],
+    "music_worst_est16_dbfs": [
+      [
+        -1.3930095,
+        -1.19243301
+      ],
+      [
+        -0.99992258,
+        -0.98566446
+      ],
+      [
+        -0.99992258,
+        -0.99992258
+      ]
+    ],
+    "est16_overloads": 0,
+    "vocal_paired_timing_median_percent": 12.02425758,
+    "music_paired_timing_median_percent": 12.4214285,
+    "vocal_median_ms_per_audio_second": [
+      8.72805155,
+      9.93821207
+    ],
+    "music_median_ms_per_audio_second": [
+      9.4803694,
+      10.4393278
+    ],
+    "timing_release_ms": 60,
+    "limits": "Fixed release during run, declared finite kernel only, bounded finite input. No certified true peak. Faster release may cause distortion or pumping; no listening preference. Timing includes setup, batched concurrent local native runs."
+  },
+  "delay": {
+    "order": [
+      "two_bank",
+      "four_bank"
+    ],
+    "request_interval_ms": 250,
+    "feedback": 0.7,
+    "vocal_requests": [
+      648,
+      648
+    ],
+    "vocal_accepted": [
+      160,
+      646
+    ],
+    "music_requests": [
+      360,
+      360
+    ],
+    "music_accepted": [
+      90,
+      360
+    ],
+    "vocal_max_accepted_wait_ms": [
+      203.35600907,
+      25.01133787
+    ],
+    "music_max_accepted_wait_ms": [
+      203.0625,
+      25
+    ],
+    "vocal_forced_retirements": [
+      0,
+      540
+    ],
+    "music_forced_retirements": [
+      0,
+      333
+    ],
+    "vocal_raw_max_sample_peak_dbfs": [
+      2.51773924,
+      4.5232603
+    ],
+    "music_raw_max_sample_peak_dbfs": [
+      8.95354153,
+      10.2862031
+    ],
+    "vocal_guard_worst_est16_dbfs": [
+      -1.48674947,
+      -1.78891989
+    ],
+    "music_guard_worst_est16_dbfs": [
+      -1.07083862,
+      -1.05769677
+    ],
+    "vocal_median_paired_tail_rms_delta_db": 0.06532293,
+    "music_median_paired_tail_rms_delta_db": 1.12076652,
+    "music_worst_guard_rms_loss_db": [
+      -6.13660452,
+      -5.59720847
+    ],
+    "exact_old_echo_checks": 60,
+    "stress_75ms_request_sequence_max_pending_wait_ms": 24.997396,
+    "stress_forced_retirements": 48,
+    "limits": "Victim is draining bank with smallest remaining lifetime, not necessarily oldest. Accepted means latest requested target equals active target before next request, not necessarily a new bank start or audible arrival. Includes padded silence. Finite bank count with forced retirement; no unlimited tails or host BPM automation. 4 banks double ring capacity vs 2; at 384k, 4s, double stereo Frame, four rings about 93.75MiB excluding overhead. No production adoption."
+  },
+  "color": {
+    "exact_channel_comparisons_per_run": 1769472,
+    "real_audio_exact": 45,
+    "real_audio_channels_compared_per_repetition": 22685858,
+    "latency_samples": 40,
+    "extra_history_bytes_for_4x40": 3232,
+    "vocal_median_ms_per_audio_second": [
+      18.04355412,
+      17.58993103
+    ],
+    "music_median_ms_per_audio_second": [
+      21.0205654,
+      21.0758612
+    ],
+    "vocal_median_paired_timing_percent": -2.40880044,
+    "music_median_paired_timing_percent": -2.83817025,
+    "vocal_faster_count": 30,
+    "music_faster_count": 7,
+    "limits": "Exact numerical equality with GCC under tested flags; not cross-platform binary identity. Only storage/indexing change, no new alias or harmonic claim. Timing includes prepare, concurrent native trials; no DAW CPU."
+  },
+  "validation": {
+    "parent_ci": "8/8 workflows success",
+    "optimized_and_asan_ubsan": "all three new tests passed at six rates",
+    "source_hashes": "10/10 exact tested Git blobs",
+    "music_first_attempt": "timed out after eight excerpts without final report; not counted; rerun split by source completed all nine",
+    "new_ci": "pending"
+  },
+  "remaining": {
+    "vendor_unknown": 854,
+    "vendor_boundary_conflicts": 90,
+    "local_candidates": 692,
+    "isolated_bass_drums": "unverified",
+    "presence_playback": "not retested",
+    "pitch": "no new challenger; fifth engine unverified",
+    "host": "no new VST3/DAW or UI tests",
+    "production_adoption": false
+  }
+}

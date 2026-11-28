@@ -1,0 +1,137 @@
+[
+  {
+    "module": "FG-401.epl",
+    "source_sha256": "0cc3444f095ccf4aa751f653e6aceb484d7bfaea73df30ccb68a7f2fccf46ef6",
+    "previously_researched_rva": "0x15ede0",
+    "covering_start_rva": "0x15ede0",
+    "covering_end_rva_exclusive": "0x15f481",
+    "module_frequency": 1,
+    "scope_status": "EXACT_FUNCTION_SCOPE"
+  },
+  {
+    "module": "FG-401.epl",
+    "source_sha256": "0cc3444f095ccf4aa751f653e6aceb484d7bfaea73df30ccb68a7f2fccf46ef6",
+    "previously_researched_rva": "0x15f490",
+    "covering_start_rva": "0x15f490",
+    "covering_end_rva_exclusive": "0x15faf4",
+    "module_frequency": 1,
+    "scope_status": "EXACT_FUNCTION_SCOPE"
+  },
+  {
+    "module": "AirEQAir.epl",
+    "source_sha256": "c75499749848d64aa9a72298204087d5a78f685e7d960beacecd6644d9e3136b",
+    "previously_researched_rva": "0x246e80",
+    "covering_start_rva": "0x246e80",
+    "covering_end_rva_exclusive": "0x246eae",
+    "module_frequency": 1,
+    "scope_status": "EXACT_FUNCTION_SCOPE"
+  },
+  {
+    "module": "AirEQAir.epl",
+    "source_sha256": "c75499749848d64aa9a72298204087d5a78f685e7d960beacecd6644d9e3136b",
+    "previously_researched_rva": "0x246eae",
+    "covering_start_rva": "0x246eae",
+    "covering_end_rva_exclusive": "0x247026",
+    "module_frequency": 1,
+    "scope_status": "EXACT_FUNCTION_SCOPE"
+  },
+  {
+    "module": "AirEQAir.epl",
+    "source_sha256": "c75499749848d64aa9a72298204087d5a78f685e7d960beacecd6644d9e3136b",
+    "previously_researched_rva": "0x248db0",
+    "covering_start_rva": "0x248db0",
+    "covering_end_rva_exclusive": "0x2490e6",
+    "module_frequency": 1,
+    "scope_status": "EXACT_FUNCTION_SCOPE"
+  },
+  {
+    "module": "VCC Channel.epl",
+    "source_sha256": "73747020e8996938b8e6fdff51004cff4ea85c95f992cbc8bc0d0896a80aad87",
+    "previously_researched_rva": "0x176970",
+    "covering_start_rva": "0x176970",
+    "covering_end_rva_exclusive": "0x176be3",
+    "module_frequency": 1,
+    "scope_status": "EXACT_FUNCTION_SCOPE"
+  },
+  {
+    "module": "VCC Channel.epl",
+    "source_sha256": "73747020e8996938b8e6fdff51004cff4ea85c95f992cbc8bc0d0896a80aad87",
+    "previously_researched_rva": "0x176610",
+    "covering_start_rva": "0x176610",
+    "covering_end_rva_exclusive": "0x1766e7",
+    "module_frequency": 1,
+    "scope_status": "EXACT_FUNCTION_SCOPE"
+  },
+  {
+    "module": "VCC Channel.epl",
+    "source_sha256": "73747020e8996938b8e6fdff51004cff4ea85c95f992cbc8bc0d0896a80aad87",
+    "previously_researched_rva": "0x19ac10",
+    "covering_start_rva": "0x19ac10",
+    "covering_end_rva_exclusive": "0x19ae48",
+    "module_frequency": 1,
+    "scope_status": "EXACT_FUNCTION_SCOPE"
+  },
+  {
+    "module": "VCC MixBuss.epl",
+    "source_sha256": "fe077912d5396577fc6b32bcf0c4ba4b61d5e1f8089e961ce68dae22e1b0b500",
+    "previously_researched_rva": "0x152670",
+    "covering_start_rva": "0x152670",
+    "covering_end_rva_exclusive": "0x1528e3",
+    "module_frequency": 1,
+    "scope_status": "EXACT_FUNCTION_SCOPE"
+  },
+  {
+    "module": "VCC MixBuss.epl",
+    "source_sha256": "fe077912d5396577fc6b32bcf0c4ba4b61d5e1f8089e961ce68dae22e1b0b500",
+    "previously_researched_rva": "0x152310",
+    "covering_start_rva": "0x152310",
+    "covering_end_rva_exclusive": "0x1523e7",
+    "module_frequency": 1,
+    "scope_status": "EXACT_FUNCTION_SCOPE"
+  },
+  {
+    "module": "VCC MixBuss.epl",
+    "source_sha256": "fe077912d5396577fc6b32bcf0c4ba4b61d5e1f8089e961ce68dae22e1b0b500",
+    "previously_researched_rva": "0x172a50",
+    "covering_start_rva": "0x172a50",
+    "covering_end_rva_exclusive": "0x172c98",
+    "module_frequency": 1,
+    "scope_status": "EXACT_FUNCTION_SCOPE"
+  },
+  {
+    "module": "FG-116.epl",
+    "source_sha256": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+    "previously_researched_rva": "0x15e670",
+    "covering_start_rva": "0x15e670",
+    "covering_end_rva_exclusive": "0x15f44c",
+    "module_frequency": 1,
+    "scope_status": "EXACT_FUNCTION_SCOPE"
+  },
+  {
+    "module": "FG-116.epl",
+    "source_sha256": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+    "previously_researched_rva": "0x162175",
+    "covering_start_rva": "0x1619a0",
+    "covering_end_rva_exclusive": "0x162418",
+    "module_frequency": 1,
+    "scope_status": "EXACT_FUNCTION_SCOPE"
+  },
+  {
+    "module": "FG-2A.epl",
+    "source_sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+    "previously_researched_rva": "0x14d590",
+    "covering_start_rva": "0x14d590",
+    "covering_end_rva_exclusive": "0x14e2d1",
+    "module_frequency": 1,
+    "scope_status": "EXACT_FUNCTION_SCOPE"
+  },
+  {
+    "module": "FG-2A.epl",
+    "source_sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+    "previously_researched_rva": "0x156b20",
+    "covering_start_rva": "0x156b20",
+    "covering_end_rva_exclusive": "0x156ffb",
+    "module_frequency": 1,
+    "scope_status": "EXACT_FUNCTION_SCOPE"
+  }
+]

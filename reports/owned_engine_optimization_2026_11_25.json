@@ -1,0 +1,175 @@
+{
+  "parent": "602ad1968ae9649fe54cf1ce89663997bb3b1870",
+  "scope": "Independent owned-engine optimizations and synthetic held-out measurements only",
+  "test_environment": {
+    "cpu": "Intel Xeon Platinum 8573C",
+    "compiler": "g++ 14.2.0",
+    "flags": "-std=c++17 -O3 -Wall -Wextra -Werror",
+    "sample_rates": [
+      44100,
+      48000,
+      96000,
+      192000
+    ]
+  },
+  "equivalence": {
+    "seed": 1234567,
+    "frames_per_case": 240000,
+    "spacer_lr_ms_max_error": 0,
+    "color_2x_4x_max_error": 0,
+    "color_dry_latency_samples": 40,
+    "spacer_initial_impulse_no_buffer": true
+  },
+  "benchmark_us_per_48_stereo_frames": {
+    "runs": [
+      [
+        17.452398,
+        7.840256,
+        34.96248,
+        29.345161
+      ],
+      [
+        17.676938,
+        8.629307,
+        35.427411,
+        29.609945
+      ],
+      [
+        21.517561,
+        8.747544,
+        39.006501,
+        31.997859
+      ]
+    ],
+    "columns": [
+      "spacer_scalar",
+      "spacer_sse2",
+      "color_4x_original",
+      "color_4x_contiguous"
+    ],
+    "median": [
+      17.676938,
+      8.629307,
+      35.427411,
+      29.609945
+    ]
+  },
+  "coverage": {
+    "frequencies": 36,
+    "rate_cases": [
+      {
+        "fs": 44100,
+        "weakest_core_db": -4.566724711,
+        "hz": 75,
+        "cut_30_hz": -0.061264753
+      },
+      {
+        "fs": 48000,
+        "weakest_core_db": -4.566754782,
+        "hz": 75,
+        "cut_30_hz": -0.061265632
+      },
+      {
+        "fs": 96000,
+        "weakest_core_db": -4.548336046,
+        "hz": 13454,
+        "cut_30_hz": -0.06127095
+      },
+      {
+        "fs": 192000,
+        "weakest_core_db": -4.539456045,
+        "hz": 13454,
+        "cut_30_hz": -0.061273883
+      }
+    ],
+    "core_hz": [
+      63,
+      16000
+    ],
+    "detector_peak": 0.5,
+    "main_peak": 0.25,
+    "measurement": "last half-second RMS attenuation; not complex gain or continuous response"
+  },
+  "chain": {
+    "stages": [
+      "dry",
+      "presence",
+      "leveler",
+      "color",
+      "color_minus_3db"
+    ],
+    "sample_peaks_rounded": [
+      [
+        1.1043,
+        1.0624,
+        0.9625,
+        1.1755,
+        0.8322
+      ],
+      [
+        1.1043,
+        1.0442,
+        0.9471,
+        1.1511,
+        0.8149
+      ],
+      [
+        1.1043,
+        1.1527,
+        0.9874,
+        1.319,
+        0.9337
+      ],
+      [
+        1.1043,
+        1.2649,
+        1.1014,
+        1.3873,
+        0.9821
+      ]
+    ],
+    "estimated_4x_peaks_rounded": [
+      [
+        1.1136,
+        1.0638,
+        0.9643,
+        1.2617,
+        0.8932
+      ],
+      [
+        1.1067,
+        1.0696,
+        0.9706,
+        1.2466,
+        0.8825
+      ],
+      [
+        1.105,
+        1.1535,
+        0.9881,
+        1.3198,
+        0.9343
+      ],
+      [
+        1.105,
+        1.2657,
+        1.1021,
+        1.3881,
+        0.9827
+      ]
+    ],
+    "limits": "Synthetic stress input, fixed trim is not a limiter; 4x polyphase estimate not certified true peak."
+  },
+  "tests": {
+    "prior_exact_ci": "8/8 passed",
+    "local_python": "9/9",
+    "optimized": "four-rate parity, 36 frequency coverage and chain passed",
+    "sanitizers": "initial full run timed out; bounded 12000-frame parity at four rates passed, 48k coverage and chain passed and byte identical optimized output",
+    "current_ci": "pending"
+  },
+  "limitations": [
+    "SSE2 acceleration tested only on Linux x86_64; other architecture scalar alias untested.",
+    "Mirrored history increases memory. No live parameter automation or host CPU/latency checks.",
+    "No real audio or commercial binary analysis in this batch; no production changes. JUCE retrieval blocked by DNS."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "kind": "windows_owned_host_scan_failure",
+  "source_commit": "5f80a46b0822594563e6a316a7e66cb94df7b06f",
+  "failed_commit": "193a6d095f443ec0e5a17a439363c6234ef36114",
+  "run_id": 45536284379,
+  "job_id": 138943557986,
+  "juce_fetch": "passed",
+  "owned_vst3_build": "passed",
+  "host_scan": "failed",
+  "captures_failed": 4,
+  "actual_dsp_renders": 0,
+  "error": "Unable to scan plugin: unsupported plugin format or scan failure",
+  "hypothesis": "Windows bundle entry path compatibility; upstream Pedalboard issue 433, not independently proven root cause",
+  "correction": "Select documented inner x64 module in place; validate whole bundle and module fingerprints",
+  "local_tests": 6,
+  "local_seconds": 6.122,
+  "result": "passed",
+  "tested_blobs": {
+    "skell_vst_decompiler/host_capture.py": "c5d82c2c6404dfa2bf87a5c525d07dcd75a9dfd3",
+    "tests/test_host_capture.py": "9a5a920b4df45faa838926a5ebcb04eda7907941"
+  },
+  "windows_retest": "pending",
+  "sources": [
+    "https://github.com/spotify/pedalboard/issues/433",
+    "https://steinbergmedia.github.io/vst3_dev_portal/pages/Technical%2BDocumentation/Locations%2BFormat/Plugin%2BFormat.html"
+  ],
+  "limits": "Path tests use owned fixture bytes, not actual VST3 loading. No TVB/VMR/Evo runtime or proprietary DSP recovery."
+}

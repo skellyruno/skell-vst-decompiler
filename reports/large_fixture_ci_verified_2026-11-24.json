@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "report_kind": "verified_large_fixture_ci",
+  "source_commit": "1a323c3413bfc79452ec1e08a6757d7339f2aa60",
+  "static_run": 45427537134,
+  "tests": 97,
+  "fixture_sha256": "4b9c8427b6424f4370c7ea87139bea498f79492186355f57feb15204fdb6dd96",
+  "distinct_functions": 64,
+  "jobs": 128,
+  "warm_hits": 128,
+  "partial_hits": 64,
+  "all_expected_edges_agreed": true,
+  "dependency_counts": {
+    "llvm-objdump": 41,
+    "objdump": 8
+  },
+  "serial_seconds": 0.9017425890000013,
+  "parallel_seconds": 0.5758360769999982,
+  "dependency_tracked_cold_seconds": 3.504446324,
+  "dependency_tracked_warm_seconds": 0.2513928959999987,
+  "partial_cache_seconds": 0.5437143720000037,
+  "maintenance": {
+    "ignored_paths": 0,
+    "remaining_bytes": 318720,
+    "remaining_entries": 64,
+    "removed": 64,
+    "within_limits": true
+  },
+  "limitations": "Owned fixture, related function templates, not 64 distinct DSP algorithms; dependency hashing overhead included."
+}

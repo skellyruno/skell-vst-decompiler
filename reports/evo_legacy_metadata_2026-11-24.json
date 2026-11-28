@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "report_kind": "legacy_pitch_reference_metadata",
+  "binary_sha256": "278d03b4a88fe6ef59b48e5c1f70bc921b3ae530ea672879ef2ae21f0ce873d5",
+  "bytes": 8790016,
+  "architecture": "x86",
+  "format": "PE32",
+  "dll": true,
+  "coff_timestamp": 1245772401,
+  "product_name": "Auto-Tune Evo VST PC",
+  "file_version": "6.0.9",
+  "product_version": "6.0.9",
+  "version_metadata_observed": true,
+  "section_count": 8,
+  "executable_section_count": 3,
+  "has_exception_directory": false,
+  "export_count": 5,
+  "public_vst_entry_names": [
+    "VSTPluginMain",
+    "main"
+  ],
+  "public_entries_alias": true,
+  "metadata_labels": [
+    "Humanize",
+    "Natural vibrato",
+    "Throat length"
+  ],
+  "scope": "Static metadata only; no binary execution, signature authentication, licensing analysis or vendor DSP extraction. Uploaded original remains private.",
+  "independent_pitch_reference": {
+    "method": "public YIN-style normalized difference",
+    "cases": 30,
+    "frame_ms": 65,
+    "rates": [
+      44100,
+      48000,
+      96000
+    ],
+    "max_absolute_cents": 0.3524330386620448,
+    "median_absolute_cents": 0.007023688384251121,
+    "min_periodicity_score": 0.9902393843308694,
+    "local_unit_tests": 4,
+    "limits": "Synthetic harmonic inputs, offline mono estimation only; no pitch shifting, real vocal, latency or parity result."
+  }
+}

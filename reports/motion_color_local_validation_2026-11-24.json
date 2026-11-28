@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "report_kind": "independent_motion_and_periodic_coloration_validation",
+  "source_commit": "3c7f19040b91b024ee1870b3d937d21a6e4e73ef",
+  "previous_ci": {
+    "tests": 139,
+    "all_eight_passed": true,
+    "run_ids": [
+      45448984049,
+      45448984071,
+      45448984050,
+      45448984063,
+      45448984039,
+      45448984101,
+      45448984198,
+      45448984356
+    ]
+  },
+  "local_tests": 4,
+  "local_result": "pass",
+  "tested_blobs": {
+    "skell_vst_decompiler/motion_pitch.py": "59165fb6e0103b93884d73e461383ea083856921",
+    "skell_vst_decompiler/coloration_compare.py": "7055f6970a01a7494c9362bb667bf24ede76fb6e",
+    "tests/test_motion_color.py": "5e1d55b3e3bb4b9a40628ee04b9737f09076aaa8",
+    "tests/motion_color_smoke.py": "0a2db1ad643123567b13be23269b5a338df05e1c"
+  },
+  "environment": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "openblas_threads": 1
+  },
+  "pitch": {
+    "trials": 30,
+    "seeds": [
+      101,
+      207,
+      309
+    ],
+    "metrics": {
+      "ar": {
+        "baseline_center_rmse": 2.2190218230056993,
+        "baseline_rate_support": 0,
+        "challenger_center_rmse": 2.5342725861064674,
+        "challenger_rate_support": 0
+      },
+      "chirp": {
+        "baseline_center_rmse": 1.218049252129599,
+        "baseline_rate_support": 1,
+        "challenger_center_rmse": 1.2180492521296002,
+        "challenger_rate_support": 1
+      },
+      "glide": {
+        "baseline_center_rmse": 1.6321218497512782,
+        "baseline_rate_support": 0,
+        "challenger_center_rmse": 1.2015366568327313,
+        "challenger_rate_support": 0
+      },
+      "mixed": {
+        "baseline_center_rmse": 15.663384406670403,
+        "baseline_rate_support": 1,
+        "challenger_center_rmse": 15.663290735614922,
+        "challenger_rate_support": 1
+      },
+      "offgrid": {
+        "baseline_center_rmse": 0.8174570448995224,
+        "baseline_rate_support": 1,
+        "challenger_center_rmse": 0.8174570448995232,
+        "challenger_rate_support": 1
+      },
+      "slow": {
+        "baseline_center_rmse": 18.972898081575988,
+        "baseline_rate_support": 0.9199999999999999,
+        "challenger_center_rmse": 1.2752573941976053,
+        "challenger_rate_support": 0
+      },
+      "step": {
+        "baseline_center_rmse": 0.9116513281124933,
+        "baseline_rate_support": 0,
+        "challenger_center_rmse": 1.0872451305340125,
+        "challenger_rate_support": 0
+      },
+      "strong": {
+        "baseline_center_rmse": 0.7789349922748365,
+        "baseline_rate_support": 1,
+        "challenger_center_rmse": 0.778934992274837,
+        "challenger_rate_support": 1
+      },
+      "weak": {
+        "baseline_center_rmse": 1.4214702543007338,
+        "baseline_rate_support": 0,
+        "challenger_center_rmse": 0.9097349779934681,
+        "challenger_rate_support": 0.9562962962962963
+      },
+      "white": {
+        "baseline_center_rmse": 0.809940312424172,
+        "baseline_rate_support": 0,
+        "challenger_center_rmse": 1.0151692408563846,
+        "challenger_rate_support": 0
+      }
+    }
+  },
+  "coloration": {
+    "comparison_count": 30,
+    "sample_rates": [
+      48000,
+      96000
+    ],
+    "frequencies_hz": [
+      997,
+      7001,
+      11003
+    ],
+    "matched_relative_waveform_error_db_rounded_3dp": {
+      "48000_11003": {
+        "direct": -11.618,
+        "adaa": -23.332,
+        "2x": -28.843,
+        "4x": -69.739,
+        "8x": -91.544
+      },
+      "48000_7001": {
+        "direct": -20.634,
+        "adaa": -22.232,
+        "2x": -34.16,
+        "4x": -34.493,
+        "8x": -34.493
+      },
+      "48000_997": {
+        "direct": -102.996,
+        "adaa": -51.408,
+        "2x": -102.762,
+        "4x": -101.407,
+        "8x": -101.008
+      },
+      "96000_11003": {
+        "direct": -20.634,
+        "adaa": -24.008,
+        "2x": -47.515,
+        "4x": -47.855,
+        "8x": -47.856
+      },
+      "96000_7001": {
+        "direct": -28.999,
+        "adaa": -29.526,
+        "2x": -37.463,
+        "4x": -37.461,
+        "8x": -37.461
+      },
+      "96000_997": {
+        "direct": -201.606,
+        "adaa": -63.409,
+        "2x": -105.382,
+        "4x": -102.086,
+        "8x": -101.404
+      }
+    }
+  },
+  "limits": "Synthetic controls only, 1.5 s warmup excluded, 10 ms frames, no actual vendor input or recovered proprietary equations. Thresholds developed on same cases, not independent validation. Mixed slow motion/vibrato remains poor; white and AR tracking slightly worse. Offline periodic oversampling and ideal 16x truncation are not production real-time algorithms. Fundamental phase matching modulo period; Nyquist omitted from matched error. No real vocal, latency, CPU or perceptual claim."
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "type": "owned_pe_discovery_smoke",
+  "master": {
+    "module_sha256": "cc1945eecaefc53131b2d59ebe66c4da415549dae3bfc7bbfdce28abc87ab238",
+    "runtime_records": 10092,
+    "scanned": 32,
+    "candidates": 1
+  },
+  "flang": {
+    "module_sha256": "7aa775fa9109971739404853e8685ac391df24e1ffc58f942bc39f1fc9bd44d1",
+    "runtime_records": 10865,
+    "scanned": 32,
+    "candidates": 1,
+    "top_candidate": {
+      "start_rva": "0x1a7f70",
+      "end_rva_exclusive": "0x1a8557",
+      "region_sha256": "72d206e79fe0f50770f58616fe0c9fa0ef85cf210b80702b5b508b5abcf8d12d",
+      "arithmetic": 41,
+      "vector_memory": 42,
+      "backward_branches": 9,
+      "score": 98
+    }
+  },
+  "limits": "Sparse sampled unwind ranges, unclassified candidates only. No claim actual algorithm identification or measured recall. GNU local. See production_owned_2026_11_25.json for independent source/binary mapping."
+}

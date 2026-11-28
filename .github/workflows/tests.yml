@@ -1,0 +1,550 @@
+name: Python static-analysis tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || format('protected-{0}-{1}', github.ref, github.run_id) }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Install audio analysis dependencies
+        run: python -m pip install "numpy>=1.26,<3" "scipy>=1.13,<2" "soundfile>=0.12,<1" "pedalboard==0.9.23"
+      - name: Install C++ PE fixture compiler and linker
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y clang lld llvm binutils
+          command -v clang++
+          command -v lld-link
+      - name: Unit tests (no vendor binaries)
+        run: python -m unittest discover -s tests -v
+      - name: Owned PE parameter-reader navigation and negative control
+        run: PYTHONPATH=. python tests/parameter_xrefs_smoke.py
+      - name: Owned PE shared-code function fingerprint and negative-control regression
+        run: PYTHONPATH=. python tests/shared_code_smoke.py
+      - name: Owned structural mnemonic variant comparison
+        run: PYTHONPATH=. python tests/structural_match_smoke.py
+      - name: Owned DSP versus numerical-utility role benchmark
+        run: PYTHONPATH=. python tests/function_roles_smoke.py
+      - name: Owned-source blind PE recognition and native behavioral benchmark
+        run: PYTHONPATH=. python tests/ground_truth_smoke.py
+      - name: Owned wrapper and engine import verification
+        run: PYTHONPATH=. python tests/architecture_native_smoke.py
+      - name: Real GNU and LLVM comparison on owned fixture
+        run: PYTHONPATH=. python tests/engine_smoke.py
+      - name: Persistent external-engine cache and bounded parallel smoke
+        run: PYTHONPATH=. python tests/engine_batch_smoke.py
+      - name: Large owned DSP fixture and dependency-tracked cache budget
+        run: PYTHONPATH=. python tests/large_engine_smoke.py
+      - name: Independent pitch and saturation numerical benchmark
+        run: PYTHONPATH=. python tests/dsp_reference_smoke.py
+      - name: Historical public pitch-method comparison
+        run: PYTHONPATH=. python tests/historical_pitch_smoke.py
+      - name: Independent behavioral model and moving pitch comparison
+        run: PYTHONPATH=. python tests/behavior_models_smoke.py
+      - name: Stereo topology, harmonics and sustained retune probes
+        run: PYTHONPATH=. python tests/public_behavior_smoke.py
+      - name: Advanced independent DSP hypothesis benchmark
+        run: PYTHONPATH=. python tests/advanced_dsp_smoke.py
+      - name: Adaptive oscillator and conservative recovery benchmark
+        run: PYTHONPATH=. python tests/adaptive_research_smoke.py
+      - name: Research gates and competing recovery descriptions
+        run: PYTHONPATH=. python tests/research_gates_smoke.py
+      - name: Slow motion discrimination and periodic coloration comparison
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+        run: PYTHONPATH=. python tests/motion_color_smoke.py
+      - name: Cross-disassembler instruction census on owned PE fixtures
+        run: PYTHONPATH=. python tests/code_census_smoke.py
+      - name: Bounded static flow verification on owned PE fixtures
+        run: PYTHONPATH=. python tests/static_flow_smoke.py
+      - name: Context sensitivity and exact decoder alias checks on owned PE fixtures
+        run: PYTHONPATH=. python tests/context_flow_smoke.py
+      - name: Relocation-backed legacy import evidence on owned PE fixture
+        run: PYTHONPATH=. python tests/legacy_math_smoke.py
+      - name: Executable extent union coverage on owned PE fixtures
+        run: PYTHONPATH=. python tests/extent_coverage_smoke.py
+      - name: Actual independent native compressor system identification
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+        run: |
+          PYTHONPATH=. python tests/system_id_native_smoke.py
+      - name: Automated fresh-process native capture matrix
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+        run: PYTHONPATH=. python tests/host_capture_smoke.py
+      - name: Seeded multi-rate automated capture regression
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+        run: PYTHONPATH=. python tests/host_matrix_extended_smoke.py
+      - name: Native delay impulse timing and state reset
+        run: PYTHONPATH=. python tests/impulse_native_smoke.py
+      - name: Original owned delay fixture native and sanitizer tests
+        run: |
+          g++ -std=c++17 -O2 -Wall -Wextra -Werror experiments/host_fixture/test_delay_fixture.cpp -o /tmp/skell_delay_fixture
+          /tmp/skell_delay_fixture
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer experiments/host_fixture/test_delay_fixture.cpp -o /tmp/skell_delay_fixture_san
+          /tmp/skell_delay_fixture_san
+      - name: Owned spectral selectivity and cross-engine behavior matrix
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/engine_lab/compare_spacer_selectivity.cpp -o /tmp/skell_spacer_compare
+          /tmp/skell_spacer_compare
+          PYTHONPATH=. python tests/spacer_selectivity_smoke.py /tmp/skell_spacer_compare
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/engine_lab/native_behavior_matrix.cpp -o /tmp/skell_behavior_matrix
+          PYTHONPATH=. python tests/native_behavior_matrix_smoke.py /tmp/skell_behavior_matrix
+      - name: Owned spectral and behavior native sanitizers
+        run: |
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie experiments/engine_lab/compare_spacer_selectivity.cpp -o /tmp/skell_spacer_compare_san
+          /tmp/skell_spacer_compare_san
+          PYTHONPATH=. python tests/spacer_selectivity_smoke.py /tmp/skell_spacer_compare_san
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie experiments/engine_lab/native_behavior_matrix.cpp -o /tmp/skell_behavior_matrix_san
+          PYTHONPATH=. python tests/native_behavior_matrix_smoke.py /tmp/skell_behavior_matrix_san
+      - name: Original optimized engine parity and held-out frequency coverage
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/engine_lab/test_fast_engines.cpp -o /tmp/skell_fast
+          /tmp/skell_fast
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/engine_lab/coverage_and_chain.cpp -o /tmp/skell_coverage
+          PYTHONPATH=. python tests/coverage_and_chain_smoke.py /tmp/skell_coverage
+      - name: Original optimized engine bounded sanitizer checks
+        run: |
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie experiments/engine_lab/test_fast_engines.cpp -o /tmp/skell_fast_san
+          /tmp/skell_fast_san quick
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie experiments/engine_lab/coverage_and_chain.cpp -o /tmp/skell_coverage_san
+          /tmp/skell_coverage_san coverage 48000 > /tmp/coverage_san.txt
+          /tmp/skell_coverage_san chain 48000 > /tmp/chain_san.bin
+          /tmp/skell_coverage coverage 48000 > /tmp/coverage_opt.txt
+          /tmp/skell_coverage chain 48000 > /tmp/chain_opt.bin
+          cmp /tmp/coverage_san.txt /tmp/coverage_opt.txt
+          python tests/compare_chain_numeric.py /tmp/chain_san.bin /tmp/chain_opt.bin
+      - name: Original extended Spacer and limiter chain regression
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/engine_lab/test_spacer_extended.cpp -o /tmp/skell_extended
+          /tmp/skell_extended
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/engine_lab/limited_color_chain.cpp -o /tmp/skell_limited
+          python tests/limited_color_smoke.py /tmp/skell_limited
+      - name: Extended Spacer and limited chain sanitizers
+        run: |
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie experiments/engine_lab/test_spacer_extended.cpp -o /tmp/skell_extended_san
+          /tmp/skell_extended_san quick
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie experiments/engine_lab/limited_color_chain.cpp -o /tmp/skell_limited_san
+          python tests/limited_color_smoke.py /tmp/skell_limited_san
+      - name: Owned PE direct caller census
+        run: PYTHONPATH=. python tests/direct_caller_smoke.py
+      - name: Owned PE relocation reference census
+        run: PYTHONPATH=. python tests/relocation_navigation_smoke.py
+      - name: Original native dual detector gate
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/skelliere/test_dual_detector_gate.cpp -o /tmp/skell_dual_gate
+          /tmp/skell_dual_gate
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/skelliere/render_dual_detector_gate.cpp -o /tmp/skell_gate_render
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie -Wall -Wextra -Werror experiments/skelliere/test_dual_detector_gate.cpp -o /tmp/skell_dual_gate_san
+          /tmp/skell_dual_gate_san
+      - name: Owned PE unwind coverage and address-taken leaf controls
+        run: PYTHONPATH=. python tests/coverage_audit_smoke.py
+      - name: Original history-dependent dynamics and space decay
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/skelliere/test_history_and_space.cpp -o /tmp/history_space
+          /tmp/history_space
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/skelliere/render_history_compressor.cpp -o /tmp/history_render
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie -Wall -Wextra -Werror experiments/skelliere/test_history_and_space.cpp -o /tmp/history_space_san
+          /tmp/history_space_san
+      - name: Spectral4 hostile crossover and low-rate regression
+        run: |
+          g++ -std=c++17 -O2 -D_GLIBCXX_ASSERTIONS -Wall -Wextra -Werror experiments/engine_lab/test_spectral4_edges.cpp -o /tmp/spec_edges
+          /tmp/spec_edges
+          g++ -std=c++17 -O1 -g -D_GLIBCXX_ASSERTIONS -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie -Wall -Wextra -Werror experiments/engine_lab/test_spectral4_edges.cpp -o /tmp/spec_edges_san
+          /tmp/spec_edges_san
+      - name: Independent spatial, tone, doubling and oversampled clipper milestone
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/milestone/test_spatial_color.cpp -o /tmp/spatial_color
+          /tmp/spatial_color
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/milestone/render_spatial_color.cpp -o /tmp/spatial_render
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie -Wall -Wextra -Werror experiments/milestone/test_spatial_color.cpp -o /tmp/spatial_color_san
+          /tmp/spatial_color_san
+      - name: Native moving spatial and reconstruction guard regression
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/milestone/test_spatial_refinement.cpp -o /tmp/spatial_refinement
+          /tmp/spatial_refinement
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/milestone/render_refinement.cpp -o /tmp/spatial_refinement_render
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie -Wall -Wextra -Werror experiments/milestone/test_spatial_refinement.cpp -o /tmp/spatial_refinement_san
+          /tmp/spatial_refinement_san
+      - name: Parallel rack timing, peak parity, coloration and matched-rate space
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/milestone/test_rack_color.cpp -o /tmp/rack_color
+          /tmp/rack_color
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/milestone/render_rack_color.cpp -o /tmp/rack_color_render
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror -I experiments/skelliere experiments/milestone/test_space_burst.cpp -o /tmp/space_burst
+          /tmp/space_burst
+          g++ -std=c++17 -O1 -g -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie experiments/milestone/test_rack_color.cpp -o /tmp/rack_color_san
+          /tmp/rack_color_san
+          g++ -std=c++17 -O1 -g -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie -I experiments/skelliere experiments/milestone/test_space_burst.cpp -o /tmp/space_burst_san
+          /tmp/space_burst_san
+      - name: Finite reconstruction bound and asymmetric live gate
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/milestone/test_evidence_engines.cpp -o /tmp/evidence_engines
+          /tmp/evidence_engines
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/milestone/render_evidence.cpp -o /tmp/evidence_render
+          g++ -std=c++17 -O1 -g -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie experiments/milestone/test_evidence_engines.cpp -o /tmp/evidence_engines_san
+          /tmp/evidence_engines_san
+      - name: Independent dual-path motion engine
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/milestone/test_motion.cpp -o /tmp/motion
+          /tmp/motion
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/milestone/render_motion.cpp -o /tmp/motion_render
+          g++ -std=c++17 -O1 -g -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie experiments/milestone/test_motion.cpp -o /tmp/motion_san
+          /tmp/motion_san
+      - name: Wet balance and motion integration
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/milestone/test_wet_balance.cpp -o /tmp/wet_balance
+          /tmp/wet_balance
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/milestone/render_balance.cpp -o /tmp/render_balance
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/milestone/test_motion_balance.cpp -o /tmp/motion_balance
+          /tmp/motion_balance
+          g++ -std=c++17 -O1 -g -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie experiments/milestone/test_wet_balance.cpp -o /tmp/wet_balance_san
+          /tmp/wet_balance_san
+          g++ -std=c++17 -O1 -g -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie experiments/milestone/test_motion_balance.cpp -o /tmp/motion_balance_san
+          /tmp/motion_balance_san
+      - name: Frequency-ducking transient probe known answers
+        run: |
+          python -m pip install numpy soundfile
+          python tools/dynamic_probe.py selftest
+      - name: Signed finite reconstruction bound and paired-transfer known answers
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/milestone/test_signed_peak.cpp -o /tmp/signed_peak
+          /tmp/signed_peak
+          g++ -std=c++17 -O1 -g -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie experiments/milestone/test_signed_peak.cpp -o /tmp/signed_peak_san
+          /tmp/signed_peak_san
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/milestone/render_signed_peak.cpp -o /tmp/signed_render
+          OPENBLAS_NUM_THREADS=1 python tools/paired_transfer.py --selftest
+      - name: Compile all research Python
+        run: python -m compileall -q skell_vst_decompiler
+      - name: Compile and test original native DSP prototypes
+        run: |
+          g++ -std=c++17 -O2 -Wall -Wextra -Werror experiments/skelliere/test_original.cpp -o /tmp/skell_original_tests
+          /tmp/skell_original_tests
+          g++ -std=c++17 -O2 -Wall -Wextra -Werror experiments/skelliere/render.cpp -o /tmp/skell_original_render
+      - name: Address and undefined behavior sanitizers
+        run: |
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer experiments/skelliere/test_original.cpp -o /tmp/skell_original_sanitized
+          /tmp/skell_original_sanitized
+      - name: Original spatial prototype regression and sanitizers
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/skelliere/test_space.cpp -o /tmp/skell_space_tests
+          /tmp/skell_space_tests
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/skelliere/render_space.cpp -o /tmp/skell_space_render
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer experiments/skelliere/test_space.cpp -o /tmp/skell_space_sanitized
+          /tmp/skell_space_sanitized
+      - name: Original adaptive compressor experiment and sanitizers
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/skelliere/test_adaptive.cpp -o /tmp/skell_adaptive
+          /tmp/skell_adaptive
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer experiments/skelliere/test_adaptive.cpp -o /tmp/skell_adaptive_sanitized
+          /tmp/skell_adaptive_sanitized
+
+      - name: Original stacked flanger reference regression and sanitizers
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/flangus_reference/test_stacked.cpp -o /tmp/skell_stacked_flanger
+          /tmp/skell_stacked_flanger
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer experiments/flangus_reference/test_stacked.cpp -o /tmp/skell_stacked_flanger_sanitized
+          /tmp/skell_stacked_flanger_sanitized
+
+      - name: Independent wet duck recovery regression
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror -Iexperiments/skelliere experiments/skelliere/test_wet_duck.cpp -o /tmp/skell_wet_duck
+          /tmp/skell_wet_duck
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Iexperiments/skelliere experiments/skelliere/test_wet_duck.cpp -o /tmp/skell_wet_duck_san
+          /tmp/skell_wet_duck_san
+
+      - name: Independent three-engine DSP lab and sanitizers
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/engine_lab/test_engines.cpp -o /tmp/skell_engines
+          /tmp/skell_engines
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -Wextra -Werror experiments/engine_lab/test_engines.cpp -o /tmp/skell_engines_san
+          /tmp/skell_engines_san
+      - name: Original Spectral4 native engine and sanitizers
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/engine_lab/test_spectral4.cpp -o /tmp/skell_spectral4
+          /tmp/skell_spectral4
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -Wextra -Werror experiments/engine_lab/test_spectral4.cpp -o /tmp/skell_spectral4_san
+          /tmp/skell_spectral4_san
+      - name: Independent Spacer three-band research prototype
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/engine_lab/test_spacer3.cpp -o /tmp/skell_spacer3
+          /tmp/skell_spacer3
+          g++ -std=c++17 -O1 -g -Wall -Wextra -Werror -D_GLIBCXX_ASSERTIONS -fsanitize=address,undefined -fno-omit-frame-pointer experiments/engine_lab/test_spacer3.cpp -o /tmp/skell_spacer3_san
+          /tmp/skell_spacer3_san
+      - name: Independent 2x and 4x color alias regression and sanitizers
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror -D_GLIBCXX_ASSERTIONS experiments/engine_lab/test_color_oversampled.cpp -o /tmp/skell_color_os
+          /tmp/skell_color_os
+          g++ -std=c++17 -O1 -g -Wall -Wextra -Werror -D_GLIBCXX_ASSERTIONS -fsanitize=address,undefined -fno-omit-frame-pointer experiments/engine_lab/test_color_oversampled.cpp -o /tmp/skell_color_os_san
+          /tmp/skell_color_os_san
+      - name: Peak-memory duck regression and full FDN comparison harness
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror -Iexperiments/skelliere experiments/skelliere/test_peak_duck.cpp -o /tmp/skell_peak_duck
+          /tmp/skell_peak_duck
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Iexperiments/skelliere experiments/skelliere/test_peak_duck.cpp -o /tmp/skell_peak_duck_san
+          /tmp/skell_peak_duck_san
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror -Iexperiments/skelliere experiments/skelliere/space_duck_compare.cpp -o /tmp/skell_space_compare
+
+      - name: Independent complementary presence neutral and stereo regression
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror tests/test_presence_complementary.cpp -o /tmp/skell_presence_comp
+          /tmp/skell_presence_comp
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie -Wall -Wextra -Werror tests/test_presence_complementary.cpp -o /tmp/skell_presence_comp_san
+          /tmp/skell_presence_comp_san
+
+      - name: Independent leveler attack and steady-state parity regression
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror tests/test_leveler_single_attack.cpp -o /tmp/skell_leveler_attack
+          /tmp/skell_leveler_attack
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie -Wall -Wextra -Werror tests/test_leveler_single_attack.cpp -o /tmp/skell_leveler_attack_san
+          /tmp/skell_leveler_attack_san
+
+      - name: Independent crest-hold and residual color regression
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -Werror tests/test_refinement_tracks.cpp -o /tmp/skell_tracks
+          /tmp/skell_tracks
+          g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_refinement_tracks.cpp -o /tmp/skell_tracks_san
+          /tmp/skell_tracks_san
+
+      - name: Independent adaptive hold, allpass and split color regression
+        run: |
+          g++ -std=c++17 -O3 -UNDEBUG -Wall -Wextra -Werror tests/test_adaptive_native.cpp -o /tmp/skell_adaptive_native
+          /tmp/skell_adaptive_native
+          g++ -std=c++17 -O1 -g -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_adaptive_native.cpp -o /tmp/skell_adaptive_native_san
+          /tmp/skell_adaptive_native_san
+
+      - name: Independent transition delay and reconstruction guard regression
+        run: |
+          g++ -std=c++17 -O3 -UNDEBUG -Wall -Wextra -Werror tests/test_transition_peak.cpp -o /tmp/skell_transition_peak
+          /tmp/skell_transition_peak
+          g++ -std=c++17 -O1 -g -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_transition_peak.cpp -o /tmp/skell_transition_peak_san
+          /tmp/skell_transition_peak_san
+
+      - name: Release-constrained reconstruction and draining delay regression
+        run: |
+          for test in bounded_peak draining_delay; do
+            g++ -std=c++17 -O3 -UNDEBUG -Wall -Wextra -Werror tests/test_${test}.cpp -o /tmp/skell_${test}
+            /tmp/skell_${test}
+            g++ -std=c++17 -O1 -g -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_${test}.cpp -o /tmp/skell_${test}_san
+            /tmp/skell_${test}_san
+          done
+
+      - name: Polarity bounds, multi-bank delay and mirrored FIR parity regression
+        run: |
+          g++ --version
+          for test in polarity_peak multi_drain color_mirrored; do
+            g++ -std=c++17 -O3 -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror tests/test_${test}.cpp -o /tmp/skell_${test}
+            /tmp/skell_${test}
+            g++ -std=c++17 -O1 -g -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_${test}.cpp -o /tmp/skell_${test}_san
+            /tmp/skell_${test}_san
+          done
+          g++ -std=c++17 -O3 -UNDEBUG -Wall -Wextra -Werror tests/test_color_mirrored.cpp -o /tmp/skell_mirror_compiler_default
+          /tmp/skell_mirror_compiler_default --diagnostic-tolerance
+
+      - name: Quiet peak guard, wet budget and symmetric FIR regression
+        run: |
+          g++ -std=c++17 -O3 -UNDEBUG -Wall -Wextra -Werror tests/test_budget_quiet_symmetric.cpp -o /tmp/skell_budget_quiet_symmetric
+          /tmp/skell_budget_quiet_symmetric
+          g++ -std=c++17 -O1 -g -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_budget_quiet_symmetric.cpp -o /tmp/skell_budget_quiet_symmetric_san
+          /tmp/skell_budget_quiet_symmetric_san
+
+      - name: Bass-aware reconstruction and cascade FIR regression
+        run: |
+          g++ -std=c++17 -O3 -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror tests/test_bass_cascade.cpp -o /tmp/skell_bass_cascade
+          /tmp/skell_bass_cascade
+          g++ -std=c++17 -O1 -g -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_bass_cascade.cpp -o /tmp/skell_bass_cascade_san
+          /tmp/skell_bass_cascade_san
+
+      - name: Scheduled recovery finite-kernel regression
+        run: |
+          g++ -std=c++17 -O3 -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror tests/test_scheduled_recovery.cpp -o /tmp/skell_scheduled_recovery
+          /tmp/skell_scheduled_recovery
+          g++ -std=c++17 -O1 -g -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_scheduled_recovery.cpp -o /tmp/skell_scheduled_recovery_san
+          /tmp/skell_scheduled_recovery_san
+
+      - name: Cached guard, band tail and regular crest regression
+        run: |
+          g++ -std=c++17 -O3 -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror tests/test_cached_band_crest.cpp -o /tmp/skell_cached_band_crest
+          /tmp/skell_cached_band_crest
+          g++ -std=c++17 -O1 -g -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_cached_band_crest.cpp -o /tmp/skell_cached_band_crest_san
+          /tmp/skell_cached_band_crest_san
+
+      - name: Forward pairwise recovery bound and streaming regression
+        run: |
+          for test in forward_pair forward_pair_stream; do
+            g++ -std=c++17 -O3 -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror -Iexperiments/engine_lab tests/test_${test}.cpp -o /tmp/skell_${test}
+            /tmp/skell_${test}
+            g++ -std=c++17 -O1 -g -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror -Iexperiments/engine_lab -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_${test}.cpp -o /tmp/skell_${test}_san
+            /tmp/skell_${test}_san
+          done
+
+      - name: Lifted DC and history cap research regression
+        run: |
+          for test in lift_prepared history_cap; do
+            g++ -std=c++17 -O3 -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror -Iexperiments/engine_lab tests/test_${test}.cpp -o /tmp/skell_${test}
+            /tmp/skell_${test}
+            g++ -std=c++17 -O1 -g -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror -Iexperiments/engine_lab -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_${test}.cpp -o /tmp/skell_${test}_san
+            /tmp/skell_${test}_san
+          done
+
+      - name: Native stereo convolution and tail transition regression
+        run: |
+          g++ -std=c++17 -O3 -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror tests/test_native_stereo_ir.cpp -o /tmp/skell_native_stereo_ir
+          /tmp/skell_native_stereo_ir
+          g++ -std=c++17 -O1 -g -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_native_stereo_ir.cpp -o /tmp/skell_native_stereo_ir_san
+          /tmp/skell_native_stereo_ir_san
+
+      - name: Fast convolution and detector-first regression
+        run: |
+          for mode in optimized sanitized; do
+            if [ "$mode" = optimized ]; then flags="-O3"; else flags="-O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie"; fi
+            g++ -std=c++17 $flags -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror tests/test_fast_stereo_ir.cpp -o /tmp/skell_fast_ir
+            /tmp/skell_fast_ir
+            g++ -std=c++17 $flags -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror tests/test_detector_probe.cpp experiments/ir/EnvelopeDetectorProbe.cpp -o /tmp/skell_detector_probe
+            /tmp/skell_detector_probe
+          done
+
+      - name: Stereo detector topology and waveform projection regression
+        run: |
+          g++ -std=c++17 -O3 -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror tests/test_stereo_detector.cpp experiments/StereoDetectorProbe.cpp -o /tmp/skell_stereo_detector
+          /tmp/skell_stereo_detector
+          g++ -std=c++17 -O1 -g -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_stereo_detector.cpp experiments/StereoDetectorProbe.cpp -o /tmp/skell_stereo_detector_san
+          /tmp/skell_stereo_detector_san
+
+      - name: Topology hypothesis steady-state regression
+        run: |
+          g++ -std=c++17 -O3 -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror tests/test_topology_dynamics.cpp experiments/TopologyDynamics.cpp -o /tmp/skell_topology
+          /tmp/skell_topology
+          g++ -std=c++17 -O1 -g -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_topology_dynamics.cpp experiments/TopologyDynamics.cpp -o /tmp/skell_topology_san
+          /tmp/skell_topology_san
+
+      - name: Cascaded dynamics description regression
+        run: |
+          g++ -std=c++17 -O3 -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror tests/test_cascade_id.cpp experiments/CascadeIdentification.cpp -o /tmp/skell_cascade_id
+          /tmp/skell_cascade_id
+          g++ -std=c++17 -O1 -g -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_cascade_id.cpp experiments/CascadeIdentification.cpp -o /tmp/skell_cascade_id_san
+          /tmp/skell_cascade_id_san
+
+      - name: Phase-clock and causal halfband parity regression
+        run: |
+          for pair in "test_phase_clock.cpp PhaseClockProbe.cpp" "test_halfband.cpp HalfbandColor.cpp"; do
+            read -r test source <<< "$pair"
+            g++ -std=c++17 -O3 -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror "tests/$test" "experiments/$source" -o /tmp/skell_clock_hb
+            /tmp/skell_clock_hb
+            g++ -std=c++17 -O1 -g -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie "tests/$test" "experiments/$source" -o /tmp/skell_clock_hb_san
+            /tmp/skell_clock_hb_san
+          done
+
+  windows-owned-vst3-host:
+    runs-on: windows-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+          architecture: x64
+      - name: Install host dependencies
+        run: python -m pip install "numpy>=1.26,<3" "scipy>=1.13,<2" "soundfile>=0.12,<1" "pedalboard==0.9.23"
+      - name: Fetch verified JUCE source
+        shell: pwsh
+        run: |
+          git clone --depth 1 --branch 8.0.12 https://github.com/juce-framework/JUCE.git "$env:RUNNER_TEMP/JUCE"
+          if ($LASTEXITCODE -ne 0) { throw "JUCE clone failed" }
+          $sha = git -C "$env:RUNNER_TEMP/JUCE" rev-parse HEAD
+          if ($sha -ne "29396c22c93392d6738e021b83196283d6e4d850") { throw "JUCE fingerprint mismatch" }
+      - name: Build original owned test VST3
+        shell: pwsh
+        run: |
+          cmake -S experiments/host_fixture -B "$env:RUNNER_TEMP/skell-host-build" -A x64 "-DJUCE_DIR=$env:RUNNER_TEMP/JUCE"
+          if ($LASTEXITCODE -ne 0) { throw "Configure failed" }
+          cmake --build "$env:RUNNER_TEMP/skell-host-build" --config Release --target SkellHostFixture_VST3 --parallel 2
+          if ($LASTEXITCODE -ne 0) { throw "Build failed" }
+      - name: Load only the owned fixture and verify gain and creative delay renders
+        shell: pwsh
+        run: |
+          $plugin = "$env:RUNNER_TEMP/skell-host-build/SkellHostFixture_artefacts/Release/VST3/Skell Host Fixture.vst3"
+          if (!(Test-Path $plugin)) { throw "Owned VST3 output missing" }
+          $env:PYTHONPATH = "."
+          python tests/host_vst3_smoke.py $plugin
+          if ($LASTEXITCODE -ne 0) { throw "Host smoke failed" }
+
+      - name: Build original Skell Analyzer VST3
+        shell: pwsh
+        run: |
+          cmake --build "$env:RUNNER_TEMP/skell-host-build" --config Release --target SkellAnalyzer_VST3 --parallel 2
+          if ($LASTEXITCODE -ne 0) { throw "Analyzer build failed" }
+      - name: Verify public-parameter sweep and analyzer pass-through
+        shell: pwsh
+        run: |
+          $fixture = "$env:RUNNER_TEMP/skell-host-build/SkellHostFixture_artefacts/Release/VST3/Skell Host Fixture.vst3"
+          $analyzer = "$env:RUNNER_TEMP/skell-host-build/analyzer/SkellAnalyzer_artefacts/Release/VST3/Skell Analyzer.vst3"
+          if (!(Test-Path $analyzer)) { throw "Analyzer output missing" }
+          $env:PYTHONPATH = "."
+          python tests/analyzer_host_smoke.py $fixture $analyzer
+          if ($LASTEXITCODE -ne 0) { throw "Analyzer host smoke failed" }
+      - name: Build and verify actual numeric VST3 parameter IDs
+        shell: pwsh
+        run: |
+          cmake --build "$env:RUNNER_TEMP/skell-host-build" --config Release --target SkellParamIds --parallel 2
+          if ($LASTEXITCODE -ne 0) { throw "ParamID host build failed" }
+          $exe = "$env:RUNNER_TEMP/skell-host-build/SkellParamIds_artefacts/Release/SkellParamIds.exe"
+          $bundle = "$env:RUNNER_TEMP/skell-host-build/SkellHostFixture_artefacts/Release/VST3/Skell Host Fixture.vst3"
+          $module = "$bundle/Contents/x86_64-win/Skell Host Fixture.vst3"
+          $sha = (Get-FileHash $module -Algorithm SHA256).Hash.ToLower()
+          $json = & $exe --authorized-owned $bundle $sha
+          if ($LASTEXITCODE -ne 0) { throw "ParamID inventory failed" }
+          $report = ($json -join "`n") | ConvertFrom-Json
+          if ($report.module_sha256 -ne $sha) { throw "ParamID source mismatch" }
+          $gain = @($report.parameters | Where-Object {$_.name -eq "Gain"})
+          $delay = @($report.parameters | Where-Object {$_.name -eq "Creative Delay"})
+          if ($gain.Count -ne 1 -or $delay.Count -ne 1) { throw "Fixture parameters missing" }
+          $expectedGain = python -c "from skell_vst_decompiler.owned_state import juce_param_id; print(juce_param_id('gain'))"
+          $expectedDelay = python -c "from skell_vst_decompiler.owned_state import juce_param_id; print(juce_param_id('creative_delay'))"
+          if ($gain[0].param_id -ne [long]$expectedGain -or $delay[0].param_id -ne [long]$expectedDelay) { throw "Observed VST3 ID differs from source prediction" }
+          Write-Output ("SKELL_PUBLIC_PARAM_IDS " + ($report | ConvertTo-Json -Depth 6 -Compress))
+      - name: Build and render separate owned convolution fixture
+        shell: pwsh
+        run: |
+          cmake --build "$env:RUNNER_TEMP/skell-host-build" --config Release --target SkellIRHostFixture_VST3 --parallel 2
+          if ($LASTEXITCODE -ne 0) { throw "IR fixture build failed" }
+          $plugin = "$env:RUNNER_TEMP/skell-host-build/SkellIRHostFixture_artefacts/Release/VST3/Skell IR Host Fixture.vst3"
+          if (!(Test-Path $plugin)) { throw "IR fixture output missing" }
+          $env:PYTHONPATH = "."
+          python tests/ir_host_smoke.py $plugin
+          if ($LASTEXITCODE -ne 0) { throw "IR fixture host comparison failed" }
+      - name: Independent pluginval owned-fixture acceptance
+        shell: pwsh
+        run: |
+          $zip = "$env:RUNNER_TEMP/pluginval-beta3.zip"
+          Invoke-WebRequest -Uri "https://github.com/Tracktion/pluginval/releases/download/v2.0.0-beta3/pluginval_Windows.zip" -OutFile $zip
+          if ((Get-FileHash $zip -Algorithm SHA256).Hash.ToLower() -ne "da158e918b60430c6a5223cd99cc2e746bda604e583258c400898caf4e95c523") { throw "pluginval release digest mismatch" }
+          $dir = "$env:RUNNER_TEMP/pluginval-beta3"
+          Expand-Archive -Path $zip -DestinationPath $dir
+          $exe = @(Get-ChildItem $dir -Recurse -File -Filter pluginval.exe)
+          if ($exe.Count -ne 1) { throw "Unexpected pluginval archive layout" }
+          $golden = "$env:RUNNER_TEMP/skell-analytic-golden"
+          python tests/pluginval_reference_cases.py $golden
+          if ($LASTEXITCODE -ne 0) { throw "Golden generation failed" }
+          $plugin = "$env:RUNNER_TEMP/skell-host-build/SkellHostFixture_artefacts/Release/VST3/Skell Host Fixture.vst3"
+          foreach ($case in @("gain", "delay")) {
+            & $exe[0].FullName test "$golden/$case.json" --plugin $plugin --timeout-ms 60000
+            if ($LASTEXITCODE -ne 0) { throw "Independent host acceptance failed: $case" }
+          }
+      - name: Upload verified owned analyzer build
+        uses: actions/upload-artifact@v4
+        with:
+          name: Skell-Analyzer-Windows-VST3
+          path: |
+            ${{ runner.temp }}/skell-host-build/analyzer/SkellAnalyzer_artefacts/Release/VST3/
+            ${{ runner.temp }}/skell-host-build/SkellParamIds_artefacts/Release/SkellParamIds.exe
+          if-no-files-found: error

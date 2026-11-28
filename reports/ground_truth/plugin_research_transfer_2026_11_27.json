@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "parent": "a647e3c6e2a7728038923883964f5d1c18e9908c",
+  "transfers": [
+    {
+      "repo": "skellyruno/skelliere-rack",
+      "commit": "70e942df4b914992d68fa29562e0821e7b0e98e2",
+      "draft_pr": 3,
+      "component": "Skell MixHead AlignedTape4x",
+      "state": "implemented on feature branch",
+      "preserves": [
+        "original coefficient math",
+        "12-sample dry delay",
+        "knobs/IDs/defaults",
+        "active filter and residual math",
+        "UI"
+      ],
+      "real_vocal_inputs": 36,
+      "configurations": 108,
+      "exact": 108,
+      "exact_dry_alignment": 108,
+      "timed_runs": 648,
+      "median_paired_reduction_percent": [
+        22.00924193720318,
+        2.167509263009876,
+        3.6976927142665152
+      ],
+      "amounts": [
+        0,
+        0.5,
+        1
+      ],
+      "rejected_mirrored": {
+        "exact": 108,
+        "timed_runs": 648,
+        "median_paired_reduction_percent": [
+          -68.93224285396226,
+          -26.69166052342986,
+          -24.771519155552923
+        ],
+        "reason": "slower on all tested excerpts"
+      },
+      "validation": "full host-free suite passed; dedicated and integrated test_dsp ASan/UBSan passed; larger sanitizer batch timed out; new Windows VST3/UI/host unverified",
+      "report_path": "docs/TAPE_KERNEL_RESEARCH_TRANSFER_20261127.json"
+    },
+    {
+      "repo": "skellyruno/skellcore-vst-template",
+      "commit": "e75c9a3f4ebd3ff7b6d2dcbae642bcb81786d55b",
+      "draft_pr": 49,
+      "component": "experimental PresenceWetTrim",
+      "state": "implemented opt-in; no production consumer changed",
+      "real_vocal_inputs": 36,
+      "configurations": 108,
+      "exact_zero_trim": 108,
+      "exact_wet_blend": 108,
+      "exact_dry_endpoint": 36,
+      "maximum_full_wet_estimated_peak_dbfs": [
+        2.3158892139161087,
+        -1.6841107860838898
+      ],
+      "validation": "optimized and sanitizer native regression passed at 44.1/48/96/192k, 240000 frames; CMake test registered; hosted CI pending",
+      "report_path": "SkellCore/include/SkellCore/experimental/research/spectral/PRESENCE_WET_TRIM.json"
+    }
+  ],
+  "ci_repair": {
+    "parent_workflows": {
+      "passed": 7,
+      "failed": 1,
+      "ghidra": "passed after prior runner fix",
+      "windows_owned_host": "passed"
+    },
+    "failure": {
+      "run_id": 45930500233,
+      "job_id": 140281761874,
+      "test": "test_contiguous_parity_and_dry_delay",
+      "observed": "assertTrue exact failed; color_checks already returned after <=1e-12 numeric guard; actual error not printed"
+    },
+    "change": "For active/mixed paths enforce existing 1e-12 absolute tolerance; exact dry comparisons remain required; print nonzero deviation. No engine or sound change. Matches preexisting bounded tolerance policy.",
+    "local_targeted_tests": 31,
+    "exact_test_blob": "4cc8308c1ca17583fefa73215303443deca041d0",
+    "new_ci": "pending"
+  },
+  "next": [
+    {
+      "target": "Skell Master",
+      "status": "planned",
+      "gate": "measure actual limiter, clipper, headroom and true-peak behavior against preserved mastering presets; require host latency parity"
+    },
+    {
+      "target": "Skell Preset / standalone effects",
+      "status": "planned",
+      "gate": "source-known module comparison with stable parameter IDs, exact/bounded parity, multiple instances and real dry vocal tests"
+    },
+    {
+      "target": "Skell Spacer",
+      "status": "planned",
+      "gate": "paired dry vocal and instrumental, isolated leakage and attenuation, no latency regression"
+    },
+    {
+      "target": "Skellay / modulation effects",
+      "status": "planned",
+      "gate": "transition and tail continuity, stereo and tempo tests before adopting any history or dispatch changes"
+    },
+    {
+      "target": "pitch correction",
+      "status": "planned",
+      "gate": "owned real dry vocal, latency and formant measurements; preserve approved engines and presets"
+    }
+  ],
+  "limits": "Local real-vocal kernel tests and optional core wrapper; timing is not DAW CPU, estimated peaks not certified true peak. No vendor DSP reconstruction or production transfer to other plugins. Prior 854 unresolved destinations, 90 boundary conflicts, 692 local value-flow candidates unchanged; no new static replay in this batch. No private identities, source files or individual metrics committed."
+}

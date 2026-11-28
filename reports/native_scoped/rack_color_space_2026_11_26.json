@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "source": {
+    "name": "Waves StudioRack for OBS.dll",
+    "bytes": 9325272,
+    "sha256": "918cbd319b28d10ad72758476172549b402d69c06fe5d9b61f3a10665dde6067",
+    "format": "PE32+ x64",
+    "sections": 6,
+    "export_module": "WaveShell-VST.dll",
+    "export_count": 4190,
+    "import_libraries": 27,
+    "vst2_entry_aliases": [
+      "VSTPluginMain",
+      "main"
+    ],
+    "entry_rva": "0x46630",
+    "unwind_range": [
+      "0x46630",
+      "0x46685"
+    ],
+    "vst3_factory_export": false,
+    "obs_module_export": false,
+    "executable_virtual_file_bytes": 6102899,
+    "unwind_covered_bytes": 5528292,
+    "unwind_ranges": 22424,
+    "relocation_slots": 25415,
+    "categories": {
+      "no_unwind_range": 6881,
+      "non_code_target": 11355,
+      "unwind_start": 7179
+    },
+    "unique_code_targets": 5757,
+    "unique_targets_without_unwind": 1454,
+    "limits": "Static shell identity and metadata only; no vendor effects, host execution or authentication established."
+  },
+  "tests": {
+    "rates": [
+      44100,
+      48000,
+      96000,
+      192000
+    ],
+    "parallel_latency_samples": 64,
+    "paths": [
+      0,
+      17,
+      64,
+      24
+    ],
+    "guard_exact_frames": 600000,
+    "sliding_max_exact_values": 100000,
+    "soft_color_selected_fold_db": -13.127,
+    "fundamental_matched_fold_db": -12.0976,
+    "space_late_early_db": [
+      -36.37861,
+      -36.33624,
+      -36.49696,
+      -36.53592
+    ],
+    "space_tail_early_db": [
+      -71.99296,
+      -71.87788,
+      -72.29438,
+      -72.30304
+    ],
+    "strict": "pass",
+    "asan_ubsan": "pass",
+    "benchmark": {
+      "hardware": "AMD EPYC 9V74",
+      "unit": "microseconds/48 stereo frames",
+      "rate": 48000,
+      "runs": 7,
+      "old": 2.860182,
+      "new": 2.434599,
+      "percent_change": -14.88,
+      "limits": "Standalone seeded random benchmark, not DAW CPU; measured before numerical branch hardening of unrelated SoftColor."
+    },
+    "real_music": "3 x 8s same owned track excerpts, 1058400 stereo frames, guard outputs float32 exact; color finite but no reference parity."
+  },
+  "limits": "No new commercial transfer equations or sound match; no production integration."
+}

@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "report_kind": "independent_audio_system_identification_validation",
+  "source_commit": "027a4f501eedcb6dba9c33015c0f7717d8f5e5ef",
+  "previous_ci": {
+    "tests": 179,
+    "all_eight_passed": true,
+    "run_ids": [
+      45528751846,
+      45528751713,
+      45528751638,
+      45528751688,
+      45528751767,
+      45528751670,
+      45528751802,
+      45528751633
+    ],
+    "ghidra_high_pcode": {
+      "fixture_sha256": "0c09a03f39a7bab0a0c5a278c14541f183f24d8417e1e042601350a437fed483",
+      "functions": {
+        "apply_gain": {
+          "defined_input_edges": 2,
+          "opcodes": {
+            "CALL": 1,
+            "FLOAT_MULT": 1,
+            "RETURN": 1
+          },
+          "operations": 3
+        },
+        "smooth": {
+          "defined_input_edges": 3,
+          "opcodes": {
+            "FLOAT_ADD": 1,
+            "FLOAT_MULT": 1,
+            "FLOAT_SUB": 1,
+            "RETURN": 1
+          },
+          "operations": 4
+        }
+      }
+    }
+  },
+  "local": {
+    "unit_tests": 7,
+    "unit_result": "pass",
+    "python_compile": "pass",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "soundfile": "0.13.1",
+    "openblas_threads": 1,
+    "tested_blobs": {
+      "skell_vst_decompiler/system_id.py": "6fc23dde804579f129faaee25a32d10b0f15b5c0",
+      "skell_vst_decompiler/detector_fit.py": "64ab014f1349e8ef4f71774c49fa3ca1ae6171b1",
+      "skell_vst_decompiler/listening_bridge.py": "89942984b0a540a81df6daf89b9805c9724aa036",
+      "tests/test_system_id.py": "5e226c559345f3d1c3ace81bf6272fd72f5a213c",
+      "tests/test_detector_fit.py": "bcf6daa64f379534649bde1ca523b3434593a2a7",
+      "tests/system_id_native_smoke.py": "25f14782c5ee5e8229b440d594329b97cbfe064a"
+    },
+    "native_calibration": {
+      "implementation": "Pedalboard built-in Compressor",
+      "version": "0.9.23",
+      "settings": {
+        "threshold_db": -24,
+        "ratio": 4,
+        "attack_ms": 20,
+        "release_ms": 160
+      },
+      "sample_rate": 48000,
+      "train_validation_test": "three separate generated WAV histories, read-back output floats, reset each case",
+      "models": {
+        "single": {
+          "parameters": [
+            -24.66224460661809,
+            0.8149210427196475,
+            0.05347524279984713,
+            10.347781627246759,
+            38.16538918427804
+          ],
+          "train_rmse_db": 0.40769839505030575,
+          "validation_rmse_db": 0.35689324538230993,
+          "test_rmse_db": 0.3768475788307072
+        },
+        "dual": {
+          "parameters": [
+            -27.05157705530788,
+            0.7000756691433954,
+            0.08933551589775136,
+            9.580395527349872,
+            39.04447857179299,
+            1.0000012691510016,
+            0.000005326294265061479
+          ],
+          "train_rmse_db": 0.4373671198900111,
+          "validation_rmse_db": 0.40158740421299016,
+          "test_rmse_db": 0.4420928808570854
+        },
+        "amplitude": {
+          "parameters": [
+            -25.44118096398583,
+            0.7630873027835738,
+            -0.0006291082945058585,
+            6.834368271636948,
+            24.746223454027295
+          ],
+          "train_rmse_db": 0.07030198922362915,
+          "validation_rmse_db": 0.09980571896742643,
+          "test_rmse_db": 0.07867525587630586
+        },
+        "power": {
+          "parameters": [
+            -25.442567641121254,
+            0.7644353076922763,
+            -0.0000509072598232248,
+            15.530875779251646,
+            14.125987661888264
+          ],
+          "train_rmse_db": 0.13146650777937124,
+          "validation_rmse_db": 0.132287508439842,
+          "test_rmse_db": 0.1341930732164535
+        }
+      },
+      "selected_by_validation": "amplitude",
+      "native_smoke_pass": true
+    },
+    "known_controls": {
+      "gain_smoothing_release_ms": 160,
+      "dual_slow_release_ms": 800,
+      "matching_model_holdout_rmse_bound_db": 0.000001,
+      "known_fir_magnitude_and_phase_agree_to_four_decimal_places": true,
+      "known_vowel_resonances_hz": [
+        700,
+        1200,
+        2500
+      ],
+      "estimated_formant_candidates_hz": [
+        714.1660837358014,
+        1189.3862482160687,
+        2502.797246127595
+      ],
+      "bridge_level_and_residual_db": -6.0206
+    }
+  },
+  "external_bridges": {
+    "sound_match": {
+      "commit_inspected": "810e387c5736791469a0a3e4e877ecd259b8aa7b",
+      "entry": "skell_sound_match.quality_gate.measure",
+      "status": "implemented_optional_not_runtime_verified"
+    },
+    "fif_ears": {
+      "entry": "skell_sound_match.wav_only.vocal_knob_search.fif_ears_signal_snapshot",
+      "status": "implemented_optional_not_runtime_verified",
+      "tempo_key": "not_requested_or_run"
+    }
+  },
+  "limits": "No TVB/VMR/Evo reference output or target runtime observation, no new original binary analysis. Local native calibration uses built-in Pedalboard, never loads a vendor plugin. Detector model times are e-folding descriptors not knob times; holdout selects model, third synthetic sequence is separate but not real voice. LTI sweep results require linear settings and complete tail. Formant candidates are single central 80ms LPC windows. Numerical least squares, not neural end-to-end differentiable audio. Optional Sound Match and FIF Ears dependencies unavailable locally; bridge contracts inspected, base pairing tested, external invocation unverified. No JUCE/VST3 or UI changes."
+}

@@ -1,0 +1,130 @@
+{
+  "schema": 1,
+  "parent": "3addeb899a66f51f6c0f5b503ff563e46fe7d678",
+  "prior_local_report_sha256": "ef58d36fe4f2ed66813924bfc42a28292ce8c871cf56059235432bc7d864476b",
+  "full_local_report_sha256": "cdbcaab48d6c6d22efbfc5a1d6dfc18c3dedb879c014ab93d0e5e40af1197ab9",
+  "totals": {
+    "binaries": 8,
+    "windows": 479,
+    "unique_transfer_sites": 15041,
+    "verified_direct": 14187,
+    "indirect_memory": 766,
+    "indirect_register": 83,
+    "unclassified": 5,
+    "remaining_unknown_destinations": 854,
+    "repeated_observations": 0,
+    "boundary_conflicts": 90,
+    "conflicts_with_other_common_start": 0,
+    "added_guards": 51,
+    "prior_value_flow_candidates": 692,
+    "retained_value_flow_candidates": 692
+  },
+  "modules": [
+    {
+      "name": "StandardCLIP",
+      "windows": 41,
+      "direct": 758,
+      "indirect_memory": 32,
+      "indirect_register": 5,
+      "unclassified": 0,
+      "unique_sites": 795,
+      "added_guards": 2,
+      "value_flow_candidates": 35,
+      "boundary_conflicts": 0
+    },
+    {
+      "name": "Trackspacer",
+      "windows": 42,
+      "direct": 1029,
+      "indirect_memory": 45,
+      "indirect_register": 4,
+      "unclassified": 0,
+      "unique_sites": 1078,
+      "added_guards": 4,
+      "value_flow_candidates": 60,
+      "boundary_conflicts": 0
+    },
+    {
+      "name": "FG-2A",
+      "windows": 44,
+      "direct": 1225,
+      "indirect_memory": 43,
+      "indirect_register": 8,
+      "unclassified": 1,
+      "unique_sites": 1277,
+      "added_guards": 14,
+      "value_flow_candidates": 205,
+      "boundary_conflicts": 4
+    },
+    {
+      "name": "Panagement",
+      "windows": 77,
+      "direct": 2404,
+      "indirect_memory": 63,
+      "indirect_register": 10,
+      "unclassified": 0,
+      "unique_sites": 2477,
+      "added_guards": 16,
+      "value_flow_candidates": 99,
+      "boundary_conflicts": 0
+    },
+    {
+      "name": "DeeDoubler",
+      "windows": 43,
+      "direct": 1839,
+      "indirect_memory": 41,
+      "indirect_register": 14,
+      "unclassified": 0,
+      "unique_sites": 1894,
+      "added_guards": 4,
+      "value_flow_candidates": 89,
+      "boundary_conflicts": 0
+    },
+    {
+      "name": "VT-5",
+      "windows": 78,
+      "direct": 2053,
+      "indirect_memory": 226,
+      "indirect_register": 23,
+      "unclassified": 2,
+      "unique_sites": 2304,
+      "added_guards": 2,
+      "value_flow_candidates": 90,
+      "boundary_conflicts": 36
+    },
+    {
+      "name": "SSL Fusion Stereo Image",
+      "windows": 76,
+      "direct": 3149,
+      "indirect_memory": 146,
+      "indirect_register": 13,
+      "unclassified": 2,
+      "unique_sites": 3310,
+      "added_guards": 6,
+      "value_flow_candidates": 64,
+      "boundary_conflicts": 50
+    },
+    {
+      "name": "MixHead",
+      "windows": 78,
+      "direct": 1730,
+      "indirect_memory": 170,
+      "indirect_register": 6,
+      "unclassified": 0,
+      "unique_sites": 1906,
+      "added_guards": 3,
+      "value_flow_candidates": 50,
+      "boundary_conflicts": 0
+    }
+  ],
+  "validation": {
+    "new_local_methods_passed": 6,
+    "prior_local_methods_passed": 13,
+    "parent_ci": "8/8 passed",
+    "offline_kit": "13/13 passed",
+    "source_blob": "f3e98e47fe5a9e36fb1f56b87f5b2caa205834b8",
+    "test_blob": "804c4601965b4ecd9d6d69caa662094bb5454eff",
+    "local_replay_script_blob": "d50be36b6fc6e00cd85c73d594494dcb6ed79e51"
+  },
+  "limits": "Existing verified windows only; guards are observations, not a complete CFG. Indirect form classification does not resolve destinations. No vendor execution, proprietary algorithm reconstruction, protected-target traversal, coefficient extraction or production changes."
+}

@@ -1,0 +1,323 @@
+{
+  "schema_version": 1,
+  "type": "stratified_role_evidence_summary",
+  "archive_sha256": "353f23373ac05d7b2121c313073f08c708e879d839115d4ce5d30657732f481e",
+  "modules": 31,
+  "eligible_regions": 487363,
+  "scanned_regions": 139,
+  "decoder_agreements": 138,
+  "groups": [
+    {
+      "selection": "prior_anchor",
+      "frequency": 1,
+      "processing": 7,
+      "byte_processing": 1,
+      "unresolved": 7
+    },
+    {
+      "selection": "stratified",
+      "frequency": 1,
+      "processing": 1,
+      "byte_processing": 15,
+      "unresolved": 46
+    },
+    {
+      "selection": "stratified",
+      "frequency": 31,
+      "processing": 0,
+      "byte_processing": 0,
+      "unresolved": 62
+    }
+  ],
+  "per_module": [
+    {
+      "name": "AirEQAir.epl",
+      "sha256": "c75499749848d64aa9a72298204087d5a78f685e7d960beacecd6644d9e3136b",
+      "scanned": 7,
+      "processing": 1,
+      "byte_processing": 1,
+      "unresolved": 5,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "AirEQEarth.epl",
+      "sha256": "e5b254ee4173e142b6822e807cee916b745b32b5ae5f38e24814e7c8b7c875f7",
+      "scanned": 4,
+      "processing": 0,
+      "byte_processing": 0,
+      "unresolved": 4,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "Blackbird Studio.epl",
+      "sha256": "44bee8e698af4a7c48f9de78bf0110d629c215aa66c999d01bd76f9d041d9a3d",
+      "scanned": 4,
+      "processing": 0,
+      "byte_processing": 0,
+      "unresolved": 4,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "CS-EQ.epl",
+      "sha256": "a4a8c92d6ea80acc16a314b23cf727c0bd86cb92a40351efb03f6892605571d0",
+      "scanned": 4,
+      "processing": 0,
+      "byte_processing": 1,
+      "unresolved": 3,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "CS-Lift.epl",
+      "sha256": "62ae20d8bbb4ec84960aca0325fdb61e5f551ff83943bb633759d4561f8b7ae6",
+      "scanned": 4,
+      "processing": 0,
+      "byte_processing": 1,
+      "unresolved": 3,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "Classic Instruments.epl",
+      "sha256": "12fe5020e71374ff14e3f3aba553a578718de886024445733bcfc148142f52f6",
+      "scanned": 4,
+      "processing": 1,
+      "byte_processing": 1,
+      "unresolved": 2,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "Custom Opto.epl",
+      "sha256": "e697454a539b54b6a610d486bac0fef0bd8f04295da020d6b6f196a44dc55bd3",
+      "scanned": 4,
+      "processing": 0,
+      "byte_processing": 0,
+      "unresolved": 4,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "FG-116 Modern.epl",
+      "sha256": "6782b73fb9d4a3c1dade5406fe6ea1bead30699529082ea9f9a8dfe04056a664",
+      "scanned": 4,
+      "processing": 0,
+      "byte_processing": 1,
+      "unresolved": 3,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "FG-116 Vintage.epl",
+      "sha256": "6e80b5108f805a0c4ee11fce56d56f149dc4a449c575108e5249e848a4638e7f",
+      "scanned": 4,
+      "processing": 0,
+      "byte_processing": 0,
+      "unresolved": 4,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "FG-116.epl",
+      "sha256": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+      "scanned": 6,
+      "processing": 2,
+      "byte_processing": 0,
+      "unresolved": 4,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "FG-2A.epl",
+      "sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+      "scanned": 6,
+      "processing": 2,
+      "byte_processing": 0,
+      "unresolved": 4,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "FG-401.epl",
+      "sha256": "0cc3444f095ccf4aa751f653e6aceb484d7bfaea73df30ccb68a7f2fccf46ef6",
+      "scanned": 6,
+      "processing": 0,
+      "byte_processing": 0,
+      "unresolved": 6,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "FG-73.epl",
+      "sha256": "b5204a61666943438690994b19ed52747de754aa0b6f741fe36a18df43053746",
+      "scanned": 4,
+      "processing": 0,
+      "byte_processing": 0,
+      "unresolved": 4,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "FG-76.epl",
+      "sha256": "1b4180667292124de2b2c64b20c581d2eb752ebffbb526c4d31c1ad9d1b237d8",
+      "scanned": 4,
+      "processing": 0,
+      "byte_processing": 1,
+      "unresolved": 3,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "FG-A.epl",
+      "sha256": "badeddab00efec8f803a56f6dd00a3cec7a7204d7ac3ba4793c095dbbb11c3cb",
+      "scanned": 4,
+      "processing": 0,
+      "byte_processing": 0,
+      "unresolved": 4,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "FG-Bomber.epl",
+      "sha256": "fb42be0d32d2c661da652f41efd0c51e530b29d3a25aab2cd46f509fa3ddfa2c",
+      "scanned": 4,
+      "processing": 0,
+      "byte_processing": 1,
+      "unresolved": 3,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "FG-N.epl",
+      "sha256": "e5a998d11bc57660fb7e500ad6805a2df1c0356650f43ce8eaefb8a4db9fc10b",
+      "scanned": 4,
+      "processing": 0,
+      "byte_processing": 1,
+      "unresolved": 3,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "FG-S.epl",
+      "sha256": "9c28aaba2ee2dc61f00d9231b9c84f02e364d8a323a93ccab7b7a08956da9a45",
+      "scanned": 4,
+      "processing": 0,
+      "byte_processing": 1,
+      "unresolved": 3,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "FG-Stress.epl",
+      "sha256": "2509a6f3480481feb15a0fde97abcb4acccfc6fc936f55f5e8c88b7c98edcd26",
+      "scanned": 4,
+      "processing": 0,
+      "byte_processing": 0,
+      "unresolved": 4,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "Gate Classic.epl",
+      "sha256": "c29d1d3a1d1a5047401613369bfa2df3492f3153ef134c0fa66c9c3d9cc92320",
+      "scanned": 4,
+      "processing": 0,
+      "byte_processing": 1,
+      "unresolved": 3,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "Gate Drums.epl",
+      "sha256": "3a2d979be9e3a684ba4274b7f481d10dbef9754ee93a9f671d2cd1daeb8c30f3",
+      "scanned": 4,
+      "processing": 0,
+      "byte_processing": 0,
+      "unresolved": 4,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "Hollywood.epl",
+      "sha256": "39e8a0b74093ee654dd2f7ce8aeee0b46f7279b19133226c3c952177863cf607",
+      "scanned": 4,
+      "processing": 0,
+      "byte_processing": 0,
+      "unresolved": 4,
+      "decoder_disagreements": 1
+    },
+    {
+      "name": "London.epl",
+      "sha256": "f4ac602d67b03e8f13bcdb04841aba7159a43c4a8c113861e711ed0bd67d30ce",
+      "scanned": 4,
+      "processing": 0,
+      "byte_processing": 1,
+      "unresolved": 3,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "New York.epl",
+      "sha256": "0258b5817750ad82c89dbee50bafdb41cad65edfcbd0d323a6a6124b3a2bccd1",
+      "scanned": 4,
+      "processing": 0,
+      "byte_processing": 1,
+      "unresolved": 3,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "Revival.epl",
+      "sha256": "f486272dc9741a6e3ef3f393cd14ef6cebbc795e4f3ac8fa20a683fbeb146867",
+      "scanned": 4,
+      "processing": 0,
+      "byte_processing": 1,
+      "unresolved": 3,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "The Monster.epl",
+      "sha256": "6aae06918694f6d9197f396896adbe9c8af150289930c466d7361d2b01aff45b",
+      "scanned": 4,
+      "processing": 0,
+      "byte_processing": 1,
+      "unresolved": 3,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "Trimmer.epl",
+      "sha256": "5dbed8fad7ff3e79263d00108bdedf766ca83c88b103e5e3613bf6567f73bb0c",
+      "scanned": 4,
+      "processing": 0,
+      "byte_processing": 1,
+      "unresolved": 3,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "U73b.epl",
+      "sha256": "47d8393eddba99816151e47dd0538fa012a9ea8b39b4547ef9afd19d88472856",
+      "scanned": 4,
+      "processing": 0,
+      "byte_processing": 0,
+      "unresolved": 4,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "VCC Channel.epl",
+      "sha256": "73747020e8996938b8e6fdff51004cff4ea85c95f992cbc8bc0d0896a80aad87",
+      "scanned": 7,
+      "processing": 1,
+      "byte_processing": 0,
+      "unresolved": 6,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "VCC MixBuss.epl",
+      "sha256": "fe077912d5396577fc6b32bcf0c4ba4b61d5e1f8089e961ce68dae22e1b0b500",
+      "scanned": 7,
+      "processing": 1,
+      "byte_processing": 1,
+      "unresolved": 5,
+      "decoder_disagreements": 0
+    },
+    {
+      "name": "VMC Classic Tubes.epl",
+      "sha256": "df4635dda8db8c15a3f1c478e39f8814d21370f05fa84a64d4cc1fb57762e0ef",
+      "scanned": 4,
+      "processing": 0,
+      "byte_processing": 0,
+      "unresolved": 4,
+      "decoder_disagreements": 0
+    }
+  ],
+  "disagreement": {
+    "module": "Hollywood.epl",
+    "start_rva": "0xc54140",
+    "end_rva": "0xc5450c",
+    "region_sha256": "c11d6274212d644d8ed142cc7ca5fd4e27ba37001903bcd9cb2e199dc8cb969e",
+    "gnu": "UNRESOLVED",
+    "llvm": "BYTE_PROCESSING_CANDIDATE",
+    "resolution": "UNRESOLVED"
+  },
+  "limits": "Two deterministic samples each from unique/all-module groups per module plus 15 exact prior anchors. No semantic ground truth or representative sample. Full output reproducible with role_corpus and existing inventory/focus reports."
+}

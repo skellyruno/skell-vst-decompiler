@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "type": "class_anchored_discovery_comparison",
+  "budget_per_strategy": 64,
+  "rows": [
+    {
+      "name": "A1TriggerGate-x64(1).vst3",
+      "sha256": "83a50c120301173e1aec1e537fa131b460d593fc7141fb4f39c8e813d99dabfc",
+      "root_regions": 23,
+      "scanned": 38,
+      "candidates": 7,
+      "uniform_candidates": 4,
+      "uniform_found_top": false,
+      "gnu_edges": 65,
+      "llvm_edges": 65,
+      "matched_edges": 65,
+      "same_top": true,
+      "top": {
+        "start_rva": "0x10ff20",
+        "end_rva_exclusive": "0x111469",
+        "region_sha256": "2af2f63935d3dd217e4fa3bb4a846490e2606fee16eef7321c4b83d37c27cb81",
+        "slot": 7,
+        "score": 214
+      }
+    },
+    {
+      "name": "Skell-Flang.vst3",
+      "sha256": "7aa775fa9109971739404853e8685ac391df24e1ffc58f942bc39f1fc9bd44d1",
+      "root_regions": 26,
+      "scanned": 57,
+      "candidates": 7,
+      "uniform_candidates": 3,
+      "uniform_found_top": false,
+      "gnu_edges": 110,
+      "llvm_edges": 110,
+      "matched_edges": 110,
+      "same_top": true,
+      "top": {
+        "start_rva": "0x21a480",
+        "end_rva_exclusive": "0x21b1fc",
+        "region_sha256": "343ccf74def7c758854cd0930903cf6aa13b77105c0945a5fc549d54c35534eb",
+        "slot": 6,
+        "score": 66
+      }
+    },
+    {
+      "name": "Skelly Master.vst3",
+      "sha256": "cc1945eecaefc53131b2d59ebe66c4da415549dae3bfc7bbfdce28abc87ab238",
+      "root_regions": 28,
+      "scanned": 60,
+      "candidates": 13,
+      "uniform_candidates": 4,
+      "uniform_found_top": false,
+      "gnu_edges": 56,
+      "llvm_edges": 56,
+      "matched_edges": 56,
+      "same_top": true,
+      "top": {
+        "start_rva": "0x1ebe40",
+        "end_rva_exclusive": "0x1ed93c",
+        "region_sha256": "adb5fe6ea8342be2c9336a1182a3671c9d8bf0efce150d02820dbba5bae6b1ac",
+        "slot": 10,
+        "score": 336
+      }
+    }
+  ],
+  "a1_intake": {
+    "bytes": 4421632,
+    "sha256": "83a50c120301173e1aec1e537fa131b460d593fc7141fb4f39c8e813d99dabfc",
+    "format": "PE32+ x64 VST3",
+    "image_base": "0x180000000",
+    "runtime_records": 12143,
+    "ordinary_import_modules": 14,
+    "processor_type": ".?AVA1TriggerGateAudioProcessor@@",
+    "base_type": ".?AVAudioProcessor@juce@@",
+    "vtable_rva": "0x35f310",
+    "processor_candidate_rva": "0x10ff20",
+    "processor_direct_call_sites": 33,
+    "gnu_instruction_count": 1191,
+    "gnu_instruction_addresses_and_mnemonics_matched_in_llvm": 1191,
+    "llvm_instruction_count": 1194,
+    "scopes": [
+      {
+        "id": "pattern_index",
+        "start_rva": "0x11099f",
+        "end_rva_exclusive": "0x1109e4",
+        "matched_gnu_instructions": 14,
+        "region_sha256": "35b21a0127164208388d2d3de83de52bc4e4cba60fdcca8fae89525d05e9604e"
+      },
+      {
+        "id": "envelope_state",
+        "start_rva": "0x110a20",
+        "end_rva_exclusive": "0x110e2e",
+        "matched_gnu_instructions": 229,
+        "region_sha256": "d49cd82fe2d1e20f72937437136906c85446b859356ea88d4fff13be9106fa62"
+      },
+      {
+        "id": "stereo_gain_mix",
+        "start_rva": "0x110ee6",
+        "end_rva_exclusive": "0x110f81",
+        "matched_gnu_instructions": 36,
+        "region_sha256": "9ee6e16e78db4e7fee74ae83ff77d5d0f673606f9fc38478de26014da5e22bcd"
+      },
+      {
+        "id": "buffer_read_write",
+        "start_rva": "0x111002",
+        "end_rva_exclusive": "0x1110e8",
+        "matched_gnu_instructions": 59,
+        "region_sha256": "a1a8ecb0d7b665b52d054ad7c5a1db82dfbe3335b5924c212f49c420d86dd3d3"
+      },
+      {
+        "id": "sample_loop",
+        "start_rva": "0x111394",
+        "end_rva_exclusive": "0x111416",
+        "matched_gnu_instructions": 22,
+        "region_sha256": "672416f722a231d48390af255bc0491dd3cd51f998701e8d7cf77bfa177d25b4"
+      }
+    ]
+  },
+  "limits": "Counts are static navigation, not algorithm accuracy. Top candidate ranking may include mathematical/library code. No vendor execution, runtime parameter mapping, or exact sound reconstruction. Whole current-head suite pending."
+}

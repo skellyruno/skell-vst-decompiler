@@ -1,0 +1,515 @@
+{
+  "schema_version": 1,
+  "binaries": [
+    {
+      "binary": "FG-116.epl",
+      "binary_sha256": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+      "wrappers": [
+        {
+          "wrapper_rva": "0x160540",
+          "wrapper_bytes": 537,
+          "wrapper_instructions": 117,
+          "wrapper_sha256": "14dd38c3bbc027a00fe482bbd7db3b86f9015ba9e3e83163f149087652b87a96",
+          "table_rva": "0xfef548",
+          "selector_field": "0xd0",
+          "selector_read_sites": [
+            "0x16069f",
+            "0x16072e"
+          ],
+          "indexed_call_sites": [
+            "0x1606a6",
+            "0x160735"
+          ],
+          "sampled_slots": [
+            {
+              "slot": 0,
+              "target_rva": "0x156ae0",
+              "unwind_region": null
+            },
+            {
+              "slot": 1,
+              "target_rva": "0x1569c0",
+              "unwind_region": {
+                "start_rva": "0x1569c0",
+                "end_rva_exclusive": "0x156a4e",
+                "unwind_rva": "0xf81648",
+                "bytes": 142
+              }
+            },
+            {
+              "slot": 2,
+              "target_rva": "0x156840",
+              "unwind_region": {
+                "start_rva": "0x156840",
+                "end_rva_exclusive": "0x15690a",
+                "unwind_rva": "0xf816dc",
+                "bytes": 202
+              }
+            },
+            {
+              "slot": 3,
+              "target_rva": "0x162e50",
+              "unwind_region": {
+                "start_rva": "0x162e50",
+                "end_rva_exclusive": "0x162f38",
+                "unwind_rva": "0xf815fc",
+                "bytes": 232
+              }
+            },
+            {
+              "slot": 4,
+              "target_rva": "0x1619a0",
+              "unwind_region": {
+                "start_rva": "0x1619a0",
+                "end_rva_exclusive": "0x162418",
+                "unwind_rva": "0xf816b4",
+                "bytes": 2680
+              }
+            },
+            {
+              "slot": 5,
+              "target_rva": "0x1619a0",
+              "unwind_region": {
+                "start_rva": "0x1619a0",
+                "end_rva_exclusive": "0x162418",
+                "unwind_rva": "0xf816b4",
+                "bytes": 2680
+              }
+            }
+          ],
+          "slot45_target_sha256": "d3a8ccc832ddb966c898f84333e2d410afaaca8f34748eaeee5e271cb7d642b4",
+          "slot45_instruction_count": 607,
+          "slot45_direct_call_count": 24,
+          "slot45_unique_direct_targets": 13,
+          "slot45_indirect_call_count": 0,
+          "slot45_atlas_overlap": [
+            "vmr_control_streams.json::fg116_envelope_call",
+            "vmr_control_streams.json::fg116_input_slew",
+            "vmr_effect_paths.json::effect_candidate"
+          ]
+        },
+        {
+          "wrapper_rva": "0x160910",
+          "wrapper_bytes": 341,
+          "wrapper_instructions": 81,
+          "wrapper_sha256": "c199ea21bfe2179a9998c3791bcabd70b1dcae9e4b79a0160393db01b728098e",
+          "table_rva": "0xfef518",
+          "selector_field": "0xd0",
+          "selector_read_sites": [
+            "0x1609f3",
+            "0x160a3d"
+          ],
+          "indexed_call_sites": [
+            "0x1609fa",
+            "0x160a44"
+          ],
+          "sampled_slots": [
+            {
+              "slot": 0,
+              "target_rva": "0x156af0",
+              "unwind_region": null
+            },
+            {
+              "slot": 1,
+              "target_rva": "0x156a50",
+              "unwind_region": {
+                "start_rva": "0x156a50",
+                "end_rva_exclusive": "0x156ade",
+                "unwind_rva": "0xf81648",
+                "bytes": 142
+              }
+            },
+            {
+              "slot": 2,
+              "target_rva": "0x156910",
+              "unwind_region": {
+                "start_rva": "0x156910",
+                "end_rva_exclusive": "0x1569b7",
+                "unwind_rva": "0xf81648",
+                "bytes": 167
+              }
+            },
+            {
+              "slot": 3,
+              "target_rva": "0x162f40",
+              "unwind_region": {
+                "start_rva": "0x162f40",
+                "end_rva_exclusive": "0x163014",
+                "unwind_rva": "0xf815fc",
+                "bytes": 212
+              }
+            },
+            {
+              "slot": 4,
+              "target_rva": "0x162420",
+              "unwind_region": {
+                "start_rva": "0x162420",
+                "end_rva_exclusive": "0x162e4c",
+                "unwind_rva": "0xf81610",
+                "bytes": 2604
+              }
+            },
+            {
+              "slot": 5,
+              "target_rva": "0x162420",
+              "unwind_region": {
+                "start_rva": "0x162420",
+                "end_rva_exclusive": "0x162e4c",
+                "unwind_rva": "0xf81610",
+                "bytes": 2604
+              }
+            }
+          ],
+          "slot45_target_sha256": "3f98ae26407aab19ebebc501fce5eda74e922dcab0125f74b50e75048c395ee2",
+          "slot45_instruction_count": 571,
+          "slot45_direct_call_count": 24,
+          "slot45_unique_direct_targets": 13,
+          "slot45_indirect_call_count": 0,
+          "slot45_atlas_overlap": []
+        }
+      ],
+      "limits": "Six sampled slots only; no table extent or runtime selection inferred. Unwind ranges and overlap are navigation evidence, not algorithm identity."
+    },
+    {
+      "binary": "FG-2A.epl",
+      "binary_sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+      "wrappers": [
+        {
+          "wrapper_rva": "0x1561c0",
+          "wrapper_bytes": 537,
+          "wrapper_instructions": 117,
+          "wrapper_sha256": "0dfa9a35e828ed1f7deaf9c8fdd3645cba8938bcda5103c798610cc4c793824f",
+          "table_rva": "0x1008518",
+          "selector_field": "0x190",
+          "selector_read_sites": [
+            "0x15631f",
+            "0x1563ae"
+          ],
+          "indexed_call_sites": [
+            "0x156326",
+            "0x1563b5"
+          ],
+          "sampled_slots": [
+            {
+              "slot": 0,
+              "target_rva": "0x144c90",
+              "unwind_region": null
+            },
+            {
+              "slot": 1,
+              "target_rva": "0x144b70",
+              "unwind_region": {
+                "start_rva": "0x144b70",
+                "end_rva_exclusive": "0x144bfe",
+                "unwind_rva": "0xf9aedc",
+                "bytes": 142
+              }
+            },
+            {
+              "slot": 2,
+              "target_rva": "0x1449f0",
+              "unwind_region": {
+                "start_rva": "0x1449f0",
+                "end_rva_exclusive": "0x144aba",
+                "unwind_rva": "0xf9afd8",
+                "bytes": 202
+              }
+            },
+            {
+              "slot": 3,
+              "target_rva": "0x1573c0",
+              "unwind_region": {
+                "start_rva": "0x1573c0",
+                "end_rva_exclusive": "0x15749d",
+                "unwind_rva": "0xf9afa0",
+                "bytes": 221
+              }
+            },
+            {
+              "slot": 4,
+              "target_rva": "0x156b20",
+              "unwind_region": {
+                "start_rva": "0x156b20",
+                "end_rva_exclusive": "0x156ffb",
+                "unwind_rva": "0xf9afbc",
+                "bytes": 1243
+              }
+            },
+            {
+              "slot": 5,
+              "target_rva": "0x156b20",
+              "unwind_region": {
+                "start_rva": "0x156b20",
+                "end_rva_exclusive": "0x156ffb",
+                "unwind_rva": "0xf9afbc",
+                "bytes": 1243
+              }
+            }
+          ],
+          "slot45_target_sha256": "8b1907f4c1f9654438908872d95c3142c3e274a28816915b14711fdb67660000",
+          "slot45_instruction_count": 239,
+          "slot45_direct_call_count": 14,
+          "slot45_unique_direct_targets": 7,
+          "slot45_indirect_call_count": 0,
+          "slot45_atlas_overlap": [
+            "vmr_effect_paths.json::effect_candidate",
+            "vmr_fg2a_coefficient_provenance.json::fg2a_processing_object",
+            "vmr_fg2a_filter_provenance.json::fg2a_filter_processing_parent"
+          ]
+        },
+        {
+          "wrapper_rva": "0x156590",
+          "wrapper_bytes": 341,
+          "wrapper_instructions": 81,
+          "wrapper_sha256": "045e79b32c6b73112a6d61d74be92cb3c1f23e8058676cc09e4a4207738bd5a6",
+          "table_rva": "0x10084e8",
+          "selector_field": "0x190",
+          "selector_read_sites": [
+            "0x156673",
+            "0x1566bd"
+          ],
+          "indexed_call_sites": [
+            "0x15667a",
+            "0x1566c4"
+          ],
+          "sampled_slots": [
+            {
+              "slot": 0,
+              "target_rva": "0x144ca0",
+              "unwind_region": null
+            },
+            {
+              "slot": 1,
+              "target_rva": "0x144c00",
+              "unwind_region": {
+                "start_rva": "0x144c00",
+                "end_rva_exclusive": "0x144c8e",
+                "unwind_rva": "0xf9aedc",
+                "bytes": 142
+              }
+            },
+            {
+              "slot": 2,
+              "target_rva": "0x144ac0",
+              "unwind_region": {
+                "start_rva": "0x144ac0",
+                "end_rva_exclusive": "0x144b67",
+                "unwind_rva": "0xf9aedc",
+                "bytes": 167
+              }
+            },
+            {
+              "slot": 3,
+              "target_rva": "0x1574a0",
+              "unwind_region": {
+                "start_rva": "0x1574a0",
+                "end_rva_exclusive": "0x157522",
+                "unwind_rva": "0xf9aeb0",
+                "bytes": 130
+              }
+            },
+            {
+              "slot": 4,
+              "target_rva": "0x157000",
+              "unwind_region": {
+                "start_rva": "0x157000",
+                "end_rva_exclusive": "0x1573b9",
+                "unwind_rva": "0xf9aec0",
+                "bytes": 953
+              }
+            },
+            {
+              "slot": 5,
+              "target_rva": "0x157000",
+              "unwind_region": {
+                "start_rva": "0x157000",
+                "end_rva_exclusive": "0x1573b9",
+                "unwind_rva": "0xf9aec0",
+                "bytes": 953
+              }
+            }
+          ],
+          "slot45_target_sha256": "98305d445c5e1aabf82b5ba888e187bb4ffebf16c6e76132db0e713c1c0d3880",
+          "slot45_instruction_count": 193,
+          "slot45_direct_call_count": 14,
+          "slot45_unique_direct_targets": 7,
+          "slot45_indirect_call_count": 0,
+          "slot45_atlas_overlap": []
+        }
+      ],
+      "limits": "Six sampled slots only; no table extent or runtime selection inferred. Unwind ranges and overlap are navigation evidence, not algorithm identity."
+    },
+    {
+      "binary": "FG-Stress.epl",
+      "binary_sha256": "2509a6f3480481feb15a0fde97abcb4acccfc6fc936f55f5e8c88b7c98edcd26",
+      "wrappers": [
+        {
+          "wrapper_rva": "0x160a30",
+          "wrapper_bytes": 537,
+          "wrapper_instructions": 117,
+          "wrapper_sha256": "c1c1f761aace9189190bccafbcb461a1f7b334c77f6df36cb9cefeb20762dfc3",
+          "table_rva": "0x1014588",
+          "selector_field": "0x360",
+          "selector_read_sites": [
+            "0x160b8f",
+            "0x160c1e"
+          ],
+          "indexed_call_sites": [
+            "0x160b96",
+            "0x160c25"
+          ],
+          "sampled_slots": [
+            {
+              "slot": 0,
+              "target_rva": "0x1556b0",
+              "unwind_region": null
+            },
+            {
+              "slot": 1,
+              "target_rva": "0x155590",
+              "unwind_region": {
+                "start_rva": "0x155590",
+                "end_rva_exclusive": "0x15561e",
+                "unwind_rva": "0xfa5f58",
+                "bytes": 142
+              }
+            },
+            {
+              "slot": 2,
+              "target_rva": "0x155410",
+              "unwind_region": {
+                "start_rva": "0x155410",
+                "end_rva_exclusive": "0x1554da",
+                "unwind_rva": "0xfa6000",
+                "bytes": 202
+              }
+            },
+            {
+              "slot": 3,
+              "target_rva": "0x164890",
+              "unwind_region": {
+                "start_rva": "0x164890",
+                "end_rva_exclusive": "0x16495f",
+                "unwind_rva": "0xfa5940",
+                "bytes": 207
+              }
+            },
+            {
+              "slot": 4,
+              "target_rva": "0x162790",
+              "unwind_region": {
+                "start_rva": "0x162790",
+                "end_rva_exclusive": "0x1638b6",
+                "unwind_rva": "0xfa5fd8",
+                "bytes": 4390
+              }
+            },
+            {
+              "slot": 5,
+              "target_rva": "0x162790",
+              "unwind_region": {
+                "start_rva": "0x162790",
+                "end_rva_exclusive": "0x1638b6",
+                "unwind_rva": "0xfa5fd8",
+                "bytes": 4390
+              }
+            }
+          ],
+          "slot45_target_sha256": "63fd4dab7fe2196410a2698271140dd688b61a4970d4ddfa14adadb7edaf4045",
+          "slot45_instruction_count": 851,
+          "slot45_direct_call_count": 39,
+          "slot45_unique_direct_targets": 18,
+          "slot45_indirect_call_count": 15,
+          "slot45_atlas_overlap": [
+            "vmr_control_streams.json::stress_bounds_setup",
+            "vmr_control_streams.json::stress_control_history",
+            "vmr_control_streams.json::stress_control_pair",
+            "vmr_effect_paths.json::effect_candidate",
+            "vmr_nonlinear_paths.json::stress_curve_caller",
+            "vmr_nonlinear_paths.json::stress_piecewise"
+          ]
+        },
+        {
+          "wrapper_rva": "0x160e00",
+          "wrapper_bytes": 341,
+          "wrapper_instructions": 81,
+          "wrapper_sha256": "d58ae7e2d2260a42292615e5654b1c43cf3616cee8dc12a3464764574b7dca95",
+          "table_rva": "0x1014558",
+          "selector_field": "0x360",
+          "selector_read_sites": [
+            "0x160ee3",
+            "0x160f2d"
+          ],
+          "indexed_call_sites": [
+            "0x160eea",
+            "0x160f34"
+          ],
+          "sampled_slots": [
+            {
+              "slot": 0,
+              "target_rva": "0x1556c0",
+              "unwind_region": null
+            },
+            {
+              "slot": 1,
+              "target_rva": "0x155620",
+              "unwind_region": {
+                "start_rva": "0x155620",
+                "end_rva_exclusive": "0x1556ae",
+                "unwind_rva": "0xfa5f58",
+                "bytes": 142
+              }
+            },
+            {
+              "slot": 2,
+              "target_rva": "0x1554e0",
+              "unwind_region": {
+                "start_rva": "0x1554e0",
+                "end_rva_exclusive": "0x155587",
+                "unwind_rva": "0xfa5f58",
+                "bytes": 167
+              }
+            },
+            {
+              "slot": 3,
+              "target_rva": "0x164960",
+              "unwind_region": {
+                "start_rva": "0x164960",
+                "end_rva_exclusive": "0x1649fd",
+                "unwind_rva": "0xfa58d0",
+                "bytes": 157
+              }
+            },
+            {
+              "slot": 4,
+              "target_rva": "0x1638c0",
+              "unwind_region": {
+                "start_rva": "0x1638c0",
+                "end_rva_exclusive": "0x164889",
+                "unwind_rva": "0xfa5f34",
+                "bytes": 4041
+              }
+            },
+            {
+              "slot": 5,
+              "target_rva": "0x1638c0",
+              "unwind_region": {
+                "start_rva": "0x1638c0",
+                "end_rva_exclusive": "0x164889",
+                "unwind_rva": "0xfa5f34",
+                "bytes": 4041
+              }
+            }
+          ],
+          "slot45_target_sha256": "ad1e01d5075fa539f519891be87c1076259ae635955c6a68461f51f81d63865a",
+          "slot45_instruction_count": 788,
+          "slot45_direct_call_count": 38,
+          "slot45_unique_direct_targets": 18,
+          "slot45_indirect_call_count": 15,
+          "slot45_atlas_overlap": []
+        }
+      ],
+      "limits": "Six sampled slots only; no table extent or runtime selection inferred. Unwind ranges and overlap are navigation evidence, not algorithm identity."
+    }
+  ]
+}

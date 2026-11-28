@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "report_kind": "reference_audio_and_chained_unwind_lab",
+  "source_commit": "b2764112fa0b28845c6a06e6b5efd3bdb0cd18f6",
+  "previous_ci": {
+    "tests": 173,
+    "all_eight_passed": true,
+    "run_ids": [
+      45525369022,
+      45525368799,
+      45525368636,
+      45525368891,
+      45525368644,
+      45525368627,
+      45525368625,
+      45525368631
+    ]
+  },
+  "local_validation": {
+    "six_focused_tests": "passed",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "soundfile": "0.13.1",
+    "probe_generation": {
+      "sample_rates": [
+        44100,
+        48000,
+        96000
+      ],
+      "cases_per_rate": 11,
+      "finite_and_peak_bounded": true
+    },
+    "fit_known_owned_fixture": {
+      "threshold_rms_db": -24.000000067086113,
+      "ratio": 4.00000007563883,
+      "makeup_db": 2.0000000523564894,
+      "threshold_bracketed": true,
+      "train_rmse_db": 2.342032288687612e-8,
+      "heldout_rmse_db": 6.482710154503267e-8,
+      "heldout_constant_gain_rmse_db": 5.3132737407976895
+    },
+    "synthetic_release_and_pitch_controls": {
+      "known_tau_ms": 150,
+      "estimated_tau_ms": 150.00650433413688,
+      "known_shift_cents": 100,
+      "pitch_median_cents": 100.00218470456622,
+      "max_pitch_error_cents": 0.01351242683263365
+    },
+    "verified_probe_pack": {
+      "sample_rate": 48000,
+      "files": 17,
+      "bytes": 3035651,
+      "sha256": "231d7f085860dbbf8c5ff9a1fdc26b9ff4b075f6d6c4bac1152403fec4142027",
+      "zip_crc": "passed"
+    },
+    "tested_python_blobs": {
+      "skell_vst_decompiler/reference_lab.py": "23aace9c6a19bfd113d8761049d9c865ed8acb5a",
+      "tests/test_reference_lab.py": "1b294deb25db5da36d7298349922dc2240f406d3",
+      "skell_vst_decompiler/unwind_chain.py": "0217f6e8bca2dc54f52f7ae940ea0ff649d41885",
+      "tests/test_unwind_chain.py": "37305a1ac4adf718d780fde283d6cbcc2d54068a"
+    },
+    "dependency_blobs": {
+      "pitch_reference": "b2a59e6b66c04d8ee7e19f5dbd95ca3332161c63",
+      "extent_coverage": "3b006d491f0356ffa377259ef89b3cc65f841b0e"
+    }
+  },
+  "original_metadata": {
+    "all_six_sha256_matched": true,
+    "verified_vmr_archive_sha256": "353f23373ac05d7b2121c313073f08c708e879d839115d4ce5d30657732f481e",
+    "chain_records_resolved": 27707,
+    "chains": {
+      "TVB": {
+        "binary_sha256": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
+        "applicable": true,
+        "runtime_records": 34461,
+        "chain_flag_records": 11314,
+        "parsed_chain_records": 11314,
+        "unsupported_version": 0,
+        "invalid_chain_metadata": 0,
+        "outcomes": {
+          "resolved_table_root": 11314
+        },
+        "resolved_depth_histogram": {
+          "1": 9262,
+          "2": 1755,
+          "3": 251,
+          "4": 40,
+          "5": 6
+        },
+        "distinct_resolved_roots": 3889,
+        "largest_chain_group": 12
+      },
+      "VMR rack": {
+        "binary_sha256": "8da77cc3d3e9935db56f56dabc586f1ff38dc1e667fa9ff6a9fbc2302f66c838",
+        "applicable": true,
+        "runtime_records": 26853,
+        "chain_flag_records": 5368,
+        "parsed_chain_records": 5368,
+        "unsupported_version": 0,
+        "invalid_chain_metadata": 0,
+        "outcomes": {
+          "resolved_table_root": 5368
+        },
+        "resolved_depth_histogram": {
+          "1": 4470,
+          "2": 767,
+          "3": 115,
+          "4": 14,
+          "5": 2
+        },
+        "distinct_resolved_roots": 1902,
+        "largest_chain_group": 16
+      },
+      "FG-116": {
+        "binary_sha256": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+        "applicable": true,
+        "runtime_records": 20110,
+        "chain_flag_records": 3706,
+        "parsed_chain_records": 3706,
+        "unsupported_version": 0,
+        "invalid_chain_metadata": 0,
+        "outcomes": {
+          "resolved_table_root": 3706
+        },
+        "resolved_depth_histogram": {
+          "1": 3150,
+          "2": 473,
+          "3": 69,
+          "4": 12,
+          "5": 2
+        },
+        "distinct_resolved_roots": 1298,
+        "largest_chain_group": 16
+      },
+      "FG-2A": {
+        "binary_sha256": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+        "applicable": true,
+        "runtime_records": 19781,
+        "chain_flag_records": 3594,
+        "parsed_chain_records": 3594,
+        "unsupported_version": 0,
+        "invalid_chain_metadata": 0,
+        "outcomes": {
+          "resolved_table_root": 3594
+        },
+        "resolved_depth_histogram": {
+          "1": 3062,
+          "2": 446,
+          "3": 68,
+          "4": 14,
+          "5": 4
+        },
+        "distinct_resolved_roots": 1290,
+        "largest_chain_group": 16
+      },
+      "FG-Stress": {
+        "binary_sha256": "2509a6f3480481feb15a0fde97abcb4acccfc6fc936f55f5e8c88b7c98edcd26",
+        "applicable": true,
+        "runtime_records": 20224,
+        "chain_flag_records": 3725,
+        "parsed_chain_records": 3725,
+        "unsupported_version": 0,
+        "invalid_chain_metadata": 0,
+        "outcomes": {
+          "resolved_table_root": 3725
+        },
+        "resolved_depth_histogram": {
+          "1": 3168,
+          "2": 476,
+          "3": 67,
+          "4": 12,
+          "5": 2
+        },
+        "distinct_resolved_roots": 1305,
+        "largest_chain_group": 16
+      },
+      "Evo": {
+        "binary_sha256": "278d03b4a88fe6ef59b48e5c1f70bc921b3ae530ea672879ef2ae21f0ce873d5",
+        "applicable": false
+      }
+    }
+  },
+  "pcode": {
+    "status": "implemented_unverified",
+    "blobs": {
+      "skell_vst_decompiler/ghidra_scripts/SkellPcodeSummary.java": "7769f946e22d2d96d201f1009b4608142587906b",
+      "tests/pcode_smoke.py": "2a2021411db427bdfe38bed5eaf01e210c3c7bc6"
+    },
+    "python_compile": "passed",
+    "ghidra_java_compile_and_run": "pending CI; Ghidra unavailable locally",
+    "scope": "owned fixture only"
+  },
+  "limitations": "No reference plugin loaded or executed; no commercial renders available in this batch. No proprietary source or algorithm recovered. Exact hashes verify source and wet file identity, not the truth of declared settings, origin or transport alignment. Release and pitch controls are synthetic known generators, not a native commercial effect. No full sweep deconvolution, formant analysis, differentiable modeling, host CPU/latency, actual plugin A/B or Sound Match/FIF Ears integration completed. Unwind root membership is metadata only, not semantic validation of unwinding, runtime call paths, or function completeness. FG-2A disputed 595 scope observations remain unresolved."
+}

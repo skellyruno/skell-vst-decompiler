@@ -1,0 +1,365 @@
+{
+  "schema": 1,
+  "baseline": "3f1f15c82b340020662a5d963f4052ec90284b69",
+  "scope": "Read-only public PE headers plus selected ordinary audio code windows; no activation/protection analysis or vendor code reproduction.",
+  "metadata": [
+    {
+      "name": "StandardCLIP.vst3",
+      "sha256": "000aff8f9983d55bcb91853c4639e2063185ca036039adaf1cc82bfb0abd7f8b",
+      "dll_characteristics": "0x160",
+      "dynamic_base": true,
+      "nx_compat": true,
+      "high_entropy_va": true,
+      "guard_cf": false,
+      "certificate_table_present": true,
+      "certificate_table_file_bounded": true
+    },
+    {
+      "name": "MixWave DW Fearn VT-5.vst3",
+      "sha256": "e90bef94adad1518c828d1a23704bd11d998c55c137939830beb4402e67c8e04",
+      "dll_characteristics": "0x120",
+      "dynamic_base": false,
+      "nx_compat": true,
+      "high_entropy_va": true,
+      "guard_cf": false,
+      "certificate_table_present": false,
+      "certificate_table_file_bounded": false
+    },
+    {
+      "name": "Auto-Key.vst3",
+      "sha256": "5b75ab74781e4108b09d035a4a140e714da648968d64114f9337d76598a42dbc",
+      "dll_characteristics": "0x120",
+      "dynamic_base": false,
+      "nx_compat": true,
+      "high_entropy_va": true,
+      "guard_cf": false,
+      "certificate_table_present": false,
+      "certificate_table_file_bounded": false
+    },
+    {
+      "name": "DeeDoubler.vst3",
+      "sha256": "0fca35f1e73496a967fb871b83efcbf17de825e574e1a943bb2cd7bb28d3a56c",
+      "dll_characteristics": "0x160",
+      "dynamic_base": true,
+      "nx_compat": true,
+      "high_entropy_va": true,
+      "guard_cf": false,
+      "certificate_table_present": true,
+      "certificate_table_file_bounded": true
+    },
+    {
+      "name": "MB MixHead.vst3",
+      "sha256": "9575f1a0cdc5152045c2f631a047648cacca6e49d7b515f6fd7994adc703075f",
+      "dll_characteristics": "0x160",
+      "dynamic_base": true,
+      "nx_compat": true,
+      "high_entropy_va": true,
+      "guard_cf": false,
+      "certificate_table_present": false,
+      "certificate_table_file_bounded": false
+    },
+    {
+      "name": "SSL Fusion Stereo Image.vst3",
+      "sha256": "31de6c45f42af28bbb74d144c6dd3b9116f1d0d8c22a0eef508df37279b1eaf5",
+      "dll_characteristics": "0x120",
+      "dynamic_base": false,
+      "nx_compat": true,
+      "high_entropy_va": true,
+      "guard_cf": false,
+      "certificate_table_present": false,
+      "certificate_table_file_bounded": false
+    },
+    {
+      "name": "Auburn Sounds Panagement 2-64.vst3",
+      "sha256": "2a18419eff9338b67d22049dc6b7b628e7b420bf48850e66ed5dee7a7c398f25",
+      "dll_characteristics": "0x160",
+      "dynamic_base": true,
+      "nx_compat": true,
+      "high_entropy_va": true,
+      "guard_cf": false,
+      "certificate_table_present": true,
+      "certificate_table_file_bounded": true
+    },
+    {
+      "name": "Trackspacer25.vst3",
+      "sha256": "f7dab96048b6d0def84b0be2395244f01e54dc71d6b99e769630fbe6c37b6242",
+      "dll_characteristics": "0x160",
+      "dynamic_base": true,
+      "nx_compat": true,
+      "high_entropy_va": true,
+      "guard_cf": false,
+      "certificate_table_present": false,
+      "certificate_table_file_bounded": false
+    },
+    {
+      "name": "Brauer Motion.dll",
+      "sha256": "8d76785017eb57c3cdab85a964bf559706450800159e65e84fdce377c541f2e5",
+      "dll_characteristics": "0x160",
+      "dynamic_base": true,
+      "nx_compat": true,
+      "high_entropy_va": true,
+      "guard_cf": false,
+      "certificate_table_present": true,
+      "certificate_table_file_bounded": true
+    },
+    {
+      "name": "Waves StudioRack for OBS.dll",
+      "sha256": "918cbd319b28d10ad72758476172549b402d69c06fe5d9b61f3a10665dde6067",
+      "dll_characteristics": "0x160",
+      "dynamic_base": true,
+      "nx_compat": true,
+      "high_entropy_va": true,
+      "guard_cf": false,
+      "certificate_table_present": true,
+      "certificate_table_file_bounded": true
+    },
+    {
+      "name": "TVB Rack V2.vst3",
+      "sha256": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
+      "dll_characteristics": "0x160",
+      "dynamic_base": true,
+      "nx_compat": true,
+      "high_entropy_va": true,
+      "guard_cf": false,
+      "certificate_table_present": true,
+      "certificate_table_file_bounded": true
+    },
+    {
+      "name": "A1TriggerGate-x64.vst3",
+      "sha256": "83a50c120301173e1aec1e537fa131b460d593fc7141fb4f39c8e813d99dabfc",
+      "dll_characteristics": "0x160",
+      "dynamic_base": true,
+      "nx_compat": true,
+      "high_entropy_va": true,
+      "guard_cf": false,
+      "certificate_table_present": false,
+      "certificate_table_file_bounded": false
+    },
+    {
+      "name": "Gem Dopamine-64.vst3",
+      "sha256": "dc923f6507cc891e0417854178f1db2eb84965040aa661c9c144649548dffb6f",
+      "dll_characteristics": "0x120",
+      "dynamic_base": false,
+      "nx_compat": true,
+      "high_entropy_va": true,
+      "guard_cf": false,
+      "certificate_table_present": true,
+      "certificate_table_file_bounded": true
+    }
+  ],
+  "metadata_limits": "Declared flags only; no actual exploit mitigation or Authenticode trust verification. No certificate table does not exclude external catalog signing. Exact file build only.",
+  "trackspacer": {
+    "sha256": "f7dab96048b6d0def84b0be2395244f01e54dc71d6b99e769630fbe6c37b6242",
+    "scopes": [
+      {
+        "start": "0x18570",
+        "end_exclusive": "0x186d3",
+        "sha256": "8b172ec7d63995c6707eb37b20834e617d4b25a1c2d84f8bc20ea32135bf1a9b",
+        "mnemonic_agreement_sites": [
+          "0x185bf",
+          "0x185c4",
+          "0x185c9",
+          "0x185f1",
+          "0x185fb",
+          "0x18605",
+          "0x18634",
+          "0x18663",
+          "0x186c4"
+        ]
+      },
+      {
+        "start": "0x188f0",
+        "end_exclusive": "0x18b96",
+        "sha256": "10ccee229fa735db1c7d129324bf6b58e008d8091abdddfc8709ff503871b17f",
+        "mnemonic_agreement_sites": [
+          "0x18971",
+          "0x18976",
+          "0x1897b",
+          "0x18988",
+          "0x189a8",
+          "0x189b3",
+          "0x189b8",
+          "0x189bc",
+          "0x189fb",
+          "0x18a17",
+          "0x18a45",
+          "0x18a51"
+        ]
+      },
+      {
+        "start": "0x19200",
+        "end_exclusive": "0x192bf",
+        "sha256": "056b7ee6ddc202ae27f341837399b35eda6add60e48e818bfd5ca9c5928a5803",
+        "mnemonic_agreement_sites": [
+          "0x1921d",
+          "0x19225",
+          "0x1922a",
+          "0x19262",
+          "0x19266",
+          "0x19274",
+          "0x19287",
+          "0x1928c",
+          "0x192af",
+          "0x192b4"
+        ]
+      },
+      {
+        "start": "0x192c0",
+        "end_exclusive": "0x193ab",
+        "sha256": "0b0616e6004a8a89af5105065940ce5d686f587954aba5620a803c9c6f2e26b5",
+        "mnemonic_agreement_sites": [
+          "0x192e2",
+          "0x192ea",
+          "0x192ef",
+          "0x19307",
+          "0x19335",
+          "0x19346",
+          "0x1934a",
+          "0x1935d",
+          "0x1936d",
+          "0x19392",
+          "0x193a0"
+        ]
+      },
+      {
+        "start": "0x1511ae",
+        "end_exclusive": "0x1511f5",
+        "sha256": "ef3edc4cd82512b64a69efd39eaea051c4122c4897d2161ea190cbf3c5350c45",
+        "mnemonic_agreement_sites": [
+          "0x1511b7",
+          "0x1511d0",
+          "0x1511d3",
+          "0x1511d7",
+          "0x1511da",
+          "0x1511de",
+          "0x1511e1",
+          "0x1511e4",
+          "0x1511e8"
+        ]
+      },
+      {
+        "start": "0x151b24",
+        "end_exclusive": "0x151baa",
+        "sha256": "a0bd5830ca02c78a51a6cf2d534c64ae2e38fcdb2cdcaadc8f55160224843775",
+        "mnemonic_agreement_sites": [
+          "0x151b2e",
+          "0x151b60",
+          "0x151b68",
+          "0x151b6c",
+          "0x151b79",
+          "0x151b86",
+          "0x151b8a",
+          "0x151b9c",
+          "0x151ba0",
+          "0x151ba5"
+        ]
+      },
+      {
+        "start": "0x151d45",
+        "end_exclusive": "0x151dd9",
+        "sha256": "710ca9101e76fb42545bddbb8391bc4cbf284210381ddc1e013edf570bbd6417",
+        "mnemonic_agreement_sites": [
+          "0x151d51",
+          "0x151d88",
+          "0x151d90",
+          "0x151d9b",
+          "0x151da3",
+          "0x151db6",
+          "0x151dba",
+          "0x151dd5"
+        ]
+      }
+    ],
+    "standard_math_identity_checks": {
+      "pi": true,
+      "one": true,
+      "taylor_cubic_one_third": true
+    },
+    "verified_direct_calls": [
+      {
+        "site": "0x15268c",
+        "target": "0x188f0",
+        "dual_decoder_and_E8_bytes": true
+      },
+      {
+        "site": "0x150ca9",
+        "target": "0x188f0",
+        "dual_decoder_and_E8_bytes": true
+      },
+      {
+        "site": "0x152737",
+        "target": "0x18570",
+        "dual_decoder_and_E8_bytes": true
+      },
+      {
+        "site": "0x1511b7",
+        "target": "0x18570",
+        "dual_decoder_and_E8_bytes": true
+      },
+      {
+        "site": "0x152779",
+        "target": "0x192c0",
+        "dual_decoder_and_E8_bytes": true
+      },
+      {
+        "site": "0x151b2e",
+        "target": "0x192c0",
+        "dual_decoder_and_E8_bytes": true
+      },
+      {
+        "site": "0x152796",
+        "target": "0x19200",
+        "dual_decoder_and_E8_bytes": true
+      },
+      {
+        "site": "0x151d51",
+        "target": "0x19200",
+        "dual_decoder_and_E8_bytes": true
+      }
+    ],
+    "conclusions": "Shared tan-like prewarp, packed/scalar band-pass-like and scalar notch-like coefficient families, separate trapezoidal one-pole smoothing. Dirty refresh and initialization call same helpers. Frequency grid/host parameter mapping and actual runtime selection unresolved."
+  },
+  "deedoubler": {
+    "sha256": "0fca35f1e73496a967fb871b83efcbf17de825e574e1a943bb2cd7bb28d3a56c",
+    "scopes": [
+      {
+        "start": "0x40aa32",
+        "end_exclusive": "0x40accc",
+        "sha256": "cfcc30d38c0c40a31b59ca09af98ed8faf41a29e8ced46477443bd2aa501e260",
+        "mnemonic_agreement_sites": [
+          "0x40aa67",
+          "0x40aac6",
+          "0x40ab64",
+          "0x40ab6d",
+          "0x40ab94",
+          "0x40abad",
+          "0x40abb6",
+          "0x40abbd",
+          "0x40abcb",
+          "0x40abf2",
+          "0x40ac0d",
+          "0x40ac1b",
+          "0x40ac29",
+          "0x40ac30",
+          "0x40ac9b",
+          "0x40aca8",
+          "0x40acaf",
+          "0x40acb9"
+        ]
+      }
+    ],
+    "conclusions": "Integer ring-read positions with independent fade state and mixed reads, not proof of fractional interpolation or exact modulation law."
+  },
+  "checks": {
+    "scopes": 8,
+    "address_mnemonic_agreement": 87,
+    "direct_call_target_byte_agreement": 8
+  },
+  "core_security": {
+    "repo": "skellyruno/skellcore-vst-template",
+    "commit": "5e01b823b126722172f43f6b5090a6c69c10bf36",
+    "independent": "Ed25519 verifier, opt-in; no vendor protection copying",
+    "local": "optimized and ASan/UBSan passed"
+  },
+  "limits": "Other priority targets retain previous evidence. No claim of advanced across corpus, exact runtime mapping or vendor parity."
+}

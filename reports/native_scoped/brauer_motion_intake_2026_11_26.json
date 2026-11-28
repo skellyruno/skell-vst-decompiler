@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "source": {
+    "name": "Brauer Motion.dll",
+    "sha256": "8d76785017eb57c3cdab85a964bf559706450800159e65e84fdce377c541f2e5",
+    "bytes": 1051352,
+    "format": "PE32+ x64",
+    "sections": 6,
+    "export_module": "BrauerMotion.dll",
+    "named_exports": 104,
+    "import_libraries": 13,
+    "dependency": "WavesLib1_15.0.70_Win64.dll",
+    "vst3_factory": false,
+    "vst2_entry": false,
+    "exception_directory_rows": 1631,
+    "dir64_relocations": 4899,
+    "padding_relocations": 11,
+    "relocation_blocks": 23
+  },
+  "manual": {
+    "name": "Brauer Motion.pdf",
+    "sha256": "f1c2af71f32cb694063e35e2f84de4e4816c873d5db9b58bdd1b024e3cbf081e",
+    "pages": 30,
+    "behavior": "documented, not verified runtime"
+  },
+  "independent_candidate": {
+    "name": "MotionField",
+    "rates": [
+      44100,
+      48000,
+      96000,
+      192000
+    ],
+    "fixed_10ms_predelay_samples": [
+      441,
+      480,
+      960,
+      1920
+    ],
+    "strict": "pass",
+    "asan_ubsan": "pass",
+    "real_audio_renders": 16,
+    "finite": 16,
+    "zero_trim_sample_peak_pass": 8,
+    "positive_trim_music_sample_peak_fail": 4,
+    "limits": "No vendor waveform equivalence; fixed trim may cause overshoot; no DAW/automation/CPU verification."
+  }
+}

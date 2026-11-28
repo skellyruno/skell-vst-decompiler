@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "source": "TVB Rack V2.vst3",
+  "binary_sha256": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
+  "checkpoint_count": 67,
+  "constant_reference_count": 19,
+  "calibration_records": [
+    {
+      "rva": "0x77a0b28",
+      "float32_words": 14,
+      "sha256": "464e0e0e70720252f123c0dcb54d440fc41672ed28eb388c5d35ca50a4c20603",
+      "section": ".data",
+      "writable": true
+    },
+    {
+      "rva": "0x77a0b60",
+      "float32_words": 14,
+      "sha256": "21a0629a91d28986f7d3a3aeb0abaa643f004663536b0f3481b286bf270e0c2b",
+      "section": ".data",
+      "writable": true
+    }
+  ],
+  "offset_curve": {
+    "rva": "0xa5c528",
+    "float32_words": 10,
+    "sha256": "2b7694a6e85ad0da9fb00912bff4dc7e917dd7145e897b4829c11b5ba98717b2",
+    "section": ".rdata",
+    "writable": false
+  },
+  "math_calls": [
+    {
+      "site_rva": "0x5cff0f",
+      "target_rva": "0x87f1aa",
+      "iat_rva": "0x8db490",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "expf"
+    },
+    {
+      "site_rva": "0x5cff57",
+      "target_rva": "0x87f1aa",
+      "iat_rva": "0x8db490",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "expf"
+    },
+    {
+      "site_rva": "0x5cff96",
+      "target_rva": "0x87f1aa",
+      "iat_rva": "0x8db490",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "expf"
+    },
+    {
+      "site_rva": "0x5d173d",
+      "target_rva": "0x87f23a",
+      "iat_rva": "0x8db3b8",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "log10f"
+    },
+    {
+      "site_rva": "0x5d1776",
+      "target_rva": "0x87f23a",
+      "iat_rva": "0x8db3b8",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "log10f"
+    },
+    {
+      "site_rva": "0x5d17d8",
+      "target_rva": "0x87f23a",
+      "iat_rva": "0x8db3b8",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "log10f"
+    },
+    {
+      "site_rva": "0x5d1816",
+      "target_rva": "0x87f23a",
+      "iat_rva": "0x8db3b8",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "symbol": "log10f"
+    }
+  ],
+  "regions": [
+    {
+      "id": "detector_morph",
+      "title": "Continuous adjacent detector selection",
+      "start_rva": "0x5cfcb8",
+      "end_rva_exclusive": "0x5cfd67",
+      "confidence": "instruction-verified for valid 0..100 inputs",
+      "equation": "Choose adjacent detector groups at anchors 0,20,40,60,80,100; interpolate with t=(v-lo)/(hi-lo). Source field 0x18c. Above 100 the code instead uses index 0 and weight 0; do not infer out-of-range behavior as clamping."
+    },
+    {
+      "id": "target_calibration",
+      "title": "Nonlinear target-coordinate calibration",
+      "start_rva": "0x5cfd61",
+      "end_rva_exclusive": "0x5cfe3f",
+      "confidence": "instruction-verified structure",
+      "equation": "Object field 0x190 is clamped to 0..100, then interpolated through a five-point decreasing offset curve. Raw values withheld; curve coordinates 0,36,50,75,100."
+    },
+    {
+      "id": "rate_setup",
+      "title": "Rate-dependent adaptive coefficients",
+      "start_rva": "0x5cfe3f",
+      "end_rva_exclusive": "0x5cffd9",
+      "confidence": "instruction-verified structure",
+      "equation": "Two file-backed 14-word calibration records feed the setup. For positive F, step=1000/F; rate-dependent exponentials produce peak decay and two one-pole update coefficients. The attack increment factor is B*step/max(T,0.01); the reciprocal gain-dependence factor is 1/max(D,0.5). Record selection is controlled by a flag. F units inferred from sample-rate-like source field."
+    },
+    {
+      "id": "blended_detector",
+      "title": "Two-stage interpolation of peak and power in logarithmic units",
+      "start_rva": "0x5d172e",
+      "end_rva_exclusive": "0x5d18d6",
+      "confidence": "instruction-verified for positive finite envelopes",
+      "equation": "Within each adjacent group blend floored 20*log10(peak) with floored 10*log10(2*power), using the selected calibration weight. Interpolate the two group levels, subtract 3.0103 dB and the control-dependent offset, then subtract the lookup origin (-70). The zero-input branch requires separate path validation."
+    }
+  ],
+  "field_references": {
+    "0x190": [
+      {
+        "site_rva": "0x5cfd61",
+        "mnemonic": "mov",
+        "operand_index": 1,
+        "access": "read",
+        "indexed": false
+      }
+    ],
+    "0x198": [
+      {
+        "site_rva": "0x5cfe3f",
+        "mnemonic": "movsd",
+        "operand_index": 1,
+        "access": "read",
+        "indexed": false
+      }
+    ]
+  },
+  "limits": [
+    "No vendor arrays or complete implementation exported. File-backed calibration values may be changed at runtime.",
+    "Numeric control fields are not proven APVTS/GUI parameter mappings. No real audio, CPU or VMR dynamics claim."
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "schema": 1,
+  "parent": "a0de21184d5546ff447207d64f6eebf41be1a934",
+  "prior_report_sha256": "e88e351a7bfe60b51423eb51f699ea5ec4053d71577a2bff07d3682313bf41ca",
+  "local_full_report_sha256": "7d6cdd58396a855ca7da340537132cc06246c7e23467ed3b8d944d5092119b88",
+  "limit": 16,
+  "totals": {
+    "binaries": 8,
+    "scopes": 479,
+    "baseline_paths": 721,
+    "guarded_paths": 692,
+    "guarded_transparent_paths": 692,
+    "removed": 29,
+    "changed_windows": 6,
+    "guarded_nonzero_windows": 82,
+    "within_window_entry_count": 7872,
+    "in_window_common_boundary_transfer_sites": 10688,
+    "outside_window": 3323,
+    "unresolved": 941,
+    "in_window_noncommon_boundary": 89,
+    "same_expression": 394,
+    "different_expression": 298,
+    "shared_shape_flagged_paths": 12,
+    "depth_histogram": {
+      "1": 254,
+      "2": 204,
+      "3": 138,
+      "4": 86,
+      "5": 1,
+      "6": 8,
+      "7": 1
+    }
+  },
+  "modules": [
+    {
+      "name": "StandardCLIP.vst3",
+      "scopes": 41,
+      "baseline": 35,
+      "guarded": 35,
+      "guarded_transparent": 35,
+      "guarded_nonzero_windows": 13,
+      "entries": 421,
+      "transfers": {
+        "in_window_common_boundary": 577,
+        "outside_window": 170,
+        "unresolved": 48,
+        "in_window_noncommon_boundary": 0
+      }
+    },
+    {
+      "name": "Trackspacer25.vst3",
+      "scopes": 42,
+      "baseline": 60,
+      "guarded": 60,
+      "guarded_transparent": 60,
+      "guarded_nonzero_windows": 8,
+      "entries": 482,
+      "transfers": {
+        "in_window_common_boundary": 746,
+        "outside_window": 274,
+        "unresolved": 58,
+        "in_window_noncommon_boundary": 0
+      }
+    },
+    {
+      "name": "FG-2A.epl",
+      "scopes": 44,
+      "baseline": 233,
+      "guarded": 205,
+      "guarded_transparent": 205,
+      "guarded_nonzero_windows": 14,
+      "entries": 632,
+      "transfers": {
+        "in_window_common_boundary": 763,
+        "outside_window": 450,
+        "unresolved": 60,
+        "in_window_noncommon_boundary": 4
+      }
+    },
+    {
+      "name": "Auburn Sounds Panagement 2-64.vst3",
+      "scopes": 77,
+      "baseline": 99,
+      "guarded": 99,
+      "guarded_transparent": 99,
+      "guarded_nonzero_windows": 14,
+      "entries": 1347,
+      "transfers": {
+        "in_window_common_boundary": 1980,
+        "outside_window": 416,
+        "unresolved": 81,
+        "in_window_noncommon_boundary": 0
+      }
+    },
+    {
+      "name": "DeeDoubler.vst3",
+      "scopes": 43,
+      "baseline": 89,
+      "guarded": 89,
+      "guarded_transparent": 89,
+      "guarded_nonzero_windows": 6,
+      "entries": 1141,
+      "transfers": {
+        "in_window_common_boundary": 1546,
+        "outside_window": 286,
+        "unresolved": 62,
+        "in_window_noncommon_boundary": 0
+      }
+    },
+    {
+      "name": "MixWave DW Fearn VT-5.vst3",
+      "scopes": 78,
+      "baseline": 90,
+      "guarded": 90,
+      "guarded_transparent": 90,
+      "guarded_nonzero_windows": 10,
+      "entries": 1134,
+      "transfers": {
+        "in_window_common_boundary": 1436,
+        "outside_window": 566,
+        "unresolved": 266,
+        "in_window_noncommon_boundary": 36
+      }
+    },
+    {
+      "name": "SSL Fusion Stereo Image.vst3",
+      "scopes": 76,
+      "baseline": 64,
+      "guarded": 64,
+      "guarded_transparent": 64,
+      "guarded_nonzero_windows": 7,
+      "entries": 1862,
+      "transfers": {
+        "in_window_common_boundary": 2451,
+        "outside_window": 632,
+        "unresolved": 178,
+        "in_window_noncommon_boundary": 49
+      }
+    },
+    {
+      "name": "MB MixHead.vst3",
+      "scopes": 78,
+      "baseline": 51,
+      "guarded": 50,
+      "guarded_transparent": 50,
+      "guarded_nonzero_windows": 10,
+      "entries": 853,
+      "transfers": {
+        "in_window_common_boundary": 1189,
+        "outside_window": 529,
+        "unresolved": 188,
+        "in_window_noncommon_boundary": 0
+      }
+    }
+  ],
+  "changed_windows": [
+    {
+      "name": "FG-2A.epl",
+      "start": "0x153c48",
+      "bytes": 3496,
+      "baseline": 42,
+      "guarded": 37,
+      "scope_sha256": "d0f11b94b2afb8bbefc4feb8dcbcb45cc3c67131c3512b973a5207d35fe3f23e"
+    },
+    {
+      "name": "FG-2A.epl",
+      "start": "0x154ad2",
+      "bytes": 3633,
+      "baseline": 42,
+      "guarded": 37,
+      "scope_sha256": "ed35b15fd1bc25f6305c4438a1ca49481c95d349e112a713ccc8838bc1b1c5cc"
+    },
+    {
+      "name": "FG-2A.epl",
+      "start": "0x1518f0",
+      "bytes": 4190,
+      "baseline": 39,
+      "guarded": 32,
+      "scope_sha256": "4752d09b82169c063b814b44c1872d131d06f61bce6027b5da1991c16b78f854"
+    },
+    {
+      "name": "FG-2A.epl",
+      "start": "0x152950",
+      "bytes": 3228,
+      "baseline": 20,
+      "guarded": 13,
+      "scope_sha256": "af13bdc0c1e675fd34eba3b7a02a1c2a60a0e9eed451afd27fec02c8407b1e6a"
+    },
+    {
+      "name": "FG-2A.epl",
+      "start": "0x14f340",
+      "bytes": 2833,
+      "baseline": 44,
+      "guarded": 40,
+      "scope_sha256": "1568acc7ad0f6687c9bef40fa41b43b1e3986bc9cd844a7565f3ae3e02462d68"
+    },
+    {
+      "name": "MB MixHead.vst3",
+      "start": "0x65533",
+      "bytes": 218,
+      "baseline": 1,
+      "guarded": 0,
+      "scope_sha256": "88677059613c056d775d1e570dfa13170e61f6e3fb3ecec189d1ff077b3fd5a4"
+    }
+  ],
+  "tests": {
+    "passed": 9,
+    "new": 3,
+    "prior": 6,
+    "source_blob": "4d5e6b2619923d4c021aa731ac1ddc4847b298b7",
+    "value_flow_blob": "1c1339b37437289f95d28fa1cbe9cee464849c89",
+    "test_blob": "b0459fa126d8dc1d07399e84a3418d7d07e9d4ad",
+    "dependencies": {
+      "pe": "40be92efc73172a5d838c73b4ce8fe8b868624c0",
+      "disasm": "d4e87f3dc1760a46907b388a06c8383377d05afc",
+      "scope_consensus": "1c80cdcb8b233b3d4e56ed82588fee3530656911",
+      "memory_effects": "4158bbe295eb87d6faa1d0d3a3a3ebf047574e68"
+    },
+    "parent_ci": "8/8 passed",
+    "offline_kit": "13/13 passed"
+  },
+  "limits": "Only observed within-window direct branch and call targets with exact relative bytes and dual decoder destination/boundary agreement. No whole-binary CFG, indirect targets or external incoming edges resolved. Removed counts are conservative exclusions, not proved unreachable or false DSP. Local syntactic dependence only. No vendor source, coefficients, reconstructed implementations or audio results."
+}

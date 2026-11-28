@@ -1,0 +1,328 @@
+{
+  "schema": 1,
+  "parent": "ea7697dfcf19b5f602e0387e3257e3f800849acc",
+  "validation": {
+    "local_unittest_methods_passed": 25,
+    "previous": 19,
+    "new": 6,
+    "offline_kit": "13/13 passed",
+    "parent_runs": [
+      {
+        "name": "REA PE imports (owned fixtures)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Craft Anything metadata (owned fixtures)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Independent PE oracle (owned fixtures)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Reccmp export comparison (owned fixture)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Real Ghidra smoke (owned fixture)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Python static-analysis tests",
+        "status": "in_progress",
+        "conclusion": null
+      },
+      {
+        "name": "Real Rizin smoke (owned fixture)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Unified engines (owned fixture)",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "exact_tested_git_blobs": {
+      "skell_vst_decompiler/mask_diagnostic.py": "648388d8596a316b88628e170a7e0b7f0f15907d",
+      "tests/test_mask_diagnostic.py": "59c0bc9b4ffc09d09ef6ce9ac800e27c86cc36a3",
+      "benchmarks/owned_extended_audio.py": "82911a20fd6a66c29bae8c77026d2fe2b7bd0099",
+      "tests/test_owned_extended_audio.py": "1fe53225237fc68b04065e0843219aa1ea58086f",
+      "experiments/engine_lab/ColorOversampled.h": "a4c7ee52708a9412b3c31f755b65ea9450271c08",
+      "benchmarks/owned_context_audio.py": "e6b2b729f67cbdc573d438b30463f81ac481364b",
+      "tests/fixtures/owned_color_tradeoff.cpp": "c96452b56be639e201f6f7bedc10fe171d580dc5",
+      "benchmarks/owned_color_tradeoff.py": "1cca10fde90b90a9a73d75d2c8b8923c12a7a91b"
+    },
+    "hardware": "AMD EPYC 9V74, five visible logical CPUs; Linux 6.18.57 x86_64; GCC 14.2; NumPy 2.3.5"
+  },
+  "local_report_sha256": {
+    "extended_audio": "2ae080780b0bd6bd5480abfa2e3852c42e0e1e13a43c10c938b082496563b191",
+    "mask_diagnostic": "c893dbf5dde02e4a77a082af69163ff4b3be1adcab3e0449ff41a2e30b640a5f",
+    "replayed_context": "4c49849d35fad1e1d17e4ea9b1c173245834c8d4eb0b59bce6f56124a44d838d",
+    "color_tradeoff": "443533f6a136857c8dc799a3380f87b8cab9dcdce958d876f210d6243754b7d7"
+  },
+  "mask": {
+    "scope": "Owned O1/O3 fixture only; no vendor replay",
+    "regions": 18,
+    "clip_candidates": [
+      1,
+      3
+    ],
+    "other_regions_with_candidate": 0,
+    "old_transformed_store_count": [
+      0,
+      0
+    ],
+    "clip_o3_select_ps": 2,
+    "clip_o3_select_ss": 1
+  },
+  "extended": {
+    "tone_renders": 162,
+    "settings": 54,
+    "timed_runs": 75,
+    "each_oversampled_lower_nonharmonic_than_1x": 54,
+    "four_x_lower_than_two_x": 45,
+    "engine_timing_order": [
+      "presence",
+      "leveler",
+      "color",
+      "color_2x",
+      "color_4x"
+    ],
+    "color_order": [
+      "1x",
+      "2x",
+      "4x"
+    ],
+    "rows": [
+      {
+        "fs": 44100,
+        "median_nonharmonic_dbc": [
+          -35.54,
+          -79.9195,
+          -126.7085
+        ],
+        "worst_nonharmonic_dbc": [
+          -10.9827,
+          -19.8092,
+          -42.1121
+        ],
+        "four_x_lower_than_two_x": 16,
+        "render_ms": [
+          1.5235,
+          1.3192,
+          1.6565,
+          13.3599,
+          26.2846
+        ],
+        "worst_fundamental_delta_db": [
+          -14.010545956475386,
+          -14.01131418880955
+        ]
+      },
+      {
+        "fs": 48000,
+        "median_nonharmonic_dbc": [
+          -35.54,
+          -73.2923,
+          -108.0502
+        ],
+        "worst_nonharmonic_dbc": [
+          -10.9827,
+          -19.8019,
+          -35.9911
+        ],
+        "four_x_lower_than_two_x": 14,
+        "render_ms": [
+          1.5503,
+          1.3986,
+          1.8179,
+          11.607,
+          23.9206
+        ],
+        "worst_fundamental_delta_db": [
+          -1.28689506225918,
+          -1.2876093745268227
+        ]
+      },
+      {
+        "fs": 96000,
+        "median_nonharmonic_dbc": [
+          -39.3181,
+          -115.8961,
+          -115.9199
+        ],
+        "worst_nonharmonic_dbc": [
+          -10.9834,
+          -34.0208,
+          -68.586
+        ],
+        "four_x_lower_than_two_x": 15,
+        "render_ms": [
+          3.4818,
+          2.6115,
+          4.8999,
+          24.2853,
+          50.5553
+        ],
+        "worst_fundamental_delta_db": [
+          -0.0010384533024046338,
+          -0.001397723435109223
+        ]
+      }
+    ]
+  },
+  "tradeoff": {
+    "variants": [
+      [
+        2,
+        40,
+        450
+      ],
+      [
+        4,
+        40,
+        450
+      ],
+      [
+        2,
+        40,
+        475
+      ],
+      [
+        4,
+        40,
+        475
+      ],
+      [
+        2,
+        80,
+        475
+      ],
+      [
+        4,
+        80,
+        475
+      ]
+    ],
+    "variant_renders": 216,
+    "timed_runs": 90,
+    "exact_baseline_comparisons": 72,
+    "dry_delay_checks": 18,
+    "case_44100_20004hz_peak_0_5": {
+      "fundamental_amplitudes": [
+        0.32611,
+        0.32608,
+        0.857,
+        0.85692,
+        1.07672,
+        1.07662
+      ],
+      "nonharmonic_dbc": [
+        -41.14,
+        -77.89,
+        -30.68,
+        -59.78,
+        -28.61,
+        -54.05
+      ],
+      "fundamental_delta_vs_same_factor_default_db": [
+        0,
+        0,
+        8.39,
+        8.39,
+        10.37,
+        10.37
+      ]
+    },
+    "summary": [
+      {
+        "fs": 44100,
+        "medians": [
+          -41.19,
+          -88.428,
+          -40.986,
+          -88.362,
+          -40.987,
+          -88.507
+        ],
+        "worst": [
+          -19.809,
+          -42.112,
+          -19.808,
+          -38.19,
+          -19.748,
+          -35.175
+        ],
+        "timings_ms": [
+          10.402,
+          19.456,
+          9.921,
+          19.628,
+          16.192,
+          33.143
+        ]
+      },
+      {
+        "fs": 48000,
+        "medians": [
+          -41.066,
+          -97.232,
+          -41.028,
+          -97.07,
+          -41.027,
+          -97.46
+        ],
+        "worst": [
+          -19.802,
+          -35.991,
+          -19.677,
+          -34.82,
+          -19.699,
+          -34.783
+        ],
+        "timings_ms": [
+          11.118,
+          21.812,
+          10.931,
+          21.403,
+          17.475,
+          36.329
+        ]
+      },
+      {
+        "fs": 96000,
+        "medians": [
+          -85.261,
+          -100.743,
+          -60.674,
+          -90.878,
+          -84.93,
+          -114.553
+        ],
+        "worst": [
+          -34.021,
+          -68.586,
+          -33.927,
+          -51.98,
+          -33.935,
+          -63.967
+        ],
+        "timings_ms": [
+          21.54,
+          42.173,
+          21.469,
+          42.362,
+          34.606,
+          69.343
+        ]
+      }
+    ]
+  },
+  "limits": "Synthetic coherent tones only. Nonharmonic metric excludes aliases landing on harmonic bins and may include residual transient/numerical energy. No perceptual or vendor comparison. Wall-time native adapter includes prepare; not host CPU. Default sample equality limited to tested inputs. No production changes, no vendor execution or additional target traversal. Prior 692 candidates, 854 unresolved destinations and 90 conflicts unchanged."
+}

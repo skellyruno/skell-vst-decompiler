@@ -1,0 +1,279 @@
+{
+  "schema": 1,
+  "parent": "cc66045d3b2937003ff98639ffeb600f740b09e7",
+  "blobs": {
+    "tests/fixtures/owned_hold_sweep.cpp": "a33ca56ff7da7e329ac7ec7c83af9f2bf2ebce8b",
+    "benchmarks/owned_hold_and_allpass.py": "71d9937076fadaf4dcee223a2b7662a75513c8fa",
+    "benchmarks/owned_color_split_cutoff.py": "35c7e5c8e26ffc289d179b9d5cf6e126ea0ebb9d"
+  },
+  "baseline_blobs": {
+    "IndependentEngines": "b81bc2cba042148e1c809f072c70ad0d4b22dba0",
+    "LevelerPeakHold": "f72fbdf3bd883a2845186295b363b1cb35311f1b"
+  },
+  "private_report_sha256": {
+    "hold_allpass": "dc0d6af19d957de30f3cee650609de8fa8b88b41e69a04fc03b8c4b2b576daac",
+    "color": "49419b5acfdbab10a5b453a33b44519f2d6906c7ff851499c5d26d248b12e09b"
+  },
+  "input_count": 36,
+  "fingerprints_verified": 36,
+  "kit": "13/13",
+  "hold": {
+    "hold_ms": [
+      0,
+      2,
+      5,
+      8,
+      12,
+      20
+    ],
+    "order": "original 4 ms, then six matched t90 peak-hold settings",
+    "rates": [
+      44100,
+      48000,
+      96000
+    ],
+    "matched_crossing_samples": [
+      709,
+      771,
+      1542
+    ],
+    "matched_attack_ms": [
+      7.8342437744140625,
+      7.8280181884765625,
+      7.833101272583008
+    ],
+    "tone_cases": 21,
+    "tone_renders": 147,
+    "release_cases": 12,
+    "release_renders": 84,
+    "vocal_renders": 252,
+    "thd_48k_dbc": {
+      "20": [
+        -62.26,
+        -60.54,
+        -60.54,
+        -60.61,
+        -60.95,
+        -62.35,
+        -75.6
+      ],
+      "30": [
+        -69.31,
+        -67.28,
+        -67.29,
+        -67.63,
+        -69.17,
+        -76.12,
+        -121.76
+      ],
+      "50": [
+        -78.22,
+        -75.9,
+        -75.98,
+        -78.14,
+        -91.1,
+        -125.44,
+        -125.44
+      ],
+      "100": [
+        -90.29,
+        -87.72,
+        -88.78,
+        -130.78,
+        -130.78,
+        -130.78,
+        -130.78
+      ]
+    },
+    "raw_lower_peaks_per_hold": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "rms_matched_lower_peaks_per_hold": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "median_gain_db_original_candidate12": [
+      -2.51737474,
+      -1.86504729
+    ],
+    "median_raw_peak_dbfs_original_candidate12": [
+      -7.44938422,
+      -7.31981955
+    ],
+    "median_matched_peak_dbfs_original_candidate12": [
+      -7.44938422,
+      -7.98138726
+    ],
+    "over_scale_samples": 0,
+    "recovery_48k_original_vs_12ms": {
+      "10": [
+        386.02,
+        333.42
+      ],
+      "50": [
+        384.08,
+        383.98
+      ],
+      "250": [
+        434.81,
+        434.83
+      ],
+      "1000": [
+        457.31,
+        457.31
+      ]
+    }
+  },
+  "allpass": {
+    "ideal_fixed_model": true,
+    "complex_checks": 90,
+    "max_complex_error": 7.850462293418876e-16,
+    "example": {
+      "rate": 44100,
+      "fraction": 0.5,
+      "frequency_hz": [
+        1000,
+        4000,
+        8000,
+        12000,
+        16000,
+        20000
+      ],
+      "group_delay_samples": [
+        0.501907,
+        0.531501,
+        0.639661,
+        0.872487,
+        1.312685,
+        1.880534
+      ],
+      "excess_after_eight_passes_samples": [
+        0.015257,
+        0.252006,
+        1.11729,
+        2.979894,
+        6.501476,
+        11.044274
+      ]
+    }
+  },
+  "color": {
+    "offline_independent": true,
+    "variants": [
+      [
+        0.45,
+        0.45
+      ],
+      [
+        0.475,
+        0.45
+      ],
+      [
+        0.45,
+        0.475
+      ],
+      [
+        0.475,
+        0.475
+      ]
+    ],
+    "tone_cases": 36,
+    "tone_renders": 144,
+    "vocal_renders": 144,
+    "example_44100_20004hz_amp_0_5": {
+      "fundamental_dbfs": [
+        -9.73342933,
+        -6.74877814,
+        -4.32579786,
+        -1.34114478
+      ],
+      "residual_dbc": [
+        -77.89292806,
+        -54.37791801,
+        -83.3021734,
+        -59.78498226
+      ],
+      "absolute_residual_rms_dbfs": [
+        -90.63665735,
+        -64.1369961,
+        -90.63827122,
+        -64.136427
+      ]
+    },
+    "fundamental_gain_gt_0_01_and_absolute_residual_change_le_0_1_cases": [
+      0,
+      0,
+      6,
+      0
+    ],
+    "over_scale_excerpts": [
+      15,
+      15,
+      14,
+      14
+    ],
+    "median_high_band_fraction_db": [
+      -16.17354154,
+      -16.17503143,
+      -16.17397482,
+      -16.17565497
+    ]
+  },
+  "validation": {
+    "actual_owned_native_adapter": "GCC O3 -Wall -Wextra -Werror compiled; complete benchmark passed",
+    "offline_python": "complete benchmark passed after adding guard samples to exclude end transient",
+    "parent_ci": [
+      [
+        "Craft Anything metadata (owned fixtures)",
+        "completed",
+        "success"
+      ],
+      [
+        "Reccmp export comparison (owned fixture)",
+        "completed",
+        "success"
+      ],
+      [
+        "Independent PE oracle (owned fixtures)",
+        "completed",
+        "success"
+      ],
+      [
+        "Real Rizin smoke (owned fixture)",
+        "completed",
+        "success"
+      ],
+      [
+        "Real Ghidra smoke (owned fixture)",
+        "completed",
+        "success"
+      ],
+      [
+        "Unified engines (owned fixture)",
+        "completed",
+        "success"
+      ],
+      [
+        "REA PE imports (owned fixtures)",
+        "completed",
+        "success"
+      ],
+      [
+        "Python static-analysis tests",
+        "completed",
+        "success"
+      ]
+    ],
+    "new_ci": "unverified"
+  },
+  "limitations": "No new vendor binary analysis, no reconstructed vendor algorithms. No production engine edits, no new native saturation implementation, no integrated allpass changes. No true peak, listening, host CPU or held-out dry validation. Existing static backlog unchanged."
+}

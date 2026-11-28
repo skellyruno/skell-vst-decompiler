@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "status": "original_candidate_only",
+  "sources": {
+    "parent_spatial_blob": "183dc0c2d088c53e5db41fb46eacb1aa3361705f",
+    "header_blob": "540d51d0274bd4adcc8d585e9b6bceab86198ce7",
+    "test_blob": "53cd21dc7d3c6e823cd6924dc54a69deba259a09",
+    "renderer_blob": "fe8f574829793b908aa21aefbbf04ed1a1c7aee3"
+  },
+  "tests": {
+    "rates": [
+      44100,
+      48000,
+      96000,
+      192000
+    ],
+    "optimized": "pass",
+    "asan_ubsan": "pass",
+    "max_mid_error": 1.11e-16,
+    "guard_input_peak": [
+      1.150714,
+      1.13086,
+      1.029258,
+      0.943396
+    ],
+    "guard_output_peak": [
+      0.82699,
+      0.82699,
+      0.823436,
+      0.82375
+    ],
+    "guard_latency_samples": 24,
+    "clip_and_guard_latency_samples": 64
+  },
+  "private_validation": {
+    "wobble": "36 exploratory candidates, fixed-setting parity after smoothing; full-effect reference and unresolved pair alignment; not promoted",
+    "master": "6 excerpts of same track; initial two intersample misses corrected with margin; all 6 final independent 16x estimates below -1 dBFS; no certification or listening claim",
+    "private_metrics": "retained locally, not uploaded"
+  },
+  "limitations": "No proprietary reconstruction or exact reference comparison; no production integration."
+}

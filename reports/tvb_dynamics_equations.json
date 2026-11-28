@@ -1,0 +1,627 @@
+{
+  "schema_version": 1,
+  "binary_sha256": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
+  "source": "TVB Rack V2.vst3",
+  "regions": [
+    {
+      "id": "input_detector",
+      "start_rva": "0x5d0740",
+      "end_rva_exclusive": "0x5d07bf",
+      "title": "Input gain and channel iteration",
+      "confidence": "instruction-verified",
+      "equation": "x_g = x * input_gain; store x_g; iterate channels",
+      "region_sha256": "747f15571acec177f2dfb997dc48e9507a61ccf6565b434e3a7b27e2a5a46fa7",
+      "file_offset": "0x5cfb40",
+      "checkpoint_rvas": [
+        "0x5d07b5",
+        "0x5d07b9",
+        "0x5d07a9",
+        "0x5d07af"
+      ],
+      "constant_refs": [],
+      "math_calls": []
+    },
+    {
+      "id": "peak_level",
+      "start_rva": "0x5d1246",
+      "end_rva_exclusive": "0x5d12ef",
+      "title": "Linked peak / level detector",
+      "confidence": "instruction-verified",
+      "equation": "p=max_c(abs(filtered x_g)); e=p if p>e_old else e_old+a*(p-e_old); L=max(-90,20*log10(e)) for e>0, otherwise -90",
+      "region_sha256": "4fde4db98c98fa30e920f4ccda01ed083da6f68397079e70c09a51c32c863388",
+      "file_offset": "0x5d0646",
+      "checkpoint_rvas": [
+        "0x5d124c",
+        "0x5d1255",
+        "0x5d1266",
+        "0x5d128e",
+        "0x5d129e",
+        "0x5d12a0",
+        "0x5d12a4",
+        "0x5d12a9",
+        "0x5d12b1",
+        "0x5d12d8",
+        "0x5d12dd"
+      ],
+      "constant_refs": [
+        {
+          "instruction_rva": "0x5d12c0",
+          "data_rva": "0x928a70",
+          "float32": 20.0
+        },
+        {
+          "instruction_rva": "0x5d126c",
+          "data_rva": "0x974224",
+          "float32": -90.0
+        }
+      ],
+      "math_calls": [
+        {
+          "rva": "0x5d12bb",
+          "symbol": "log10f"
+        }
+      ]
+    },
+    {
+      "id": "mode0_knee",
+      "start_rva": "0x5d1b2c",
+      "end_rva_exclusive": "0x5d1bac",
+      "title": "Conventional compressor target gain reduction",
+      "confidence": "instruction-verified",
+      "equation": "u=L-T; s=1-1/R; K>0.001: 0 below -K/2; s*(u+K/2)^2/(2*K) inside knee; s*u above K/2. K<=0.001: max(0,u)*s",
+      "region_sha256": "3f2181066adb0ca01641dc8228ee0e09313b1262b57c2d8a4eb9a48b3caa583c",
+      "file_offset": "0x5d0f2c",
+      "checkpoint_rvas": [
+        "0x5d1b2c",
+        "0x5d1b35",
+        "0x5d1b3b",
+        "0x5d1b45",
+        "0x5d1b54",
+        "0x5d1b64",
+        "0x5d1b74",
+        "0x5d1b76",
+        "0x5d1b7c",
+        "0x5d1b83",
+        "0x5d1b87",
+        "0x5d1b96",
+        "0x5d1ba0",
+        "0x5d1ba8"
+      ],
+      "constant_refs": [
+        {
+          "instruction_rva": "0x5d1b49",
+          "data_rva": "0x9142a0",
+          "float32": 0.0010000000474974513
+        },
+        {
+          "instruction_rva": "0x5d1b59",
+          "data_rva": "0x909cd8",
+          "float32": -0.5
+        },
+        {
+          "instruction_rva": "0x5d1b69",
+          "data_rva": "0x8e96a8",
+          "float32": 0.5
+        },
+        {
+          "instruction_rva": "0x5d1b8e",
+          "data_rva": "0x909c40",
+          "float32": 2.0
+        }
+      ],
+      "math_calls": []
+    },
+    {
+      "id": "dual_recovery",
+      "start_rva": "0x5d1bac",
+      "end_rva_exclusive": "0x5d1c1b",
+      "title": "Two independent gain-reduction states",
+      "confidence": "instruction-verified",
+      "equation": "g_j <- g_j + alpha_j*(G-g_j); alpha_j selected by G>g_j; output max(g_1,g_2)",
+      "region_sha256": "eb28fad922d154d8aafcb629f92fab4090fa78307e205671d391a52807e99f35",
+      "file_offset": "0x5d0fac",
+      "checkpoint_rvas": [
+        "0x5d1bb3",
+        "0x5d1bc5",
+        "0x5d1bc7",
+        "0x5d1bcf",
+        "0x5d1bd4",
+        "0x5d1bdb",
+        "0x5d1be3",
+        "0x5d1bf2",
+        "0x5d1bf4",
+        "0x5d1bfb",
+        "0x5d1c09",
+        "0x5d1c0d",
+        "0x5d1c15"
+      ],
+      "constant_refs": [],
+      "math_calls": []
+    },
+    {
+      "id": "single_recovery",
+      "start_rva": "0x5d1c1b",
+      "end_rva_exclusive": "0x5d1c52",
+      "title": "Single gain-reduction state",
+      "confidence": "instruction-verified",
+      "equation": "g <- g + alpha*(G-g); attack alpha if G>g, release alpha otherwise",
+      "region_sha256": "5a4d351bbacf2b78aa4a22c1f6a1a4c39401daa70c1a454d8698b9622cf1bc94",
+      "file_offset": "0x5d101b",
+      "checkpoint_rvas": [
+        "0x5d1c1b",
+        "0x5d1c29",
+        "0x5d1c2d",
+        "0x5d1c2f",
+        "0x5d1c37",
+        "0x5d1c46",
+        "0x5d1c4a"
+      ],
+      "constant_refs": [
+        {
+          "instruction_rva": "0x5d1c3d",
+          "data_rva": "0x909bec",
+          "float32": 0.05000000074505806
+        }
+      ],
+      "math_calls": []
+    },
+    {
+      "id": "gain_conversion",
+      "start_rva": "0x5d1c9a",
+      "end_rva_exclusive": "0x5d1cd9",
+      "title": "dB to linear multiplier",
+      "confidence": "instruction-verified",
+      "equation": "gain=10^(-g/20) if -g>-100 dB; else zero; then two additional gain factors",
+      "region_sha256": "3dcbbf6cf24c69cdaa7889beb373c9bddc2d08bdf75d3e78e490638de76c9120",
+      "file_offset": "0x5d109a",
+      "checkpoint_rvas": [
+        "0x5d1ca8",
+        "0x5d1caa",
+        "0x5d1caf",
+        "0x5d1cc5",
+        "0x5d1ccd",
+        "0x5d1cd2"
+      ],
+      "constant_refs": [
+        {
+          "instruction_rva": "0x5d1ca1",
+          "data_rva": "0x928ae8",
+          "float32": -100.0
+        },
+        {
+          "instruction_rva": "0x5d1cb2",
+          "data_rva": "0x909c98",
+          "float32": 10.0
+        }
+      ],
+      "math_calls": [
+        {
+          "rva": "0x5d1cba",
+          "symbol": "powf"
+        }
+      ]
+    },
+    {
+      "id": "output_blend",
+      "start_rva": "0x5d1ee1",
+      "end_rva_exclusive": "0x5d1f1e",
+      "title": "Output gain and optional parallel blend",
+      "confidence": "instruction-verified",
+      "equation": "y=out_gain*((1-m)*dry+m*processed) when blend flag is set; otherwise out_gain*processed",
+      "region_sha256": "8d3fcc2c27f75c277a75e1cf68ffb8937c9b86fd5a02f3b2babaad38697e76a8",
+      "file_offset": "0x5d12e1",
+      "checkpoint_rvas": [
+        "0x5d1ef7",
+        "0x5d1eff",
+        "0x5d1f04",
+        "0x5d1f08",
+        "0x5d1f18"
+      ],
+      "constant_refs": [],
+      "math_calls": []
+    },
+    {
+      "id": "time_helper",
+      "start_rva": "0x5d22e0",
+      "end_rva_exclusive": "0x5d231c",
+      "title": "Time-to-coefficient helper",
+      "confidence": "instruction-verified",
+      "equation": "alpha=1-exp(-1/(0.001*t*F)); arguments t and F; no zero-time guard in helper",
+      "region_sha256": "e8a247e4baad0dd378068bb2a2c7379f5ce141e38d81cf5a49d85ce7fd63339a",
+      "file_offset": "0x5d16e0",
+      "checkpoint_rvas": [
+        "0x5d22f7",
+        "0x5d22fb",
+        "0x5d22ff",
+        "0x5d2310"
+      ],
+      "constant_refs": [
+        {
+          "instruction_rva": "0x5d22e7",
+          "data_rva": "0x8f04c8",
+          "float32": -1.0
+        },
+        {
+          "instruction_rva": "0x5d22ef",
+          "data_rva": "0x9142a0",
+          "float32": 0.0010000000474974513
+        },
+        {
+          "instruction_rva": "0x5d2308",
+          "data_rva": "0x8e96ac",
+          "float32": 1.0
+        }
+      ],
+      "math_calls": [
+        {
+          "rva": "0x5d2303",
+          "symbol": "expf"
+        }
+      ]
+    },
+    {
+      "id": "attack_release_setup",
+      "start_rva": "0x5d0379",
+      "end_rva_exclusive": "0x5d04f7",
+      "title": "Attack/release coefficient construction",
+      "confidence": "instruction-verified",
+      "equation": "mode 0 single alpha=1-exp(-1/(0.001*t*F)); auxiliary recovery coefficients use 0.08*F, 0.30*F, 1.50*F; mode 0 peak time uses 15 ms",
+      "region_sha256": "265e3635d7aa64f31bf3dcd4a746765d4ff4a327547ac7d604366fc807ed2f29",
+      "file_offset": "0x5cf779",
+      "checkpoint_rvas": [
+        "0x5d03c2",
+        "0x5d044a",
+        "0x5d0481",
+        "0x5d04a6",
+        "0x5d04d6",
+        "0x5d04f2"
+      ],
+      "constant_refs": [
+        {
+          "instruction_rva": "0x5d0456",
+          "data_rva": "0x91441c",
+          "float32": 15.0
+        },
+        {
+          "instruction_rva": "0x5d048a",
+          "data_rva": "0xa5c704",
+          "float32": 0.08000000566244125
+        },
+        {
+          "instruction_rva": "0x5d04af",
+          "data_rva": "0x9142d8",
+          "float32": 0.30000001192092896
+        },
+        {
+          "instruction_rva": "0x5d04c0",
+          "data_rva": "0xa5c708",
+          "float32": 1.5000001192092896
+        }
+      ],
+      "math_calls": [
+        {
+          "rva": "0x5d03a5",
+          "symbol": "expf"
+        },
+        {
+          "rva": "0x5d043d",
+          "symbol": "expf"
+        },
+        {
+          "rva": "0x5d0471",
+          "symbol": "expf"
+        },
+        {
+          "rva": "0x5d0496",
+          "symbol": "expf"
+        },
+        {
+          "rva": "0x5d04bb",
+          "symbol": "expf"
+        },
+        {
+          "rva": "0x5d04de",
+          "symbol": "expf"
+        }
+      ]
+    },
+    {
+      "id": "mode2_filter_bank",
+      "start_rva": "0x5d07bf",
+      "end_rva_exclusive": "0x5d117e",
+      "title": "Six groups of four detector biquads",
+      "confidence": "instruction-verified-structure",
+      "equation": "six group inputs restart at x_g; p_j=max_c(w_j*abs(group_j(x_g))); each group has four two-state sections",
+      "region_sha256": "cc7659516fcc4fdf6bd9839bf4d7df522cdef6cbd6d7593f12f192e5f2f61943",
+      "file_offset": "0x5cfbbf",
+      "checkpoint_rvas": [],
+      "constant_refs": [],
+      "math_calls": []
+    },
+    {
+      "id": "mode2_envelopes",
+      "start_rva": "0x5d15be",
+      "end_rva_exclusive": "0x5d172e",
+      "title": "Six parallel peak and power states",
+      "confidence": "instruction-verified",
+      "equation": "P_j=max(decay*P_j,p_j); E_j=E_j+alpha*(p_j^2-E_j), j=0..5",
+      "region_sha256": "34c0a0ed641f2139ff8eeee4c07d5d5ba6cbe34c85a90df92d0c522c9d5414c8",
+      "file_offset": "0x5d09be",
+      "checkpoint_rvas": [
+        "0x5d15d7",
+        "0x5d15dc",
+        "0x5d15f4",
+        "0x5d15f9",
+        "0x5d15fe"
+      ],
+      "constant_refs": [],
+      "math_calls": []
+    },
+    {
+      "id": "mode2_peak_rms",
+      "start_rva": "0x5d172e",
+      "end_rva_exclusive": "0x5d17bf",
+      "title": "First indexed peak/power blend",
+      "confidence": "instruction-verified",
+      "equation": "Pdb=max(-90,20*log10(P)); Edb=max(-180,20*log10(2*E)); L=blend*Pdb+(1-blend)*max(-90,0.5*Edb) (nonpositive inputs use floors)",
+      "region_sha256": "88e0532e85687fa8f187021b1e16124935ac3caf8e5075f947e427a6778f0b62",
+      "file_offset": "0x5d0b2e",
+      "checkpoint_rvas": [
+        "0x5d176c",
+        "0x5d17a5",
+        "0x5d17a9",
+        "0x5d17b0"
+      ],
+      "constant_refs": [
+        {
+          "instruction_rva": "0x5d177b",
+          "data_rva": "0x94fa3c",
+          "float32": -180.0
+        }
+      ],
+      "math_calls": [
+        {
+          "rva": "0x5d173d",
+          "symbol": "log10f"
+        },
+        {
+          "rva": "0x5d1776",
+          "symbol": "log10f"
+        }
+      ]
+    },
+    {
+      "id": "mode1_lookup",
+      "start_rva": "0x5d30b0",
+      "end_rva_exclusive": "0x5d3121",
+      "title": "Indexed 61-point gain curve interpolation",
+      "confidence": "instruction-verified-structure",
+      "equation": "u = input - origin; clamp endpoints; i=floor(u); y=C[i]+(u-i)*(C[i+1]-C[i]); row stride 244 bytes; runtime table values not recovered",
+      "region_sha256": "c7a1ad86c021bd88ce1075a6fdedafa74afc7d78e1ae5f6b4ccc09cc061017bd",
+      "file_offset": "0x5d24b0",
+      "checkpoint_rvas": [
+        "0x5d30cd",
+        "0x5d30df",
+        "0x5d30ec",
+        "0x5d30f6",
+        "0x5d3108",
+        "0x5d310c",
+        "0x5d3112",
+        "0x5d3117",
+        "0x5d311b"
+      ],
+      "constant_refs": [],
+      "math_calls": []
+    },
+    {
+      "id": "mode2_lookup",
+      "start_rva": "0x5d1833",
+      "end_rva_exclusive": "0x5d18d6",
+      "title": "Indexed 77-point gain curve interpolation",
+      "confidence": "instruction-verified-structure",
+      "equation": "row stride 308 bytes; clamp endpoints; i=floor(u); y=C[i]+(u-i)*(C[i+1]-C[i]); runtime table values not recovered",
+      "region_sha256": "6824f79a7ed6b91d21884c211d5440aee233a3456ba41491f61a58bce9c811d2",
+      "file_offset": "0x5d0c33",
+      "checkpoint_rvas": [
+        "0x5d185c",
+        "0x5d18a5",
+        "0x5d18aa",
+        "0x5d18be",
+        "0x5d18c4",
+        "0x5d18c9",
+        "0x5d18cd",
+        "0x5d18d1"
+      ],
+      "constant_refs": [],
+      "math_calls": []
+    },
+    {
+      "id": "knee_helper",
+      "start_rva": "0x5d3130",
+      "end_rva_exclusive": "0x5d31a3",
+      "title": "Standalone soft-knee helper",
+      "confidence": "instruction-verified-structure",
+      "equation": "same quadratic knee motif as mode0_knee; exact caller relationships not established",
+      "region_sha256": "31a9e650bbe7cd7edb7ff8002fe62e34c87a844bfa3f6201a88b0c72acc4e02e",
+      "file_offset": "0x5d2530",
+      "checkpoint_rvas": [
+        "0x5d3138",
+        "0x5d313f",
+        "0x5d3143",
+        "0x5d3174",
+        "0x5d3178",
+        "0x5d3183",
+        "0x5d3187"
+      ],
+      "constant_refs": [],
+      "math_calls": []
+    },
+    {
+      "id": "mode1_custom",
+      "start_rva": "0x5d12f9",
+      "end_rva_exclusive": "0x5d15b4",
+      "title": "Alternate gain curve and adaptive state",
+      "confidence": "partial",
+      "equation": "table interpolation and two coupled state updates; complete curve and control mapping unresolved",
+      "region_sha256": "3c079bd83791f6c137fb6af0e8047d242eb12284bd3634e015363521afe1cbb3",
+      "file_offset": "0x5d06f9",
+      "checkpoint_rvas": [],
+      "constant_refs": [],
+      "math_calls": []
+    }
+  ],
+  "checkpoint_count": 119,
+  "constant_count": 17,
+  "constant_use_count": 17,
+  "import_checkpoint_count": 11,
+  "constants": [
+    {
+      "rva": "0x974224",
+      "float32": -90.0
+    },
+    {
+      "rva": "0x928a70",
+      "float32": 20.0
+    },
+    {
+      "rva": "0x9142a0",
+      "float32": 0.0010000000474974513
+    },
+    {
+      "rva": "0x909cd8",
+      "float32": -0.5
+    },
+    {
+      "rva": "0x8e96a8",
+      "float32": 0.5
+    },
+    {
+      "rva": "0x909c40",
+      "float32": 2.0
+    },
+    {
+      "rva": "0x8e96ac",
+      "float32": 1.0
+    },
+    {
+      "rva": "0x909bec",
+      "float32": 0.05000000074505806
+    },
+    {
+      "rva": "0x909c98",
+      "float32": 10.0
+    },
+    {
+      "rva": "0x928ae8",
+      "float32": -100.0
+    },
+    {
+      "rva": "0x8f04c8",
+      "float32": -1.0
+    },
+    {
+      "rva": "0x91441c",
+      "float32": 15.0
+    },
+    {
+      "rva": "0xa5c704",
+      "float32": 0.08000000566244125
+    },
+    {
+      "rva": "0x9142d8",
+      "float32": 0.30000001192092896
+    },
+    {
+      "rva": "0xa5c708",
+      "float32": 1.5000001192092896
+    },
+    {
+      "rva": "0x94fa3c",
+      "float32": -180.0
+    },
+    {
+      "rva": "0x928ae0",
+      "float32": -72.0
+    }
+  ],
+  "six_groups": [
+    {
+      "group": 0,
+      "start_rva": "0x5d07bf",
+      "peak_rva": "0x5d0960",
+      "weight_offset": "0x700",
+      "sections": 4
+    },
+    {
+      "group": 1,
+      "start_rva": "0x5d096f",
+      "peak_rva": "0x5d0afd",
+      "weight_offset": "0x704",
+      "sections": 4
+    },
+    {
+      "group": 2,
+      "start_rva": "0x5d0b0c",
+      "peak_rva": "0x5d0c9a",
+      "weight_offset": "0x708",
+      "sections": 4
+    },
+    {
+      "group": 3,
+      "start_rva": "0x5d0ca9",
+      "peak_rva": "0x5d0e37",
+      "weight_offset": "0x70c",
+      "sections": 4
+    },
+    {
+      "group": 4,
+      "start_rva": "0x5d0e46",
+      "peak_rva": "0x5d0fd4",
+      "weight_offset": "0x710",
+      "sections": 4
+    },
+    {
+      "group": 5,
+      "start_rva": "0x5d0fe7",
+      "peak_rva": "0x5d1167",
+      "weight_offset": "0x714",
+      "sections": 4
+    }
+  ],
+  "state_map": {
+    "peak": "0x200",
+    "single_gain_reduction": "0x204",
+    "dual_gain_reduction": [
+      "0x208",
+      "0x20c"
+    ],
+    "mode2_peak_array": "0xd18..0xd2c",
+    "mode2_power_array": "0xd30..0xd44",
+    "mode0_knee_field": "0x158",
+    "mode0_ratio_field": "0x154",
+    "mode0_threshold_field": "0x150 (clamped -72..0)",
+    "time_scale_field": "0x198 (double; sample-rate-like)"
+  },
+  "curve_tables": [
+    {
+      "role": "mode1",
+      "base_rva": "0x77e7cb0",
+      "entries_per_row": 61,
+      "row_stride_bytes": 244,
+      "values_status": "not recovered"
+    },
+    {
+      "role": "mode2",
+      "base_rva": "0x77e7a40",
+      "entries_per_row": 77,
+      "row_stride_bytes": 308,
+      "values_status": "not recovered"
+    }
+  ],
+  "limits": [
+    "Normal finite input and valid parameters assumed; float rounding omitted in equations.",
+    "Filter topology and control mapping remain incomplete; no audio-render parity.",
+    "Mode 1 and mode 2 full gain curves unresolved.",
+    "No VMR vendor dynamics law recovered."
+  ]
+}

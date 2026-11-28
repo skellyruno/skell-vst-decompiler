@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "report_kind": "verified_behavior_ci",
+  "source_commit": "dcea7b8407b3d50d40c6ca4cc5200fc529b4fb8d",
+  "tests": 124,
+  "run_ids": {
+    "unified": 45440280348,
+    "reccmp": 45440280731,
+    "craft": 45440282629,
+    "pe_oracle": 45440281294,
+    "static": 45440281669,
+    "rizin": 45440280050,
+    "ghidra": 45440280051
+  },
+  "all_seven_passed": true,
+  "detector_probes": {
+    "pulse_rms": 0.1,
+    "sine_rms": 0.1,
+    "pulse_peak": 0.3,
+    "sine_peak": 0.1414213562373095,
+    "left_only_mean_rms": 0.07071067811865475
+  },
+  "recovery": {
+    "dual_control_single_heldout_rmse": 0.4644047279667751,
+    "dual_control_dual_heldout_rmse": 1.4043333874306804e-16,
+    "single_control_single_heldout_rmse": 2.3250657177093507e-18
+  },
+  "pitch": {
+    "two_period": {
+      "glide_median": 15.59385550211764,
+      "step_median": 0.720863290379328,
+      "vibrato_median": 20.81889286599206,
+      "gross_errors": 1
+    },
+    "yin_fft": {
+      "glide_median": 2.301392567872411,
+      "step_median": 0.11965321335558034,
+      "vibrato_median": 4.255362314836313,
+      "gross_errors": 0
+    },
+    "both": {
+      "accepted_voiced": 498,
+      "unvoiced_frames": 42,
+      "false_positive_unvoiced": 0,
+      "excluded_transition_frames": 42,
+      "missed_voiced": 0
+    }
+  },
+  "limits": "Synthetic controls, no vendor measurements. Center-window scoring excludes transitions; relative detector timing alignment matters. No transition latency or implementation proof."
+}

@@ -1,0 +1,314 @@
+{
+  "schema": 1,
+  "parent": "805cd80bbe1d7408d29a4e9780815f5822cbe32e",
+  "source_blobs": {
+    "experiments/engine_lab/LevelerSingleAttack.h": "c6a077a7195eb1cd45550d5f5e42758a6695e084",
+    "tests/fixtures/owned_leveler_attack.cpp": "61ae4b0b2ac73762122af6eb01456e36ecf6358f",
+    "tests/test_leveler_single_attack.cpp": "1a82bc35c78d99f614608f989c60c71932b97a30",
+    "benchmarks/owned_leveler_attack.py": "3a8820aad30a81e6df58eb69b8ba402194707460"
+  },
+  "original_header_blob": "b81bc2cba042148e1c809f072c70ad0d4b22dba0",
+  "private_report_sha256": "c39bd945cde14cecd4f0d0a6bff8ecea7390d5066ddb613722b0e558b78dadf0",
+  "inputs": {
+    "count": 36,
+    "duration_seconds": 159.25009070294786,
+    "rate": 44100,
+    "stages": {
+      "dry": 2,
+      "processed_module_input": 1,
+      "processed_main_or_full": 18,
+      "processed_adlib": 15
+    },
+    "fingerprints_verified": 36
+  },
+  "config": {
+    "threshold_db": -18,
+    "ratio": 4,
+    "release_setting_ms": 120,
+    "makeup_db": 0,
+    "wet": 1
+  },
+  "step": {
+    "rates": [
+      44100,
+      48000,
+      96000
+    ],
+    "conditions": 12,
+    "steady_gr_db": 8.98455,
+    "rate_48000": [
+      {
+        "nominal_attack_ms": 1,
+        "t90_ms": [
+          4.020833333333333,
+          2.0625
+        ],
+        "gr_after_4ms_db": [
+          8.081190646095687,
+          8.864128151760305
+        ]
+      },
+      {
+        "nominal_attack_ms": 4,
+        "t90_ms": [
+          16.0625,
+          8.208333333333334
+        ],
+        "gr_after_4ms_db": [
+          1.7976153450481003,
+          5.9965487956235926
+        ]
+      },
+      {
+        "nominal_attack_ms": 10,
+        "t90_ms": [
+          40.166666666666664,
+          20.5
+        ],
+        "gr_after_4ms_db": [
+          0.09433002154206234,
+          1.7559381781322723
+        ]
+      },
+      {
+        "nominal_attack_ms": 30,
+        "t90_ms": [
+          120.5,
+          61.479166666666664
+        ],
+        "gr_after_4ms_db": [
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "matched_attack": [
+    {
+      "fs": 44100,
+      "candidate_attack_ms": 7.8342437744140625,
+      "t90_samples": 709
+    },
+    {
+      "fs": 48000,
+      "candidate_attack_ms": 7.8280181884765625,
+      "t90_samples": 771
+    },
+    {
+      "fs": 96000,
+      "candidate_attack_ms": 7.833106994628906,
+      "t90_samples": 1542
+    }
+  ],
+  "tones": {
+    "conditions": 12,
+    "order": [
+      "original_4ms",
+      "single_4ms",
+      "single_matched"
+    ],
+    "rate_48000": [
+      {
+        "hz": 50,
+        "thd_dbc": [
+          -78.22257789397314,
+          -75.61715406434486,
+          -75.90487427686006
+        ]
+      },
+      {
+        "hz": 100,
+        "thd_dbc": [
+          -90.2916460016005,
+          -87.4301694014305,
+          -87.7197948128314
+        ]
+      },
+      {
+        "hz": 200,
+        "thd_dbc": [
+          -102.31004100762257,
+          -99.30323616577807,
+          -99.59571216267078
+        ]
+      },
+      {
+        "hz": 1000,
+        "thd_dbc": [
+          -129.84856939550775,
+          -126.71712046207992,
+          -126.73335173341422
+        ]
+      }
+    ]
+  },
+  "release": {
+    "conditions": 12,
+    "rate_48000": [
+      {
+        "burst_ms": 10,
+        "initial_gr_db": [
+          6.079767643755022,
+          8.426586909733366,
+          6.855894150738708
+        ],
+        "recovery_10_percent_ms": [
+          386.0208333333333,
+          350.125,
+          333.2708333333333
+        ]
+      },
+      {
+        "burst_ms": 50,
+        "initial_gr_db": [
+          8.984148776997653,
+          8.98452565466472,
+          8.973578417335181
+        ],
+        "recovery_10_percent_ms": [
+          384.0833333333333,
+          384.0833333333333,
+          383.9166666666667
+        ]
+      },
+      {
+        "burst_ms": 250,
+        "initial_gr_db": [
+          8.98454996803602,
+          8.984549968036204,
+          8.984549968036134
+        ],
+        "recovery_10_percent_ms": [
+          434.8125,
+          434.8125,
+          434.8125
+        ]
+      },
+      {
+        "burst_ms": 1000,
+        "initial_gr_db": [
+          8.984549977540787,
+          8.984549977540969,
+          8.984549977540901
+        ],
+        "recovery_10_percent_ms": [
+          457.3125,
+          457.3125,
+          457.3125
+        ]
+      }
+    ]
+  },
+  "vocals": {
+    "pairs": 144,
+    "renders": 288,
+    "all_finite": true,
+    "over_scale_samples": 0,
+    "nominal_cases": [
+      {
+        "attack_ms": 1,
+        "lower_peak_count": 30,
+        "median_raw_gain_db": [
+          -3.96442175,
+          -4.03541743
+        ],
+        "median_matched_difference_db": -37.354443968373516,
+        "median_peak_change_db": -0.3116875201348117
+      },
+      {
+        "attack_ms": 4,
+        "lower_peak_count": 28,
+        "median_raw_gain_db": [
+          -2.51737474,
+          -2.60918377
+        ],
+        "median_matched_difference_db": -35.51193501446985,
+        "median_peak_change_db": -0.1878613615818696
+      },
+      {
+        "attack_ms": 10,
+        "lower_peak_count": 25,
+        "median_raw_gain_db": [
+          -1.46401747,
+          -1.56703258
+        ],
+        "median_matched_difference_db": -34.30403715635757,
+        "median_peak_change_db": -0.0015685066881663268
+      }
+    ],
+    "matched_case": {
+      "pairs": 36,
+      "lower_peak_count": 1,
+      "median_raw_gain_db": [
+        -2.51737474,
+        -1.86241885
+      ],
+      "median_matched_difference_db": -31.598277605322377,
+      "max_sample_peak_dbfs": [
+        -3.0417895,
+        -3.02663087
+      ]
+    }
+  },
+  "decision": "Keep original ProgramLeveler. Candidate experimental: faster at equal nominal setting but no demonstrated superiority at matched measured t90, slightly higher tone harmonic distortion.",
+  "delay": {
+    "repo": "skellyruno/skellay",
+    "commit": "5ee9a58fffb3a790ee62f2d85a1cfb62424ddcf4",
+    "tested_header_blob": "6dad6c09adca53c92627251956477cfc4579d770",
+    "configurations": 96,
+    "complex_checks": 9216,
+    "max_abs_complex_error": 1.21061807468e-7,
+    "local_optimized_and_sanitized": "passed",
+    "test_only": true
+  },
+  "validation": {
+    "native_optimized": "passed at 8/44.1/48/96/192/384 kHz",
+    "asan_ubsan": "passed at same six rates",
+    "audio_benchmark": "passed",
+    "kit": "13/13 passed",
+    "parent_runs": [
+      {
+        "name": "Python static-analysis tests",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Reccmp export comparison (owned fixture)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Independent PE oracle (owned fixtures)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Craft Anything metadata (owned fixtures)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Real Rizin smoke (owned fixture)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "REA PE imports (owned fixtures)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Real Ghidra smoke (owned fixture)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Unified engines (owned fixture)",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "latest_full_ci": "pending"
+  },
+  "limits": "Actual owned prototypes, fixed controls. Sample peak not true peak. Harmonic-bin energy not isolated aliasing. t90 matched at one controlled step amplitude and ratio, not all dynamics. Private excerpts may share performances. No listening/host/CPU or vendor match claim. No production or approved-engine change. Existing vendor static backlog unchanged."
+}

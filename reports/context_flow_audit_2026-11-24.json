@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "report_kind": "bounded_alias_and_context_flow_audit",
+  "source_commit": "3c831d1b87e99b32f3791328b99c8c07075b489c",
+  "atlas_git_blob": "bc75dc2ee0781189b539897bcb435c7a3f8091bc",
+  "previous_ci": {
+    "tests": 154,
+    "all_eight_passed": true,
+    "run_ids": [
+      45478949383,
+      45478949376,
+      45478949429,
+      45478949348,
+      45478949546,
+      45478949600,
+      45478949555,
+      45478949298
+    ]
+  },
+  "tool_versions": {
+    "gnu": "2.44",
+    "llvm": "17.0.0"
+  },
+  "source_sha256": {
+    "FG-116": "1cf796db09bc6ce3455d3fa3506614fa990374fc2f2642ff8fc9c40e626dfbf2",
+    "FG-2A": "6b365ee15dbb94efb9d97b76923445f4ad4f3740194e21363cd9ffbe8df8d573",
+    "FG-Stress": "2509a6f3480481feb15a0fde97abcb4acccfc6fc936f55f5e8c88b7c98edcd26",
+    "TVB": "cefaa0c08642093832b0cf9cd93fea791ebd8146dae395d310a2624610a8fff9",
+    "VMR_rack": "8da77cc3d3e9935db56f56dabc586f1ff38dc1e667fa9ff6a9fbc2302f66c838",
+    "Evo": "278d03b4a88fe6ef59b48e5c1f70bc921b3ae530ea672879ef2ae21f0ce873d5"
+  },
+  "vmr_archive_sha256": "353f23373ac05d7b2121c313073f08c708e879d839115d4ce5d30657732f481e",
+  "hashes_checked": 6,
+  "original_scope_analyses": 4,
+  "scopes": 128,
+  "uniquely_contained_scopes": 112,
+  "unique_enclosing_records": 34,
+  "excluded_scopes": 16,
+  "observations": {
+    "FG-116": {
+      "archived_scopes": 8,
+      "raw_agreed_spans": 1082,
+      "raw_reached_spans": 1050,
+      "raw_reached_bytes": 4690,
+      "exact_alias_pairs": 0,
+      "normalized_agreed_spans": 1082,
+      "normalized_reached_spans": 1050,
+      "normalized_reached_bytes": 4690,
+      "uniquely_contained_scopes": 7,
+      "enclosing_records": 2,
+      "child_agreed_spans": 1014,
+      "child_reached_spans": 982,
+      "same_seed_enclosing_reached": 982,
+      "record_start_enclosing_reached": 982,
+      "child_local_spans_not_confirmed_from_record_start": 0,
+      "scopes_with_unconfirmed_local_spans": 0
+    },
+    "FG-2A": {
+      "archived_scopes": 50,
+      "raw_agreed_spans": 2846,
+      "raw_reached_spans": 1890,
+      "raw_reached_bytes": 9733,
+      "exact_alias_pairs": 4,
+      "normalized_agreed_spans": 2854,
+      "normalized_reached_spans": 1901,
+      "normalized_reached_bytes": 9765,
+      "uniquely_contained_scopes": 41,
+      "enclosing_records": 15,
+      "child_agreed_spans": 1782,
+      "child_reached_spans": 1575,
+      "same_seed_enclosing_reached": 1575,
+      "record_start_enclosing_reached": 980,
+      "child_local_spans_not_confirmed_from_record_start": 595,
+      "scopes_with_unconfirmed_local_spans": 17
+    },
+    "FG-Stress": {
+      "archived_scopes": 6,
+      "raw_agreed_spans": 1001,
+      "raw_reached_spans": 1001,
+      "raw_reached_bytes": 5168,
+      "exact_alias_pairs": 0,
+      "normalized_agreed_spans": 1001,
+      "normalized_reached_spans": 1001,
+      "normalized_reached_bytes": 5168,
+      "uniquely_contained_scopes": 6,
+      "enclosing_records": 1,
+      "child_agreed_spans": 1001,
+      "child_reached_spans": 1001,
+      "same_seed_enclosing_reached": 1001,
+      "record_start_enclosing_reached": 1001,
+      "child_local_spans_not_confirmed_from_record_start": 0,
+      "scopes_with_unconfirmed_local_spans": 0
+    },
+    "TVB": {
+      "archived_scopes": 64,
+      "raw_agreed_spans": 4831,
+      "raw_reached_spans": 4731,
+      "raw_reached_bytes": 23417,
+      "exact_alias_pairs": 0,
+      "normalized_agreed_spans": 4831,
+      "normalized_reached_spans": 4731,
+      "normalized_reached_bytes": 23417,
+      "uniquely_contained_scopes": 58,
+      "enclosing_records": 16,
+      "child_agreed_spans": 3940,
+      "child_reached_spans": 3840,
+      "same_seed_enclosing_reached": 3842,
+      "record_start_enclosing_reached": 3842,
+      "child_local_spans_not_confirmed_from_record_start": 0,
+      "scopes_with_unconfirmed_local_spans": 0
+    }
+  },
+  "context_comparison": {
+    "all_child_spans_exactly_matched_enclosing_decode": true,
+    "all_112_child_and_record_seeds_at_agreed_starts": true,
+    "alias_normalized_context_totals_unchanged": true,
+    "fg2a_not_reached_in_original_scopes": 956,
+    "fg2a_not_reached_in_contained_scopes": 207,
+    "fg2a_not_reached_in_excluded_scopes": 749,
+    "fg2a_local_bytes_not_confirmed_from_record_start": 3546,
+    "tvb_additional_spans": 2,
+    "tvb_additional_bytes": 12
+  },
+  "local_validation": {
+    "unit_tests": 9,
+    "unit_result": "pass",
+    "fixture_cases": 4,
+    "fixture_result": "pass",
+    "fixture_sha256": [
+      "3494216551a335e3dd3a35c256a819dbd7ea1c541aad9e10b838a61a907d0305",
+      "0e539c1621255b5da1a9475f7b13ed326fcfb84d9f09741e7ff8d63c6e1b0d3d",
+      "07901642ff9ad5a7d94b5217b301d5adfeb154a2dde390fcfd7de383d1c53739",
+      "c0f10dd7fd7fac90f93bd0f043a0923530ea67ee5d4a383fbbb05b60da30e173"
+    ],
+    "initial_fixture_link_failure": "x86 assembly missing SafeSEH compatibility feature metadata; corrected owned fixture metadata, no target security modifications",
+    "tested_blobs": {
+      "skell_vst_decompiler/flow_aliases.py": "f5f1d5bdfc0bac1d3ccf8bf9fda7b301214e6d78",
+      "skell_vst_decompiler/context_flow.py": "3529d7be42744d0bce769a373b0c36781c26f098",
+      "tests/test_flow_aliases.py": "70e219f409706596c2c9222de929a6d0ef6d6bc5",
+      "tests/test_context_flow.py": "03282fb27f470ab6a3b9c46b25b81f7b298246ec",
+      "tests/context_flow_smoke.py": "918a051b9228e437c9ac2744fbf9fbcefda270bd"
+    }
+  },
+  "limits": "Counts are overlapping scope observations, not unique instructions or functions. Alias normalized spans are derived. Enclosing unwind record starts not confirmed entry points. No call traversal, indirect resolution, exception paths, runtime proof or new proprietary implementation recovery. Evo and rack hashes verified only; no new decoding of those two. No vendor input uploaded."
+}

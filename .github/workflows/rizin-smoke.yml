@@ -1,0 +1,38 @@
+name: Real Rizin smoke (owned fixture)
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/rizin-smoke.yml'
+      - 'tests/rizin_smoke.py'
+      - 'tests/fixtures/ghidra_fixture.c'
+      - 'skell_vst_decompiler/classgraph.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || format('protected-{0}-{1}', github.ref, github.run_id) }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  owned-fixture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Install fixture compiler
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y clang lld
+      - name: Verify and extract pinned official Rizin release
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 2 --max-time 180 https://github.com/rizinorg/rizin/releases/download/v0.9.1/rizin-v0.9.1-static-x86_64.tar.xz -o "$RUNNER_TEMP/rizin.tar.xz"
+          echo "9102249a9f0b6319c5334a2e5cf8d9cc3f2035e1d3def027c41f6a90f647e8cf  $RUNNER_TEMP/rizin.tar.xz" | sha256sum -c -
+          mkdir -p "$RUNNER_TEMP/rizin"
+          tar -xJf "$RUNNER_TEMP/rizin.tar.xz" -C "$RUNNER_TEMP/rizin"
+          rz=$(find "$RUNNER_TEMP/rizin" -type f -name rizin -perm -u+x -print -quit)
+          test -n "$rz"
+          "$rz" -v
+          PYTHONPATH=. python tests/rizin_smoke.py --rizin "$rz"

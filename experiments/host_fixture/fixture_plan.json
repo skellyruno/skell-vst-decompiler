@@ -1,0 +1,50 @@
+[
+  {
+    "id": "train",
+    "case": "dynamic_train",
+    "spec": {
+      "backend": "fixture",
+      "name": "Compressor",
+      "parameters": {
+        "threshold_db": -24,
+        "ratio": 4,
+        "attack_ms": 20,
+        "release_ms": 160
+      },
+      "block_size": 64,
+      "target_stage": "output"
+    }
+  },
+  {
+    "id": "validation",
+    "case": "dynamic_holdout",
+    "spec": {
+      "backend": "fixture",
+      "name": "Compressor",
+      "parameters": {
+        "threshold_db": -24,
+        "ratio": 4,
+        "attack_ms": 20,
+        "release_ms": 160
+      },
+      "block_size": 64,
+      "target_stage": "output"
+    }
+  },
+  {
+    "id": "test",
+    "case": "dynamic_test",
+    "spec": {
+      "backend": "fixture",
+      "name": "Compressor",
+      "parameters": {
+        "threshold_db": -24,
+        "ratio": 4,
+        "attack_ms": 20,
+        "release_ms": 160
+      },
+      "block_size": 64,
+      "target_stage": "output"
+    }
+  }
+]

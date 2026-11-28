@@ -1,0 +1,192 @@
+{
+  "schema": 1,
+  "parent": "e66a71e2669dfa07123d3b9fa3e8f3c03f853571",
+  "full_local_report_sha256": "92302a4cfc51d4f1dcf1ab9b05715cab80f7e9782d8ea442ff0a640544c1bb1a",
+  "owned_static": [
+    {
+      "optimization": "-O1",
+      "pe_sha256": "b38be892bb3fa44aef5fc81142a18877335325b7388110f019b6d339d6b3113a",
+      "equal_gain_geometry_scope_sha256": "47af9044a2048daa017aead3c5e2462a4e7e21296c1a6b071fcdbae2e85aebf5",
+      "scope_bytes": 48,
+      "arithmetic_sites_each": 1,
+      "local_transformed_stores_each": 1,
+      "clip_transformed_stores": 0,
+      "direct_sites": 12,
+      "indirect_register_sites": 1
+    },
+    {
+      "optimization": "-O3",
+      "pe_sha256": "34902602a1c81e3764b00bafb08bee31e4a1b802d1a95707ccb8d1b6fc9e5c09",
+      "equal_gain_geometry_scope_sha256": "4e275de6c3384bc28cd94dd6313eab4e13561315ed91c55100250f8a2f14d9ac",
+      "scope_bytes": 128,
+      "arithmetic_sites_each": 3,
+      "local_transformed_stores_each": 2,
+      "clip_transformed_stores": 0,
+      "direct_sites": 28,
+      "indirect_register_sites": 1
+    }
+  ],
+  "owned_native": {
+    "callback_cases": 8,
+    "wrapper_cases": 8,
+    "max_absolute_error": 0,
+    "scope": "Native source-known builds only; not Windows execution or runtime target resolution."
+  },
+  "audio": {
+    "native_sha256": "c73969d7ca8316bf9b15cca106686dcd68be062b68192d64150a0ee77aed4358",
+    "engines": [
+      "PresenceEngine",
+      "ProgramLeveler",
+      "ColorEngine",
+      "ColorOversampled2x",
+      "ColorOversampled"
+    ],
+    "sample_rate_cases": 15,
+    "all_finite": true,
+    "block_partition_max_error": 0,
+    "dry_aligned_max_error": 0,
+    "dry_impulse_delay_samples": [
+      0,
+      0,
+      0,
+      40,
+      40
+    ],
+    "rows": [
+      {
+        "fs": 44100,
+        "presence_100hz_db": 0.000007488364059810937,
+        "presence_9000hz_db": 2.9899567941206624,
+        "leveler_steady_db": -8.686834765325377,
+        "leveler_stereo_link_error": 2.7755575615628914e-17,
+        "leveler_recovery_short_db": [
+          -8.339409460830964,
+          -6.70967523860196,
+          -0.2272899557070337,
+          -0.0034788867412472407
+        ],
+        "leveler_recovery_long_db": [
+          -8.685194500953916,
+          -7.614100345295476,
+          -0.40489866401626107,
+          -0.006135672046312346
+        ],
+        "harmonic_hz": 11100,
+        "harmonic_folded": true,
+        "color_dbc": [
+          -15.479444487881818,
+          -107.92691708034836,
+          -105.72703143446557
+        ]
+      },
+      {
+        "fs": 48000,
+        "presence_100hz_db": 0.000007542679333063805,
+        "presence_9000hz_db": 2.988946524859304,
+        "leveler_steady_db": -8.68865689875644,
+        "leveler_stereo_link_error": 2.7755575615628914e-17,
+        "leveler_recovery_short_db": [
+          -8.339556420899363,
+          -6.7095315525592625,
+          -0.22724071122277462,
+          -0.0034781426699754267
+        ],
+        "leveler_recovery_long_db": [
+          -8.686785771344333,
+          -7.615290833718149,
+          -0.40479561954762655,
+          -0.006134146094526967
+        ],
+        "harmonic_hz": 15000,
+        "harmonic_folded": true,
+        "color_dbc": [
+          -15.47944410638259,
+          -114.37798102756486,
+          -111.34936077021672
+        ]
+      },
+      {
+        "fs": 96000,
+        "presence_100hz_db": 0.000007765873413184407,
+        "presence_9000hz_db": 2.984230557072399,
+        "leveler_steady_db": -8.687596385949213,
+        "leveler_stereo_link_error": 2.7755575615628914e-17,
+        "leveler_recovery_short_db": [
+          -8.339036233983911,
+          -6.709665519758693,
+          -0.22728680415565733,
+          -0.0034788391222749103
+        ],
+        "leveler_recovery_long_db": [
+          -8.685964892174013,
+          -7.615020874365629,
+          -0.40495900117772987,
+          -0.0061365655512925065
+        ],
+        "harmonic_hz": 33000,
+        "harmonic_folded": false,
+        "color_dbc": [
+          -15.47944371587809,
+          -15.478410108649234,
+          -15.478410131175442
+        ]
+      }
+    ]
+  },
+  "validation": {
+    "existing_local_tests": 19,
+    "owned_benchmark": "passed",
+    "offline_kit": "13/13 checksums passed",
+    "toolchain": "clang 17 / lld-link; GCC 14.2 / GNU objdump 2.44 / LLVM objdump",
+    "parent_runs": [
+      {
+        "name": "Independent PE oracle (owned fixtures)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Python static-analysis tests",
+        "status": "in_progress",
+        "conclusion": null
+      },
+      {
+        "name": "Craft Anything metadata (owned fixtures)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Real Rizin smoke (owned fixture)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Reccmp export comparison (owned fixture)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Unified engines (owned fixture)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "REA PE imports (owned fixtures)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Real Ghidra smoke (owned fixture)",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "blobs": {
+      "fixture": "c96340c8880bbc092b22146e5f26a8058b34ceb4",
+      "adapter": "4919ff5771e96eb9dbfa28ec1d7b63ebac079888",
+      "benchmark": "6712aa54db0c4f0a662d6312b5a600b8168b7a45",
+      "independent_engines": "b81bc2cba042148e1c809f072c70ad0d4b22dba0",
+      "color_oversampled": "9d403ac669479bb6629a39f8ae2f9bded737844d"
+    }
+  },
+  "limits": "Generated tones, existing independent prototypes; no real music, vendor execution, vendor target traversal or equivalence, actual host latency, CPU measurements, generalized alias conclusion or changes to production DSP. Prior 854 unknown destinations, 90 boundary conflicts and 692 candidates unchanged. Source-known labels do not generalize to unknown binaries."
+}

@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "report_kind": "offline_supported_host_capture",
+  "source_commit": "2faa62db0bfef3ddc605a6794644997f272a91fb",
+  "previous_ci": {
+    "tests": 191,
+    "all_eight_passed": true,
+    "run_ids": [
+      45535454247,
+      45535454156,
+      45535454128,
+      45535454140,
+      45535454179,
+      45535454150,
+      45535454172,
+      45535454168
+    ]
+  },
+  "local": {
+    "pedalboard": "0.9.23",
+    "unit_tests": 4,
+    "unit_result": "pass",
+    "unit_seconds": 6.04,
+    "native_smoke": "pass",
+    "render_jobs": 7,
+    "sample_rate": 48000,
+    "block_sizes": [
+      64,
+      1024
+    ],
+    "comparisons": {
+      "dynamic_holdout": {
+        "frames": 264480,
+        "channels": 2,
+        "mismatched_samples": 0,
+        "max_absolute_error": 0
+      },
+      "dynamic_test": {
+        "frames": 296640,
+        "channels": 2,
+        "mismatched_samples": 0,
+        "max_absolute_error": 0
+      },
+      "dynamic_train": {
+        "frames": 264960,
+        "channels": 2,
+        "mismatched_samples": 0,
+        "max_absolute_error": 0
+      },
+      "fresh_process_repeat": {
+        "frames": 264960,
+        "channels": 2,
+        "mismatched_samples": 0,
+        "max_absolute_error": 0
+      }
+    },
+    "models_test_rmse_db": {
+      "amplitude": 0.07867525587630586,
+      "dual": 0.4420928808570854,
+      "power": 0.1341930732164535,
+      "single": 0.3768475788307072
+    },
+    "selected_by_validation": "amplitude",
+    "tested_blobs": {
+      "skell_vst_decompiler/host_capture.py": "61312a086e67a5dd4d6a7ddac44902287e70a8d8",
+      "tests/test_host_capture.py": "f1c8d53035458eaf9a9ed31edee0bfa8f5826a9c",
+      "tests/host_capture_smoke.py": "f2fe2582fe4dd19c8e6ae332fc9a699d717ad3a5"
+    }
+  },
+  "windows_owned_fixture": {
+    "status": "implemented_not_built_or_executed_locally",
+    "juce_tag": "8.0.12",
+    "juce_commit": "29396c22c93392d6738e021b83196283d6e4d850",
+    "source_blobs": {
+      "experiments/host_fixture/CMakeLists.txt": "29667e1a7524ffc5740af650093dd8a91f8484e6",
+      "experiments/host_fixture/Fixture.cpp": "8c3bc8a817f808dc53ec58fff1b1015e2b34684c",
+      "tests/host_vst3_smoke.py": "9e5982677619b29863cc03a9f31efa5e3648c48f"
+    },
+    "python_smoke_syntax": "pass",
+    "local_dependency_blocker": "JUCE not present; git ls-remote failed DNS resolution. No Windows runtime."
+  },
+  "limits": "Native fixtures are independent Pedalboard built-ins, not loaded VST3s. Installed VST3 adapter is unverified and requires explicit local authorization, license, Windows x64, exact bundle and version identity. Public parameter readback does not capture hidden state or establish parameter routing. Reported latency is not measured latency. No plugin loaded from user's DLLs; no FL Studio, no Evo x86 runtime, no production builds or new vendor source recovery. Child processes are crash containment, not a security sandbox."
+}
