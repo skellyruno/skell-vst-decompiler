@@ -396,6 +396,13 @@ jobs:
             /tmp/skell_${test}_san
           done
 
+      - name: Native stereo convolution and tail transition regression
+        run: |
+          g++ -std=c++17 -O3 -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror tests/test_native_stereo_ir.cpp -o /tmp/skell_native_stereo_ir
+          /tmp/skell_native_stereo_ir
+          g++ -std=c++17 -O1 -g -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_native_stereo_ir.cpp -o /tmp/skell_native_stereo_ir_san
+          /tmp/skell_native_stereo_ir_san
+
   windows-owned-vst3-host:
     runs-on: windows-latest
     timeout-minutes: 50

@@ -16,3 +16,7 @@ Updated 2026-11-27; preserve all earlier reports and approved sounds. This is th
 | High | Read-only vendor evidence backlog | 854 unresolved transfer destinations, 90 boundary conflicts, 692 local candidates; no new vendor replay this batch. |
 
 Reference: [Lifted DC and history-cap research](LIFT_HISTORY_20261127.md). Do not repeat already rejected settings as new experiments. All latest research remains isolated from production.
+
+## Native IR and all-target follow-up
+
+See [native IR scheduling report](NATIVE_IR_ALL_TARGET_GATES_20261127.md) and [47-target gate ledger](ALL_TARGET_GATES_20261127.md). Prioritize long-IR deadline misses, real host reference capture, bounded repeated transitions, and per-target control validation. Do not raise commercial-source estimates from independent engine results.
