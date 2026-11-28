@@ -427,6 +427,13 @@ jobs:
           g++ -std=c++17 -O1 -g -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_topology_dynamics.cpp experiments/TopologyDynamics.cpp -o /tmp/skell_topology_san
           /tmp/skell_topology_san
 
+      - name: Cascaded dynamics description regression
+        run: |
+          g++ -std=c++17 -O3 -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror tests/test_cascade_id.cpp experiments/CascadeIdentification.cpp -o /tmp/skell_cascade_id
+          /tmp/skell_cascade_id
+          g++ -std=c++17 -O1 -g -ffp-contract=off -UNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -no-pie tests/test_cascade_id.cpp experiments/CascadeIdentification.cpp -o /tmp/skell_cascade_id_san
+          /tmp/skell_cascade_id_san
+
   windows-owned-vst3-host:
     runs-on: windows-latest
     timeout-minutes: 50

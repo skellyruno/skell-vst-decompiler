@@ -413,3 +413,6 @@ Independent fixture asymmetry reveals earlier linked-detector assumption invalid
 
 ## Finite complementary stereo measurement — 2026-11-27
 108 independent fixture renders, eight local tests, 12/12 fixed-response cases consistent, six nonlinear/time-varying cases rejected; two reused private recorded holdouts. Six equal-peak known FIR noise comparisons 63.9–64.3x lower error (unequal energy). 12s/96k known cross route peak 960017 exact, max RSS 640224 to 457932 KiB with array lifetime optimization. Four original probe WAVs verified. Previous db898f3 independent Windows pluginval acceptance completed successfully (46103974354). No vendor or production changes. See docs/FINITE_STEREO_20261127.md.
+
+## Cascaded dynamics model selection — 2026-11-27
+34 independent built-in fixture renders; selected one vs two stages correctly for chosen settings. Synthetic training at 48k, separate validation and 12 reused audio/rate holdouts per fixture. Cascade mean relative RMS .0486775 to 9.16715e-6, all 12 improved, no refit. Native optimized/sanitizer tests pass. Previous owned pluginval Windows acceptance passed. Cached Quick4 13/13. No commercial or production changes. See docs/CASCADE_IDENTIFICATION_20261127.md.
